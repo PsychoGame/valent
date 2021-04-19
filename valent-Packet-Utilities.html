@@ -1,0 +1,1095 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Packet Utilities: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch03.html" title="Miscellaneous">
+<link rel="prev" href="valent-valent-object-utils.html" title="valent-object-utils">
+<link rel="next" href="valent-Utilities.html" title="Utilities">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#valent-Packet-Utilities.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="valent-valent-object-utils.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="valent-Utilities.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="valent-Packet-Utilities"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="valent-Packet-Utilities.top_of_page"></a>Packet Utilities</span></h2>
+<p>Packet Utilities — A collection of packet helpers</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="valent-Packet-Utilities.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="valent-Packet-Utilities.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GQuark</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-error-quark" title="valent_packet_error_quark ()">valent_packet_error_quark</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../json-glib/JsonBuilder.html#JsonBuilder-struct"><span class="returnvalue">JsonBuilder</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-start" title="valent_packet_start ()">valent_packet_start</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="returnvalue">JsonNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-finish" title="valent_packet_finish ()">valent_packet_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="returnvalue">JsonNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-from-stream" title="valent_packet_from_stream ()">valent_packet_from_stream</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-to-stream" title="valent_packet_to_stream ()">valent_packet_to_stream</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-serialize" title="valent_packet_serialize ()">valent_packet_serialize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="returnvalue">JsonNode</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-deserialize" title="valent_packet_deserialize ()">valent_packet_deserialize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-get-id" title="valent_packet_get_id ()">valent_packet_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="returnvalue">JsonObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-get-body" title="valent_packet_get_body ()">valent_packet_get_body</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-has-payload" title="valent_packet_has_payload ()">valent_packet_has_payload</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="returnvalue">JsonObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-get-payload-full" title="valent_packet_get_payload_full ()">valent_packet_get_payload_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-set-payload-full" title="valent_packet_set_payload_full ()">valent_packet_set_payload_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="returnvalue">JsonObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-get-payload-info" title="valent_packet_get_payload_info ()">valent_packet_get_payload_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-set-payload-info" title="valent_packet_set_payload_info ()">valent_packet_set_payload_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gssize</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-get-payload-size" title="valent_packet_get_payload_size ()">valent_packet_get_payload_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-set-payload-size" title="valent_packet_set_payload_size ()">valent_packet_set_payload_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-identity-get-device-id" title="valent_identity_get_device_id ()">valent_identity_get_device_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-is-valid" title="valent_packet_is_valid ()">valent_packet_is_valid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-validate" title="valent_packet_validate ()">valent_packet_validate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-check-boolean" title="valent_packet_check_boolean ()">valent_packet_check_boolean</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">double</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-check-double" title="valent_packet_check_double ()">valent_packet_check_double</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-check-int" title="valent_packet_check_int ()">valent_packet_check_int</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="valent-Packet-Utilities.html#valent-packet-check-string" title="valent_packet_check_string ()">valent_packet_check_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="valent-Packet-Utilities.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="valent-Packet-Utilities.html#VALENT-PACKET-ERROR:CAPS" title="VALENT_PACKET_ERROR">VALENT_PACKET_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="valent-Packet-Utilities.html#ValentPacketError" title="enum ValentPacketError">ValentPacketError</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="valent-Packet-Utilities.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-core.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="valent-Packet-Utilities.description"></a><h2>Description</h2>
+<p>Utilities and helpers for validating and working with KDE Connect packets.</p>
+</div>
+<div class="refsect1">
+<a name="valent-Packet-Utilities.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-packet-error-quark"></a><h3>valent_packet_error_quark ()</h3>
+<pre class="programlisting"><span class="returnvalue">GQuark</span>
+valent_packet_error_quark (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-start"></a><h3>valent_packet_start ()</h3>
+<pre class="programlisting"><a href="../json-glib/JsonBuilder.html#JsonBuilder-struct"><span class="returnvalue">JsonBuilder</span></a> *
+valent_packet_start (<em class="parameter"><code>const <span class="type">char</span> *type</code></em>);</pre>
+<p>A convenience function for building the first half of a KDE Connect packet
+and returning a <a href="../json-glib/JsonBuilder.html#JsonBuilder-struct"><span class="type">JsonBuilder</span></a> positioned in the <code class="literal">body</code> object. Add members to
+the and call <a class="link" href="valent-Packet-Utilities.html#valent-packet-finish" title="valent_packet_finish ()"><code class="function">valent_packet_finish()</code></a> to close the <a href="../json-glib/JsonBuilder.html#JsonBuilder-struct"><span class="type">JsonBuilder</span></a> and get the
+result.</p>
+<div class="refsect3">
+<a name="valent-packet-start.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>A KDE Connect packet type</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-start.returns"></a><h4>Returns</h4>
+<p>A <a href="../json-glib/JsonBuilder.html#JsonBuilder-struct"><span class="type">JsonBuilder</span></a> object. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-finish"></a><h3>valent_packet_finish ()</h3>
+<pre class="programlisting"><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="returnvalue">JsonNode</span></a> *
+valent_packet_finish (<em class="parameter"><code><a href="../json-glib/JsonBuilder.html#JsonBuilder-struct"><span class="type">JsonBuilder</span></a> *builder</code></em>);</pre>
+<p>Finishes a packet started with <a class="link" href="valent-Packet-Utilities.html#valent-packet-start" title="valent_packet_start ()"><code class="function">valent_packet_start()</code></a> and returns the finished
+<a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> packet. <em class="parameter"><code>builder</code></em>
+ will be consumed by this function.</p>
+<div class="refsect3">
+<a name="valent-packet-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/JsonBuilder.html#JsonBuilder-struct"><span class="type">JsonBuilder</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-finish.returns"></a><h4>Returns</h4>
+<p>A <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> object. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-from-stream"></a><h3>valent_packet_from_stream ()</h3>
+<pre class="programlisting"><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="returnvalue">JsonNode</span></a> *
+valent_packet_from_stream (<em class="parameter"><code><span class="type">GInputStream</span> *stream</code></em>,
+                           <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>A convenience function for reading a packet from a connection.</p>
+<p>If the read fails or the packet does not conform to the minimum structure of
+a KDE Connect packet, <code class="literal">NULL</code> will be returned with <em class="parameter"><code>error</code></em>
+ set.</p>
+<div class="refsect3">
+<a name="valent-packet-from-stream.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <span class="type">GInputStream</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-from-stream.returns"></a><h4>Returns</h4>
+<p>A <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> identity, or <code class="literal">NULL</code> with <em class="parameter"><code>error</code></em>
+set. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-to-stream"></a><h3>valent_packet_to_stream ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_packet_to_stream (<em class="parameter"><code><span class="type">GOutputStream</span> *stream</code></em>,
+                         <em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>A convenience function for writing an identity packet to a connection.</p>
+<div class="refsect3">
+<a name="valent-packet-to-stream.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <span class="type">GOutputStream</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-to-stream.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success or <code class="literal">FALSE</code> with <em class="parameter"><code>error</code></em>
+set</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-serialize"></a><h3>valent_packet_serialize ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+valent_packet_serialize (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>);</pre>
+<p>Convenience function that updates the timestamp of a packet before returning
+a serialized string with newline ending, ready to be written to a stream.</p>
+<div class="refsect3">
+<a name="valent-packet-serialize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a complete KDE Connect packet</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-serialize.returns"></a><h4>Returns</h4>
+<p>the serialized packet. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-deserialize"></a><h3>valent_packet_deserialize ()</h3>
+<pre class="programlisting"><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="returnvalue">JsonNode</span></a> *
+valent_packet_deserialize (<em class="parameter"><code>const <span class="type">char</span> *json</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Convenience function that deserializes a KDE Connect packet from a string
+with basic validation. If <em class="parameter"><code>str</code></em>
+ is empty, this function will return <code class="literal">NULL</code>.</p>
+<p>If parsing or validation fails, <em class="parameter"><code>error</code></em>
+ will be set and <code class="literal">NULL</code> returned.</p>
+<div class="refsect3">
+<a name="valent-packet-deserialize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>json</p></td>
+<td class="parameter_description"><p>a complete KDE Connect packet</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-deserialize.returns"></a><h4>Returns</h4>
+<p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-get-id"></a><h3>valent_packet_get_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint64</span>
+valent_packet_get_id (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>);</pre>
+<p>Convenience function for getting the timestamp of a KDE Connect packet.</p>
+<div class="refsect3">
+<a name="valent-packet-get-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> holding a KDE Connect packet</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-get-id.returns"></a><h4>Returns</h4>
+<p> a UNIX epoch timestamp</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-get-body"></a><h3>valent_packet_get_body ()</h3>
+<pre class="programlisting"><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="returnvalue">JsonObject</span></a> *
+valent_packet_get_body (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>);</pre>
+<p>Convenience function for getting the packet body of a KDE Connect packet.</p>
+<div class="refsect3">
+<a name="valent-packet-get-body.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> holding a KDE Connect packet</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-get-body.returns"></a><h4>Returns</h4>
+<p>a <a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-has-payload"></a><h3>valent_packet_has_payload ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_packet_has_payload (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>);</pre>
+<p>Return <code class="literal">TRUE</code> if the packet holds valid transfer information. Payload
+information is considered invalid in the following cases:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>The <code class="literal">payloadSize</code> field is present, but not a <code class="literal">G_TYPE_INT64</code></p></li>
+<li class="listitem"><p>The <code class="literal">payloadTransferInfo</code> field is missing from the root object</p></li>
+<li class="listitem"><p>The <code class="literal">payloadTransferInfo</code> field is not a <a href="../json-glib/json-glib-JSON-Node.html#JSON-NODE-OBJECT:CAPS"><code class="literal">JSON_NODE_OBJECT</code></a></p></li>
+</ul></div>
+<div class="refsect3">
+<a name="valent-packet-has-payload.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-has-payload.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>packet</code></em>
+has a payload</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-get-payload-full"></a><h3>valent_packet_get_payload_full ()</h3>
+<pre class="programlisting"><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="returnvalue">JsonObject</span></a> *
+valent_packet_get_payload_full (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>,
+                                <em class="parameter"><code><span class="type">gssize</span> *size</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>A convenience for retrieving the <code class="literal">payloadTransferInfo</code> and <code class="literal">payloadSize</code>
+fields from <em class="parameter"><code>packet</code></em>
+.</p>
+<p>If <em class="parameter"><code>packet</code></em>
+ is malformed or missing payload information, <code class="literal">NULL</code> will be
+returned with <em class="parameter"><code>error</code></em>
+ set. See <a class="link" href="valent-Packet-Utilities.html#valent-packet-has-payload" title="valent_packet_has_payload ()"><code class="function">valent_packet_has_payload()</code></a> for validation
+criteria.</p>
+<div class="refsect3">
+<a name="valent-packet-get-payload-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>the payload size. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-get-payload-full.returns"></a><h4>Returns</h4>
+<p>a <a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-set-payload-full"></a><h3>valent_packet_set_payload_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_packet_set_payload_full (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>,
+                                <em class="parameter"><code><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a> *info</code></em>,
+                                <em class="parameter"><code><span class="type">gssize</span> size</code></em>);</pre>
+<p>A convenience method for setting the <code class="literal">payloadTransferInfo</code> and <code class="literal">payloadSize</code>
+fields on <em class="parameter"><code>packet</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-packet-set-payload-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>the payload size in bytes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-get-payload-info"></a><h3>valent_packet_get_payload_info ()</h3>
+<pre class="programlisting"><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="returnvalue">JsonObject</span></a> *
+valent_packet_get_payload_info (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>);</pre>
+<p>A convenience for retrieve the 'payloadTransferInfo` field from <em class="parameter"><code>packet</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-packet-get-payload-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-get-payload-info.returns"></a><h4>Returns</h4>
+<p>a <a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-set-payload-info"></a><h3>valent_packet_set_payload_info ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_packet_set_payload_info (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>,
+                                <em class="parameter"><code><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a> *info</code></em>);</pre>
+<p>A convenience method for setting the <code class="literal">payloadTransferInfo</code> field on <em class="parameter"><code>packet</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-packet-set-payload-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-get-payload-size"></a><h3>valent_packet_get_payload_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">gssize</span>
+valent_packet_get_payload_size (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>);</pre>
+<p>Get the <code class="literal">payloadSize</code> field of <em class="parameter"><code>packet</code></em>
+ in bytes.</p>
+<div class="refsect3">
+<a name="valent-packet-get-payload-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-get-payload-size.returns"></a><h4>Returns</h4>
+<p> the payload size</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-set-payload-size"></a><h3>valent_packet_set_payload_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_packet_set_payload_size (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>,
+                                <em class="parameter"><code><span class="type">gssize</span> size</code></em>);</pre>
+<p>Set the <code class="literal">payloadSize</code> field of <em class="parameter"><code>packet</code></em>
+ to <em class="parameter"><code>size</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-packet-set-payload-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>the payload size in bytes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-identity-get-device-id"></a><h3>valent_identity_get_device_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_identity_get_device_id (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *identity</code></em>);</pre>
+<p>Convenience function for getting the <code class="literal">deviceId</code> field from a
+<code class="literal">kdeconnect.identity</code> packet. Returns <code class="literal">NULL</code> if <em class="parameter"><code>packet</code></em>
+ is not a valid
+identity packet.</p>
+<div class="refsect3">
+<a name="valent-identity-get-device-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>identity</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-identity-get-device-id.returns"></a><h4>Returns</h4>
+<p>a device ID. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-is-valid"></a><h3>valent_packet_is_valid ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_packet_is_valid (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>);</pre>
+<p>Returns <code class="literal">TRUE</code> if <em class="parameter"><code>packet</code></em>
+ is a valid packet. This can be used in
+<code class="literal"><code class="function">g_return_if_fail()</code></code> checks.</p>
+<div class="refsect3">
+<a name="valent-packet-is-valid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-is-valid.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> of <code class="literal">FALSE</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-validate"></a><h3>valent_packet_validate ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_packet_validate (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a> *packet</code></em>,
+                        <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Returns <code class="literal">TRUE</code> if <em class="parameter"><code>packet</code></em>
+ is a valid packet like <a class="link" href="valent-Packet-Utilities.html#valent-packet-is-valid" title="valent_packet_is_valid ()"><code class="function">valent_packet_is_valid()</code></a>, but
+sets <em class="parameter"><code>error</code></em>
+ if returning <code class="literal">FALSE</code>.</p>
+<div class="refsect3">
+<a name="valent-packet-validate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <a href="../json-glib/json-glib-JSON-Node.html#JsonNode-struct"><span class="type">JsonNode</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-validate.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> or <code class="literal">FALSE</code> with <em class="parameter"><code>error</code></em>
+set</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-check-boolean"></a><h3>valent_packet_check_boolean ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_packet_check_boolean (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a> *body</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *member</code></em>);</pre>
+<p>A quick and silent macro for getting a boolean member from a packet body. If
+the member is missing or holds another type <code class="literal">FALSE</code> is returned.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="valent-packet-check-boolean.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>body</p></td>
+<td class="parameter_description"><p>a packet body. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Json.Object]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>member</p></td>
+<td class="parameter_description"><p>a member name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-check-boolean.returns"></a><h4>Returns</h4>
+<p> a boolean</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-check-double"></a><h3>valent_packet_check_double ()</h3>
+<pre class="programlisting"><span class="returnvalue">double</span>
+valent_packet_check_double (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a> *body</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *member</code></em>);</pre>
+<p>A quick and silent macro for getting a double member from a packet body. If
+the member is missing or holds another type <code class="literal">0.0</code> is returned.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="valent-packet-check-double.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>body</p></td>
+<td class="parameter_description"><p>a packet body. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Json.Object]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>member</p></td>
+<td class="parameter_description"><p>a member name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-check-double.returns"></a><h4>Returns</h4>
+<p> a double</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-check-int"></a><h3>valent_packet_check_int ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint64</span>
+valent_packet_check_int (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a> *body</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *member</code></em>);</pre>
+<p>A quick and silent macro for getting an integer member from a packet body. If
+the member is missing or holds another type <code class="literal">0</code> is returned.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="valent-packet-check-int.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>body</p></td>
+<td class="parameter_description"><p>a packet body. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Json.Object]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>member</p></td>
+<td class="parameter_description"><p>a member name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-check-int.returns"></a><h4>Returns</h4>
+<p> an integer</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-packet-check-string"></a><h3>valent_packet_check_string ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_packet_check_string (<em class="parameter"><code><a href="../json-glib/json-glib-JSON-Object.html#JsonObject-struct"><span class="type">JsonObject</span></a> *body</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *member</code></em>);</pre>
+<p>A quick and silent macro for getting a string member from a packet body. If
+the member is missing, holds another type or an empty string <code class="literal">NULL</code> is
+returned.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="valent-packet-check-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>body</p></td>
+<td class="parameter_description"><p>a packet body. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Json.Object]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>member</p></td>
+<td class="parameter_description"><p>a member name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-packet-check-string.returns"></a><h4>Returns</h4>
+<p>a string. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="valent-Packet-Utilities.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-PACKET-ERROR:CAPS"></a><h3>VALENT_PACKET_ERROR</h3>
+<pre class="programlisting">#define VALENT_PACKET_ERROR      (valent_packet_error_quark ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentPacketError"></a><h3>enum ValentPacketError</h3>
+<p>Error enumeration for KDE Connect packet validation.</p>
+<p>This enumeration can be extended at later date</p>
+<div class="refsect3">
+<a name="ValentPacketError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-PACKET-ERROR-UNKNOWN:CAPS"></a>VALENT_PACKET_ERROR_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-PACKET-ERROR-MALFORMED:CAPS"></a>VALENT_PACKET_ERROR_MALFORMED</p></td>
+<td class="enum_member_description">
+<p>a malformed packet</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-PACKET-ERROR-INVALID-FIELD:CAPS"></a>VALENT_PACKET_ERROR_INVALID_FIELD</p></td>
+<td class="enum_member_description">
+<p>an expected field is missing or holds an invalid type</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-PACKET-ERROR-UNKNOWN-MEMBER:CAPS"></a>VALENT_PACKET_ERROR_UNKNOWN_MEMBER</p></td>
+<td class="enum_member_description">
+<p>the <code class="literal">id</code> field is missing</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-PACKET-ERROR-INVALID-DATA:CAPS"></a>VALENT_PACKET_ERROR_INVALID_DATA</p></td>
+<td class="enum_member_description">
+<p>invalid data</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

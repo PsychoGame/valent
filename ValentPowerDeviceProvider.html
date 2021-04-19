@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentPowerDeviceProvider: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch10.html" title="Power">
+<link rel="prev" href="ValentPowerDevice.html" title="ValentPowerDevice">
+<link rel="next" href="ch11.html" title="Session">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentPowerDeviceProvider.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentPowerDeviceProvider.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentPowerDeviceProvider.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#ValentPowerDeviceProvider.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch10.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ValentPowerDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch11.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentPowerDeviceProvider"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentPowerDeviceProvider.top_of_page"></a>ValentPowerDeviceProvider</span></h2>
+<p>ValentPowerDeviceProvider — Base class for power device providers</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-emit-device-added" title="valent_power_device_provider_emit_device_added ()">valent_power_device_provider_emit_device_added</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-emit-device-removed" title="valent_power_device_provider_emit_device_removed ()">valent_power_device_provider_emit_device_removed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-get-devices" title="valent_power_device_provider_get_devices ()">valent_power_device_provider_get_devices</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-load-async" title="valent_power_device_provider_load_async ()">valent_power_device_provider_load_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-load-finish" title="valent_power_device_provider_load_finish ()">valent_power_device_provider_load_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a href="../libpeas/PeasPluginInfo.html#PeasPluginInfo-struct"><span class="type">PeasPluginInfo</span></a> *</td>
+<td class="property_name"><a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider--plugin-info" title="The “plugin-info” property">plugin-info</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-added" title="The “device-added” signal">device-added</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-removed" title="The “device-removed” signal">device-removed</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentPowerDeviceProvider.html#VALENT-TYPE-POWER-DEVICE-PROVIDER:CAPS" title="VALENT_TYPE_POWER_DEVICE_PROVIDER">VALENT_TYPE_POWER_DEVICE_PROVIDER</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass" title="struct ValentPowerDeviceProviderClass">ValentPowerDeviceProviderClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-struct" title="ValentPowerDeviceProvider">ValentPowerDeviceProvider</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> ValentPowerDeviceProvider
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-power.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.description"></a><h2>Description</h2>
+<p><a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> is base class for plugins that provide <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a> objects.</p>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-power-device-provider-emit-device-added"></a><h3>valent_power_device_provider_emit_device_added ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_power_device_provider_emit_device_added
+                               (<em class="parameter"><code><a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> *provider</code></em>,
+                                <em class="parameter"><code><a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a> *device</code></em>);</pre>
+<p>Emits the <a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-added" title="The “device-added” signal"><span class="type">“device-added”</span></a> signal.</p>
+<p>This should only be called by subclasses of <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> when
+a new device has been discovered.</p>
+<div class="refsect3">
+<a name="valent-power-device-provider-emit-device-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-power-device-provider-emit-device-removed"></a><h3>valent_power_device_provider_emit_device_removed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_power_device_provider_emit_device_removed
+                               (<em class="parameter"><code><a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> *provider</code></em>,
+                                <em class="parameter"><code><a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a> *device</code></em>);</pre>
+<p>Emits the <a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-removed" title="The “device-removed” signal"><span class="type">“device-removed”</span></a> signal.</p>
+<p>This should only be called by subclasses of <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> when
+a previously added device has been removed.</p>
+<div class="refsect3">
+<a name="valent-power-device-provider-emit-device-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-power-device-provider-get-devices"></a><h3>valent_power_device_provider_get_devices ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+valent_power_device_provider_get_devices
+                               (<em class="parameter"><code><a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> *provider</code></em>);</pre>
+<p>Gets a new <span class="type">GPtrArray</span> containing a list of <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a> instances that were registered by
+the <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p>
+<div class="refsect3">
+<a name="valent-power-device-provider-get-devices.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-power-device-provider-get-devices.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GPtrArray</span> of <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Valent.PowerDevice][<acronym title="NULL must not be passed as the value in, out, in-out; or as a return value."><span class="acronym">not nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-power-device-provider-load-async"></a><h3>valent_power_device_provider_load_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_power_device_provider_load_async
+                               (<em class="parameter"><code><a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> *provider</code></em>,
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Requests that the <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> asynchronously load any known devices.</p>
+<p>This should only be called once on an <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a>. It is an error
+to call this function more than once for a single <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a>.</p>
+<p><a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> implementations are expected to emit the
+<span class="type">“power_device-added”</span> signal for each power_device they've discovered.
+That should be done for known devices before returning from the asynchronous
+operation so that the power_device manager does not need to wait for additional
+devices to enter the "settled" state.</p>
+<div class="refsect3">
+<a name="valent-power-device-provider-load-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-power-device-provider-load-finish"></a><h3>valent_power_device_provider_load_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_power_device_provider_load_finish
+                               (<em class="parameter"><code><a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> *provider</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Completes an asynchronous request to load known devices via
+<a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-load-async" title="valent_power_device_provider_load_async ()"><code class="function">valent_power_device_provider_load_async()</code></a>.</p>
+<div class="refsect3">
+<a name="valent-power-device-provider-load-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncResult</span> provided to callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-power-device-provider-load-finish.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if successful; otherwise <code class="literal">FALSE</code> and <em class="parameter"><code>error</code></em>
+is set.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-TYPE-POWER-DEVICE-PROVIDER:CAPS"></a><h3>VALENT_TYPE_POWER_DEVICE_PROVIDER</h3>
+<pre class="programlisting">#define VALENT_TYPE_POWER_DEVICE_PROVIDER (valent_power_device_provider_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentPowerDeviceProviderClass"></a><h3>struct ValentPowerDeviceProviderClass</h3>
+<pre class="programlisting">struct ValentPowerDeviceProviderClass {
+  GObjectClass   parent_class;
+
+  /* virtual functions */
+  void           (*load_async)     (ValentPowerDeviceProvider  *provider,
+                                    GCancellable               *cancellable,
+                                    GAsyncReadyCallback         callback,
+                                    gpointer                    user_data);
+  gboolean       (*load_finish)    (ValentPowerDeviceProvider  *provider,
+                                    GAsyncResult               *result,
+                                    GError                    **error);
+
+  /* signals */
+  void           (*device_added)   (ValentPowerDeviceProvider  *provider,
+                                    ValentPowerDevice          *device);
+  void           (*device_removed) (ValentPowerDeviceProvider  *provider,
+                                    ValentPowerDevice          *device);
+};
+</pre>
+<p>The virtual function table for <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a>.</p>
+<div class="refsect3">
+<a name="ValentPowerDeviceProviderClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentPowerDeviceProviderClass.load-async"></a>load_async</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-load-async" title="valent_power_device_provider_load_async ()"><code class="function">valent_power_device_provider_load_async()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentPowerDeviceProviderClass.load-finish"></a>load_finish</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentPowerDeviceProvider.html#valent-power-device-provider-load-finish" title="valent_power_device_provider_load_finish ()"><code class="function">valent_power_device_provider_load_finish()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentPowerDeviceProviderClass.device-added"></a>device_added</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for <a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-added" title="The “device-added” signal"><span class="type">“device-added”</span></a> signal</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentPowerDeviceProviderClass.device-removed"></a>device_removed</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for <span class="type">“device-removed”</span> signal</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentPowerDeviceProvider-struct"></a><h3>ValentPowerDeviceProvider</h3>
+<pre class="programlisting">typedef struct _ValentPowerDeviceProvider ValentPowerDeviceProvider;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentPowerDeviceProvider--plugin-info"></a><h3>The <code class="literal">“plugin-info”</code> property</h3>
+<pre class="programlisting">  “plugin-info”              <a href="../libpeas/PeasPluginInfo.html#PeasPluginInfo-struct"><span class="type">PeasPluginInfo</span></a> *</pre>
+<p>The <a href="../libpeas/PeasPluginInfo.html#PeasPluginInfo-struct"><span class="type">PeasPluginInfo</span></a> describing this provider.</p>
+<p>Owner: ValentPowerDeviceProvider</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentPowerDeviceProvider.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ValentPowerDeviceProvider-device-added"></a><h3>The <code class="literal">“device-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> *provider,
+               <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a>         *device,
+               <span class="type">gpointer</span>                   user_data)</pre>
+<p>The "device-added" signal is emitted when a provider has discovered a
+device has become available.</p>
+<p>Subclasses of <span class="type">ValentPowerDeviceManager</span> must chain-up if they override the
+<a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.device-added"><span class="type">ValentPowerDeviceProviderClass.device_added</span></a> vfunc.</p>
+<div class="refsect3">
+<a name="ValentPowerDeviceProvider-device-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentPowerDeviceProvider-device-removed"></a><h3>The <code class="literal">“device-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a> *provider,
+               <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a>         *device,
+               <span class="type">gpointer</span>                   user_data)</pre>
+<p>The "device-removed" signal is emitted when a provider has discovered a
+device is no longer available.</p>
+<p>Subclasses of <span class="type">ValentPowerDeviceManager</span> must chain-up if they override the
+<a class="link" href="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.device-removed"><span class="type">ValentPowerDeviceProviderClass.device_removed</span></a> vfunc.</p>
+<div class="refsect3">
+<a name="ValentPowerDeviceProvider-device-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentPowerDeviceProvider.html" title="ValentPowerDeviceProvider"><span class="type">ValentPowerDeviceProvider</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentPowerDevice.html" title="ValentPowerDevice"><span class="type">ValentPowerDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>
