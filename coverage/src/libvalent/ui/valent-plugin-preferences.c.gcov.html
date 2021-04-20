@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-20 02:47:37</td>
+            <td class="headerValue">2021-04-20 04:07:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -144,16 +144,16 @@
 <a name="65"><span class="lineNum">      65 </span>                :            :  *     and &gt; 0 otherwise</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :  */</a>
 <a name="67"><span class="lineNum">      67 </span>                :            : int</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         23 : valent_plugin_preferences_row_sort (GtkListBoxRow *row1,</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         22 : valent_plugin_preferences_row_sort (GtkListBoxRow *row1,</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            :                                     GtkListBoxRow *row2,</a>
 <a name="70"><span class="lineNum">      70 </span>                :            :                                     gpointer       user_data)</a>
 <a name="71"><span class="lineNum">      71 </span>                :            : {</a>
-<a name="72"><span class="lineNum">      72 </span>  [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 23 times"> + </span>]:<span class="lineCov">         23 :   if G_UNLIKELY (!ADW_IS_PREFERENCES_ROW (row1) ||</span></a>
+<a name="72"><span class="lineNum">      72 </span>  [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 22 times"> + </span>]:<span class="lineCov">         22 :   if G_UNLIKELY (!ADW_IS_PREFERENCES_ROW (row1) ||</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :            :                  !ADW_IS_PREFERENCES_ROW (row2))</a>
 <a name="74"><span class="lineNum">      74 </span>                :<span class="lineNoCov">          0 :     return 0;</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">         23 :   return g_utf8_collate (adw_preferences_row_get_title ((AdwPreferencesRow *)row1),</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         23 :                          adw_preferences_row_get_title ((AdwPreferencesRow *)row2));</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">         22 :   return g_utf8_collate (adw_preferences_row_get_title ((AdwPreferencesRow *)row1),</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         22 :                          adw_preferences_row_get_title ((AdwPreferencesRow *)row2));</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            : }</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
 </pre>
