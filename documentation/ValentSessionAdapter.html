@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentSessionAdapter: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch11.html" title="Session">
+<link rel="prev" href="ValentSession.html" title="ValentSession">
+<link rel="next" href="libvalent-ui.html" title="Part III. GUI">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentSessionAdapter.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentSessionAdapter.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentSessionAdapter.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#ValentSessionAdapter.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch11.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ValentSession.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libvalent-ui.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentSessionAdapter"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentSessionAdapter.top_of_page"></a>ValentSessionAdapter</span></h2>
+<p>ValentSessionAdapter — Interface for session adapters</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentSessionAdapter.html#valent-session-adapter-emit-changed" title="valent_session_adapter_emit_changed ()">valent_session_adapter_emit_changed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentSessionAdapter.html#valent-session-adapter-get-active" title="valent_session_adapter_get_active ()">valent_session_adapter_get_active</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentSessionAdapter.html#valent-session-adapter-get-locked" title="valent_session_adapter_get_locked ()">valent_session_adapter_get_locked</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentSessionAdapter.html#valent-session-adapter-set-locked" title="valent_session_adapter_set_locked ()">valent_session_adapter_set_locked</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter--active" title="The “active” property">active</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter--locked" title="The “locked” property">locked</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">PeasPluginInfo</span> *</td>
+<td class="property_name"><a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter--plugin-info" title="The “plugin-info” property">plugin-info</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter-changed" title="The “changed” signal">changed</a></td>
+<td class="signal_flags">Run Last</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentSessionAdapter.html#VALENT-TYPE-SESSION-ADAPTER:CAPS" title="VALENT_TYPE_SESSION_ADAPTER">VALENT_TYPE_SESSION_ADAPTER</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentSessionAdapter.html#ValentSessionAdapterClass" title="struct ValentSessionAdapterClass">ValentSessionAdapterClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter-struct" title="ValentSessionAdapter">ValentSessionAdapter</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> ValentSessionAdapter
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-session.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.description"></a><h2>Description</h2>
+<p>The <a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a> interface should be implemented by libpeas
+plugins that operate at the desktop level. This generally means providing
+access to the desktop session.</p>
+<div class="refsect3">
+<a name="id-1.3.9.3.10.3"></a><h4>.plugin File</h4>
+<p>Session adapter require no special entries in the <code class="literal">.plugin</code> file.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-session-adapter-emit-changed"></a><h3>valent_session_adapter_emit_changed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_session_adapter_emit_changed (<em class="parameter"><code><a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a> *adapter</code></em>);</pre>
+<p>Emits the <a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter-changed" title="The “changed” signal"><span class="type">“changed”</span></a> signal on <em class="parameter"><code>adapter</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-session-adapter-emit-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>adapter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-session-adapter-get-active"></a><h3>valent_session_adapter_get_active ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_session_adapter_get_active (<em class="parameter"><code><a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a> *adapter</code></em>);</pre>
+<p>Get the active state of <em class="parameter"><code>adapter</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-session-adapter-get-active.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>adapter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-session-adapter-get-locked"></a><h3>valent_session_adapter_get_locked ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_session_adapter_get_locked (<em class="parameter"><code><a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a> *adapter</code></em>);</pre>
+<p>Get the locked state of <em class="parameter"><code>adapter</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-session-adapter-get-locked.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>adapter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-session-adapter-set-locked"></a><h3>valent_session_adapter_set_locked ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_session_adapter_set_locked (<em class="parameter"><code><a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a> *adapter</code></em>,
+                                   <em class="parameter"><code><span class="type">gboolean</span> state</code></em>);</pre>
+<p>Set the locked state of <em class="parameter"><code>adapter</code></em>
+ to <em class="parameter"><code>state</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-session-adapter-set-locked.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>adapter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>state</p></td>
+<td class="parameter_description"><p>locked state</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-TYPE-SESSION-ADAPTER:CAPS"></a><h3>VALENT_TYPE_SESSION_ADAPTER</h3>
+<pre class="programlisting">#define VALENT_TYPE_SESSION_ADAPTER (valent_session_adapter_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentSessionAdapterClass"></a><h3>struct ValentSessionAdapterClass</h3>
+<pre class="programlisting">struct ValentSessionAdapterClass {
+  GObjectClass   parent_class;
+
+  /* virtual functions */
+  gboolean       (*get_active) (ValentSessionAdapter *adapter);
+  gboolean       (*get_locked) (ValentSessionAdapter *adapter);
+  void           (*set_locked) (ValentSessionAdapter *adapter,
+                                gboolean              state);
+
+  /* signals */
+  void           (*changed)    (ValentSessionAdapter *adapter);
+};
+</pre>
+<p>The virtual function table for <a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a>.</p>
+<div class="refsect3">
+<a name="ValentSessionAdapterClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentSessionAdapterClass.get-active"></a>get_active</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentSessionAdapter.html#valent-session-adapter-get-active" title="valent_session_adapter_get_active ()"><code class="function">valent_session_adapter_get_active()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentSessionAdapterClass.get-locked"></a>get_locked</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentSessionAdapter.html#valent-session-adapter-get-locked" title="valent_session_adapter_get_locked ()"><code class="function">valent_session_adapter_get_locked()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentSessionAdapterClass.set-locked"></a>set_locked</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentSessionAdapter.html#valent-session-adapter-set-locked" title="valent_session_adapter_set_locked ()"><code class="function">valent_session_adapter_set_locked()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentSessionAdapterClass.changed"></a>changed</code></em> ()</p></td>
+<td class="struct_member_description"><p>class closure for <a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter-changed" title="The “changed” signal"><span class="type">“changed”</span></a> signal</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentSessionAdapter-struct"></a><h3>ValentSessionAdapter</h3>
+<pre class="programlisting">typedef struct _ValentSessionAdapter ValentSessionAdapter;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentSessionAdapter--active"></a><h3>The <code class="literal">“active”</code> property</h3>
+<pre class="programlisting">  “active”                   <span class="type">gboolean</span></pre>
+<p>Whether the session is active.</p>
+<p>Owner: ValentSessionAdapter</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentSessionAdapter--locked"></a><h3>The <code class="literal">“locked”</code> property</h3>
+<pre class="programlisting">  “locked”                   <span class="type">gboolean</span></pre>
+<p>Whether the session is locked.</p>
+<p>Owner: ValentSessionAdapter</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentSessionAdapter--plugin-info"></a><h3>The <code class="literal">“plugin-info”</code> property</h3>
+<pre class="programlisting">  “plugin-info”              <span class="type">PeasPluginInfo</span> *</pre>
+<p>The <span class="type">PeasPluginInfo</span> describing this adapter.</p>
+<p>Owner: ValentSessionAdapter</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentSessionAdapter.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ValentSessionAdapter-changed"></a><h3>The <code class="literal">“changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a> *adapter,
+               <span class="type">gpointer</span>              user_data)</pre>
+<p><a class="link" href="ValentSessionAdapter.html#ValentSessionAdapter-changed" title="The “changed” signal"><span class="type">“changed”</span></a> is emitted when <em class="parameter"><code>adapter</code></em>
+ changes.</p>
+<div class="refsect3">
+<a name="ValentSessionAdapter-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>adapter</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentSessionAdapter.html" title="ValentSessionAdapter"><span class="type">ValentSessionAdapter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

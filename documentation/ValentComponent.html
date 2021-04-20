@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentComponent: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch03.html" title="Miscellaneous">
+<link rel="prev" href="ch03.html" title="Miscellaneous">
+<link rel="next" href="ValentData.html" title="ValentData">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentComponent.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentComponent.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentComponent.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#ValentComponent.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch03.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ValentData.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentComponent"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentComponent.top_of_page"></a>ValentComponent</span></h2>
+<p>ValentComponent — Base class for components</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentComponent.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentComponent.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">PeasExtension</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentComponent.html#valent-component-get-priority-provider" title="valent_component_get_priority_provider ()">valent_component_get_priority_provider</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentComponent.html#valent-component-get-providers" title="valent_component_get_providers ()">valent_component_get_providers</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentComponent.html#ValentComponent--plugin-context" title="The “plugin-context” property">plugin-context</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GType</span> *</td>
+<td class="property_name"><a class="link" href="ValentComponent.html#ValentComponent--plugin-type" title="The “plugin-type” property">plugin-type</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentComponent.html#ValentComponent-provider-added" title="The “provider-added” signal">provider-added</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentComponent.html#ValentComponent-provider-removed" title="The “provider-removed” signal">provider-removed</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentComponent.html#VALENT-TYPE-COMPONENT:CAPS" title="VALENT_TYPE_COMPONENT">VALENT_TYPE_COMPONENT</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentComponent.html#ValentComponentClass" title="struct ValentComponentClass">ValentComponentClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentComponent.html#ValentComponent-struct" title="ValentComponent">ValentComponent</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> ValentComponent
+        <span class="lineart">├──</span> <a class="link" href="ValentClipboard.html" title="ValentClipboard">ValentClipboard</a>
+        <span class="lineart">├──</span> <a class="link" href="ValentContacts.html" title="ValentContacts">ValentContacts</a>
+        <span class="lineart">├──</span> <a class="link" href="ValentInput.html" title="ValentInput">ValentInput</a>
+        <span class="lineart">├──</span> <a class="link" href="ValentMedia.html" title="ValentMedia">ValentMedia</a>
+        <span class="lineart">├──</span> <a class="link" href="ValentMixer.html" title="ValentMixer">ValentMixer</a>
+        <span class="lineart">├──</span> <a class="link" href="ValentNotifications.html" title="ValentNotifications">ValentNotifications</a>
+        <span class="lineart">├──</span> <a class="link" href="ValentPower.html" title="ValentPower">ValentPower</a>
+        <span class="lineart">╰──</span> <a class="link" href="ValentSession.html" title="ValentSession">ValentSession</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-core.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.description"></a><h2>Description</h2>
+<p><a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> is a base class for session and system components, such as
+the clipboard or volume control. Each <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> is typically a
+singleton representing a unique resource, but may be backed by one or more
+providers implemented by <span class="type">PeasExtensions</span>.</p>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-component-get-priority-provider"></a><h3>valent_component_get_priority_provider ()</h3>
+<pre class="programlisting"><span class="returnvalue">PeasExtension</span> *
+valent_component_get_priority_provider
+                               (<em class="parameter"><code><a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
+<p>Get the provider with the highest priority for <em class="parameter"><code>component</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-component-get-priority-provider.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>component</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>The priority key in the plugin info</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-component-get-priority-provider.returns"></a><h4>Returns</h4>
+<p>a <span class="type">PeasExtension</span>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-component-get-providers"></a><h3>valent_component_get_providers ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+valent_component_get_providers (<em class="parameter"><code><a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component</code></em>);</pre>
+<p>Get a list of the currently loaded providers.</p>
+<div class="refsect3">
+<a name="valent-component-get-providers.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>component</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-component-get-providers.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GPtrArray</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Peas.Extension]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-TYPE-COMPONENT:CAPS"></a><h3>VALENT_TYPE_COMPONENT</h3>
+<pre class="programlisting">#define VALENT_TYPE_COMPONENT (valent_component_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentComponentClass"></a><h3>struct ValentComponentClass</h3>
+<pre class="programlisting">struct ValentComponentClass {
+  GObjectClass   parent_class;
+
+  /* signals */
+  void           (*provider_added)   (ValentComponent *component,
+                                      PeasExtension   *extension);
+  void           (*provider_removed) (ValentComponent *component,
+                                      PeasExtension   *extension);
+};
+</pre>
+<p>The virtual function table for <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a>.</p>
+<div class="refsect3">
+<a name="ValentComponentClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentComponentClass.provider-added"></a>provider_added</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for the <a class="link" href="ValentComponent.html#ValentComponent-provider-added" title="The “provider-added” signal"><span class="type">“provider-added”</span></a> signal</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentComponentClass.provider-removed"></a>provider_removed</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for the <a class="link" href="ValentComponent.html#ValentComponent-provider-removed" title="The “provider-removed” signal"><span class="type">“provider-removed”</span></a> signal</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentComponent-struct"></a><h3>ValentComponent</h3>
+<pre class="programlisting">typedef struct _ValentComponent ValentComponent;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentComponent--plugin-context"></a><h3>The <code class="literal">“plugin-context”</code> property</h3>
+<pre class="programlisting">  “plugin-context”           <span class="type">char</span> *</pre>
+<p>The context for the component. This is a <span class="type">GSettings</span> safe string such as
+"contacts" or "media", used to distinguish the settings and configuration
+files of pluggable providers.</p>
+<p>Owner: ValentComponent</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentComponent--plugin-type"></a><h3>The <code class="literal">“plugin-type”</code> property</h3>
+<pre class="programlisting">  “plugin-type”              <span class="type">GType</span> *</pre>
+<p>The <span class="type">GType</span> of the provider this component aggregates.</p>
+<p>Owner: ValentComponent</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: void</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentComponent.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ValentComponent-provider-added"></a><h3>The <code class="literal">“provider-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component,
+               <span class="type">GObject</span>         *provider,
+               <span class="type">gpointer</span>         user_data)</pre>
+<p>The "provider-added" signal is emitted when a provider has discovered a
+provider has become available.</p>
+<p>Subclasses of <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> must chain-up if they override the
+<a class="link" href="ValentComponent.html#ValentComponentClass.provider-added"><span class="type">ValentComponentClass.provider_added</span></a> vfunc.</p>
+<div class="refsect3">
+<a name="ValentComponent-provider-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>component</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>an <span class="type">PeasExtension</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentComponent-provider-removed"></a><h3>The <code class="literal">“provider-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component,
+               <span class="type">GObject</span>         *provider,
+               <span class="type">gpointer</span>         user_data)</pre>
+<p>The "provider-removed" signal is emitted when a provider has discovered a
+provider is no longer available.</p>
+<p>Subclasses of <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> must chain-up if they override the
+<a class="link" href="ValentComponent.html#ValentComponentClass.provider-removed"><span class="type">ValentComponentClass.provider_removed</span></a> vfunc.</p>
+<div class="refsect3">
+<a name="ValentComponent-provider-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>component</p></td>
+<td class="parameter_description"><p>an <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_description"><p>an <span class="type">PeasExtension</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

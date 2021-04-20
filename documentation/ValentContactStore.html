@@ -1,0 +1,1546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentContactStore: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch05.html" title="Contacts">
+<link rel="prev" href="ValentContacts.html" title="ValentContacts">
+<link rel="next" href="ValentContactStoreProvider.html" title="ValentContactStoreProvider">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentContactStore.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentContactStore.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentContactStore.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#ValentContactStore.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ValentContacts.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ValentContactStoreProvider.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentContactStore"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentContactStore.top_of_page"></a>ValentContactStore</span></h2>
+<p>ValentContactStore — A helper for ESource address books</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentContactStore.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-emit-contact-added" title="valent_contact_store_emit_contact_added ()">valent_contact_store_emit_contact_added</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-emit-contact-removed" title="valent_contact_store_emit_contact_removed ()">valent_contact_store_emit_contact_removed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-name" title="valent_contact_store_get_name ()">valent_contact_store_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-set-name" title="valent_contact_store_set_name ()">valent_contact_store_set_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">ESource</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-source" title="valent_contact_store_get_source ()">valent_contact_store_get_source</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-uid" title="valent_contact_store_get_uid ()">valent_contact_store_get_uid</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-add" title="valent_contact_store_add ()">valent_contact_store_add</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-add-async" title="valent_contact_store_add_async ()">valent_contact_store_add_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-add-finish" title="valent_contact_store_add_finish ()">valent_contact_store_add_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-remove" title="valent_contact_store_remove ()">valent_contact_store_remove</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-remove-async" title="valent_contact_store_remove_async ()">valent_contact_store_remove_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-remove-finish" title="valent_contact_store_remove_finish ()">valent_contact_store_remove_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">EContact</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-contact" title="valent_contact_store_get_contact ()">valent_contact_store_get_contact</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-contact-async" title="valent_contact_store_get_contact_async ()">valent_contact_store_get_contact_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">EContact</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-contact-finish" title="valent_contact_store_get_contact_finish ()">valent_contact_store_get_contact_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-contacts-async" title="valent_contact_store_get_contacts_async ()">valent_contact_store_get_contacts_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-query" title="valent_contact_store_query ()">valent_contact_store_query</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-query-async" title="valent_contact_store_query_async ()">valent_contact_store_query_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-query-finish" title="valent_contact_store_query_finish ()">valent_contact_store_query_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">EContact</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-dup-for-phone" title="valent_contact_store_dup_for_phone ()">valent_contact_store_dup_for_phone</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-dup-for-phone-async" title="valent_contact_store_dup_for_phone_async ()">valent_contact_store_dup_for_phone_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">EContact</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentContactStore.html#valent-contact-store-dup-for-phone-finish" title="valent_contact_store_dup_for_phone_finish ()">valent_contact_store_dup_for_phone_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentContactStore.html#ValentContactStore--name" title="The “name” property">name</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">ESource</span> *</td>
+<td class="property_name"><a class="link" href="ValentContactStore.html#ValentContactStore--source" title="The “source” property">source</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentContactStore.html#ValentContactStore--uid" title="The “uid” property">uid</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentContactStore.html#ValentContactStore-contact-added" title="The “contact-added” signal">contact-added</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentContactStore.html#ValentContactStore-contact-removed" title="The “contact-removed” signal">contact-removed</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentContactStore.html#VALENT-TYPE-CONTACT-STORE:CAPS" title="VALENT_TYPE_CONTACT_STORE">VALENT_TYPE_CONTACT_STORE</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentContactStore.html#ValentContactStoreClass" title="struct ValentContactStoreClass">ValentContactStoreClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentContactStore.html#ValentContactStore-struct" title="ValentContactStore">ValentContactStore</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> ValentContactStore
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-contacts.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.description"></a><h2>Description</h2>
+<p>The <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> class is a simple implementation of <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a>
+that is effectively a wrapper around <span class="type">ESource</span> and <span class="type">EBookCache</span>.</p>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-contact-store-emit-contact-added"></a><h3>valent_contact_store_emit_contact_added ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_emit_contact_added
+                               (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *uid</code></em>,
+                                <em class="parameter"><code><span class="type">EContact</span> *contact</code></em>);</pre>
+<p>Emits the <span class="type">“contact-added”</span> signal on <em class="parameter"><code>list</code></em>
+.</p>
+<p>This function should only be called by classes implementing
+<a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a>. It has to be called after the internal representation
+of <em class="parameter"><code>store</code></em>
+ has been updated, because handlers connected to this signal
+might query the new state of the provider.</p>
+<div class="refsect3">
+<a name="valent-contact-store-emit-contact-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>the UID of <em class="parameter"><code>contact</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contact</p></td>
+<td class="parameter_description"><p>the <span class="type">EContact</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-emit-contact-removed"></a><h3>valent_contact_store_emit_contact_removed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_emit_contact_removed
+                               (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *uid</code></em>,
+                                <em class="parameter"><code><span class="type">EContact</span> *contact</code></em>);</pre>
+<p>Emits the <span class="type">“contact-removed”</span> signal on <em class="parameter"><code>list</code></em>
+.</p>
+<p>This function should only be called by classes implementing
+<a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a>. It has to be called after the internal representation
+of <em class="parameter"><code>store</code></em>
+ has been updated, because handlers connected to this signal
+might query the new state of the provider.</p>
+<div class="refsect3">
+<a name="valent-contact-store-emit-contact-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>the UID of <em class="parameter"><code>contact</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contact</p></td>
+<td class="parameter_description"><p>the <span class="type">EContact</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-get-name"></a><h3>valent_contact_store_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_contact_store_get_name (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>);</pre>
+<p>Get the display name of <em class="parameter"><code>store</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-contact-store-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-get-name.returns"></a><h4>Returns</h4>
+<p>a display name. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-set-name"></a><h3>valent_contact_store_set_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_set_name (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Set the display name of <em class="parameter"><code>store</code></em>
+ to <em class="parameter"><code>name</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-contact-store-set-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a display name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-get-source"></a><h3>valent_contact_store_get_source ()</h3>
+<pre class="programlisting"><span class="returnvalue">ESource</span> *
+valent_contact_store_get_source (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>);</pre>
+<p>Get the <span class="type">ESource</span> backing <em class="parameter"><code>store</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-contact-store-get-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-get-source.returns"></a><h4>Returns</h4>
+<p>an <span class="type">ESource</span>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-get-uid"></a><h3>valent_contact_store_get_uid ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_contact_store_get_uid (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>);</pre>
+<p>Get the UID of <em class="parameter"><code>store</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-contact-store-get-uid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-get-uid.returns"></a><h4>Returns</h4>
+<p>a UID. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-add"></a><h3>valent_contact_store_add ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_contact_store_add (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                          <em class="parameter"><code><span class="type">EContact</span> *contact</code></em>,
+                          <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Add <em class="parameter"><code>contact</code></em>
+ to <em class="parameter"><code>store</code></em>
+. This is optional and should only be implemented by
+writable address books.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> add]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-add.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contact</p></td>
+<td class="parameter_description"><p>an <span class="type">EContact</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-add.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code>, or <code class="literal">FALSE</code> with <em class="parameter"><code>error</code></em>
+set</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-add-async"></a><h3>valent_contact_store_add_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_add_async (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code><span class="type">EContact</span> *contact</code></em>,
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronous version of <a class="link" href="ValentContactStore.html#valent-contact-store-add" title="valent_contact_store_add ()"><code class="function">valent_contact_store_add()</code></a>. Call
+<a class="link" href="ValentContactStore.html#valent-contact-store-add-finish" title="valent_contact_store_add_finish ()"><code class="function">valent_contact_store_add_finish()</code></a> to get the result.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> add_async]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-add-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contact</p></td>
+<td class="parameter_description"><p>a <span class="type">EContact</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-add-finish"></a><h3>valent_contact_store_add_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_contact_store_add_finish (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                 <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an operation started by <a class="link" href="ValentContactStore.html#valent-contact-store-add-async" title="valent_contact_store_add_async ()"><code class="function">valent_contact_store_add_async()</code></a>.</p>
+<div class="refsect3">
+<a name="valent-contact-store-add-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-add-finish.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code>, or <code class="literal">FALSE</code> with <em class="parameter"><code>error</code></em>
+set</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-remove"></a><h3>valent_contact_store_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_contact_store_remove (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *uid</code></em>,
+                             <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Remove the <em class="parameter"><code>contact</code></em>
+ from the address book.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> remove]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>contact id</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-remove.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code>, or <code class="literal">FALSE</code> with <em class="parameter"><code>error</code></em>
+set</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-remove-async"></a><h3>valent_contact_store_remove_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_remove_async (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *uid</code></em>,
+                                   <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                   <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                   <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronous version of <a class="link" href="ValentContactStore.html#valent-contact-store-remove" title="valent_contact_store_remove ()"><code class="function">valent_contact_store_remove()</code></a>. Call
+<a class="link" href="ValentContactStore.html#valent-contact-store-remove-finish" title="valent_contact_store_remove_finish ()"><code class="function">valent_contact_store_remove_finish()</code></a> to get the result.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> remove_async]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-remove-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>a contact id</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-remove-finish"></a><h3>valent_contact_store_remove_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_contact_store_remove_finish (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                    <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                    <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an operation started by <a class="link" href="ValentContactStore.html#valent-contact-store-remove-async" title="valent_contact_store_remove_async ()"><code class="function">valent_contact_store_remove_async()</code></a>.</p>
+<div class="refsect3">
+<a name="valent-contact-store-remove-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-remove-finish.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code>, or <code class="literal">FALSE</code> with <em class="parameter"><code>error</code></em>
+set</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-get-contact"></a><h3>valent_contact_store_get_contact ()</h3>
+<pre class="programlisting"><span class="returnvalue">EContact</span> *
+valent_contact_store_get_contact (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *uid</code></em>,
+                                  <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                  <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Get the <span class="type">EContact</span> in <em class="parameter"><code>store</code></em>
+ by <em class="parameter"><code>uid</code></em>
+, or <code class="literal">NULL</code> if it doesn't exist.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> get_contact]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-get-contact.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>a unique identifier</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-get-contact.returns"></a><h4>Returns</h4>
+<p>a <span class="type">EContact</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-get-contact-async"></a><h3>valent_contact_store_get_contact_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_get_contact_async
+                               (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *uid</code></em>,
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronous version of <a class="link" href="ValentContactStore.html#valent-contact-store-get-contact" title="valent_contact_store_get_contact ()"><code class="function">valent_contact_store_get_contact()</code></a>. Call
+<a class="link" href="ValentContactStore.html#valent-contact-store-get-contact-finish" title="valent_contact_store_get_contact_finish ()"><code class="function">valent_contact_store_get_contact_finish()</code></a> to get the result.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> get_contact_async]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-get-contact-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>a contact UID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-get-contact-finish"></a><h3>valent_contact_store_get_contact_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">EContact</span> *
+valent_contact_store_get_contact_finish
+                               (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an operation started by <a class="link" href="ValentContactStore.html#valent-contact-store-get-contact-async" title="valent_contact_store_get_contact_async ()"><code class="function">valent_contact_store_get_contact_async()</code></a>.</p>
+<div class="refsect3">
+<a name="valent-contact-store-get-contact-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-get-contact-finish.returns"></a><h4>Returns</h4>
+<p>a <span class="type">EContact</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-get-contacts-async"></a><h3>valent_contact_store_get_contacts_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_get_contacts_async
+                               (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code><span class="type">char</span> **uids</code></em>,
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>A convenience wrapper around <a class="link" href="ValentContactStore.html#valent-contact-store-query-async" title="valent_contact_store_query_async ()"><code class="function">valent_contact_store_query_async()</code></a> for searching contacts by UID.
+Call <a class="link" href="ValentContactStore.html#valent-contact-store-query-finish" title="valent_contact_store_query_finish ()"><code class="function">valent_contact_store_query_finish()</code></a> to get the result.</p>
+<div class="refsect3">
+<a name="valent-contact-store-get-contacts-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uids</p></td>
+<td class="parameter_description"><p>a list of UIDs</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-query"></a><h3>valent_contact_store_query ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *
+valent_contact_store_query (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *query</code></em>,
+                            <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Search <em class="parameter"><code>store</code></em>
+ for contacts matching <em class="parameter"><code>query</code></em>
+.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> query]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-query.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>query</p></td>
+<td class="parameter_description"><p>a search expression</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-query.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GSList</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> EContact]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-query-async"></a><h3>valent_contact_store_query_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_query_async (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *query</code></em>,
+                                  <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                  <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                  <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronous version of <a class="link" href="ValentContactStore.html#valent-contact-store-query" title="valent_contact_store_query ()"><code class="function">valent_contact_store_query()</code></a>. Call
+<a class="link" href="ValentContactStore.html#valent-contact-store-query-finish" title="valent_contact_store_query_finish ()"><code class="function">valent_contact_store_query_finish()</code></a> to get the result.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> query_async]</span></p>
+<div class="refsect3">
+<a name="valent-contact-store-query-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>query</p></td>
+<td class="parameter_description"><p>a search expression</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-query-finish"></a><h3>valent_contact_store_query_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *
+valent_contact_store_query_finish (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                   <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an operation started by <a class="link" href="ValentContactStore.html#valent-contact-store-query-async" title="valent_contact_store_query_async ()"><code class="function">valent_contact_store_query_async()</code></a>.</p>
+<div class="refsect3">
+<a name="valent-contact-store-query-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-query-finish.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GSList</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> EContact]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-dup-for-phone"></a><h3>valent_contact_store_dup_for_phone ()</h3>
+<pre class="programlisting"><span class="returnvalue">EContact</span> *
+valent_contact_store_dup_for_phone (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *number</code></em>);</pre>
+<p>Return a copy of the first <span class="type">EContact</span> in <em class="parameter"><code>store</code></em>
+ with <em class="parameter"><code>phone</code></em>
+. If it does not
+exist a new <span class="type">EContact</span> will be made.</p>
+<p>This is a convenience wrapper around <a class="link" href="ValentContactStore.html#valent-contact-store-query" title="valent_contact_store_query ()"><code class="function">valent_contact_store_query()</code></a> that perfers
+libphonenumber, but falls back to iterating the full list of contacts.</p>
+<div class="refsect3">
+<a name="valent-contact-store-dup-for-phone.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>number</p></td>
+<td class="parameter_description"><p>a phone number string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-dup-for-phone.returns"></a><h4>Returns</h4>
+<p>a <span class="type">EContact</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-dup-for-phone-async"></a><h3>valent_contact_store_dup_for_phone_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_contact_store_dup_for_phone_async
+                               (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *number</code></em>,
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronous version of <a class="link" href="ValentContactStore.html#valent-contact-store-dup-for-phone" title="valent_contact_store_dup_for_phone ()"><code class="function">valent_contact_store_dup_for_phone()</code></a>. Call
+<a class="link" href="ValentContactStore.html#valent-contact-store-dup-for-phone-finish" title="valent_contact_store_dup_for_phone_finish ()"><code class="function">valent_contact_store_dup_for_phone_finish()</code></a> to get the result.</p>
+<div class="refsect3">
+<a name="valent-contact-store-dup-for-phone-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>number</p></td>
+<td class="parameter_description"><p>a phone number string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p><span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-contact-store-dup-for-phone-finish"></a><h3>valent_contact_store_dup_for_phone_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">EContact</span> *
+valent_contact_store_dup_for_phone_finish
+                               (<em class="parameter"><code><a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish an operation started by <code class="function">valent_contact_store_dup_contacts_async()</code>.</p>
+<div class="refsect3">
+<a name="valent-contact-store-dup-for-phone-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-contact-store-dup-for-phone-finish.returns"></a><h4>Returns</h4>
+<p>an <span class="type">EContact</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-TYPE-CONTACT-STORE:CAPS"></a><h3>VALENT_TYPE_CONTACT_STORE</h3>
+<pre class="programlisting">#define VALENT_TYPE_CONTACT_STORE (valent_contact_store_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentContactStoreClass"></a><h3>struct ValentContactStoreClass</h3>
+<pre class="programlisting">struct ValentContactStoreClass {
+  GObjectClass   parent_class;
+
+  /* virtual functions */
+  gboolean       (*add)               (ValentContactStore   *store,
+                                       EContact             *contact,
+                                       GCancellable         *cancellable,
+                                       GError              **error);
+  void           (*add_async)         (ValentContactStore   *store,
+                                       EContact             *contact,
+                                       GCancellable         *cancellable,
+                                       GAsyncReadyCallback   callback,
+                                       gpointer              user_data);
+  gboolean       (*remove)            (ValentContactStore   *store,
+                                       const char           *uid,
+                                       GCancellable         *cancellable,
+                                       GError              **error);
+  void           (*remove_async)      (ValentContactStore   *store,
+                                       const char           *uid,
+                                       GCancellable         *cancellable,
+                                       GAsyncReadyCallback   callback,
+                                       gpointer              user_data);
+  GSList       * (*query)             (ValentContactStore   *store,
+                                       const char           *query,
+                                       GCancellable         *cancellable,
+                                       GError              **error);
+  void           (*query_async)       (ValentContactStore   *store,
+                                       const char           *query,
+                                       GCancellable         *cancellable,
+                                       GAsyncReadyCallback   callback,
+                                       gpointer              user_data);
+  EContact     * (*get_contact)       (ValentContactStore   *store,
+                                       const char           *uid,
+                                       GCancellable         *cancellable,
+                                       GError              **error);
+  void           (*get_contact_async) (ValentContactStore   *store,
+                                       const char           *uid,
+                                       GCancellable         *cancellable,
+                                       GAsyncReadyCallback   callback,
+                                       gpointer              user_data);
+  void           (*prepare_backend)   (ValentContactStore   *store);
+
+  /* signals */
+  void           (*contact_added)     (ValentContactStore *store,
+                                       const char         *uid,
+                                       EContact           *contact);
+  void           (*contact_removed)   (ValentContactStore *store,
+                                       const char         *uid,
+                                       EContact           *contact);
+};
+</pre>
+<p>The virtual function table for <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a>.</p>
+<div class="refsect3">
+<a name="ValentContactStoreClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.add"></a>add</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-add" title="valent_contact_store_add ()"><code class="function">valent_contact_store_add()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.add-async"></a>add_async</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-add-async" title="valent_contact_store_add_async ()"><code class="function">valent_contact_store_add_async()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.remove"></a>remove</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-remove" title="valent_contact_store_remove ()"><code class="function">valent_contact_store_remove()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.remove-async"></a>remove_async</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-remove-async" title="valent_contact_store_remove_async ()"><code class="function">valent_contact_store_remove_async()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.query"></a>query</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-query" title="valent_contact_store_query ()"><code class="function">valent_contact_store_query()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.query-async"></a>query_async</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-query-async" title="valent_contact_store_query_async ()"><code class="function">valent_contact_store_query_async()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.get-contact"></a>get_contact</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-get-contact" title="valent_contact_store_get_contact ()"><code class="function">valent_contact_store_get_contact()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.get-contact-async"></a>get_contact_async</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentContactStore.html#valent-contact-store-get-contact-async" title="valent_contact_store_get_contact_async ()"><code class="function">valent_contact_store_get_contact_async()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.prepare-backend"></a>prepare_backend</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <code class="function">valent_contact_store_prepare_backend()</code></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.contact-added"></a>contact_added</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for <a class="link" href="ValentContactStore.html#ValentContactStore-contact-added" title="The “contact-added” signal"><span class="type">“contact-added”</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentContactStoreClass.contact-removed"></a>contact_removed</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for <a class="link" href="ValentContactStore.html#ValentContactStore-contact-removed" title="The “contact-removed” signal"><span class="type">“contact-removed”</span></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentContactStore-struct"></a><h3>ValentContactStore</h3>
+<pre class="programlisting">typedef struct _ValentContactStore ValentContactStore;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentContactStore--name"></a><h3>The <code class="literal">“name”</code> property</h3>
+<pre class="programlisting">  “name”                     <span class="type">char</span> *</pre>
+<p>The display name.</p>
+<p>Owner: ValentContactStore</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentContactStore--source"></a><h3>The <code class="literal">“source”</code> property</h3>
+<pre class="programlisting">  “source”                   <span class="type">ESource</span> *</pre>
+<p>The <span class="type">ESource</span> describing the store.</p>
+<p>Owner: ValentContactStore</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentContactStore--uid"></a><h3>The <code class="literal">“uid”</code> property</h3>
+<pre class="programlisting">  “uid”                      <span class="type">char</span> *</pre>
+<p>The unique identifier.</p>
+<p>Owner: ValentContactStore</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentContactStore.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ValentContactStore-contact-added"></a><h3>The <code class="literal">“contact-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store,
+               <span class="type">char</span>               *uid,
+               <span class="type">EContact</span>           *contact,
+               <span class="type">gpointer</span>            user_data)</pre>
+<p>ValentContactStore::contact-added is emitted when a new contact is added to
+<em class="parameter"><code>store</code></em>
+.</p>
+<div class="refsect3">
+<a name="ValentContactStore-contact-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>the UID of <em class="parameter"><code>contact</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contact</p></td>
+<td class="parameter_description"><p>the <span class="type">EContact</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentContactStore-contact-removed"></a><h3>The <code class="literal">“contact-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> *store,
+               <span class="type">char</span>               *uid,
+               <span class="type">EContact</span>           *contact,
+               <span class="type">gpointer</span>            user_data)</pre>
+<p>ValentContactStore::contact-added is emitted when a contact is removed from
+<em class="parameter"><code>store</code></em>
+.</p>
+<div class="refsect3">
+<a name="ValentContactStore-contact-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>store</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uid</p></td>
+<td class="parameter_description"><p>the UID of <em class="parameter"><code>contact</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>contact</p></td>
+<td class="parameter_description"><p>the <span class="type">EContact</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

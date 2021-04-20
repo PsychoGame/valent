@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentDevicePlugin: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch02.html" title="Devices">
+<link rel="prev" href="ValentDevice.html" title="ValentDevice">
+<link rel="next" href="ValentTransfer.html" title="ValentTransfer">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentDevicePlugin.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentDevicePlugin.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#ValentDevicePlugin.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentDevicePlugin.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ValentDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ValentTransfer.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentDevicePlugin"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentDevicePlugin.top_of_page"></a>ValentDevicePlugin</span></h2>
+<p>ValentDevicePlugin — Interface for device plugins</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-disable" title="valent_device_plugin_disable ()">valent_device_plugin_disable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-enable" title="valent_device_plugin_enable ()">valent_device_plugin_enable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-handle-packet" title="valent_device_plugin_handle_packet ()">valent_device_plugin_handle_packet</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-update-state" title="valent_device_plugin_update_state ()">valent_device_plugin_update_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSettings</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-new-settings" title="valent_device_plugin_new_settings ()">valent_device_plugin_new_settings</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-register-actions" title="valent_device_plugin_register_actions ()">valent_device_plugin_register_actions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-unregister-actions" title="valent_device_plugin_unregister_actions ()">valent_device_plugin_unregister_actions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-toggle-actions" title="valent_device_plugin_toggle_actions ()">valent_device_plugin_toggle_actions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-add-menu-entries" title="valent_device_plugin_add_menu_entries ()">valent_device_plugin_add_menu_entries</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-remove-menu-entries" title="valent_device_plugin_remove_menu_entries ()">valent_device_plugin_remove_menu_entries</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GStrv</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-get-incoming" title="valent_device_plugin_get_incoming ()">valent_device_plugin_get_incoming</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GStrv</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-get-outgoing" title="valent_device_plugin_get_outgoing ()">valent_device_plugin_get_outgoing</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> *</td>
+<td class="property_name"><a class="link" href="ValentDevicePlugin.html#ValentDevicePlugin--device" title="The “device” property">device</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentDevicePlugin.html#VALENT-TYPE-DEVICE-PLUGIN:CAPS" title="VALENT_TYPE_DEVICE_PLUGIN">VALENT_TYPE_DEVICE_PLUGIN</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentDevicePlugin.html#ValentDevicePluginInterface" title="struct ValentDevicePluginInterface">ValentDevicePluginInterface</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentDevicePlugin.html#ValentDevicePlugin-struct" title="ValentDevicePlugin">ValentDevicePlugin</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GInterface
+    <span class="lineart">╰──</span> ValentDevicePlugin
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+ValentDevicePlugin requires
+ GObject.</p>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-core.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.description"></a><h2>Description</h2>
+<p>The <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> interface should be implemented by libpeas plugins
+that operate in the scope of a single device. This generally means sending
+and receiving packets with other devices.</p>
+<p>When the device state changes, <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-update-state" title="valent_device_plugin_update_state ()"><code class="function">valent_device_plugin_update_state()</code></a> is invoked
+to allow the plugin to enable or disable any entry points requiring an active
+connection.</p>
+<div class="refsect2">
+<a name="id-1.2.3.4.10.4"></a><h3>
+<code class="literal">.plugin</code> File</h3>
+<p>Device plugins require extra information in the <code class="literal">.plugin</code> file to be
+processed correctly.</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><code class="literal">X-IncomingCapabilities</code></p>
+<p>A list of strings separated by semi-colons indicating the packets that the plugin can handle.</p>
+</li>
+<li class="listitem">
+<p><code class="literal">X-OutgoingCapabilities</code></p>
+<p>A list of strings separated by semi-colons indicating the packets that the plugin may provide.</p>
+</li>
+</ul></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="id-1.2.3.4.10.5"></a><h3>Plugin States</h3>
+<p>Plugins essentially have three states: loaded, enabled and available.</p>
+<p>Plugins are loaded (instantiated) if any of the following criteria are met:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>the device's outgoing types match any of the plugin's incoming types</p></li>
+<li class="listitem"><p>the device's incoming types match any of the plugin's outgoing types</p></li>
+<li class="listitem"><p>the plugin doesn't list any packet types (eg. a non-packet based plugin).</p></li>
+</ul></div>
+<p>Plugins are enabled by default and can be disabled or enabled by the user.
+Once loaded a plugin can be configured regardless of whether it is enabled or
+the device is connected or paired. This allows the user to restrict the
+remote device's access before pairing.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-device-plugin-disable"></a><h3>valent_device_plugin_disable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_disable (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>);</pre>
+<p>This function is called before the extension is unloaded and should clean up
+any resources that were allocated in <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-enable" title="valent_device_plugin_enable ()"><code class="function">valent_device_plugin_enable()</code></a> or
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-update-state" title="valent_device_plugin_update_state ()"><code class="function">valent_device_plugin_update_state()</code></a>.</p>
+<p>It is guaranteed that this function will be called if
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-enable" title="valent_device_plugin_enable ()"><code class="function">valent_device_plugin_enable()</code></a> has been called.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> disable]</span></p>
+<div class="refsect3">
+<a name="valent-device-plugin-disable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-enable"></a><h3>valent_device_plugin_enable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_enable (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>);</pre>
+<p>Enables the plugin. This will register the plugin as the handler for any
+packets the it claims to support then call the plugin's implementation.</p>
+<p>This function is called after the extension is loaded and should prepare
+anything the plugin needs to handle and provide packets once the device is
+connected.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> enable]</span></p>
+<div class="refsect3">
+<a name="valent-device-plugin-enable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-handle-packet"></a><h3>valent_device_plugin_handle_packet ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_handle_packet (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *type</code></em>,
+                                    <em class="parameter"><code><span class="type">JsonNode</span> *packet</code></em>);</pre>
+<p>This is called when the device receives a packet type included in the
+<code class="literal">X-IncomingCapabilities</code> field of the <code class="literal">.plugin</code> file for <em class="parameter"><code>plugin</code></em>
+.</p>
+<p>This is optional for <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> implementations which do not
+register any incoming capabilities, such as plugins that do not provide
+packet-based functionality.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> handle_packet]</span></p>
+<div class="refsect3">
+<a name="valent-device-plugin-handle-packet.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the packet type</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <span class="type">JsonNode</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-update-state"></a><h3>valent_device_plugin_update_state ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_update_state (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>);</pre>
+<p>This function is called when the device's connected or paired state changes.
+It should be used to prepare or release resources only needed during active
+use. Usually this means disabling or enabling any plugin actions and sending
+or requesting data from the device.</p>
+<p>It is guaranteed that this function will only be called after
+<a class="link" href="ValentDevicePlugin.html#valent-device-plugin-enable" title="valent_device_plugin_enable ()"><code class="function">valent_device_plugin_enable()</code></a> and never after <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-disable" title="valent_device_plugin_disable ()"><code class="function">valent_device_plugin_disable()</code></a>.</p>
+<p>This is an optional for <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> implementations as plugins aren't
+required to be packet handlers.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> update_state]</span></p>
+<div class="refsect3">
+<a name="valent-device-plugin-update-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-new-settings"></a><h3>valent_device_plugin_new_settings ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSettings</span> *
+valent_device_plugin_new_settings (<em class="parameter"><code>const <span class="type">char</span> *device_id</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *module_name</code></em>);</pre>
+<p>A convenience function for plugins to create a <span class="type">GSettings</span> object for a device
+ID and module name.</p>
+<p>It is expected that <em class="parameter"><code>device_id</code></em>
+ is a valid string for a <span class="type">GSettings</span> path and
+that the target <span class="type">GSettingsSchema</span> is of the form <code class="literal">ca.andyholmes.valent.module_name</code>.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-new-settings.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>device_id</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>module_name</p></td>
+<td class="parameter_description"><p>a <span class="type">PeasPluginInfo</span> module name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-device-plugin-new-settings.returns"></a><h4>Returns</h4>
+<p>the new <span class="type">GSettings</span> object. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-register-actions"></a><h3>valent_device_plugin_register_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_register_actions (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>,
+                                       <em class="parameter"><code>const <span class="type">GActionEntry</span> *entries</code></em>,
+                                       <em class="parameter"><code><span class="type">int</span> n_entries</code></em>);</pre>
+<p>Register <span class="type">GAction</span> <em class="parameter"><code>entries</code></em>
+ with the <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> for <em class="parameter"><code>plugin</code></em>
+. Each action is
+passed <em class="parameter"><code>plugin</code></em>
+ as the user data for <span class="type">“activate”</span>.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-register-actions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entries</p></td>
+<td class="parameter_description"><p>a pointer to
+the first item in an array of <span class="type">GActionEntry</span> structs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GActionEntry]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_entries</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>entries</code></em>
+, or -1 if <em class="parameter"><code>entries</code></em>
+is <code class="literal">NULL</code>-terminated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-unregister-actions"></a><h3>valent_device_plugin_unregister_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_unregister_actions
+                               (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>,
+                                <em class="parameter"><code>const <span class="type">GActionEntry</span> *entries</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> n_entries</code></em>);</pre>
+<p>Unregister <span class="type">GAction</span> <em class="parameter"><code>entries</code></em>
+ with the <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> for <em class="parameter"><code>plugin</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-unregister-actions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entries</p></td>
+<td class="parameter_description"><p>a pointer to
+the first item in an array of <span class="type">GActionEntry</span> structs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GActionEntry]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_entries</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>entries</code></em>
+, or -1 if <em class="parameter"><code>entries</code></em>
+is <code class="literal">NULL</code>-terminated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-toggle-actions"></a><h3>valent_device_plugin_toggle_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_toggle_actions (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>,
+                                     <em class="parameter"><code>const <span class="type">GActionEntry</span> *actions</code></em>,
+                                     <em class="parameter"><code><span class="type">int</span> n_entries</code></em>,
+                                     <em class="parameter"><code><span class="type">gboolean</span> state</code></em>);</pre>
+<p>Enable or disable <em class="parameter"><code>actions</code></em>
+ for <em class="parameter"><code>device</code></em>
+ based on <em class="parameter"><code>state</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-toggle-actions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>actions</p></td>
+<td class="parameter_description"><p>a pointer to
+the first item in an array of <span class="type">GActionEntry</span> structs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GActionEntry]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_entries</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>entries</code></em>
+, or -1 if <em class="parameter"><code>entries</code></em>
+is <code class="literal">NULL</code>-terminated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>state</p></td>
+<td class="parameter_description"><p>boolean</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-add-menu-entries"></a><h3>valent_device_plugin_add_menu_entries ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_add_menu_entries (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>,
+                                       <em class="parameter"><code>const <span class="type">ValentMenuEntry</span> *entries</code></em>,
+                                       <em class="parameter"><code><span class="type">int</span> n_entries</code></em>);</pre>
+<p>A convenience function for creating multiple <span class="type">GMenuItem</span> instances and adding
+them to a <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a>'s <span class="type">GMenu</span>. Each action is constructed as per one
+<span class="type">ValentMenuEntry</span>.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-add-menu-entries.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entries</p></td>
+<td class="parameter_description"><p>a pointer
+to the first item in an array of <span class="type">ValentMenuEntry</span> structs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ValentMenuEntry]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_entries</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>entries</code></em>
+, or -1 if <em class="parameter"><code>entries</code></em>
+is <code class="literal">NULL</code>-terminated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-remove-menu-entries"></a><h3>valent_device_plugin_remove_menu_entries ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_device_plugin_remove_menu_entries
+                               (<em class="parameter"><code><a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> *plugin</code></em>,
+                                <em class="parameter"><code>const <span class="type">ValentMenuEntry</span> *entries</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> n_entries</code></em>);</pre>
+<p>A counterpart to <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-add-menu-entries" title="valent_device_plugin_add_menu_entries ()"><code class="function">valent_device_plugin_add_menu_entries()</code></a>.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-remove-menu-entries.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>plugin</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>entries</p></td>
+<td class="parameter_description"><p>a pointer
+to the first item in an array of <span class="type">ValentMenuEntry</span> structs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_entries][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ValentMenuEntry]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_entries</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>entries</code></em>
+, or -1 if <em class="parameter"><code>entries</code></em>
+is <code class="literal">NULL</code>-terminated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-get-incoming"></a><h3>valent_device_plugin_get_incoming ()</h3>
+<pre class="programlisting"><span class="returnvalue">GStrv</span>
+valent_device_plugin_get_incoming (<em class="parameter"><code><span class="type">PeasPluginInfo</span> *info</code></em>);</pre>
+<p>Gets the list of incoming packets <em class="parameter"><code>plugin</code></em>
+ can handle.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-get-incoming.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>a <span class="type">ValentDevicePluginInfo</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-device-plugin-get-incoming.returns"></a><h4>Returns</h4>
+<p>a list of packet types. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-device-plugin-get-outgoing"></a><h3>valent_device_plugin_get_outgoing ()</h3>
+<pre class="programlisting"><span class="returnvalue">GStrv</span>
+valent_device_plugin_get_outgoing (<em class="parameter"><code><span class="type">PeasPluginInfo</span> *info</code></em>);</pre>
+<p>Gets the list of outgoing packets <em class="parameter"><code>plugin</code></em>
+ can provide.</p>
+<div class="refsect3">
+<a name="valent-device-plugin-get-outgoing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>a <span class="type">PeasPluginInfo</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-device-plugin-get-outgoing.returns"></a><h4>Returns</h4>
+<p>a list of packet types. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-TYPE-DEVICE-PLUGIN:CAPS"></a><h3>VALENT_TYPE_DEVICE_PLUGIN</h3>
+<pre class="programlisting">#define VALENT_TYPE_DEVICE_PLUGIN (valent_device_plugin_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentDevicePluginInterface"></a><h3>struct ValentDevicePluginInterface</h3>
+<pre class="programlisting">struct ValentDevicePluginInterface {
+  GTypeInterface   g_iface;
+
+  /* virtual functions */
+  void             (*disable)       (ValentDevicePlugin *plugin);
+  void             (*enable)        (ValentDevicePlugin *plugin);
+  void             (*handle_packet) (ValentDevicePlugin *plugin,
+                                     const char         *type,
+                                     JsonNode           *packet);
+  void             (*update_state)  (ValentDevicePlugin *plugin);
+};
+</pre>
+<p>The virtual function table for <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a>.</p>
+<div class="refsect3">
+<a name="ValentDevicePluginInterface.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentDevicePluginInterface.disable"></a>disable</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-disable" title="valent_device_plugin_disable ()"><code class="function">valent_device_plugin_disable()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentDevicePluginInterface.enable"></a>enable</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-enable" title="valent_device_plugin_enable ()"><code class="function">valent_device_plugin_enable()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentDevicePluginInterface.handle-packet"></a>handle_packet</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-handle-packet" title="valent_device_plugin_handle_packet ()"><code class="function">valent_device_plugin_handle_packet()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentDevicePluginInterface.update-state"></a>update_state</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentDevicePlugin.html#valent-device-plugin-update-state" title="valent_device_plugin_update_state ()"><code class="function">valent_device_plugin_update_state()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentDevicePlugin-struct"></a><h3>ValentDevicePlugin</h3>
+<pre class="programlisting">typedef struct _ValentDevicePlugin ValentDevicePlugin;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentDevicePlugin.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentDevicePlugin--device"></a><h3>The <code class="literal">“device”</code> property</h3>
+<pre class="programlisting">  “device”                   <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> *</pre>
+<p>The <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> this plugin is bound to.</p>
+<p>Owner: ValentDevicePlugin</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

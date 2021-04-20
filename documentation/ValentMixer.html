@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentMixer: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch08.html" title="Mixer">
+<link rel="prev" href="ch08.html" title="Mixer">
+<link rel="next" href="ValentMixerControl.html" title="ValentMixerControl">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentMixer.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentMixer.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#ValentMixer.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch08.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ValentMixerControl.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentMixer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentMixer.top_of_page"></a>ValentMixer</span></h2>
+<p>ValentMixer — Mixer Abstraction</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentMixer.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentMixer.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentMixer.html" title="ValentMixer"><span class="returnvalue">ValentMixer</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixer.html#valent-mixer-get-default" title="valent_mixer_get_default ()">valent_mixer_get_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="returnvalue">ValentMixerStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixer.html#valent-mixer-get-default-output" title="valent_mixer_get_default_output ()">valent_mixer_get_default_output</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="returnvalue">ValentMixerStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixer.html#valent-mixer-get-default-input" title="valent_mixer_get_default_input ()">valent_mixer_get_default_input</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixer.html#valent-mixer-get-inputs" title="valent_mixer_get_inputs ()">valent_mixer_get_inputs</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GPtrArray</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixer.html#valent-mixer-get-outputs" title="valent_mixer_get_outputs ()">valent_mixer_get_outputs</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentMixer.html#ValentMixer-stream-added" title="The “stream-added” signal">stream-added</a></td>
+<td class="signal_flags">Has Details</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentMixer.html#ValentMixer-stream-changed" title="The “stream-changed” signal">stream-changed</a></td>
+<td class="signal_flags">Has Details</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="ValentMixer.html#ValentMixer-stream-removed" title="The “stream-removed” signal">stream-removed</a></td>
+<td class="signal_flags">Has Details</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentMixer.html#VALENT-TYPE-MIXER:CAPS" title="VALENT_TYPE_MIXER">VALENT_TYPE_MIXER</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentMixer.html#ValentMixer-struct" title="ValentMixer">ValentMixer</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="ValentComponent.html" title="ValentComponent">ValentComponent</a>
+        <span class="lineart">╰──</span> ValentMixer
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-mixer.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.description"></a><h2>Description</h2>
+<p><a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a> is an aggregator of mixer controls, with a simple API generally intended to be used
+by <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> implementations.</p>
+<p>Plugins can provide adapters for various backends by subclassing <a class="link" href="ValentMixerControl.html" title="ValentMixerControl"><span class="type">ValentMixerControl</span></a> interface.</p>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-mixer-get-default"></a><h3>valent_mixer_get_default ()</h3>
+<pre class="programlisting"><a class="link" href="ValentMixer.html" title="ValentMixer"><span class="returnvalue">ValentMixer</span></a> *
+valent_mixer_get_default (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get the default <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a>.</p>
+<div class="refsect3">
+<a name="valent-mixer-get-default.returns"></a><h4>Returns</h4>
+<p>The default mixer. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-get-default-output"></a><h3>valent_mixer_get_default_output ()</h3>
+<pre class="programlisting"><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="returnvalue">ValentMixerStream</span></a> *
+valent_mixer_get_default_output (<em class="parameter"><code><a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a> *mixer</code></em>);</pre>
+<p>Get the default output stream (eg. speakers).</p>
+<div class="refsect3">
+<a name="valent-mixer-get-default-output.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>mixer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-get-default-output.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-get-default-input"></a><h3>valent_mixer_get_default_input ()</h3>
+<pre class="programlisting"><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="returnvalue">ValentMixerStream</span></a> *
+valent_mixer_get_default_input (<em class="parameter"><code><a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a> *mixer</code></em>);</pre>
+<p>Get the default input stream (eg. microphone).</p>
+<div class="refsect3">
+<a name="valent-mixer-get-default-input.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>mixer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-get-default-input.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-get-inputs"></a><h3>valent_mixer_get_inputs ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+valent_mixer_get_inputs (<em class="parameter"><code><a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a> *mixer</code></em>);</pre>
+<p>Get a list of all the input streams for <em class="parameter"><code>mixer</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-mixer-get-inputs.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>mixer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-get-inputs.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GPtrArray</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Valent.MixerStream]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-get-outputs"></a><h3>valent_mixer_get_outputs ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
+valent_mixer_get_outputs (<em class="parameter"><code><a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a> *mixer</code></em>);</pre>
+<p>Get a list of all the output streams for <em class="parameter"><code>mixer</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-mixer-get-outputs.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>mixer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-get-outputs.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GPtrArray</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Valent.MixerStream]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-TYPE-MIXER:CAPS"></a><h3>VALENT_TYPE_MIXER</h3>
+<pre class="programlisting">#define VALENT_TYPE_MIXER (valent_mixer_get_type ())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixer-struct"></a><h3>ValentMixer</h3>
+<pre class="programlisting">typedef struct _ValentMixer ValentMixer;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentMixer.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="ValentMixer-stream-added"></a><h3>The <code class="literal">“stream-added”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a>       *control,
+               <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream,
+               <span class="type">gpointer</span>           user_data)</pre>
+<p>The "stream-added" signal is emitted when a new stream is added to the
+<a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a>.</p>
+<div class="refsect3">
+<a name="ValentMixer-stream-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>control</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Has Details</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixer-stream-changed"></a><h3>The <code class="literal">“stream-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a>       *control,
+               <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream,
+               <span class="type">gpointer</span>           user_data)</pre>
+<p>The "stream-removed" signal is emitted when a stream is changed from
+the <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a>.</p>
+<div class="refsect3">
+<a name="ValentMixer-stream-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>control</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Has Details</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixer-stream-removed"></a><h3>The <code class="literal">“stream-removed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a>       *control,
+               <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream,
+               <span class="type">gpointer</span>           user_data)</pre>
+<p>The "stream-removed" signal is emitted when a new stream is removed from
+the <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a>.</p>
+<div class="refsect3">
+<a name="ValentMixer-stream-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>control</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixer.html" title="ValentMixer"><span class="type">ValentMixer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Has Details</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

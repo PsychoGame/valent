@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentMixerStream: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch08.html" title="Mixer">
+<link rel="prev" href="ValentMixerControl.html" title="ValentMixerControl">
+<link rel="next" href="ch09.html" title="Notifications">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentMixerStream.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentMixerStream.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentMixerStream.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch08.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ValentMixerControl.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch09.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentMixerStream"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentMixerStream.top_of_page"></a>ValentMixerStream</span></h2>
+<p>ValentMixerStream — Base class for mixer streams</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentMixerStream.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-name" title="valent_mixer_stream_get_name ()">valent_mixer_stream_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-description" title="valent_mixer_stream_get_description ()">valent_mixer_stream_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentMixerStream.html#ValentMixerStreamFlags" title="enum ValentMixerStreamFlags"><span class="returnvalue">ValentMixerStreamFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-flags" title="valent_mixer_stream_get_flags ()">valent_mixer_stream_get_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">unsigned <span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-level" title="valent_mixer_stream_get_level ()">valent_mixer_stream_get_level</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixerStream.html#valent-mixer-stream-set-level" title="valent_mixer_stream_set_level ()">valent_mixer_stream_set_level</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-muted" title="valent_mixer_stream_get_muted ()">valent_mixer_stream_get_muted</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentMixerStream.html#valent-mixer-stream-set-muted" title="valent_mixer_stream_set_muted ()">valent_mixer_stream_set_muted</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentMixerStream.html#ValentMixerStream--description" title="The “description” property">description</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="ValentMixerStream.html#ValentMixerStreamFlags" title="enum ValentMixerStreamFlags"><span class="type">ValentMixerStreamFlags</span></a></td>
+<td class="property_name"><a class="link" href="ValentMixerStream.html#ValentMixerStream--flags" title="The “flags” property">flags</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="ValentMixerStream.html#ValentMixerStream--level" title="The “level” property">level</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="ValentMixerStream.html#ValentMixerStream--muted" title="The “muted” property">muted</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentMixerStream.html#ValentMixerStream--name" title="The “name” property">name</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="ValentMixerStream.html#ValentMixerStreamFlags" title="enum ValentMixerStreamFlags">ValentMixerStreamFlags</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentMixerStream.html#VALENT-TYPE-MIXER-STREAM:CAPS" title="VALENT_TYPE_MIXER_STREAM">VALENT_TYPE_MIXER_STREAM</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentMixerStream.html#ValentMixerStreamClass" title="struct ValentMixerStreamClass">ValentMixerStreamClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentMixerStream.html#ValentMixerStream-struct" title="ValentMixerStream">ValentMixerStream</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GFlags
+    <span class="lineart">╰──</span> ValentMixerStreamFlags
+    GObject
+    <span class="lineart">╰──</span> ValentMixerStream
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-mixer.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.description"></a><h2>Description</h2>
+<p><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> is a base class for mixer streams.</p>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-mixer-stream-get-name"></a><h3>valent_mixer_stream_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_mixer_stream_get_name (<em class="parameter"><code><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream</code></em>);</pre>
+<p>Get the unique stream name. For strings to display to users, see
+<code class="function">valent_mixer_stream_dup_label()</code>, <code class="function">valent_mixer_stream_get_primary_text()</code> and
+<code class="function">valent_mixer_stream_get_secondary_text()</code>.</p>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-name.returns"></a><h4>Returns</h4>
+<p>a string name. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-stream-get-description"></a><h3>valent_mixer_stream_get_description ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_mixer_stream_get_description (<em class="parameter"><code><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream</code></em>);</pre>
+<p>Get the human-readable label for <em class="parameter"><code>stream</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-description.returns"></a><h4>Returns</h4>
+<p>a newly allocated string. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-stream-get-flags"></a><h3>valent_mixer_stream_get_flags ()</h3>
+<pre class="programlisting"><a class="link" href="ValentMixerStream.html#ValentMixerStreamFlags" title="enum ValentMixerStreamFlags"><span class="returnvalue">ValentMixerStreamFlags</span></a>
+valent_mixer_stream_get_flags (<em class="parameter"><code><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream</code></em>);</pre>
+<p>Get the type flags for the stream.</p>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-flags.returns"></a><h4>Returns</h4>
+<p> the <a class="link" href="ValentMixerStream.html#ValentMixerStreamFlags" title="enum ValentMixerStreamFlags"><span class="type">ValentMixerStreamFlags</span></a> that apply to <em class="parameter"><code>stream</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-stream-get-level"></a><h3>valent_mixer_stream_get_level ()</h3>
+<pre class="programlisting">unsigned <span class="returnvalue">int</span>
+valent_mixer_stream_get_level (<em class="parameter"><code><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream</code></em>);</pre>
+<p>Get the level of the stream (eg. speaker volume, microphone sensitivity).</p>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-level.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-level.returns"></a><h4>Returns</h4>
+<p> stream level</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-stream-set-level"></a><h3>valent_mixer_stream_set_level ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_mixer_stream_set_level (<em class="parameter"><code><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream</code></em>,
+                               <em class="parameter"><code>unsigned <span class="type">int</span> level</code></em>);</pre>
+<p>Set the level of the stream (eg. speaker volume, microphone sensitivity).</p>
+<div class="refsect3">
+<a name="valent-mixer-stream-set-level.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>level</p></td>
+<td class="parameter_description"><p>a level</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-stream-get-muted"></a><h3>valent_mixer_stream_get_muted ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_mixer_stream_get_muted (<em class="parameter"><code><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream</code></em>);</pre>
+<p>Get the muted state of the default input stream (eg. microphone on/off).</p>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-muted.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-mixer-stream-get-muted.returns"></a><h4>Returns</h4>
+<p> mute state</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-mixer-stream-set-muted"></a><h3>valent_mixer_stream_set_muted ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_mixer_stream_set_muted (<em class="parameter"><code><a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a> *stream</code></em>,
+                               <em class="parameter"><code><span class="type">gboolean</span> state</code></em>);</pre>
+<p>Set the muted state of the default input stream (eg. microphone on/off).</p>
+<div class="refsect3">
+<a name="valent-mixer-stream-set-muted.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>state</p></td>
+<td class="parameter_description"><p>a muted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="ValentMixerStreamFlags"></a><h3>enum ValentMixerStreamFlags</h3>
+<p>Flags describing a <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a>.</p>
+<div class="refsect3">
+<a name="ValentMixerStreamFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-UNKNOWN:CAPS"></a>VALENT_MIXER_STREAM_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>no flags</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-SINK:CAPS"></a>VALENT_MIXER_STREAM_SINK</p></td>
+<td class="enum_member_description">
+<p>A mixer output stream (eg. speakers)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-SOURCE:CAPS"></a>VALENT_MIXER_STREAM_SOURCE</p></td>
+<td class="enum_member_description">
+<p>A mixer input stream (eg. microphone)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-LOCAL:CAPS"></a>VALENT_MIXER_STREAM_LOCAL</p></td>
+<td class="enum_member_description">
+<p>A local stream</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-REMOTE:CAPS"></a>VALENT_MIXER_STREAM_REMOTE</p></td>
+<td class="enum_member_description">
+<p>A remote stream</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-RESERVED1:CAPS"></a>VALENT_MIXER_STREAM_RESERVED1</p></td>
+<td class="enum_member_description">
+<p>Reserved</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-RESERVED2:CAPS"></a>VALENT_MIXER_STREAM_RESERVED2</p></td>
+<td class="enum_member_description">
+<p>Reserved</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-RESERVED3:CAPS"></a>VALENT_MIXER_STREAM_RESERVED3</p></td>
+<td class="enum_member_description">
+<p>Reserved</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-MIXER-STREAM-RESERVED4:CAPS"></a>VALENT_MIXER_STREAM_RESERVED4</p></td>
+<td class="enum_member_description">
+<p>Reserved</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="VALENT-TYPE-MIXER-STREAM:CAPS"></a><h3>VALENT_TYPE_MIXER_STREAM</h3>
+<pre class="programlisting">#define VALENT_TYPE_MIXER_STREAM (valent_mixer_stream_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixerStreamClass"></a><h3>struct ValentMixerStreamClass</h3>
+<pre class="programlisting">struct ValentMixerStreamClass {
+  GObjectClass   parent_class;
+
+  const char   * (*get_name)        (ValentMixerStream *stream);
+  const char   * (*get_description) (ValentMixerStream *stream);
+
+  unsigned int   (*get_level)       (ValentMixerStream *stream);
+  void           (*set_level)       (ValentMixerStream *stream,
+                                     unsigned int       level);
+  gboolean       (*get_muted)       (ValentMixerStream *stream);
+  void           (*set_muted)       (ValentMixerStream *stream,
+                                     gboolean           state);
+};
+</pre>
+<p>The virtual function table for <a class="link" href="ValentMixerStream.html" title="ValentMixerStream"><span class="type">ValentMixerStream</span></a>.</p>
+<div class="refsect3">
+<a name="ValentMixerStreamClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentMixerStreamClass.get-name"></a>get_name</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-name" title="valent_mixer_stream_get_name ()"><code class="function">valent_mixer_stream_get_name()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentMixerStreamClass.get-description"></a>get_description</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-description" title="valent_mixer_stream_get_description ()"><code class="function">valent_mixer_stream_get_description()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentMixerStreamClass.get-level"></a>get_level</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-level" title="valent_mixer_stream_get_level ()"><code class="function">valent_mixer_stream_get_level()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentMixerStreamClass.set-level"></a>set_level</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentMixerStream.html#valent-mixer-stream-set-level" title="valent_mixer_stream_set_level ()"><code class="function">valent_mixer_stream_set_level()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentMixerStreamClass.get-muted"></a>get_muted</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentMixerStream.html#valent-mixer-stream-get-muted" title="valent_mixer_stream_get_muted ()"><code class="function">valent_mixer_stream_get_muted()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentMixerStreamClass.set-muted"></a>set_muted</code></em> ()</p></td>
+<td class="struct_member_description"><p>the virtual function pointer for <a class="link" href="ValentMixerStream.html#valent-mixer-stream-set-muted" title="valent_mixer_stream_set_muted ()"><code class="function">valent_mixer_stream_set_muted()</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixerStream-struct"></a><h3>ValentMixerStream</h3>
+<pre class="programlisting">typedef struct _ValentMixerStream ValentMixerStream;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentMixerStream.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentMixerStream--description"></a><h3>The <code class="literal">“description”</code> property</h3>
+<pre class="programlisting">  “description”              <span class="type">char</span> *</pre>
+<p>The "description" property holds the human-readable label of the stream.</p>
+<p>Owner: ValentMixerStream</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixerStream--flags"></a><h3>The <code class="literal">“flags”</code> property</h3>
+<pre class="programlisting">  “flags”                    <a class="link" href="ValentMixerStream.html#ValentMixerStreamFlags" title="enum ValentMixerStreamFlags"><span class="type">ValentMixerStreamFlags</span></a></pre>
+<p>The "falgs" property holds the input or output level of the stream.</p>
+<p>Owner: ValentMixerStream</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixerStream--level"></a><h3>The <code class="literal">“level”</code> property</h3>
+<pre class="programlisting">  “level”                    <span class="type">guint</span></pre>
+<p>The "level" property holds the input or output level of the stream.</p>
+<p>Owner: ValentMixerStream</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &lt;= 100</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixerStream--muted"></a><h3>The <code class="literal">“muted”</code> property</h3>
+<pre class="programlisting">  “muted”                    <span class="type">gboolean</span></pre>
+<p>The "muted" property indicates whether the stream is muted.</p>
+<p>Owner: ValentMixerStream</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentMixerStream--name"></a><h3>The <code class="literal">“name”</code> property</h3>
+<pre class="programlisting">  “name”                     <span class="type">char</span> *</pre>
+<p>The "name" property holds the unique name of the stream.</p>
+<p>Owner: ValentMixerStream</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

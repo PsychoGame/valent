@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentTransfer: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch02.html" title="Devices">
+<link rel="prev" href="ValentDevicePlugin.html" title="ValentDevicePlugin">
+<link rel="next" href="ch03.html" title="Miscellaneous">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentTransfer.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentTransfer.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentTransfer.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ValentDevicePlugin.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch03.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentTransfer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentTransfer.top_of_page"></a>ValentTransfer</span></h2>
+<p>ValentTransfer — An object representing a remote transfer</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentTransfer.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="returnvalue">ValentTransfer</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-new" title="valent_transfer_new ()">valent_transfer_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-add-bytes" title="valent_transfer_add_bytes ()">valent_transfer_add_bytes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-add-file" title="valent_transfer_add_file ()">valent_transfer_add_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-add-stream" title="valent_transfer_add_stream ()">valent_transfer_add_stream</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GFile</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-cache-file" title="valent_transfer_cache_file ()">valent_transfer_cache_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-cancel" title="valent_transfer_cancel ()">valent_transfer_cancel</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-execute" title="valent_transfer_execute ()">valent_transfer_execute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-execute-finish" title="valent_transfer_execute_finish ()">valent_transfer_execute_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentDevice.html" title="ValentDevice"><span class="returnvalue">ValentDevice</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-get-device" title="valent_transfer_get_device ()">valent_transfer_get_device</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-get-id" title="valent_transfer_get_id ()">valent_transfer_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-set-id" title="valent_transfer_set_id ()">valent_transfer_set_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentTransfer.html#ValentTransferState" title="enum ValentTransferState"><span class="returnvalue">ValentTransferState</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="ValentTransfer.html#valent-transfer-get-state" title="valent_transfer_get_state ()">valent_transfer_get_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> *</td>
+<td class="property_name"><a class="link" href="ValentTransfer.html#ValentTransfer--device" title="The “device” property">device</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentTransfer.html#ValentTransfer--id" title="The “id” property">id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="ValentTransfer.html#ValentTransferState" title="enum ValentTransferState"><span class="type">ValentTransferState</span></a></td>
+<td class="property_name"><a class="link" href="ValentTransfer.html#ValentTransfer--state" title="The “state” property">state</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="ValentTransfer.html#ValentTransferState" title="enum ValentTransferState">ValentTransferState</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentTransfer.html#VALENT-TYPE-TRANSFER:CAPS" title="VALENT_TYPE_TRANSFER">VALENT_TYPE_TRANSFER</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentTransfer.html#ValentTransferClass" title="struct ValentTransferClass">ValentTransferClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentTransfer.html#ValentTransfer-struct" title="ValentTransfer">ValentTransfer</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GEnum
+    <span class="lineart">╰──</span> ValentTransferState
+    GObject
+    <span class="lineart">╰──</span> ValentTransfer
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-core.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.description"></a><h2>Description</h2>
+<p>The <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> object represents a data transfer to or from a device.</p>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-transfer-new"></a><h3>valent_transfer_new ()</h3>
+<pre class="programlisting"><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="returnvalue">ValentTransfer</span></a> *
+valent_transfer_new (<em class="parameter"><code><a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> *device</code></em>);</pre>
+<p>Create a new transfer object for <em class="parameter"><code>device</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-transfer-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-transfer-new.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-add-bytes"></a><h3>valent_transfer_add_bytes ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_transfer_add_bytes (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>,
+                           <em class="parameter"><code><span class="type">JsonNode</span> *packet</code></em>,
+                           <em class="parameter"><code><span class="type">GBytes</span> *bytes</code></em>);</pre>
+<p>Add <em class="parameter"><code>file</code></em>
+ to the transfer queue.</p>
+<div class="refsect3">
+<a name="valent-transfer-add-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <span class="type">JsonNode</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bytes</p></td>
+<td class="parameter_description"><p>a <span class="type">GBytes</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-add-file"></a><h3>valent_transfer_add_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_transfer_add_file (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>,
+                          <em class="parameter"><code><span class="type">JsonNode</span> *packet</code></em>,
+                          <em class="parameter"><code><span class="type">GFile</span> *file</code></em>);</pre>
+<p>Add <em class="parameter"><code>file</code></em>
+ to the transfer queue.</p>
+<div class="refsect3">
+<a name="valent-transfer-add-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <span class="type">JsonNode</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>file</p></td>
+<td class="parameter_description"><p>a <span class="type">GFile</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-add-stream"></a><h3>valent_transfer_add_stream ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_transfer_add_stream (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>,
+                            <em class="parameter"><code><span class="type">JsonNode</span> *packet</code></em>,
+                            <em class="parameter"><code><span class="type">GInputStream</span> *source</code></em>,
+                            <em class="parameter"><code><span class="type">GOutputStream</span> *target</code></em>,
+                            <em class="parameter"><code><span class="type">gssize</span> size</code></em>);</pre>
+<p>Add a stream to the transfer queue.</p>
+<p>If <em class="parameter"><code>packet</code></em>
+ describes an upload, <em class="parameter"><code>source</code></em>
+ and <em class="parameter"><code>size</code></em>
+ must be given.</p>
+<p>If <em class="parameter"><code>packet</code></em>
+ describes a download, <em class="parameter"><code>target</code></em>
+ must be given an <em class="parameter"><code>size</code></em>
+ is ignored.</p>
+<div class="refsect3">
+<a name="valent-transfer-add-stream.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <span class="type">JsonNode</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>source</p></td>
+<td class="parameter_description"><p>a <span class="type">GInputStream</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>target</p></td>
+<td class="parameter_description"><p>a <span class="type">GOutputStream</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>a payload size</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-cache-file"></a><h3>valent_transfer_cache_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">GFile</span> *
+valent_transfer_cache_file (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>,
+                            <em class="parameter"><code><span class="type">JsonNode</span> *packet</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Download and store the payload described by <em class="parameter"><code>packet</code></em>
+ in the device cache,
+using <em class="parameter"><code>name</code></em>
+ to generate hash string.</p>
+<div class="refsect3">
+<a name="valent-transfer-cache-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>packet</p></td>
+<td class="parameter_description"><p>a <span class="type">JsonNode</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a filename or other unique string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-transfer-cache-file.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GFile</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-cancel"></a><h3>valent_transfer_cancel ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_transfer_cancel (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>);</pre>
+<p>Cancel the transfer if in progress.</p>
+<div class="refsect3">
+<a name="valent-transfer-cancel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-execute"></a><h3>valent_transfer_execute ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_transfer_execute (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Start the transfer.</p>
+<div class="refsect3">
+<a name="valent-transfer-execute.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <span class="type">GCancellable</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user supplied data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-execute-finish"></a><h3>valent_transfer_execute_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+valent_transfer_execute_finish (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finish a transfer started with <a class="link" href="ValentTransfer.html#valent-transfer-execute" title="valent_transfer_execute ()"><code class="function">valent_transfer_execute()</code></a>.</p>
+<div class="refsect3">
+<a name="valent-transfer-execute-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <span class="type">GAsyncResult</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-transfer-execute-finish.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success or <code class="literal">FALSE</code> with <em class="parameter"><code>error</code></em>
+set.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-get-device"></a><h3>valent_transfer_get_device ()</h3>
+<pre class="programlisting"><a class="link" href="ValentDevice.html" title="ValentDevice"><span class="returnvalue">ValentDevice</span></a> *
+valent_transfer_get_device (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>);</pre>
+<p>Get the <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> for <em class="parameter"><code>transfer</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-transfer-get-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-transfer-get-device.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-get-id"></a><h3>valent_transfer_get_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_transfer_get_id (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>);</pre>
+<p>Get the unique ID for <em class="parameter"><code>transfer</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-transfer-get-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-transfer-get-id.returns"></a><h4>Returns</h4>
+<p> a unique id</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-set-id"></a><h3>valent_transfer_set_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_transfer_set_id (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>,
+                        <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<p>Set the id for <em class="parameter"><code>transfer</code></em>
+ to <em class="parameter"><code>id</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-transfer-set-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>transfer</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>a unique id</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-transfer-get-state"></a><h3>valent_transfer_get_state ()</h3>
+<pre class="programlisting"><a class="link" href="ValentTransfer.html#ValentTransferState" title="enum ValentTransferState"><span class="returnvalue">ValentTransferState</span></a>
+valent_transfer_get_state (<em class="parameter"><code><a class="link" href="ValentTransfer.html" title="ValentTransfer"><span class="type">ValentTransfer</span></a> *transfer</code></em>);</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="ValentTransferState"></a><h3>enum ValentTransferState</h3>
+<p>Enumeration of transfer states.</p>
+<div class="refsect3">
+<a name="ValentTransferState.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-TRANSFER-STATE-NONE:CAPS"></a>VALENT_TRANSFER_STATE_NONE</p></td>
+<td class="enum_member_description">
+<p>None</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-TRANSFER-STATE-ACTIVE:CAPS"></a>VALENT_TRANSFER_STATE_ACTIVE</p></td>
+<td class="enum_member_description">
+<p>Transfer is in progress</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="VALENT-TRANSFER-STATE-COMPLETE:CAPS"></a>VALENT_TRANSFER_STATE_COMPLETE</p></td>
+<td class="enum_member_description">
+<p>Transfer is complete</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="VALENT-TYPE-TRANSFER:CAPS"></a><h3>VALENT_TYPE_TRANSFER</h3>
+<pre class="programlisting">#define VALENT_TYPE_TRANSFER (valent_transfer_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentTransferClass"></a><h3>struct ValentTransferClass</h3>
+<pre class="programlisting">struct ValentTransferClass {
+  GObjectClass parent_class;
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentTransfer-struct"></a><h3>ValentTransfer</h3>
+<pre class="programlisting">typedef struct _ValentTransfer ValentTransfer;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentTransfer.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentTransfer--device"></a><h3>The <code class="literal">“device”</code> property</h3>
+<pre class="programlisting">  “device”                   <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> *</pre>
+<p>The <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> this channel is attached to.</p>
+<p>Owner: ValentTransfer</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentTransfer--id"></a><h3>The <code class="literal">“id”</code> property</h3>
+<pre class="programlisting">  “id”                       <span class="type">char</span> *</pre>
+<p>A unique identifier for the transfer. A random UUID will be generated on-
+demand if necessary.</p>
+<p>Although not enforced, this should be set to a standard UUIDv4 string.</p>
+<p>Owner: ValentTransfer</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentTransfer--state"></a><h3>The <code class="literal">“state”</code> property</h3>
+<pre class="programlisting">  “state”                    <a class="link" href="ValentTransfer.html#ValentTransferState" title="enum ValentTransferState"><span class="type">ValentTransferState</span></a></pre>
+<p>Whether the transfer has completed.</p>
+<p>Owner: ValentTransfer</p>
+<p>Flags: Read</p>
+<p>Default value: VALENT_TRANSFER_STATE_NONE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

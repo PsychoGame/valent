@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="Valent Reference Manual" link="index.html" author="" name="valent" version="2" language="c" online="https://andyholmes.ca/valent/index.html">
+  <chapters>
+    <sub name="Core" link="libvalent-core.html">
+      <sub name="Networking" link="ch01.html">
+        <sub name="ValentChannel" link="ValentChannel.html"/>
+        <sub name="ValentChannelService" link="ValentChannelService.html"/>
+      </sub>
+      <sub name="Devices" link="ch02.html">
+        <sub name="ValentManager" link="ValentManager.html"/>
+        <sub name="ValentDevice" link="ValentDevice.html"/>
+        <sub name="ValentDevicePlugin" link="ValentDevicePlugin.html"/>
+        <sub name="ValentTransfer" link="ValentTransfer.html"/>
+      </sub>
+      <sub name="Miscellaneous" link="ch03.html">
+        <sub name="ValentComponent" link="ValentComponent.html"/>
+        <sub name="ValentData" link="ValentData.html"/>
+        <sub name="Certificate Utilities" link="valent-Certificate-Utilities.html"/>
+        <sub name="valent-object-utils" link="valent-valent-object-utils.html"/>
+        <sub name="Packet Utilities" link="valent-Packet-Utilities.html"/>
+        <sub name="Utilities" link="valent-Utilities.html"/>
+      </sub>
+    </sub>
+    <sub name="Components" link="libvalent-components.html">
+      <sub name="Clipboard" link="ch04.html">
+        <sub name="ValentClipboard" link="ValentClipboard.html"/>
+        <sub name="ValentClipboardSource" link="ValentClipboardSource.html"/>
+      </sub>
+      <sub name="Contacts" link="ch05.html">
+        <sub name="ValentContacts" link="ValentContacts.html"/>
+        <sub name="ValentContactStore" link="ValentContactStore.html"/>
+        <sub name="ValentContactStoreProvider" link="ValentContactStoreProvider.html"/>
+        <sub name="Contact Utilities" link="valent-Contact-Utilities.html"/>
+      </sub>
+      <sub name="Input" link="ch06.html">
+        <sub name="ValentInput" link="ValentInput.html"/>
+        <sub name="ValentInputController" link="ValentInputController.html"/>
+      </sub>
+      <sub name="Media" link="ch07.html">
+        <sub name="ValentMedia" link="ValentMedia.html"/>
+        <sub name="ValentMediaPlayer" link="ValentMediaPlayer.html"/>
+        <sub name="ValentMediaPlayerProvider" link="ValentMediaPlayerProvider.html"/>
+      </sub>
+      <sub name="Mixer" link="ch08.html">
+        <sub name="ValentMixer" link="ValentMixer.html"/>
+        <sub name="ValentMixerControl" link="ValentMixerControl.html"/>
+        <sub name="ValentMixerStream" link="ValentMixerStream.html"/>
+      </sub>
+      <sub name="Notifications" link="ch09.html">
+        <sub name="ValentNotifications" link="ValentNotifications.html"/>
+        <sub name="ValentNotification" link="ValentNotification.html"/>
+        <sub name="ValentNotificationSource" link="ValentNotificationSource.html"/>
+      </sub>
+      <sub name="Power" link="ch10.html">
+        <sub name="ValentPower" link="ValentPower.html"/>
+        <sub name="ValentPowerDevice" link="ValentPowerDevice.html"/>
+        <sub name="ValentPowerDeviceProvider" link="ValentPowerDeviceProvider.html"/>
+      </sub>
+      <sub name="Session" link="ch11.html">
+        <sub name="ValentSession" link="ValentSession.html"/>
+        <sub name="ValentSessionAdapter" link="ValentSessionAdapter.html"/>
+      </sub>
+    </sub>
+    <sub name="GUI" link="libvalent-ui.html">
+      <sub name="Widgets" link="ch12.html">
+        <sub name="ValentPanel" link="ValentPanel.html"/>
+      </sub>
+      <sub name="Interfaces" link="ch13.html">
+        <sub name="ValentDeviceActivity" link="ValentDeviceActivity.html"/>
+        <sub name="ValentDeviceGadget" link="ValentDeviceGadget.html"/>
+        <sub name="ValentPluginPreferences" link="ValentPluginPreferences.html"/>
+      </sub>
+    </sub>
+    <sub name="Index of all symbols" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="function" name="valent_channel_get_base_stream ()" link="ValentChannel.html#valent-channel-get-base-stream"/>
+    <keyword type="function" name="valent_channel_set_base_stream ()" link="ValentChannel.html#valent-channel-set-base-stream"/>
+    <keyword type="function" name="valent_channel_get_identity ()" link="ValentChannel.html#valent-channel-get-identity"/>
+    <keyword type="function" name="valent_channel_set_identity ()" link="ValentChannel.html#valent-channel-set-identity"/>
+    <keyword type="function" name="valent_channel_get_peer_identity ()" link="ValentChannel.html#valent-channel-get-peer-identity"/>
+    <keyword type="function" name="valent_channel_set_peer_identity ()" link="ValentChannel.html#valent-channel-set-peer-identity"/>
+    <keyword type="function" name="valent_channel_get_uri ()" link="ValentChannel.html#valent-channel-get-uri"/>
+    <keyword type="function" name="valent_channel_set_uri ()" link="ValentChannel.html#valent-channel-set-uri"/>
+    <keyword type="function" name="valent_channel_read_packet ()" link="ValentChannel.html#valent-channel-read-packet"/>
+    <keyword type="function" name="valent_channel_read_packet_finish ()" link="ValentChannel.html#valent-channel-read-packet-finish"/>
+    <keyword type="function" name="valent_channel_write_packet ()" link="ValentChannel.html#valent-channel-write-packet"/>
+    <keyword type="function" name="valent_channel_write_packet_finish ()" link="ValentChannel.html#valent-channel-write-packet-finish"/>
+    <keyword type="function" name="valent_channel_close ()" link="ValentChannel.html#valent-channel-close"/>
+    <keyword type="function" name="valent_channel_close_async ()" link="ValentChannel.html#valent-channel-close-async"/>
+    <keyword type="function" name="valent_channel_close_finish ()" link="ValentChannel.html#valent-channel-close-finish"/>
+    <keyword type="function" name="valent_channel_get_verification_key ()" link="ValentChannel.html#valent-channel-get-verification-key"/>
+    <keyword type="function" name="valent_channel_download ()" link="ValentChannel.html#valent-channel-download"/>
+    <keyword type="function" name="valent_channel_upload ()" link="ValentChannel.html#valent-channel-upload"/>
+    <keyword type="function" name="valent_channel_store_data ()" link="ValentChannel.html#valent-channel-store-data"/>
+    <keyword type="macro" name="VALENT_TYPE_CHANNEL" link="ValentChannel.html#VALENT-TYPE-CHANNEL:CAPS"/>
+    <keyword type="struct" name="struct ValentChannelClass" link="ValentChannel.html#ValentChannelClass"/>
+    <keyword type="struct" name="ValentChannel" link="ValentChannel.html#ValentChannel-struct"/>
+    <keyword type="property" name="The “base-stream” property" link="ValentChannel.html#ValentChannel--base-stream"/>
+    <keyword type="property" name="The “identity” property" link="ValentChannel.html#ValentChannel--identity"/>
+    <keyword type="property" name="The “peer-identity” property" link="ValentChannel.html#ValentChannel--peer-identity"/>
+    <keyword type="property" name="The “uri” property" link="ValentChannel.html#ValentChannel--uri"/>
+    <keyword type="function" name="valent_channel_service_emit_channel ()" link="ValentChannelService.html#valent-channel-service-emit-channel"/>
+    <keyword type="function" name="valent_channel_service_get_id ()" link="ValentChannelService.html#valent-channel-service-get-id"/>
+    <keyword type="function" name="valent_channel_service_get_identity ()" link="ValentChannelService.html#valent-channel-service-get-identity"/>
+    <keyword type="function" name="valent_channel_service_get_plugin_info ()" link="ValentChannelService.html#valent-channel-service-get-plugin-info"/>
+    <keyword type="function" name="valent_channel_service_build_identity ()" link="ValentChannelService.html#valent-channel-service-build-identity"/>
+    <keyword type="function" name="valent_channel_service_identify ()" link="ValentChannelService.html#valent-channel-service-identify"/>
+    <keyword type="function" name="valent_channel_service_start ()" link="ValentChannelService.html#valent-channel-service-start"/>
+    <keyword type="function" name="valent_channel_service_start_finish ()" link="ValentChannelService.html#valent-channel-service-start-finish"/>
+    <keyword type="function" name="valent_channel_service_stop ()" link="ValentChannelService.html#valent-channel-service-stop"/>
+    <keyword type="function" name="valent_channel_service_supports_plugin ()" link="ValentChannelService.html#valent-channel-service-supports-plugin"/>
+    <keyword type="macro" name="VALENT_TYPE_CHANNEL_SERVICE" link="ValentChannelService.html#VALENT-TYPE-CHANNEL-SERVICE:CAPS"/>
+    <keyword type="struct" name="struct ValentChannelServiceClass" link="ValentChannelService.html#ValentChannelServiceClass"/>
+    <keyword type="struct" name="ValentChannelService" link="ValentChannelService.html#ValentChannelService-struct"/>
+    <keyword type="property" name="The “data” property" link="ValentChannelService.html#ValentChannelService--data"/>
+    <keyword type="property" name="The “id” property" link="ValentChannelService.html#ValentChannelService--id"/>
+    <keyword type="property" name="The “identity” property" link="ValentChannelService.html#ValentChannelService--identity"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentChannelService.html#ValentChannelService--plugin-info"/>
+    <keyword type="signal" name="The “channel” signal" link="ValentChannelService.html#ValentChannelService-channel"/>
+    <keyword type="function" name="valent_manager_new ()" link="ValentManager.html#valent-manager-new"/>
+    <keyword type="function" name="valent_manager_new_finish ()" link="ValentManager.html#valent-manager-new-finish"/>
+    <keyword type="function" name="valent_manager_new_sync ()" link="ValentManager.html#valent-manager-new-sync"/>
+    <keyword type="function" name="valent_manager_get_device ()" link="ValentManager.html#valent-manager-get-device"/>
+    <keyword type="function" name="valent_manager_get_devices ()" link="ValentManager.html#valent-manager-get-devices"/>
+    <keyword type="function" name="valent_manager_get_id ()" link="ValentManager.html#valent-manager-get-id"/>
+    <keyword type="function" name="valent_manager_identify ()" link="ValentManager.html#valent-manager-identify"/>
+    <keyword type="function" name="valent_manager_start ()" link="ValentManager.html#valent-manager-start"/>
+    <keyword type="function" name="valent_manager_stop ()" link="ValentManager.html#valent-manager-stop"/>
+    <keyword type="function" name="valent_manager_export ()" link="ValentManager.html#valent-manager-export"/>
+    <keyword type="function" name="valent_manager_unexport ()" link="ValentManager.html#valent-manager-unexport"/>
+    <keyword type="macro" name="VALENT_TYPE_MANAGER" link="ValentManager.html#VALENT-TYPE-MANAGER:CAPS"/>
+    <keyword type="struct" name="ValentManager" link="ValentManager.html#ValentManager-struct"/>
+    <keyword type="property" name="The “data” property" link="ValentManager.html#ValentManager--data"/>
+    <keyword type="property" name="The “id” property" link="ValentManager.html#ValentManager--id"/>
+    <keyword type="signal" name="The “device-added” signal" link="ValentManager.html#ValentManager-device-added"/>
+    <keyword type="signal" name="The “device-removed” signal" link="ValentManager.html#ValentManager-device-removed"/>
+    <keyword type="function" name="valent_device_new ()" link="ValentDevice.html#valent-device-new"/>
+    <keyword type="function" name="valent_device_get_actions ()" link="ValentDevice.html#valent-device-get-actions"/>
+    <keyword type="function" name="valent_device_get_channel ()" link="ValentDevice.html#valent-device-get-channel"/>
+    <keyword type="function" name="valent_device_get_connected ()" link="ValentDevice.html#valent-device-get-connected"/>
+    <keyword type="function" name="valent_device_get_data ()" link="ValentDevice.html#valent-device-get-data"/>
+    <keyword type="function" name="valent_device_get_icon_name ()" link="ValentDevice.html#valent-device-get-icon-name"/>
+    <keyword type="function" name="valent_device_get_id ()" link="ValentDevice.html#valent-device-get-id"/>
+    <keyword type="function" name="valent_device_get_menu ()" link="ValentDevice.html#valent-device-get-menu"/>
+    <keyword type="function" name="valent_device_get_name ()" link="ValentDevice.html#valent-device-get-name"/>
+    <keyword type="function" name="valent_device_get_paired ()" link="ValentDevice.html#valent-device-get-paired"/>
+    <keyword type="function" name="valent_device_get_plugins ()" link="ValentDevice.html#valent-device-get-plugins"/>
+    <keyword type="function" name="valent_device_get_state ()" link="ValentDevice.html#valent-device-get-state"/>
+    <keyword type="function" name="valent_device_queue_packet ()" link="ValentDevice.html#valent-device-queue-packet"/>
+    <keyword type="function" name="valent_device_send_packet ()" link="ValentDevice.html#valent-device-send-packet"/>
+    <keyword type="function" name="valent_device_send_packet_finish ()" link="ValentDevice.html#valent-device-send-packet-finish"/>
+    <keyword type="function" name="valent_device_hide_notification ()" link="ValentDevice.html#valent-device-hide-notification"/>
+    <keyword type="function" name="valent_device_show_notification ()" link="ValentDevice.html#valent-device-show-notification"/>
+    <keyword type="function" name="valent_device_new_download_file ()" link="ValentDevice.html#valent-device-new-download-file"/>
+    <keyword type="enum" name="enum ValentDeviceState" link="ValentDevice.html#ValentDeviceState"/>
+    <keyword type="macro" name="VALENT_TYPE_DEVICE" link="ValentDevice.html#VALENT-TYPE-DEVICE:CAPS"/>
+    <keyword type="struct" name="ValentDevice" link="ValentDevice.html#ValentDevice-struct"/>
+    <keyword type="property" name="The “connected” property" link="ValentDevice.html#ValentDevice--connected"/>
+    <keyword type="property" name="The “data” property" link="ValentDevice.html#ValentDevice--data"/>
+    <keyword type="property" name="The “icon-name” property" link="ValentDevice.html#ValentDevice--icon-name"/>
+    <keyword type="property" name="The “id” property" link="ValentDevice.html#ValentDevice--id"/>
+    <keyword type="property" name="The “name” property" link="ValentDevice.html#ValentDevice--name"/>
+    <keyword type="property" name="The “paired” property" link="ValentDevice.html#ValentDevice--paired"/>
+    <keyword type="property" name="The “state” property" link="ValentDevice.html#ValentDevice--state"/>
+    <keyword type="property" name="The “type” property" link="ValentDevice.html#ValentDevice--type"/>
+    <keyword type="signal" name="The “plugin-added” signal" link="ValentDevice.html#ValentDevice-plugin-added"/>
+    <keyword type="signal" name="The “plugin-removed” signal" link="ValentDevice.html#ValentDevice-plugin-removed"/>
+    <keyword type="function" name="valent_device_plugin_disable ()" link="ValentDevicePlugin.html#valent-device-plugin-disable"/>
+    <keyword type="function" name="valent_device_plugin_enable ()" link="ValentDevicePlugin.html#valent-device-plugin-enable"/>
+    <keyword type="function" name="valent_device_plugin_handle_packet ()" link="ValentDevicePlugin.html#valent-device-plugin-handle-packet"/>
+    <keyword type="function" name="valent_device_plugin_update_state ()" link="ValentDevicePlugin.html#valent-device-plugin-update-state"/>
+    <keyword type="function" name="valent_device_plugin_new_settings ()" link="ValentDevicePlugin.html#valent-device-plugin-new-settings"/>
+    <keyword type="function" name="valent_device_plugin_register_actions ()" link="ValentDevicePlugin.html#valent-device-plugin-register-actions"/>
+    <keyword type="function" name="valent_device_plugin_unregister_actions ()" link="ValentDevicePlugin.html#valent-device-plugin-unregister-actions"/>
+    <keyword type="function" name="valent_device_plugin_toggle_actions ()" link="ValentDevicePlugin.html#valent-device-plugin-toggle-actions"/>
+    <keyword type="function" name="valent_device_plugin_add_menu_entries ()" link="ValentDevicePlugin.html#valent-device-plugin-add-menu-entries"/>
+    <keyword type="function" name="valent_device_plugin_remove_menu_entries ()" link="ValentDevicePlugin.html#valent-device-plugin-remove-menu-entries"/>
+    <keyword type="function" name="valent_device_plugin_get_incoming ()" link="ValentDevicePlugin.html#valent-device-plugin-get-incoming"/>
+    <keyword type="function" name="valent_device_plugin_get_outgoing ()" link="ValentDevicePlugin.html#valent-device-plugin-get-outgoing"/>
+    <keyword type="macro" name="VALENT_TYPE_DEVICE_PLUGIN" link="ValentDevicePlugin.html#VALENT-TYPE-DEVICE-PLUGIN:CAPS"/>
+    <keyword type="struct" name="struct ValentDevicePluginInterface" link="ValentDevicePlugin.html#ValentDevicePluginInterface"/>
+    <keyword type="struct" name="ValentDevicePlugin" link="ValentDevicePlugin.html#ValentDevicePlugin-struct"/>
+    <keyword type="property" name="The “device” property" link="ValentDevicePlugin.html#ValentDevicePlugin--device"/>
+    <keyword type="function" name="valent_transfer_new ()" link="ValentTransfer.html#valent-transfer-new"/>
+    <keyword type="function" name="valent_transfer_add_bytes ()" link="ValentTransfer.html#valent-transfer-add-bytes"/>
+    <keyword type="function" name="valent_transfer_add_file ()" link="ValentTransfer.html#valent-transfer-add-file"/>
+    <keyword type="function" name="valent_transfer_add_stream ()" link="ValentTransfer.html#valent-transfer-add-stream"/>
+    <keyword type="function" name="valent_transfer_cache_file ()" link="ValentTransfer.html#valent-transfer-cache-file"/>
+    <keyword type="function" name="valent_transfer_cancel ()" link="ValentTransfer.html#valent-transfer-cancel"/>
+    <keyword type="function" name="valent_transfer_execute ()" link="ValentTransfer.html#valent-transfer-execute"/>
+    <keyword type="function" name="valent_transfer_execute_finish ()" link="ValentTransfer.html#valent-transfer-execute-finish"/>
+    <keyword type="function" name="valent_transfer_get_device ()" link="ValentTransfer.html#valent-transfer-get-device"/>
+    <keyword type="function" name="valent_transfer_get_id ()" link="ValentTransfer.html#valent-transfer-get-id"/>
+    <keyword type="function" name="valent_transfer_set_id ()" link="ValentTransfer.html#valent-transfer-set-id"/>
+    <keyword type="function" name="valent_transfer_get_state ()" link="ValentTransfer.html#valent-transfer-get-state"/>
+    <keyword type="enum" name="enum ValentTransferState" link="ValentTransfer.html#ValentTransferState"/>
+    <keyword type="macro" name="VALENT_TYPE_TRANSFER" link="ValentTransfer.html#VALENT-TYPE-TRANSFER:CAPS"/>
+    <keyword type="struct" name="struct ValentTransferClass" link="ValentTransfer.html#ValentTransferClass"/>
+    <keyword type="struct" name="ValentTransfer" link="ValentTransfer.html#ValentTransfer-struct"/>
+    <keyword type="property" name="The “device” property" link="ValentTransfer.html#ValentTransfer--device"/>
+    <keyword type="property" name="The “id” property" link="ValentTransfer.html#ValentTransfer--id"/>
+    <keyword type="property" name="The “state” property" link="ValentTransfer.html#ValentTransfer--state"/>
+    <keyword type="function" name="valent_component_get_priority_provider ()" link="ValentComponent.html#valent-component-get-priority-provider"/>
+    <keyword type="function" name="valent_component_get_providers ()" link="ValentComponent.html#valent-component-get-providers"/>
+    <keyword type="macro" name="VALENT_TYPE_COMPONENT" link="ValentComponent.html#VALENT-TYPE-COMPONENT:CAPS"/>
+    <keyword type="struct" name="struct ValentComponentClass" link="ValentComponent.html#ValentComponentClass"/>
+    <keyword type="struct" name="ValentComponent" link="ValentComponent.html#ValentComponent-struct"/>
+    <keyword type="property" name="The “plugin-context” property" link="ValentComponent.html#ValentComponent--plugin-context"/>
+    <keyword type="property" name="The “plugin-type” property" link="ValentComponent.html#ValentComponent--plugin-type"/>
+    <keyword type="signal" name="The “provider-added” signal" link="ValentComponent.html#ValentComponent-provider-added"/>
+    <keyword type="signal" name="The “provider-removed” signal" link="ValentComponent.html#ValentComponent-provider-removed"/>
+    <keyword type="function" name="valent_data_new ()" link="ValentData.html#valent-data-new"/>
+    <keyword type="function" name="valent_data_get_cache_path ()" link="ValentData.html#valent-data-get-cache-path"/>
+    <keyword type="function" name="valent_data_get_config_path ()" link="ValentData.html#valent-data-get-config-path"/>
+    <keyword type="function" name="valent_data_get_data_path ()" link="ValentData.html#valent-data-get-data-path"/>
+    <keyword type="function" name="valent_data_get_context ()" link="ValentData.html#valent-data-get-context"/>
+    <keyword type="function" name="valent_data_get_parent ()" link="ValentData.html#valent-data-get-parent"/>
+    <keyword type="function" name="valent_data_clear_cache ()" link="ValentData.html#valent-data-clear-cache"/>
+    <keyword type="function" name="valent_data_clear_data ()" link="ValentData.html#valent-data-clear-data"/>
+    <keyword type="function" name="valent_data_new_cache_file ()" link="ValentData.html#valent-data-new-cache-file"/>
+    <keyword type="function" name="valent_data_new_config_file ()" link="ValentData.html#valent-data-new-config-file"/>
+    <keyword type="function" name="valent_data_new_data_file ()" link="ValentData.html#valent-data-new-data-file"/>
+    <keyword type="function" name="valent_data_get_directory ()" link="ValentData.html#valent-data-get-directory"/>
+    <keyword type="function" name="valent_data_get_file ()" link="ValentData.html#valent-data-get-file"/>
+    <keyword type="macro" name="VALENT_TYPE_DATA" link="ValentData.html#VALENT-TYPE-DATA:CAPS"/>
+    <keyword type="struct" name="struct ValentDataClass" link="ValentData.html#ValentDataClass"/>
+    <keyword type="struct" name="ValentData" link="ValentData.html#ValentData-struct"/>
+    <keyword type="property" name="The “cache-path” property" link="ValentData.html#ValentData--cache-path"/>
+    <keyword type="property" name="The “config-path” property" link="ValentData.html#ValentData--config-path"/>
+    <keyword type="property" name="The “context” property" link="ValentData.html#ValentData--context"/>
+    <keyword type="property" name="The “data-path” property" link="ValentData.html#ValentData--data-path"/>
+    <keyword type="property" name="The “parent” property" link="ValentData.html#ValentData--parent"/>
+    <keyword type="function" name="valent_certificate_generate ()" link="valent-Certificate-Utilities.html#valent-certificate-generate"/>
+    <keyword type="function" name="valent_certificate_get_common_name ()" link="valent-Certificate-Utilities.html#valent-certificate-get-common-name"/>
+    <keyword type="function" name="valent_certificate_get_fingerprint ()" link="valent-Certificate-Utilities.html#valent-certificate-get-fingerprint"/>
+    <keyword type="function" name="valent_certificate_get_public_key ()" link="valent-Certificate-Utilities.html#valent-certificate-get-public-key"/>
+    <keyword type="function" name="valent_object_notify ()" link="valent-valent-object-utils.html#valent-object-notify"/>
+    <keyword type="function" name="valent_object_notify_by_pspec ()" link="valent-valent-object-utils.html#valent-object-notify-by-pspec"/>
+    <keyword type="function" name="valent_object_list_free ()" link="valent-valent-object-utils.html#valent-object-list-free"/>
+    <keyword type="function" name="valent_object_slist_free ()" link="valent-valent-object-utils.html#valent-object-slist-free"/>
+    <keyword type="function" name="valent_packet_error_quark ()" link="valent-Packet-Utilities.html#valent-packet-error-quark"/>
+    <keyword type="function" name="valent_packet_start ()" link="valent-Packet-Utilities.html#valent-packet-start"/>
+    <keyword type="function" name="valent_packet_finish ()" link="valent-Packet-Utilities.html#valent-packet-finish"/>
+    <keyword type="function" name="valent_packet_from_stream ()" link="valent-Packet-Utilities.html#valent-packet-from-stream"/>
+    <keyword type="function" name="valent_packet_to_stream ()" link="valent-Packet-Utilities.html#valent-packet-to-stream"/>
+    <keyword type="function" name="valent_packet_serialize ()" link="valent-Packet-Utilities.html#valent-packet-serialize"/>
+    <keyword type="function" name="valent_packet_deserialize ()" link="valent-Packet-Utilities.html#valent-packet-deserialize"/>
+    <keyword type="function" name="valent_packet_get_id ()" link="valent-Packet-Utilities.html#valent-packet-get-id"/>
+    <keyword type="function" name="valent_packet_get_body ()" link="valent-Packet-Utilities.html#valent-packet-get-body"/>
+    <keyword type="function" name="valent_packet_has_payload ()" link="valent-Packet-Utilities.html#valent-packet-has-payload"/>
+    <keyword type="function" name="valent_packet_get_payload_full ()" link="valent-Packet-Utilities.html#valent-packet-get-payload-full"/>
+    <keyword type="function" name="valent_packet_set_payload_full ()" link="valent-Packet-Utilities.html#valent-packet-set-payload-full"/>
+    <keyword type="function" name="valent_packet_get_payload_info ()" link="valent-Packet-Utilities.html#valent-packet-get-payload-info"/>
+    <keyword type="function" name="valent_packet_set_payload_info ()" link="valent-Packet-Utilities.html#valent-packet-set-payload-info"/>
+    <keyword type="function" name="valent_packet_get_payload_size ()" link="valent-Packet-Utilities.html#valent-packet-get-payload-size"/>
+    <keyword type="function" name="valent_packet_set_payload_size ()" link="valent-Packet-Utilities.html#valent-packet-set-payload-size"/>
+    <keyword type="function" name="valent_identity_get_device_id ()" link="valent-Packet-Utilities.html#valent-identity-get-device-id"/>
+    <keyword type="function" name="valent_packet_is_valid ()" link="valent-Packet-Utilities.html#valent-packet-is-valid"/>
+    <keyword type="function" name="valent_packet_validate ()" link="valent-Packet-Utilities.html#valent-packet-validate"/>
+    <keyword type="function" name="valent_packet_check_boolean ()" link="valent-Packet-Utilities.html#valent-packet-check-boolean"/>
+    <keyword type="function" name="valent_packet_check_double ()" link="valent-Packet-Utilities.html#valent-packet-check-double"/>
+    <keyword type="function" name="valent_packet_check_int ()" link="valent-Packet-Utilities.html#valent-packet-check-int"/>
+    <keyword type="function" name="valent_packet_check_string ()" link="valent-Packet-Utilities.html#valent-packet-check-string"/>
+    <keyword type="macro" name="VALENT_PACKET_ERROR" link="valent-Packet-Utilities.html#VALENT-PACKET-ERROR:CAPS"/>
+    <keyword type="enum" name="enum ValentPacketError" link="valent-Packet-Utilities.html#ValentPacketError"/>
+    <keyword type="function" name="valent_debug_init ()" link="valent-Utilities.html#valent-debug-init"/>
+    <keyword type="function" name="valent_debug_clear ()" link="valent-Utilities.html#valent-debug-clear"/>
+    <keyword type="function" name="valent_get_engine ()" link="valent-Utilities.html#valent-get-engine"/>
+    <keyword type="function" name="valent_get_host_path ()" link="valent-Utilities.html#valent-get-host-path"/>
+    <keyword type="function" name="valent_get_main_thread ()" link="valent-Utilities.html#valent-get-main-thread"/>
+    <keyword type="function" name="valent_in_flatpak ()" link="valent-Utilities.html#valent-in-flatpak"/>
+    <keyword type="function" name="valent_load_plugins ()" link="valent-Utilities.html#valent-load-plugins"/>
+    <keyword type="function" name="valent_timestamp_ms ()" link="valent-Utilities.html#valent-timestamp-ms"/>
+    <keyword type="function" name="valent_menu_find_item ()" link="valent-Utilities.html#valent-menu-find-item"/>
+    <keyword type="function" name="valent_menu_remove_item ()" link="valent-Utilities.html#valent-menu-remove-item"/>
+    <keyword type="function" name="valent_menu_replace_item ()" link="valent-Utilities.html#valent-menu-replace-item"/>
+    <keyword type="function" name="valent_notification_set_device_action ()" link="valent-Utilities.html#valent-notification-set-device-action"/>
+    <keyword type="function" name="valent_notification_add_device_button ()" link="valent-Utilities.html#valent-notification-add-device-button"/>
+    <keyword type="function" name="valent_clipboard_get_text_async ()" link="ValentClipboard.html#valent-clipboard-get-text-async"/>
+    <keyword type="function" name="valent_clipboard_get_text_finish ()" link="ValentClipboard.html#valent-clipboard-get-text-finish"/>
+    <keyword type="function" name="valent_clipboard_set_text ()" link="ValentClipboard.html#valent-clipboard-set-text"/>
+    <keyword type="function" name="valent_clipboard_get_default ()" link="ValentClipboard.html#valent-clipboard-get-default"/>
+    <keyword type="macro" name="VALENT_TYPE_CLIPBOARD" link="ValentClipboard.html#VALENT-TYPE-CLIPBOARD:CAPS"/>
+    <keyword type="struct" name="ValentClipboard" link="ValentClipboard.html#ValentClipboard-struct"/>
+    <keyword type="signal" name="The “changed” signal" link="ValentClipboard.html#ValentClipboard-changed"/>
+    <keyword type="function" name="valent_clipboard_source_emit_changed ()" link="ValentClipboardSource.html#valent-clipboard-source-emit-changed"/>
+    <keyword type="function" name="valent_clipboard_source_get_text_async ()" link="ValentClipboardSource.html#valent-clipboard-source-get-text-async"/>
+    <keyword type="function" name="valent_clipboard_source_get_text_finish ()" link="ValentClipboardSource.html#valent-clipboard-source-get-text-finish"/>
+    <keyword type="function" name="valent_clipboard_source_set_text ()" link="ValentClipboardSource.html#valent-clipboard-source-set-text"/>
+    <keyword type="macro" name="VALENT_TYPE_CLIPBOARD_SOURCE" link="ValentClipboardSource.html#VALENT-TYPE-CLIPBOARD-SOURCE:CAPS"/>
+    <keyword type="struct" name="struct ValentClipboardSourceClass" link="ValentClipboardSource.html#ValentClipboardSourceClass"/>
+    <keyword type="struct" name="ValentClipboardSource" link="ValentClipboardSource.html#ValentClipboardSource-struct"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentClipboardSource.html#ValentClipboardSource--plugin-info"/>
+    <keyword type="signal" name="The “changed” signal" link="ValentClipboardSource.html#ValentClipboardSource-changed"/>
+    <keyword type="function" name="valent_contacts_get_default ()" link="ValentContacts.html#valent-contacts-get-default"/>
+    <keyword type="function" name="valent_contacts_ensure_store ()" link="ValentContacts.html#valent-contacts-ensure-store"/>
+    <keyword type="function" name="valent_contacts_get_store ()" link="ValentContacts.html#valent-contacts-get-store"/>
+    <keyword type="function" name="valent_contacts_get_stores ()" link="ValentContacts.html#valent-contacts-get-stores"/>
+    <keyword type="enum" name="enum ValentPhoneNumberFlags" link="ValentContacts.html#ValentPhoneNumberFlags"/>
+    <keyword type="macro" name="VALENT_TYPE_CONTACTS" link="ValentContacts.html#VALENT-TYPE-CONTACTS:CAPS"/>
+    <keyword type="struct" name="ValentContacts" link="ValentContacts.html#ValentContacts-struct"/>
+    <keyword type="signal" name="The “store-added” signal" link="ValentContacts.html#ValentContacts-store-added"/>
+    <keyword type="signal" name="The “store-removed” signal" link="ValentContacts.html#ValentContacts-store-removed"/>
+    <keyword type="function" name="valent_contact_store_emit_contact_added ()" link="ValentContactStore.html#valent-contact-store-emit-contact-added"/>
+    <keyword type="function" name="valent_contact_store_emit_contact_removed ()" link="ValentContactStore.html#valent-contact-store-emit-contact-removed"/>
+    <keyword type="function" name="valent_contact_store_get_name ()" link="ValentContactStore.html#valent-contact-store-get-name"/>
+    <keyword type="function" name="valent_contact_store_set_name ()" link="ValentContactStore.html#valent-contact-store-set-name"/>
+    <keyword type="function" name="valent_contact_store_get_source ()" link="ValentContactStore.html#valent-contact-store-get-source"/>
+    <keyword type="function" name="valent_contact_store_get_uid ()" link="ValentContactStore.html#valent-contact-store-get-uid"/>
+    <keyword type="function" name="valent_contact_store_add ()" link="ValentContactStore.html#valent-contact-store-add"/>
+    <keyword type="function" name="valent_contact_store_add_async ()" link="ValentContactStore.html#valent-contact-store-add-async"/>
+    <keyword type="function" name="valent_contact_store_add_finish ()" link="ValentContactStore.html#valent-contact-store-add-finish"/>
+    <keyword type="function" name="valent_contact_store_remove ()" link="ValentContactStore.html#valent-contact-store-remove"/>
+    <keyword type="function" name="valent_contact_store_remove_async ()" link="ValentContactStore.html#valent-contact-store-remove-async"/>
+    <keyword type="function" name="valent_contact_store_remove_finish ()" link="ValentContactStore.html#valent-contact-store-remove-finish"/>
+    <keyword type="function" name="valent_contact_store_get_contact ()" link="ValentContactStore.html#valent-contact-store-get-contact"/>
+    <keyword type="function" name="valent_contact_store_get_contact_async ()" link="ValentContactStore.html#valent-contact-store-get-contact-async"/>
+    <keyword type="function" name="valent_contact_store_get_contact_finish ()" link="ValentContactStore.html#valent-contact-store-get-contact-finish"/>
+    <keyword type="function" name="valent_contact_store_get_contacts_async ()" link="ValentContactStore.html#valent-contact-store-get-contacts-async"/>
+    <keyword type="function" name="valent_contact_store_query ()" link="ValentContactStore.html#valent-contact-store-query"/>
+    <keyword type="function" name="valent_contact_store_query_async ()" link="ValentContactStore.html#valent-contact-store-query-async"/>
+    <keyword type="function" name="valent_contact_store_query_finish ()" link="ValentContactStore.html#valent-contact-store-query-finish"/>
+    <keyword type="function" name="valent_contact_store_dup_for_phone ()" link="ValentContactStore.html#valent-contact-store-dup-for-phone"/>
+    <keyword type="function" name="valent_contact_store_dup_for_phone_async ()" link="ValentContactStore.html#valent-contact-store-dup-for-phone-async"/>
+    <keyword type="function" name="valent_contact_store_dup_for_phone_finish ()" link="ValentContactStore.html#valent-contact-store-dup-for-phone-finish"/>
+    <keyword type="macro" name="VALENT_TYPE_CONTACT_STORE" link="ValentContactStore.html#VALENT-TYPE-CONTACT-STORE:CAPS"/>
+    <keyword type="struct" name="struct ValentContactStoreClass" link="ValentContactStore.html#ValentContactStoreClass"/>
+    <keyword type="struct" name="ValentContactStore" link="ValentContactStore.html#ValentContactStore-struct"/>
+    <keyword type="property" name="The “name” property" link="ValentContactStore.html#ValentContactStore--name"/>
+    <keyword type="property" name="The “source” property" link="ValentContactStore.html#ValentContactStore--source"/>
+    <keyword type="property" name="The “uid” property" link="ValentContactStore.html#ValentContactStore--uid"/>
+    <keyword type="signal" name="The “contact-added” signal" link="ValentContactStore.html#ValentContactStore-contact-added"/>
+    <keyword type="signal" name="The “contact-removed” signal" link="ValentContactStore.html#ValentContactStore-contact-removed"/>
+    <keyword type="function" name="valent_contact_store_provider_emit_store_added ()" link="ValentContactStoreProvider.html#valent-contact-store-provider-emit-store-added"/>
+    <keyword type="function" name="valent_contact_store_provider_emit_store_removed ()" link="ValentContactStoreProvider.html#valent-contact-store-provider-emit-store-removed"/>
+    <keyword type="function" name="valent_contact_store_provider_get_stores ()" link="ValentContactStoreProvider.html#valent-contact-store-provider-get-stores"/>
+    <keyword type="function" name="valent_contact_store_provider_load_async ()" link="ValentContactStoreProvider.html#valent-contact-store-provider-load-async"/>
+    <keyword type="function" name="valent_contact_store_provider_load_finish ()" link="ValentContactStoreProvider.html#valent-contact-store-provider-load-finish"/>
+    <keyword type="macro" name="VALENT_TYPE_CONTACT_STORE_PROVIDER" link="ValentContactStoreProvider.html#VALENT-TYPE-CONTACT-STORE-PROVIDER:CAPS"/>
+    <keyword type="struct" name="struct ValentContactStoreProviderClass" link="ValentContactStoreProvider.html#ValentContactStoreProviderClass"/>
+    <keyword type="struct" name="ValentContactStoreProvider" link="ValentContactStoreProvider.html#ValentContactStoreProvider-struct"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentContactStoreProvider.html#ValentContactStoreProvider--plugin-info"/>
+    <keyword type="signal" name="The “store-added” signal" link="ValentContactStoreProvider.html#ValentContactStoreProvider-store-added"/>
+    <keyword type="signal" name="The “store-removed” signal" link="ValentContactStoreProvider.html#ValentContactStoreProvider-store-removed"/>
+    <keyword type="function" name="valent_contacts_create_ebook_source ()" link="valent-Contact-Utilities.html#valent-contacts-create-ebook-source"/>
+    <keyword type="function" name="valent_phone_number_equal ()" link="valent-Contact-Utilities.html#valent-phone-number-equal"/>
+    <keyword type="function" name="valent_phone_number_normalize ()" link="valent-Contact-Utilities.html#valent-phone-number-normalize"/>
+    <keyword type="function" name="valent_phone_number_of_contact ()" link="valent-Contact-Utilities.html#valent-phone-number-of-contact"/>
+    <keyword type="function" name="valent_input_get_default ()" link="ValentInput.html#valent-input-get-default"/>
+    <keyword type="function" name="valent_input_keyboard_action ()" link="ValentInput.html#valent-input-keyboard-action"/>
+    <keyword type="function" name="valent_input_keyboard_keysym ()" link="ValentInput.html#valent-input-keyboard-keysym"/>
+    <keyword type="function" name="valent_input_keyboard_mask ()" link="ValentInput.html#valent-input-keyboard-mask"/>
+    <keyword type="function" name="valent_input_pointer_axis ()" link="ValentInput.html#valent-input-pointer-axis"/>
+    <keyword type="function" name="valent_input_pointer_button ()" link="ValentInput.html#valent-input-pointer-button"/>
+    <keyword type="function" name="valent_input_pointer_click ()" link="ValentInput.html#valent-input-pointer-click"/>
+    <keyword type="function" name="valent_input_pointer_motion ()" link="ValentInput.html#valent-input-pointer-motion"/>
+    <keyword type="function" name="valent_input_pointer_position ()" link="ValentInput.html#valent-input-pointer-position"/>
+    <keyword type="macro" name="VALENT_TYPE_INPUT" link="ValentInput.html#VALENT-TYPE-INPUT:CAPS"/>
+    <keyword type="struct" name="ValentInput" link="ValentInput.html#ValentInput-struct"/>
+    <keyword type="function" name="valent_input_controller_keyboard_keysym ()" link="ValentInputController.html#valent-input-controller-keyboard-keysym"/>
+    <keyword type="function" name="valent_input_controller_pointer_axis ()" link="ValentInputController.html#valent-input-controller-pointer-axis"/>
+    <keyword type="function" name="valent_input_controller_pointer_button ()" link="ValentInputController.html#valent-input-controller-pointer-button"/>
+    <keyword type="function" name="valent_input_controller_pointer_motion ()" link="ValentInputController.html#valent-input-controller-pointer-motion"/>
+    <keyword type="function" name="valent_input_controller_pointer_position ()" link="ValentInputController.html#valent-input-controller-pointer-position"/>
+    <keyword type="macro" name="VALENT_TYPE_INPUT_CONTROLLER" link="ValentInputController.html#VALENT-TYPE-INPUT-CONTROLLER:CAPS"/>
+    <keyword type="struct" name="struct ValentInputControllerInterface" link="ValentInputController.html#ValentInputControllerInterface"/>
+    <keyword type="struct" name="ValentInputController" link="ValentInputController.html#ValentInputController-struct"/>
+    <keyword type="function" name="valent_media_get_players ()" link="ValentMedia.html#valent-media-get-players"/>
+    <keyword type="function" name="valent_media_get_player_by_name ()" link="ValentMedia.html#valent-media-get-player-by-name"/>
+    <keyword type="function" name="valent_media_pause ()" link="ValentMedia.html#valent-media-pause"/>
+    <keyword type="function" name="valent_media_unpause ()" link="ValentMedia.html#valent-media-unpause"/>
+    <keyword type="function" name="valent_media_get_default ()" link="ValentMedia.html#valent-media-get-default"/>
+    <keyword type="macro" name="VALENT_TYPE_MEDIA" link="ValentMedia.html#VALENT-TYPE-MEDIA:CAPS"/>
+    <keyword type="struct" name="ValentMedia" link="ValentMedia.html#ValentMedia-struct"/>
+    <keyword type="signal" name="The “player-added” signal" link="ValentMedia.html#ValentMedia-player-added"/>
+    <keyword type="signal" name="The “player-changed” signal" link="ValentMedia.html#ValentMedia-player-changed"/>
+    <keyword type="signal" name="The “player-removed” signal" link="ValentMedia.html#ValentMedia-player-removed"/>
+    <keyword type="signal" name="The “player-seeked” signal" link="ValentMedia.html#ValentMedia-player-seeked"/>
+    <keyword type="function" name="valent_media_player_emit_changed ()" link="ValentMediaPlayer.html#valent-media-player-emit-changed"/>
+    <keyword type="function" name="valent_media_player_emit_seeked ()" link="ValentMediaPlayer.html#valent-media-player-emit-seeked"/>
+    <keyword type="function" name="valent_media_player_is_playing ()" link="ValentMediaPlayer.html#valent-media-player-is-playing"/>
+    <keyword type="function" name="valent_media_player_get_flags ()" link="ValentMediaPlayer.html#valent-media-player-get-flags"/>
+    <keyword type="function" name="valent_media_player_get_metadata ()" link="ValentMediaPlayer.html#valent-media-player-get-metadata"/>
+    <keyword type="function" name="valent_media_player_get_name ()" link="ValentMediaPlayer.html#valent-media-player-get-name"/>
+    <keyword type="function" name="valent_media_player_get_position ()" link="ValentMediaPlayer.html#valent-media-player-get-position"/>
+    <keyword type="function" name="valent_media_player_set_position ()" link="ValentMediaPlayer.html#valent-media-player-set-position"/>
+    <keyword type="function" name="valent_media_player_get_state ()" link="ValentMediaPlayer.html#valent-media-player-get-state"/>
+    <keyword type="function" name="valent_media_player_set_state ()" link="ValentMediaPlayer.html#valent-media-player-set-state"/>
+    <keyword type="function" name="valent_media_player_get_volume ()" link="ValentMediaPlayer.html#valent-media-player-get-volume"/>
+    <keyword type="function" name="valent_media_player_set_volume ()" link="ValentMediaPlayer.html#valent-media-player-set-volume"/>
+    <keyword type="function" name="valent_media_player_next ()" link="ValentMediaPlayer.html#valent-media-player-next"/>
+    <keyword type="function" name="valent_media_player_open_uri ()" link="ValentMediaPlayer.html#valent-media-player-open-uri"/>
+    <keyword type="function" name="valent_media_player_pause ()" link="ValentMediaPlayer.html#valent-media-player-pause"/>
+    <keyword type="function" name="valent_media_player_play ()" link="ValentMediaPlayer.html#valent-media-player-play"/>
+    <keyword type="function" name="valent_media_player_play_pause ()" link="ValentMediaPlayer.html#valent-media-player-play-pause"/>
+    <keyword type="function" name="valent_media_player_previous ()" link="ValentMediaPlayer.html#valent-media-player-previous"/>
+    <keyword type="function" name="valent_media_player_seek ()" link="ValentMediaPlayer.html#valent-media-player-seek"/>
+    <keyword type="function" name="valent_media_player_stop ()" link="ValentMediaPlayer.html#valent-media-player-stop"/>
+    <keyword type="enum" name="enum ValentMediaActions" link="ValentMediaPlayer.html#ValentMediaActions"/>
+    <keyword type="enum" name="enum ValentMediaState" link="ValentMediaPlayer.html#ValentMediaState"/>
+    <keyword type="macro" name="VALENT_TYPE_MEDIA_PLAYER" link="ValentMediaPlayer.html#VALENT-TYPE-MEDIA-PLAYER:CAPS"/>
+    <keyword type="struct" name="struct ValentMediaPlayerClass" link="ValentMediaPlayer.html#ValentMediaPlayerClass"/>
+    <keyword type="struct" name="ValentMediaPlayer" link="ValentMediaPlayer.html#ValentMediaPlayer-struct"/>
+    <keyword type="property" name="The “flags” property" link="ValentMediaPlayer.html#ValentMediaPlayer--flags"/>
+    <keyword type="property" name="The “metadata” property" link="ValentMediaPlayer.html#ValentMediaPlayer--metadata"/>
+    <keyword type="property" name="The “name” property" link="ValentMediaPlayer.html#ValentMediaPlayer--name"/>
+    <keyword type="property" name="The “position” property" link="ValentMediaPlayer.html#ValentMediaPlayer--position"/>
+    <keyword type="property" name="The “state” property" link="ValentMediaPlayer.html#ValentMediaPlayer--state"/>
+    <keyword type="property" name="The “volume” property" link="ValentMediaPlayer.html#ValentMediaPlayer--volume"/>
+    <keyword type="signal" name="The “changed” signal" link="ValentMediaPlayer.html#ValentMediaPlayer-changed"/>
+    <keyword type="signal" name="The “seeked” signal" link="ValentMediaPlayer.html#ValentMediaPlayer-seeked"/>
+    <keyword type="function" name="valent_media_player_provider_emit_player_added ()" link="ValentMediaPlayerProvider.html#valent-media-player-provider-emit-player-added"/>
+    <keyword type="function" name="valent_media_player_provider_emit_player_removed ()" link="ValentMediaPlayerProvider.html#valent-media-player-provider-emit-player-removed"/>
+    <keyword type="function" name="valent_media_player_provider_get_players ()" link="ValentMediaPlayerProvider.html#valent-media-player-provider-get-players"/>
+    <keyword type="function" name="valent_media_player_provider_load_async ()" link="ValentMediaPlayerProvider.html#valent-media-player-provider-load-async"/>
+    <keyword type="function" name="valent_media_player_provider_load_finish ()" link="ValentMediaPlayerProvider.html#valent-media-player-provider-load-finish"/>
+    <keyword type="macro" name="VALENT_TYPE_MEDIA_PLAYER_PROVIDER" link="ValentMediaPlayerProvider.html#VALENT-TYPE-MEDIA-PLAYER-PROVIDER:CAPS"/>
+    <keyword type="struct" name="struct ValentMediaPlayerProviderClass" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProviderClass"/>
+    <keyword type="struct" name="ValentMediaPlayerProvider" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProvider-struct"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProvider--plugin-info"/>
+    <keyword type="signal" name="The “player-added” signal" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProvider-player-added"/>
+    <keyword type="signal" name="The “player-removed” signal" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProvider-player-removed"/>
+    <keyword type="function" name="valent_mixer_get_default ()" link="ValentMixer.html#valent-mixer-get-default"/>
+    <keyword type="function" name="valent_mixer_get_default_output ()" link="ValentMixer.html#valent-mixer-get-default-output"/>
+    <keyword type="function" name="valent_mixer_get_default_input ()" link="ValentMixer.html#valent-mixer-get-default-input"/>
+    <keyword type="function" name="valent_mixer_get_inputs ()" link="ValentMixer.html#valent-mixer-get-inputs"/>
+    <keyword type="function" name="valent_mixer_get_outputs ()" link="ValentMixer.html#valent-mixer-get-outputs"/>
+    <keyword type="macro" name="VALENT_TYPE_MIXER" link="ValentMixer.html#VALENT-TYPE-MIXER:CAPS"/>
+    <keyword type="struct" name="ValentMixer" link="ValentMixer.html#ValentMixer-struct"/>
+    <keyword type="signal" name="The “stream-added” signal" link="ValentMixer.html#ValentMixer-stream-added"/>
+    <keyword type="signal" name="The “stream-changed” signal" link="ValentMixer.html#ValentMixer-stream-changed"/>
+    <keyword type="signal" name="The “stream-removed” signal" link="ValentMixer.html#ValentMixer-stream-removed"/>
+    <keyword type="function" name="valent_mixer_stream_input_quark ()" link="ValentMixerControl.html#valent-mixer-stream-input-quark"/>
+    <keyword type="function" name="valent_mixer_stream_output_quark ()" link="ValentMixerControl.html#valent-mixer-stream-output-quark"/>
+    <keyword type="function" name="valent_mixer_control_emit_stream_added ()" link="ValentMixerControl.html#valent-mixer-control-emit-stream-added"/>
+    <keyword type="function" name="valent_mixer_control_emit_stream_changed ()" link="ValentMixerControl.html#valent-mixer-control-emit-stream-changed"/>
+    <keyword type="function" name="valent_mixer_control_emit_stream_removed ()" link="ValentMixerControl.html#valent-mixer-control-emit-stream-removed"/>
+    <keyword type="function" name="valent_mixer_control_get_default_input ()" link="ValentMixerControl.html#valent-mixer-control-get-default-input"/>
+    <keyword type="function" name="valent_mixer_control_get_default_output ()" link="ValentMixerControl.html#valent-mixer-control-get-default-output"/>
+    <keyword type="function" name="valent_mixer_control_get_inputs ()" link="ValentMixerControl.html#valent-mixer-control-get-inputs"/>
+    <keyword type="function" name="valent_mixer_control_get_outputs ()" link="ValentMixerControl.html#valent-mixer-control-get-outputs"/>
+    <keyword type="macro" name="VALENT_TYPE_MIXER_CONTROL" link="ValentMixerControl.html#VALENT-TYPE-MIXER-CONTROL:CAPS"/>
+    <keyword type="struct" name="struct ValentMixerControlClass" link="ValentMixerControl.html#ValentMixerControlClass"/>
+    <keyword type="struct" name="ValentMixerControl" link="ValentMixerControl.html#ValentMixerControl-struct"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentMixerControl.html#ValentMixerControl--plugin-info"/>
+    <keyword type="signal" name="The “stream-added” signal" link="ValentMixerControl.html#ValentMixerControl-stream-added"/>
+    <keyword type="signal" name="The “stream-changed” signal" link="ValentMixerControl.html#ValentMixerControl-stream-changed"/>
+    <keyword type="signal" name="The “stream-removed” signal" link="ValentMixerControl.html#ValentMixerControl-stream-removed"/>
+    <keyword type="function" name="valent_mixer_stream_get_name ()" link="ValentMixerStream.html#valent-mixer-stream-get-name"/>
+    <keyword type="function" name="valent_mixer_stream_get_description ()" link="ValentMixerStream.html#valent-mixer-stream-get-description"/>
+    <keyword type="function" name="valent_mixer_stream_get_flags ()" link="ValentMixerStream.html#valent-mixer-stream-get-flags"/>
+    <keyword type="function" name="valent_mixer_stream_get_level ()" link="ValentMixerStream.html#valent-mixer-stream-get-level"/>
+    <keyword type="function" name="valent_mixer_stream_set_level ()" link="ValentMixerStream.html#valent-mixer-stream-set-level"/>
+    <keyword type="function" name="valent_mixer_stream_get_muted ()" link="ValentMixerStream.html#valent-mixer-stream-get-muted"/>
+    <keyword type="function" name="valent_mixer_stream_set_muted ()" link="ValentMixerStream.html#valent-mixer-stream-set-muted"/>
+    <keyword type="enum" name="enum ValentMixerStreamFlags" link="ValentMixerStream.html#ValentMixerStreamFlags"/>
+    <keyword type="macro" name="VALENT_TYPE_MIXER_STREAM" link="ValentMixerStream.html#VALENT-TYPE-MIXER-STREAM:CAPS"/>
+    <keyword type="struct" name="struct ValentMixerStreamClass" link="ValentMixerStream.html#ValentMixerStreamClass"/>
+    <keyword type="struct" name="ValentMixerStream" link="ValentMixerStream.html#ValentMixerStream-struct"/>
+    <keyword type="property" name="The “description” property" link="ValentMixerStream.html#ValentMixerStream--description"/>
+    <keyword type="property" name="The “flags” property" link="ValentMixerStream.html#ValentMixerStream--flags"/>
+    <keyword type="property" name="The “level” property" link="ValentMixerStream.html#ValentMixerStream--level"/>
+    <keyword type="property" name="The “muted” property" link="ValentMixerStream.html#ValentMixerStream--muted"/>
+    <keyword type="property" name="The “name” property" link="ValentMixerStream.html#ValentMixerStream--name"/>
+    <keyword type="function" name="valent_notifications_get_default ()" link="ValentNotifications.html#valent-notifications-get-default"/>
+    <keyword type="function" name="valent_notifications_get_applications ()" link="ValentNotifications.html#valent-notifications-get-applications"/>
+    <keyword type="macro" name="VALENT_TYPE_NOTIFICATIONS" link="ValentNotifications.html#VALENT-TYPE-NOTIFICATIONS:CAPS"/>
+    <keyword type="struct" name="ValentNotifications" link="ValentNotifications.html#ValentNotifications-struct"/>
+    <keyword type="signal" name="The “notification-added” signal" link="ValentNotifications.html#ValentNotifications-notification-added"/>
+    <keyword type="signal" name="The “notification-removed” signal" link="ValentNotifications.html#ValentNotifications-notification-removed"/>
+    <keyword type="function" name="valent_notification_get_application ()" link="ValentNotification.html#valent-notification-get-application"/>
+    <keyword type="function" name="valent_notification_set_application ()" link="ValentNotification.html#valent-notification-set-application"/>
+    <keyword type="function" name="valent_notification_get_body ()" link="ValentNotification.html#valent-notification-get-body"/>
+    <keyword type="function" name="valent_notification_set_body ()" link="ValentNotification.html#valent-notification-set-body"/>
+    <keyword type="function" name="valent_notification_get_icon ()" link="ValentNotification.html#valent-notification-get-icon"/>
+    <keyword type="function" name="valent_notification_set_icon ()" link="ValentNotification.html#valent-notification-set-icon"/>
+    <keyword type="function" name="valent_notification_set_icon_from_string ()" link="ValentNotification.html#valent-notification-set-icon-from-string"/>
+    <keyword type="function" name="valent_notification_get_id ()" link="ValentNotification.html#valent-notification-get-id"/>
+    <keyword type="function" name="valent_notification_set_id ()" link="ValentNotification.html#valent-notification-set-id"/>
+    <keyword type="function" name="valent_notification_get_priority ()" link="ValentNotification.html#valent-notification-get-priority"/>
+    <keyword type="function" name="valent_notification_set_priority ()" link="ValentNotification.html#valent-notification-set-priority"/>
+    <keyword type="function" name="valent_notification_get_time ()" link="ValentNotification.html#valent-notification-get-time"/>
+    <keyword type="function" name="valent_notification_set_time ()" link="ValentNotification.html#valent-notification-set-time"/>
+    <keyword type="function" name="valent_notification_get_title ()" link="ValentNotification.html#valent-notification-get-title"/>
+    <keyword type="function" name="valent_notification_set_title ()" link="ValentNotification.html#valent-notification-set-title"/>
+    <keyword type="function" name="valent_notification_set_action ()" link="ValentNotification.html#valent-notification-set-action"/>
+    <keyword type="function" name="valent_notification_set_action_and_target ()" link="ValentNotification.html#valent-notification-set-action-and-target"/>
+    <keyword type="function" name="valent_notification_add_button ()" link="ValentNotification.html#valent-notification-add-button"/>
+    <keyword type="function" name="valent_notification_add_button_with_target ()" link="ValentNotification.html#valent-notification-add-button-with-target"/>
+    <keyword type="function" name="valent_notification_new ()" link="ValentNotification.html#valent-notification-new"/>
+    <keyword type="function" name="valent_notification_serialize ()" link="ValentNotification.html#valent-notification-serialize"/>
+    <keyword type="function" name="valent_notification_deserialize ()" link="ValentNotification.html#valent-notification-deserialize"/>
+    <keyword type="macro" name="VALENT_TYPE_NOTIFICATION" link="ValentNotification.html#VALENT-TYPE-NOTIFICATION:CAPS"/>
+    <keyword type="struct" name="ValentNotification" link="ValentNotification.html#ValentNotification-struct"/>
+    <keyword type="property" name="The “action” property" link="ValentNotification.html#ValentNotification--action"/>
+    <keyword type="property" name="The “application” property" link="ValentNotification.html#ValentNotification--application"/>
+    <keyword type="property" name="The “body” property" link="ValentNotification.html#ValentNotification--body"/>
+    <keyword type="property" name="The “icon” property" link="ValentNotification.html#ValentNotification--icon"/>
+    <keyword type="property" name="The “icon-name” property" link="ValentNotification.html#ValentNotification--icon-name"/>
+    <keyword type="property" name="The “id” property" link="ValentNotification.html#ValentNotification--id"/>
+    <keyword type="property" name="The “priority” property" link="ValentNotification.html#ValentNotification--priority"/>
+    <keyword type="property" name="The “time” property" link="ValentNotification.html#ValentNotification--time"/>
+    <keyword type="property" name="The “title” property" link="ValentNotification.html#ValentNotification--title"/>
+    <keyword type="function" name="valent_notification_source_emit_notification_added ()" link="ValentNotificationSource.html#valent-notification-source-emit-notification-added"/>
+    <keyword type="function" name="valent_notification_source_emit_notification_removed ()" link="ValentNotificationSource.html#valent-notification-source-emit-notification-removed"/>
+    <keyword type="function" name="valent_notification_source_add_notification ()" link="ValentNotificationSource.html#valent-notification-source-add-notification"/>
+    <keyword type="function" name="valent_notification_source_remove_notification ()" link="ValentNotificationSource.html#valent-notification-source-remove-notification"/>
+    <keyword type="function" name="valent_notification_source_load_async ()" link="ValentNotificationSource.html#valent-notification-source-load-async"/>
+    <keyword type="function" name="valent_notification_source_load_finish ()" link="ValentNotificationSource.html#valent-notification-source-load-finish"/>
+    <keyword type="macro" name="VALENT_TYPE_NOTIFICATION_SOURCE" link="ValentNotificationSource.html#VALENT-TYPE-NOTIFICATION-SOURCE:CAPS"/>
+    <keyword type="struct" name="struct ValentNotificationSourceClass" link="ValentNotificationSource.html#ValentNotificationSourceClass"/>
+    <keyword type="struct" name="ValentNotificationSource" link="ValentNotificationSource.html#ValentNotificationSource-struct"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentNotificationSource.html#ValentNotificationSource--plugin-info"/>
+    <keyword type="signal" name="The “notification-added” signal" link="ValentNotificationSource.html#ValentNotificationSource-notification-added"/>
+    <keyword type="signal" name="The “notification-removed” signal" link="ValentNotificationSource.html#ValentNotificationSource-notification-removed"/>
+    <keyword type="function" name="valent_power_get_default ()" link="ValentPower.html#valent-power-get-default"/>
+    <keyword type="function" name="valent_power_get_battery_charging ()" link="ValentPower.html#valent-power-get-battery-charging"/>
+    <keyword type="function" name="valent_power_get_battery_level ()" link="ValentPower.html#valent-power-get-battery-level"/>
+    <keyword type="function" name="valent_power_get_battery_state ()" link="ValentPower.html#valent-power-get-battery-state"/>
+    <keyword type="function" name="valent_power_get_battery_warning ()" link="ValentPower.html#valent-power-get-battery-warning"/>
+    <keyword type="macro" name="VALENT_TYPE_POWER" link="ValentPower.html#VALENT-TYPE-POWER:CAPS"/>
+    <keyword type="struct" name="ValentPower" link="ValentPower.html#ValentPower-struct"/>
+    <keyword type="property" name="The “battery-charging” property" link="ValentPower.html#ValentPower--battery-charging"/>
+    <keyword type="property" name="The “battery-level” property" link="ValentPower.html#ValentPower--battery-level"/>
+    <keyword type="property" name="The “battery-state” property" link="ValentPower.html#ValentPower--battery-state"/>
+    <keyword type="property" name="The “battery-warning” property" link="ValentPower.html#ValentPower--battery-warning"/>
+    <keyword type="signal" name="The “changed” signal" link="ValentPower.html#ValentPower-changed"/>
+    <keyword type="function" name="valent_power_device_get_kind ()" link="ValentPowerDevice.html#valent-power-device-get-kind"/>
+    <keyword type="function" name="valent_power_device_get_level ()" link="ValentPowerDevice.html#valent-power-device-get-level"/>
+    <keyword type="function" name="valent_power_device_get_state ()" link="ValentPowerDevice.html#valent-power-device-get-state"/>
+    <keyword type="function" name="valent_power_device_get_warning ()" link="ValentPowerDevice.html#valent-power-device-get-warning"/>
+    <keyword type="enum" name="enum ValentPowerKind" link="ValentPowerDevice.html#ValentPowerKind"/>
+    <keyword type="enum" name="enum ValentPowerState" link="ValentPowerDevice.html#ValentPowerState"/>
+    <keyword type="enum" name="enum ValentPowerWarning" link="ValentPowerDevice.html#ValentPowerWarning"/>
+    <keyword type="macro" name="VALENT_TYPE_POWER_DEVICE" link="ValentPowerDevice.html#VALENT-TYPE-POWER-DEVICE:CAPS"/>
+    <keyword type="struct" name="struct ValentPowerDeviceClass" link="ValentPowerDevice.html#ValentPowerDeviceClass"/>
+    <keyword type="struct" name="ValentPowerDevice" link="ValentPowerDevice.html#ValentPowerDevice-struct"/>
+    <keyword type="property" name="The “kind” property" link="ValentPowerDevice.html#ValentPowerDevice--kind"/>
+    <keyword type="property" name="The “level” property" link="ValentPowerDevice.html#ValentPowerDevice--level"/>
+    <keyword type="property" name="The “state” property" link="ValentPowerDevice.html#ValentPowerDevice--state"/>
+    <keyword type="property" name="The “warning” property" link="ValentPowerDevice.html#ValentPowerDevice--warning"/>
+    <keyword type="function" name="valent_power_device_provider_emit_device_added ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-emit-device-added"/>
+    <keyword type="function" name="valent_power_device_provider_emit_device_removed ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-emit-device-removed"/>
+    <keyword type="function" name="valent_power_device_provider_get_devices ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-get-devices"/>
+    <keyword type="function" name="valent_power_device_provider_load_async ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-load-async"/>
+    <keyword type="function" name="valent_power_device_provider_load_finish ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-load-finish"/>
+    <keyword type="macro" name="VALENT_TYPE_POWER_DEVICE_PROVIDER" link="ValentPowerDeviceProvider.html#VALENT-TYPE-POWER-DEVICE-PROVIDER:CAPS"/>
+    <keyword type="struct" name="struct ValentPowerDeviceProviderClass" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass"/>
+    <keyword type="struct" name="ValentPowerDeviceProvider" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-struct"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider--plugin-info"/>
+    <keyword type="signal" name="The “device-added” signal" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-added"/>
+    <keyword type="signal" name="The “device-removed” signal" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-removed"/>
+    <keyword type="function" name="valent_session_get_active ()" link="ValentSession.html#valent-session-get-active"/>
+    <keyword type="function" name="valent_session_get_locked ()" link="ValentSession.html#valent-session-get-locked"/>
+    <keyword type="function" name="valent_session_set_locked ()" link="ValentSession.html#valent-session-set-locked"/>
+    <keyword type="function" name="valent_session_get_default ()" link="ValentSession.html#valent-session-get-default"/>
+    <keyword type="macro" name="VALENT_TYPE_SESSION" link="ValentSession.html#VALENT-TYPE-SESSION:CAPS"/>
+    <keyword type="struct" name="ValentSession" link="ValentSession.html#ValentSession-struct"/>
+    <keyword type="signal" name="The “changed” signal" link="ValentSession.html#ValentSession-changed"/>
+    <keyword type="function" name="valent_session_adapter_emit_changed ()" link="ValentSessionAdapter.html#valent-session-adapter-emit-changed"/>
+    <keyword type="function" name="valent_session_adapter_get_active ()" link="ValentSessionAdapter.html#valent-session-adapter-get-active"/>
+    <keyword type="function" name="valent_session_adapter_get_locked ()" link="ValentSessionAdapter.html#valent-session-adapter-get-locked"/>
+    <keyword type="function" name="valent_session_adapter_set_locked ()" link="ValentSessionAdapter.html#valent-session-adapter-set-locked"/>
+    <keyword type="macro" name="VALENT_TYPE_SESSION_ADAPTER" link="ValentSessionAdapter.html#VALENT-TYPE-SESSION-ADAPTER:CAPS"/>
+    <keyword type="struct" name="struct ValentSessionAdapterClass" link="ValentSessionAdapter.html#ValentSessionAdapterClass"/>
+    <keyword type="struct" name="ValentSessionAdapter" link="ValentSessionAdapter.html#ValentSessionAdapter-struct"/>
+    <keyword type="property" name="The “active” property" link="ValentSessionAdapter.html#ValentSessionAdapter--active"/>
+    <keyword type="property" name="The “locked” property" link="ValentSessionAdapter.html#ValentSessionAdapter--locked"/>
+    <keyword type="property" name="The “plugin-info” property" link="ValentSessionAdapter.html#ValentSessionAdapter--plugin-info"/>
+    <keyword type="signal" name="The “changed” signal" link="ValentSessionAdapter.html#ValentSessionAdapter-changed"/>
+    <keyword type="function" name="valent_panel_new ()" link="ValentPanel.html#valent-panel-new"/>
+    <keyword type="function" name="valent_panel_append ()" link="ValentPanel.html#valent-panel-append"/>
+    <keyword type="function" name="valent_panel_prepend ()" link="ValentPanel.html#valent-panel-prepend"/>
+    <keyword type="function" name="valent_panel_get_icon_name ()" link="ValentPanel.html#valent-panel-get-icon-name"/>
+    <keyword type="function" name="valent_panel_set_icon_name ()" link="ValentPanel.html#valent-panel-set-icon-name"/>
+    <keyword type="function" name="valent_panel_get_title ()" link="ValentPanel.html#valent-panel-get-title"/>
+    <keyword type="function" name="valent_panel_set_title ()" link="ValentPanel.html#valent-panel-set-title"/>
+    <keyword type="function" name="valent_panel_get_header ()" link="ValentPanel.html#valent-panel-get-header"/>
+    <keyword type="function" name="valent_panel_set_header ()" link="ValentPanel.html#valent-panel-set-header"/>
+    <keyword type="function" name="valent_panel_get_footer ()" link="ValentPanel.html#valent-panel-get-footer"/>
+    <keyword type="function" name="valent_panel_set_footer ()" link="ValentPanel.html#valent-panel-set-footer"/>
+    <keyword type="macro" name="VALENT_TYPE_PANEL" link="ValentPanel.html#VALENT-TYPE-PANEL:CAPS"/>
+    <keyword type="struct" name="struct ValentPanelClass" link="ValentPanel.html#ValentPanelClass"/>
+    <keyword type="struct" name="ValentPanel" link="ValentPanel.html#ValentPanel-struct"/>
+    <keyword type="property" name="The “icon-name” property" link="ValentPanel.html#ValentPanel--icon-name"/>
+    <keyword type="property" name="The “title” property" link="ValentPanel.html#ValentPanel--title"/>
+    <keyword type="macro" name="VALENT_TYPE_DEVICE_ACTIVITY" link="ValentDeviceActivity.html#VALENT-TYPE-DEVICE-ACTIVITY:CAPS"/>
+    <keyword type="struct" name="struct ValentDeviceActivityInterface" link="ValentDeviceActivity.html#ValentDeviceActivityInterface"/>
+    <keyword type="struct" name="ValentDeviceActivity" link="ValentDeviceActivity.html#ValentDeviceActivity-struct"/>
+    <keyword type="property" name="The “device” property" link="ValentDeviceActivity.html#ValentDeviceActivity--device"/>
+    <keyword type="macro" name="VALENT_TYPE_DEVICE_GADGET" link="ValentDeviceGadget.html#VALENT-TYPE-DEVICE-GADGET:CAPS"/>
+    <keyword type="struct" name="struct ValentDeviceGadgetInterface" link="ValentDeviceGadget.html#ValentDeviceGadgetInterface"/>
+    <keyword type="struct" name="ValentDeviceGadget" link="ValentDeviceGadget.html#ValentDeviceGadget-struct"/>
+    <keyword type="property" name="The “device” property" link="ValentDeviceGadget.html#ValentDeviceGadget--device"/>
+    <keyword type="function" name="valent_plugin_preferences_row_sort ()" link="ValentPluginPreferences.html#valent-plugin-preferences-row-sort"/>
+    <keyword type="macro" name="VALENT_TYPE_PLUGIN_PREFERENCES" link="ValentPluginPreferences.html#VALENT-TYPE-PLUGIN-PREFERENCES:CAPS"/>
+    <keyword type="struct" name="struct ValentPluginPreferencesInterface" link="ValentPluginPreferences.html#ValentPluginPreferencesInterface"/>
+    <keyword type="struct" name="ValentPluginPreferences" link="ValentPluginPreferences.html#ValentPluginPreferences-struct"/>
+    <keyword type="property" name="The “plugin-context” property" link="ValentPluginPreferences.html#ValentPluginPreferences--plugin-context"/>
+    <keyword type="constant" name="VALENT_DEVICE_STATE_NONE" link="ValentDevice.html#VALENT-DEVICE-STATE-NONE:CAPS"/>
+    <keyword type="constant" name="VALENT_DEVICE_STATE_CONNECTED" link="ValentDevice.html#VALENT-DEVICE-STATE-CONNECTED:CAPS"/>
+    <keyword type="constant" name="VALENT_DEVICE_STATE_PAIRED" link="ValentDevice.html#VALENT-DEVICE-STATE-PAIRED:CAPS"/>
+    <keyword type="constant" name="VALENT_DEVICE_STATE_PAIR_INCOMING" link="ValentDevice.html#VALENT-DEVICE-STATE-PAIR-INCOMING:CAPS"/>
+    <keyword type="constant" name="VALENT_DEVICE_STATE_PAIR_OUTGOING" link="ValentDevice.html#VALENT-DEVICE-STATE-PAIR-OUTGOING:CAPS"/>
+    <keyword type="constant" name="VALENT_TRANSFER_STATE_NONE" link="ValentTransfer.html#VALENT-TRANSFER-STATE-NONE:CAPS"/>
+    <keyword type="constant" name="VALENT_TRANSFER_STATE_ACTIVE" link="ValentTransfer.html#VALENT-TRANSFER-STATE-ACTIVE:CAPS"/>
+    <keyword type="constant" name="VALENT_TRANSFER_STATE_COMPLETE" link="ValentTransfer.html#VALENT-TRANSFER-STATE-COMPLETE:CAPS"/>
+    <keyword type="constant" name="VALENT_PACKET_ERROR_UNKNOWN" link="valent-Packet-Utilities.html#VALENT-PACKET-ERROR-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="VALENT_PACKET_ERROR_MALFORMED" link="valent-Packet-Utilities.html#VALENT-PACKET-ERROR-MALFORMED:CAPS"/>
+    <keyword type="constant" name="VALENT_PACKET_ERROR_INVALID_FIELD" link="valent-Packet-Utilities.html#VALENT-PACKET-ERROR-INVALID-FIELD:CAPS"/>
+    <keyword type="constant" name="VALENT_PACKET_ERROR_UNKNOWN_MEMBER" link="valent-Packet-Utilities.html#VALENT-PACKET-ERROR-UNKNOWN-MEMBER:CAPS"/>
+    <keyword type="constant" name="VALENT_PACKET_ERROR_INVALID_DATA" link="valent-Packet-Utilities.html#VALENT-PACKET-ERROR-INVALID-DATA:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_UNKNOWN" link="ValentContacts.html#VALENT-PHONE-NUMBER-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_BBS" link="ValentContacts.html#VALENT-PHONE-NUMBER-BBS:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_CAR" link="ValentContacts.html#VALENT-PHONE-NUMBER-CAR:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_CELL" link="ValentContacts.html#VALENT-PHONE-NUMBER-CELL:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_FAX" link="ValentContacts.html#VALENT-PHONE-NUMBER-FAX:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_HOME" link="ValentContacts.html#VALENT-PHONE-NUMBER-HOME:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_ISDN" link="ValentContacts.html#VALENT-PHONE-NUMBER-ISDN:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_MODEM" link="ValentContacts.html#VALENT-PHONE-NUMBER-MODEM:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_MSG" link="ValentContacts.html#VALENT-PHONE-NUMBER-MSG:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_PAGER" link="ValentContacts.html#VALENT-PHONE-NUMBER-PAGER:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_PCS" link="ValentContacts.html#VALENT-PHONE-NUMBER-PCS:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_PREF" link="ValentContacts.html#VALENT-PHONE-NUMBER-PREF:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_VIDEO" link="ValentContacts.html#VALENT-PHONE-NUMBER-VIDEO:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_VOICE" link="ValentContacts.html#VALENT-PHONE-NUMBER-VOICE:CAPS"/>
+    <keyword type="constant" name="VALENT_PHONE_NUMBER_WORK" link="ValentContacts.html#VALENT-PHONE-NUMBER-WORK:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_NONE" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-NONE:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_PLAY" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-PLAY:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_PAUSE" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-PAUSE:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_STOP" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-STOP:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_NEXT" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-NEXT:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_PREVIOUS" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-PREVIOUS:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_SEEK" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-SEEK:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_RESERVED1" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-RESERVED1:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_ACTION_RESERVED2" link="ValentMediaPlayer.html#VALENT-MEDIA-ACTION-RESERVED2:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_UNKNOWN" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_PLAYING" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-PLAYING:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_PAUSED" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-PAUSED:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_STOPPED" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-STOPPED:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_REPEAT" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-REPEAT:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_REPEAT_ALL" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-REPEAT-ALL:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_SHUFFLE" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-SHUFFLE:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_RESERVED1" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-RESERVED1:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_RESERVED2" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-RESERVED2:CAPS"/>
+    <keyword type="constant" name="VALENT_MEDIA_STATE_RESERVED3" link="ValentMediaPlayer.html#VALENT-MEDIA-STATE-RESERVED3:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_UNKNOWN" link="ValentMixerStream.html#VALENT-MIXER-STREAM-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_SINK" link="ValentMixerStream.html#VALENT-MIXER-STREAM-SINK:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_SOURCE" link="ValentMixerStream.html#VALENT-MIXER-STREAM-SOURCE:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_LOCAL" link="ValentMixerStream.html#VALENT-MIXER-STREAM-LOCAL:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_REMOTE" link="ValentMixerStream.html#VALENT-MIXER-STREAM-REMOTE:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_RESERVED1" link="ValentMixerStream.html#VALENT-MIXER-STREAM-RESERVED1:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_RESERVED2" link="ValentMixerStream.html#VALENT-MIXER-STREAM-RESERVED2:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_RESERVED3" link="ValentMixerStream.html#VALENT-MIXER-STREAM-RESERVED3:CAPS"/>
+    <keyword type="constant" name="VALENT_MIXER_STREAM_RESERVED4" link="ValentMixerStream.html#VALENT-MIXER-STREAM-RESERVED4:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_UNKNOWN" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_LINE_POWER" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-LINE-POWER:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_BATTERY" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-BATTERY:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_UPS" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-UPS:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_MONITOR" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-MONITOR:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_MOUSE" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-MOUSE:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_KEYBOARD" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-KEYBOARD:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_PDA" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-PDA:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_PHONE" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-PHONE:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_MEDIA_PLAYER" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-MEDIA-PLAYER:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_TABLET" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-TABLET:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_COMPUTER" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-COMPUTER:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_DEVICE_LAST" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-LAST:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_UNKNOWN" link="ValentPowerDevice.html#VALENT-POWER-STATE-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_CHARGING" link="ValentPowerDevice.html#VALENT-POWER-STATE-CHARGING:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_DISCHARGING" link="ValentPowerDevice.html#VALENT-POWER-STATE-DISCHARGING:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_ONLINE" link="ValentPowerDevice.html#VALENT-POWER-STATE-ONLINE:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_OFFLINE" link="ValentPowerDevice.html#VALENT-POWER-STATE-OFFLINE:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_RESERVED1" link="ValentPowerDevice.html#VALENT-POWER-STATE-RESERVED1:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_RESERVED2" link="ValentPowerDevice.html#VALENT-POWER-STATE-RESERVED2:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_STATE_RESERVED3" link="ValentPowerDevice.html#VALENT-POWER-STATE-RESERVED3:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_NONE" link="ValentPowerDevice.html#VALENT-POWER-WARNING-NONE:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_LOW" link="ValentPowerDevice.html#VALENT-POWER-WARNING-LOW:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_CRITICAL" link="ValentPowerDevice.html#VALENT-POWER-WARNING-CRITICAL:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED1" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED1:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED2" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED2:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED3" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED3:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED4" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED4:CAPS"/>
+    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED5" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED5:CAPS"/>
+    <keyword type="member" name="ValentChannelClass.get-verification-key" link="ValentChannel.html#ValentChannelClass.get-verification-key"/>
+    <keyword type="member" name="ValentChannelClass.download" link="ValentChannel.html#ValentChannelClass.download"/>
+    <keyword type="member" name="ValentChannelClass.upload" link="ValentChannel.html#ValentChannelClass.upload"/>
+    <keyword type="member" name="ValentChannelClass.store-data" link="ValentChannel.html#ValentChannelClass.store-data"/>
+    <keyword type="member" name="ValentChannelServiceClass.build-identity" link="ValentChannelService.html#ValentChannelServiceClass.build-identity"/>
+    <keyword type="member" name="ValentChannelServiceClass.identify" link="ValentChannelService.html#ValentChannelServiceClass.identify"/>
+    <keyword type="member" name="ValentChannelServiceClass.start" link="ValentChannelService.html#ValentChannelServiceClass.start"/>
+    <keyword type="member" name="ValentChannelServiceClass.stop" link="ValentChannelService.html#ValentChannelServiceClass.stop"/>
+    <keyword type="member" name="ValentChannelServiceClass.channel" link="ValentChannelService.html#ValentChannelServiceClass.channel"/>
+    <keyword type="member" name="ValentDevicePluginInterface.disable" link="ValentDevicePlugin.html#ValentDevicePluginInterface.disable"/>
+    <keyword type="member" name="ValentDevicePluginInterface.enable" link="ValentDevicePlugin.html#ValentDevicePluginInterface.enable"/>
+    <keyword type="member" name="ValentDevicePluginInterface.handle-packet" link="ValentDevicePlugin.html#ValentDevicePluginInterface.handle-packet"/>
+    <keyword type="member" name="ValentDevicePluginInterface.update-state" link="ValentDevicePlugin.html#ValentDevicePluginInterface.update-state"/>
+    <keyword type="member" name="ValentComponentClass.provider-added" link="ValentComponent.html#ValentComponentClass.provider-added"/>
+    <keyword type="member" name="ValentComponentClass.provider-removed" link="ValentComponent.html#ValentComponentClass.provider-removed"/>
+    <keyword type="member" name="ValentClipboardSourceClass.get-text-async" link="ValentClipboardSource.html#ValentClipboardSourceClass.get-text-async"/>
+    <keyword type="member" name="ValentClipboardSourceClass.get-text-finish" link="ValentClipboardSource.html#ValentClipboardSourceClass.get-text-finish"/>
+    <keyword type="member" name="ValentClipboardSourceClass.set-text" link="ValentClipboardSource.html#ValentClipboardSourceClass.set-text"/>
+    <keyword type="member" name="ValentClipboardSourceClass.changed" link="ValentClipboardSource.html#ValentClipboardSourceClass.changed"/>
+    <keyword type="member" name="ValentContactStoreClass.add" link="ValentContactStore.html#ValentContactStoreClass.add"/>
+    <keyword type="member" name="ValentContactStoreClass.add-async" link="ValentContactStore.html#ValentContactStoreClass.add-async"/>
+    <keyword type="member" name="ValentContactStoreClass.remove" link="ValentContactStore.html#ValentContactStoreClass.remove"/>
+    <keyword type="member" name="ValentContactStoreClass.remove-async" link="ValentContactStore.html#ValentContactStoreClass.remove-async"/>
+    <keyword type="member" name="ValentContactStoreClass.query" link="ValentContactStore.html#ValentContactStoreClass.query"/>
+    <keyword type="member" name="ValentContactStoreClass.query-async" link="ValentContactStore.html#ValentContactStoreClass.query-async"/>
+    <keyword type="member" name="ValentContactStoreClass.get-contact" link="ValentContactStore.html#ValentContactStoreClass.get-contact"/>
+    <keyword type="member" name="ValentContactStoreClass.get-contact-async" link="ValentContactStore.html#ValentContactStoreClass.get-contact-async"/>
+    <keyword type="member" name="ValentContactStoreClass.prepare-backend" link="ValentContactStore.html#ValentContactStoreClass.prepare-backend"/>
+    <keyword type="member" name="ValentContactStoreClass.contact-added" link="ValentContactStore.html#ValentContactStoreClass.contact-added"/>
+    <keyword type="member" name="ValentContactStoreClass.contact-removed" link="ValentContactStore.html#ValentContactStoreClass.contact-removed"/>
+    <keyword type="member" name="ValentContactStoreProviderClass.load-async" link="ValentContactStoreProvider.html#ValentContactStoreProviderClass.load-async"/>
+    <keyword type="member" name="ValentContactStoreProviderClass.load-finish" link="ValentContactStoreProvider.html#ValentContactStoreProviderClass.load-finish"/>
+    <keyword type="member" name="ValentContactStoreProviderClass.store-added" link="ValentContactStoreProvider.html#ValentContactStoreProviderClass.store-added"/>
+    <keyword type="member" name="ValentContactStoreProviderClass.store-removed" link="ValentContactStoreProvider.html#ValentContactStoreProviderClass.store-removed"/>
+    <keyword type="member" name="ValentInputControllerInterface.keyboard-keysym" link="ValentInputController.html#ValentInputControllerInterface.keyboard-keysym"/>
+    <keyword type="member" name="ValentInputControllerInterface.pointer-axis" link="ValentInputController.html#ValentInputControllerInterface.pointer-axis"/>
+    <keyword type="member" name="ValentInputControllerInterface.pointer-button" link="ValentInputController.html#ValentInputControllerInterface.pointer-button"/>
+    <keyword type="member" name="ValentInputControllerInterface.pointer-motion" link="ValentInputController.html#ValentInputControllerInterface.pointer-motion"/>
+    <keyword type="member" name="ValentInputControllerInterface.pointer-position" link="ValentInputController.html#ValentInputControllerInterface.pointer-position"/>
+    <keyword type="member" name="ValentMediaPlayerClass.next" link="ValentMediaPlayer.html#ValentMediaPlayerClass.next"/>
+    <keyword type="member" name="ValentMediaPlayerClass.open-uri" link="ValentMediaPlayer.html#ValentMediaPlayerClass.open-uri"/>
+    <keyword type="member" name="ValentMediaPlayerClass.pause" link="ValentMediaPlayer.html#ValentMediaPlayerClass.pause"/>
+    <keyword type="member" name="ValentMediaPlayerClass.play" link="ValentMediaPlayer.html#ValentMediaPlayerClass.play"/>
+    <keyword type="member" name="ValentMediaPlayerClass.play-pause" link="ValentMediaPlayer.html#ValentMediaPlayerClass.play-pause"/>
+    <keyword type="member" name="ValentMediaPlayerClass.previous" link="ValentMediaPlayer.html#ValentMediaPlayerClass.previous"/>
+    <keyword type="member" name="ValentMediaPlayerClass.seek" link="ValentMediaPlayer.html#ValentMediaPlayerClass.seek"/>
+    <keyword type="member" name="ValentMediaPlayerClass.stop" link="ValentMediaPlayer.html#ValentMediaPlayerClass.stop"/>
+    <keyword type="member" name="ValentMediaPlayerClass.get-flags" link="ValentMediaPlayer.html#ValentMediaPlayerClass.get-flags"/>
+    <keyword type="member" name="ValentMediaPlayerClass.get-metadata" link="ValentMediaPlayer.html#ValentMediaPlayerClass.get-metadata"/>
+    <keyword type="member" name="ValentMediaPlayerClass.get-name" link="ValentMediaPlayer.html#ValentMediaPlayerClass.get-name"/>
+    <keyword type="member" name="ValentMediaPlayerClass.get-position" link="ValentMediaPlayer.html#ValentMediaPlayerClass.get-position"/>
+    <keyword type="member" name="ValentMediaPlayerClass.set-position" link="ValentMediaPlayer.html#ValentMediaPlayerClass.set-position"/>
+    <keyword type="member" name="ValentMediaPlayerClass.get-state" link="ValentMediaPlayer.html#ValentMediaPlayerClass.get-state"/>
+    <keyword type="member" name="ValentMediaPlayerClass.set-state" link="ValentMediaPlayer.html#ValentMediaPlayerClass.set-state"/>
+    <keyword type="member" name="ValentMediaPlayerClass.get-volume" link="ValentMediaPlayer.html#ValentMediaPlayerClass.get-volume"/>
+    <keyword type="member" name="ValentMediaPlayerClass.set-volume" link="ValentMediaPlayer.html#ValentMediaPlayerClass.set-volume"/>
+    <keyword type="member" name="ValentMediaPlayerClass.changed" link="ValentMediaPlayer.html#ValentMediaPlayerClass.changed"/>
+    <keyword type="member" name="ValentMediaPlayerClass.seeked" link="ValentMediaPlayer.html#ValentMediaPlayerClass.seeked"/>
+    <keyword type="member" name="ValentMediaPlayerProviderClass.load-async" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProviderClass.load-async"/>
+    <keyword type="member" name="ValentMediaPlayerProviderClass.load-finish" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProviderClass.load-finish"/>
+    <keyword type="member" name="ValentMediaPlayerProviderClass.player-added" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProviderClass.player-added"/>
+    <keyword type="member" name="ValentMediaPlayerProviderClass.player-removed" link="ValentMediaPlayerProvider.html#ValentMediaPlayerProviderClass.player-removed"/>
+    <keyword type="member" name="ValentMixerControlClass.get-default-input" link="ValentMixerControl.html#ValentMixerControlClass.get-default-input"/>
+    <keyword type="member" name="ValentMixerControlClass.get-default-output" link="ValentMixerControl.html#ValentMixerControlClass.get-default-output"/>
+    <keyword type="member" name="ValentMixerControlClass.stream-added" link="ValentMixerControl.html#ValentMixerControlClass.stream-added"/>
+    <keyword type="member" name="ValentMixerControlClass.stream-changed" link="ValentMixerControl.html#ValentMixerControlClass.stream-changed"/>
+    <keyword type="member" name="ValentMixerControlClass.stream-removed" link="ValentMixerControl.html#ValentMixerControlClass.stream-removed"/>
+    <keyword type="member" name="ValentMixerStreamClass.get-name" link="ValentMixerStream.html#ValentMixerStreamClass.get-name"/>
+    <keyword type="member" name="ValentMixerStreamClass.get-description" link="ValentMixerStream.html#ValentMixerStreamClass.get-description"/>
+    <keyword type="member" name="ValentMixerStreamClass.get-level" link="ValentMixerStream.html#ValentMixerStreamClass.get-level"/>
+    <keyword type="member" name="ValentMixerStreamClass.set-level" link="ValentMixerStream.html#ValentMixerStreamClass.set-level"/>
+    <keyword type="member" name="ValentMixerStreamClass.get-muted" link="ValentMixerStream.html#ValentMixerStreamClass.get-muted"/>
+    <keyword type="member" name="ValentMixerStreamClass.set-muted" link="ValentMixerStream.html#ValentMixerStreamClass.set-muted"/>
+    <keyword type="member" name="ValentNotificationSourceClass.add-notification" link="ValentNotificationSource.html#ValentNotificationSourceClass.add-notification"/>
+    <keyword type="member" name="ValentNotificationSourceClass.remove-notification" link="ValentNotificationSource.html#ValentNotificationSourceClass.remove-notification"/>
+    <keyword type="member" name="ValentNotificationSourceClass.load-async" link="ValentNotificationSource.html#ValentNotificationSourceClass.load-async"/>
+    <keyword type="member" name="ValentNotificationSourceClass.load-finish" link="ValentNotificationSource.html#ValentNotificationSourceClass.load-finish"/>
+    <keyword type="member" name="ValentNotificationSourceClass.notification-added" link="ValentNotificationSource.html#ValentNotificationSourceClass.notification-added"/>
+    <keyword type="member" name="ValentNotificationSourceClass.notification-removed" link="ValentNotificationSource.html#ValentNotificationSourceClass.notification-removed"/>
+    <keyword type="member" name="ValentPowerDeviceClass.get-kind" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-kind"/>
+    <keyword type="member" name="ValentPowerDeviceClass.get-level" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-level"/>
+    <keyword type="member" name="ValentPowerDeviceClass.get-state" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-state"/>
+    <keyword type="member" name="ValentPowerDeviceClass.get-warning" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-warning"/>
+    <keyword type="member" name="ValentPowerDeviceProviderClass.load-async" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.load-async"/>
+    <keyword type="member" name="ValentPowerDeviceProviderClass.load-finish" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.load-finish"/>
+    <keyword type="member" name="ValentPowerDeviceProviderClass.device-added" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.device-added"/>
+    <keyword type="member" name="ValentPowerDeviceProviderClass.device-removed" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.device-removed"/>
+    <keyword type="member" name="ValentSessionAdapterClass.get-active" link="ValentSessionAdapter.html#ValentSessionAdapterClass.get-active"/>
+    <keyword type="member" name="ValentSessionAdapterClass.get-locked" link="ValentSessionAdapter.html#ValentSessionAdapterClass.get-locked"/>
+    <keyword type="member" name="ValentSessionAdapterClass.set-locked" link="ValentSessionAdapter.html#ValentSessionAdapterClass.set-locked"/>
+    <keyword type="member" name="ValentSessionAdapterClass.changed" link="ValentSessionAdapter.html#ValentSessionAdapterClass.changed"/>
+  </functions>
+</book>

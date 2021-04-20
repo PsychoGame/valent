@@ -1,0 +1,751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValentData: Valent Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Valent Reference Manual">
+<link rel="up" href="ch03.html" title="Miscellaneous">
+<link rel="prev" href="ValentComponent.html" title="ValentComponent">
+<link rel="next" href="valent-Certificate-Utilities.html" title="Certificate Utilities">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#ValentData.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#ValentData.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#ValentData.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ValentComponent.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="valent-Certificate-Utilities.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="ValentData"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="ValentData.top_of_page"></a>ValentData</span></h2>
+<p>ValentData — An object for handling contextual data</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="ValentData.stability-level"></a><h2>Stability Level</h2>
+<acronym title="Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+"><span class="acronym">Unstable</span></acronym>, unless otherwise indicated
+</div>
+<div class="refsect1">
+<a name="ValentData.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_proto_type">
+<col class="functions_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentData.html" title="ValentData"><span class="returnvalue">ValentData</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-new" title="valent_data_new ()">valent_data_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-get-cache-path" title="valent_data_get_cache_path ()">valent_data_get_cache_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-get-config-path" title="valent_data_get_config_path ()">valent_data_get_config_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-get-data-path" title="valent_data_get_data_path ()">valent_data_get_data_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-get-context" title="valent_data_get_context ()">valent_data_get_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="ValentData.html" title="ValentData"><span class="returnvalue">ValentData</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-get-parent" title="valent_data_get_parent ()">valent_data_get_parent</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-clear-cache" title="valent_data_clear_cache ()">valent_data_clear_cache</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-clear-data" title="valent_data_clear_data ()">valent_data_clear_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GFile</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-new-cache-file" title="valent_data_new_cache_file ()">valent_data_new_cache_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GFile</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-new-config-file" title="valent_data_new_config_file ()">valent_data_new_config_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GFile</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-new-data-file" title="valent_data_new_data_file ()">valent_data_new_data_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-get-directory" title="valent_data_get_directory ()">valent_data_get_directory</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GFile</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentData.html#valent-data-get-file" title="valent_data_get_file ()">valent_data_get_file</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentData.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table class="informaltable" border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentData.html#ValentData--cache-path" title="The “cache-path” property">cache-path</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentData.html#ValentData--config-path" title="The “config-path” property">config-path</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentData.html#ValentData--context" title="The “context” property">context</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">char</span> *</td>
+<td class="property_name"><a class="link" href="ValentData.html#ValentData--data-path" title="The “data-path” property">data-path</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *</td>
+<td class="property_name"><a class="link" href="ValentData.html#ValentData--parent" title="The “parent” property">parent</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentData.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ValentData.html#VALENT-TYPE-DATA:CAPS" title="VALENT_TYPE_DATA">VALENT_TYPE_DATA</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="ValentData.html#ValentDataClass" title="struct ValentDataClass">ValentDataClass</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="ValentData.html#ValentData-struct" title="ValentData">ValentData</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="ValentData.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> ValentData
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentData.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libvalent-core.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="ValentData.description"></a><h2>Description</h2>
+<p>The <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> class is intended to abstract storing and loading data for a
+given context, such as a device or plugin.</p>
+<p>There are conveniences for working with <span class="type">GFile</span>, getting and settings file
+contents and high-level <code class="literal">sqlite</code>.</p>
+</div>
+<div class="refsect1">
+<a name="ValentData.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="valent-data-new"></a><h3>valent_data_new ()</h3>
+<pre class="programlisting"><a class="link" href="ValentData.html" title="ValentData"><span class="returnvalue">ValentData</span></a> *
+valent_data_new (<em class="parameter"><code>const <span class="type">char</span> *context</code></em>,
+                 <em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *parent</code></em>);</pre>
+<p>Create a new <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> for <em class="parameter"><code>context</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-data-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a data context. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>parent</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-new.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-get-cache-path"></a><h3>valent_data_get_cache_path ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_data_get_cache_path (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>);</pre>
+<p>Get the cache directory of <em class="parameter"><code>data</code></em>
+ as a string.</p>
+<div class="refsect3">
+<a name="valent-data-get-cache-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-get-cache-path.returns"></a><h4>Returns</h4>
+<p>a path. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-get-config-path"></a><h3>valent_data_get_config_path ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_data_get_config_path (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>);</pre>
+<p>Get the config directory of <em class="parameter"><code>data</code></em>
+ as a string.</p>
+<div class="refsect3">
+<a name="valent-data-get-config-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-get-config-path.returns"></a><h4>Returns</h4>
+<p>a path. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-get-data-path"></a><h3>valent_data_get_data_path ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_data_get_data_path (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>);</pre>
+<p>Get the data directory of <em class="parameter"><code>data</code></em>
+ as a string.</p>
+<div class="refsect3">
+<a name="valent-data-get-data-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-get-data-path.returns"></a><h4>Returns</h4>
+<p>a path. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-get-context"></a><h3>valent_data_get_context ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_data_get_context (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>);</pre>
+<p>Get the context of <em class="parameter"><code>data</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-data-get-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-get-context.returns"></a><h4>Returns</h4>
+<p>the context. </p>
+<p><span class="annotation">[<acronym title="NULL must not be passed as the value in, out, in-out; or as a return value."><span class="acronym">not nullable</span></acronym>][<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-get-parent"></a><h3>valent_data_get_parent ()</h3>
+<pre class="programlisting"><a class="link" href="ValentData.html" title="ValentData"><span class="returnvalue">ValentData</span></a> *
+valent_data_get_parent (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>);</pre>
+<p>Get the parent <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> of <em class="parameter"><code>data</code></em>
+. If <code class="literal">NULL</code> is returned, then <em class="parameter"><code>data</code></em>
+ is
+equivalent to or a reference of the root <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> context for Valent.</p>
+<div class="refsect3">
+<a name="valent-data-get-parent.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-get-parent.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-clear-cache"></a><h3>valent_data_clear_cache ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_data_clear_cache (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>);</pre>
+<p>Delete all cache data for <em class="parameter"><code>data</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-data-clear-cache.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-clear-data"></a><h3>valent_data_clear_data ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+valent_data_clear_data (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>);</pre>
+<p>Delete all files in the cache, config and data directories for <em class="parameter"><code>data</code></em>
+. This is
+a no-op for the root <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> object, since it would wipe all data for all
+contexts.</p>
+<div class="refsect3">
+<a name="valent-data-clear-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-new-cache-file"></a><h3>valent_data_new_cache_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">GFile</span> *
+valent_data_new_cache_file (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *filename</code></em>);</pre>
+<p>Get a <span class="type">GFile</span> for <em class="parameter"><code>filename</code></em>
+ in the cache directory of <em class="parameter"><code>data</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-data-new-cache-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>a filename. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-new-cache-file.returns"></a><h4>Returns</h4>
+<p>a new <span class="type">GFile</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-new-config-file"></a><h3>valent_data_new_config_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">GFile</span> *
+valent_data_new_config_file (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>,
+                             <em class="parameter"><code>const <span class="type">char</span> *filename</code></em>);</pre>
+<p>Get a <span class="type">GFile</span> for <em class="parameter"><code>filename</code></em>
+ in the config directory of <em class="parameter"><code>data</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-data-new-config-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>a filename. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-new-config-file.returns"></a><h4>Returns</h4>
+<p>a new <span class="type">GFile</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-new-data-file"></a><h3>valent_data_new_data_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">GFile</span> *
+valent_data_new_data_file (<em class="parameter"><code><a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *data</code></em>,
+                           <em class="parameter"><code>const <span class="type">char</span> *filename</code></em>);</pre>
+<p>Get a <span class="type">GFile</span> for <em class="parameter"><code>filename</code></em>
+ in the data directory of <em class="parameter"><code>data</code></em>
+.</p>
+<div class="refsect3">
+<a name="valent-data-new-data-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filename</p></td>
+<td class="parameter_description"><p>a filename. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-new-data-file.returns"></a><h4>Returns</h4>
+<p>a new <span class="type">GFile</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-get-directory"></a><h3>valent_data_get_directory ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+valent_data_get_directory (<em class="parameter"><code><span class="type">GUserDirectory</span> directory</code></em>);</pre>
+<p>Return a <span class="type">GUserDirectory</span> file path for <em class="parameter"><code>directory</code></em>
+ that is guaranteed to be
+valid and existing.</p>
+<div class="refsect3">
+<a name="valent-data-get-directory.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>directory</p></td>
+<td class="parameter_description"><p>a <span class="type">GUserDirectory</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-get-directory.returns"></a><h4>Returns</h4>
+<p>a directory path. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-data-get-file"></a><h3>valent_data_get_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">GFile</span> *
+valent_data_get_file (<em class="parameter"><code>const <span class="type">char</span> *dirname</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *basename</code></em>,
+                      <em class="parameter"><code><span class="type">gboolean</span> unique</code></em>);</pre>
+<p>Create a new <span class="type">GFile</span> for <em class="parameter"><code>filename</code></em>
+ in <em class="parameter"><code>base_path</code></em>
+. If <em class="parameter"><code>unique</code></em>
+ is <code class="literal">TRUE</code>, the
+file will be guaranteed not to conflict with an existing file.</p>
+<div class="refsect3">
+<a name="valent-data-get-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>dirname</p></td>
+<td class="parameter_description"><p>a directory path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>basename</p></td>
+<td class="parameter_description"><p>a file name. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>unique</p></td>
+<td class="parameter_description"><p>whether the resulting filepath should be unique</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-data-get-file.returns"></a><h4>Returns</h4>
+<p>a <span class="type">GFile</span>. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentData.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="VALENT-TYPE-DATA:CAPS"></a><h3>VALENT_TYPE_DATA</h3>
+<pre class="programlisting">#define VALENT_TYPE_DATA (valent_data_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentDataClass"></a><h3>struct ValentDataClass</h3>
+<pre class="programlisting">struct ValentDataClass {
+  GObjectClass   parent_class;
+};
+</pre>
+<p>The virtual function table for <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>.</p>
+<div class="refsect3">
+<a name="ValentDataClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentData-struct"></a><h3>ValentData</h3>
+<pre class="programlisting">typedef struct _ValentData ValentData;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="ValentData.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="ValentData--cache-path"></a><h3>The <code class="literal">“cache-path”</code> property</h3>
+<pre class="programlisting">  “cache-path”               <span class="type">char</span> *</pre>
+<p>Path to the cache directory for this <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>.</p>
+<p>Owner: ValentData</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentData--config-path"></a><h3>The <code class="literal">“config-path”</code> property</h3>
+<pre class="programlisting">  “config-path”              <span class="type">char</span> *</pre>
+<p>Path to the config directory for this <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>.</p>
+<p>Owner: ValentData</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentData--context"></a><h3>The <code class="literal">“context”</code> property</h3>
+<pre class="programlisting">  “context”                  <span class="type">char</span> *</pre>
+<p>The "context" property is the specific context for this <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>.</p>
+<p>For example, the application will generally have no context (<code class="literal">NULL</code>),
+therefore using the root of <span class="type">“base-path”</span> , while devices or
+backends will generally store their data in subdirectories of these.</p>
+<p>Owner: ValentData</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentData--data-path"></a><h3>The <code class="literal">“data-path”</code> property</h3>
+<pre class="programlisting">  “data-path”                <span class="type">char</span> *</pre>
+<p>Path to the data directory for this <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a>.</p>
+<p>Owner: ValentData</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ValentData--parent"></a><h3>The <code class="literal">“parent”</code> property</h3>
+<pre class="programlisting">  “parent”                   <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> *</pre>
+<p>The "parent" <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> of this instance. If given during construction the
+ancestor <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> will be taken into consideration when using path and
+filenames.</p>
+<p>For example, a <a class="link" href="ValentManager.html" title="ValentManager"><span class="type">ValentManager</span></a>, with a <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> object, manages devices
+with <a class="link" href="ValentData.html" title="ValentData"><span class="type">ValentData</span></a> objects that are children of the manager's data object,
+and so on with plugins.</p>
+<p>Owner: ValentData</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>
