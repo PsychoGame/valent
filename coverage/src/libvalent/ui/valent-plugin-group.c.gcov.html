@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-20 04:07:27</td>
+            <td class="headerValue">2021-04-20 09:19:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -135,17 +135,17 @@
 <a name="55"><span class="lineNum">      55 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 150 times"> + </span>]:<span class="lineCov">        150 :   g_assert (info != NULL);</span></a>
 <a name="56"><span class="lineNum">      56 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 150 times"> + </span>]:<span class="lineCov">        150 :   g_assert (VALENT_IS_PLUGIN_GROUP (self));</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>        [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchCov" title="Branch 1 was taken 55 times"> + </span>]:<span class="lineCov">        150 :   if (!peas_engine_provides_extension (engine, info, self-&gt;plugin_type))</span></a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         95 :     return;</span></a>
+<a name="58"><span class="lineNum">      58 </span>        [<span class="branchCov" title="Branch 0 was taken 90 times"> + </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">        150 :   if (!peas_engine_provides_extension (engine, info, self-&gt;plugin_type))</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         90 :     return;</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            : </a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">         55 :   row = g_object_new (VALENT_TYPE_PLUGIN_ROW,</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">         60 :   row = g_object_new (VALENT_TYPE_PLUGIN_ROW,</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            :                       &quot;plugin-context&quot;, self-&gt;plugin_context,</a>
 <a name="63"><span class="lineNum">      63 </span>                :            :                       &quot;plugin-info&quot;,    info,</a>
 <a name="64"><span class="lineNum">      64 </span>                :            :                       &quot;plugin-type&quot;,    self-&gt;plugin_type,</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :                       NULL);</a>
 <a name="66"><span class="lineNum">      66 </span>                :            : </a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">         55 :   gtk_list_box_insert (self-&gt;plugin_list, row, -1);</span></a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         55 :   g_hash_table_insert (self-&gt;plugin_rows, info, row);</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">         60 :   gtk_list_box_insert (self-&gt;plugin_list, row, -1);</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         60 :   g_hash_table_insert (self-&gt;plugin_rows, info, row);</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : }</a>
 <a name="70"><span class="lineNum">      70 </span>                :            : </a>
 <a name="71"><span class="lineNum">      71 </span>                :            : static void</a>

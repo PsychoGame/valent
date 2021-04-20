@@ -31,18 +31,18 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntry">43</td>
             <td class="headerCovTableEntry">70</td>
-            <td class="headerCovTableEntryLo">32.9 %</td>
+            <td class="headerCovTableEntryLo">61.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-20 04:07:27</td>
+            <td class="headerValue">2021-04-20 09:19:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">10</td>
             <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntryLo">71.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">14</td>
             <td class="headerCovTableEntry">36</td>
-            <td class="headerCovTableEntryLo">25.0 %</td>
+            <td class="headerCovTableEntryLo">38.9 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -114,8 +114,8 @@
 <a name="36"><span class="lineNum">      36 </span>                :            :   ValentSessionAdapter *default_adapter;</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : };</a>
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
-<a name="39"><span class="lineNum">      39 </span>  [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 61 times"> + </span><span class="branchCov" title="Branch 2 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         83 : G_DEFINE_TYPE (ValentSession, valent_session, VALENT_TYPE_COMPONENT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 11 times"> + </span><span class="branchCov" title="Branch 5 was taken 50 times"> + </span>]
+<a name="39"><span class="lineNum">      39 </span>  [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 136 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        168 : G_DEFINE_TYPE (ValentSession, valent_session, VALENT_TYPE_COMPONENT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 16 times"> + </span><span class="branchCov" title="Branch 5 was taken 120 times"> + </span>]
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
 <a name="41"><span class="lineNum">      41 </span>                :            : enum {</a>
 <a name="42"><span class="lineNum">      42 </span>                :            :   CHANGED,</a>
@@ -128,46 +128,46 @@
 <a name="49"><span class="lineNum">      49 </span>                :            : </a>
 <a name="50"><span class="lineNum">      50 </span>                :            : </a>
 <a name="51"><span class="lineNum">      51 </span>                :            : static void</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineNoCov">          0 : on_session_adapter_changed (ValentSessionAdapter *adapter,</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         10 : on_session_adapter_changed (ValentSessionAdapter *adapter,</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            :                             ValentSession        *self)</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : {</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :   VALENT_ENTRY;</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : </a>
-<a name="57"><span class="lineNum">      57 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (self-&gt;default_adapter == adapter)</span></a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineNoCov">          0 :     g_signal_emit (G_OBJECT (self), signals [CHANGED], 0);</span></a>
+<a name="57"><span class="lineNum">      57 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   if (self-&gt;default_adapter == adapter)</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         10 :     g_signal_emit (G_OBJECT (self), signals [CHANGED], 0);</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineNoCov">          0 :   VALENT_EXIT;</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">         10 :   VALENT_EXIT;</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : }</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : </a>
 <a name="63"><span class="lineNum">      63 </span>                :            : /*</a>
 <a name="64"><span class="lineNum">      64 </span>                :            :  * ValentComponent</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :  */</a>
 <a name="66"><span class="lineNum">      66 </span>                :            : static void</a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineNoCov">          0 : valent_session_provider_added (ValentComponent *component,</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">         15 : valent_session_provider_added (ValentComponent *component,</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            :                                PeasExtension   *extension)</a>
 <a name="69"><span class="lineNum">      69 </span>                :            : {</a>
-<a name="70"><span class="lineNum">      70 </span>                :<span class="lineNoCov">          0 :   ValentSession *self = VALENT_SESSION (component);</span></a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineNoCov">          0 :   ValentSessionAdapter *adapter = VALENT_SESSION_ADAPTER (extension);</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">         15 :   ValentSession *self = VALENT_SESSION (component);</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">         15 :   ValentSessionAdapter *adapter = VALENT_SESSION_ADAPTER (extension);</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   PeasExtension *provider;</a>
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
 <a name="74"><span class="lineNum">      74 </span>                :            :   VALENT_ENTRY;</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
-<a name="76"><span class="lineNum">      76 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SESSION (self));</span></a>
+<a name="76"><span class="lineNum">      76 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_SESSION (self));</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            : </a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   /* Watch for changes */</a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineNoCov">          0 :   g_signal_connect_object (adapter,</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         15 :   g_signal_connect_object (adapter,</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            :                            &quot;changed&quot;,</a>
 <a name="81"><span class="lineNum">      81 </span>                :            :                            G_CALLBACK (on_session_adapter_changed),</a>
 <a name="82"><span class="lineNum">      82 </span>                :            :                            component, 0);</a>
 <a name="83"><span class="lineNum">      83 </span>                :            : </a>
 <a name="84"><span class="lineNum">      84 </span>                :            :   /* Set default provider */</a>
-<a name="85"><span class="lineNum">      85 </span>                :<span class="lineNoCov">          0 :   provider = valent_component_get_priority_provider (component,</span></a>
+<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">         15 :   provider = valent_component_get_priority_provider (component,</span></a>
 <a name="86"><span class="lineNum">      86 </span>                :            :                                                      &quot;SessionAdapterPriority&quot;);</a>
 <a name="87"><span class="lineNum">      87 </span>                :            : </a>
-<a name="88"><span class="lineNum">      88 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if ((PeasExtension *)self-&gt;default_adapter != provider)</span></a>
-<a name="89"><span class="lineNum">      89 </span>                :<span class="lineNoCov">          0 :     g_set_object (&amp;self-&gt;default_adapter, VALENT_SESSION_ADAPTER (provider));</span></a>
+<a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   if ((PeasExtension *)self-&gt;default_adapter != provider)</span></a>
+<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         15 :     g_set_object (&amp;self-&gt;default_adapter, VALENT_SESSION_ADAPTER (provider));</span></a>
 <a name="90"><span class="lineNum">      90 </span>                :            : </a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineNoCov">          0 :   VALENT_EXIT;</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">         15 :   VALENT_EXIT;</span></a>
 <a name="92"><span class="lineNum">      92 </span>                :            : }</a>
 <a name="93"><span class="lineNum">      93 </span>                :            : </a>
 <a name="94"><span class="lineNum">      94 </span>                :            : static void</a>
@@ -221,16 +221,16 @@
 <a name="142"><span class="lineNum">     142 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
 <a name="144"><span class="lineNum">     144 </span>                :            : static void</a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">         11 : valent_session_class_init (ValentSessionClass *klass)</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">         16 : valent_session_class_init (ValentSessionClass *klass)</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            : {</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         11 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">         11 :   ValentComponentClass *component_class = VALENT_COMPONENT_CLASS (klass);</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         16 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">         16 :   ValentComponentClass *component_class = VALENT_COMPONENT_CLASS (klass);</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            : </a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         11 :   object_class-&gt;dispose = valent_session_dispose;</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         11 :   object_class-&gt;finalize = valent_session_finalize;</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         16 :   object_class-&gt;dispose = valent_session_dispose;</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         16 :   object_class-&gt;finalize = valent_session_finalize;</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         11 :   component_class-&gt;provider_added = valent_session_provider_added;</span></a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         11 :   component_class-&gt;provider_removed = valent_session_provider_removed;</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         16 :   component_class-&gt;provider_added = valent_session_provider_added;</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         16 :   component_class-&gt;provider_removed = valent_session_provider_removed;</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   /**</a>
 <a name="157"><span class="lineNum">     157 </span>                :            :    * ValentSession::changed:</a>
@@ -239,20 +239,20 @@
 <a name="160"><span class="lineNum">     160 </span>                :            :    * #ValentSession::changed is emitted when the content of the default #ValentSessionAdapter</a>
 <a name="161"><span class="lineNum">     161 </span>                :            :    * changes.</a>
 <a name="162"><span class="lineNum">     162 </span>                :            :    */</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         11 :   signals [CHANGED] =</span></a>
-<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">         11 :     g_signal_new (&quot;changed&quot;,</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         16 :   signals [CHANGED] =</span></a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">         16 :     g_signal_new (&quot;changed&quot;,</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :                   G_SIGNAL_RUN_FIRST,</a>
 <a name="167"><span class="lineNum">     167 </span>                :            :                   0,</a>
 <a name="168"><span class="lineNum">     168 </span>                :            :                   NULL, NULL, NULL,</a>
 <a name="169"><span class="lineNum">     169 </span>                :            :                   G_TYPE_NONE, 0);</a>
-<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">         11 : }</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">         16 : }</span></a>
 <a name="171"><span class="lineNum">     171 </span>                :            : </a>
 <a name="172"><span class="lineNum">     172 </span>                :            : static void</a>
-<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">         10 : valent_session_init (ValentSession *self)</span></a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">         15 : valent_session_init (ValentSession *self)</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :            : {</a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">         10 :   self-&gt;cancellable = g_cancellable_new ();</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         10 : }</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">         15 :   self-&gt;cancellable = g_cancellable_new ();</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         15 : }</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            : </a>
 <a name="178"><span class="lineNum">     178 </span>                :            : </a>
 <a name="179"><span class="lineNum">     179 </span>                :            : /**</a>
@@ -287,18 +287,18 @@
 <a name="208"><span class="lineNum">     208 </span>                :            :  * Returns: the locked state</a>
 <a name="209"><span class="lineNum">     209 </span>                :            :  */</a>
 <a name="210"><span class="lineNum">     210 </span>                :            : gboolean</a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineNoCov">          0 : valent_session_get_locked (ValentSession *session)</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         15 : valent_session_get_locked (ValentSession *session)</span></a>
 <a name="212"><span class="lineNum">     212 </span>                :            : {</a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineNoCov">          0 :   gboolean ret = FALSE;</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         15 :   gboolean ret = FALSE;</span></a>
 <a name="214"><span class="lineNum">     214 </span>                :            : </a>
 <a name="215"><span class="lineNum">     215 </span>                :            :   VALENT_ENTRY;</a>
 <a name="216"><span class="lineNum">     216 </span>                :            : </a>
-<a name="217"><span class="lineNum">     217 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_SESSION (session), FALSE);</span></a>
+<a name="217"><span class="lineNum">     217 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_return_val_if_fail (VALENT_IS_SESSION (session), FALSE);</span></a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
-<a name="219"><span class="lineNum">     219 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if G_LIKELY (session-&gt;default_adapter != NULL)</span></a>
-<a name="220"><span class="lineNum">     220 </span>                :<span class="lineNoCov">          0 :     ret = valent_session_adapter_get_locked (session-&gt;default_adapter);</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   if G_LIKELY (session-&gt;default_adapter != NULL)</span></a>
+<a name="220"><span class="lineNum">     220 </span>                :<span class="lineCov">         15 :     ret = valent_session_adapter_get_locked (session-&gt;default_adapter);</span></a>
 <a name="221"><span class="lineNum">     221 </span>                :            : </a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineNoCov">          0 :   VALENT_RETURN (ret);</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         15 :   VALENT_RETURN (ret);</span></a>
 <a name="223"><span class="lineNum">     223 </span>                :            : }</a>
 <a name="224"><span class="lineNum">     224 </span>                :            : </a>
 <a name="225"><span class="lineNum">     225 </span>                :            : /**</a>
@@ -309,17 +309,17 @@
 <a name="230"><span class="lineNum">     230 </span>                :            :  * Set the locked state of @session to @state.</a>
 <a name="231"><span class="lineNum">     231 </span>                :            :  */</a>
 <a name="232"><span class="lineNum">     232 </span>                :            : void</a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         50 : valent_session_set_locked (ValentSession *session,</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         75 : valent_session_set_locked (ValentSession *session,</span></a>
 <a name="234"><span class="lineNum">     234 </span>                :            :                            gboolean       state)</a>
 <a name="235"><span class="lineNum">     235 </span>                :            : {</a>
 <a name="236"><span class="lineNum">     236 </span>                :            :   VALENT_ENTRY;</a>
 <a name="237"><span class="lineNum">     237 </span>                :            : </a>
-<a name="238"><span class="lineNum">     238 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (VALENT_IS_SESSION (session));</span></a>
+<a name="238"><span class="lineNum">     238 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span>]:<span class="lineCov">         75 :   g_return_if_fail (VALENT_IS_SESSION (session));</span></a>
 <a name="239"><span class="lineNum">     239 </span>                :            : </a>
-<a name="240"><span class="lineNum">     240 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   if G_LIKELY (session-&gt;default_adapter != NULL)</span></a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineNoCov">          0 :     valent_session_adapter_set_locked (session-&gt;default_adapter, state);</span></a>
+<a name="240"><span class="lineNum">     240 </span>        [<span class="branchCov" title="Branch 0 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         75 :   if G_LIKELY (session-&gt;default_adapter != NULL)</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">         75 :     valent_session_adapter_set_locked (session-&gt;default_adapter, state);</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            : </a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">         50 :   VALENT_EXIT;</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">         75 :   VALENT_EXIT;</span></a>
 <a name="244"><span class="lineNum">     244 </span>                :            : }</a>
 <a name="245"><span class="lineNum">     245 </span>                :            : </a>
 <a name="246"><span class="lineNum">     246 </span>                :            : /**</a>
@@ -330,20 +330,20 @@
 <a name="251"><span class="lineNum">     251 </span>                :            :  * Returns: (transfer none): The default session</a>
 <a name="252"><span class="lineNum">     252 </span>                :            :  */</a>
 <a name="253"><span class="lineNum">     253 </span>                :            : ValentSession *</a>
-<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">         45 : valent_session_get_default (void)</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">         65 : valent_session_get_default (void)</span></a>
 <a name="255"><span class="lineNum">     255 </span>                :            : {</a>
-<a name="256"><span class="lineNum">     256 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         45 :   if (default_adapter == NULL)</span></a>
+<a name="256"><span class="lineNum">     256 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         65 :   if (default_adapter == NULL)</span></a>
 <a name="257"><span class="lineNum">     257 </span>                :            :     {</a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         10 :       default_adapter = g_object_new (VALENT_TYPE_SESSION,</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         15 :       default_adapter = g_object_new (VALENT_TYPE_SESSION,</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            :                                       &quot;plugin-context&quot;, &quot;session&quot;,</a>
 <a name="260"><span class="lineNum">     260 </span>                :            :                                       &quot;plugin-type&quot;,    VALENT_TYPE_SESSION_ADAPTER,</a>
 <a name="261"><span class="lineNum">     261 </span>                :            :                                       NULL);</a>
 <a name="262"><span class="lineNum">     262 </span>                :            : </a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">         10 :       g_object_add_weak_pointer (G_OBJECT (default_adapter),</span></a>
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">         15 :       g_object_add_weak_pointer (G_OBJECT (default_adapter),</span></a>
 <a name="264"><span class="lineNum">     264 </span>                :            :                                  (gpointer) &amp;default_adapter);</a>
 <a name="265"><span class="lineNum">     265 </span>                :            :     }</a>
 <a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">         45 :   return default_adapter;</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">         65 :   return default_adapter;</span></a>
 <a name="268"><span class="lineNum">     268 </span>                :            : }</a>
 <a name="269"><span class="lineNum">     269 </span>                :            : </a>
 </pre>
