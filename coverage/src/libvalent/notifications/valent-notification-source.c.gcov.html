@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-20 09:19:14</td>
+            <td class="headerValue">2021-04-20 19:57:36</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -112,8 +112,8 @@
 <a name="34"><span class="lineNum">      34 </span>                :            :   PeasPluginInfo *plugin_info;</a>
 <a name="35"><span class="lineNum">      35 </span>                :            : } ValentNotificationSourcePrivate;</a>
 <a name="36"><span class="lineNum">      36 </span>                :            : </a>
-<a name="37"><span class="lineNum">      37 </span>  [<span class="branchCov" title="Branch 0 was taken 362 times"> + </span><span class="branchCov" title="Branch 1 was taken 755 times"> + </span><span class="branchCov" title="Branch 2 was taken 181 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1333 : G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (ValentNotificationSource, valent_notification_source, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 181 times"> + </span><span class="branchCov" title="Branch 5 was taken 755 times"> + </span>]
+<a name="37"><span class="lineNum">      37 </span>  [<span class="branchCov" title="Branch 0 was taken 372 times"> + </span><span class="branchCov" title="Branch 1 was taken 765 times"> + </span><span class="branchCov" title="Branch 2 was taken 186 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1358 : G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (ValentNotificationSource, valent_notification_source, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 186 times"> + </span><span class="branchCov" title="Branch 5 was taken 765 times"> + </span>]
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
 <a name="39"><span class="lineNum">      39 </span>                :            : /**</a>
 <a name="40"><span class="lineNum">      40 </span>                :            :  * ValentNotificationSourceClass:</a>
@@ -225,25 +225,25 @@
 <a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         30 : }</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            : </a>
 <a name="148"><span class="lineNum">     148 </span>                :            : static void</a>
-<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">        181 : valent_notification_source_class_init (ValentNotificationSourceClass *klass)</span></a>
+<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">        186 : valent_notification_source_class_init (ValentNotificationSourceClass *klass)</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :            : {</a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        181 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        186 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">        181 :   object_class-&gt;get_property = valent_notification_source_get_property;</span></a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">        181 :   object_class-&gt;set_property = valent_notification_source_set_property;</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">        186 :   object_class-&gt;get_property = valent_notification_source_get_property;</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">        186 :   object_class-&gt;set_property = valent_notification_source_set_property;</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">        181 :   klass-&gt;add_notification = valent_notification_source_real_add_notification;</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">        181 :   klass-&gt;remove_notification = valent_notification_source_real_remove_notification;</span></a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        181 :   klass-&gt;load_async = valent_notification_source_real_load_async;</span></a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">        181 :   klass-&gt;load_finish = valent_notification_source_real_load_finish;</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">        186 :   klass-&gt;add_notification = valent_notification_source_real_add_notification;</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">        186 :   klass-&gt;remove_notification = valent_notification_source_real_remove_notification;</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        186 :   klass-&gt;load_async = valent_notification_source_real_load_async;</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">        186 :   klass-&gt;load_finish = valent_notification_source_real_load_finish;</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            : </a>
 <a name="161"><span class="lineNum">     161 </span>                :            :   /**</a>
 <a name="162"><span class="lineNum">     162 </span>                :            :    * ValentNotificationSource:plugin-info:</a>
 <a name="163"><span class="lineNum">     163 </span>                :            :    *</a>
 <a name="164"><span class="lineNum">     164 </span>                :            :    * The #PeasPluginInfo describing this source.</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :    */</a>
-<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        181 :   properties [PROP_PLUGIN_INFO] =</span></a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        181 :     g_param_spec_boxed (&quot;plugin-info&quot;,</span></a>
+<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        186 :   properties [PROP_PLUGIN_INFO] =</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        186 :     g_param_spec_boxed (&quot;plugin-info&quot;,</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :                         &quot;Plugin Info&quot;,</a>
 <a name="169"><span class="lineNum">     169 </span>                :            :                         &quot;Plugin Info&quot;,</a>
 <a name="170"><span class="lineNum">     170 </span>                :            :                         PEAS_TYPE_PLUGIN_INFO,</a>
@@ -252,7 +252,7 @@
 <a name="173"><span class="lineNum">     173 </span>                :            :                          G_PARAM_EXPLICIT_NOTIFY |</a>
 <a name="174"><span class="lineNum">     174 </span>                :            :                          G_PARAM_STATIC_STRINGS));</a>
 <a name="175"><span class="lineNum">     175 </span>                :            : </a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">        181 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">        186 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            : </a>
 <a name="178"><span class="lineNum">     178 </span>                :            :   /**</a>
 <a name="179"><span class="lineNum">     179 </span>                :            :    * ValentNotificationSource::notification-added:</a>
@@ -262,15 +262,15 @@
 <a name="183"><span class="lineNum">     183 </span>                :            :    * ValentNotificationSource::notification-removed is emitted when a</a>
 <a name="184"><span class="lineNum">     184 </span>                :            :    * notification is added to @source.</a>
 <a name="185"><span class="lineNum">     185 </span>                :            :    */</a>
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">        181 :   signals [NOTIFICATION_ADDED] =</span></a>
-<a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">        181 :     g_signal_new (&quot;notification-added&quot;,</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">        186 :   signals [NOTIFICATION_ADDED] =</span></a>
+<a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">        186 :     g_signal_new (&quot;notification-added&quot;,</span></a>
 <a name="188"><span class="lineNum">     188 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
 <a name="189"><span class="lineNum">     189 </span>                :            :                   G_SIGNAL_RUN_LAST,</a>
 <a name="190"><span class="lineNum">     190 </span>                :            :                   G_STRUCT_OFFSET (ValentNotificationSourceClass, notification_added),</a>
 <a name="191"><span class="lineNum">     191 </span>                :            :                   NULL, NULL,</a>
 <a name="192"><span class="lineNum">     192 </span>                :            :                   g_cclosure_marshal_VOID__OBJECT,</a>
 <a name="193"><span class="lineNum">     193 </span>                :            :                   G_TYPE_NONE, 1, VALENT_TYPE_NOTIFICATION);</a>
-<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">        181 :   g_signal_set_va_marshaller (signals [NOTIFICATION_ADDED],</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">        186 :   g_signal_set_va_marshaller (signals [NOTIFICATION_ADDED],</span></a>
 <a name="195"><span class="lineNum">     195 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
 <a name="196"><span class="lineNum">     196 </span>                :            :                               g_cclosure_marshal_VOID__OBJECTv);</a>
 <a name="197"><span class="lineNum">     197 </span>                :            : </a>
@@ -282,18 +282,18 @@
 <a name="203"><span class="lineNum">     203 </span>                :            :    * ValentNotificationSource::notification-removed is emitted when a</a>
 <a name="204"><span class="lineNum">     204 </span>                :            :    * notification is removed from @source.</a>
 <a name="205"><span class="lineNum">     205 </span>                :            :    */</a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">        181 :   signals [NOTIFICATION_REMOVED] =</span></a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        181 :     g_signal_new (&quot;notification-removed&quot;,</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">        186 :   signals [NOTIFICATION_REMOVED] =</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        186 :     g_signal_new (&quot;notification-removed&quot;,</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
 <a name="209"><span class="lineNum">     209 </span>                :            :                   G_SIGNAL_RUN_LAST,</a>
 <a name="210"><span class="lineNum">     210 </span>                :            :                   G_STRUCT_OFFSET (ValentNotificationSourceClass, notification_removed),</a>
 <a name="211"><span class="lineNum">     211 </span>                :            :                   NULL, NULL,</a>
 <a name="212"><span class="lineNum">     212 </span>                :            :                   g_cclosure_marshal_VOID__STRING,</a>
 <a name="213"><span class="lineNum">     213 </span>                :            :                   G_TYPE_NONE, 1, G_TYPE_STRING);</a>
-<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">        181 :   g_signal_set_va_marshaller (signals [NOTIFICATION_REMOVED],</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">        186 :   g_signal_set_va_marshaller (signals [NOTIFICATION_REMOVED],</span></a>
 <a name="215"><span class="lineNum">     215 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
 <a name="216"><span class="lineNum">     216 </span>                :            :                               g_cclosure_marshal_VOID__STRINGv);</a>
-<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">        181 : }</span></a>
+<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">        186 : }</span></a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
 <a name="219"><span class="lineNum">     219 </span>                :            : static void</a>
 <a name="220"><span class="lineNum">     220 </span>                :<span class="lineCov">         30 : valent_notification_source_init (ValentNotificationSource *source)</span></a>

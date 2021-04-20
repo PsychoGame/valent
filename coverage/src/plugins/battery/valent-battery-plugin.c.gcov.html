@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-20 09:19:14</td>
+            <td class="headerValue">2021-04-20 19:57:36</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -117,8 +117,8 @@
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
 <a name="40"><span class="lineNum">      40 </span>                :            : static void         valent_device_plugin_iface_init     (ValentDevicePluginInterface *iface);</a>
 <a name="41"><span class="lineNum">      41 </span>                :            : </a>
-<a name="42"><span class="lineNum">      42 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 2448 times"> + </span><span class="branchCov" title="Branch 2 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2518 : G_DEFINE_TYPE_WITH_CODE (ValentBatteryPlugin, valent_battery_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 35 times"> + </span><span class="branchCov" title="Branch 5 was taken 2413 times"> + </span>]
+<a name="42"><span class="lineNum">      42 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 2436 times"> + </span><span class="branchCov" title="Branch 2 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2506 : G_DEFINE_TYPE_WITH_CODE (ValentBatteryPlugin, valent_battery_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 35 times"> + </span><span class="branchCov" title="Branch 5 was taken 2401 times"> + </span>]
 <a name="43"><span class="lineNum">      43 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="44"><span class="lineNum">      44 </span>                :            : </a>
 <a name="45"><span class="lineNum">      45 </span>                :            : enum {</a>
@@ -222,24 +222,24 @@
 <a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         15 : }</span></a>
 <a name="144"><span class="lineNum">     144 </span>                :            : </a>
 <a name="145"><span class="lineNum">     145 </span>                :            : static void</a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         96 : connect_power (ValentBatteryPlugin *self,</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         92 : connect_power (ValentBatteryPlugin *self,</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            :                gboolean             connect)</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : {</a>
-<a name="149"><span class="lineNum">     149 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 96 times"> + </span>]:<span class="lineCov">         96 :   if (self-&gt;power == NULL)</span></a>
+<a name="149"><span class="lineNum">     149 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 92 times"> + </span>]:<span class="lineCov">         92 :   if (self-&gt;power == NULL)</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :     self-&gt;power = valent_power_get_default ();</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            : </a>
-<a name="152"><span class="lineNum">     152 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 76 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         96 :   if (connect &amp;&amp; self-&gt;power_changed_id == 0)</span></a>
+<a name="152"><span class="lineNum">     152 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 72 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         92 :   if (connect &amp;&amp; self-&gt;power_changed_id == 0)</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :     {</a>
 <a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         20 :       self-&gt;power_changed_id = g_signal_connect (self-&gt;power,</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :            :                                                  &quot;changed&quot;,</a>
 <a name="156"><span class="lineNum">     156 </span>                :            :                                                  G_CALLBACK (on_power_changed),</a>
 <a name="157"><span class="lineNum">     157 </span>                :            :                                                  self);</a>
 <a name="158"><span class="lineNum">     158 </span>                :            :     }</a>
-<a name="159"><span class="lineNum">     159 </span>        [<span class="branchCov" title="Branch 0 was taken 76 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         76 :   else if (!connect)</span></a>
+<a name="159"><span class="lineNum">     159 </span>        [<span class="branchCov" title="Branch 0 was taken 72 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         72 :   else if (!connect)</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            :     {</a>
-<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchCov" title="Branch 1 was taken 63 times"> + </span>]:<span class="lineCov">         76 :       g_clear_signal_handler (&amp;self-&gt;power_changed_id, self-&gt;power);</span></a>
+<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 61 times"> + </span>]:<span class="lineCov">         72 :       g_clear_signal_handler (&amp;self-&gt;power_changed_id, self-&gt;power);</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            :     }</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         96 : }</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         92 : }</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
 <a name="165"><span class="lineNum">     165 </span>                :            : /**</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :  * valent_battery_plugin_get_icon_name:</a>
@@ -476,42 +476,42 @@
 <a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">         35 : }</span></a>
 <a name="397"><span class="lineNum">     397 </span>                :            : </a>
 <a name="398"><span class="lineNum">     398 </span>                :            : static void</a>
-<a name="399"><span class="lineNum">     399 </span>                :<span class="lineCov">         28 : valent_battery_plugin_disable (ValentDevicePlugin *plugin)</span></a>
+<a name="399"><span class="lineNum">     399 </span>                :<span class="lineCov">         26 : valent_battery_plugin_disable (ValentDevicePlugin *plugin)</span></a>
 <a name="400"><span class="lineNum">     400 </span>                :            : {</a>
-<a name="401"><span class="lineNum">     401 </span>                :<span class="lineCov">         28 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
+<a name="401"><span class="lineNum">     401 </span>                :<span class="lineCov">         26 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
 <a name="402"><span class="lineNum">     402 </span>                :            : </a>
-<a name="403"><span class="lineNum">     403 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         28 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="403"><span class="lineNum">     403 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span>]:<span class="lineCov">         26 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
 <a name="404"><span class="lineNum">     404 </span>                :            : </a>
 <a name="405"><span class="lineNum">     405 </span>                :            :   /* Unregister GActions */</a>
-<a name="406"><span class="lineNum">     406 </span>                :<span class="lineCov">         28 :   valent_device_plugin_unregister_actions (plugin, actions, G_N_ELEMENTS (actions));</span></a>
+<a name="406"><span class="lineNum">     406 </span>                :<span class="lineCov">         26 :   valent_device_plugin_unregister_actions (plugin, actions, G_N_ELEMENTS (actions));</span></a>
 <a name="407"><span class="lineNum">     407 </span>                :            : </a>
 <a name="408"><span class="lineNum">     408 </span>                :            :   /* Dispose GSettings */</a>
-<a name="409"><span class="lineNum">     409 </span>        [<span class="branchCov" title="Branch 0 was taken 28 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         28 :   g_clear_object (&amp;self-&gt;settings);</span></a>
+<a name="409"><span class="lineNum">     409 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         26 :   g_clear_object (&amp;self-&gt;settings);</span></a>
 <a name="410"><span class="lineNum">     410 </span>                :            : </a>
 <a name="411"><span class="lineNum">     411 </span>                :            :   /* Drop power */</a>
-<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">         28 :   connect_power (self, FALSE);</span></a>
-<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">         28 : }</span></a>
+<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">         26 :   connect_power (self, FALSE);</span></a>
+<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">         26 : }</span></a>
 <a name="414"><span class="lineNum">     414 </span>                :            : </a>
 <a name="415"><span class="lineNum">     415 </span>                :            : static void</a>
-<a name="416"><span class="lineNum">     416 </span>                :<span class="lineCov">         68 : valent_battery_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :<span class="lineCov">         66 : valent_battery_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
 <a name="417"><span class="lineNum">     417 </span>                :            : {</a>
-<a name="418"><span class="lineNum">     418 </span>                :<span class="lineCov">         68 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
+<a name="418"><span class="lineNum">     418 </span>                :<span class="lineCov">         66 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
 <a name="419"><span class="lineNum">     419 </span>                :            :   gboolean connected;</a>
 <a name="420"><span class="lineNum">     420 </span>                :            :   gboolean paired;</a>
 <a name="421"><span class="lineNum">     421 </span>                :            :   gboolean available;</a>
 <a name="422"><span class="lineNum">     422 </span>                :            : </a>
-<a name="423"><span class="lineNum">     423 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 68 times"> + </span>]:<span class="lineCov">         68 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="423"><span class="lineNum">     423 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 66 times"> + </span>]:<span class="lineCov">         66 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
 <a name="424"><span class="lineNum">     424 </span>                :            : </a>
-<a name="425"><span class="lineNum">     425 </span>                :<span class="lineCov">         68 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
-<a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">         68 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
-<a name="427"><span class="lineNum">     427 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         68 :   available = (connected &amp;&amp; paired);</span></a>
+<a name="425"><span class="lineNum">     425 </span>                :<span class="lineCov">         66 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
+<a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">         66 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
+<a name="427"><span class="lineNum">     427 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         66 :   available = (connected &amp;&amp; paired);</span></a>
 <a name="428"><span class="lineNum">     428 </span>                :            : </a>
 <a name="429"><span class="lineNum">     429 </span>                :            :   /* GActions */</a>
-<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">         68 :   valent_device_plugin_toggle_actions (plugin,</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">         66 :   valent_device_plugin_toggle_actions (plugin,</span></a>
 <a name="431"><span class="lineNum">     431 </span>                :            :                                        actions, G_N_ELEMENTS (actions),</a>
 <a name="432"><span class="lineNum">     432 </span>                :            :                                        available);</a>
 <a name="433"><span class="lineNum">     433 </span>                :            : </a>
-<a name="434"><span class="lineNum">     434 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span>]:<span class="lineCov">         68 :   if (available)</span></a>
+<a name="434"><span class="lineNum">     434 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         66 :   if (available)</span></a>
 <a name="435"><span class="lineNum">     435 </span>                :            :     {</a>
 <a name="436"><span class="lineNum">     436 </span>                :<span class="lineCov">         20 :       connect_power (self, TRUE);</span></a>
 <a name="437"><span class="lineNum">     437 </span>                :<span class="lineCov">         20 :       valent_battery_plugin_send_state (self);</span></a>
@@ -519,9 +519,9 @@
 <a name="439"><span class="lineNum">     439 </span>                :            :     }</a>
 <a name="440"><span class="lineNum">     440 </span>                :            :   else</a>
 <a name="441"><span class="lineNum">     441 </span>                :            :     {</a>
-<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">         48 :       connect_power (self, FALSE);</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">         46 :       connect_power (self, FALSE);</span></a>
 <a name="443"><span class="lineNum">     443 </span>                :            :     }</a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         68 : }</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         66 : }</span></a>
 <a name="445"><span class="lineNum">     445 </span>                :            : </a>
 <a name="446"><span class="lineNum">     446 </span>                :            : static void</a>
 <a name="447"><span class="lineNum">     447 </span>                :<span class="lineCov">        375 : valent_battery_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
@@ -559,23 +559,23 @@
 <a name="479"><span class="lineNum">     479 </span>                :            :  * GObject</a>
 <a name="480"><span class="lineNum">     480 </span>                :            :  */</a>
 <a name="481"><span class="lineNum">     481 </span>                :            : static void</a>
-<a name="482"><span class="lineNum">     482 </span>                :<span class="lineCov">        131 : valent_battery_plugin_get_property (GObject    *object,</span></a>
+<a name="482"><span class="lineNum">     482 </span>                :<span class="lineCov">        127 : valent_battery_plugin_get_property (GObject    *object,</span></a>
 <a name="483"><span class="lineNum">     483 </span>                :            :                                     guint       prop_id,</a>
 <a name="484"><span class="lineNum">     484 </span>                :            :                                     GValue     *value,</a>
 <a name="485"><span class="lineNum">     485 </span>                :            :                                     GParamSpec *pspec)</a>
 <a name="486"><span class="lineNum">     486 </span>                :            : {</a>
-<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">        131 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (object);</span></a>
+<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">        127 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (object);</span></a>
 <a name="488"><span class="lineNum">     488 </span>                :            : </a>
-<a name="489"><span class="lineNum">     489 </span>        [<span class="branchCov" title="Branch 0 was taken 131 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        131 :   switch (prop_id)</span></a>
+<a name="489"><span class="lineNum">     489 </span>        [<span class="branchCov" title="Branch 0 was taken 127 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        127 :   switch (prop_id)</span></a>
 <a name="490"><span class="lineNum">     490 </span>                :            :     {</a>
-<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">        131 :     case PROP_DEVICE:</span></a>
-<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">        131 :       g_value_set_object (value, self-&gt;device);</span></a>
-<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">        131 :       break;</span></a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">        127 :     case PROP_DEVICE:</span></a>
+<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">        127 :       g_value_set_object (value, self-&gt;device);</span></a>
+<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">        127 :       break;</span></a>
 <a name="494"><span class="lineNum">     494 </span>                :            : </a>
 <a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="496"><span class="lineNum">     496 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
 <a name="497"><span class="lineNum">     497 </span>                :            :     }</a>
-<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">        131 : }</span></a>
+<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">        127 : }</span></a>
 <a name="499"><span class="lineNum">     499 </span>                :            : </a>
 <a name="500"><span class="lineNum">     500 </span>                :            : static void</a>
 <a name="501"><span class="lineNum">     501 </span>                :<span class="lineCov">         35 : valent_battery_plugin_set_property (GObject      *object,</span></a>

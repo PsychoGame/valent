@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-20 09:19:14</td>
+            <td class="headerValue">2021-04-20 19:57:36</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
@@ -118,11 +118,11 @@
 <a name="40"><span class="lineNum">      40 </span>                :            : #endif</a>
 <a name="41"><span class="lineNum">      41 </span>                :            : </a>
 <a name="42"><span class="lineNum">      42 </span>                :            : static void</a>
-<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">        201 : valent_init_ctor (void)</span></a>
+<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">        206 : valent_init_ctor (void)</span></a>
 <a name="44"><span class="lineNum">      44 </span>                :            : {</a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">        201 :   main_thread = g_thread_self ();</span></a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">        201 :   in_flatpak = g_file_test (&quot;/.flatpak-info&quot;, G_FILE_TEST_EXISTS);</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">        201 : }</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">        206 :   main_thread = g_thread_self ();</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">        206 :   in_flatpak = g_file_test (&quot;/.flatpak-info&quot;, G_FILE_TEST_EXISTS);</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">        206 : }</span></a>
 <a name="48"><span class="lineNum">      48 </span>                :            : </a>
 <a name="49"><span class="lineNum">      49 </span>                :            : /**</a>
 <a name="50"><span class="lineNum">      50 </span>                :            :  * valent_get_main_thread:</a>
@@ -135,9 +135,9 @@
 <a name="57"><span class="lineNum">      57 </span>                :            :  * Returns: (transfer none): a #GThread</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :  */</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : GThread *</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1931 : valent_get_main_thread (void)</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1935 : valent_get_main_thread (void)</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : {</a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1931 :   return main_thread;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1935 :   return main_thread;</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : }</a>
 <a name="64"><span class="lineNum">      64 </span>                :            : </a>
 <a name="65"><span class="lineNum">      65 </span>                :            : /**</a>
@@ -148,12 +148,12 @@
 <a name="70"><span class="lineNum">      70 </span>                :            :  * Returns: %TRUE if running in a flatpak</a>
 <a name="71"><span class="lineNum">      71 </span>                :            :  */</a>
 <a name="72"><span class="lineNum">      72 </span>                :            : gboolean</a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">        195 : valent_in_flatpak (void)</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">        200 : valent_in_flatpak (void)</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            : {</a>
-<a name="75"><span class="lineNum">      75 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 195 times"> + </span>]:<span class="lineCov">        195 :   if (in_flatpak == -1)</span></a>
+<a name="75"><span class="lineNum">      75 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 200 times"> + </span>]:<span class="lineCov">        200 :   if (in_flatpak == -1)</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :<span class="lineNoCov">          0 :     in_flatpak = g_file_test (&quot;/.flatpak-info&quot;, G_FILE_TEST_EXISTS);</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            : </a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">        195 :   return in_flatpak;</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">        200 :   return in_flatpak;</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            : }</a>
 <a name="80"><span class="lineNum">      80 </span>                :            : </a>
 <a name="81"><span class="lineNum">      81 </span>                :            : static char *</a>
@@ -212,41 +212,41 @@
 <a name="134"><span class="lineNum">     134 </span>                :            :  * Initialize the global #PeasEngine and load plugins.</a>
 <a name="135"><span class="lineNum">     135 </span>                :            :  */</a>
 <a name="136"><span class="lineNum">     136 </span>                :            : void</a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        870 : valent_load_plugins (PeasEngine *engine)</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        890 : valent_load_plugins (PeasEngine *engine)</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            : {</a>
-<a name="139"><span class="lineNum">     139 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchCov" title="Branch 1 was taken 690 times"> + </span>]:<span class="lineCov">        870 :   g_autofree char *user_dir = NULL;</span></a>
-<a name="140"><span class="lineNum">     140 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchCov" title="Branch 1 was taken 690 times"> + </span>]:<span class="lineCov">        870 :   g_autoptr (GError) error = NULL;</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">        870 :   const GList *plugins = NULL;</span></a>
+<a name="139"><span class="lineNum">     139 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchCov" title="Branch 1 was taken 705 times"> + </span>]:<span class="lineCov">        890 :   g_autofree char *user_dir = NULL;</span></a>
+<a name="140"><span class="lineNum">     140 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchCov" title="Branch 1 was taken 705 times"> + </span>]:<span class="lineCov">        890 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">        890 :   const GList *plugins = NULL;</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   static gboolean loaded = FALSE;</a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
-<a name="144"><span class="lineNum">     144 </span>        [<span class="branchCov" title="Branch 0 was taken 690 times"> + </span><span class="branchCov" title="Branch 1 was taken 180 times"> + </span>]:<span class="lineCov">        870 :   if (loaded)</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">        690 :     return;</span></a>
+<a name="144"><span class="lineNum">     144 </span>        [<span class="branchCov" title="Branch 0 was taken 705 times"> + </span><span class="branchCov" title="Branch 1 was taken 185 times"> + </span>]:<span class="lineCov">        890 :   if (loaded)</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">        705 :     return;</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            : </a>
-<a name="147"><span class="lineNum">     147 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        180 :   if (engine == NULL)</span></a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">        180 :     engine = peas_engine_get_default ();</span></a>
+<a name="147"><span class="lineNum">     147 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        185 :   if (engine == NULL)</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">        185 :     engine = peas_engine_get_default ();</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            : </a>
 <a name="150"><span class="lineNum">     150 </span>                :            :   /* Ensure that we have all our required GObject Introspection packages */</a>
-<a name="151"><span class="lineNum">     151 </span>  [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        360 :   if (g_irepository_require (NULL, &quot;Gio&quot;,  &quot;2.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
-<a name="152"><span class="lineNum">     152 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        360 :       g_irepository_require (NULL, &quot;GLib&quot;, &quot;2.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
-<a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        360 :       g_irepository_require (NULL, &quot;Gdk&quot;,  &quot;4.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
-<a name="154"><span class="lineNum">     154 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        360 :       g_irepository_require (NULL, &quot;Gtk&quot;,  &quot;4.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
-<a name="155"><span class="lineNum">     155 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        360 :       g_irepository_require (NULL, &quot;Json&quot;, &quot;1.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
-<a name="156"><span class="lineNum">     156 </span>        [<span class="branchCov" title="Branch 0 was taken 180 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        360 :       g_irepository_require (NULL, &quot;Peas&quot;, &quot;1.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">        180 :       g_irepository_require (NULL, &quot;Valent&quot;, PACKAGE_API, 0, &amp;error))</span></a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        180 :     peas_engine_enable_loader (engine, &quot;python3&quot;);</span></a>
+<a name="151"><span class="lineNum">     151 </span>  [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        370 :   if (g_irepository_require (NULL, &quot;Gio&quot;,  &quot;2.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
+<a name="152"><span class="lineNum">     152 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        370 :       g_irepository_require (NULL, &quot;GLib&quot;, &quot;2.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
+<a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        370 :       g_irepository_require (NULL, &quot;Gdk&quot;,  &quot;4.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
+<a name="154"><span class="lineNum">     154 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        370 :       g_irepository_require (NULL, &quot;Gtk&quot;,  &quot;4.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
+<a name="155"><span class="lineNum">     155 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        370 :       g_irepository_require (NULL, &quot;Json&quot;, &quot;1.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
+<a name="156"><span class="lineNum">     156 </span>        [<span class="branchCov" title="Branch 0 was taken 185 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        370 :       g_irepository_require (NULL, &quot;Peas&quot;, &quot;1.0&quot;, 0, &amp;error) &amp;&amp;</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">        185 :       g_irepository_require (NULL, &quot;Valent&quot;, PACKAGE_API, 0, &amp;error))</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        185 :     peas_engine_enable_loader (engine, &quot;python3&quot;);</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            :   else</a>
 <a name="160"><span class="lineNum">     160 </span>                :<span class="lineNoCov">          0 :     g_message (&quot;Disabling Python3 plugins: %s&quot;, error-&gt;message);</span></a>
 <a name="161"><span class="lineNum">     161 </span>                :            : </a>
 <a name="162"><span class="lineNum">     162 </span>                :            :   /* Built-in &amp; Bundled Plugins */</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        180 :   peas_engine_add_search_path (engine, &quot;resource:///plugins&quot;, NULL);</span></a>
-<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">        180 :   peas_engine_add_search_path (engine, PACKAGE_PLUGINSDIR, NULL);</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        185 :   peas_engine_add_search_path (engine, &quot;resource:///plugins&quot;, NULL);</span></a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">        185 :   peas_engine_add_search_path (engine, PACKAGE_PLUGINSDIR, NULL);</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            : </a>
 <a name="166"><span class="lineNum">     166 </span>                :            :   /* User Plugins */</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        180 :   user_dir = g_build_filename (g_get_user_data_dir (),</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        185 :   user_dir = g_build_filename (g_get_user_data_dir (),</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :                                PACKAGE_NAME, &quot;plugins&quot;, NULL);</a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        180 :   peas_engine_prepend_search_path (engine, user_dir, NULL);</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        185 :   peas_engine_prepend_search_path (engine, user_dir, NULL);</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            : </a>
-<a name="171"><span class="lineNum">     171 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 180 times"> + </span>]:<span class="lineCov">        180 :   if (valent_in_flatpak ())</span></a>
+<a name="171"><span class="lineNum">     171 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 185 times"> + </span>]:<span class="lineCov">        185 :   if (valent_in_flatpak ())</span></a>
 <a name="172"><span class="lineNum">     172 </span>                :            :     {</a>
 <a name="173"><span class="lineNum">     173 </span>                :<span class="lineNoCov">          0 :       g_autofree char *extensions_dir = NULL;</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :<span class="lineNoCov">          0 :       g_autofree char *flatpak_dir = NULL;</span></a>
@@ -263,12 +263,12 @@
 <a name="185"><span class="lineNum">     185 </span>                :            :     }</a>
 <a name="186"><span class="lineNum">     186 </span>                :            : </a>
 <a name="187"><span class="lineNum">     187 </span>                :            :   /* Load plugins */</a>
-<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">        180 :   plugins = peas_engine_get_plugin_list (engine);</span></a>
+<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">        185 :   plugins = peas_engine_get_plugin_list (engine);</span></a>
 <a name="189"><span class="lineNum">     189 </span>                :            : </a>
-<a name="190"><span class="lineNum">     190 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchCov" title="Branch 1 was taken 180 times"> + </span>]:<span class="lineCov">        670 :   for (const GList *iter = plugins; iter; iter = iter-&gt;next)</span></a>
-<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">        490 :     peas_engine_load_plugin (engine, iter-&gt;data);</span></a>
+<a name="190"><span class="lineNum">     190 </span>        [<span class="branchCov" title="Branch 0 was taken 500 times"> + </span><span class="branchCov" title="Branch 1 was taken 185 times"> + </span>]:<span class="lineCov">        685 :   for (const GList *iter = plugins; iter; iter = iter-&gt;next)</span></a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">        500 :     peas_engine_load_plugin (engine, iter-&gt;data);</span></a>
 <a name="192"><span class="lineNum">     192 </span>                :            : </a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">        180 :   loaded = TRUE;</span></a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">        185 :   loaded = TRUE;</span></a>
 <a name="194"><span class="lineNum">     194 </span>                :            : }</a>
 <a name="195"><span class="lineNum">     195 </span>                :            : </a>
 <a name="196"><span class="lineNum">     196 </span>                :            : /**</a>
@@ -280,11 +280,11 @@
 <a name="202"><span class="lineNum">     202 </span>                :            :  * Returns: (transfer none): a #PeasEngine</a>
 <a name="203"><span class="lineNum">     203 </span>                :            :  */</a>
 <a name="204"><span class="lineNum">     204 </span>                :            : PeasEngine *</a>
-<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        870 : valent_get_engine (void)</span></a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        890 : valent_get_engine (void)</span></a>
 <a name="206"><span class="lineNum">     206 </span>                :            : {</a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        870 :   valent_load_plugins (NULL);</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        890 :   valent_load_plugins (NULL);</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :            : </a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        870 :   return peas_engine_get_default ();</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        890 :   return peas_engine_get_default ();</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            : }</a>
 <a name="211"><span class="lineNum">     211 </span>                :            : </a>
 <a name="212"><span class="lineNum">     212 </span>                :            : /**</a>
