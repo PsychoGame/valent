@@ -105,7 +105,6 @@
     <keyword type="function" name="valent_channel_service_emit_channel ()" link="ValentChannelService.html#valent-channel-service-emit-channel"/>
     <keyword type="function" name="valent_channel_service_get_id ()" link="ValentChannelService.html#valent-channel-service-get-id"/>
     <keyword type="function" name="valent_channel_service_get_identity ()" link="ValentChannelService.html#valent-channel-service-get-identity"/>
-    <keyword type="function" name="valent_channel_service_get_plugin_info ()" link="ValentChannelService.html#valent-channel-service-get-plugin-info"/>
     <keyword type="function" name="valent_channel_service_build_identity ()" link="ValentChannelService.html#valent-channel-service-build-identity"/>
     <keyword type="function" name="valent_channel_service_identify ()" link="ValentChannelService.html#valent-channel-service-identify"/>
     <keyword type="function" name="valent_channel_service_start ()" link="ValentChannelService.html#valent-channel-service-start"/>
