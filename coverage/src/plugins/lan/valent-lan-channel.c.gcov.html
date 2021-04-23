@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-23 02:38:51</td>
+            <td class="headerValue">2021-04-23 03:36:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">14</td>
@@ -149,15 +149,15 @@
 <a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">          5 :   checksum = g_checksum_new (G_CHECKSUM_SHA256);</span></a>
 <a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">          5 :   cmplen = pubkey-&gt;len &lt; peer_pubkey-&gt;len ? pubkey-&gt;len : peer_pubkey-&gt;len;</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            : </a>
-<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          5 :   if (memcmp (pubkey-&gt;data, peer_pubkey-&gt;data, cmplen) &gt; 0)</span></a>
+<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          5 :   if (memcmp (pubkey-&gt;data, peer_pubkey-&gt;data, cmplen) &gt; 0)</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            :     {</a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">          4 :       g_checksum_update (checksum, pubkey-&gt;data, pubkey-&gt;len);</span></a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          4 :       g_checksum_update (checksum, peer_pubkey-&gt;data, peer_pubkey-&gt;len);</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">          2 :       g_checksum_update (checksum, pubkey-&gt;data, pubkey-&gt;len);</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          2 :       g_checksum_update (checksum, peer_pubkey-&gt;data, peer_pubkey-&gt;len);</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            :     }</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   else</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :     {</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">          1 :       g_checksum_update (checksum, peer_pubkey-&gt;data, peer_pubkey-&gt;len);</span></a>
-<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">          1 :       g_checksum_update (checksum, pubkey-&gt;data, pubkey-&gt;len);</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">          3 :       g_checksum_update (checksum, peer_pubkey-&gt;data, peer_pubkey-&gt;len);</span></a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">          3 :       g_checksum_update (checksum, pubkey-&gt;data, pubkey-&gt;len);</span></a>
 <a name="82"><span class="lineNum">      82 </span>                :            :     }</a>
 <a name="83"><span class="lineNum">      83 </span>                :            : </a>
 <a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">          5 :   self-&gt;description = g_strdup (g_checksum_get_string (checksum));</span></a>
