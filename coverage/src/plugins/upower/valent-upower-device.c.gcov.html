@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">159</td>
+            <td class="headerCovTableEntry">160</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-23 02:11:53</td>
+            <td class="headerValue">2021-04-23 02:38:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -402,120 +402,121 @@
 <a name="324"><span class="lineNum">     324 </span>                :<span class="lineNoCov">          0 :   ValentUPowerDevice *self = VALENT_UPOWER_DEVICE (object);</span></a>
 <a name="325"><span class="lineNum">     325 </span>                :            : </a>
 <a name="326"><span class="lineNum">     326 </span>                :<span class="lineNoCov">          0 :   g_signal_handlers_disconnect_by_func (self-&gt;proxy, on_properties_changed, self);</span></a>
-<a name="327"><span class="lineNum">     327 </span>                :<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;proxy);</span></a>
-<a name="328"><span class="lineNum">     328 </span>                :            : </a>
-<a name="329"><span class="lineNum">     329 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_upower_device_parent_class)-&gt;finalize (object);</span></a>
-<a name="330"><span class="lineNum">     330 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="331"><span class="lineNum">     331 </span>                :            : </a>
-<a name="332"><span class="lineNum">     332 </span>                :            : static void</a>
-<a name="333"><span class="lineNum">     333 </span>                :<span class="lineNoCov">          0 : valent_upower_device_get_property (GObject    *object,</span></a>
-<a name="334"><span class="lineNum">     334 </span>                :            :                                    guint       prop_id,</a>
-<a name="335"><span class="lineNum">     335 </span>                :            :                                    GValue     *value,</a>
-<a name="336"><span class="lineNum">     336 </span>                :            :                                    GParamSpec *pspec)</a>
-<a name="337"><span class="lineNum">     337 </span>                :            : {</a>
-<a name="338"><span class="lineNum">     338 </span>                :<span class="lineNoCov">          0 :   ValentUPowerDevice *self = VALENT_UPOWER_DEVICE (object);</span></a>
-<a name="339"><span class="lineNum">     339 </span>                :            : </a>
-<a name="340"><span class="lineNum">     340 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
-<a name="341"><span class="lineNum">     341 </span>                :            :     {</a>
-<a name="342"><span class="lineNum">     342 </span>                :<span class="lineNoCov">          0 :     case PROP_OBJECT_PATH:</span></a>
-<a name="343"><span class="lineNum">     343 </span>                :<span class="lineNoCov">          0 :       g_value_set_string (value, self-&gt;object_path);</span></a>
-<a name="344"><span class="lineNum">     344 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
-<a name="345"><span class="lineNum">     345 </span>                :            : </a>
-<a name="346"><span class="lineNum">     346 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="347"><span class="lineNum">     347 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="348"><span class="lineNum">     348 </span>                :            :     }</a>
-<a name="349"><span class="lineNum">     349 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="350"><span class="lineNum">     350 </span>                :            : </a>
-<a name="351"><span class="lineNum">     351 </span>                :            : static void</a>
-<a name="352"><span class="lineNum">     352 </span>                :<span class="lineNoCov">          0 : valent_upower_device_set_property (GObject      *object,</span></a>
-<a name="353"><span class="lineNum">     353 </span>                :            :                                    guint         prop_id,</a>
-<a name="354"><span class="lineNum">     354 </span>                :            :                                    const GValue *value,</a>
-<a name="355"><span class="lineNum">     355 </span>                :            :                                    GParamSpec   *pspec)</a>
-<a name="356"><span class="lineNum">     356 </span>                :            : {</a>
-<a name="357"><span class="lineNum">     357 </span>                :<span class="lineNoCov">          0 :   ValentUPowerDevice *self = VALENT_UPOWER_DEVICE (object);</span></a>
-<a name="358"><span class="lineNum">     358 </span>                :            : </a>
-<a name="359"><span class="lineNum">     359 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
-<a name="360"><span class="lineNum">     360 </span>                :            :     {</a>
-<a name="361"><span class="lineNum">     361 </span>                :<span class="lineNoCov">          0 :     case PROP_OBJECT_PATH:</span></a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineNoCov">          0 :       self-&gt;object_path = g_value_dup_string (value);</span></a>
-<a name="363"><span class="lineNum">     363 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
-<a name="364"><span class="lineNum">     364 </span>                :            : </a>
-<a name="365"><span class="lineNum">     365 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="366"><span class="lineNum">     366 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="367"><span class="lineNum">     367 </span>                :            :     }</a>
-<a name="368"><span class="lineNum">     368 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="369"><span class="lineNum">     369 </span>                :            : </a>
-<a name="370"><span class="lineNum">     370 </span>                :            : static void</a>
-<a name="371"><span class="lineNum">     371 </span>                :<span class="lineNoCov">          0 : valent_upower_device_class_init (ValentUPowerDeviceClass *klass)</span></a>
-<a name="372"><span class="lineNum">     372 </span>                :            : {</a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineNoCov">          0 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="374"><span class="lineNum">     374 </span>                :<span class="lineNoCov">          0 :   ValentPowerDeviceClass *device_class = VALENT_POWER_DEVICE_CLASS (klass);</span></a>
-<a name="375"><span class="lineNum">     375 </span>                :            : </a>
-<a name="376"><span class="lineNum">     376 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;finalize = valent_upower_device_finalize;</span></a>
-<a name="377"><span class="lineNum">     377 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;get_property = valent_upower_device_get_property;</span></a>
-<a name="378"><span class="lineNum">     378 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;set_property = valent_upower_device_set_property;</span></a>
-<a name="379"><span class="lineNum">     379 </span>                :            : </a>
-<a name="380"><span class="lineNum">     380 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_kind = valent_upower_device_get_kind;</span></a>
-<a name="381"><span class="lineNum">     381 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_level = valent_upower_device_get_level;</span></a>
-<a name="382"><span class="lineNum">     382 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_state = valent_upower_device_get_state;</span></a>
-<a name="383"><span class="lineNum">     383 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_warning = valent_upower_device_get_warning;</span></a>
-<a name="384"><span class="lineNum">     384 </span>                :            : </a>
-<a name="385"><span class="lineNum">     385 </span>                :            :   /**</a>
-<a name="386"><span class="lineNum">     386 </span>                :            :    * ValentUPowerDevice:object-path:</a>
-<a name="387"><span class="lineNum">     387 </span>                :            :    *</a>
-<a name="388"><span class="lineNum">     388 </span>                :            :    * The object path the device is exported on.</a>
-<a name="389"><span class="lineNum">     389 </span>                :            :    */</a>
-<a name="390"><span class="lineNum">     390 </span>                :<span class="lineNoCov">          0 :   properties [PROP_OBJECT_PATH] =</span></a>
-<a name="391"><span class="lineNum">     391 </span>                :<span class="lineNoCov">          0 :     g_param_spec_string (&quot;object-path&quot;,</span></a>
-<a name="392"><span class="lineNum">     392 </span>                :            :                          &quot;Object Path&quot;,</a>
-<a name="393"><span class="lineNum">     393 </span>                :            :                          &quot;The object path the device is on.&quot;,</a>
-<a name="394"><span class="lineNum">     394 </span>                :            :                          NULL,</a>
-<a name="395"><span class="lineNum">     395 </span>                :            :                          (G_PARAM_READWRITE |</a>
-<a name="396"><span class="lineNum">     396 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
-<a name="397"><span class="lineNum">     397 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
-<a name="398"><span class="lineNum">     398 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
-<a name="399"><span class="lineNum">     399 </span>                :            : </a>
-<a name="400"><span class="lineNum">     400 </span>                :<span class="lineNoCov">          0 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
-<a name="401"><span class="lineNum">     401 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="402"><span class="lineNum">     402 </span>                :            : </a>
-<a name="403"><span class="lineNum">     403 </span>                :            : static void</a>
-<a name="404"><span class="lineNum">     404 </span>                :<span class="lineNoCov">          0 : valent_upower_device_init (ValentUPowerDevice *self)</span></a>
-<a name="405"><span class="lineNum">     405 </span>                :            : {</a>
-<a name="406"><span class="lineNum">     406 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="407"><span class="lineNum">     407 </span>                :            : </a>
-<a name="408"><span class="lineNum">     408 </span>                :            : void</a>
-<a name="409"><span class="lineNum">     409 </span>                :<span class="lineNoCov">          0 : valent_upower_device_new (const char          *object_path,</span></a>
-<a name="410"><span class="lineNum">     410 </span>                :            :                           GCancellable        *cancellable,</a>
-<a name="411"><span class="lineNum">     411 </span>                :            :                           GAsyncReadyCallback  callback,</a>
-<a name="412"><span class="lineNum">     412 </span>                :            :                           gpointer             user_data)</a>
-<a name="413"><span class="lineNum">     413 </span>                :            : {</a>
-<a name="414"><span class="lineNum">     414 </span>                :<span class="lineNoCov">          0 :   g_async_initable_new_async (VALENT_TYPE_UPOWER_DEVICE,</span></a>
-<a name="415"><span class="lineNum">     415 </span>                :            :                               G_PRIORITY_DEFAULT,</a>
-<a name="416"><span class="lineNum">     416 </span>                :            :                               cancellable,</a>
-<a name="417"><span class="lineNum">     417 </span>                :            :                               callback,</a>
-<a name="418"><span class="lineNum">     418 </span>                :            :                               user_data,</a>
-<a name="419"><span class="lineNum">     419 </span>                :            :                               &quot;object-path&quot;, object_path,</a>
-<a name="420"><span class="lineNum">     420 </span>                :            :                               NULL);</a>
-<a name="421"><span class="lineNum">     421 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="422"><span class="lineNum">     422 </span>                :            : </a>
-<a name="423"><span class="lineNum">     423 </span>                :            : ValentPowerDevice *</a>
-<a name="424"><span class="lineNum">     424 </span>                :<span class="lineNoCov">          0 : valent_upower_device_new_finish (GAsyncResult  *result,</span></a>
-<a name="425"><span class="lineNum">     425 </span>                :            :                                  GError       **error)</a>
-<a name="426"><span class="lineNum">     426 </span>                :            : {</a>
-<a name="427"><span class="lineNum">     427 </span>                :            :   GObject *ret;</a>
-<a name="428"><span class="lineNum">     428 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GObject) source_object = NULL;</span></a>
-<a name="429"><span class="lineNum">     429 </span>                :            : </a>
-<a name="430"><span class="lineNum">     430 </span>                :<span class="lineNoCov">          0 :   source_object = g_async_result_get_source_object (result);</span></a>
-<a name="431"><span class="lineNum">     431 </span>                :<span class="lineNoCov">          0 :   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object),</span></a>
-<a name="432"><span class="lineNum">     432 </span>                :            :                                      result,</a>
-<a name="433"><span class="lineNum">     433 </span>                :            :                                      error);</a>
-<a name="434"><span class="lineNum">     434 </span>                :            : </a>
-<a name="435"><span class="lineNum">     435 </span>                :<span class="lineNoCov">          0 :   if (ret != NULL)</span></a>
-<a name="436"><span class="lineNum">     436 </span>                :<span class="lineNoCov">          0 :     return VALENT_POWER_DEVICE (ret);</span></a>
-<a name="437"><span class="lineNum">     437 </span>                :            : </a>
-<a name="438"><span class="lineNum">     438 </span>                :<span class="lineNoCov">          0 :   return NULL;</span></a>
-<a name="439"><span class="lineNum">     439 </span>                :            : }</a>
-<a name="440"><span class="lineNum">     440 </span>                :            : </a>
+<a name="327"><span class="lineNum">     327 </span>                :<span class="lineNoCov">          0 :   g_clear_pointer (&amp;self-&gt;object_path, g_free);</span></a>
+<a name="328"><span class="lineNum">     328 </span>                :<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;proxy);</span></a>
+<a name="329"><span class="lineNum">     329 </span>                :            : </a>
+<a name="330"><span class="lineNum">     330 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_upower_device_parent_class)-&gt;finalize (object);</span></a>
+<a name="331"><span class="lineNum">     331 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="332"><span class="lineNum">     332 </span>                :            : </a>
+<a name="333"><span class="lineNum">     333 </span>                :            : static void</a>
+<a name="334"><span class="lineNum">     334 </span>                :<span class="lineNoCov">          0 : valent_upower_device_get_property (GObject    *object,</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :            :                                    guint       prop_id,</a>
+<a name="336"><span class="lineNum">     336 </span>                :            :                                    GValue     *value,</a>
+<a name="337"><span class="lineNum">     337 </span>                :            :                                    GParamSpec *pspec)</a>
+<a name="338"><span class="lineNum">     338 </span>                :            : {</a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineNoCov">          0 :   ValentUPowerDevice *self = VALENT_UPOWER_DEVICE (object);</span></a>
+<a name="340"><span class="lineNum">     340 </span>                :            : </a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :            :     {</a>
+<a name="343"><span class="lineNum">     343 </span>                :<span class="lineNoCov">          0 :     case PROP_OBJECT_PATH:</span></a>
+<a name="344"><span class="lineNum">     344 </span>                :<span class="lineNoCov">          0 :       g_value_set_string (value, self-&gt;object_path);</span></a>
+<a name="345"><span class="lineNum">     345 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="346"><span class="lineNum">     346 </span>                :            : </a>
+<a name="347"><span class="lineNum">     347 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="348"><span class="lineNum">     348 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="349"><span class="lineNum">     349 </span>                :            :     }</a>
+<a name="350"><span class="lineNum">     350 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="351"><span class="lineNum">     351 </span>                :            : </a>
+<a name="352"><span class="lineNum">     352 </span>                :            : static void</a>
+<a name="353"><span class="lineNum">     353 </span>                :<span class="lineNoCov">          0 : valent_upower_device_set_property (GObject      *object,</span></a>
+<a name="354"><span class="lineNum">     354 </span>                :            :                                    guint         prop_id,</a>
+<a name="355"><span class="lineNum">     355 </span>                :            :                                    const GValue *value,</a>
+<a name="356"><span class="lineNum">     356 </span>                :            :                                    GParamSpec   *pspec)</a>
+<a name="357"><span class="lineNum">     357 </span>                :            : {</a>
+<a name="358"><span class="lineNum">     358 </span>                :<span class="lineNoCov">          0 :   ValentUPowerDevice *self = VALENT_UPOWER_DEVICE (object);</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :            : </a>
+<a name="360"><span class="lineNum">     360 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
+<a name="361"><span class="lineNum">     361 </span>                :            :     {</a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineNoCov">          0 :     case PROP_OBJECT_PATH:</span></a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineNoCov">          0 :       self-&gt;object_path = g_value_dup_string (value);</span></a>
+<a name="364"><span class="lineNum">     364 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="365"><span class="lineNum">     365 </span>                :            : </a>
+<a name="366"><span class="lineNum">     366 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="367"><span class="lineNum">     367 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="368"><span class="lineNum">     368 </span>                :            :     }</a>
+<a name="369"><span class="lineNum">     369 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="370"><span class="lineNum">     370 </span>                :            : </a>
+<a name="371"><span class="lineNum">     371 </span>                :            : static void</a>
+<a name="372"><span class="lineNum">     372 </span>                :<span class="lineNoCov">          0 : valent_upower_device_class_init (ValentUPowerDeviceClass *klass)</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :            : {</a>
+<a name="374"><span class="lineNum">     374 </span>                :<span class="lineNoCov">          0 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="375"><span class="lineNum">     375 </span>                :<span class="lineNoCov">          0 :   ValentPowerDeviceClass *device_class = VALENT_POWER_DEVICE_CLASS (klass);</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :            : </a>
+<a name="377"><span class="lineNum">     377 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;finalize = valent_upower_device_finalize;</span></a>
+<a name="378"><span class="lineNum">     378 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;get_property = valent_upower_device_get_property;</span></a>
+<a name="379"><span class="lineNum">     379 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;set_property = valent_upower_device_set_property;</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :            : </a>
+<a name="381"><span class="lineNum">     381 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_kind = valent_upower_device_get_kind;</span></a>
+<a name="382"><span class="lineNum">     382 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_level = valent_upower_device_get_level;</span></a>
+<a name="383"><span class="lineNum">     383 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_state = valent_upower_device_get_state;</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :<span class="lineNoCov">          0 :   device_class-&gt;get_warning = valent_upower_device_get_warning;</span></a>
+<a name="385"><span class="lineNum">     385 </span>                :            : </a>
+<a name="386"><span class="lineNum">     386 </span>                :            :   /**</a>
+<a name="387"><span class="lineNum">     387 </span>                :            :    * ValentUPowerDevice:object-path:</a>
+<a name="388"><span class="lineNum">     388 </span>                :            :    *</a>
+<a name="389"><span class="lineNum">     389 </span>                :            :    * The object path the device is exported on.</a>
+<a name="390"><span class="lineNum">     390 </span>                :            :    */</a>
+<a name="391"><span class="lineNum">     391 </span>                :<span class="lineNoCov">          0 :   properties [PROP_OBJECT_PATH] =</span></a>
+<a name="392"><span class="lineNum">     392 </span>                :<span class="lineNoCov">          0 :     g_param_spec_string (&quot;object-path&quot;,</span></a>
+<a name="393"><span class="lineNum">     393 </span>                :            :                          &quot;Object Path&quot;,</a>
+<a name="394"><span class="lineNum">     394 </span>                :            :                          &quot;The object path the device is on.&quot;,</a>
+<a name="395"><span class="lineNum">     395 </span>                :            :                          NULL,</a>
+<a name="396"><span class="lineNum">     396 </span>                :            :                          (G_PARAM_READWRITE |</a>
+<a name="397"><span class="lineNum">     397 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
+<a name="398"><span class="lineNum">     398 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
+<a name="399"><span class="lineNum">     399 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
+<a name="400"><span class="lineNum">     400 </span>                :            : </a>
+<a name="401"><span class="lineNum">     401 </span>                :<span class="lineNoCov">          0 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
+<a name="402"><span class="lineNum">     402 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="403"><span class="lineNum">     403 </span>                :            : </a>
+<a name="404"><span class="lineNum">     404 </span>                :            : static void</a>
+<a name="405"><span class="lineNum">     405 </span>                :<span class="lineNoCov">          0 : valent_upower_device_init (ValentUPowerDevice *self)</span></a>
+<a name="406"><span class="lineNum">     406 </span>                :            : {</a>
+<a name="407"><span class="lineNum">     407 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="408"><span class="lineNum">     408 </span>                :            : </a>
+<a name="409"><span class="lineNum">     409 </span>                :            : void</a>
+<a name="410"><span class="lineNum">     410 </span>                :<span class="lineNoCov">          0 : valent_upower_device_new (const char          *object_path,</span></a>
+<a name="411"><span class="lineNum">     411 </span>                :            :                           GCancellable        *cancellable,</a>
+<a name="412"><span class="lineNum">     412 </span>                :            :                           GAsyncReadyCallback  callback,</a>
+<a name="413"><span class="lineNum">     413 </span>                :            :                           gpointer             user_data)</a>
+<a name="414"><span class="lineNum">     414 </span>                :            : {</a>
+<a name="415"><span class="lineNum">     415 </span>                :<span class="lineNoCov">          0 :   g_async_initable_new_async (VALENT_TYPE_UPOWER_DEVICE,</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :            :                               G_PRIORITY_DEFAULT,</a>
+<a name="417"><span class="lineNum">     417 </span>                :            :                               cancellable,</a>
+<a name="418"><span class="lineNum">     418 </span>                :            :                               callback,</a>
+<a name="419"><span class="lineNum">     419 </span>                :            :                               user_data,</a>
+<a name="420"><span class="lineNum">     420 </span>                :            :                               &quot;object-path&quot;, object_path,</a>
+<a name="421"><span class="lineNum">     421 </span>                :            :                               NULL);</a>
+<a name="422"><span class="lineNum">     422 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="423"><span class="lineNum">     423 </span>                :            : </a>
+<a name="424"><span class="lineNum">     424 </span>                :            : ValentPowerDevice *</a>
+<a name="425"><span class="lineNum">     425 </span>                :<span class="lineNoCov">          0 : valent_upower_device_new_finish (GAsyncResult  *result,</span></a>
+<a name="426"><span class="lineNum">     426 </span>                :            :                                  GError       **error)</a>
+<a name="427"><span class="lineNum">     427 </span>                :            : {</a>
+<a name="428"><span class="lineNum">     428 </span>                :            :   GObject *ret;</a>
+<a name="429"><span class="lineNum">     429 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GObject) source_object = NULL;</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :            : </a>
+<a name="431"><span class="lineNum">     431 </span>                :<span class="lineNoCov">          0 :   source_object = g_async_result_get_source_object (result);</span></a>
+<a name="432"><span class="lineNum">     432 </span>                :<span class="lineNoCov">          0 :   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object),</span></a>
+<a name="433"><span class="lineNum">     433 </span>                :            :                                      result,</a>
+<a name="434"><span class="lineNum">     434 </span>                :            :                                      error);</a>
+<a name="435"><span class="lineNum">     435 </span>                :            : </a>
+<a name="436"><span class="lineNum">     436 </span>                :<span class="lineNoCov">          0 :   if (ret != NULL)</span></a>
+<a name="437"><span class="lineNum">     437 </span>                :<span class="lineNoCov">          0 :     return VALENT_POWER_DEVICE (ret);</span></a>
+<a name="438"><span class="lineNum">     438 </span>                :            : </a>
+<a name="439"><span class="lineNum">     439 </span>                :<span class="lineNoCov">          0 :   return NULL;</span></a>
+<a name="440"><span class="lineNum">     440 </span>                :            : }</a>
+<a name="441"><span class="lineNum">     441 </span>                :            : </a>
 </pre>
       </td>
     </tr>
