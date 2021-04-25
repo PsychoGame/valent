@@ -51,21 +51,16 @@
         <sub name="ValentNotification" link="ValentNotification.html"/>
         <sub name="ValentNotificationSource" link="ValentNotificationSource.html"/>
       </sub>
-      <sub name="Power" link="ch10.html">
-        <sub name="ValentPower" link="ValentPower.html"/>
-        <sub name="ValentPowerDevice" link="ValentPowerDevice.html"/>
-        <sub name="ValentPowerDeviceProvider" link="ValentPowerDeviceProvider.html"/>
-      </sub>
-      <sub name="Session" link="ch11.html">
+      <sub name="Session" link="ch10.html">
         <sub name="ValentSession" link="ValentSession.html"/>
         <sub name="ValentSessionAdapter" link="ValentSessionAdapter.html"/>
       </sub>
     </sub>
     <sub name="GUI" link="libvalent-ui.html">
-      <sub name="Widgets" link="ch12.html">
+      <sub name="Widgets" link="ch11.html">
         <sub name="ValentPanel" link="ValentPanel.html"/>
       </sub>
-      <sub name="Interfaces" link="ch13.html">
+      <sub name="Interfaces" link="ch12.html">
         <sub name="ValentDeviceActivity" link="ValentDeviceActivity.html"/>
         <sub name="ValentDeviceGadget" link="ValentDeviceGadget.html"/>
         <sub name="ValentPluginPreferences" link="ValentPluginPreferences.html"/>
@@ -515,43 +510,6 @@
     <keyword type="property" name="The “plugin-info” property" link="ValentNotificationSource.html#ValentNotificationSource--plugin-info"/>
     <keyword type="signal" name="The “notification-added” signal" link="ValentNotificationSource.html#ValentNotificationSource-notification-added"/>
     <keyword type="signal" name="The “notification-removed” signal" link="ValentNotificationSource.html#ValentNotificationSource-notification-removed"/>
-    <keyword type="function" name="valent_power_get_default ()" link="ValentPower.html#valent-power-get-default"/>
-    <keyword type="function" name="valent_power_get_battery_charging ()" link="ValentPower.html#valent-power-get-battery-charging"/>
-    <keyword type="function" name="valent_power_get_battery_level ()" link="ValentPower.html#valent-power-get-battery-level"/>
-    <keyword type="function" name="valent_power_get_battery_state ()" link="ValentPower.html#valent-power-get-battery-state"/>
-    <keyword type="function" name="valent_power_get_battery_warning ()" link="ValentPower.html#valent-power-get-battery-warning"/>
-    <keyword type="macro" name="VALENT_TYPE_POWER" link="ValentPower.html#VALENT-TYPE-POWER:CAPS"/>
-    <keyword type="struct" name="ValentPower" link="ValentPower.html#ValentPower-struct"/>
-    <keyword type="property" name="The “battery-charging” property" link="ValentPower.html#ValentPower--battery-charging"/>
-    <keyword type="property" name="The “battery-level” property" link="ValentPower.html#ValentPower--battery-level"/>
-    <keyword type="property" name="The “battery-state” property" link="ValentPower.html#ValentPower--battery-state"/>
-    <keyword type="property" name="The “battery-warning” property" link="ValentPower.html#ValentPower--battery-warning"/>
-    <keyword type="signal" name="The “changed” signal" link="ValentPower.html#ValentPower-changed"/>
-    <keyword type="function" name="valent_power_device_get_kind ()" link="ValentPowerDevice.html#valent-power-device-get-kind"/>
-    <keyword type="function" name="valent_power_device_get_level ()" link="ValentPowerDevice.html#valent-power-device-get-level"/>
-    <keyword type="function" name="valent_power_device_get_state ()" link="ValentPowerDevice.html#valent-power-device-get-state"/>
-    <keyword type="function" name="valent_power_device_get_warning ()" link="ValentPowerDevice.html#valent-power-device-get-warning"/>
-    <keyword type="enum" name="enum ValentPowerKind" link="ValentPowerDevice.html#ValentPowerKind"/>
-    <keyword type="enum" name="enum ValentPowerState" link="ValentPowerDevice.html#ValentPowerState"/>
-    <keyword type="enum" name="enum ValentPowerWarning" link="ValentPowerDevice.html#ValentPowerWarning"/>
-    <keyword type="macro" name="VALENT_TYPE_POWER_DEVICE" link="ValentPowerDevice.html#VALENT-TYPE-POWER-DEVICE:CAPS"/>
-    <keyword type="struct" name="struct ValentPowerDeviceClass" link="ValentPowerDevice.html#ValentPowerDeviceClass"/>
-    <keyword type="struct" name="ValentPowerDevice" link="ValentPowerDevice.html#ValentPowerDevice-struct"/>
-    <keyword type="property" name="The “kind” property" link="ValentPowerDevice.html#ValentPowerDevice--kind"/>
-    <keyword type="property" name="The “level” property" link="ValentPowerDevice.html#ValentPowerDevice--level"/>
-    <keyword type="property" name="The “state” property" link="ValentPowerDevice.html#ValentPowerDevice--state"/>
-    <keyword type="property" name="The “warning” property" link="ValentPowerDevice.html#ValentPowerDevice--warning"/>
-    <keyword type="function" name="valent_power_device_provider_emit_device_added ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-emit-device-added"/>
-    <keyword type="function" name="valent_power_device_provider_emit_device_removed ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-emit-device-removed"/>
-    <keyword type="function" name="valent_power_device_provider_get_devices ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-get-devices"/>
-    <keyword type="function" name="valent_power_device_provider_load_async ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-load-async"/>
-    <keyword type="function" name="valent_power_device_provider_load_finish ()" link="ValentPowerDeviceProvider.html#valent-power-device-provider-load-finish"/>
-    <keyword type="macro" name="VALENT_TYPE_POWER_DEVICE_PROVIDER" link="ValentPowerDeviceProvider.html#VALENT-TYPE-POWER-DEVICE-PROVIDER:CAPS"/>
-    <keyword type="struct" name="struct ValentPowerDeviceProviderClass" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass"/>
-    <keyword type="struct" name="ValentPowerDeviceProvider" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-struct"/>
-    <keyword type="property" name="The “plugin-info” property" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider--plugin-info"/>
-    <keyword type="signal" name="The “device-added” signal" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-added"/>
-    <keyword type="signal" name="The “device-removed” signal" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProvider-device-removed"/>
     <keyword type="function" name="valent_session_get_active ()" link="ValentSession.html#valent-session-get-active"/>
     <keyword type="function" name="valent_session_get_locked ()" link="ValentSession.html#valent-session-get-locked"/>
     <keyword type="function" name="valent_session_set_locked ()" link="ValentSession.html#valent-session-set-locked"/>
@@ -655,35 +613,6 @@
     <keyword type="constant" name="VALENT_MIXER_STREAM_RESERVED2" link="ValentMixerStream.html#VALENT-MIXER-STREAM-RESERVED2:CAPS"/>
     <keyword type="constant" name="VALENT_MIXER_STREAM_RESERVED3" link="ValentMixerStream.html#VALENT-MIXER-STREAM-RESERVED3:CAPS"/>
     <keyword type="constant" name="VALENT_MIXER_STREAM_RESERVED4" link="ValentMixerStream.html#VALENT-MIXER-STREAM-RESERVED4:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_UNKNOWN" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-UNKNOWN:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_LINE_POWER" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-LINE-POWER:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_BATTERY" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-BATTERY:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_UPS" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-UPS:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_MONITOR" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-MONITOR:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_MOUSE" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-MOUSE:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_KEYBOARD" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-KEYBOARD:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_PDA" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-PDA:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_PHONE" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-PHONE:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_MEDIA_PLAYER" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-MEDIA-PLAYER:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_TABLET" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-TABLET:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_COMPUTER" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-COMPUTER:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_DEVICE_LAST" link="ValentPowerDevice.html#VALENT-POWER-DEVICE-LAST:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_UNKNOWN" link="ValentPowerDevice.html#VALENT-POWER-STATE-UNKNOWN:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_CHARGING" link="ValentPowerDevice.html#VALENT-POWER-STATE-CHARGING:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_DISCHARGING" link="ValentPowerDevice.html#VALENT-POWER-STATE-DISCHARGING:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_ONLINE" link="ValentPowerDevice.html#VALENT-POWER-STATE-ONLINE:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_OFFLINE" link="ValentPowerDevice.html#VALENT-POWER-STATE-OFFLINE:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_RESERVED1" link="ValentPowerDevice.html#VALENT-POWER-STATE-RESERVED1:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_RESERVED2" link="ValentPowerDevice.html#VALENT-POWER-STATE-RESERVED2:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_STATE_RESERVED3" link="ValentPowerDevice.html#VALENT-POWER-STATE-RESERVED3:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_NONE" link="ValentPowerDevice.html#VALENT-POWER-WARNING-NONE:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_LOW" link="ValentPowerDevice.html#VALENT-POWER-WARNING-LOW:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_CRITICAL" link="ValentPowerDevice.html#VALENT-POWER-WARNING-CRITICAL:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED1" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED1:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED2" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED2:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED3" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED3:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED4" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED4:CAPS"/>
-    <keyword type="constant" name="VALENT_POWER_WARNING_RESERVED5" link="ValentPowerDevice.html#VALENT-POWER-WARNING-RESERVED5:CAPS"/>
     <keyword type="member" name="ValentChannelClass.get-verification-key" link="ValentChannel.html#ValentChannelClass.get-verification-key"/>
     <keyword type="member" name="ValentChannelClass.download" link="ValentChannel.html#ValentChannelClass.download"/>
     <keyword type="member" name="ValentChannelClass.upload" link="ValentChannel.html#ValentChannelClass.upload"/>
@@ -763,14 +692,6 @@
     <keyword type="member" name="ValentNotificationSourceClass.load-finish" link="ValentNotificationSource.html#ValentNotificationSourceClass.load-finish"/>
     <keyword type="member" name="ValentNotificationSourceClass.notification-added" link="ValentNotificationSource.html#ValentNotificationSourceClass.notification-added"/>
     <keyword type="member" name="ValentNotificationSourceClass.notification-removed" link="ValentNotificationSource.html#ValentNotificationSourceClass.notification-removed"/>
-    <keyword type="member" name="ValentPowerDeviceClass.get-kind" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-kind"/>
-    <keyword type="member" name="ValentPowerDeviceClass.get-level" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-level"/>
-    <keyword type="member" name="ValentPowerDeviceClass.get-state" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-state"/>
-    <keyword type="member" name="ValentPowerDeviceClass.get-warning" link="ValentPowerDevice.html#ValentPowerDeviceClass.get-warning"/>
-    <keyword type="member" name="ValentPowerDeviceProviderClass.load-async" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.load-async"/>
-    <keyword type="member" name="ValentPowerDeviceProviderClass.load-finish" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.load-finish"/>
-    <keyword type="member" name="ValentPowerDeviceProviderClass.device-added" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.device-added"/>
-    <keyword type="member" name="ValentPowerDeviceProviderClass.device-removed" link="ValentPowerDeviceProvider.html#ValentPowerDeviceProviderClass.device-removed"/>
     <keyword type="member" name="ValentSessionAdapterClass.get-active" link="ValentSessionAdapter.html#ValentSessionAdapterClass.get-active"/>
     <keyword type="member" name="ValentSessionAdapterClass.get-locked" link="ValentSessionAdapter.html#ValentSessionAdapterClass.get-locked"/>
     <keyword type="member" name="ValentSessionAdapterClass.set-locked" link="ValentSessionAdapter.html#ValentSessionAdapterClass.set-locked"/>
