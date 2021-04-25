@@ -31,13 +31,13 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">200</td>
-            <td class="headerCovTableEntry">212</td>
+            <td class="headerCovTableEntry">199</td>
+            <td class="headerCovTableEntry">211</td>
             <td class="headerCovTableEntryHi">94.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-25 09:53:08</td>
+            <td class="headerValue">2021-04-25 10:03:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -117,8 +117,8 @@
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
 <a name="40"><span class="lineNum">      40 </span>                :            : static void         valent_device_plugin_iface_init     (ValentDevicePluginInterface *iface);</a>
 <a name="41"><span class="lineNum">      41 </span>                :            : </a>
-<a name="42"><span class="lineNum">      42 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 2380 times"> + </span><span class="branchCov" title="Branch 2 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2450 : G_DEFINE_TYPE_WITH_CODE (ValentBatteryPlugin, valent_battery_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 35 times"> + </span><span class="branchCov" title="Branch 5 was taken 2345 times"> + </span>]
+<a name="42"><span class="lineNum">      42 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 2014 times"> + </span><span class="branchCov" title="Branch 2 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2084 : G_DEFINE_TYPE_WITH_CODE (ValentBatteryPlugin, valent_battery_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 35 times"> + </span><span class="branchCov" title="Branch 5 was taken 1979 times"> + </span>]
 <a name="43"><span class="lineNum">      43 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="44"><span class="lineNum">      44 </span>                :            : </a>
 <a name="45"><span class="lineNum">      45 </span>                :            : enum {</a>
@@ -212,14 +212,14 @@
 <a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        215 : }</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
 <a name="135"><span class="lineNum">     135 </span>                :            : static void</a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         15 : on_battery_changed (ValentBattery       *battery,</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         17 : on_battery_changed (ValentBattery       *battery,</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            :                     ValentBatteryPlugin *self)</a>
 <a name="138"><span class="lineNum">     138 </span>                :            : {</a>
-<a name="139"><span class="lineNum">     139 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_BATTERY (battery));</span></a>
-<a name="140"><span class="lineNum">     140 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="139"><span class="lineNum">     139 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         17 :   g_assert (VALENT_IS_BATTERY (battery));</span></a>
+<a name="140"><span class="lineNum">     140 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         17 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            : </a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">         15 :   valent_battery_plugin_send_state (self);</span></a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">         17 :   valent_battery_plugin_send_state (self);</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         17 : }</span></a>
 <a name="144"><span class="lineNum">     144 </span>                :            : </a>
 <a name="145"><span class="lineNum">     145 </span>                :            : static void</a>
 <a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         80 : connect_battery (ValentBatteryPlugin *self,</span></a>
@@ -237,7 +237,7 @@
 <a name="158"><span class="lineNum">     158 </span>                :            :     }</a>
 <a name="159"><span class="lineNum">     159 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         60 :   else if (!connect)</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            :     {</a>
-<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         60 :       g_clear_signal_handler (&amp;self-&gt;battery_changed_id, self-&gt;battery);</span></a>
+<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span>]:<span class="lineCov">         60 :       g_clear_signal_handler (&amp;self-&gt;battery_changed_id, self-&gt;battery);</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            :     }</a>
 <a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         80 : }</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
@@ -322,300 +322,299 @@
 <a name="243"><span class="lineNum">     243 </span>                :            :  * Packet Handlers</a>
 <a name="244"><span class="lineNum">     244 </span>                :            :  */</a>
 <a name="245"><span class="lineNum">     245 </span>                :            : static void</a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">        370 : valent_battery_plugin_handle_battery (ValentDevicePlugin *plugin,</span></a>
-<a name="247"><span class="lineNum">     247 </span>                :            :                                       JsonNode           *packet)</a>
+<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">        370 : valent_battery_plugin_handle_battery (ValentBatteryPlugin *self,</span></a>
+<a name="247"><span class="lineNum">     247 </span>                :            :                                       JsonNode            *packet)</a>
 <a name="248"><span class="lineNum">     248 </span>                :            : {</a>
-<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">        370 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
-<a name="250"><span class="lineNum">     250 </span>                :            :   JsonObject *body;</a>
-<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">        370 :   gboolean changed = FALSE;</span></a>
-<a name="252"><span class="lineNum">     252 </span>                :            :   gboolean charging;</a>
-<a name="253"><span class="lineNum">     253 </span>                :            :   gint64 level;</a>
-<a name="254"><span class="lineNum">     254 </span>                :            :   gint64 threshold;</a>
-<a name="255"><span class="lineNum">     255 </span>                :            : </a>
-<a name="256"><span class="lineNum">     256 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 370 times"> + </span>]:<span class="lineCov">        370 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="257"><span class="lineNum">     257 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 370 times"> + </span>]:<span class="lineCov">        370 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
-<a name="258"><span class="lineNum">     258 </span>                :            : </a>
-<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">        370 :   body = valent_packet_get_body (packet);</span></a>
-<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">        370 :   charging = json_object_get_boolean_member_with_default (body, &quot;isCharging&quot;,</span></a>
-<a name="261"><span class="lineNum">     261 </span>                :            :                                                           self-&gt;charging);</a>
-<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">        370 :   level = json_object_get_int_member_with_default (body, &quot;currentCharge&quot;,</span></a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">        370 :                                                    self-&gt;level);</span></a>
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">        370 :   threshold = json_object_get_int_member_with_default (body, &quot;thresholdEvent&quot;,</span></a>
-<a name="265"><span class="lineNum">     265 </span>                :            :                                                        0);</a>
-<a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>                :            :   /* We get a lot of battery updates, so check if something changed */</a>
-<a name="268"><span class="lineNum">     268 </span>  [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchCov" title="Branch 1 was taken 170 times"> + </span><span class="branchCov" title="Branch 2 was taken 45 times"> + </span><span class="branchCov" title="Branch 3 was taken 155 times"> + </span>]:<span class="lineCov">        370 :   if (self-&gt;charging != charging || self-&gt;level != level)</span></a>
-<a name="269"><span class="lineNum">     269 </span>                :            :     {</a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">        215 :       changed = TRUE;</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">        215 :       self-&gt;charging = charging;</span></a>
-<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        215 :       self-&gt;level = level;</span></a>
-<a name="273"><span class="lineNum">     273 </span>                :            :     }</a>
-<a name="274"><span class="lineNum">     274 </span>                :            : </a>
-<a name="275"><span class="lineNum">     275 </span>                :            :   /* We can always update the time estimate */</a>
-<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">        370 :   valent_battery_plugin_update_estimate (self);</span></a>
-<a name="277"><span class="lineNum">     277 </span>                :            : </a>
-<a name="278"><span class="lineNum">     278 </span>        [<span class="branchCov" title="Branch 0 was taken 215 times"> + </span><span class="branchCov" title="Branch 1 was taken 155 times"> + </span>]:<span class="lineCov">        370 :   if (changed)</span></a>
-<a name="279"><span class="lineNum">     279 </span>                :            :     {</a>
-<a name="280"><span class="lineNum">     280 </span>                :            :       int full, low;</a>
-<a name="281"><span class="lineNum">     281 </span>                :            : </a>
-<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        215 :       full = g_settings_get_int (self-&gt;settings, &quot;full-notification-level&quot;);</span></a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">        215 :       low = g_settings_get_int (self-&gt;settings, &quot;low-notification-level&quot;);</span></a>
-<a name="284"><span class="lineNum">     284 </span>                :            : </a>
-<a name="285"><span class="lineNum">     285 </span>                :            :       /* Battery is now full */</a>
-<a name="286"><span class="lineNum">     286 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 205 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        225 :       if (self-&gt;level == full &amp;&amp;</span></a>
-<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">         10 :           g_settings_get_boolean (self-&gt;settings, &quot;full-notification&quot;))</span></a>
-<a name="288"><span class="lineNum">     288 </span>                :            :         {</a>
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">         10 :           valent_battery_plugin_show_notification (self, TRUE);</span></a>
-<a name="290"><span class="lineNum">     290 </span>                :            :         }</a>
-<a name="291"><span class="lineNum">     291 </span>                :            : </a>
-<a name="292"><span class="lineNum">     292 </span>                :            :       /* Battery is now low */</a>
-<a name="293"><span class="lineNum">     293 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 190 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 15 times"> + </span> :<span class="lineCov">        395 :       else if ((self-&gt;level &lt;= low || threshold) &amp;&amp;</span></a>
+<a name="249"><span class="lineNum">     249 </span>                :            :   JsonObject *body;</a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        370 :   gboolean changed = FALSE;</span></a>
+<a name="251"><span class="lineNum">     251 </span>                :            :   gboolean charging;</a>
+<a name="252"><span class="lineNum">     252 </span>                :            :   gint64 level;</a>
+<a name="253"><span class="lineNum">     253 </span>                :            :   gint64 threshold;</a>
+<a name="254"><span class="lineNum">     254 </span>                :            : </a>
+<a name="255"><span class="lineNum">     255 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 370 times"> + </span>]:<span class="lineCov">        370 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="256"><span class="lineNum">     256 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 370 times"> + </span>]:<span class="lineCov">        370 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
+<a name="257"><span class="lineNum">     257 </span>                :            : </a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">        370 :   body = valent_packet_get_body (packet);</span></a>
+<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">        370 :   charging = json_object_get_boolean_member_with_default (body, &quot;isCharging&quot;,</span></a>
+<a name="260"><span class="lineNum">     260 </span>                :            :                                                           self-&gt;charging);</a>
+<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">        370 :   level = json_object_get_int_member_with_default (body, &quot;currentCharge&quot;,</span></a>
+<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">        370 :                                                    self-&gt;level);</span></a>
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">        370 :   threshold = json_object_get_int_member_with_default (body, &quot;thresholdEvent&quot;,</span></a>
+<a name="264"><span class="lineNum">     264 </span>                :            :                                                        0);</a>
+<a name="265"><span class="lineNum">     265 </span>                :            : </a>
+<a name="266"><span class="lineNum">     266 </span>                :            :   /* We get a lot of battery updates, so check if something changed */</a>
+<a name="267"><span class="lineNum">     267 </span>  [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchCov" title="Branch 1 was taken 170 times"> + </span><span class="branchCov" title="Branch 2 was taken 45 times"> + </span><span class="branchCov" title="Branch 3 was taken 155 times"> + </span>]:<span class="lineCov">        370 :   if (self-&gt;charging != charging || self-&gt;level != level)</span></a>
+<a name="268"><span class="lineNum">     268 </span>                :            :     {</a>
+<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">        215 :       changed = TRUE;</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">        215 :       self-&gt;charging = charging;</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">        215 :       self-&gt;level = level;</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :            :     }</a>
+<a name="273"><span class="lineNum">     273 </span>                :            : </a>
+<a name="274"><span class="lineNum">     274 </span>                :            :   /* We can always update the time estimate */</a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">        370 :   valent_battery_plugin_update_estimate (self);</span></a>
+<a name="276"><span class="lineNum">     276 </span>                :            : </a>
+<a name="277"><span class="lineNum">     277 </span>        [<span class="branchCov" title="Branch 0 was taken 215 times"> + </span><span class="branchCov" title="Branch 1 was taken 155 times"> + </span>]:<span class="lineCov">        370 :   if (changed)</span></a>
+<a name="278"><span class="lineNum">     278 </span>                :            :     {</a>
+<a name="279"><span class="lineNum">     279 </span>                :            :       int full, low;</a>
+<a name="280"><span class="lineNum">     280 </span>                :            : </a>
+<a name="281"><span class="lineNum">     281 </span>                :<span class="lineCov">        215 :       full = g_settings_get_int (self-&gt;settings, &quot;full-notification-level&quot;);</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        215 :       low = g_settings_get_int (self-&gt;settings, &quot;low-notification-level&quot;);</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :            : </a>
+<a name="284"><span class="lineNum">     284 </span>                :            :       /* Battery is now full */</a>
+<a name="285"><span class="lineNum">     285 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 205 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        225 :       if (self-&gt;level == full &amp;&amp;</span></a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">         10 :           g_settings_get_boolean (self-&gt;settings, &quot;full-notification&quot;))</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :            :         {</a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">         10 :           valent_battery_plugin_show_notification (self, TRUE);</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :            :         }</a>
+<a name="290"><span class="lineNum">     290 </span>                :            : </a>
+<a name="291"><span class="lineNum">     291 </span>                :            :       /* Battery is now low */</a>
+<a name="292"><span class="lineNum">     292 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 190 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 15 times"> + </span> :<span class="lineCov">        395 :       else if ((self-&gt;level &lt;= low || threshold) &amp;&amp;</span></a>
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 190 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">        190 :                g_settings_get_boolean (self-&gt;settings, &quot;low-notification&quot;))</span></a>
-<a name="295"><span class="lineNum">     295 </span>                :            :         {</a>
-<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">        190 :           self-&gt;threshold = self-&gt;level;</span></a>
-<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">        190 :           valent_battery_plugin_show_notification (self, FALSE);</span></a>
-<a name="298"><span class="lineNum">     298 </span>                :            :         }</a>
-<a name="299"><span class="lineNum">     299 </span>                :            : </a>
-<a name="300"><span class="lineNum">     300 </span>                :            :       /* Battery is no longer low or is charging */</a>
-<a name="301"><span class="lineNum">     301 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         15 :       else if (self-&gt;level &gt; self-&gt;threshold || self-&gt;charging)</span></a>
-<a name="302"><span class="lineNum">     302 </span>                :            :         {</a>
-<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">         15 :           valent_device_hide_notification (self-&gt;device, &quot;battery-level&quot;);</span></a>
-<a name="304"><span class="lineNum">     304 </span>                :            :         }</a>
-<a name="305"><span class="lineNum">     305 </span>                :            : </a>
-<a name="306"><span class="lineNum">     306 </span>                :            :       /* Notify listening parties */</a>
-<a name="307"><span class="lineNum">     307 </span>                :<span class="lineCov">        215 :       valent_battery_plugin_update_gaction (self);</span></a>
-<a name="308"><span class="lineNum">     308 </span>                :            :     }</a>
-<a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">        370 : }</span></a>
-<a name="310"><span class="lineNum">     310 </span>                :            : </a>
-<a name="311"><span class="lineNum">     311 </span>                :            : static void</a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">          5 : valent_battery_plugin_handle_battery_request (ValentBatteryPlugin *self)</span></a>
-<a name="313"><span class="lineNum">     313 </span>                :            : {</a>
-<a name="314"><span class="lineNum">     314 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="315"><span class="lineNum">     315 </span>                :            : </a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">          5 :   valent_battery_plugin_send_state (self);</span></a>
-<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">          5 : }</span></a>
-<a name="318"><span class="lineNum">     318 </span>                :            : </a>
-<a name="319"><span class="lineNum">     319 </span>                :            : /**</a>
-<a name="320"><span class="lineNum">     320 </span>                :            :  * valent_battery_plugin_request_state:</a>
-<a name="321"><span class="lineNum">     321 </span>                :            :  * @self: a #ValentBatteryPlugin</a>
-<a name="322"><span class="lineNum">     322 </span>                :            :  *</a>
-<a name="323"><span class="lineNum">     323 </span>                :            :  * Send a request for the remote device's battery state.</a>
-<a name="324"><span class="lineNum">     324 </span>                :            :  */</a>
-<a name="325"><span class="lineNum">     325 </span>                :            : static void</a>
-<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">         20 : valent_battery_plugin_request_state (ValentBatteryPlugin *self)</span></a>
-<a name="327"><span class="lineNum">     327 </span>                :            : {</a>
-<a name="328"><span class="lineNum">     328 </span>                :            :   JsonBuilder *builder;</a>
-<a name="329"><span class="lineNum">     329 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_autoptr (JsonNode) packet = NULL;</span></a>
-<a name="330"><span class="lineNum">     330 </span>                :            : </a>
-<a name="331"><span class="lineNum">     331 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_return_if_fail (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="332"><span class="lineNum">     332 </span>                :            : </a>
-<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">         20 :   builder = valent_packet_start(&quot;kdeconnect.battery.request&quot;);</span></a>
-<a name="334"><span class="lineNum">     334 </span>                :<span class="lineCov">         20 :   json_builder_set_member_name (builder, &quot;request&quot;);</span></a>
-<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">         20 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">         20 :   packet = valent_packet_finish (builder);</span></a>
-<a name="337"><span class="lineNum">     337 </span>                :            : </a>
-<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">         20 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="339"><span class="lineNum">     339 </span>                :            : }</a>
-<a name="340"><span class="lineNum">     340 </span>                :            : </a>
-<a name="341"><span class="lineNum">     341 </span>                :            : /**</a>
-<a name="342"><span class="lineNum">     342 </span>                :            :  * valent_battery_plugin_send_state:</a>
-<a name="343"><span class="lineNum">     343 </span>                :            :  * @self: a #ValentBatteryPlugin</a>
-<a name="344"><span class="lineNum">     344 </span>                :            :  *</a>
-<a name="345"><span class="lineNum">     345 </span>                :            :  * Send the local device's battery state.</a>
-<a name="346"><span class="lineNum">     346 </span>                :            :  */</a>
-<a name="347"><span class="lineNum">     347 </span>                :            : static void</a>
-<a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">         40 : valent_battery_plugin_send_state (ValentBatteryPlugin *self)</span></a>
-<a name="349"><span class="lineNum">     349 </span>                :            : {</a>
-<a name="350"><span class="lineNum">     350 </span>                :            :   JsonBuilder *builder;</a>
-<a name="351"><span class="lineNum">     351 </span>        [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :   g_autoptr (JsonNode) packet = NULL;</span></a>
-<a name="352"><span class="lineNum">     352 </span>                :            : </a>
-<a name="353"><span class="lineNum">     353 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">         40 :   g_return_if_fail (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="354"><span class="lineNum">     354 </span>                :            : </a>
-<a name="355"><span class="lineNum">     355 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">         40 :   if (!g_settings_get_boolean (self-&gt;settings, &quot;share-state&quot;))</span></a>
-<a name="356"><span class="lineNum">     356 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
-<a name="357"><span class="lineNum">     357 </span>                :            : </a>
-<a name="358"><span class="lineNum">     358 </span>                :<span class="lineCov">         40 :   builder = valent_packet_start(&quot;kdeconnect.battery&quot;);</span></a>
-<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">         40 :   json_builder_set_member_name (builder, &quot;currentCharge&quot;);</span></a>
-<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         40 :   json_builder_add_int_value (builder, valent_battery_get_level (self-&gt;battery));</span></a>
-<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">         40 :   json_builder_set_member_name (builder, &quot;isCharging&quot;);</span></a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">         40 :   json_builder_add_boolean_value (builder, valent_battery_get_charging (self-&gt;battery));</span></a>
-<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">         40 :   json_builder_set_member_name (builder, &quot;thresholdEvent&quot;);</span></a>
-<a name="364"><span class="lineNum">     364 </span>                :<span class="lineCov">         40 :   json_builder_add_int_value (builder, valent_battery_get_threshold (self-&gt;battery));</span></a>
-<a name="365"><span class="lineNum">     365 </span>                :<span class="lineCov">         40 :   packet = valent_packet_finish (builder);</span></a>
-<a name="366"><span class="lineNum">     366 </span>                :            : </a>
-<a name="367"><span class="lineNum">     367 </span>                :<span class="lineCov">         40 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="368"><span class="lineNum">     368 </span>                :            : }</a>
-<a name="369"><span class="lineNum">     369 </span>                :            : </a>
-<a name="370"><span class="lineNum">     370 </span>                :            : /*</a>
-<a name="371"><span class="lineNum">     371 </span>                :            :  * GActions</a>
-<a name="372"><span class="lineNum">     372 </span>                :            :  */</a>
-<a name="373"><span class="lineNum">     373 </span>                :            : static const GActionEntry actions[] = {</a>
-<a name="374"><span class="lineNum">     374 </span>                :            :     {&quot;battery&quot;, NULL, NULL, &quot;(false, 'battery-missing-symbolic', -1, uint32 0)&quot;, NULL},</a>
-<a name="375"><span class="lineNum">     375 </span>                :            : };</a>
-<a name="376"><span class="lineNum">     376 </span>                :            : </a>
-<a name="377"><span class="lineNum">     377 </span>                :            : /*</a>
-<a name="378"><span class="lineNum">     378 </span>                :            :  * ValentDevicePlugin</a>
-<a name="379"><span class="lineNum">     379 </span>                :            :  */</a>
-<a name="380"><span class="lineNum">     380 </span>                :            : static void</a>
-<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">         30 : valent_battery_plugin_enable (ValentDevicePlugin *plugin)</span></a>
-<a name="382"><span class="lineNum">     382 </span>                :            : {</a>
-<a name="383"><span class="lineNum">     383 </span>                :<span class="lineCov">         30 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
-<a name="384"><span class="lineNum">     384 </span>                :            :   const char *device_id;</a>
-<a name="385"><span class="lineNum">     385 </span>                :            : </a>
-<a name="386"><span class="lineNum">     386 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="387"><span class="lineNum">     387 </span>                :            : </a>
-<a name="388"><span class="lineNum">     388 </span>                :            :   /* Setup GSettings */</a>
-<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">         30 :   device_id = valent_device_get_id (self-&gt;device);</span></a>
-<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">         30 :   self-&gt;settings = valent_device_plugin_new_settings (device_id, &quot;battery&quot;);</span></a>
-<a name="391"><span class="lineNum">     391 </span>                :            : </a>
-<a name="392"><span class="lineNum">     392 </span>                :            :   /* Register GActions */</a>
-<a name="393"><span class="lineNum">     393 </span>                :<span class="lineCov">         30 :   valent_device_plugin_register_actions (plugin,</span></a>
-<a name="394"><span class="lineNum">     394 </span>                :            :                                          actions,</a>
-<a name="395"><span class="lineNum">     395 </span>                :            :                                          G_N_ELEMENTS (actions));</a>
-<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">         30 : }</span></a>
-<a name="397"><span class="lineNum">     397 </span>                :            : </a>
-<a name="398"><span class="lineNum">     398 </span>                :            : static void</a>
-<a name="399"><span class="lineNum">     399 </span>                :<span class="lineCov">         20 : valent_battery_plugin_disable (ValentDevicePlugin *plugin)</span></a>
-<a name="400"><span class="lineNum">     400 </span>                :            : {</a>
-<a name="401"><span class="lineNum">     401 </span>                :<span class="lineCov">         20 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
-<a name="402"><span class="lineNum">     402 </span>                :            : </a>
-<a name="403"><span class="lineNum">     403 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="404"><span class="lineNum">     404 </span>                :            : </a>
-<a name="405"><span class="lineNum">     405 </span>                :            :   /* Unregister GActions */</a>
-<a name="406"><span class="lineNum">     406 </span>                :<span class="lineCov">         20 :   valent_device_plugin_unregister_actions (plugin, actions, G_N_ELEMENTS (actions));</span></a>
-<a name="407"><span class="lineNum">     407 </span>                :            : </a>
-<a name="408"><span class="lineNum">     408 </span>                :            :   /* Dispose GSettings */</a>
-<a name="409"><span class="lineNum">     409 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_clear_object (&amp;self-&gt;settings);</span></a>
-<a name="410"><span class="lineNum">     410 </span>                :            : </a>
-<a name="411"><span class="lineNum">     411 </span>                :            :   /* Drop power */</a>
-<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">         20 :   connect_battery (self, FALSE);</span></a>
-<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">         20 : }</span></a>
-<a name="414"><span class="lineNum">     414 </span>                :            : </a>
-<a name="415"><span class="lineNum">     415 </span>                :            : static void</a>
-<a name="416"><span class="lineNum">     416 </span>                :<span class="lineCov">         60 : valent_battery_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
-<a name="417"><span class="lineNum">     417 </span>                :            : {</a>
-<a name="418"><span class="lineNum">     418 </span>                :<span class="lineCov">         60 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
-<a name="419"><span class="lineNum">     419 </span>                :            :   gboolean connected;</a>
-<a name="420"><span class="lineNum">     420 </span>                :            :   gboolean paired;</a>
-<a name="421"><span class="lineNum">     421 </span>                :            :   gboolean available;</a>
-<a name="422"><span class="lineNum">     422 </span>                :            : </a>
-<a name="423"><span class="lineNum">     423 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="424"><span class="lineNum">     424 </span>                :            : </a>
-<a name="425"><span class="lineNum">     425 </span>                :<span class="lineCov">         60 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
-<a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">         60 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
-<a name="427"><span class="lineNum">     427 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         60 :   available = (connected &amp;&amp; paired);</span></a>
-<a name="428"><span class="lineNum">     428 </span>                :            : </a>
-<a name="429"><span class="lineNum">     429 </span>                :            :   /* GActions */</a>
-<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">         60 :   valent_device_plugin_toggle_actions (plugin,</span></a>
-<a name="431"><span class="lineNum">     431 </span>                :            :                                        actions, G_N_ELEMENTS (actions),</a>
-<a name="432"><span class="lineNum">     432 </span>                :            :                                        available);</a>
-<a name="433"><span class="lineNum">     433 </span>                :            : </a>
-<a name="434"><span class="lineNum">     434 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">         60 :   if (available)</span></a>
-<a name="435"><span class="lineNum">     435 </span>                :            :     {</a>
-<a name="436"><span class="lineNum">     436 </span>                :<span class="lineCov">         20 :       connect_battery (self, TRUE);</span></a>
-<a name="437"><span class="lineNum">     437 </span>                :<span class="lineCov">         20 :       valent_battery_plugin_send_state (self);</span></a>
-<a name="438"><span class="lineNum">     438 </span>                :<span class="lineCov">         20 :       valent_battery_plugin_request_state (self);</span></a>
-<a name="439"><span class="lineNum">     439 </span>                :            :     }</a>
-<a name="440"><span class="lineNum">     440 </span>                :            :   else</a>
-<a name="441"><span class="lineNum">     441 </span>                :            :     {</a>
-<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">         40 :       connect_battery (self, FALSE);</span></a>
-<a name="443"><span class="lineNum">     443 </span>                :            :     }</a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         60 : }</span></a>
-<a name="445"><span class="lineNum">     445 </span>                :            : </a>
-<a name="446"><span class="lineNum">     446 </span>                :            : static void</a>
-<a name="447"><span class="lineNum">     447 </span>                :<span class="lineCov">        375 : valent_battery_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
-<a name="448"><span class="lineNum">     448 </span>                :            :                                      const char         *type,</a>
-<a name="449"><span class="lineNum">     449 </span>                :            :                                      JsonNode           *packet)</a>
-<a name="450"><span class="lineNum">     450 </span>                :            : {</a>
-<a name="451"><span class="lineNum">     451 </span>                :<span class="lineCov">        375 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
-<a name="452"><span class="lineNum">     452 </span>                :            : </a>
-<a name="453"><span class="lineNum">     453 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 375 times"> + </span>]:<span class="lineCov">        375 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
-<a name="454"><span class="lineNum">     454 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 375 times"> + </span>]:<span class="lineCov">        375 :   g_assert (type != NULL);</span></a>
-<a name="455"><span class="lineNum">     455 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 375 times"> + </span>]:<span class="lineCov">        375 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
-<a name="456"><span class="lineNum">     456 </span>                :            : </a>
-<a name="457"><span class="lineNum">     457 </span>                :            :   /* The remote battery state changed */</a>
-<a name="458"><span class="lineNum">     458 </span>        [<span class="branchCov" title="Branch 0 was taken 370 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">        375 :   if (g_strcmp0 (type, &quot;kdeconnect.battery&quot;) == 0)</span></a>
-<a name="459"><span class="lineNum">     459 </span>                :<span class="lineCov">        370 :     valent_battery_plugin_handle_battery (plugin, packet);</span></a>
-<a name="460"><span class="lineNum">     460 </span>                :            : </a>
-<a name="461"><span class="lineNum">     461 </span>                :            :   /* A request for the local battery state */</a>
-<a name="462"><span class="lineNum">     462 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   else if (g_strcmp0 (type, &quot;kdeconnect.battery.request&quot;) == 0)</span></a>
-<a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">          5 :     valent_battery_plugin_handle_battery_request (self);</span></a>
-<a name="464"><span class="lineNum">     464 </span>                :            : </a>
-<a name="465"><span class="lineNum">     465 </span>                :            :   else</a>
-<a name="466"><span class="lineNum">     466 </span>                :<span class="lineNoCov">          0 :     g_assert_not_reached ();</span></a>
-<a name="467"><span class="lineNum">     467 </span>                :<span class="lineCov">        375 : }</span></a>
-<a name="468"><span class="lineNum">     468 </span>                :            : </a>
-<a name="469"><span class="lineNum">     469 </span>                :            : static void</a>
-<a name="470"><span class="lineNum">     470 </span>                :<span class="lineCov">         35 : valent_device_plugin_iface_init (ValentDevicePluginInterface *iface)</span></a>
-<a name="471"><span class="lineNum">     471 </span>                :            : {</a>
-<a name="472"><span class="lineNum">     472 </span>                :<span class="lineCov">         35 :   iface-&gt;enable = valent_battery_plugin_enable;</span></a>
-<a name="473"><span class="lineNum">     473 </span>                :<span class="lineCov">         35 :   iface-&gt;disable = valent_battery_plugin_disable;</span></a>
-<a name="474"><span class="lineNum">     474 </span>                :<span class="lineCov">         35 :   iface-&gt;handle_packet = valent_battery_plugin_handle_packet;</span></a>
-<a name="475"><span class="lineNum">     475 </span>                :<span class="lineCov">         35 :   iface-&gt;update_state = valent_battery_plugin_update_state;</span></a>
-<a name="476"><span class="lineNum">     476 </span>                :<span class="lineCov">         35 : }</span></a>
-<a name="477"><span class="lineNum">     477 </span>                :            : </a>
-<a name="478"><span class="lineNum">     478 </span>                :            : /*</a>
-<a name="479"><span class="lineNum">     479 </span>                :            :  * GObject</a>
-<a name="480"><span class="lineNum">     480 </span>                :            :  */</a>
-<a name="481"><span class="lineNum">     481 </span>                :            : static void</a>
-<a name="482"><span class="lineNum">     482 </span>                :<span class="lineCov">        110 : valent_battery_plugin_get_property (GObject    *object,</span></a>
-<a name="483"><span class="lineNum">     483 </span>                :            :                                     guint       prop_id,</a>
-<a name="484"><span class="lineNum">     484 </span>                :            :                                     GValue     *value,</a>
-<a name="485"><span class="lineNum">     485 </span>                :            :                                     GParamSpec *pspec)</a>
-<a name="486"><span class="lineNum">     486 </span>                :            : {</a>
-<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">        110 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (object);</span></a>
-<a name="488"><span class="lineNum">     488 </span>                :            : </a>
-<a name="489"><span class="lineNum">     489 </span>        [<span class="branchCov" title="Branch 0 was taken 110 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        110 :   switch (prop_id)</span></a>
-<a name="490"><span class="lineNum">     490 </span>                :            :     {</a>
-<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">        110 :     case PROP_DEVICE:</span></a>
-<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">        110 :       g_value_set_object (value, self-&gt;device);</span></a>
-<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">        110 :       break;</span></a>
-<a name="494"><span class="lineNum">     494 </span>                :            : </a>
-<a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="496"><span class="lineNum">     496 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="497"><span class="lineNum">     497 </span>                :            :     }</a>
-<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">        110 : }</span></a>
-<a name="499"><span class="lineNum">     499 </span>                :            : </a>
-<a name="500"><span class="lineNum">     500 </span>                :            : static void</a>
-<a name="501"><span class="lineNum">     501 </span>                :<span class="lineCov">         30 : valent_battery_plugin_set_property (GObject      *object,</span></a>
-<a name="502"><span class="lineNum">     502 </span>                :            :                                     guint         prop_id,</a>
-<a name="503"><span class="lineNum">     503 </span>                :            :                                     const GValue *value,</a>
-<a name="504"><span class="lineNum">     504 </span>                :            :                                     GParamSpec   *pspec)</a>
-<a name="505"><span class="lineNum">     505 </span>                :            : {</a>
-<a name="506"><span class="lineNum">     506 </span>                :<span class="lineCov">         30 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (object);</span></a>
-<a name="507"><span class="lineNum">     507 </span>                :            : </a>
-<a name="508"><span class="lineNum">     508 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         30 :   switch (prop_id)</span></a>
-<a name="509"><span class="lineNum">     509 </span>                :            :     {</a>
-<a name="510"><span class="lineNum">     510 </span>                :<span class="lineCov">         30 :     case PROP_DEVICE:</span></a>
-<a name="511"><span class="lineNum">     511 </span>                :<span class="lineCov">         30 :       self-&gt;device = g_value_get_object (value);</span></a>
-<a name="512"><span class="lineNum">     512 </span>                :<span class="lineCov">         30 :       break;</span></a>
-<a name="513"><span class="lineNum">     513 </span>                :            : </a>
-<a name="514"><span class="lineNum">     514 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="515"><span class="lineNum">     515 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="516"><span class="lineNum">     516 </span>                :            :     }</a>
-<a name="517"><span class="lineNum">     517 </span>                :<span class="lineCov">         30 : }</span></a>
-<a name="518"><span class="lineNum">     518 </span>                :            : </a>
-<a name="519"><span class="lineNum">     519 </span>                :            : static void</a>
-<a name="520"><span class="lineNum">     520 </span>                :<span class="lineCov">         30 : valent_battery_plugin_init (ValentBatteryPlugin *self)</span></a>
-<a name="521"><span class="lineNum">     521 </span>                :            : {</a>
-<a name="522"><span class="lineNum">     522 </span>                :<span class="lineCov">         30 :   self-&gt;charging = FALSE;</span></a>
-<a name="523"><span class="lineNum">     523 </span>                :<span class="lineCov">         30 :   self-&gt;level = -1;</span></a>
-<a name="524"><span class="lineNum">     524 </span>                :<span class="lineCov">         30 :   self-&gt;time = 0;</span></a>
-<a name="525"><span class="lineNum">     525 </span>                :<span class="lineCov">         30 :   self-&gt;threshold = 15;</span></a>
-<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">         30 : }</span></a>
-<a name="527"><span class="lineNum">     527 </span>                :            : </a>
-<a name="528"><span class="lineNum">     528 </span>                :            : static void</a>
-<a name="529"><span class="lineNum">     529 </span>                :<span class="lineCov">         35 : valent_battery_plugin_class_init (ValentBatteryPluginClass *klass)</span></a>
-<a name="530"><span class="lineNum">     530 </span>                :            : {</a>
-<a name="531"><span class="lineNum">     531 </span>                :<span class="lineCov">         35 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="532"><span class="lineNum">     532 </span>                :            : </a>
-<a name="533"><span class="lineNum">     533 </span>                :<span class="lineCov">         35 :   object_class-&gt;get_property = valent_battery_plugin_get_property;</span></a>
-<a name="534"><span class="lineNum">     534 </span>                :<span class="lineCov">         35 :   object_class-&gt;set_property = valent_battery_plugin_set_property;</span></a>
-<a name="535"><span class="lineNum">     535 </span>                :            : </a>
-<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">         35 :   g_object_class_override_property (object_class, PROP_DEVICE, &quot;device&quot;);</span></a>
-<a name="537"><span class="lineNum">     537 </span>                :<span class="lineCov">         35 : }</span></a>
-<a name="538"><span class="lineNum">     538 </span>                :            : </a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">        190 :                g_settings_get_boolean (self-&gt;settings, &quot;low-notification&quot;))</span></a>
+<a name="294"><span class="lineNum">     294 </span>                :            :         {</a>
+<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">        190 :           self-&gt;threshold = self-&gt;level;</span></a>
+<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">        190 :           valent_battery_plugin_show_notification (self, FALSE);</span></a>
+<a name="297"><span class="lineNum">     297 </span>                :            :         }</a>
+<a name="298"><span class="lineNum">     298 </span>                :            : </a>
+<a name="299"><span class="lineNum">     299 </span>                :            :       /* Battery is no longer low or is charging */</a>
+<a name="300"><span class="lineNum">     300 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         15 :       else if (self-&gt;level &gt; self-&gt;threshold || self-&gt;charging)</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :            :         {</a>
+<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">         15 :           valent_device_hide_notification (self-&gt;device, &quot;battery-level&quot;);</span></a>
+<a name="303"><span class="lineNum">     303 </span>                :            :         }</a>
+<a name="304"><span class="lineNum">     304 </span>                :            : </a>
+<a name="305"><span class="lineNum">     305 </span>                :            :       /* Notify listening parties */</a>
+<a name="306"><span class="lineNum">     306 </span>                :<span class="lineCov">        215 :       valent_battery_plugin_update_gaction (self);</span></a>
+<a name="307"><span class="lineNum">     307 </span>                :            :     }</a>
+<a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">        370 : }</span></a>
+<a name="309"><span class="lineNum">     309 </span>                :            : </a>
+<a name="310"><span class="lineNum">     310 </span>                :            : static void</a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">          5 : valent_battery_plugin_handle_battery_request (ValentBatteryPlugin *self)</span></a>
+<a name="312"><span class="lineNum">     312 </span>                :            : {</a>
+<a name="313"><span class="lineNum">     313 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :            : </a>
+<a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">          5 :   valent_battery_plugin_send_state (self);</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="317"><span class="lineNum">     317 </span>                :            : </a>
+<a name="318"><span class="lineNum">     318 </span>                :            : /**</a>
+<a name="319"><span class="lineNum">     319 </span>                :            :  * valent_battery_plugin_request_state:</a>
+<a name="320"><span class="lineNum">     320 </span>                :            :  * @self: a #ValentBatteryPlugin</a>
+<a name="321"><span class="lineNum">     321 </span>                :            :  *</a>
+<a name="322"><span class="lineNum">     322 </span>                :            :  * Send a request for the remote device's battery state.</a>
+<a name="323"><span class="lineNum">     323 </span>                :            :  */</a>
+<a name="324"><span class="lineNum">     324 </span>                :            : static void</a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">         20 : valent_battery_plugin_request_state (ValentBatteryPlugin *self)</span></a>
+<a name="326"><span class="lineNum">     326 </span>                :            : {</a>
+<a name="327"><span class="lineNum">     327 </span>                :            :   JsonBuilder *builder;</a>
+<a name="328"><span class="lineNum">     328 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="329"><span class="lineNum">     329 </span>                :            : </a>
+<a name="330"><span class="lineNum">     330 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_return_if_fail (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="331"><span class="lineNum">     331 </span>                :            : </a>
+<a name="332"><span class="lineNum">     332 </span>                :<span class="lineCov">         20 :   builder = valent_packet_start(&quot;kdeconnect.battery.request&quot;);</span></a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">         20 :   json_builder_set_member_name (builder, &quot;request&quot;);</span></a>
+<a name="334"><span class="lineNum">     334 </span>                :<span class="lineCov">         20 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">         20 :   packet = valent_packet_finish (builder);</span></a>
+<a name="336"><span class="lineNum">     336 </span>                :            : </a>
+<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">         20 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="338"><span class="lineNum">     338 </span>                :            : }</a>
+<a name="339"><span class="lineNum">     339 </span>                :            : </a>
+<a name="340"><span class="lineNum">     340 </span>                :            : /**</a>
+<a name="341"><span class="lineNum">     341 </span>                :            :  * valent_battery_plugin_send_state:</a>
+<a name="342"><span class="lineNum">     342 </span>                :            :  * @self: a #ValentBatteryPlugin</a>
+<a name="343"><span class="lineNum">     343 </span>                :            :  *</a>
+<a name="344"><span class="lineNum">     344 </span>                :            :  * Send the local device's battery state.</a>
+<a name="345"><span class="lineNum">     345 </span>                :            :  */</a>
+<a name="346"><span class="lineNum">     346 </span>                :            : static void</a>
+<a name="347"><span class="lineNum">     347 </span>                :<span class="lineCov">         42 : valent_battery_plugin_send_state (ValentBatteryPlugin *self)</span></a>
+<a name="348"><span class="lineNum">     348 </span>                :            : {</a>
+<a name="349"><span class="lineNum">     349 </span>                :            :   JsonBuilder *builder;</a>
+<a name="350"><span class="lineNum">     350 </span>        [<span class="branchCov" title="Branch 0 was taken 42 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         42 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="351"><span class="lineNum">     351 </span>                :            : </a>
+<a name="352"><span class="lineNum">     352 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 42 times"> + </span>]:<span class="lineCov">         42 :   g_return_if_fail (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="353"><span class="lineNum">     353 </span>                :            : </a>
+<a name="354"><span class="lineNum">     354 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 42 times"> + </span>]:<span class="lineCov">         42 :   if (!g_settings_get_boolean (self-&gt;settings, &quot;share-state&quot;))</span></a>
+<a name="355"><span class="lineNum">     355 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
+<a name="356"><span class="lineNum">     356 </span>                :            : </a>
+<a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">         42 :   builder = valent_packet_start(&quot;kdeconnect.battery&quot;);</span></a>
+<a name="358"><span class="lineNum">     358 </span>                :<span class="lineCov">         42 :   json_builder_set_member_name (builder, &quot;currentCharge&quot;);</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">         42 :   json_builder_add_int_value (builder, valent_battery_get_level (self-&gt;battery));</span></a>
+<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         42 :   json_builder_set_member_name (builder, &quot;isCharging&quot;);</span></a>
+<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">         42 :   json_builder_add_boolean_value (builder, valent_battery_get_charging (self-&gt;battery));</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">         42 :   json_builder_set_member_name (builder, &quot;thresholdEvent&quot;);</span></a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">         42 :   json_builder_add_int_value (builder, valent_battery_get_threshold (self-&gt;battery));</span></a>
+<a name="364"><span class="lineNum">     364 </span>                :<span class="lineCov">         42 :   packet = valent_packet_finish (builder);</span></a>
+<a name="365"><span class="lineNum">     365 </span>                :            : </a>
+<a name="366"><span class="lineNum">     366 </span>                :<span class="lineCov">         42 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="367"><span class="lineNum">     367 </span>                :            : }</a>
+<a name="368"><span class="lineNum">     368 </span>                :            : </a>
+<a name="369"><span class="lineNum">     369 </span>                :            : /*</a>
+<a name="370"><span class="lineNum">     370 </span>                :            :  * GActions</a>
+<a name="371"><span class="lineNum">     371 </span>                :            :  */</a>
+<a name="372"><span class="lineNum">     372 </span>                :            : static const GActionEntry actions[] = {</a>
+<a name="373"><span class="lineNum">     373 </span>                :            :     {&quot;battery&quot;, NULL, NULL, &quot;(false, 'battery-missing-symbolic', -1, uint32 0)&quot;, NULL},</a>
+<a name="374"><span class="lineNum">     374 </span>                :            : };</a>
+<a name="375"><span class="lineNum">     375 </span>                :            : </a>
+<a name="376"><span class="lineNum">     376 </span>                :            : /*</a>
+<a name="377"><span class="lineNum">     377 </span>                :            :  * ValentDevicePlugin</a>
+<a name="378"><span class="lineNum">     378 </span>                :            :  */</a>
+<a name="379"><span class="lineNum">     379 </span>                :            : static void</a>
+<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">         30 : valent_battery_plugin_enable (ValentDevicePlugin *plugin)</span></a>
+<a name="381"><span class="lineNum">     381 </span>                :            : {</a>
+<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">         30 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
+<a name="383"><span class="lineNum">     383 </span>                :            :   const char *device_id;</a>
+<a name="384"><span class="lineNum">     384 </span>                :            : </a>
+<a name="385"><span class="lineNum">     385 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="386"><span class="lineNum">     386 </span>                :            : </a>
+<a name="387"><span class="lineNum">     387 </span>                :            :   /* Setup GSettings */</a>
+<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">         30 :   device_id = valent_device_get_id (self-&gt;device);</span></a>
+<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">         30 :   self-&gt;settings = valent_device_plugin_new_settings (device_id, &quot;battery&quot;);</span></a>
+<a name="390"><span class="lineNum">     390 </span>                :            : </a>
+<a name="391"><span class="lineNum">     391 </span>                :            :   /* Register GActions */</a>
+<a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">         30 :   valent_device_plugin_register_actions (plugin,</span></a>
+<a name="393"><span class="lineNum">     393 </span>                :            :                                          actions,</a>
+<a name="394"><span class="lineNum">     394 </span>                :            :                                          G_N_ELEMENTS (actions));</a>
+<a name="395"><span class="lineNum">     395 </span>                :<span class="lineCov">         30 : }</span></a>
+<a name="396"><span class="lineNum">     396 </span>                :            : </a>
+<a name="397"><span class="lineNum">     397 </span>                :            : static void</a>
+<a name="398"><span class="lineNum">     398 </span>                :<span class="lineCov">         19 : valent_battery_plugin_disable (ValentDevicePlugin *plugin)</span></a>
+<a name="399"><span class="lineNum">     399 </span>                :            : {</a>
+<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">         19 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
+<a name="401"><span class="lineNum">     401 </span>                :            : </a>
+<a name="402"><span class="lineNum">     402 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span>]:<span class="lineCov">         19 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="403"><span class="lineNum">     403 </span>                :            : </a>
+<a name="404"><span class="lineNum">     404 </span>                :            :   /* Unregister GActions */</a>
+<a name="405"><span class="lineNum">     405 </span>                :<span class="lineCov">         19 :   valent_device_plugin_unregister_actions (plugin, actions, G_N_ELEMENTS (actions));</span></a>
+<a name="406"><span class="lineNum">     406 </span>                :            : </a>
+<a name="407"><span class="lineNum">     407 </span>                :            :   /* Dispose GSettings */</a>
+<a name="408"><span class="lineNum">     408 </span>        [<span class="branchCov" title="Branch 0 was taken 19 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         19 :   g_clear_object (&amp;self-&gt;settings);</span></a>
+<a name="409"><span class="lineNum">     409 </span>                :            : </a>
+<a name="410"><span class="lineNum">     410 </span>                :            :   /* Drop power */</a>
+<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">         19 :   connect_battery (self, FALSE);</span></a>
+<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">         19 : }</span></a>
+<a name="413"><span class="lineNum">     413 </span>                :            : </a>
+<a name="414"><span class="lineNum">     414 </span>                :            : static void</a>
+<a name="415"><span class="lineNum">     415 </span>                :<span class="lineCov">         61 : valent_battery_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :            : {</a>
+<a name="417"><span class="lineNum">     417 </span>                :<span class="lineCov">         61 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
+<a name="418"><span class="lineNum">     418 </span>                :            :   gboolean connected;</a>
+<a name="419"><span class="lineNum">     419 </span>                :            :   gboolean paired;</a>
+<a name="420"><span class="lineNum">     420 </span>                :            :   gboolean available;</a>
+<a name="421"><span class="lineNum">     421 </span>                :            : </a>
+<a name="422"><span class="lineNum">     422 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 61 times"> + </span>]:<span class="lineCov">         61 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="423"><span class="lineNum">     423 </span>                :            : </a>
+<a name="424"><span class="lineNum">     424 </span>                :<span class="lineCov">         61 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
+<a name="425"><span class="lineNum">     425 </span>                :<span class="lineCov">         61 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
+<a name="426"><span class="lineNum">     426 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 41 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         61 :   available = (connected &amp;&amp; paired);</span></a>
+<a name="427"><span class="lineNum">     427 </span>                :            : </a>
+<a name="428"><span class="lineNum">     428 </span>                :            :   /* GActions */</a>
+<a name="429"><span class="lineNum">     429 </span>                :<span class="lineCov">         61 :   valent_device_plugin_toggle_actions (plugin,</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :            :                                        actions, G_N_ELEMENTS (actions),</a>
+<a name="431"><span class="lineNum">     431 </span>                :            :                                        available);</a>
+<a name="432"><span class="lineNum">     432 </span>                :            : </a>
+<a name="433"><span class="lineNum">     433 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 41 times"> + </span>]:<span class="lineCov">         61 :   if (available)</span></a>
+<a name="434"><span class="lineNum">     434 </span>                :            :     {</a>
+<a name="435"><span class="lineNum">     435 </span>                :<span class="lineCov">         20 :       connect_battery (self, TRUE);</span></a>
+<a name="436"><span class="lineNum">     436 </span>                :<span class="lineCov">         20 :       valent_battery_plugin_send_state (self);</span></a>
+<a name="437"><span class="lineNum">     437 </span>                :<span class="lineCov">         20 :       valent_battery_plugin_request_state (self);</span></a>
+<a name="438"><span class="lineNum">     438 </span>                :            :     }</a>
+<a name="439"><span class="lineNum">     439 </span>                :            :   else</a>
+<a name="440"><span class="lineNum">     440 </span>                :            :     {</a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         41 :       connect_battery (self, FALSE);</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :            :     }</a>
+<a name="443"><span class="lineNum">     443 </span>                :<span class="lineCov">         61 : }</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :            : </a>
+<a name="445"><span class="lineNum">     445 </span>                :            : static void</a>
+<a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">        375 : valent_battery_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
+<a name="447"><span class="lineNum">     447 </span>                :            :                                      const char         *type,</a>
+<a name="448"><span class="lineNum">     448 </span>                :            :                                      JsonNode           *packet)</a>
+<a name="449"><span class="lineNum">     449 </span>                :            : {</a>
+<a name="450"><span class="lineNum">     450 </span>                :<span class="lineCov">        375 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (plugin);</span></a>
+<a name="451"><span class="lineNum">     451 </span>                :            : </a>
+<a name="452"><span class="lineNum">     452 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 375 times"> + </span>]:<span class="lineCov">        375 :   g_assert (VALENT_IS_BATTERY_PLUGIN (self));</span></a>
+<a name="453"><span class="lineNum">     453 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 375 times"> + </span>]:<span class="lineCov">        375 :   g_assert (type != NULL);</span></a>
+<a name="454"><span class="lineNum">     454 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 375 times"> + </span>]:<span class="lineCov">        375 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
+<a name="455"><span class="lineNum">     455 </span>                :            : </a>
+<a name="456"><span class="lineNum">     456 </span>                :            :   /* The remote battery state changed */</a>
+<a name="457"><span class="lineNum">     457 </span>        [<span class="branchCov" title="Branch 0 was taken 370 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">        375 :   if (g_strcmp0 (type, &quot;kdeconnect.battery&quot;) == 0)</span></a>
+<a name="458"><span class="lineNum">     458 </span>                :<span class="lineCov">        370 :     valent_battery_plugin_handle_battery (self, packet);</span></a>
+<a name="459"><span class="lineNum">     459 </span>                :            : </a>
+<a name="460"><span class="lineNum">     460 </span>                :            :   /* A request for the local battery state */</a>
+<a name="461"><span class="lineNum">     461 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   else if (g_strcmp0 (type, &quot;kdeconnect.battery.request&quot;) == 0)</span></a>
+<a name="462"><span class="lineNum">     462 </span>                :<span class="lineCov">          5 :     valent_battery_plugin_handle_battery_request (self);</span></a>
+<a name="463"><span class="lineNum">     463 </span>                :            : </a>
+<a name="464"><span class="lineNum">     464 </span>                :            :   else</a>
+<a name="465"><span class="lineNum">     465 </span>                :<span class="lineNoCov">          0 :     g_assert_not_reached ();</span></a>
+<a name="466"><span class="lineNum">     466 </span>                :<span class="lineCov">        375 : }</span></a>
+<a name="467"><span class="lineNum">     467 </span>                :            : </a>
+<a name="468"><span class="lineNum">     468 </span>                :            : static void</a>
+<a name="469"><span class="lineNum">     469 </span>                :<span class="lineCov">         35 : valent_device_plugin_iface_init (ValentDevicePluginInterface *iface)</span></a>
+<a name="470"><span class="lineNum">     470 </span>                :            : {</a>
+<a name="471"><span class="lineNum">     471 </span>                :<span class="lineCov">         35 :   iface-&gt;enable = valent_battery_plugin_enable;</span></a>
+<a name="472"><span class="lineNum">     472 </span>                :<span class="lineCov">         35 :   iface-&gt;disable = valent_battery_plugin_disable;</span></a>
+<a name="473"><span class="lineNum">     473 </span>                :<span class="lineCov">         35 :   iface-&gt;handle_packet = valent_battery_plugin_handle_packet;</span></a>
+<a name="474"><span class="lineNum">     474 </span>                :<span class="lineCov">         35 :   iface-&gt;update_state = valent_battery_plugin_update_state;</span></a>
+<a name="475"><span class="lineNum">     475 </span>                :<span class="lineCov">         35 : }</span></a>
+<a name="476"><span class="lineNum">     476 </span>                :            : </a>
+<a name="477"><span class="lineNum">     477 </span>                :            : /*</a>
+<a name="478"><span class="lineNum">     478 </span>                :            :  * GObject</a>
+<a name="479"><span class="lineNum">     479 </span>                :            :  */</a>
+<a name="480"><span class="lineNum">     480 </span>                :            : static void</a>
+<a name="481"><span class="lineNum">     481 </span>                :<span class="lineCov">        110 : valent_battery_plugin_get_property (GObject    *object,</span></a>
+<a name="482"><span class="lineNum">     482 </span>                :            :                                     guint       prop_id,</a>
+<a name="483"><span class="lineNum">     483 </span>                :            :                                     GValue     *value,</a>
+<a name="484"><span class="lineNum">     484 </span>                :            :                                     GParamSpec *pspec)</a>
+<a name="485"><span class="lineNum">     485 </span>                :            : {</a>
+<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">        110 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (object);</span></a>
+<a name="487"><span class="lineNum">     487 </span>                :            : </a>
+<a name="488"><span class="lineNum">     488 </span>        [<span class="branchCov" title="Branch 0 was taken 110 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        110 :   switch (prop_id)</span></a>
+<a name="489"><span class="lineNum">     489 </span>                :            :     {</a>
+<a name="490"><span class="lineNum">     490 </span>                :<span class="lineCov">        110 :     case PROP_DEVICE:</span></a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">        110 :       g_value_set_object (value, self-&gt;device);</span></a>
+<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">        110 :       break;</span></a>
+<a name="493"><span class="lineNum">     493 </span>                :            : </a>
+<a name="494"><span class="lineNum">     494 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="496"><span class="lineNum">     496 </span>                :            :     }</a>
+<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">        110 : }</span></a>
+<a name="498"><span class="lineNum">     498 </span>                :            : </a>
+<a name="499"><span class="lineNum">     499 </span>                :            : static void</a>
+<a name="500"><span class="lineNum">     500 </span>                :<span class="lineCov">         30 : valent_battery_plugin_set_property (GObject      *object,</span></a>
+<a name="501"><span class="lineNum">     501 </span>                :            :                                     guint         prop_id,</a>
+<a name="502"><span class="lineNum">     502 </span>                :            :                                     const GValue *value,</a>
+<a name="503"><span class="lineNum">     503 </span>                :            :                                     GParamSpec   *pspec)</a>
+<a name="504"><span class="lineNum">     504 </span>                :            : {</a>
+<a name="505"><span class="lineNum">     505 </span>                :<span class="lineCov">         30 :   ValentBatteryPlugin *self = VALENT_BATTERY_PLUGIN (object);</span></a>
+<a name="506"><span class="lineNum">     506 </span>                :            : </a>
+<a name="507"><span class="lineNum">     507 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         30 :   switch (prop_id)</span></a>
+<a name="508"><span class="lineNum">     508 </span>                :            :     {</a>
+<a name="509"><span class="lineNum">     509 </span>                :<span class="lineCov">         30 :     case PROP_DEVICE:</span></a>
+<a name="510"><span class="lineNum">     510 </span>                :<span class="lineCov">         30 :       self-&gt;device = g_value_get_object (value);</span></a>
+<a name="511"><span class="lineNum">     511 </span>                :<span class="lineCov">         30 :       break;</span></a>
+<a name="512"><span class="lineNum">     512 </span>                :            : </a>
+<a name="513"><span class="lineNum">     513 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="514"><span class="lineNum">     514 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="515"><span class="lineNum">     515 </span>                :            :     }</a>
+<a name="516"><span class="lineNum">     516 </span>                :<span class="lineCov">         30 : }</span></a>
+<a name="517"><span class="lineNum">     517 </span>                :            : </a>
+<a name="518"><span class="lineNum">     518 </span>                :            : static void</a>
+<a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">         30 : valent_battery_plugin_init (ValentBatteryPlugin *self)</span></a>
+<a name="520"><span class="lineNum">     520 </span>                :            : {</a>
+<a name="521"><span class="lineNum">     521 </span>                :<span class="lineCov">         30 :   self-&gt;charging = FALSE;</span></a>
+<a name="522"><span class="lineNum">     522 </span>                :<span class="lineCov">         30 :   self-&gt;level = -1;</span></a>
+<a name="523"><span class="lineNum">     523 </span>                :<span class="lineCov">         30 :   self-&gt;time = 0;</span></a>
+<a name="524"><span class="lineNum">     524 </span>                :<span class="lineCov">         30 :   self-&gt;threshold = 15;</span></a>
+<a name="525"><span class="lineNum">     525 </span>                :<span class="lineCov">         30 : }</span></a>
+<a name="526"><span class="lineNum">     526 </span>                :            : </a>
+<a name="527"><span class="lineNum">     527 </span>                :            : static void</a>
+<a name="528"><span class="lineNum">     528 </span>                :<span class="lineCov">         35 : valent_battery_plugin_class_init (ValentBatteryPluginClass *klass)</span></a>
+<a name="529"><span class="lineNum">     529 </span>                :            : {</a>
+<a name="530"><span class="lineNum">     530 </span>                :<span class="lineCov">         35 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="531"><span class="lineNum">     531 </span>                :            : </a>
+<a name="532"><span class="lineNum">     532 </span>                :<span class="lineCov">         35 :   object_class-&gt;get_property = valent_battery_plugin_get_property;</span></a>
+<a name="533"><span class="lineNum">     533 </span>                :<span class="lineCov">         35 :   object_class-&gt;set_property = valent_battery_plugin_set_property;</span></a>
+<a name="534"><span class="lineNum">     534 </span>                :            : </a>
+<a name="535"><span class="lineNum">     535 </span>                :<span class="lineCov">         35 :   g_object_class_override_property (object_class, PROP_DEVICE, &quot;device&quot;);</span></a>
+<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">         35 : }</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :            : </a>
 </pre>
       </td>
     </tr>
