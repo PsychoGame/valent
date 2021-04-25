@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-23 20:02:17</td>
+            <td class="headerValue">2021-04-25 09:53:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">30</td>
@@ -133,8 +133,8 @@
 <a name="55"><span class="lineNum">      55 </span>                :            :   GQueue         write_queue;</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : } ValentChannelPrivate;</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 287 times"> + </span><span class="branchCov" title="Branch 1 was taken 23375 times"> + </span><span class="branchCov" title="Branch 2 was taken 186 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      39520 : G_DEFINE_TYPE_WITH_PRIVATE (ValentChannel, valent_channel, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 186 times"> + </span><span class="branchCov" title="Branch 5 was taken 23375 times"> + </span>]
+<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 322 times"> + </span><span class="branchCov" title="Branch 1 was taken 23470 times"> + </span><span class="branchCov" title="Branch 2 was taken 201 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      39681 : G_DEFINE_TYPE_WITH_PRIVATE (ValentChannel, valent_channel, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 201 times"> + </span><span class="branchCov" title="Branch 5 was taken 23470 times"> + </span>]
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
 <a name="60"><span class="lineNum">      60 </span>                :            : /**</a>
 <a name="61"><span class="lineNum">      61 </span>                :            :  * ValentChannelClass:</a>
@@ -162,16 +162,16 @@
 <a name="83"><span class="lineNum">      83 </span>                :            :  * Packet Buffer</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :  */</a>
 <a name="85"><span class="lineNum">      85 </span>                :            : static inline gsize</a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">       1187 : channel_buffer_find_lf (ValentChannelPrivate *priv,</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">       1177 : channel_buffer_find_lf (ValentChannelPrivate *priv,</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            :                         gsize                *cursor_out)</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : {</a>
-<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 62735 times"> + </span><span class="branchCov" title="Branch 1 was taken 712 times"> + </span>]:<span class="lineCov">      63447 :   for (gsize cursor = *cursor_out; cursor &lt; priv-&gt;end; cursor++)</span></a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 62735 times"> + </span><span class="branchCov" title="Branch 1 was taken 702 times"> + </span>]:<span class="lineCov">      63437 :   for (gsize cursor = *cursor_out; cursor &lt; priv-&gt;end; cursor++)</span></a>
 <a name="90"><span class="lineNum">      90 </span>                :            :     {</a>
 <a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 475 times"> + </span><span class="branchCov" title="Branch 1 was taken 62260 times"> + </span>]:<span class="lineCov">      62735 :       if G_UNLIKELY (priv-&gt;buffer[cursor] == '\n')</span></a>
 <a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">        475 :         return cursor;</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            :     }</a>
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        712 :   return 0;</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        702 :   return 0;</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            : }</a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <a name="98"><span class="lineNum">      98 </span>                :            : static JsonNode *</a>
@@ -200,12 +200,12 @@
 <a name="121"><span class="lineNum">     121 </span>                :            : </a>
 <a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">        725 :   cursor = priv-&gt;pos;</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            : </a>
-<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 712 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">       1187 :   while ((lf_pos = channel_buffer_find_lf (priv, &amp;cursor)) == 0)</span></a>
+<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 702 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">       1177 :   while ((lf_pos = channel_buffer_find_lf (priv, &amp;cursor)) == 0)</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            :     {</a>
 <a name="126"><span class="lineNum">     126 </span>                :            :       gssize n_read;</a>
 <a name="127"><span class="lineNum">     127 </span>                :            : </a>
 <a name="128"><span class="lineNum">     128 </span>                :            :       /* Compact or extend the buffer */</a>
-<a name="129"><span class="lineNum">     129 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 712 times"> + </span>]:<span class="lineCov">        712 :       if G_UNLIKELY (priv-&gt;buffer_size - priv-&gt;end == 0)</span></a>
+<a name="129"><span class="lineNum">     129 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 702 times"> + </span>]:<span class="lineCov">        702 :       if G_UNLIKELY (priv-&gt;buffer_size - priv-&gt;end == 0)</span></a>
 <a name="130"><span class="lineNum">     130 </span>                :            :         {</a>
 <a name="131"><span class="lineNum">     131 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if G_LIKELY (priv-&gt;pos)</span></a>
 <a name="132"><span class="lineNum">     132 </span>                :            :             {</a>
@@ -226,29 +226,29 @@
 <a name="147"><span class="lineNum">     147 </span>                :            :         }</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
 <a name="149"><span class="lineNum">     149 </span>                :            :       /* Fill the buffer */</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        712 :       n_read = g_input_stream_read (input_stream,</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        712 :                                     priv-&gt;buffer + priv-&gt;end,</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">        712 :                                     priv-&gt;buffer_size - priv-&gt;end,</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        702 :       n_read = g_input_stream_read (input_stream,</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        702 :                                     priv-&gt;buffer + priv-&gt;end,</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">        702 :                                     priv-&gt;buffer_size - priv-&gt;end,</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :                                     cancellable,</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :                                     error);</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :       /* Success; loop to check for an LF */</a>
-<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 462 times"> + </span><span class="branchCov" title="Branch 1 was taken 247 times"> + </span>]:<span class="lineCov">        709 :       if (n_read &gt; 0)</span></a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        462 :         priv-&gt;end = priv-&gt;end + n_read;</span></a>
+<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 452 times"> + </span><span class="branchCov" title="Branch 1 was taken 247 times"> + </span>]:<span class="lineCov">        699 :       if (n_read &gt; 0)</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        452 :         priv-&gt;end = priv-&gt;end + n_read;</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            : </a>
 <a name="160"><span class="lineNum">     160 </span>                :            :       /* End of stream; report connection closed */</a>
-<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 191 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">        247 :       else if (n_read == 0)</span></a>
+<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 190 times"> + </span><span class="branchCov" title="Branch 1 was taken 57 times"> + </span>]:<span class="lineCov">        247 :       else if (n_read == 0)</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            :         {</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        191 :           g_set_error (error,</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        190 :           g_set_error (error,</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            :                        G_IO_ERROR,</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :                        G_IO_ERROR_CONNECTION_CLOSED,</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :                        &quot;Channel is closed&quot;);</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        191 :           return NULL;</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        190 :           return NULL;</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :         }</a>
 <a name="169"><span class="lineNum">     169 </span>                :            : </a>
 <a name="170"><span class="lineNum">     170 </span>                :            :       /* There was a genuine error */</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :       else</a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         56 :         return NULL;</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         57 :         return NULL;</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            :     }</a>
 <a name="174"><span class="lineNum">     174 </span>                :            : </a>
 <a name="175"><span class="lineNum">     175 </span>                :            :   /* Size the line and compact buffer */</a>
@@ -387,38 +387,38 @@
 <a name="308"><span class="lineNum">     308 </span>                :            :  * GObject</a>
 <a name="309"><span class="lineNum">     309 </span>                :            :  */</a>
 <a name="310"><span class="lineNum">     310 </span>                :            : static void</a>
-<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        616 : valent_channel_dispose (GObject *object)</span></a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        624 : valent_channel_dispose (GObject *object)</span></a>
 <a name="312"><span class="lineNum">     312 </span>                :            : {</a>
-<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">        616 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
-<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        616 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
+<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">        624 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        624 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
 <a name="315"><span class="lineNum">     315 </span>                :            : </a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">        616 :   g_queue_foreach (&amp;priv-&gt;write_queue, (GFunc)g_object_unref, NULL);</span></a>
-<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">        616 :   g_queue_clear (&amp;priv-&gt;write_queue);</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">        624 :   g_queue_foreach (&amp;priv-&gt;write_queue, (GFunc)g_object_unref, NULL);</span></a>
+<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">        624 :   g_queue_clear (&amp;priv-&gt;write_queue);</span></a>
 <a name="318"><span class="lineNum">     318 </span>                :            : </a>
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">        616 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;dispose (object);</span></a>
-<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">        616 : }</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">        624 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;dispose (object);</span></a>
+<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">        624 : }</span></a>
 <a name="321"><span class="lineNum">     321 </span>                :            : </a>
 <a name="322"><span class="lineNum">     322 </span>                :            : static void</a>
-<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">        616 : valent_channel_finalize (GObject *object)</span></a>
+<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">        624 : valent_channel_finalize (GObject *object)</span></a>
 <a name="324"><span class="lineNum">     324 </span>                :            : {</a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">        616 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
-<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">        616 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">        624 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
+<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">        624 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
 <a name="327"><span class="lineNum">     327 </span>                :            : </a>
-<a name="328"><span class="lineNum">     328 </span>        [<span class="branchCov" title="Branch 0 was taken 616 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        616 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
+<a name="328"><span class="lineNum">     328 </span>        [<span class="branchCov" title="Branch 0 was taken 624 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        624 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
 <a name="329"><span class="lineNum">     329 </span>                :            : </a>
 <a name="330"><span class="lineNum">     330 </span>                :            :   /* Channel metadata */</a>
-<a name="331"><span class="lineNum">     331 </span>        [<span class="branchCov" title="Branch 0 was taken 526 times"> + </span><span class="branchCov" title="Branch 1 was taken 90 times"> + </span>]:<span class="lineCov">        616 :   g_clear_pointer (&amp;priv-&gt;identity, json_node_unref);</span></a>
-<a name="332"><span class="lineNum">     332 </span>        [<span class="branchCov" title="Branch 0 was taken 571 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">        616 :   g_clear_pointer (&amp;priv-&gt;peer_identity, json_node_unref);</span></a>
-<a name="333"><span class="lineNum">     333 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 586 times"> + </span>]:<span class="lineCov">        616 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
+<a name="331"><span class="lineNum">     331 </span>        [<span class="branchCov" title="Branch 0 was taken 534 times"> + </span><span class="branchCov" title="Branch 1 was taken 90 times"> + </span>]:<span class="lineCov">        624 :   g_clear_pointer (&amp;priv-&gt;identity, json_node_unref);</span></a>
+<a name="332"><span class="lineNum">     332 </span>        [<span class="branchCov" title="Branch 0 was taken 579 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">        624 :   g_clear_pointer (&amp;priv-&gt;peer_identity, json_node_unref);</span></a>
+<a name="333"><span class="lineNum">     333 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 594 times"> + </span>]:<span class="lineCov">        624 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            : </a>
 <a name="335"><span class="lineNum">     335 </span>                :            :   /* Packet Buffer */</a>
-<a name="336"><span class="lineNum">     336 </span>        [<span class="branchCov" title="Branch 0 was taken 616 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        616 :   g_clear_pointer (&amp;priv-&gt;buffer, g_free);</span></a>
-<a name="337"><span class="lineNum">     337 </span>        [<span class="branchCov" title="Branch 0 was taken 616 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        616 :   g_clear_object (&amp;priv-&gt;parser);</span></a>
-<a name="338"><span class="lineNum">     338 </span>        [<span class="branchCov" title="Branch 0 was taken 616 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        616 :   g_clear_object (&amp;priv-&gt;generator);</span></a>
-<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">        616 :   g_mutex_clear (&amp;priv-&gt;write_lock);</span></a>
+<a name="336"><span class="lineNum">     336 </span>        [<span class="branchCov" title="Branch 0 was taken 624 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        624 :   g_clear_pointer (&amp;priv-&gt;buffer, g_free);</span></a>
+<a name="337"><span class="lineNum">     337 </span>        [<span class="branchCov" title="Branch 0 was taken 624 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        624 :   g_clear_object (&amp;priv-&gt;parser);</span></a>
+<a name="338"><span class="lineNum">     338 </span>        [<span class="branchCov" title="Branch 0 was taken 624 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        624 :   g_clear_object (&amp;priv-&gt;generator);</span></a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">        624 :   g_mutex_clear (&amp;priv-&gt;write_lock);</span></a>
 <a name="340"><span class="lineNum">     340 </span>                :            : </a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">        616 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;finalize (object);</span></a>
-<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">        616 : }</span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">        624 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;finalize (object);</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">        624 : }</span></a>
 <a name="343"><span class="lineNum">     343 </span>                :            : </a>
 <a name="344"><span class="lineNum">     344 </span>                :            : static void</a>
 <a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">          5 : valent_channel_get_property (GObject    *object,</span></a>
@@ -486,27 +486,27 @@
 <a name="405"><span class="lineNum">     405 </span>                :<span class="lineCov">       1905 : }</span></a>
 <a name="406"><span class="lineNum">     406 </span>                :            : </a>
 <a name="407"><span class="lineNum">     407 </span>                :            : static void</a>
-<a name="408"><span class="lineNum">     408 </span>                :<span class="lineCov">        101 : valent_channel_class_init (ValentChannelClass *klass)</span></a>
+<a name="408"><span class="lineNum">     408 </span>                :<span class="lineCov">        121 : valent_channel_class_init (ValentChannelClass *klass)</span></a>
 <a name="409"><span class="lineNum">     409 </span>                :            : {</a>
-<a name="410"><span class="lineNum">     410 </span>                :<span class="lineCov">        101 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="410"><span class="lineNum">     410 </span>                :<span class="lineCov">        121 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
 <a name="411"><span class="lineNum">     411 </span>                :            : </a>
-<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">        101 :   object_class-&gt;dispose = valent_channel_dispose;</span></a>
-<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">        101 :   object_class-&gt;finalize = valent_channel_finalize;</span></a>
-<a name="414"><span class="lineNum">     414 </span>                :<span class="lineCov">        101 :   object_class-&gt;get_property = valent_channel_get_property;</span></a>
-<a name="415"><span class="lineNum">     415 </span>                :<span class="lineCov">        101 :   object_class-&gt;set_property = valent_channel_set_property;</span></a>
+<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">        121 :   object_class-&gt;dispose = valent_channel_dispose;</span></a>
+<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">        121 :   object_class-&gt;finalize = valent_channel_finalize;</span></a>
+<a name="414"><span class="lineNum">     414 </span>                :<span class="lineCov">        121 :   object_class-&gt;get_property = valent_channel_get_property;</span></a>
+<a name="415"><span class="lineNum">     415 </span>                :<span class="lineCov">        121 :   object_class-&gt;set_property = valent_channel_set_property;</span></a>
 <a name="416"><span class="lineNum">     416 </span>                :            : </a>
-<a name="417"><span class="lineNum">     417 </span>                :<span class="lineCov">        101 :   klass-&gt;get_verification_key = valent_channel_real_get_verification_key;</span></a>
-<a name="418"><span class="lineNum">     418 </span>                :<span class="lineCov">        101 :   klass-&gt;download = valent_channel_real_download;</span></a>
-<a name="419"><span class="lineNum">     419 </span>                :<span class="lineCov">        101 :   klass-&gt;upload = valent_channel_real_upload;</span></a>
-<a name="420"><span class="lineNum">     420 </span>                :<span class="lineCov">        101 :   klass-&gt;store_data = valent_channel_real_store_data;</span></a>
+<a name="417"><span class="lineNum">     417 </span>                :<span class="lineCov">        121 :   klass-&gt;get_verification_key = valent_channel_real_get_verification_key;</span></a>
+<a name="418"><span class="lineNum">     418 </span>                :<span class="lineCov">        121 :   klass-&gt;download = valent_channel_real_download;</span></a>
+<a name="419"><span class="lineNum">     419 </span>                :<span class="lineCov">        121 :   klass-&gt;upload = valent_channel_real_upload;</span></a>
+<a name="420"><span class="lineNum">     420 </span>                :<span class="lineCov">        121 :   klass-&gt;store_data = valent_channel_real_store_data;</span></a>
 <a name="421"><span class="lineNum">     421 </span>                :            : </a>
 <a name="422"><span class="lineNum">     422 </span>                :            :   /**</a>
 <a name="423"><span class="lineNum">     423 </span>                :            :    * ValentChannel:base-stream:</a>
 <a name="424"><span class="lineNum">     424 </span>                :            :    *</a>
 <a name="425"><span class="lineNum">     425 </span>                :            :    * The base #GIOStream for the channel.</a>
 <a name="426"><span class="lineNum">     426 </span>                :            :    */</a>
-<a name="427"><span class="lineNum">     427 </span>                :<span class="lineCov">        101 :   properties [PROP_BASE_STREAM] =</span></a>
-<a name="428"><span class="lineNum">     428 </span>                :<span class="lineCov">        101 :     g_param_spec_object (&quot;base-stream&quot;,</span></a>
+<a name="427"><span class="lineNum">     427 </span>                :<span class="lineCov">        121 :   properties [PROP_BASE_STREAM] =</span></a>
+<a name="428"><span class="lineNum">     428 </span>                :<span class="lineCov">        121 :     g_param_spec_object (&quot;base-stream&quot;,</span></a>
 <a name="429"><span class="lineNum">     429 </span>                :            :                          &quot;Base Stream&quot;,</a>
 <a name="430"><span class="lineNum">     430 </span>                :            :                          &quot;Base Stream&quot;,</a>
 <a name="431"><span class="lineNum">     431 </span>                :            :                          G_TYPE_IO_STREAM,</a>
@@ -520,8 +520,8 @@
 <a name="439"><span class="lineNum">     439 </span>                :            :    * The identity packet sent by the #ValentChannelService during connection</a>
 <a name="440"><span class="lineNum">     440 </span>                :            :    * negotiation.</a>
 <a name="441"><span class="lineNum">     441 </span>                :            :    */</a>
-<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">        101 :   properties [PROP_IDENTITY] =</span></a>
-<a name="443"><span class="lineNum">     443 </span>                :<span class="lineCov">        101 :     g_param_spec_boxed (&quot;identity&quot;,</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">        121 :   properties [PROP_IDENTITY] =</span></a>
+<a name="443"><span class="lineNum">     443 </span>                :<span class="lineCov">        121 :     g_param_spec_boxed (&quot;identity&quot;,</span></a>
 <a name="444"><span class="lineNum">     444 </span>                :            :                         &quot;Identity&quot;,</a>
 <a name="445"><span class="lineNum">     445 </span>                :            :                         &quot;Identity&quot;,</a>
 <a name="446"><span class="lineNum">     446 </span>                :            :                         JSON_TYPE_NODE,</a>
@@ -534,8 +534,8 @@
 <a name="453"><span class="lineNum">     453 </span>                :            :    *</a>
 <a name="454"><span class="lineNum">     454 </span>                :            :    * The identity packet sent by the peer during connection negotiation.</a>
 <a name="455"><span class="lineNum">     455 </span>                :            :    */</a>
-<a name="456"><span class="lineNum">     456 </span>                :<span class="lineCov">        101 :   properties [PROP_PEER_IDENTITY] =</span></a>
-<a name="457"><span class="lineNum">     457 </span>                :<span class="lineCov">        101 :     g_param_spec_boxed (&quot;peer-identity&quot;,</span></a>
+<a name="456"><span class="lineNum">     456 </span>                :<span class="lineCov">        121 :   properties [PROP_PEER_IDENTITY] =</span></a>
+<a name="457"><span class="lineNum">     457 </span>                :<span class="lineCov">        121 :     g_param_spec_boxed (&quot;peer-identity&quot;,</span></a>
 <a name="458"><span class="lineNum">     458 </span>                :            :                         &quot;Peer Identity&quot;,</a>
 <a name="459"><span class="lineNum">     459 </span>                :            :                         &quot;Peer Identity&quot;,</a>
 <a name="460"><span class="lineNum">     460 </span>                :            :                         JSON_TYPE_NODE,</a>
@@ -548,8 +548,8 @@
 <a name="467"><span class="lineNum">     467 </span>                :            :    *</a>
 <a name="468"><span class="lineNum">     468 </span>                :            :    * The reconnect URI of the channel.</a>
 <a name="469"><span class="lineNum">     469 </span>                :            :    */</a>
-<a name="470"><span class="lineNum">     470 </span>                :<span class="lineCov">        101 :   properties [PROP_URI] =</span></a>
-<a name="471"><span class="lineNum">     471 </span>                :<span class="lineCov">        101 :     g_param_spec_string (&quot;uri&quot;,</span></a>
+<a name="470"><span class="lineNum">     470 </span>                :<span class="lineCov">        121 :   properties [PROP_URI] =</span></a>
+<a name="471"><span class="lineNum">     471 </span>                :<span class="lineCov">        121 :     g_param_spec_string (&quot;uri&quot;,</span></a>
 <a name="472"><span class="lineNum">     472 </span>                :            :                          &quot;URI&quot;,</a>
 <a name="473"><span class="lineNum">     473 </span>                :            :                          &quot;The reconnect URI of the channel&quot;,</a>
 <a name="474"><span class="lineNum">     474 </span>                :            :                          NULL,</a>
@@ -557,8 +557,8 @@
 <a name="476"><span class="lineNum">     476 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
 <a name="477"><span class="lineNum">     477 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
 <a name="478"><span class="lineNum">     478 </span>                :            : </a>
-<a name="479"><span class="lineNum">     479 </span>                :<span class="lineCov">        101 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
-<a name="480"><span class="lineNum">     480 </span>                :<span class="lineCov">        101 : }</span></a>
+<a name="479"><span class="lineNum">     479 </span>                :<span class="lineCov">        121 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
+<a name="480"><span class="lineNum">     480 </span>                :<span class="lineCov">        121 : }</span></a>
 <a name="481"><span class="lineNum">     481 </span>                :            : </a>
 <a name="482"><span class="lineNum">     482 </span>                :            : static void</a>
 <a name="483"><span class="lineNum">     483 </span>                :<span class="lineCov">        670 : valent_channel_init (ValentChannel *self)</span></a>
@@ -644,7 +644,7 @@
 <a name="561"><span class="lineNum">     561 </span>                :            :  * Returns: (transfer full): a #JsonNode or %NULL with @error set</a>
 <a name="562"><span class="lineNum">     562 </span>                :            :  */</a>
 <a name="563"><span class="lineNum">     563 </span>                :            : JsonNode *</a>
-<a name="564"><span class="lineNum">     564 </span>                :<span class="lineCov">        671 : valent_channel_read_packet_finish (ValentChannel  *channel,</span></a>
+<a name="564"><span class="lineNum">     564 </span>                :<span class="lineCov">        682 : valent_channel_read_packet_finish (ValentChannel  *channel,</span></a>
 <a name="565"><span class="lineNum">     565 </span>                :            :                                    GAsyncResult   *result,</a>
 <a name="566"><span class="lineNum">     566 </span>                :            :                                    GError        **error)</a>
 <a name="567"><span class="lineNum">     567 </span>                :            : {</a>
@@ -652,13 +652,13 @@
 <a name="569"><span class="lineNum">     569 </span>                :            : </a>
 <a name="570"><span class="lineNum">     570 </span>                :            :   VALENT_ENTRY;</a>
 <a name="571"><span class="lineNum">     571 </span>                :            : </a>
-<a name="572"><span class="lineNum">     572 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 671 times"> + </span>]:<span class="lineCov">        671 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
-<a name="573"><span class="lineNum">     573 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 671 times"> + </span>]:<span class="lineCov">        671 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
-<a name="574"><span class="lineNum">     574 </span>  [<span class="branchCov" title="Branch 0 was taken 671 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 671 times"> + </span>]:<span class="lineCov">        671 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
+<a name="572"><span class="lineNum">     572 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 682 times"> + </span>]:<span class="lineCov">        682 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
+<a name="573"><span class="lineNum">     573 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 682 times"> + </span>]:<span class="lineCov">        682 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
+<a name="574"><span class="lineNum">     574 </span>  [<span class="branchCov" title="Branch 0 was taken 682 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 682 times"> + </span>]:<span class="lineCov">        682 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
 <a name="575"><span class="lineNum">     575 </span>                :            : </a>
-<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">        671 :   ret = g_task_propagate_pointer (G_TASK (result), error);</span></a>
+<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">        682 :   ret = g_task_propagate_pointer (G_TASK (result), error);</span></a>
 <a name="577"><span class="lineNum">     577 </span>                :            : </a>
-<a name="578"><span class="lineNum">     578 </span>                :<span class="lineCov">        671 :   VALENT_RETURN (ret);</span></a>
+<a name="578"><span class="lineNum">     578 </span>                :<span class="lineCov">        682 :   VALENT_RETURN (ret);</span></a>
 <a name="579"><span class="lineNum">     579 </span>                :            : }</a>
 <a name="580"><span class="lineNum">     580 </span>                :            : </a>
 <a name="581"><span class="lineNum">     581 </span>                :            : static gboolean</a>
@@ -670,11 +670,11 @@
 <a name="587"><span class="lineNum">     587 </span>                :            : </a>
 <a name="588"><span class="lineNum">     588 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4330 times"> + </span>]:<span class="lineCov">       4330 :   g_assert (VALENT_IS_CHANNEL (channel));</span></a>
 <a name="589"><span class="lineNum">     589 </span>                :            : </a>
-<a name="590"><span class="lineNum">     590 </span>        [<span class="branchCov" title="Branch 0 was taken 2129 times"> + </span><span class="branchCov" title="Branch 1 was taken 2201 times"> + </span>]:<span class="lineCov">       4330 :   if (priv-&gt;write_queue.length == 0)</span></a>
-<a name="591"><span class="lineNum">     591 </span>                :<span class="lineCov">       2129 :     return FALSE;</span></a>
+<a name="590"><span class="lineNum">     590 </span>        [<span class="branchCov" title="Branch 0 was taken 2131 times"> + </span><span class="branchCov" title="Branch 1 was taken 2199 times"> + </span>]:<span class="lineCov">       4330 :   if (priv-&gt;write_queue.length == 0)</span></a>
+<a name="591"><span class="lineNum">     591 </span>                :<span class="lineCov">       2131 :     return FALSE;</span></a>
 <a name="592"><span class="lineNum">     592 </span>                :            : </a>
-<a name="593"><span class="lineNum">     593 </span>        [<span class="branchCov" title="Branch 0 was taken 36 times"> + </span><span class="branchCov" title="Branch 1 was taken 2165 times"> + </span>]:<span class="lineCov">       2201 :   if (!g_mutex_trylock (&amp;priv-&gt;write_lock))</span></a>
-<a name="594"><span class="lineNum">     594 </span>                :<span class="lineCov">         36 :     return FALSE;</span></a>
+<a name="593"><span class="lineNum">     593 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchCov" title="Branch 1 was taken 2165 times"> + </span>]:<span class="lineCov">       2199 :   if (!g_mutex_trylock (&amp;priv-&gt;write_lock))</span></a>
+<a name="594"><span class="lineNum">     594 </span>                :<span class="lineCov">         34 :     return FALSE;</span></a>
 <a name="595"><span class="lineNum">     595 </span>                :            : </a>
 <a name="596"><span class="lineNum">     596 </span>                :<span class="lineCov">       2165 :   task = g_queue_pop_head (&amp;priv-&gt;write_queue);</span></a>
 <a name="597"><span class="lineNum">     597 </span>                :<span class="lineCov">       2165 :   g_task_run_in_thread (task, write_packet_task);</span></a>
@@ -755,7 +755,7 @@
 <a name="670"><span class="lineNum">     670 </span>                :            :  * Returns: %TRUE or %FALSE with @error set</a>
 <a name="671"><span class="lineNum">     671 </span>                :            :  */</a>
 <a name="672"><span class="lineNum">     672 </span>                :            : gboolean</a>
-<a name="673"><span class="lineNum">     673 </span>                :<span class="lineCov">       2102 : valent_channel_write_packet_finish (ValentChannel  *channel,</span></a>
+<a name="673"><span class="lineNum">     673 </span>                :<span class="lineCov">       2105 : valent_channel_write_packet_finish (ValentChannel  *channel,</span></a>
 <a name="674"><span class="lineNum">     674 </span>                :            :                                     GAsyncResult   *result,</a>
 <a name="675"><span class="lineNum">     675 </span>                :            :                                     GError        **error)</a>
 <a name="676"><span class="lineNum">     676 </span>                :            : {</a>
@@ -763,13 +763,13 @@
 <a name="678"><span class="lineNum">     678 </span>                :            : </a>
 <a name="679"><span class="lineNum">     679 </span>                :            :   VALENT_ENTRY;</a>
 <a name="680"><span class="lineNum">     680 </span>                :            : </a>
-<a name="681"><span class="lineNum">     681 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2102 times"> + </span>]:<span class="lineCov">       2102 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
-<a name="682"><span class="lineNum">     682 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2102 times"> + </span>]:<span class="lineCov">       2102 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
-<a name="683"><span class="lineNum">     683 </span>  [<span class="branchCov" title="Branch 0 was taken 2102 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2102 times"> + </span>]:<span class="lineCov">       2102 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
+<a name="681"><span class="lineNum">     681 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2105 times"> + </span>]:<span class="lineCov">       2105 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
+<a name="682"><span class="lineNum">     682 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2105 times"> + </span>]:<span class="lineCov">       2105 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
+<a name="683"><span class="lineNum">     683 </span>  [<span class="branchCov" title="Branch 0 was taken 2105 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2105 times"> + </span>]:<span class="lineCov">       2105 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
 <a name="684"><span class="lineNum">     684 </span>                :            : </a>
-<a name="685"><span class="lineNum">     685 </span>                :<span class="lineCov">       2102 :   ret = g_task_propagate_boolean (G_TASK (result), error);</span></a>
+<a name="685"><span class="lineNum">     685 </span>                :<span class="lineCov">       2105 :   ret = g_task_propagate_boolean (G_TASK (result), error);</span></a>
 <a name="686"><span class="lineNum">     686 </span>                :            : </a>
-<a name="687"><span class="lineNum">     687 </span>                :<span class="lineCov">       2102 :   VALENT_RETURN (ret);</span></a>
+<a name="687"><span class="lineNum">     687 </span>                :<span class="lineCov">       2105 :   VALENT_RETURN (ret);</span></a>
 <a name="688"><span class="lineNum">     688 </span>                :            : }</a>
 <a name="689"><span class="lineNum">     689 </span>                :            : </a>
 <a name="690"><span class="lineNum">     690 </span>                :            : /**</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-23 20:02:17</td>
+            <td class="headerValue">2021-04-25 09:53:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -109,8 +109,8 @@
 <a name="31"><span class="lineNum">      31 </span>                :            : /* Interfaces */</a>
 <a name="32"><span class="lineNum">      32 </span>                :            : static void valent_plugin_preferences_iface_init (ValentPluginPreferencesInterface *iface);</a>
 <a name="33"><span class="lineNum">      33 </span>                :            : </a>
-<a name="34"><span class="lineNum">      34 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span><span class="branchCov" title="Branch 2 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         65 : G_DEFINE_TYPE_WITH_CODE (ValentBatteryPreferences, valent_battery_preferences, ADW_TYPE_PREFERENCES_PAGE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 15 times"> + </span><span class="branchCov" title="Branch 5 was taken 20 times"> + </span>]
+<a name="34"><span class="lineNum">      34 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 55 times"> + </span><span class="branchCov" title="Branch 2 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        125 : G_DEFINE_TYPE_WITH_CODE (ValentBatteryPreferences, valent_battery_preferences, ADW_TYPE_PREFERENCES_PAGE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 35 times"> + </span><span class="branchCov" title="Branch 5 was taken 20 times"> + </span>]
 <a name="35"><span class="lineNum">      35 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_PLUGIN_PREFERENCES, valent_plugin_preferences_iface_init))</a>
 <a name="36"><span class="lineNum">      36 </span>                :            : </a>
 <a name="37"><span class="lineNum">      37 </span>                :            : </a>
@@ -125,9 +125,9 @@
 <a name="46"><span class="lineNum">      46 </span>                :            :  * ValentPluginPreferences</a>
 <a name="47"><span class="lineNum">      47 </span>                :            :  */</a>
 <a name="48"><span class="lineNum">      48 </span>                :            : static void</a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">         15 : valent_plugin_preferences_iface_init (ValentPluginPreferencesInterface *iface)</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">         35 : valent_plugin_preferences_iface_init (ValentPluginPreferencesInterface *iface)</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :            : {</a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">         35 : }</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            : </a>
 <a name="53"><span class="lineNum">      53 </span>                :            : /*</a>
 <a name="54"><span class="lineNum">      54 </span>                :            :  * GObject</a>
@@ -212,27 +212,27 @@
 <a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">          5 : }</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
 <a name="135"><span class="lineNum">     135 </span>                :            : static void</a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         15 : valent_battery_preferences_class_init (ValentBatteryPreferencesClass *klass)</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         35 : valent_battery_preferences_class_init (ValentBatteryPreferencesClass *klass)</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            : {</a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         15 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         15 :   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         35 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         35 :   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            : </a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         15 :   object_class-&gt;constructed = valent_battery_preferences_constructed;</span></a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">         15 :   object_class-&gt;finalize = valent_battery_preferences_finalize;</span></a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         15 :   object_class-&gt;get_property = valent_battery_preferences_get_property;</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         15 :   object_class-&gt;set_property = valent_battery_preferences_set_property;</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         35 :   object_class-&gt;constructed = valent_battery_preferences_constructed;</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">         35 :   object_class-&gt;finalize = valent_battery_preferences_finalize;</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         35 :   object_class-&gt;get_property = valent_battery_preferences_get_property;</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         35 :   object_class-&gt;set_property = valent_battery_preferences_set_property;</span></a>
 <a name="145"><span class="lineNum">     145 </span>                :            : </a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         15 :   gtk_widget_class_set_template_from_resource (widget_class, &quot;/plugins/battery/valent-battery-preferences.ui&quot;);</span></a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         15 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, share_state);</span></a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">         15 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, full_notification);</span></a>
-<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">         15 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, full_notification_level);</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         15 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, low_notification);</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         15 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, low_notification_level);</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         35 :   gtk_widget_class_set_template_from_resource (widget_class, &quot;/plugins/battery/valent-battery-preferences.ui&quot;);</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         35 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, share_state);</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">         35 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, full_notification);</span></a>
+<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">         35 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, full_notification_level);</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         35 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, low_notification);</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         35 :   gtk_widget_class_bind_template_child (widget_class, ValentBatteryPreferences, low_notification_level);</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         15 :   g_object_class_override_property (object_class,</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         35 :   g_object_class_override_property (object_class,</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            :                                     PROP_PLUGIN_CONTEXT,</a>
 <a name="155"><span class="lineNum">     155 </span>                :            :                                     &quot;plugin-context&quot;);</a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         35 : }</span></a>
 <a name="157"><span class="lineNum">     157 </span>                :            : </a>
 <a name="158"><span class="lineNum">     158 </span>                :            : static void</a>
 <a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">          5 : valent_battery_preferences_init (ValentBatteryPreferences *self)</span></a>

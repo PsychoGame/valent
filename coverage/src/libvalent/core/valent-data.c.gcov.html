@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-23 20:02:17</td>
+            <td class="headerValue">2021-04-25 09:53:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -116,8 +116,8 @@
 <a name="38"><span class="lineNum">      38 </span>                :            :   char       *context;</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : } ValentDataPrivate;</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
-<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 307 times"> + </span><span class="branchCov" title="Branch 1 was taken 2720 times"> + </span><span class="branchCov" title="Branch 2 was taken 191 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       5209 : G_DEFINE_TYPE_WITH_PRIVATE (ValentData, valent_data, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 191 times"> + </span><span class="branchCov" title="Branch 5 was taken 2720 times"> + </span>]
+<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 342 times"> + </span><span class="branchCov" title="Branch 1 was taken 2771 times"> + </span><span class="branchCov" title="Branch 2 was taken 206 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       5321 : G_DEFINE_TYPE_WITH_PRIVATE (ValentData, valent_data, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 206 times"> + </span><span class="branchCov" title="Branch 5 was taken 2771 times"> + </span>]
 <a name="42"><span class="lineNum">      42 </span>                :            : </a>
 <a name="43"><span class="lineNum">      43 </span>                :            : /**</a>
 <a name="44"><span class="lineNum">      44 </span>                :            :  * ValentDataClass:</a>
@@ -248,19 +248,19 @@
 <a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        425 : }</span></a>
 <a name="167"><span class="lineNum">     167 </span>                :            : </a>
 <a name="168"><span class="lineNum">     168 </span>                :            : static void</a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        371 : valent_data_finalize (GObject *object)</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        382 : valent_data_finalize (GObject *object)</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            : {</a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">        371 :   ValentData *self = VALENT_DATA (object);</span></a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        371 :   ValentDataPrivate *priv = valent_data_get_instance_private (self);</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">        382 :   ValentData *self = VALENT_DATA (object);</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        382 :   ValentDataPrivate *priv = valent_data_get_instance_private (self);</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            : </a>
-<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 371 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        371 :   g_clear_pointer (&amp;priv-&gt;cache_path, g_free);</span></a>
-<a name="175"><span class="lineNum">     175 </span>        [<span class="branchCov" title="Branch 0 was taken 371 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        371 :   g_clear_pointer (&amp;priv-&gt;config_path, g_free);</span></a>
-<a name="176"><span class="lineNum">     176 </span>        [<span class="branchCov" title="Branch 0 was taken 371 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        371 :   g_clear_pointer (&amp;priv-&gt;data_path, g_free);</span></a>
-<a name="177"><span class="lineNum">     177 </span>        [<span class="branchCov" title="Branch 0 was taken 331 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        371 :   g_clear_pointer (&amp;priv-&gt;context, g_free);</span></a>
-<a name="178"><span class="lineNum">     178 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 341 times"> + </span>]:<span class="lineCov">        371 :   g_clear_object (&amp;priv-&gt;parent);</span></a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 382 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        382 :   g_clear_pointer (&amp;priv-&gt;cache_path, g_free);</span></a>
+<a name="175"><span class="lineNum">     175 </span>        [<span class="branchCov" title="Branch 0 was taken 382 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        382 :   g_clear_pointer (&amp;priv-&gt;config_path, g_free);</span></a>
+<a name="176"><span class="lineNum">     176 </span>        [<span class="branchCov" title="Branch 0 was taken 382 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        382 :   g_clear_pointer (&amp;priv-&gt;data_path, g_free);</span></a>
+<a name="177"><span class="lineNum">     177 </span>        [<span class="branchCov" title="Branch 0 was taken 342 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        382 :   g_clear_pointer (&amp;priv-&gt;context, g_free);</span></a>
+<a name="178"><span class="lineNum">     178 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 352 times"> + </span>]:<span class="lineCov">        382 :   g_clear_object (&amp;priv-&gt;parent);</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :            : </a>
-<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">        371 :   G_OBJECT_CLASS (valent_data_parent_class)-&gt;finalize (object);</span></a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        371 : }</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">        382 :   G_OBJECT_CLASS (valent_data_parent_class)-&gt;finalize (object);</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        382 : }</span></a>
 <a name="182"><span class="lineNum">     182 </span>                :            : </a>
 <a name="183"><span class="lineNum">     183 </span>                :            : static void</a>
 <a name="184"><span class="lineNum">     184 </span>                :<span class="lineNoCov">          0 : valent_data_get_property (GObject    *object,</span></a>
@@ -323,22 +323,22 @@
 <a name="240"><span class="lineNum">     240 </span>                :<span class="lineCov">        850 : }</span></a>
 <a name="241"><span class="lineNum">     241 </span>                :            : </a>
 <a name="242"><span class="lineNum">     242 </span>                :            : static void</a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">        116 : valent_data_class_init (ValentDataClass *klass)</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">        136 : valent_data_class_init (ValentDataClass *klass)</span></a>
 <a name="244"><span class="lineNum">     244 </span>                :            : {</a>
-<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">        116 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">        136 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
 <a name="246"><span class="lineNum">     246 </span>                :            : </a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">        116 :   object_class-&gt;constructed = valent_data_constructed;</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">        116 :   object_class-&gt;finalize = valent_data_finalize;</span></a>
-<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">        116 :   object_class-&gt;get_property = valent_data_get_property;</span></a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        116 :   object_class-&gt;set_property = valent_data_set_property;</span></a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">        136 :   object_class-&gt;constructed = valent_data_constructed;</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">        136 :   object_class-&gt;finalize = valent_data_finalize;</span></a>
+<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">        136 :   object_class-&gt;get_property = valent_data_get_property;</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        136 :   object_class-&gt;set_property = valent_data_set_property;</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : </a>
 <a name="252"><span class="lineNum">     252 </span>                :            :   /**</a>
 <a name="253"><span class="lineNum">     253 </span>                :            :    * ValentData:cache-path:</a>
 <a name="254"><span class="lineNum">     254 </span>                :            :    *</a>
 <a name="255"><span class="lineNum">     255 </span>                :            :    * Path to the cache directory for this #ValentData.</a>
 <a name="256"><span class="lineNum">     256 </span>                :            :    */</a>
-<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">        116 :   properties [PROP_CACHE_PATH] =</span></a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">        116 :     g_param_spec_string (&quot;cache-path&quot;,</span></a>
+<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">        136 :   properties [PROP_CACHE_PATH] =</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">        136 :     g_param_spec_string (&quot;cache-path&quot;,</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            :                          &quot;Cache Path&quot;,</a>
 <a name="260"><span class="lineNum">     260 </span>                :            :                          &quot;Path to the cache directory&quot;,</a>
 <a name="261"><span class="lineNum">     261 </span>                :            :                          NULL,</a>
@@ -351,8 +351,8 @@
 <a name="268"><span class="lineNum">     268 </span>                :            :    *</a>
 <a name="269"><span class="lineNum">     269 </span>                :            :    * Path to the config directory for this #ValentData.</a>
 <a name="270"><span class="lineNum">     270 </span>                :            :    */</a>
-<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">        116 :   properties [PROP_CONFIG_PATH] =</span></a>
-<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        116 :     g_param_spec_string (&quot;config-path&quot;,</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">        136 :   properties [PROP_CONFIG_PATH] =</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        136 :     g_param_spec_string (&quot;config-path&quot;,</span></a>
 <a name="273"><span class="lineNum">     273 </span>                :            :                          &quot;Config Path&quot;,</a>
 <a name="274"><span class="lineNum">     274 </span>                :            :                          &quot;Path to the config directory&quot;,</a>
 <a name="275"><span class="lineNum">     275 </span>                :            :                          NULL,</a>
@@ -369,8 +369,8 @@
 <a name="286"><span class="lineNum">     286 </span>                :            :    * therefore using the root of #ValentData:base-path , while devices or</a>
 <a name="287"><span class="lineNum">     287 </span>                :            :    * backends will generally store their data in subdirectories of these.</a>
 <a name="288"><span class="lineNum">     288 </span>                :            :    */</a>
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">        116 :   properties [PROP_CONTEXT] =</span></a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        116 :     g_param_spec_string (&quot;context&quot;,</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">        136 :   properties [PROP_CONTEXT] =</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        136 :     g_param_spec_string (&quot;context&quot;,</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            :                          &quot;Context&quot;,</a>
 <a name="292"><span class="lineNum">     292 </span>                :            :                          &quot;Context to store data for&quot;,</a>
 <a name="293"><span class="lineNum">     293 </span>                :            :                          NULL,</a>
@@ -384,8 +384,8 @@
 <a name="301"><span class="lineNum">     301 </span>                :            :    *</a>
 <a name="302"><span class="lineNum">     302 </span>                :            :    * Path to the data directory for this #ValentData.</a>
 <a name="303"><span class="lineNum">     303 </span>                :            :    */</a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">        116 :   properties [PROP_DATA_PATH] =</span></a>
-<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">        116 :     g_param_spec_string (&quot;data-path&quot;,</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">        136 :   properties [PROP_DATA_PATH] =</span></a>
+<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">        136 :     g_param_spec_string (&quot;data-path&quot;,</span></a>
 <a name="306"><span class="lineNum">     306 </span>                :            :                          &quot;Data Path&quot;,</a>
 <a name="307"><span class="lineNum">     307 </span>                :            :                          &quot;Path to the data directory&quot;,</a>
 <a name="308"><span class="lineNum">     308 </span>                :            :                          NULL,</a>
@@ -404,8 +404,8 @@
 <a name="321"><span class="lineNum">     321 </span>                :            :    * with #ValentData objects that are children of the manager's data object,</a>
 <a name="322"><span class="lineNum">     322 </span>                :            :    * and so on with plugins.</a>
 <a name="323"><span class="lineNum">     323 </span>                :            :    */</a>
-<a name="324"><span class="lineNum">     324 </span>                :<span class="lineCov">        116 :   properties [PROP_PARENT] =</span></a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">        116 :     g_param_spec_object (&quot;parent&quot;,</span></a>
+<a name="324"><span class="lineNum">     324 </span>                :<span class="lineCov">        136 :   properties [PROP_PARENT] =</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">        136 :     g_param_spec_object (&quot;parent&quot;,</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            :                          &quot;Parent&quot;,</a>
 <a name="327"><span class="lineNum">     327 </span>                :            :                          &quot;Parent data object&quot;,</a>
 <a name="328"><span class="lineNum">     328 </span>                :            :                          VALENT_TYPE_DATA,</a>
@@ -414,8 +414,8 @@
 <a name="331"><span class="lineNum">     331 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
 <a name="332"><span class="lineNum">     332 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
 <a name="333"><span class="lineNum">     333 </span>                :            : </a>
-<a name="334"><span class="lineNum">     334 </span>                :<span class="lineCov">        116 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
-<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">        116 : }</span></a>
+<a name="334"><span class="lineNum">     334 </span>                :<span class="lineCov">        136 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">        136 : }</span></a>
 <a name="336"><span class="lineNum">     336 </span>                :            : </a>
 <a name="337"><span class="lineNum">     337 </span>                :            : static void</a>
 <a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">        425 : valent_data_init (ValentData *self)</span></a>
@@ -451,16 +451,16 @@
 <a name="368"><span class="lineNum">     368 </span>                :            :  * Returns: (transfer full): a directory path</a>
 <a name="369"><span class="lineNum">     369 </span>                :            :  */</a>
 <a name="370"><span class="lineNum">     370 </span>                :            : char *</a>
-<a name="371"><span class="lineNum">     371 </span>                :<span class="lineCov">        105 : valent_data_get_directory (GUserDirectory directory)</span></a>
+<a name="371"><span class="lineNum">     371 </span>                :<span class="lineCov">        125 : valent_data_get_directory (GUserDirectory directory)</span></a>
 <a name="372"><span class="lineNum">     372 </span>                :            : {</a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">        105 :   g_autofree char *dirname = NULL;</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">        125 :   g_autofree char *dirname = NULL;</span></a>
 <a name="374"><span class="lineNum">     374 </span>                :            : </a>
 <a name="375"><span class="lineNum">     375 </span>                :            :   /* Ensure we get a real path */</a>
-<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">        105 :   dirname = g_strdup (g_get_user_special_dir (directory));</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">        125 :   dirname = g_strdup (g_get_user_special_dir (directory));</span></a>
 <a name="377"><span class="lineNum">     377 </span>                :            : </a>
-<a name="378"><span class="lineNum">     378 </span>        [<span class="branchCov" title="Branch 0 was taken 105 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        105 :   if (dirname == NULL)</span></a>
+<a name="378"><span class="lineNum">     378 </span>        [<span class="branchCov" title="Branch 0 was taken 125 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        125 :   if (dirname == NULL)</span></a>
 <a name="379"><span class="lineNum">     379 </span>                :            :     {</a>
-<a name="380"><span class="lineNum">     380 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 105 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        105 :       switch (directory)</span></a>
+<a name="380"><span class="lineNum">     380 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 125 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        125 :       switch (directory)</span></a>
 <span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span> 
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 8 was not taken"> - </span>]
 <a name="381"><span class="lineNum">     381 </span>                :            :         {</a>
@@ -472,9 +472,9 @@
 <a name="387"><span class="lineNum">     387 </span>                :<span class="lineNoCov">          0 :           dirname = g_build_filename (g_get_home_dir(), &quot;Documents&quot;, NULL);</span></a>
 <a name="388"><span class="lineNum">     388 </span>                :<span class="lineNoCov">          0 :           break;</span></a>
 <a name="389"><span class="lineNum">     389 </span>                :            : </a>
-<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">        105 :         case G_USER_DIRECTORY_DOWNLOAD:</span></a>
-<a name="391"><span class="lineNum">     391 </span>                :<span class="lineCov">        105 :           dirname = g_build_filename (g_get_home_dir(), &quot;Downloads&quot;, NULL);</span></a>
-<a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">        105 :           break;</span></a>
+<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">        125 :         case G_USER_DIRECTORY_DOWNLOAD:</span></a>
+<a name="391"><span class="lineNum">     391 </span>                :<span class="lineCov">        125 :           dirname = g_build_filename (g_get_home_dir(), &quot;Downloads&quot;, NULL);</span></a>
+<a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">        125 :           break;</span></a>
 <a name="393"><span class="lineNum">     393 </span>                :            : </a>
 <a name="394"><span class="lineNum">     394 </span>                :<span class="lineNoCov">          0 :         case G_USER_DIRECTORY_MUSIC:</span></a>
 <a name="395"><span class="lineNum">     395 </span>                :<span class="lineNoCov">          0 :           dirname = g_build_filename (g_get_home_dir(), &quot;Music&quot;, NULL);</span></a>
@@ -503,7 +503,7 @@
 <a name="418"><span class="lineNum">     418 </span>                :            :     }</a>
 <a name="419"><span class="lineNum">     419 </span>                :            : </a>
 <a name="420"><span class="lineNum">     420 </span>                :            :   /* TODO: ensure the basepath exists */</a>
-<a name="421"><span class="lineNum">     421 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 105 times"> + </span>]:<span class="lineCov">        105 :   if (g_mkdir_with_parents (dirname, 0700) == -1)</span></a>
+<a name="421"><span class="lineNum">     421 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 125 times"> + </span>]:<span class="lineCov">        125 :   if (g_mkdir_with_parents (dirname, 0700) == -1)</span></a>
 <a name="422"><span class="lineNum">     422 </span>                :            :     {</a>
 <a name="423"><span class="lineNum">     423 </span>                :<span class="lineNoCov">          0 :       int direrr = errno;</span></a>
 <a name="424"><span class="lineNum">     424 </span>                :            : </a>
@@ -511,7 +511,7 @@
 <a name="426"><span class="lineNum">     426 </span>                :<span class="lineNoCov">          0 :       return NULL;</span></a>
 <a name="427"><span class="lineNum">     427 </span>                :            :     }</a>
 <a name="428"><span class="lineNum">     428 </span>                :            : </a>
-<a name="429"><span class="lineNum">     429 </span>                :<span class="lineCov">        105 :   return g_steal_pointer (&amp;dirname);</span></a>
+<a name="429"><span class="lineNum">     429 </span>                :<span class="lineCov">        125 :   return g_steal_pointer (&amp;dirname);</span></a>
 <a name="430"><span class="lineNum">     430 </span>                :            : }</a>
 <a name="431"><span class="lineNum">     431 </span>                :            : </a>
 <a name="432"><span class="lineNum">     432 </span>                :            : /**</a>

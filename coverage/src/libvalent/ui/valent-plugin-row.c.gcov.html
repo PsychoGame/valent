@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-23 20:02:17</td>
+            <td class="headerValue">2021-04-25 09:53:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -114,8 +114,8 @@
 <a name="36"><span class="lineNum">      36 </span>                :            :   N_PROPERTIES</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : };</a>
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
-<a name="39"><span class="lineNum">      39 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 500 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        540 : G_DEFINE_TYPE (ValentPluginRow, valent_plugin_row, ADW_TYPE_ACTION_ROW)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 20 times"> + </span><span class="branchCov" title="Branch 5 was taken 480 times"> + </span>]
+<a name="39"><span class="lineNum">      39 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 470 times"> + </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        510 : G_DEFINE_TYPE (ValentPluginRow, valent_plugin_row, ADW_TYPE_ACTION_ROW)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 20 times"> + </span><span class="branchCov" title="Branch 5 was taken 450 times"> + </span>]
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
 <a name="41"><span class="lineNum">      41 </span>                :            : static GParamSpec *properties[N_PROPERTIES] = { NULL, };</a>
 <a name="42"><span class="lineNum">      42 </span>                :            : </a>
@@ -124,43 +124,43 @@
 <a name="45"><span class="lineNum">      45 </span>                :            :  * GObject</a>
 <a name="46"><span class="lineNum">      46 </span>                :            :  */</a>
 <a name="47"><span class="lineNum">      47 </span>                :            : static void</a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">         80 : valent_plugin_row_constructed (GObject *object)</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">         75 : valent_plugin_row_constructed (GObject *object)</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            : {</a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">         80 :   ValentPluginRow *self = VALENT_PLUGIN_ROW (object);</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">         75 :   ValentPluginRow *self = VALENT_PLUGIN_ROW (object);</span></a>
 <a name="51"><span class="lineNum">      51 </span>                :            :   const char *module, *name, *description, *icon_name;</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         80 :   g_autofree char *path = NULL;</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         75 :   g_autofree char *path = NULL;</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            : </a>
-<a name="54"><span class="lineNum">      54 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   g_assert (self-&gt;plugin_info != NULL);</span></a>
+<a name="54"><span class="lineNum">      54 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span>]:<span class="lineCov">         75 :   g_assert (self-&gt;plugin_info != NULL);</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :            : </a>
 <a name="56"><span class="lineNum">      56 </span>                :            :   /* Set the standard row properties from the plugin info */</a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">         80 :   module = peas_plugin_info_get_module_name (self-&gt;plugin_info);</span></a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         80 :   name = peas_plugin_info_get_name (self-&gt;plugin_info);</span></a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         80 :   description = peas_plugin_info_get_description (self-&gt;plugin_info);</span></a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">         80 :   icon_name = peas_plugin_info_get_icon_name (self-&gt;plugin_info);</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">         75 :   module = peas_plugin_info_get_module_name (self-&gt;plugin_info);</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         75 :   name = peas_plugin_info_get_name (self-&gt;plugin_info);</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         75 :   description = peas_plugin_info_get_description (self-&gt;plugin_info);</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">         75 :   icon_name = peas_plugin_info_get_icon_name (self-&gt;plugin_info);</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : </a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         80 :   gtk_widget_set_name (GTK_WIDGET (self), module);</span></a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         80 :   adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self), name);</span></a>
-<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">         80 :   adw_action_row_set_subtitle (ADW_ACTION_ROW (self), description);</span></a>
-<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">         80 :   adw_action_row_set_icon_name (ADW_ACTION_ROW (self), icon_name);</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         75 :   gtk_widget_set_name (GTK_WIDGET (self), module);</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         75 :   adw_preferences_row_set_title (ADW_PREFERENCES_ROW (self), name);</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">         75 :   adw_action_row_set_subtitle (ADW_ACTION_ROW (self), description);</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">         75 :   adw_action_row_set_icon_name (ADW_ACTION_ROW (self), icon_name);</span></a>
 <a name="66"><span class="lineNum">      66 </span>                :            : </a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   /* Plugin Toggle */</a>
-<a name="68"><span class="lineNum">      68 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         80 :   if (self-&gt;plugin_type == VALENT_TYPE_DEVICE_PLUGIN)</span></a>
+<a name="68"><span class="lineNum">      68 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         75 :   if (self-&gt;plugin_type == VALENT_TYPE_DEVICE_PLUGIN)</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">         30 :     path = g_strdup_printf (&quot;/ca/andyholmes/valent/device/%s/plugin/%s/&quot;,</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            :                             self-&gt;plugin_context,</a>
 <a name="71"><span class="lineNum">      71 </span>                :            :                             module);</a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   else</a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">         50 :     path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">         45 :     path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            :                             self-&gt;plugin_context,</a>
 <a name="75"><span class="lineNum">      75 </span>                :            :                             module);</a>
 <a name="76"><span class="lineNum">      76 </span>                :            : </a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         80 :   self-&gt;settings = g_settings_new_with_path (&quot;ca.andyholmes.Valent.Plugin&quot;, path);</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         75 :   self-&gt;settings = g_settings_new_with_path (&quot;ca.andyholmes.Valent.Plugin&quot;, path);</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            : </a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         80 :   g_settings_bind (self-&gt;settings, &quot;enabled&quot;,</span></a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">         80 :                    self-&gt;sw,       &quot;active&quot;,</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         75 :   g_settings_bind (self-&gt;settings, &quot;enabled&quot;,</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">         75 :                    self-&gt;sw,       &quot;active&quot;,</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            :                    G_SETTINGS_BIND_DEFAULT);</a>
 <a name="82"><span class="lineNum">      82 </span>                :            : </a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   /* Plugin Settings */</a>
-<a name="84"><span class="lineNum">      84 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   if (peas_engine_provides_extension (valent_get_engine (),</span></a>
+<a name="84"><span class="lineNum">      84 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span>]:<span class="lineCov">         75 :   if (peas_engine_provides_extension (valent_get_engine (),</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            :                                       self-&gt;plugin_info,</a>
 <a name="86"><span class="lineNum">      86 </span>                :            :                                       VALENT_TYPE_PLUGIN_PREFERENCES))</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :     {</a>
@@ -176,19 +176,19 @@
 <a name="97"><span class="lineNum">      97 </span>                :<span class="lineNoCov">          0 :       gtk_widget_set_sensitive (GTK_WIDGET (self-&gt;button), TRUE);</span></a>
 <a name="98"><span class="lineNum">      98 </span>                :            :     }</a>
 <a name="99"><span class="lineNum">      99 </span>                :            : </a>
-<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">         80 :   G_OBJECT_CLASS (valent_plugin_row_parent_class)-&gt;constructed (object);</span></a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">         80 : }</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">         75 :   G_OBJECT_CLASS (valent_plugin_row_parent_class)-&gt;constructed (object);</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">         75 : }</span></a>
 <a name="102"><span class="lineNum">     102 </span>                :            : </a>
 <a name="103"><span class="lineNum">     103 </span>                :            : static void</a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         80 : valent_plugin_row_finalize (GObject *object)</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         75 : valent_plugin_row_finalize (GObject *object)</span></a>
 <a name="105"><span class="lineNum">     105 </span>                :            : {</a>
-<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">         80 :   ValentPluginRow *self = VALENT_PLUGIN_ROW (object);</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">         75 :   ValentPluginRow *self = VALENT_PLUGIN_ROW (object);</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            : </a>
-<a name="108"><span class="lineNum">     108 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         80 :   g_clear_pointer (&amp;self-&gt;plugin_context, g_free);</span></a>
-<a name="109"><span class="lineNum">     109 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         80 :   g_clear_object (&amp;self-&gt;settings);</span></a>
+<a name="108"><span class="lineNum">     108 </span>        [<span class="branchCov" title="Branch 0 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         75 :   g_clear_pointer (&amp;self-&gt;plugin_context, g_free);</span></a>
+<a name="109"><span class="lineNum">     109 </span>        [<span class="branchCov" title="Branch 0 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         75 :   g_clear_object (&amp;self-&gt;settings);</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            : </a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         80 :   G_OBJECT_CLASS (valent_plugin_row_parent_class)-&gt;finalize (object);</span></a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">         80 : }</span></a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         75 :   G_OBJECT_CLASS (valent_plugin_row_parent_class)-&gt;finalize (object);</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">         75 : }</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            : </a>
 <a name="114"><span class="lineNum">     114 </span>                :            : static void</a>
 <a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">         15 : valent_plugin_row_get_property (GObject    *object,</span></a>
@@ -218,31 +218,31 @@
 <a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         15 : }</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            : </a>
 <a name="141"><span class="lineNum">     141 </span>                :            : static void</a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        240 : valent_plugin_row_set_property (GObject      *object,</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        225 : valent_plugin_row_set_property (GObject      *object,</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            :                                 guint         prop_id,</a>
 <a name="144"><span class="lineNum">     144 </span>                :            :                                 const GValue *value,</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :                                 GParamSpec   *pspec)</a>
 <a name="146"><span class="lineNum">     146 </span>                :            : {</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        240 :   ValentPluginRow *self = VALENT_PLUGIN_ROW (object);</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        225 :   ValentPluginRow *self = VALENT_PLUGIN_ROW (object);</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
-<a name="149"><span class="lineNum">     149 </span>  [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span><span class="branchCov" title="Branch 2 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        240 :   switch (prop_id)</span></a>
+<a name="149"><span class="lineNum">     149 </span>  [<span class="branchCov" title="Branch 0 was taken 75 times"> + </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span><span class="branchCov" title="Branch 2 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        225 :   switch (prop_id)</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :            :     {</a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         80 :     case PROP_PLUGIN_CONTEXT:</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">         80 :       self-&gt;plugin_context = g_value_dup_string (value);</span></a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         80 :       break;</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         75 :     case PROP_PLUGIN_CONTEXT:</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">         75 :       self-&gt;plugin_context = g_value_dup_string (value);</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         75 :       break;</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            : </a>
-<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">         80 :     case PROP_PLUGIN_INFO:</span></a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         80 :       self-&gt;plugin_info = g_value_get_boxed (value);</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">         80 :       break;</span></a>
+<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">         75 :     case PROP_PLUGIN_INFO:</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         75 :       self-&gt;plugin_info = g_value_get_boxed (value);</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">         75 :       break;</span></a>
 <a name="158"><span class="lineNum">     158 </span>                :            : </a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">         80 :     case PROP_PLUGIN_TYPE:</span></a>
-<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">         80 :       self-&gt;plugin_type = g_value_get_gtype (value);</span></a>
-<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">         80 :       break;</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">         75 :     case PROP_PLUGIN_TYPE:</span></a>
+<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">         75 :       self-&gt;plugin_type = g_value_get_gtype (value);</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">         75 :       break;</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            : </a>
 <a name="163"><span class="lineNum">     163 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            :     }</a>
-<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        240 : }</span></a>
+<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        225 : }</span></a>
 <a name="167"><span class="lineNum">     167 </span>                :            : </a>
 <a name="168"><span class="lineNum">     168 </span>                :            : static void</a>
 <a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">         20 : valent_plugin_row_class_init (ValentPluginRowClass *klass)</span></a>
@@ -304,40 +304,40 @@
 <a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">         20 : }</span></a>
 <a name="226"><span class="lineNum">     226 </span>                :            : </a>
 <a name="227"><span class="lineNum">     227 </span>                :            : static void</a>
-<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">         80 : valent_plugin_row_init (ValentPluginRow *self)</span></a>
+<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">         75 : valent_plugin_row_init (ValentPluginRow *self)</span></a>
 <a name="229"><span class="lineNum">     229 </span>                :            : {</a>
 <a name="230"><span class="lineNum">     230 </span>                :            :   GtkWidget *box;</a>
 <a name="231"><span class="lineNum">     231 </span>                :            :   GtkWidget *separator;</a>
 <a name="232"><span class="lineNum">     232 </span>                :            : </a>
 <a name="233"><span class="lineNum">     233 </span>                :            :   /* Row Widget */</a>
-<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">         80 :   box = g_object_new (GTK_TYPE_BOX,</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">         75 :   box = g_object_new (GTK_TYPE_BOX,</span></a>
 <a name="235"><span class="lineNum">     235 </span>                :            :                       &quot;orientation&quot;, GTK_ORIENTATION_HORIZONTAL,</a>
 <a name="236"><span class="lineNum">     236 </span>                :            :                       &quot;spacing&quot;,     8,</a>
 <a name="237"><span class="lineNum">     237 </span>                :            :                       &quot;valign&quot;,      GTK_ALIGN_CENTER,</a>
 <a name="238"><span class="lineNum">     238 </span>                :            :                       NULL);</a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">         80 :   adw_action_row_add_suffix (ADW_ACTION_ROW (self), box);</span></a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">         75 :   adw_action_row_add_suffix (ADW_ACTION_ROW (self), box);</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
 <a name="241"><span class="lineNum">     241 </span>                :            :   /* Enabled Switch */</a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         80 :   self-&gt;sw = g_object_new (GTK_TYPE_SWITCH,</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         75 :   self-&gt;sw = g_object_new (GTK_TYPE_SWITCH,</span></a>
 <a name="243"><span class="lineNum">     243 </span>                :            :                            &quot;active&quot;,  TRUE,</a>
 <a name="244"><span class="lineNum">     244 </span>                :            :                            &quot;valign&quot;,  GTK_ALIGN_CENTER,</a>
 <a name="245"><span class="lineNum">     245 </span>                :            :                            NULL);</a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">         80 :   gtk_box_append (GTK_BOX (box), self-&gt;sw);</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">         75 :   gtk_box_append (GTK_BOX (box), self-&gt;sw);</span></a>
 <a name="247"><span class="lineNum">     247 </span>                :            : </a>
 <a name="248"><span class="lineNum">     248 </span>                :            :   /* Separator */</a>
-<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">         80 :   separator = g_object_new (GTK_TYPE_SEPARATOR,</span></a>
+<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">         75 :   separator = g_object_new (GTK_TYPE_SEPARATOR,</span></a>
 <a name="250"><span class="lineNum">     250 </span>                :            :                             &quot;orientation&quot;, GTK_ORIENTATION_VERTICAL,</a>
 <a name="251"><span class="lineNum">     251 </span>                :            :                             NULL);</a>
-<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         80 :   gtk_box_append (GTK_BOX (box), separator);</span></a>
+<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         75 :   gtk_box_append (GTK_BOX (box), separator);</span></a>
 <a name="253"><span class="lineNum">     253 </span>                :            : </a>
 <a name="254"><span class="lineNum">     254 </span>                :            :   /* Preferences Button */</a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">         80 :   self-&gt;button = g_object_new (GTK_TYPE_BUTTON,</span></a>
+<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">         75 :   self-&gt;button = g_object_new (GTK_TYPE_BUTTON,</span></a>
 <a name="256"><span class="lineNum">     256 </span>                :            :                                &quot;icon-name&quot;,   &quot;emblem-system-symbolic&quot;,</a>
 <a name="257"><span class="lineNum">     257 </span>                :            :                                &quot;sensitive&quot;,   FALSE,</a>
 <a name="258"><span class="lineNum">     258 </span>                :            :                                &quot;valign&quot;,      GTK_ALIGN_CENTER,</a>
 <a name="259"><span class="lineNum">     259 </span>                :            :                                NULL);</a>
-<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">         80 :   gtk_box_append (GTK_BOX (box), self-&gt;button);</span></a>
-<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">         80 : }</span></a>
+<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">         75 :   gtk_box_append (GTK_BOX (box), self-&gt;button);</span></a>
+<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">         75 : }</span></a>
 <a name="262"><span class="lineNum">     262 </span>                :            : </a>
 <a name="263"><span class="lineNum">     263 </span>                :            : /**</a>
 <a name="264"><span class="lineNum">     264 </span>                :            :  * valent_plugin_row_new:</a>
