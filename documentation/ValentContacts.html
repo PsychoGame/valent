@@ -154,18 +154,20 @@ mentioned in the release notes for the affected release.
 </div>
 <div class="refsect1">
 <a name="ValentContacts.description"></a><h2>Description</h2>
-<p><a class="link" href="ValentContacts.html" title="ValentContacts"><span class="type">ValentContacts</span></a> is an abstraction of desktop contact sources, with a simple API
-generally intended to be used by <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> implementations.</p>
+<p><a class="link" href="ValentContacts.html" title="ValentContacts"><span class="type">ValentContacts</span></a> is an abstraction of desktop contact sources, with a simple
+API generally intended to be used by <a class="link" href="ValentDevicePlugin.html" title="ValentDevicePlugin"><span class="type">ValentDevicePlugin</span></a> implementations.</p>
 <div class="refsect3">
 <a name="id-1.3.3.2.9.3"></a><h4>Providers and Models</h4>
-<p><a class="link" href="ValentContacts.html" title="ValentContacts"><span class="type">ValentContacts</span></a> loads and tracks implementations of <a class="link" href="ValentContactStoreProvider.html" title="ValentContactStoreProvider"><span class="type">ValentContactStoreProvider</span></a> known
-to the default <span class="type">ValentEngine</span>. Each <a class="link" href="ValentContactStoreProvider.html" title="ValentContactStoreProvider"><span class="type">ValentContactStoreProvider</span></a> may provide stores
-implementing <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> and create new stores backed by that provider.</p>
+<p><a class="link" href="ValentContacts.html" title="ValentContacts"><span class="type">ValentContacts</span></a> loads and tracks implementations of
+<a class="link" href="ValentContactStoreProvider.html" title="ValentContactStoreProvider"><span class="type">ValentContactStoreProvider</span></a> known to the default <span class="type">ValentEngine</span>. Each
+<a class="link" href="ValentContactStoreProvider.html" title="ValentContactStoreProvider"><span class="type">ValentContactStoreProvider</span></a> may provide stores implementing
+<a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> and create new stores backed by that provider.</p>
 <p>For example, the Evolution Data Server (<code class="literal">eds</code>) plugin implements
-<a class="link" href="ValentContactStoreProvider.html" title="ValentContactStoreProvider"><span class="type">ValentContactStoreProvider</span></a> in <span class="type">ValentEBookProvider</span> and provides a <span class="type">ValentEBookStore</span> for
-each address book known to Evolution. If no other provider is available,
-<a class="link" href="ValentContacts.html" title="ValentContacts"><span class="type">ValentContacts</span></a> will fallback to providing <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> objects, a simple
-<span class="type">EBookCache</span> implementation of <a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a>.</p>
+<a class="link" href="ValentContactStoreProvider.html" title="ValentContactStoreProvider"><span class="type">ValentContactStoreProvider</span></a> in <span class="type">ValentEBookProvider</span> and provides a
+<span class="type">ValentEBookStore</span> for each address book known to Evolution. If no other
+provider is available, <a class="link" href="ValentContacts.html" title="ValentContacts"><span class="type">ValentContacts</span></a> will fallback to providing
+<a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a> objects, a simple <span class="type">EBookCache</span> implementation of
+<a class="link" href="ValentContactStore.html" title="ValentContactStore"><span class="type">ValentContactStore</span></a>.</p>
 </div>
 </div>
 <div class="refsect1">

@@ -198,14 +198,15 @@
     <keyword type="property" name="The “id” property" link="ValentTransfer.html#ValentTransfer--id"/>
     <keyword type="property" name="The “state” property" link="ValentTransfer.html#ValentTransfer--state"/>
     <keyword type="function" name="valent_component_get_priority_provider ()" link="ValentComponent.html#valent-component-get-priority-provider"/>
-    <keyword type="function" name="valent_component_get_providers ()" link="ValentComponent.html#valent-component-get-providers"/>
+    <keyword type="function" name="valent_component_get_extensions ()" link="ValentComponent.html#valent-component-get-extensions"/>
+    <keyword type="function" name="valent_component_new_settings ()" link="ValentComponent.html#valent-component-new-settings"/>
     <keyword type="macro" name="VALENT_TYPE_COMPONENT" link="ValentComponent.html#VALENT-TYPE-COMPONENT:CAPS"/>
     <keyword type="struct" name="struct ValentComponentClass" link="ValentComponent.html#ValentComponentClass"/>
     <keyword type="struct" name="ValentComponent" link="ValentComponent.html#ValentComponent-struct"/>
     <keyword type="property" name="The “plugin-context” property" link="ValentComponent.html#ValentComponent--plugin-context"/>
     <keyword type="property" name="The “plugin-type” property" link="ValentComponent.html#ValentComponent--plugin-type"/>
-    <keyword type="signal" name="The “provider-added” signal" link="ValentComponent.html#ValentComponent-provider-added"/>
-    <keyword type="signal" name="The “provider-removed” signal" link="ValentComponent.html#ValentComponent-provider-removed"/>
+    <keyword type="signal" name="The “extension-added” signal" link="ValentComponent.html#ValentComponent-extension-added"/>
+    <keyword type="signal" name="The “extension-removed” signal" link="ValentComponent.html#ValentComponent-extension-removed"/>
     <keyword type="function" name="valent_data_new ()" link="ValentData.html#valent-data-new"/>
     <keyword type="function" name="valent_data_get_cache_path ()" link="ValentData.html#valent-data-get-cache-path"/>
     <keyword type="function" name="valent_data_get_config_path ()" link="ValentData.html#valent-data-get-config-path"/>
@@ -626,8 +627,8 @@
     <keyword type="member" name="ValentDevicePluginInterface.enable" link="ValentDevicePlugin.html#ValentDevicePluginInterface.enable"/>
     <keyword type="member" name="ValentDevicePluginInterface.handle-packet" link="ValentDevicePlugin.html#ValentDevicePluginInterface.handle-packet"/>
     <keyword type="member" name="ValentDevicePluginInterface.update-state" link="ValentDevicePlugin.html#ValentDevicePluginInterface.update-state"/>
-    <keyword type="member" name="ValentComponentClass.provider-added" link="ValentComponent.html#ValentComponentClass.provider-added"/>
-    <keyword type="member" name="ValentComponentClass.provider-removed" link="ValentComponent.html#ValentComponentClass.provider-removed"/>
+    <keyword type="member" name="ValentComponentClass.extension-added" link="ValentComponent.html#ValentComponentClass.extension-added"/>
+    <keyword type="member" name="ValentComponentClass.extension-removed" link="ValentComponent.html#ValentComponentClass.extension-removed"/>
     <keyword type="member" name="ValentClipboardSourceClass.get-text-async" link="ValentClipboardSource.html#ValentClipboardSourceClass.get-text-async"/>
     <keyword type="member" name="ValentClipboardSourceClass.get-text-finish" link="ValentClipboardSource.html#ValentClipboardSourceClass.get-text-finish"/>
     <keyword type="member" name="ValentClipboardSourceClass.set-text" link="ValentClipboardSource.html#ValentClipboardSourceClass.set-text"/>

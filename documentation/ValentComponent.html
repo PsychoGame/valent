@@ -72,7 +72,15 @@ mentioned in the release notes for the affected release.
 <span class="returnvalue">GPtrArray</span> *
 </td>
 <td class="function_name">
-<a class="link" href="ValentComponent.html#valent-component-get-providers" title="valent_component_get_providers ()">valent_component_get_providers</a> <span class="c_punctuation">()</span>
+<a class="link" href="ValentComponent.html#valent-component-get-extensions" title="valent_component_get_extensions ()">valent_component_get_extensions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GSettings</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentComponent.html#valent-component-new-settings" title="valent_component_new_settings ()">valent_component_new_settings</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 </tbody>
@@ -113,12 +121,12 @@ mentioned in the release notes for the affected release.
 <tbody>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
-<td class="signal_name"><a class="link" href="ValentComponent.html#ValentComponent-provider-added" title="The “provider-added” signal">provider-added</a></td>
+<td class="signal_name"><a class="link" href="ValentComponent.html#ValentComponent-extension-added" title="The “extension-added” signal">extension-added</a></td>
 <td class="signal_flags">Run Last</td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
-<td class="signal_name"><a class="link" href="ValentComponent.html#ValentComponent-provider-removed" title="The “provider-removed” signal">provider-removed</a></td>
+<td class="signal_name"><a class="link" href="ValentComponent.html#ValentComponent-extension-removed" title="The “extension-removed” signal">extension-removed</a></td>
 <td class="signal_flags">Run Last</td>
 </tr>
 </tbody>
@@ -170,7 +178,7 @@ mentioned in the release notes for the affected release.
 <p><a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> is a base class for session and system components, such as
 the clipboard or volume control. Each <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> is typically a
 singleton representing a unique resource, but may be backed by one or more
-providers implemented by <span class="type">PeasExtensions</span>.</p>
+extensions implemented by <span class="type">PeasExtensions</span>.</p>
 </div>
 <div class="refsect1">
 <a name="ValentComponent.functions_details"></a><h2>Functions</h2>
@@ -180,7 +188,7 @@ providers implemented by <span class="type">PeasExtensions</span>.</p>
 valent_component_get_priority_provider
                                (<em class="parameter"><code><a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component</code></em>,
                                 <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
-<p>Get the provider with the highest priority for <em class="parameter"><code>component</code></em>
+<p>Get the extension with the highest priority for <em class="parameter"><code>component</code></em>
 .</p>
 <div class="refsect3">
 <a name="valent-component-get-priority-provider.parameters"></a><h4>Parameters</h4>
@@ -212,12 +220,12 @@ valent_component_get_priority_provider
 </div>
 <hr>
 <div class="refsect2">
-<a name="valent-component-get-providers"></a><h3>valent_component_get_providers ()</h3>
+<a name="valent-component-get-extensions"></a><h3>valent_component_get_extensions ()</h3>
 <pre class="programlisting"><span class="returnvalue">GPtrArray</span> *
-valent_component_get_providers (<em class="parameter"><code><a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component</code></em>);</pre>
-<p>Get a list of the currently loaded providers.</p>
+valent_component_get_extensions (<em class="parameter"><code><a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component</code></em>);</pre>
+<p>Get a list of the currently loaded extensions.</p>
 <div class="refsect3">
-<a name="valent-component-get-providers.parameters"></a><h4>Parameters</h4>
+<a name="valent-component-get-extensions.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -232,9 +240,47 @@ valent_component_get_providers (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="valent-component-get-providers.returns"></a><h4>Returns</h4>
+<a name="valent-component-get-extensions.returns"></a><h4>Returns</h4>
 <p>a <span class="type">GPtrArray</span>. </p>
 <p><span class="annotation">[<acronym title="The caller owns the data container, but not the data inside it."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Peas.Extension]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-component-new-settings"></a><h3>valent_component_new_settings ()</h3>
+<pre class="programlisting"><span class="returnvalue">GSettings</span> *
+valent_component_new_settings (<em class="parameter"><code>const <span class="type">char</span> *context</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *module_name</code></em>);</pre>
+<p>A convenience function for components to create a <span class="type">GSettings</span> object for a
+context and module name.</p>
+<p>It is expected that <em class="parameter"><code>context</code></em>
+ is a valid string for a <span class="type">GSettings</span> path.</p>
+<div class="refsect3">
+<a name="valent-component-new-settings.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentDevice.html" title="ValentDevice"><span class="type">ValentDevice</span></a> ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>module_name</p></td>
+<td class="parameter_description"><p>a <span class="type">PeasPluginInfo</span> module name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-component-new-settings.returns"></a><h4>Returns</h4>
+<p>the new <span class="type">GSettings</span> object. </p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
 </div>
@@ -252,10 +298,10 @@ valent_component_get_providers (<em class="parameter"><code><a class="link" href
   GObjectClass   parent_class;
 
   /* signals */
-  void           (*provider_added)   (ValentComponent *component,
-                                      PeasExtension   *extension);
-  void           (*provider_removed) (ValentComponent *component,
-                                      PeasExtension   *extension);
+  void           (*extension_added)   (ValentComponent *component,
+                                       PeasExtension   *extension);
+  void           (*extension_removed) (ValentComponent *component,
+                                       PeasExtension   *extension);
 };
 </pre>
 <p>The virtual function table for <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a>.</p>
@@ -269,13 +315,13 @@ valent_component_get_providers (<em class="parameter"><code><a class="link" href
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentComponentClass.provider-added"></a>provider_added</code></em> ()</p></td>
-<td class="struct_member_description"><p>the class closure for the <a class="link" href="ValentComponent.html#ValentComponent-provider-added" title="The “provider-added” signal"><span class="type">“provider-added”</span></a> signal</p></td>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentComponentClass.extension-added"></a>extension_added</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for the <a class="link" href="ValentComponent.html#ValentComponent-extension-added" title="The “extension-added” signal"><span class="type">“extension-added”</span></a> signal</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentComponentClass.provider-removed"></a>provider_removed</code></em> ()</p></td>
-<td class="struct_member_description"><p>the class closure for the <a class="link" href="ValentComponent.html#ValentComponent-provider-removed" title="The “provider-removed” signal"><span class="type">“provider-removed”</span></a> signal</p></td>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="ValentComponentClass.extension-removed"></a>extension_removed</code></em> ()</p></td>
+<td class="struct_member_description"><p>the class closure for the <a class="link" href="ValentComponent.html#ValentComponent-extension-removed" title="The “extension-removed” signal"><span class="type">“extension-removed”</span></a> signal</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 </tbody>
@@ -295,7 +341,7 @@ valent_component_get_providers (<em class="parameter"><code><a class="link" href
 <pre class="programlisting">  “plugin-context”           <span class="type">char</span> *</pre>
 <p>The context for the component. This is a <span class="type">GSettings</span> safe string such as
 "contacts" or "media", used to distinguish the settings and configuration
-files of pluggable providers.</p>
+files of pluggable extensions.</p>
 <p>Owner: ValentComponent</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
@@ -304,7 +350,7 @@ files of pluggable providers.</p>
 <div class="refsect2">
 <a name="ValentComponent--plugin-type"></a><h3>The <code class="literal">“plugin-type”</code> property</h3>
 <pre class="programlisting">  “plugin-type”              <span class="type">GType</span> *</pre>
-<p>The <span class="type">GType</span> of the provider this component aggregates.</p>
+<p>The <span class="type">GType</span> of the extension this component aggregates.</p>
 <p>Owner: ValentComponent</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Allowed values: void</p>
@@ -313,17 +359,18 @@ files of pluggable providers.</p>
 <div class="refsect1">
 <a name="ValentComponent.signal-details"></a><h2>Signal Details</h2>
 <div class="refsect2">
-<a name="ValentComponent-provider-added"></a><h3>The <code class="literal">“provider-added”</code> signal</h3>
+<a name="ValentComponent-extension-added"></a><h3>The <code class="literal">“extension-added”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component,
-               <span class="type">GObject</span>         *provider,
+               <span class="type">GObject</span>         *extension,
                <span class="type">gpointer</span>         user_data)</pre>
-<p>The "provider-added" signal is emitted when a provider has discovered a
-provider has become available.</p>
+<p>The "extension-added" signal is emitted when <em class="parameter"><code>component</code></em>
+ has enabled a
+supported extension.</p>
 <p>Subclasses of <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> must chain-up if they override the
-<a class="link" href="ValentComponent.html#ValentComponentClass.provider-added"><span class="type">ValentComponentClass.provider_added</span></a> vfunc.</p>
+<a class="link" href="ValentComponent.html#ValentComponentClass.extension-added"><span class="type">ValentComponentClass.extension_added</span></a> vfunc.</p>
 <div class="refsect3">
-<a name="ValentComponent-provider-added.parameters"></a><h4>Parameters</h4>
+<a name="ValentComponent-extension-added.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -337,7 +384,7 @@ provider has become available.</p>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
-<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_name"><p>extension</p></td>
 <td class="parameter_description"><p>an <span class="type">PeasExtension</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
@@ -353,17 +400,17 @@ provider has become available.</p>
 </div>
 <hr>
 <div class="refsect2">
-<a name="ValentComponent-provider-removed"></a><h3>The <code class="literal">“provider-removed”</code> signal</h3>
+<a name="ValentComponent-extension-removed"></a><h3>The <code class="literal">“extension-removed”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> *component,
-               <span class="type">GObject</span>         *provider,
+               <span class="type">GObject</span>         *extension,
                <span class="type">gpointer</span>         user_data)</pre>
-<p>The "provider-removed" signal is emitted when a provider has discovered a
-provider is no longer available.</p>
+<p>The "extension-removed" signal is emitted when a extension has discovered a
+extension is no longer available.</p>
 <p>Subclasses of <a class="link" href="ValentComponent.html" title="ValentComponent"><span class="type">ValentComponent</span></a> must chain-up if they override the
-<a class="link" href="ValentComponent.html#ValentComponentClass.provider-removed"><span class="type">ValentComponentClass.provider_removed</span></a> vfunc.</p>
+<a class="link" href="ValentComponent.html#ValentComponentClass.extension-removed"><span class="type">ValentComponentClass.extension_removed</span></a> vfunc.</p>
 <div class="refsect3">
-<a name="ValentComponent-provider-removed.parameters"></a><h4>Parameters</h4>
+<a name="ValentComponent-extension-removed.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -377,7 +424,7 @@ provider is no longer available.</p>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
-<td class="parameter_name"><p>provider</p></td>
+<td class="parameter_name"><p>extension</p></td>
 <td class="parameter_description"><p>an <span class="type">PeasExtension</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
