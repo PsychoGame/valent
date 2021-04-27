@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-25 10:03:08</td>
+            <td class="headerValue">2021-04-27 08:02:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -114,8 +114,8 @@
 <a name="36"><span class="lineNum">      36 </span>                :            :   ValentClipboardSource *default_clipboard;</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : };</a>
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
-<a name="39"><span class="lineNum">      39 </span>  [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 241 times"> + </span><span class="branchCov" title="Branch 2 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        263 : G_DEFINE_TYPE (ValentClipboard, valent_clipboard, VALENT_TYPE_COMPONENT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 11 times"> + </span><span class="branchCov" title="Branch 5 was taken 230 times"> + </span>]
+<a name="39"><span class="lineNum">      39 </span>  [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 261 times"> + </span><span class="branchCov" title="Branch 2 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        283 : G_DEFINE_TYPE (ValentClipboard, valent_clipboard, VALENT_TYPE_COMPONENT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 11 times"> + </span><span class="branchCov" title="Branch 5 was taken 250 times"> + </span>]
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
 <a name="41"><span class="lineNum">      41 </span>                :            : enum {</a>
 <a name="42"><span class="lineNum">      42 </span>                :            :   CHANGED,</a>
@@ -163,50 +163,50 @@
 <a name="84"><span class="lineNum">      84 </span>                :            :  * ValentComponent</a>
 <a name="85"><span class="lineNum">      85 </span>                :            :  */</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : static void</a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">         20 : valent_clipboard_provider_added (ValentComponent *component,</span></a>
-<a name="88"><span class="lineNum">      88 </span>                :            :                                  PeasExtension   *extension)</a>
+<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">         25 : valent_clipboard_extension_added (ValentComponent *component,</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :            :                                   PeasExtension   *extension)</a>
 <a name="89"><span class="lineNum">      89 </span>                :            : {</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         20 :   ValentClipboard *self = VALENT_CLIPBOARD (component);</span></a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">         20 :   ValentClipboardSource *clipboard = VALENT_CLIPBOARD_SOURCE (extension);</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         25 :   ValentClipboard *self = VALENT_CLIPBOARD (component);</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">         25 :   ValentClipboardSource *clipboard = VALENT_CLIPBOARD_SOURCE (extension);</span></a>
 <a name="92"><span class="lineNum">      92 </span>                :            :   PeasExtension *provider;</a>
 <a name="93"><span class="lineNum">      93 </span>                :            : </a>
 <a name="94"><span class="lineNum">      94 </span>                :            :   VALENT_ENTRY;</a>
 <a name="95"><span class="lineNum">      95 </span>                :            : </a>
-<a name="96"><span class="lineNum">      96 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_assert (VALENT_IS_CLIPBOARD (self));</span></a>
+<a name="96"><span class="lineNum">      96 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (VALENT_IS_CLIPBOARD (self));</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
-<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">         20 :   g_signal_connect_object (clipboard,</span></a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">         25 :   g_signal_connect_object (clipboard,</span></a>
 <a name="99"><span class="lineNum">      99 </span>                :            :                            &quot;changed&quot;,</a>
 <a name="100"><span class="lineNum">     100 </span>                :            :                            G_CALLBACK (on_clipboard_source_changed),</a>
 <a name="101"><span class="lineNum">     101 </span>                :            :                            component, 0);</a>
 <a name="102"><span class="lineNum">     102 </span>                :            : </a>
-<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">         20 :   provider = valent_component_get_priority_provider (component,</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">         25 :   provider = valent_component_get_priority_provider (component,</span></a>
 <a name="104"><span class="lineNum">     104 </span>                :            :                                                      &quot;ClipboardSourcePriority&quot;);</a>
 <a name="105"><span class="lineNum">     105 </span>                :            : </a>
-<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   if ((PeasExtension *)self-&gt;default_clipboard != provider)</span></a>
-<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">         20 :     g_set_object (&amp;self-&gt;default_clipboard, VALENT_CLIPBOARD_SOURCE (provider));</span></a>
+<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         25 :   if ((PeasExtension *)self-&gt;default_clipboard != provider)</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">         25 :     g_set_object (&amp;self-&gt;default_clipboard, VALENT_CLIPBOARD_SOURCE (provider));</span></a>
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">         20 :   VALENT_EXIT;</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">         25 :   VALENT_EXIT;</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            : }</a>
 <a name="111"><span class="lineNum">     111 </span>                :            : </a>
 <a name="112"><span class="lineNum">     112 </span>                :            : static void</a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         15 : valent_clipboard_provider_removed (ValentComponent *component,</span></a>
-<a name="114"><span class="lineNum">     114 </span>                :            :                                    PeasExtension   *extension)</a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         20 : valent_clipboard_extension_removed (ValentComponent *component,</span></a>
+<a name="114"><span class="lineNum">     114 </span>                :            :                                     PeasExtension   *extension)</a>
 <a name="115"><span class="lineNum">     115 </span>                :            : {</a>
-<a name="116"><span class="lineNum">     116 </span>                :<span class="lineCov">         15 :   ValentClipboard *self = VALENT_CLIPBOARD (component);</span></a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">         15 :   ValentClipboardSource *clipboard = VALENT_CLIPBOARD_SOURCE (extension);</span></a>
+<a name="116"><span class="lineNum">     116 </span>                :<span class="lineCov">         20 :   ValentClipboard *self = VALENT_CLIPBOARD (component);</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">         20 :   ValentClipboardSource *clipboard = VALENT_CLIPBOARD_SOURCE (extension);</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   PeasExtension *provider;</a>
 <a name="119"><span class="lineNum">     119 </span>                :            : </a>
 <a name="120"><span class="lineNum">     120 </span>                :            :   VALENT_ENTRY;</a>
 <a name="121"><span class="lineNum">     121 </span>                :            : </a>
-<a name="122"><span class="lineNum">     122 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_CLIPBOARD (self));</span></a>
+<a name="122"><span class="lineNum">     122 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_assert (VALENT_IS_CLIPBOARD (self));</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            : </a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         15 :   g_signal_handlers_disconnect_by_data (clipboard, self);</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         20 :   g_signal_handlers_disconnect_by_data (clipboard, self);</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            : </a>
-<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">         15 :   provider = valent_component_get_priority_provider (component,</span></a>
+<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">         20 :   provider = valent_component_get_priority_provider (component,</span></a>
 <a name="127"><span class="lineNum">     127 </span>                :            :                                                      &quot;ClipboardSourcePriority&quot;);</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         15 :   g_set_object (&amp;self-&gt;default_clipboard, VALENT_CLIPBOARD_SOURCE (provider));</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         20 :   g_set_object (&amp;self-&gt;default_clipboard, VALENT_CLIPBOARD_SOURCE (provider));</span></a>
 <a name="129"><span class="lineNum">     129 </span>                :            : </a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         15 :   VALENT_EXIT;</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         20 :   VALENT_EXIT;</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            : }</a>
 <a name="132"><span class="lineNum">     132 </span>                :            : </a>
 <a name="133"><span class="lineNum">     133 </span>                :            : /*</a>
@@ -243,8 +243,8 @@
 <a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">         11 :   object_class-&gt;dispose = valent_clipboard_dispose;</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">         11 :   object_class-&gt;finalize = valent_clipboard_finalize;</span></a>
 <a name="166"><span class="lineNum">     166 </span>                :            : </a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">         11 :   component_class-&gt;provider_added = valent_clipboard_provider_added;</span></a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         11 :   component_class-&gt;provider_removed = valent_clipboard_provider_removed;</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">         11 :   component_class-&gt;extension_added = valent_clipboard_extension_added;</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         11 :   component_class-&gt;extension_removed = valent_clipboard_extension_removed;</span></a>
 <a name="169"><span class="lineNum">     169 </span>                :            : </a>
 <a name="170"><span class="lineNum">     170 </span>                :            :   /**</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :    * ValentClipboard::changed:</a>

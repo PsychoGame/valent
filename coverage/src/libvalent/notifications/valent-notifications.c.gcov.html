@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-25 10:03:08</td>
+            <td class="headerValue">2021-04-27 08:02:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">16</td>
@@ -99,372 +99,373 @@
 <a name="21"><span class="lineNum">      21 </span>                :            :  * @stability: Unstable</a>
 <a name="22"><span class="lineNum">      22 </span>                :            :  * @include: libvalent-notifications.h</a>
 <a name="23"><span class="lineNum">      23 </span>                :            :  *</a>
-<a name="24"><span class="lineNum">      24 </span>                :            :  * #ValentNotifications is an aggregator for notification services, with a simple API generally</a>
-<a name="25"><span class="lineNum">      25 </span>                :            :  * intended to be used by #ValentDevicePlugin implementations.</a>
-<a name="26"><span class="lineNum">      26 </span>                :            :  *</a>
-<a name="27"><span class="lineNum">      27 </span>                :            :  * Plugins can provide adapters for services by subclassing the #ValentNotificationSource base</a>
-<a name="28"><span class="lineNum">      28 </span>                :            :  * class.</a>
-<a name="29"><span class="lineNum">      29 </span>                :            :  */</a>
-<a name="30"><span class="lineNum">      30 </span>                :            : </a>
-<a name="31"><span class="lineNum">      31 </span>                :            : struct _ValentNotifications</a>
-<a name="32"><span class="lineNum">      32 </span>                :            : {</a>
-<a name="33"><span class="lineNum">      33 </span>                :            :   ValentComponent  parent_instance;</a>
-<a name="34"><span class="lineNum">      34 </span>                :            : </a>
-<a name="35"><span class="lineNum">      35 </span>                :            :   GVariant        *applications;</a>
-<a name="36"><span class="lineNum">      36 </span>                :            : };</a>
-<a name="37"><span class="lineNum">      37 </span>                :            : </a>
-<a name="38"><span class="lineNum">      38 </span>  [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 291 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        323 : G_DEFINE_TYPE (ValentNotifications, valent_notifications, VALENT_TYPE_COMPONENT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 16 times"> + </span><span class="branchCov" title="Branch 5 was taken 275 times"> + </span>]
-<a name="39"><span class="lineNum">      39 </span>                :            : </a>
-<a name="40"><span class="lineNum">      40 </span>                :            : enum {</a>
-<a name="41"><span class="lineNum">      41 </span>                :            :   NOTIFICATION_ADDED,</a>
-<a name="42"><span class="lineNum">      42 </span>                :            :   NOTIFICATION_REMOVED,</a>
-<a name="43"><span class="lineNum">      43 </span>                :            :   N_SIGNALS</a>
-<a name="44"><span class="lineNum">      44 </span>                :            : };</a>
-<a name="45"><span class="lineNum">      45 </span>                :            : </a>
-<a name="46"><span class="lineNum">      46 </span>                :            : static guint signals[N_SIGNALS] = { 0, };</a>
-<a name="47"><span class="lineNum">      47 </span>                :            : </a>
+<a name="24"><span class="lineNum">      24 </span>                :            :  * #ValentNotifications is an aggregator for notification services, with a</a>
+<a name="25"><span class="lineNum">      25 </span>                :            :  * simple API generally intended to be used by #ValentDevicePlugin</a>
+<a name="26"><span class="lineNum">      26 </span>                :            :  * implementations.</a>
+<a name="27"><span class="lineNum">      27 </span>                :            :  *</a>
+<a name="28"><span class="lineNum">      28 </span>                :            :  * Plugins can provide adapters for services by subclassing the</a>
+<a name="29"><span class="lineNum">      29 </span>                :            :  * #ValentNotificationSource base class.</a>
+<a name="30"><span class="lineNum">      30 </span>                :            :  */</a>
+<a name="31"><span class="lineNum">      31 </span>                :            : </a>
+<a name="32"><span class="lineNum">      32 </span>                :            : struct _ValentNotifications</a>
+<a name="33"><span class="lineNum">      33 </span>                :            : {</a>
+<a name="34"><span class="lineNum">      34 </span>                :            :   ValentComponent  parent_instance;</a>
+<a name="35"><span class="lineNum">      35 </span>                :            : </a>
+<a name="36"><span class="lineNum">      36 </span>                :            :   GVariant        *applications;</a>
+<a name="37"><span class="lineNum">      37 </span>                :            : };</a>
+<a name="38"><span class="lineNum">      38 </span>                :            : </a>
+<a name="39"><span class="lineNum">      39 </span>  [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 316 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        348 : G_DEFINE_TYPE (ValentNotifications, valent_notifications, VALENT_TYPE_COMPONENT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 16 times"> + </span><span class="branchCov" title="Branch 5 was taken 300 times"> + </span>]
+<a name="40"><span class="lineNum">      40 </span>                :            : </a>
+<a name="41"><span class="lineNum">      41 </span>                :            : enum {</a>
+<a name="42"><span class="lineNum">      42 </span>                :            :   NOTIFICATION_ADDED,</a>
+<a name="43"><span class="lineNum">      43 </span>                :            :   NOTIFICATION_REMOVED,</a>
+<a name="44"><span class="lineNum">      44 </span>                :            :   N_SIGNALS</a>
+<a name="45"><span class="lineNum">      45 </span>                :            : };</a>
+<a name="46"><span class="lineNum">      46 </span>                :            : </a>
+<a name="47"><span class="lineNum">      47 </span>                :            : static guint signals[N_SIGNALS] = { 0, };</a>
 <a name="48"><span class="lineNum">      48 </span>                :            : </a>
-<a name="49"><span class="lineNum">      49 </span>                :            : static ValentNotifications *default_listener = NULL;</a>
-<a name="50"><span class="lineNum">      50 </span>                :            : </a>
+<a name="49"><span class="lineNum">      49 </span>                :            : </a>
+<a name="50"><span class="lineNum">      50 </span>                :            : static ValentNotifications *default_listener = NULL;</a>
 <a name="51"><span class="lineNum">      51 </span>                :            : </a>
-<a name="52"><span class="lineNum">      52 </span>                :            : static char *</a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineNoCov">          0 : app_info_get_id (GAppInfo *app_info)</span></a>
-<a name="54"><span class="lineNum">      54 </span>                :            : {</a>
-<a name="55"><span class="lineNum">      55 </span>                :            :   const char *desktop_id;</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineNoCov">          0 :   g_autofree char *ret = NULL;</span></a>
-<a name="57"><span class="lineNum">      57 </span>                :            :   const char *filename;</a>
-<a name="58"><span class="lineNum">      58 </span>                :            :   int l;</a>
-<a name="59"><span class="lineNum">      59 </span>                :            : </a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineNoCov">          0 :   desktop_id = g_app_info_get_id (app_info);</span></a>
-<a name="61"><span class="lineNum">      61 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (desktop_id != NULL)</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :            :     {</a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineNoCov">          0 :       ret = g_strdup (desktop_id);</span></a>
-<a name="64"><span class="lineNum">      64 </span>                :            :     }</a>
-<a name="65"><span class="lineNum">      65 </span>                :            :   else</a>
-<a name="66"><span class="lineNum">      66 </span>                :            :     {</a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineNoCov">          0 :       filename = g_desktop_app_info_get_filename (G_DESKTOP_APP_INFO (app_info));</span></a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 :       ret = g_path_get_basename (filename);</span></a>
-<a name="69"><span class="lineNum">      69 </span>                :            :     }</a>
-<a name="70"><span class="lineNum">      70 </span>                :            : </a>
-<a name="71"><span class="lineNum">      71 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (G_UNLIKELY (g_str_has_suffix (ret, &quot;.desktop&quot;) == FALSE))</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineNoCov">          0 :     return NULL;</span></a>
-<a name="73"><span class="lineNum">      73 </span>                :            : </a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineNoCov">          0 :   l = strlen (desktop_id);</span></a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineNoCov">          0 :   *(ret + l - strlen(&quot;.desktop&quot;)) = '\0';</span></a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineNoCov">          0 :   return g_steal_pointer (&amp;ret);</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :            : }</a>
-<a name="78"><span class="lineNum">      78 </span>                :            : </a>
-<a name="79"><span class="lineNum">      79 </span>                :            : static GVariant *</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineNoCov">          0 : app_info_serialize (GAppInfo *info)</span></a>
-<a name="81"><span class="lineNum">      81 </span>                :            : {</a>
-<a name="82"><span class="lineNum">      82 </span>                :            :   GVariantDict dict;</a>
-<a name="83"><span class="lineNum">      83 </span>                :            :   const char *name;</a>
-<a name="84"><span class="lineNum">      84 </span>                :            :   GIcon *icon;</a>
-<a name="85"><span class="lineNum">      85 </span>                :            : </a>
-<a name="86"><span class="lineNum">      86 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   g_assert (G_IS_APP_INFO (info));</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :            : </a>
+<a name="53"><span class="lineNum">      53 </span>                :            : static char *</a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineNoCov">          0 : app_info_get_id (GAppInfo *app_info)</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :            : {</a>
+<a name="56"><span class="lineNum">      56 </span>                :            :   const char *desktop_id;</a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineNoCov">          0 :   g_autofree char *ret = NULL;</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :            :   const char *filename;</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :   int l;</a>
+<a name="60"><span class="lineNum">      60 </span>                :            : </a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineNoCov">          0 :   desktop_id = g_app_info_get_id (app_info);</span></a>
+<a name="62"><span class="lineNum">      62 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (desktop_id != NULL)</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :            :     {</a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineNoCov">          0 :       ret = g_strdup (desktop_id);</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :            :     }</a>
+<a name="66"><span class="lineNum">      66 </span>                :            :   else</a>
+<a name="67"><span class="lineNum">      67 </span>                :            :     {</a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 :       filename = g_desktop_app_info_get_filename (G_DESKTOP_APP_INFO (app_info));</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineNoCov">          0 :       ret = g_path_get_basename (filename);</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :            :     }</a>
+<a name="71"><span class="lineNum">      71 </span>                :            : </a>
+<a name="72"><span class="lineNum">      72 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (G_UNLIKELY (g_str_has_suffix (ret, &quot;.desktop&quot;) == FALSE))</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineNoCov">          0 :     return NULL;</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :            : </a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineNoCov">          0 :   l = strlen (desktop_id);</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineNoCov">          0 :   *(ret + l - strlen(&quot;.desktop&quot;)) = '\0';</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineNoCov">          0 :   return g_steal_pointer (&amp;ret);</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :            : }</a>
+<a name="79"><span class="lineNum">      79 </span>                :            : </a>
+<a name="80"><span class="lineNum">      80 </span>                :            : static GVariant *</a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineNoCov">          0 : app_info_serialize (GAppInfo *info)</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :            : {</a>
+<a name="83"><span class="lineNum">      83 </span>                :            :   GVariantDict dict;</a>
+<a name="84"><span class="lineNum">      84 </span>                :            :   const char *name;</a>
+<a name="85"><span class="lineNum">      85 </span>                :            :   GIcon *icon;</a>
+<a name="86"><span class="lineNum">      86 </span>                :            : </a>
+<a name="87"><span class="lineNum">      87 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   g_assert (G_IS_APP_INFO (info));</span></a>
 <span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
-<a name="87"><span class="lineNum">      87 </span>                :            : </a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineNoCov">          0 :   g_variant_dict_init (&amp;dict, NULL);</span></a>
-<a name="89"><span class="lineNum">      89 </span>                :            : </a>
-<a name="90"><span class="lineNum">      90 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if ((name = g_app_info_get_display_name (info)) != NULL)</span></a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineNoCov">          0 :     g_variant_dict_insert (&amp;dict, &quot;name&quot;, &quot;s&quot;, name);</span></a>
-<a name="92"><span class="lineNum">      92 </span>                :            : </a>
-<a name="93"><span class="lineNum">      93 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if ((icon = g_app_info_get_icon (info)) != NULL)</span></a>
-<a name="94"><span class="lineNum">      94 </span>                :            :     {</a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineNoCov">          0 :       g_autoptr (GVariant) iconv = NULL;</span></a>
-<a name="96"><span class="lineNum">      96 </span>                :            : </a>
-<a name="97"><span class="lineNum">      97 </span>                :<span class="lineNoCov">          0 :       iconv = g_icon_serialize (icon);</span></a>
-<a name="98"><span class="lineNum">      98 </span>                :<span class="lineNoCov">          0 :       g_variant_dict_insert_value (&amp;dict, &quot;icon&quot;, iconv);</span></a>
-<a name="99"><span class="lineNum">      99 </span>                :            :     }</a>
-<a name="100"><span class="lineNum">     100 </span>                :            : </a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineNoCov">          0 :   return g_variant_dict_end (&amp;dict);</span></a>
-<a name="102"><span class="lineNum">     102 </span>                :            : }</a>
-<a name="103"><span class="lineNum">     103 </span>                :            : </a>
-<a name="104"><span class="lineNum">     104 </span>                :            : static GVariant *</a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">         45 : notification_serialize (ValentNotification *notification)</span></a>
-<a name="106"><span class="lineNum">     106 </span>                :            : {</a>
-<a name="107"><span class="lineNum">     107 </span>                :            :   GVariantDict dict;</a>
-<a name="108"><span class="lineNum">     108 </span>                :            :   const char *app_name;</a>
-<a name="109"><span class="lineNum">     109 </span>                :            :   GIcon *icon;</a>
-<a name="110"><span class="lineNum">     110 </span>                :            : </a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         45 :   g_variant_dict_init (&amp;dict, NULL);</span></a>
-<a name="112"><span class="lineNum">     112 </span>                :            : </a>
-<a name="113"><span class="lineNum">     113 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         45 :   if ((app_name = valent_notification_get_application (notification)) != NULL)</span></a>
-<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">         25 :     g_variant_dict_insert (&amp;dict, &quot;name&quot;, &quot;s&quot;, app_name);</span></a>
-<a name="115"><span class="lineNum">     115 </span>                :            : </a>
-<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         45 :   if ((icon = valent_notification_get_icon (notification)) != NULL)</span></a>
-<a name="117"><span class="lineNum">     117 </span>                :            :     {</a>
-<a name="118"><span class="lineNum">     118 </span>                :<span class="lineCov">         20 :       g_autoptr (GVariant) iconv = NULL;</span></a>
-<a name="119"><span class="lineNum">     119 </span>                :            : </a>
-<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">         20 :       iconv = g_icon_serialize (icon);</span></a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         20 :       g_variant_dict_insert_value (&amp;dict, &quot;icon&quot;, iconv);</span></a>
-<a name="122"><span class="lineNum">     122 </span>                :            :     }</a>
-<a name="123"><span class="lineNum">     123 </span>                :            : </a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         45 :   return g_variant_dict_end (&amp;dict);</span></a>
-<a name="125"><span class="lineNum">     125 </span>                :            : }</a>
-<a name="126"><span class="lineNum">     126 </span>                :            : </a>
-<a name="127"><span class="lineNum">     127 </span>                :            : static void</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         30 : query_applications (ValentNotifications *self)</span></a>
-<a name="129"><span class="lineNum">     129 </span>                :            : {</a>
-<a name="130"><span class="lineNum">     130 </span>                :            :   GVariantDict dict;</a>
-<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">         60 :   g_autolist (GAppInfo) infos = NULL;</span></a>
-<a name="132"><span class="lineNum">     132 </span>                :            : </a>
-<a name="133"><span class="lineNum">     133 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
-<a name="134"><span class="lineNum">     134 </span>                :            : </a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         30 :   g_variant_dict_init (&amp;dict, NULL);</span></a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         30 :   infos = g_app_info_get_all ();</span></a>
-<a name="137"><span class="lineNum">     137 </span>                :            : </a>
-<a name="138"><span class="lineNum">     138 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         90 :   for (const GList *iter = infos; iter; iter = iter-&gt;next)</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :            :     {</a>
-<a name="140"><span class="lineNum">     140 </span>                :            :       const char *desktop_id;</a>
-<a name="141"><span class="lineNum">     141 </span>                :            :       const char *name;</a>
-<a name="142"><span class="lineNum">     142 </span>                :            : </a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         60 :       desktop_id = g_app_info_get_id (iter-&gt;data);</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :            : </a>
-<a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :       if G_UNLIKELY (g_str_has_prefix (desktop_id, APPLICATION_ID))</span></a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineNoCov">          0 :         continue;</span></a>
-<a name="147"><span class="lineNum">     147 </span>                :            : </a>
-<a name="148"><span class="lineNum">     148 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         60 :       if (!g_desktop_app_info_get_boolean (iter-&gt;data, &quot;X-GNOME-UsesNotifications&quot;))</span></a>
-<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">         60 :         continue;</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :            : </a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineNoCov">          0 :       name = g_app_info_get_display_name (iter-&gt;data);</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineNoCov">          0 :       g_variant_dict_insert_value (&amp;dict, name, app_info_serialize (iter-&gt;data));</span></a>
-<a name="153"><span class="lineNum">     153 </span>                :            :     }</a>
-<a name="154"><span class="lineNum">     154 </span>                :            : </a>
-<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">         30 :   self-&gt;applications = g_variant_ref_sink (g_variant_dict_end (&amp;dict));</span></a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         30 : }</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :            : </a>
-<a name="158"><span class="lineNum">     158 </span>                :            : static void</a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">         45 : add_application (ValentNotifications *self,</span></a>
-<a name="160"><span class="lineNum">     160 </span>                :            :                  GVariant            *application)</a>
-<a name="161"><span class="lineNum">     161 </span>                :            : {</a>
-<a name="162"><span class="lineNum">     162 </span>                :            :   GVariantDict dict;</a>
-<a name="163"><span class="lineNum">     163 </span>                :            :   const char *name;</a>
-<a name="164"><span class="lineNum">     164 </span>                :            : </a>
-<a name="165"><span class="lineNum">     165 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   if (self-&gt;applications == NULL)</span></a>
-<a name="166"><span class="lineNum">     166 </span>                :<span class="lineNoCov">          0 :     query_applications (self);</span></a>
-<a name="167"><span class="lineNum">     167 </span>                :            : </a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         45 :   g_variant_dict_init (&amp;dict, self-&gt;applications);</span></a>
-<a name="169"><span class="lineNum">     169 </span>                :            : </a>
-<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         45 :   if (g_variant_lookup (application, &quot;name&quot;, &quot;&amp;s&quot;, &amp;name))</span></a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">         25 :     g_variant_dict_insert_value (&amp;dict, name, application);</span></a>
-<a name="172"><span class="lineNum">     172 </span>                :            : </a>
-<a name="173"><span class="lineNum">     173 </span>        [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         45 :   g_clear_pointer (&amp;self-&gt;applications, g_variant_unref);</span></a>
-<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">         45 :   self-&gt;applications = g_variant_ref_sink (g_variant_dict_end (&amp;dict));</span></a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">         45 : }</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :            : </a>
+<a name="88"><span class="lineNum">      88 </span>                :            : </a>
+<a name="89"><span class="lineNum">      89 </span>                :<span class="lineNoCov">          0 :   g_variant_dict_init (&amp;dict, NULL);</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :            : </a>
+<a name="91"><span class="lineNum">      91 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if ((name = g_app_info_get_display_name (info)) != NULL)</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineNoCov">          0 :     g_variant_dict_insert (&amp;dict, &quot;name&quot;, &quot;s&quot;, name);</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :            : </a>
+<a name="94"><span class="lineNum">      94 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if ((icon = g_app_info_get_icon (info)) != NULL)</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :            :     {</a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineNoCov">          0 :       g_autoptr (GVariant) iconv = NULL;</span></a>
+<a name="97"><span class="lineNum">      97 </span>                :            : </a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineNoCov">          0 :       iconv = g_icon_serialize (icon);</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineNoCov">          0 :       g_variant_dict_insert_value (&amp;dict, &quot;icon&quot;, iconv);</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :            :     }</a>
+<a name="101"><span class="lineNum">     101 </span>                :            : </a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineNoCov">          0 :   return g_variant_dict_end (&amp;dict);</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :            : }</a>
+<a name="104"><span class="lineNum">     104 </span>                :            : </a>
+<a name="105"><span class="lineNum">     105 </span>                :            : static GVariant *</a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">         45 : notification_serialize (ValentNotification *notification)</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :            : {</a>
+<a name="108"><span class="lineNum">     108 </span>                :            :   GVariantDict dict;</a>
+<a name="109"><span class="lineNum">     109 </span>                :            :   const char *app_name;</a>
+<a name="110"><span class="lineNum">     110 </span>                :            :   GIcon *icon;</a>
+<a name="111"><span class="lineNum">     111 </span>                :            : </a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">         45 :   g_variant_dict_init (&amp;dict, NULL);</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :            : </a>
+<a name="114"><span class="lineNum">     114 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         45 :   if ((app_name = valent_notification_get_application (notification)) != NULL)</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">         25 :     g_variant_dict_insert (&amp;dict, &quot;name&quot;, &quot;s&quot;, app_name);</span></a>
+<a name="116"><span class="lineNum">     116 </span>                :            : </a>
+<a name="117"><span class="lineNum">     117 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         45 :   if ((icon = valent_notification_get_icon (notification)) != NULL)</span></a>
+<a name="118"><span class="lineNum">     118 </span>                :            :     {</a>
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         20 :       g_autoptr (GVariant) iconv = NULL;</span></a>
+<a name="120"><span class="lineNum">     120 </span>                :            : </a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         20 :       iconv = g_icon_serialize (icon);</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         20 :       g_variant_dict_insert_value (&amp;dict, &quot;icon&quot;, iconv);</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :            :     }</a>
+<a name="124"><span class="lineNum">     124 </span>                :            : </a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         45 :   return g_variant_dict_end (&amp;dict);</span></a>
+<a name="126"><span class="lineNum">     126 </span>                :            : }</a>
+<a name="127"><span class="lineNum">     127 </span>                :            : </a>
+<a name="128"><span class="lineNum">     128 </span>                :            : static void</a>
+<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">         30 : query_applications (ValentNotifications *self)</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :            : {</a>
+<a name="131"><span class="lineNum">     131 </span>                :            :   GVariantDict dict;</a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         60 :   g_autolist (GAppInfo) infos = NULL;</span></a>
+<a name="133"><span class="lineNum">     133 </span>                :            : </a>
+<a name="134"><span class="lineNum">     134 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :            : </a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         30 :   g_variant_dict_init (&amp;dict, NULL);</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">         30 :   infos = g_app_info_get_all ();</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :            : </a>
+<a name="139"><span class="lineNum">     139 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         90 :   for (const GList *iter = infos; iter; iter = iter-&gt;next)</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :            :     {</a>
+<a name="141"><span class="lineNum">     141 </span>                :            :       const char *desktop_id;</a>
+<a name="142"><span class="lineNum">     142 </span>                :            :       const char *name;</a>
+<a name="143"><span class="lineNum">     143 </span>                :            : </a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         60 :       desktop_id = g_app_info_get_id (iter-&gt;data);</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :            : </a>
+<a name="146"><span class="lineNum">     146 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :       if G_UNLIKELY (g_str_has_prefix (desktop_id, APPLICATION_ID))</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineNoCov">          0 :         continue;</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :            : </a>
+<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         60 :       if (!g_desktop_app_info_get_boolean (iter-&gt;data, &quot;X-GNOME-UsesNotifications&quot;))</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         60 :         continue;</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :            : </a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineNoCov">          0 :       name = g_app_info_get_display_name (iter-&gt;data);</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineNoCov">          0 :       g_variant_dict_insert_value (&amp;dict, name, app_info_serialize (iter-&gt;data));</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :            :     }</a>
+<a name="155"><span class="lineNum">     155 </span>                :            : </a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         30 :   self-&gt;applications = g_variant_ref_sink (g_variant_dict_end (&amp;dict));</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">         30 : }</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :            : </a>
+<a name="159"><span class="lineNum">     159 </span>                :            : static void</a>
+<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">         45 : add_application (ValentNotifications *self,</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :            :                  GVariant            *application)</a>
+<a name="162"><span class="lineNum">     162 </span>                :            : {</a>
+<a name="163"><span class="lineNum">     163 </span>                :            :   GVariantDict dict;</a>
+<a name="164"><span class="lineNum">     164 </span>                :            :   const char *name;</a>
+<a name="165"><span class="lineNum">     165 </span>                :            : </a>
+<a name="166"><span class="lineNum">     166 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   if (self-&gt;applications == NULL)</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineNoCov">          0 :     query_applications (self);</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :            : </a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">         45 :   g_variant_dict_init (&amp;dict, self-&gt;applications);</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :            : </a>
+<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         45 :   if (g_variant_lookup (application, &quot;name&quot;, &quot;&amp;s&quot;, &amp;name))</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         25 :     g_variant_dict_insert_value (&amp;dict, name, application);</span></a>
+<a name="173"><span class="lineNum">     173 </span>                :            : </a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         45 :   g_clear_pointer (&amp;self-&gt;applications, g_variant_unref);</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">         45 :   self-&gt;applications = g_variant_ref_sink (g_variant_dict_end (&amp;dict));</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         45 : }</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            : </a>
-<a name="178"><span class="lineNum">     178 </span>                :            : /*</a>
-<a name="179"><span class="lineNum">     179 </span>                :            :  * ValentNotificationSource Callbacks</a>
-<a name="180"><span class="lineNum">     180 </span>                :            :  */</a>
-<a name="181"><span class="lineNum">     181 </span>                :            : static void</a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">         45 : on_notification_added (ValentNotificationSource *source,</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :            :                        ValentNotification       *notification,</a>
-<a name="184"><span class="lineNum">     184 </span>                :            :                        ValentNotifications      *self)</a>
-<a name="185"><span class="lineNum">     185 </span>                :            : {</a>
-<a name="186"><span class="lineNum">     186 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
-<a name="187"><span class="lineNum">     187 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_NOTIFICATION (notification));</span></a>
-<a name="188"><span class="lineNum">     188 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
-<a name="189"><span class="lineNum">     189 </span>                :            : </a>
-<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">         45 :   add_application (self, notification_serialize (notification));</span></a>
-<a name="191"><span class="lineNum">     191 </span>                :            : </a>
-<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         45 :   g_signal_emit (G_OBJECT (self), signals [NOTIFICATION_ADDED], 0, notification);</span></a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         45 : }</span></a>
-<a name="194"><span class="lineNum">     194 </span>                :            : </a>
-<a name="195"><span class="lineNum">     195 </span>                :            : static void</a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         15 : on_notification_removed (ValentNotificationSource *source,</span></a>
-<a name="197"><span class="lineNum">     197 </span>                :            :                          const char               *id,</a>
-<a name="198"><span class="lineNum">     198 </span>                :            :                          ValentNotifications      *self)</a>
-<a name="199"><span class="lineNum">     199 </span>                :            : {</a>
-<a name="200"><span class="lineNum">     200 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
-<a name="201"><span class="lineNum">     201 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (id != NULL);</span></a>
-<a name="202"><span class="lineNum">     202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
-<a name="203"><span class="lineNum">     203 </span>                :            : </a>
-<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">         15 :   g_signal_emit (G_OBJECT (self), signals [NOTIFICATION_REMOVED], 0, id);</span></a>
-<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">         15 : }</span></a>
-<a name="206"><span class="lineNum">     206 </span>                :            : </a>
-<a name="207"><span class="lineNum">     207 </span>                :            : static void</a>
-<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">         25 : valent_notification_source_load_cb (ValentNotificationSource *source,</span></a>
-<a name="209"><span class="lineNum">     209 </span>                :            :                                     GAsyncResult             *result,</a>
-<a name="210"><span class="lineNum">     210 </span>                :            :                                     ValentNotifications      *self)</a>
-<a name="211"><span class="lineNum">     211 </span>                :            : {</a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">         25 :   g_autoptr (GError) error = NULL;</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :            : </a>
-<a name="214"><span class="lineNum">     214 </span>                :            :   VALENT_ENTRY;</a>
-<a name="215"><span class="lineNum">     215 </span>                :            : </a>
-<a name="216"><span class="lineNum">     216 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
-<a name="217"><span class="lineNum">     217 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (g_task_is_valid (result, source));</span></a>
-<a name="218"><span class="lineNum">     218 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
-<a name="219"><span class="lineNum">     219 </span>                :            : </a>
-<a name="220"><span class="lineNum">     220 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         25 :   if (!valent_notification_source_load_finish (source, result, &amp;error) &amp;&amp;</span></a>
-<a name="221"><span class="lineNum">     221 </span>                :<span class="lineNoCov">          0 :       !valent_error_ignore (error))</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineNoCov">          0 :     g_warning (&quot;%s failed to load: %s&quot;, G_OBJECT_TYPE_NAME (source), error-&gt;message);</span></a>
-<a name="223"><span class="lineNum">     223 </span>                :            : </a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">         25 :   VALENT_EXIT;</span></a>
-<a name="225"><span class="lineNum">     225 </span>                :            : }</a>
-<a name="226"><span class="lineNum">     226 </span>                :            : </a>
+<a name="178"><span class="lineNum">     178 </span>                :            : </a>
+<a name="179"><span class="lineNum">     179 </span>                :            : /*</a>
+<a name="180"><span class="lineNum">     180 </span>                :            :  * ValentNotificationSource Callbacks</a>
+<a name="181"><span class="lineNum">     181 </span>                :            :  */</a>
+<a name="182"><span class="lineNum">     182 </span>                :            : static void</a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         45 : on_notification_added (ValentNotificationSource *source,</span></a>
+<a name="184"><span class="lineNum">     184 </span>                :            :                        ValentNotification       *notification,</a>
+<a name="185"><span class="lineNum">     185 </span>                :            :                        ValentNotifications      *self)</a>
+<a name="186"><span class="lineNum">     186 </span>                :            : {</a>
+<a name="187"><span class="lineNum">     187 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
+<a name="188"><span class="lineNum">     188 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_NOTIFICATION (notification));</span></a>
+<a name="189"><span class="lineNum">     189 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :            : </a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">         45 :   add_application (self, notification_serialize (notification));</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :            : </a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         45 :   g_signal_emit (G_OBJECT (self), signals [NOTIFICATION_ADDED], 0, notification);</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">         45 : }</span></a>
+<a name="195"><span class="lineNum">     195 </span>                :            : </a>
+<a name="196"><span class="lineNum">     196 </span>                :            : static void</a>
+<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">         15 : on_notification_removed (ValentNotificationSource *source,</span></a>
+<a name="198"><span class="lineNum">     198 </span>                :            :                          const char               *id,</a>
+<a name="199"><span class="lineNum">     199 </span>                :            :                          ValentNotifications      *self)</a>
+<a name="200"><span class="lineNum">     200 </span>                :            : {</a>
+<a name="201"><span class="lineNum">     201 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
+<a name="202"><span class="lineNum">     202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (id != NULL);</span></a>
+<a name="203"><span class="lineNum">     203 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
+<a name="204"><span class="lineNum">     204 </span>                :            : </a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">         15 :   g_signal_emit (G_OBJECT (self), signals [NOTIFICATION_REMOVED], 0, id);</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :            : </a>
+<a name="208"><span class="lineNum">     208 </span>                :            : static void</a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">         30 : valent_notification_source_load_cb (ValentNotificationSource *source,</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :            :                                     GAsyncResult             *result,</a>
+<a name="211"><span class="lineNum">     211 </span>                :            :                                     ValentNotifications      *self)</a>
+<a name="212"><span class="lineNum">     212 </span>                :            : {</a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         30 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :            : </a>
+<a name="215"><span class="lineNum">     215 </span>                :            :   VALENT_ENTRY;</a>
+<a name="216"><span class="lineNum">     216 </span>                :            : </a>
+<a name="217"><span class="lineNum">     217 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
+<a name="218"><span class="lineNum">     218 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (g_task_is_valid (result, source));</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
+<a name="220"><span class="lineNum">     220 </span>                :            : </a>
+<a name="221"><span class="lineNum">     221 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         30 :   if (!valent_notification_source_load_finish (source, result, &amp;error) &amp;&amp;</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineNoCov">          0 :       !valent_error_ignore (error))</span></a>
+<a name="223"><span class="lineNum">     223 </span>                :<span class="lineNoCov">          0 :     g_warning (&quot;%s failed to load: %s&quot;, G_OBJECT_TYPE_NAME (source), error-&gt;message);</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :            : </a>
+<a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">         30 :   VALENT_EXIT;</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :            : }</a>
 <a name="227"><span class="lineNum">     227 </span>                :            : </a>
-<a name="228"><span class="lineNum">     228 </span>                :            : /*</a>
-<a name="229"><span class="lineNum">     229 </span>                :            :  * ValentComponent</a>
-<a name="230"><span class="lineNum">     230 </span>                :            :  */</a>
-<a name="231"><span class="lineNum">     231 </span>                :            : static void</a>
-<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">         30 : valent_notifications_provider_added (ValentComponent *component,</span></a>
-<a name="233"><span class="lineNum">     233 </span>                :            :                                      PeasExtension   *extension)</a>
-<a name="234"><span class="lineNum">     234 </span>                :            : {</a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">         30 :   ValentNotifications *self = VALENT_NOTIFICATIONS (component);</span></a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">         30 :   ValentNotificationSource *source = VALENT_NOTIFICATION_SOURCE (extension);</span></a>
-<a name="237"><span class="lineNum">     237 </span>                :            : </a>
-<a name="238"><span class="lineNum">     238 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
-<a name="239"><span class="lineNum">     239 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
-<a name="240"><span class="lineNum">     240 </span>                :            : </a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">         30 :   g_signal_connect_object (source,</span></a>
-<a name="242"><span class="lineNum">     242 </span>                :            :                            &quot;notification-added&quot;,</a>
-<a name="243"><span class="lineNum">     243 </span>                :            :                            G_CALLBACK (on_notification_added),</a>
-<a name="244"><span class="lineNum">     244 </span>                :            :                            self, 0);</a>
-<a name="245"><span class="lineNum">     245 </span>                :            : </a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">         30 :   g_signal_connect_object (source,</span></a>
-<a name="247"><span class="lineNum">     247 </span>                :            :                            &quot;notification-removed&quot;,</a>
-<a name="248"><span class="lineNum">     248 </span>                :            :                            G_CALLBACK (on_notification_removed),</a>
-<a name="249"><span class="lineNum">     249 </span>                :            :                            self, 0);</a>
-<a name="250"><span class="lineNum">     250 </span>                :            : </a>
-<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">         30 :   valent_notification_source_load_async (source,</span></a>
-<a name="252"><span class="lineNum">     252 </span>                :            :                                          NULL, // TODO self-&gt;cancellable,</a>
-<a name="253"><span class="lineNum">     253 </span>                :            :                                          (GAsyncReadyCallback)valent_notification_source_load_cb,</a>
-<a name="254"><span class="lineNum">     254 </span>                :            :                                          self);</a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">         30 : }</span></a>
-<a name="256"><span class="lineNum">     256 </span>                :            : </a>
-<a name="257"><span class="lineNum">     257 </span>                :            : static void</a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         20 : valent_notifications_provider_removed (ValentComponent *component,</span></a>
-<a name="259"><span class="lineNum">     259 </span>                :            :                                        PeasExtension   *extension)</a>
-<a name="260"><span class="lineNum">     260 </span>                :            : {</a>
-<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">         20 :   ValentNotifications *self = VALENT_NOTIFICATIONS (component);</span></a>
-<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">         20 :   ValentNotificationSource *source = VALENT_NOTIFICATION_SOURCE (extension);</span></a>
-<a name="263"><span class="lineNum">     263 </span>                :            : </a>
-<a name="264"><span class="lineNum">     264 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
-<a name="265"><span class="lineNum">     265 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
-<a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">         20 :   g_signal_handlers_disconnect_by_func (source, on_notification_added, self);</span></a>
-<a name="268"><span class="lineNum">     268 </span>                :<span class="lineCov">         20 :   g_signal_handlers_disconnect_by_func (source, on_notification_removed, self);</span></a>
-<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">         20 : }</span></a>
-<a name="270"><span class="lineNum">     270 </span>                :            : </a>
+<a name="228"><span class="lineNum">     228 </span>                :            : </a>
+<a name="229"><span class="lineNum">     229 </span>                :            : /*</a>
+<a name="230"><span class="lineNum">     230 </span>                :            :  * ValentComponent</a>
+<a name="231"><span class="lineNum">     231 </span>                :            :  */</a>
+<a name="232"><span class="lineNum">     232 </span>                :            : static void</a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         35 : valent_notifications_extension_added (ValentComponent *component,</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :            :                                       PeasExtension   *extension)</a>
+<a name="235"><span class="lineNum">     235 </span>                :            : {</a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">         35 :   ValentNotifications *self = VALENT_NOTIFICATIONS (component);</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">         35 :   ValentNotificationSource *source = VALENT_NOTIFICATION_SOURCE (extension);</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :            : </a>
+<a name="239"><span class="lineNum">     239 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
+<a name="240"><span class="lineNum">     240 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :            : </a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         35 :   g_signal_connect_object (source,</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :            :                            &quot;notification-added&quot;,</a>
+<a name="244"><span class="lineNum">     244 </span>                :            :                            G_CALLBACK (on_notification_added),</a>
+<a name="245"><span class="lineNum">     245 </span>                :            :                            self, 0);</a>
+<a name="246"><span class="lineNum">     246 </span>                :            : </a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">         35 :   g_signal_connect_object (source,</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :            :                            &quot;notification-removed&quot;,</a>
+<a name="249"><span class="lineNum">     249 </span>                :            :                            G_CALLBACK (on_notification_removed),</a>
+<a name="250"><span class="lineNum">     250 </span>                :            :                            self, 0);</a>
+<a name="251"><span class="lineNum">     251 </span>                :            : </a>
+<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         35 :   valent_notification_source_load_async (source,</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :            :                                          NULL, // TODO self-&gt;cancellable,</a>
+<a name="254"><span class="lineNum">     254 </span>                :            :                                          (GAsyncReadyCallback)valent_notification_source_load_cb,</a>
+<a name="255"><span class="lineNum">     255 </span>                :            :                                          self);</a>
+<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">         35 : }</span></a>
+<a name="257"><span class="lineNum">     257 </span>                :            : </a>
+<a name="258"><span class="lineNum">     258 </span>                :            : static void</a>
+<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">         25 : valent_notifications_extension_removed (ValentComponent *component,</span></a>
+<a name="260"><span class="lineNum">     260 </span>                :            :                                         PeasExtension   *extension)</a>
+<a name="261"><span class="lineNum">     261 </span>                :            : {</a>
+<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">         25 :   ValentNotifications *self = VALENT_NOTIFICATIONS (component);</span></a>
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">         25 :   ValentNotificationSource *source = VALENT_NOTIFICATION_SOURCE (extension);</span></a>
+<a name="264"><span class="lineNum">     264 </span>                :            : </a>
+<a name="265"><span class="lineNum">     265 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (VALENT_IS_NOTIFICATIONS (self));</span></a>
+<a name="266"><span class="lineNum">     266 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (VALENT_IS_NOTIFICATION_SOURCE (source));</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :            : </a>
+<a name="268"><span class="lineNum">     268 </span>                :<span class="lineCov">         25 :   g_signal_handlers_disconnect_by_func (source, on_notification_added, self);</span></a>
+<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">         25 :   g_signal_handlers_disconnect_by_func (source, on_notification_removed, self);</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">         25 : }</span></a>
 <a name="271"><span class="lineNum">     271 </span>                :            : </a>
-<a name="272"><span class="lineNum">     272 </span>                :            : /*</a>
-<a name="273"><span class="lineNum">     273 </span>                :            :  * GObject</a>
-<a name="274"><span class="lineNum">     274 </span>                :            :  */</a>
-<a name="275"><span class="lineNum">     275 </span>                :            : static void</a>
-<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">         20 : valent_notifications_finalize (GObject *object)</span></a>
-<a name="277"><span class="lineNum">     277 </span>                :            : {</a>
-<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">         20 :   ValentNotifications *self = VALENT_NOTIFICATIONS (object);</span></a>
-<a name="279"><span class="lineNum">     279 </span>                :            : </a>
-<a name="280"><span class="lineNum">     280 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_clear_pointer (&amp;self-&gt;applications, g_variant_unref);</span></a>
-<a name="281"><span class="lineNum">     281 </span>                :            : </a>
-<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">         20 :   G_OBJECT_CLASS (valent_notifications_parent_class)-&gt;finalize (object);</span></a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">         20 : }</span></a>
-<a name="284"><span class="lineNum">     284 </span>                :            : </a>
-<a name="285"><span class="lineNum">     285 </span>                :            : static void</a>
-<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">         16 : valent_notifications_class_init (ValentNotificationsClass *klass)</span></a>
-<a name="287"><span class="lineNum">     287 </span>                :            : {</a>
-<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">         16 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">         16 :   ValentComponentClass *component_class = VALENT_COMPONENT_CLASS (klass);</span></a>
-<a name="290"><span class="lineNum">     290 </span>                :            : </a>
-<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">         16 :   object_class-&gt;finalize = valent_notifications_finalize;</span></a>
-<a name="292"><span class="lineNum">     292 </span>                :            : </a>
-<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">         16 :   component_class-&gt;provider_added = valent_notifications_provider_added;</span></a>
-<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">         16 :   component_class-&gt;provider_removed = valent_notifications_provider_removed;</span></a>
-<a name="295"><span class="lineNum">     295 </span>                :            : </a>
-<a name="296"><span class="lineNum">     296 </span>                :            :   /**</a>
-<a name="297"><span class="lineNum">     297 </span>                :            :    * ValentNotifications::notification-added:</a>
-<a name="298"><span class="lineNum">     298 </span>                :            :    * @notifications: a #ValentNotifications</a>
-<a name="299"><span class="lineNum">     299 </span>                :            :    * @notification: a #ValentNotification</a>
-<a name="300"><span class="lineNum">     300 </span>                :            :    *</a>
-<a name="301"><span class="lineNum">     301 </span>                :            :    * #ValentNotifications::notification-removed is emitted when a new notification</a>
-<a name="302"><span class="lineNum">     302 </span>                :            :    * is added to @notifications.</a>
-<a name="303"><span class="lineNum">     303 </span>                :            :    */</a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">         16 :   signals [NOTIFICATION_ADDED] =</span></a>
-<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">         16 :     g_signal_new (&quot;notification-added&quot;,</span></a>
-<a name="306"><span class="lineNum">     306 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
-<a name="307"><span class="lineNum">     307 </span>                :            :                   G_SIGNAL_RUN_FIRST,</a>
-<a name="308"><span class="lineNum">     308 </span>                :            :                   0,</a>
-<a name="309"><span class="lineNum">     309 </span>                :            :                   NULL, NULL,</a>
-<a name="310"><span class="lineNum">     310 </span>                :            :                   g_cclosure_marshal_VOID__OBJECT,</a>
-<a name="311"><span class="lineNum">     311 </span>                :            :                   G_TYPE_NONE, 1, VALENT_TYPE_NOTIFICATION);</a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">         16 :   g_signal_set_va_marshaller (signals [NOTIFICATION_ADDED],</span></a>
-<a name="313"><span class="lineNum">     313 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
-<a name="314"><span class="lineNum">     314 </span>                :            :                               g_cclosure_marshal_VOID__OBJECTv);</a>
-<a name="315"><span class="lineNum">     315 </span>                :            : </a>
-<a name="316"><span class="lineNum">     316 </span>                :            :   /**</a>
-<a name="317"><span class="lineNum">     317 </span>                :            :    * ValentNotifications::notification-removed:</a>
-<a name="318"><span class="lineNum">     318 </span>                :            :    * @notifications: a #ValentNotifications</a>
-<a name="319"><span class="lineNum">     319 </span>                :            :    * @id: a notification id</a>
-<a name="320"><span class="lineNum">     320 </span>                :            :    *</a>
-<a name="321"><span class="lineNum">     321 </span>                :            :    * #ValentNotifications::notification-removed is emitted when a notification</a>
-<a name="322"><span class="lineNum">     322 </span>                :            :    * is removed from @notifications.</a>
-<a name="323"><span class="lineNum">     323 </span>                :            :    */</a>
-<a name="324"><span class="lineNum">     324 </span>                :<span class="lineCov">         16 :   signals [NOTIFICATION_REMOVED] =</span></a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">         16 :     g_signal_new (&quot;notification-removed&quot;,</span></a>
-<a name="326"><span class="lineNum">     326 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
-<a name="327"><span class="lineNum">     327 </span>                :            :                   G_SIGNAL_RUN_FIRST,</a>
-<a name="328"><span class="lineNum">     328 </span>                :            :                   0,</a>
-<a name="329"><span class="lineNum">     329 </span>                :            :                   NULL, NULL,</a>
-<a name="330"><span class="lineNum">     330 </span>                :            :                   g_cclosure_marshal_VOID__STRING,</a>
-<a name="331"><span class="lineNum">     331 </span>                :            :                   G_TYPE_NONE, 1, G_TYPE_STRING);</a>
-<a name="332"><span class="lineNum">     332 </span>                :<span class="lineCov">         16 :   g_signal_set_va_marshaller (signals [NOTIFICATION_REMOVED],</span></a>
-<a name="333"><span class="lineNum">     333 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
-<a name="334"><span class="lineNum">     334 </span>                :            :                               g_cclosure_marshal_VOID__STRINGv);</a>
-<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">         16 : }</span></a>
-<a name="336"><span class="lineNum">     336 </span>                :            : </a>
-<a name="337"><span class="lineNum">     337 </span>                :            : static void</a>
-<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">         30 : valent_notifications_init (ValentNotifications *self)</span></a>
-<a name="339"><span class="lineNum">     339 </span>                :            : {</a>
-<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">         30 :   query_applications (self);</span></a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">         30 : }</span></a>
-<a name="342"><span class="lineNum">     342 </span>                :            : </a>
-<a name="343"><span class="lineNum">     343 </span>                :            : /**</a>
-<a name="344"><span class="lineNum">     344 </span>                :            :  * valent_notifications_get_applications:</a>
-<a name="345"><span class="lineNum">     345 </span>                :            :  * @notifications: (nullable): a #ValentNotifications</a>
-<a name="346"><span class="lineNum">     346 </span>                :            :  *</a>
-<a name="347"><span class="lineNum">     347 </span>                :            :  * Get a dictionary of applications that are known to send notifications.</a>
-<a name="348"><span class="lineNum">     348 </span>                :            :  *</a>
-<a name="349"><span class="lineNum">     349 </span>                :            :  * Returns: (transfer none): a #GVariant</a>
-<a name="350"><span class="lineNum">     350 </span>                :            :  */</a>
-<a name="351"><span class="lineNum">     351 </span>                :            : GVariant *</a>
-<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">          5 : valent_notifications_get_applications (ValentNotifications *notifications)</span></a>
-<a name="353"><span class="lineNum">     353 </span>                :            : {</a>
-<a name="354"><span class="lineNum">     354 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (notifications == NULL || VALENT_IS_NOTIFICATIONS (notifications), NULL);</span></a>
-<a name="355"><span class="lineNum">     355 </span>                :            : </a>
-<a name="356"><span class="lineNum">     356 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (notifications == NULL)</span></a>
-<a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">          5 :       notifications = valent_notifications_get_default ();</span></a>
-<a name="358"><span class="lineNum">     358 </span>                :            : </a>
-<a name="359"><span class="lineNum">     359 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (notifications-&gt;applications == NULL)</span></a>
-<a name="360"><span class="lineNum">     360 </span>                :<span class="lineNoCov">          0 :     query_applications (notifications);</span></a>
-<a name="361"><span class="lineNum">     361 </span>                :            : </a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">          5 :   return notifications-&gt;applications;</span></a>
-<a name="363"><span class="lineNum">     363 </span>                :            : }</a>
-<a name="364"><span class="lineNum">     364 </span>                :            : </a>
-<a name="365"><span class="lineNum">     365 </span>                :            : /**</a>
-<a name="366"><span class="lineNum">     366 </span>                :            :  * valent_notifications_get_default:</a>
-<a name="367"><span class="lineNum">     367 </span>                :            :  *</a>
-<a name="368"><span class="lineNum">     368 </span>                :            :  * Get the #ValentNotifications singleton.</a>
-<a name="369"><span class="lineNum">     369 </span>                :            :  *</a>
-<a name="370"><span class="lineNum">     370 </span>                :            :  * Returns: (transfer none): a #ValentNotifications</a>
-<a name="371"><span class="lineNum">     371 </span>                :            :  */</a>
-<a name="372"><span class="lineNum">     372 </span>                :            : ValentNotifications *</a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">         50 : valent_notifications_get_default (void)</span></a>
-<a name="374"><span class="lineNum">     374 </span>                :            : {</a>
-<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         50 :   if (default_listener == NULL)</span></a>
-<a name="376"><span class="lineNum">     376 </span>                :            :     {</a>
-<a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">         30 :       default_listener = g_object_new (VALENT_TYPE_NOTIFICATIONS,</span></a>
-<a name="378"><span class="lineNum">     378 </span>                :            :                                        &quot;plugin-context&quot;, &quot;notifications&quot;,</a>
-<a name="379"><span class="lineNum">     379 </span>                :            :                                        &quot;plugin-type&quot;,    VALENT_TYPE_NOTIFICATION_SOURCE,</a>
-<a name="380"><span class="lineNum">     380 </span>                :            :                                        NULL);</a>
-<a name="381"><span class="lineNum">     381 </span>                :            : </a>
-<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">         30 :       g_object_add_weak_pointer (G_OBJECT (default_listener), (gpointer) &amp;default_listener);</span></a>
-<a name="383"><span class="lineNum">     383 </span>                :            :     }</a>
-<a name="384"><span class="lineNum">     384 </span>                :            : </a>
-<a name="385"><span class="lineNum">     385 </span>                :<span class="lineCov">         50 :   return default_listener;</span></a>
-<a name="386"><span class="lineNum">     386 </span>                :            : }</a>
-<a name="387"><span class="lineNum">     387 </span>                :            : </a>
+<a name="272"><span class="lineNum">     272 </span>                :            : </a>
+<a name="273"><span class="lineNum">     273 </span>                :            : /*</a>
+<a name="274"><span class="lineNum">     274 </span>                :            :  * GObject</a>
+<a name="275"><span class="lineNum">     275 </span>                :            :  */</a>
+<a name="276"><span class="lineNum">     276 </span>                :            : static void</a>
+<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">         20 : valent_notifications_finalize (GObject *object)</span></a>
+<a name="278"><span class="lineNum">     278 </span>                :            : {</a>
+<a name="279"><span class="lineNum">     279 </span>                :<span class="lineCov">         20 :   ValentNotifications *self = VALENT_NOTIFICATIONS (object);</span></a>
+<a name="280"><span class="lineNum">     280 </span>                :            : </a>
+<a name="281"><span class="lineNum">     281 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_clear_pointer (&amp;self-&gt;applications, g_variant_unref);</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :            : </a>
+<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">         20 :   G_OBJECT_CLASS (valent_notifications_parent_class)-&gt;finalize (object);</span></a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">         20 : }</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :            : </a>
+<a name="286"><span class="lineNum">     286 </span>                :            : static void</a>
+<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">         16 : valent_notifications_class_init (ValentNotificationsClass *klass)</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :            : {</a>
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">         16 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">         16 :   ValentComponentClass *component_class = VALENT_COMPONENT_CLASS (klass);</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :            : </a>
+<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">         16 :   object_class-&gt;finalize = valent_notifications_finalize;</span></a>
+<a name="293"><span class="lineNum">     293 </span>                :            : </a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">         16 :   component_class-&gt;extension_added = valent_notifications_extension_added;</span></a>
+<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">         16 :   component_class-&gt;extension_removed = valent_notifications_extension_removed;</span></a>
+<a name="296"><span class="lineNum">     296 </span>                :            : </a>
+<a name="297"><span class="lineNum">     297 </span>                :            :   /**</a>
+<a name="298"><span class="lineNum">     298 </span>                :            :    * ValentNotifications::notification-added:</a>
+<a name="299"><span class="lineNum">     299 </span>                :            :    * @notifications: a #ValentNotifications</a>
+<a name="300"><span class="lineNum">     300 </span>                :            :    * @notification: a #ValentNotification</a>
+<a name="301"><span class="lineNum">     301 </span>                :            :    *</a>
+<a name="302"><span class="lineNum">     302 </span>                :            :    * #ValentNotifications::notification-removed is emitted when a new notification</a>
+<a name="303"><span class="lineNum">     303 </span>                :            :    * is added to @notifications.</a>
+<a name="304"><span class="lineNum">     304 </span>                :            :    */</a>
+<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">         16 :   signals [NOTIFICATION_ADDED] =</span></a>
+<a name="306"><span class="lineNum">     306 </span>                :<span class="lineCov">         16 :     g_signal_new (&quot;notification-added&quot;,</span></a>
+<a name="307"><span class="lineNum">     307 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
+<a name="308"><span class="lineNum">     308 </span>                :            :                   G_SIGNAL_RUN_FIRST,</a>
+<a name="309"><span class="lineNum">     309 </span>                :            :                   0,</a>
+<a name="310"><span class="lineNum">     310 </span>                :            :                   NULL, NULL,</a>
+<a name="311"><span class="lineNum">     311 </span>                :            :                   g_cclosure_marshal_VOID__OBJECT,</a>
+<a name="312"><span class="lineNum">     312 </span>                :            :                   G_TYPE_NONE, 1, VALENT_TYPE_NOTIFICATION);</a>
+<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">         16 :   g_signal_set_va_marshaller (signals [NOTIFICATION_ADDED],</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
+<a name="315"><span class="lineNum">     315 </span>                :            :                               g_cclosure_marshal_VOID__OBJECTv);</a>
+<a name="316"><span class="lineNum">     316 </span>                :            : </a>
+<a name="317"><span class="lineNum">     317 </span>                :            :   /**</a>
+<a name="318"><span class="lineNum">     318 </span>                :            :    * ValentNotifications::notification-removed:</a>
+<a name="319"><span class="lineNum">     319 </span>                :            :    * @notifications: a #ValentNotifications</a>
+<a name="320"><span class="lineNum">     320 </span>                :            :    * @id: a notification id</a>
+<a name="321"><span class="lineNum">     321 </span>                :            :    *</a>
+<a name="322"><span class="lineNum">     322 </span>                :            :    * #ValentNotifications::notification-removed is emitted when a notification</a>
+<a name="323"><span class="lineNum">     323 </span>                :            :    * is removed from @notifications.</a>
+<a name="324"><span class="lineNum">     324 </span>                :            :    */</a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">         16 :   signals [NOTIFICATION_REMOVED] =</span></a>
+<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">         16 :     g_signal_new (&quot;notification-removed&quot;,</span></a>
+<a name="327"><span class="lineNum">     327 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
+<a name="328"><span class="lineNum">     328 </span>                :            :                   G_SIGNAL_RUN_FIRST,</a>
+<a name="329"><span class="lineNum">     329 </span>                :            :                   0,</a>
+<a name="330"><span class="lineNum">     330 </span>                :            :                   NULL, NULL,</a>
+<a name="331"><span class="lineNum">     331 </span>                :            :                   g_cclosure_marshal_VOID__STRING,</a>
+<a name="332"><span class="lineNum">     332 </span>                :            :                   G_TYPE_NONE, 1, G_TYPE_STRING);</a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">         16 :   g_signal_set_va_marshaller (signals [NOTIFICATION_REMOVED],</span></a>
+<a name="334"><span class="lineNum">     334 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
+<a name="335"><span class="lineNum">     335 </span>                :            :                               g_cclosure_marshal_VOID__STRINGv);</a>
+<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">         16 : }</span></a>
+<a name="337"><span class="lineNum">     337 </span>                :            : </a>
+<a name="338"><span class="lineNum">     338 </span>                :            : static void</a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">         30 : valent_notifications_init (ValentNotifications *self)</span></a>
+<a name="340"><span class="lineNum">     340 </span>                :            : {</a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">         30 :   query_applications (self);</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">         30 : }</span></a>
+<a name="343"><span class="lineNum">     343 </span>                :            : </a>
+<a name="344"><span class="lineNum">     344 </span>                :            : /**</a>
+<a name="345"><span class="lineNum">     345 </span>                :            :  * valent_notifications_get_applications:</a>
+<a name="346"><span class="lineNum">     346 </span>                :            :  * @notifications: (nullable): a #ValentNotifications</a>
+<a name="347"><span class="lineNum">     347 </span>                :            :  *</a>
+<a name="348"><span class="lineNum">     348 </span>                :            :  * Get a dictionary of applications that are known to send notifications.</a>
+<a name="349"><span class="lineNum">     349 </span>                :            :  *</a>
+<a name="350"><span class="lineNum">     350 </span>                :            :  * Returns: (transfer none): a #GVariant</a>
+<a name="351"><span class="lineNum">     351 </span>                :            :  */</a>
+<a name="352"><span class="lineNum">     352 </span>                :            : GVariant *</a>
+<a name="353"><span class="lineNum">     353 </span>                :<span class="lineCov">          5 : valent_notifications_get_applications (ValentNotifications *notifications)</span></a>
+<a name="354"><span class="lineNum">     354 </span>                :            : {</a>
+<a name="355"><span class="lineNum">     355 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (notifications == NULL || VALENT_IS_NOTIFICATIONS (notifications), NULL);</span></a>
+<a name="356"><span class="lineNum">     356 </span>                :            : </a>
+<a name="357"><span class="lineNum">     357 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (notifications == NULL)</span></a>
+<a name="358"><span class="lineNum">     358 </span>                :<span class="lineCov">          5 :       notifications = valent_notifications_get_default ();</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :            : </a>
+<a name="360"><span class="lineNum">     360 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (notifications-&gt;applications == NULL)</span></a>
+<a name="361"><span class="lineNum">     361 </span>                :<span class="lineNoCov">          0 :     query_applications (notifications);</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :            : </a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">          5 :   return notifications-&gt;applications;</span></a>
+<a name="364"><span class="lineNum">     364 </span>                :            : }</a>
+<a name="365"><span class="lineNum">     365 </span>                :            : </a>
+<a name="366"><span class="lineNum">     366 </span>                :            : /**</a>
+<a name="367"><span class="lineNum">     367 </span>                :            :  * valent_notifications_get_default:</a>
+<a name="368"><span class="lineNum">     368 </span>                :            :  *</a>
+<a name="369"><span class="lineNum">     369 </span>                :            :  * Get the #ValentNotifications singleton.</a>
+<a name="370"><span class="lineNum">     370 </span>                :            :  *</a>
+<a name="371"><span class="lineNum">     371 </span>                :            :  * Returns: (transfer none): a #ValentNotifications</a>
+<a name="372"><span class="lineNum">     372 </span>                :            :  */</a>
+<a name="373"><span class="lineNum">     373 </span>                :            : ValentNotifications *</a>
+<a name="374"><span class="lineNum">     374 </span>                :<span class="lineCov">         50 : valent_notifications_get_default (void)</span></a>
+<a name="375"><span class="lineNum">     375 </span>                :            : {</a>
+<a name="376"><span class="lineNum">     376 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         50 :   if (default_listener == NULL)</span></a>
+<a name="377"><span class="lineNum">     377 </span>                :            :     {</a>
+<a name="378"><span class="lineNum">     378 </span>                :<span class="lineCov">         30 :       default_listener = g_object_new (VALENT_TYPE_NOTIFICATIONS,</span></a>
+<a name="379"><span class="lineNum">     379 </span>                :            :                                        &quot;plugin-context&quot;, &quot;notifications&quot;,</a>
+<a name="380"><span class="lineNum">     380 </span>                :            :                                        &quot;plugin-type&quot;,    VALENT_TYPE_NOTIFICATION_SOURCE,</a>
+<a name="381"><span class="lineNum">     381 </span>                :            :                                        NULL);</a>
+<a name="382"><span class="lineNum">     382 </span>                :            : </a>
+<a name="383"><span class="lineNum">     383 </span>                :<span class="lineCov">         30 :       g_object_add_weak_pointer (G_OBJECT (default_listener), (gpointer) &amp;default_listener);</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :            :     }</a>
+<a name="385"><span class="lineNum">     385 </span>                :            : </a>
+<a name="386"><span class="lineNum">     386 </span>                :<span class="lineCov">         50 :   return default_listener;</span></a>
+<a name="387"><span class="lineNum">     387 </span>                :            : }</a>
+<a name="388"><span class="lineNum">     388 </span>                :            : </a>
 </pre>
       </td>
     </tr>

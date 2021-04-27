@@ -31,18 +31,18 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">138</td>
-            <td class="headerCovTableEntry">165</td>
-            <td class="headerCovTableEntryMed">83.6 %</td>
+            <td class="headerCovTableEntry">159</td>
+            <td class="headerCovTableEntry">177</td>
+            <td class="headerCovTableEntryMed">89.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-25 10:03:08</td>
+            <td class="headerValue">2021-04-27 08:02:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">17</td>
             <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntryMed">89.5 %</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntryHi">95.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">47</td>
-            <td class="headerCovTableEntry">92</td>
-            <td class="headerCovTableEntryLo">51.1 %</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntry">98</td>
+            <td class="headerCovTableEntryLo">58.2 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -100,27 +100,27 @@
 <a name="22"><span class="lineNum">      22 </span>                :            :  * #ValentComponent is a base class for session and system components, such as</a>
 <a name="23"><span class="lineNum">      23 </span>                :            :  * the clipboard or volume control. Each #ValentComponent is typically a</a>
 <a name="24"><span class="lineNum">      24 </span>                :            :  * singleton representing a unique resource, but may be backed by one or more</a>
-<a name="25"><span class="lineNum">      25 </span>                :            :  * providers implemented by #PeasExtensions.</a>
+<a name="25"><span class="lineNum">      25 </span>                :            :  * extensions implemented by #PeasExtensions.</a>
 <a name="26"><span class="lineNum">      26 </span>                :            :  */</a>
 <a name="27"><span class="lineNum">      27 </span>                :            : </a>
 <a name="28"><span class="lineNum">      28 </span>                :            : typedef struct</a>
 <a name="29"><span class="lineNum">      29 </span>                :            : {</a>
-<a name="30"><span class="lineNum">      30 </span>                :            :   PeasEngine   *engine;</a>
-<a name="31"><span class="lineNum">      31 </span>                :            :   char         *plugin_context;</a>
-<a name="32"><span class="lineNum">      32 </span>                :            :   GType         plugin_type;</a>
+<a name="30"><span class="lineNum">      30 </span>                :            :   PeasEngine *engine;</a>
+<a name="31"><span class="lineNum">      31 </span>                :            :   char       *plugin_context;</a>
+<a name="32"><span class="lineNum">      32 </span>                :            :   GType       plugin_type;</a>
 <a name="33"><span class="lineNum">      33 </span>                :            : </a>
-<a name="34"><span class="lineNum">      34 </span>                :            :   GHashTable   *providers;</a>
-<a name="35"><span class="lineNum">      35 </span>                :            :   GHashTable   *settings;</a>
+<a name="34"><span class="lineNum">      34 </span>                :            :   GHashTable *extensions;</a>
+<a name="35"><span class="lineNum">      35 </span>                :            :   GHashTable *settings;</a>
 <a name="36"><span class="lineNum">      36 </span>                :            : } ValentComponentPrivate;</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : </a>
-<a name="38"><span class="lineNum">      38 </span>  [<span class="branchCov" title="Branch 0 was taken 182 times"> + </span><span class="branchCov" title="Branch 1 was taken 1849 times"> + </span><span class="branchCov" title="Branch 2 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       4077 : G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (ValentComponent, valent_component, G_TYPE_OBJECT);</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 91 times"> + </span><span class="branchCov" title="Branch 5 was taken 1849 times"> + </span>]
+<a name="38"><span class="lineNum">      38 </span>  [<span class="branchCov" title="Branch 0 was taken 182 times"> + </span><span class="branchCov" title="Branch 1 was taken 2089 times"> + </span><span class="branchCov" title="Branch 2 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       4487 : G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (ValentComponent, valent_component, G_TYPE_OBJECT);</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 91 times"> + </span><span class="branchCov" title="Branch 5 was taken 2089 times"> + </span>]
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
 <a name="41"><span class="lineNum">      41 </span>                :            : /**</a>
 <a name="42"><span class="lineNum">      42 </span>                :            :  * ValentComponentClass:</a>
-<a name="43"><span class="lineNum">      43 </span>                :            :  * @provider_added: the class closure for the #ValentComponent::provider-added signal</a>
-<a name="44"><span class="lineNum">      44 </span>                :            :  * @provider_removed: the class closure for the #ValentComponent::provider-removed signal</a>
+<a name="43"><span class="lineNum">      43 </span>                :            :  * @extension_added: the class closure for the #ValentComponent::extension-added signal</a>
+<a name="44"><span class="lineNum">      44 </span>                :            :  * @extension_removed: the class closure for the #ValentComponent::extension-removed signal</a>
 <a name="45"><span class="lineNum">      45 </span>                :            :  *</a>
 <a name="46"><span class="lineNum">      46 </span>                :            :  * The virtual function table for #ValentComponent.</a>
 <a name="47"><span class="lineNum">      47 </span>                :            :  */</a>
@@ -135,8 +135,8 @@
 <a name="56"><span class="lineNum">      56 </span>                :            : static GParamSpec *properties[N_PROPERTIES] = { NULL, };</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
 <a name="58"><span class="lineNum">      58 </span>                :            : enum {</a>
-<a name="59"><span class="lineNum">      59 </span>                :            :   PROVIDER_ADDED,</a>
-<a name="60"><span class="lineNum">      60 </span>                :            :   PROVIDER_REMOVED,</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :   EXTENSION_ADDED,</a>
+<a name="60"><span class="lineNum">      60 </span>                :            :   EXTENSION_REMOVED,</a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   N_SIGNALS</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : };</a>
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>
@@ -151,19 +151,19 @@
 <a name="72"><span class="lineNum">      72 </span>                :            : </a>
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
 <a name="74"><span class="lineNum">      74 </span>                :            : static gint64</a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">         95 : get_provider_priority (PeasPluginInfo *info,</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">        115 : get_extension_priority (PeasPluginInfo *info,</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :            :                        const char     *key)</a>
 <a name="77"><span class="lineNum">      77 </span>                :            : {</a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">         95 :   const char *priority_str = NULL;</span></a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         95 :   gint64 priority = 0;</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">        115 :   const char *priority_str = NULL;</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">        115 :   gint64 priority = 0;</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            : </a>
-<a name="81"><span class="lineNum">      81 </span>        [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         95 :   if (info != NULL)</span></a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         95 :     priority_str = peas_plugin_info_get_external_data (info, key);</span></a>
+<a name="81"><span class="lineNum">      81 </span>        [<span class="branchCov" title="Branch 0 was taken 115 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        115 :   if (info != NULL)</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">        115 :     priority_str = peas_plugin_info_get_external_data (info, key);</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :            : </a>
-<a name="84"><span class="lineNum">      84 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 95 times"> + </span>]:<span class="lineCov">         95 :   if (priority_str != NULL)</span></a>
+<a name="84"><span class="lineNum">      84 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 115 times"> + </span>]:<span class="lineCov">        115 :   if (priority_str != NULL)</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :<span class="lineNoCov">          0 :     priority = g_ascii_strtoll (priority_str, NULL, 10);</span></a>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">         95 :   return priority;</span></a>
+<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">        115 :   return priority;</span></a>
 <a name="88"><span class="lineNum">      88 </span>                :            : }</a>
 <a name="89"><span class="lineNum">      89 </span>                :            : </a>
 <a name="90"><span class="lineNum">      90 </span>                :            : </a>
@@ -171,55 +171,55 @@
 <a name="92"><span class="lineNum">      92 </span>                :            :  * Invoked when a source is enabled or disabled in settings.</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :  */</a>
 <a name="94"><span class="lineNum">      94 </span>                :            : static void</a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        190 : valent_component_enable_provider (ValentComponent *component,</span></a>
-<a name="96"><span class="lineNum">      96 </span>                :            :                                   PeasPluginInfo  *info)</a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        225 : valent_component_enable_extension (ValentComponent *component,</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :            :                                    PeasPluginInfo  *info)</a>
 <a name="97"><span class="lineNum">      97 </span>                :            : {</a>
-<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">        190 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">        225 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
 <a name="99"><span class="lineNum">      99 </span>                :            :   PeasExtension *extension;</a>
 <a name="100"><span class="lineNum">     100 </span>                :            : </a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">        190 :   extension = peas_engine_create_extension (priv-&gt;engine,</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">        225 :   extension = peas_engine_create_extension (priv-&gt;engine,</span></a>
 <a name="102"><span class="lineNum">     102 </span>                :            :                                             info,</a>
 <a name="103"><span class="lineNum">     103 </span>                :            :                                             priv-&gt;plugin_type,</a>
 <a name="104"><span class="lineNum">     104 </span>                :            :                                             NULL);</a>
 <a name="105"><span class="lineNum">     105 </span>                :            : </a>
-<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 190 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        190 :   if (extension != NULL)</span></a>
+<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 225 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        225 :   if (extension != NULL)</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            :     {</a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">        190 :       g_hash_table_replace (priv-&gt;providers, info, extension);</span></a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        190 :       g_signal_emit (G_OBJECT (component), signals [PROVIDER_ADDED], 0, extension);</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">        225 :       g_hash_table_replace (priv-&gt;extensions, info, extension);</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        225 :       g_signal_emit (G_OBJECT (component), signals [EXTENSION_ADDED], 0, extension);</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            :     }</a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">        190 : }</span></a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">        225 : }</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            : </a>
 <a name="113"><span class="lineNum">     113 </span>                :            : static void</a>
-<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">         35 : valent_component_disable_provider (ValentComponent *component,</span></a>
+<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">         70 : valent_component_disable_extension (ValentComponent *component,</span></a>
 <a name="115"><span class="lineNum">     115 </span>                :            :                                    PeasPluginInfo  *info)</a>
 <a name="116"><span class="lineNum">     116 </span>                :            : {</a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">         35 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">         70 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   gpointer extension;</a>
 <a name="119"><span class="lineNum">     119 </span>                :            : </a>
-<a name="120"><span class="lineNum">     120 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         35 :   if (g_hash_table_steal_extended (priv-&gt;providers, info, NULL, &amp;extension))</span></a>
+<a name="120"><span class="lineNum">     120 </span>        [<span class="branchCov" title="Branch 0 was taken 70 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         70 :   if (g_hash_table_steal_extended (priv-&gt;extensions, info, NULL, &amp;extension))</span></a>
 <a name="121"><span class="lineNum">     121 </span>                :            :     {</a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         35 :       g_signal_emit (G_OBJECT (component), signals [PROVIDER_REMOVED], 0, extension);</span></a>
-<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">         35 :       g_object_unref (extension);</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         70 :       g_signal_emit (G_OBJECT (component), signals [EXTENSION_REMOVED], 0, extension);</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">         70 :       g_object_unref (extension);</span></a>
 <a name="124"><span class="lineNum">     124 </span>                :            :     }</a>
-<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         35 : }</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         70 : }</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            : </a>
 <a name="127"><span class="lineNum">     127 </span>                :            : static void</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineNoCov">          0 : on_enabled_changed (GSettings             *settings,</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         70 : on_enabled_changed (GSettings             *settings,</span></a>
 <a name="129"><span class="lineNum">     129 </span>                :            :                     const char            *key,</a>
-<a name="130"><span class="lineNum">     130 </span>                :            :                     ComponentProviderInfo *provider_info)</a>
+<a name="130"><span class="lineNum">     130 </span>                :            :                     ComponentProviderInfo *extension_info)</a>
 <a name="131"><span class="lineNum">     131 </span>                :            : {</a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineNoCov">          0 :   ValentComponent *component = provider_info-&gt;component;</span></a>
-<a name="133"><span class="lineNum">     133 </span>                :<span class="lineNoCov">          0 :   PeasPluginInfo *info = provider_info-&gt;info;</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         70 :   ValentComponent *component = extension_info-&gt;component;</span></a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">         70 :   PeasPluginInfo *info = extension_info-&gt;info;</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
-<a name="135"><span class="lineNum">     135 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   g_assert (G_IS_SETTINGS (settings));</span></a>
-<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
-<a name="136"><span class="lineNum">     136 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_COMPONENT (component));</span></a>
+<a name="135"><span class="lineNum">     135 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 70 times"> + </span><span class="branchCov" title="Branch 2 was taken 70 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         70 :   g_assert (G_IS_SETTINGS (settings));</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 70 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 70 times"> + </span>]
+<a name="136"><span class="lineNum">     136 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 70 times"> + </span>]:<span class="lineCov">         70 :   g_assert (VALENT_IS_COMPONENT (component));</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
-<a name="138"><span class="lineNum">     138 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (g_settings_get_boolean (settings, key))</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineNoCov">          0 :     valent_component_enable_provider (component, info);</span></a>
+<a name="138"><span class="lineNum">     138 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         70 :   if (g_settings_get_boolean (settings, key))</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         35 :     valent_component_enable_extension (component, info);</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            :   else</a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineNoCov">          0 :     valent_component_disable_provider (component, info);</span></a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         35 :     valent_component_disable_extension (component, info);</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">         70 : }</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
 <a name="144"><span class="lineNum">     144 </span>                :            : /*</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :  * PeasEngine Callbacks</a>
@@ -230,7 +230,7 @@
 <a name="150"><span class="lineNum">     150 </span>                :            :                 ValentComponent *component)</a>
 <a name="151"><span class="lineNum">     151 </span>                :            : {</a>
 <a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">        435 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
-<a name="153"><span class="lineNum">     153 </span>                :            :   ComponentProviderInfo *provider_info;</a>
+<a name="153"><span class="lineNum">     153 </span>                :            :   ComponentProviderInfo *extension_info;</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   const char *module;</a>
 <a name="155"><span class="lineNum">     155 </span>        [<span class="branchCov" title="Branch 0 was taken 190 times"> + </span><span class="branchCov" title="Branch 1 was taken 245 times"> + </span>]:<span class="lineCov">        435 :   g_autofree char *path = NULL;</span></a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   GSettings *settings;</a>
@@ -251,26 +251,26 @@
 <a name="170"><span class="lineNum">     170 </span>                :            :   /* We create and destroy the #PeasExtension based on the enabled state to</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :    * ensure they aren't using any resources. */</a>
 <a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        190 :   module = peas_plugin_info_get_module_name (info);</span></a>
-<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">        190 :   path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/%s/&quot;,</span></a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">        190 :   path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :            :                           priv-&gt;plugin_context,</a>
 <a name="175"><span class="lineNum">     175 </span>                :            :                           module);</a>
 <a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">        190 :   settings = g_settings_new_with_path (&quot;ca.andyholmes.Valent.Plugin&quot;, path);</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">        190 :   g_hash_table_insert (priv-&gt;settings, info, settings);</span></a>
 <a name="178"><span class="lineNum">     178 </span>                :            : </a>
 <a name="179"><span class="lineNum">     179 </span>                :            :   /* Watch for enabled/disabled */</a>
-<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">        190 :   provider_info = g_new0 (ComponentProviderInfo, 1);</span></a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        190 :   provider_info-&gt;component = component;</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">        190 :   provider_info-&gt;info = info;</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">        190 :   extension_info = g_new0 (ComponentProviderInfo, 1);</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        190 :   extension_info-&gt;component = component;</span></a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">        190 :   extension_info-&gt;info = info;</span></a>
 <a name="183"><span class="lineNum">     183 </span>                :            : </a>
 <a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">        190 :   g_signal_connect_data (settings,</span></a>
 <a name="185"><span class="lineNum">     185 </span>                :            :                          &quot;changed::enabled&quot;,</a>
 <a name="186"><span class="lineNum">     186 </span>                :            :                          G_CALLBACK (on_enabled_changed),</a>
-<a name="187"><span class="lineNum">     187 </span>                :            :                          provider_info,</a>
+<a name="187"><span class="lineNum">     187 </span>                :            :                          extension_info,</a>
 <a name="188"><span class="lineNum">     188 </span>                :            :                          (GClosureNotify)g_free,</a>
 <a name="189"><span class="lineNum">     189 </span>                :            :                          0);</a>
 <a name="190"><span class="lineNum">     190 </span>                :            : </a>
 <a name="191"><span class="lineNum">     191 </span>        [<span class="branchCov" title="Branch 0 was taken 190 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        190 :   if (g_settings_get_boolean (settings, &quot;enabled&quot;))</span></a>
-<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">        190 :     valent_component_enable_provider (component, info);</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">        190 :     valent_component_enable_extension (component, info);</span></a>
 <a name="193"><span class="lineNum">     193 </span>                :            : }</a>
 <a name="194"><span class="lineNum">     194 </span>                :            : </a>
 <a name="195"><span class="lineNum">     195 </span>                :            : static void</a>
@@ -290,7 +290,7 @@
 <a name="208"><span class="lineNum">     208 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
 <a name="209"><span class="lineNum">     209 </span>                :            : </a>
 <a name="210"><span class="lineNum">     210 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         35 :   if (g_hash_table_remove (priv-&gt;settings, info))</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         35 :     valent_component_disable_provider (component, info);</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         35 :     valent_component_disable_extension (component, info);</span></a>
 <a name="212"><span class="lineNum">     212 </span>                :            : }</a>
 <a name="213"><span class="lineNum">     213 </span>                :            : </a>
 <a name="214"><span class="lineNum">     214 </span>                :            : </a>
@@ -332,20 +332,20 @@
 <a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        120 :   ValentComponent *self = VALENT_COMPONENT (object);</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">        120 :   ValentComponentPrivate *priv = valent_component_get_instance_private (self);</span></a>
 <a name="252"><span class="lineNum">     252 </span>                :            :   GHashTableIter iter;</a>
-<a name="253"><span class="lineNum">     253 </span>                :            :   gpointer info, provider;</a>
+<a name="253"><span class="lineNum">     253 </span>                :            :   gpointer info, extension;</a>
 <a name="254"><span class="lineNum">     254 </span>                :            : </a>
 <a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">        120 :   g_signal_handlers_disconnect_by_func (priv-&gt;engine, on_load_plugin, self);</span></a>
 <a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">        120 :   g_signal_handlers_disconnect_by_func (priv-&gt;engine, on_unload_plugin, self);</span></a>
 <a name="257"><span class="lineNum">     257 </span>                :            : </a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">        120 :   g_hash_table_iter_init (&amp;iter, priv-&gt;providers);</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">        120 :   g_hash_table_iter_init (&amp;iter, priv-&gt;extensions);</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
-<a name="260"><span class="lineNum">     260 </span>        [<span class="branchCov" title="Branch 0 was taken 85 times"> + </span><span class="branchCov" title="Branch 1 was taken 120 times"> + </span>]:<span class="lineCov">        205 :   while (g_hash_table_iter_next (&amp;iter, &amp;info, &amp;provider))</span></a>
+<a name="260"><span class="lineNum">     260 </span>        [<span class="branchCov" title="Branch 0 was taken 85 times"> + </span><span class="branchCov" title="Branch 1 was taken 120 times"> + </span>]:<span class="lineCov">        205 :   while (g_hash_table_iter_next (&amp;iter, &amp;info, &amp;extension))</span></a>
 <a name="261"><span class="lineNum">     261 </span>                :            :     {</a>
 <a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">         85 :       g_hash_table_remove (priv-&gt;settings, info);</span></a>
 <a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">         85 :       g_hash_table_iter_steal (&amp;iter);</span></a>
 <a name="264"><span class="lineNum">     264 </span>                :            : </a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">         85 :       g_signal_emit (G_OBJECT (self), signals [PROVIDER_REMOVED], 0, provider);</span></a>
-<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">         85 :       g_object_unref (provider);</span></a>
+<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">         85 :       g_signal_emit (G_OBJECT (self), signals [EXTENSION_REMOVED], 0, extension);</span></a>
+<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">         85 :       g_object_unref (extension);</span></a>
 <a name="267"><span class="lineNum">     267 </span>                :            :     }</a>
 <a name="268"><span class="lineNum">     268 </span>                :            : </a>
 <a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">        120 :   G_OBJECT_CLASS (valent_component_parent_class)-&gt;dispose (object);</span></a>
@@ -358,7 +358,7 @@
 <a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">        120 :   ValentComponentPrivate *priv = valent_component_get_instance_private (self);</span></a>
 <a name="277"><span class="lineNum">     277 </span>                :            : </a>
 <a name="278"><span class="lineNum">     278 </span>        [<span class="branchCov" title="Branch 0 was taken 120 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        120 :   g_clear_pointer (&amp;priv-&gt;plugin_context, g_free);</span></a>
-<a name="279"><span class="lineNum">     279 </span>        [<span class="branchCov" title="Branch 0 was taken 120 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        120 :   g_clear_pointer (&amp;priv-&gt;providers, g_hash_table_unref);</span></a>
+<a name="279"><span class="lineNum">     279 </span>        [<span class="branchCov" title="Branch 0 was taken 120 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        120 :   g_clear_pointer (&amp;priv-&gt;extensions, g_hash_table_unref);</span></a>
 <a name="280"><span class="lineNum">     280 </span>        [<span class="branchCov" title="Branch 0 was taken 120 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        120 :   g_clear_pointer (&amp;priv-&gt;settings, g_hash_table_unref);</span></a>
 <a name="281"><span class="lineNum">     281 </span>                :            : </a>
 <a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        120 :   G_OBJECT_CLASS (valent_component_parent_class)-&gt;finalize (object);</span></a>
@@ -428,7 +428,7 @@
 <a name="346"><span class="lineNum">     346 </span>                :            :    *</a>
 <a name="347"><span class="lineNum">     347 </span>                :            :    * The context for the component. This is a #GSettings safe string such as</a>
 <a name="348"><span class="lineNum">     348 </span>                :            :    * &quot;contacts&quot; or &quot;media&quot;, used to distinguish the settings and configuration</a>
-<a name="349"><span class="lineNum">     349 </span>                :            :    * files of pluggable providers.</a>
+<a name="349"><span class="lineNum">     349 </span>                :            :    * files of pluggable extensions.</a>
 <a name="350"><span class="lineNum">     350 </span>                :            :    */</a>
 <a name="351"><span class="lineNum">     351 </span>                :<span class="lineCov">         91 :   properties [PROP_PLUGIN_CONTEXT] =</span></a>
 <a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">         91 :     g_param_spec_string (&quot;plugin-context&quot;,</span></a>
@@ -443,7 +443,7 @@
 <a name="361"><span class="lineNum">     361 </span>                :            :   /**</a>
 <a name="362"><span class="lineNum">     362 </span>                :            :    * ValentComponent:plugin-type:</a>
 <a name="363"><span class="lineNum">     363 </span>                :            :    *</a>
-<a name="364"><span class="lineNum">     364 </span>                :            :    * The #GType of the provider this component aggregates.</a>
+<a name="364"><span class="lineNum">     364 </span>                :            :    * The #GType of the extension this component aggregates.</a>
 <a name="365"><span class="lineNum">     365 </span>                :            :    */</a>
 <a name="366"><span class="lineNum">     366 </span>                :<span class="lineCov">         91 :   properties [PROP_PLUGIN_TYPE] =</span></a>
 <a name="367"><span class="lineNum">     367 </span>                :<span class="lineCov">         91 :     g_param_spec_gtype (&quot;plugin-type&quot;,</span></a>
@@ -458,48 +458,48 @@
 <a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">         91 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
 <a name="377"><span class="lineNum">     377 </span>                :            : </a>
 <a name="378"><span class="lineNum">     378 </span>                :            :   /**</a>
-<a name="379"><span class="lineNum">     379 </span>                :            :    * ValentComponent::provider-added:</a>
+<a name="379"><span class="lineNum">     379 </span>                :            :    * ValentComponent::extension-added:</a>
 <a name="380"><span class="lineNum">     380 </span>                :            :    * @component: an #ValentComponent</a>
-<a name="381"><span class="lineNum">     381 </span>                :            :    * @provider: an #PeasExtension</a>
+<a name="381"><span class="lineNum">     381 </span>                :            :    * @extension: an #PeasExtension</a>
 <a name="382"><span class="lineNum">     382 </span>                :            :    *</a>
-<a name="383"><span class="lineNum">     383 </span>                :            :    * The &quot;provider-added&quot; signal is emitted when a provider has discovered a</a>
-<a name="384"><span class="lineNum">     384 </span>                :            :    * provider has become available.</a>
+<a name="383"><span class="lineNum">     383 </span>                :            :    * The &quot;extension-added&quot; signal is emitted when @component has enabled a</a>
+<a name="384"><span class="lineNum">     384 </span>                :            :    * supported extension.</a>
 <a name="385"><span class="lineNum">     385 </span>                :            :    *</a>
 <a name="386"><span class="lineNum">     386 </span>                :            :    * Subclasses of #ValentComponent must chain-up if they override the</a>
-<a name="387"><span class="lineNum">     387 </span>                :            :    * #ValentComponentClass.provider_added vfunc.</a>
+<a name="387"><span class="lineNum">     387 </span>                :            :    * #ValentComponentClass.extension_added vfunc.</a>
 <a name="388"><span class="lineNum">     388 </span>                :            :    */</a>
-<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">         91 :   signals [PROVIDER_ADDED] =</span></a>
-<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">         91 :     g_signal_new (&quot;provider-added&quot;,</span></a>
+<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">         91 :   signals [EXTENSION_ADDED] =</span></a>
+<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">         91 :     g_signal_new (&quot;extension-added&quot;,</span></a>
 <a name="391"><span class="lineNum">     391 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
 <a name="392"><span class="lineNum">     392 </span>                :            :                   G_SIGNAL_RUN_LAST,</a>
-<a name="393"><span class="lineNum">     393 </span>                :            :                   G_STRUCT_OFFSET (ValentComponentClass, provider_added),</a>
+<a name="393"><span class="lineNum">     393 </span>                :            :                   G_STRUCT_OFFSET (ValentComponentClass, extension_added),</a>
 <a name="394"><span class="lineNum">     394 </span>                :            :                   NULL, NULL,</a>
 <a name="395"><span class="lineNum">     395 </span>                :            :                   g_cclosure_marshal_VOID__OBJECT,</a>
 <a name="396"><span class="lineNum">     396 </span>                :            :                   G_TYPE_NONE, 1, PEAS_TYPE_EXTENSION);</a>
-<a name="397"><span class="lineNum">     397 </span>                :<span class="lineCov">         91 :   g_signal_set_va_marshaller (signals [PROVIDER_ADDED],</span></a>
+<a name="397"><span class="lineNum">     397 </span>                :<span class="lineCov">         91 :   g_signal_set_va_marshaller (signals [EXTENSION_ADDED],</span></a>
 <a name="398"><span class="lineNum">     398 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
 <a name="399"><span class="lineNum">     399 </span>                :            :                               g_cclosure_marshal_VOID__OBJECTv);</a>
 <a name="400"><span class="lineNum">     400 </span>                :            : </a>
 <a name="401"><span class="lineNum">     401 </span>                :            :   /**</a>
-<a name="402"><span class="lineNum">     402 </span>                :            :    * ValentComponent::provider-removed:</a>
+<a name="402"><span class="lineNum">     402 </span>                :            :    * ValentComponent::extension-removed:</a>
 <a name="403"><span class="lineNum">     403 </span>                :            :    * @component: an #ValentComponent</a>
-<a name="404"><span class="lineNum">     404 </span>                :            :    * @provider: an #PeasExtension</a>
+<a name="404"><span class="lineNum">     404 </span>                :            :    * @extension: an #PeasExtension</a>
 <a name="405"><span class="lineNum">     405 </span>                :            :    *</a>
-<a name="406"><span class="lineNum">     406 </span>                :            :    * The &quot;provider-removed&quot; signal is emitted when a provider has discovered a</a>
-<a name="407"><span class="lineNum">     407 </span>                :            :    * provider is no longer available.</a>
+<a name="406"><span class="lineNum">     406 </span>                :            :    * The &quot;extension-removed&quot; signal is emitted when a extension has discovered a</a>
+<a name="407"><span class="lineNum">     407 </span>                :            :    * extension is no longer available.</a>
 <a name="408"><span class="lineNum">     408 </span>                :            :    *</a>
 <a name="409"><span class="lineNum">     409 </span>                :            :    * Subclasses of #ValentComponent must chain-up if they override the</a>
-<a name="410"><span class="lineNum">     410 </span>                :            :    * #ValentComponentClass.provider_removed vfunc.</a>
+<a name="410"><span class="lineNum">     410 </span>                :            :    * #ValentComponentClass.extension_removed vfunc.</a>
 <a name="411"><span class="lineNum">     411 </span>                :            :    */</a>
-<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">         91 :   signals [PROVIDER_REMOVED] =</span></a>
-<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">         91 :     g_signal_new (&quot;provider-removed&quot;,</span></a>
+<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">         91 :   signals [EXTENSION_REMOVED] =</span></a>
+<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">         91 :     g_signal_new (&quot;extension-removed&quot;,</span></a>
 <a name="414"><span class="lineNum">     414 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
 <a name="415"><span class="lineNum">     415 </span>                :            :                   G_SIGNAL_RUN_LAST,</a>
-<a name="416"><span class="lineNum">     416 </span>                :            :                   G_STRUCT_OFFSET (ValentComponentClass, provider_removed),</a>
+<a name="416"><span class="lineNum">     416 </span>                :            :                   G_STRUCT_OFFSET (ValentComponentClass, extension_removed),</a>
 <a name="417"><span class="lineNum">     417 </span>                :            :                   NULL, NULL,</a>
 <a name="418"><span class="lineNum">     418 </span>                :            :                   g_cclosure_marshal_VOID__OBJECT,</a>
 <a name="419"><span class="lineNum">     419 </span>                :            :                   G_TYPE_NONE, 1, PEAS_TYPE_EXTENSION);</a>
-<a name="420"><span class="lineNum">     420 </span>                :<span class="lineCov">         91 :   g_signal_set_va_marshaller (signals [PROVIDER_REMOVED],</span></a>
+<a name="420"><span class="lineNum">     420 </span>                :<span class="lineCov">         91 :   g_signal_set_va_marshaller (signals [EXTENSION_REMOVED],</span></a>
 <a name="421"><span class="lineNum">     421 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
 <a name="422"><span class="lineNum">     422 </span>                :            :                               g_cclosure_marshal_VOID__OBJECTv);</a>
 <a name="423"><span class="lineNum">     423 </span>                :<span class="lineCov">         91 : }</span></a>
@@ -511,7 +511,7 @@
 <a name="429"><span class="lineNum">     429 </span>                :            : </a>
 <a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">        185 :   priv-&gt;engine = valent_get_engine ();</span></a>
 <a name="431"><span class="lineNum">     431 </span>                :<span class="lineCov">        185 :   priv-&gt;plugin_type = G_TYPE_NONE;</span></a>
-<a name="432"><span class="lineNum">     432 </span>                :<span class="lineCov">        185 :   priv-&gt;providers = g_hash_table_new_full (NULL, NULL, NULL, g_object_unref);</span></a>
+<a name="432"><span class="lineNum">     432 </span>                :<span class="lineCov">        185 :   priv-&gt;extensions = g_hash_table_new_full (NULL, NULL, NULL, g_object_unref);</span></a>
 <a name="433"><span class="lineNum">     433 </span>                :<span class="lineCov">        185 :   priv-&gt;settings = g_hash_table_new_full (NULL, NULL, NULL, g_object_unref);</span></a>
 <a name="434"><span class="lineNum">     434 </span>                :<span class="lineCov">        185 : }</span></a>
 <a name="435"><span class="lineNum">     435 </span>                :            : </a>
@@ -520,67 +520,103 @@
 <a name="438"><span class="lineNum">     438 </span>                :            :  * @component: a #ValentComponent</a>
 <a name="439"><span class="lineNum">     439 </span>                :            :  * @key: The priority key in the plugin info</a>
 <a name="440"><span class="lineNum">     440 </span>                :            :  *</a>
-<a name="441"><span class="lineNum">     441 </span>                :            :  * Get the provider with the highest priority for @component.</a>
+<a name="441"><span class="lineNum">     441 </span>                :            :  * Get the extension with the highest priority for @component.</a>
 <a name="442"><span class="lineNum">     442 </span>                :            :  *</a>
 <a name="443"><span class="lineNum">     443 </span>                :            :  * Returns: (transfer none) (nullable): a #PeasExtension</a>
 <a name="444"><span class="lineNum">     444 </span>                :            :  */</a>
 <a name="445"><span class="lineNum">     445 </span>                :            : PeasExtension *</a>
-<a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">        155 : valent_component_get_priority_provider (ValentComponent *component,</span></a>
+<a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">        195 : valent_component_get_priority_provider (ValentComponent *component,</span></a>
 <a name="447"><span class="lineNum">     447 </span>                :            :                                         const char      *key)</a>
 <a name="448"><span class="lineNum">     448 </span>                :            : {</a>
-<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">        155 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
+<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">        195 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
 <a name="450"><span class="lineNum">     450 </span>                :            :   GHashTableIter iter;</a>
 <a name="451"><span class="lineNum">     451 </span>                :            :   gpointer info, value;</a>
-<a name="452"><span class="lineNum">     452 </span>                :<span class="lineCov">        155 :   PeasExtension *provider = NULL;</span></a>
-<a name="453"><span class="lineNum">     453 </span>                :<span class="lineCov">        155 :   gint64 priority = 1000;</span></a>
+<a name="452"><span class="lineNum">     452 </span>                :<span class="lineCov">        195 :   PeasExtension *extension = NULL;</span></a>
+<a name="453"><span class="lineNum">     453 </span>                :<span class="lineCov">        195 :   gint64 priority = 1000;</span></a>
 <a name="454"><span class="lineNum">     454 </span>                :            : </a>
-<a name="455"><span class="lineNum">     455 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 155 times"> + </span>]:<span class="lineCov">        155 :   g_return_val_if_fail (VALENT_IS_COMPONENT (component), NULL);</span></a>
+<a name="455"><span class="lineNum">     455 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 195 times"> + </span>]:<span class="lineCov">        195 :   g_return_val_if_fail (VALENT_IS_COMPONENT (component), NULL);</span></a>
 <a name="456"><span class="lineNum">     456 </span>                :            : </a>
-<a name="457"><span class="lineNum">     457 </span>                :<span class="lineCov">        155 :   g_hash_table_iter_init (&amp;iter, priv-&gt;providers);</span></a>
+<a name="457"><span class="lineNum">     457 </span>                :<span class="lineCov">        195 :   g_hash_table_iter_init (&amp;iter, priv-&gt;extensions);</span></a>
 <a name="458"><span class="lineNum">     458 </span>                :            : </a>
-<a name="459"><span class="lineNum">     459 </span>        [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchCov" title="Branch 1 was taken 155 times"> + </span>]:<span class="lineCov">        250 :   while (g_hash_table_iter_next (&amp;iter, &amp;info, &amp;value))</span></a>
+<a name="459"><span class="lineNum">     459 </span>        [<span class="branchCov" title="Branch 0 was taken 115 times"> + </span><span class="branchCov" title="Branch 1 was taken 195 times"> + </span>]:<span class="lineCov">        310 :   while (g_hash_table_iter_next (&amp;iter, &amp;info, &amp;value))</span></a>
 <a name="460"><span class="lineNum">     460 </span>                :            :     {</a>
 <a name="461"><span class="lineNum">     461 </span>                :            :       gint64 curr_priority;</a>
 <a name="462"><span class="lineNum">     462 </span>                :            : </a>
-<a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">         95 :       curr_priority = get_provider_priority (info, key);</span></a>
+<a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">        115 :       curr_priority = get_extension_priority (info, key);</span></a>
 <a name="464"><span class="lineNum">     464 </span>                :            : </a>
-<a name="465"><span class="lineNum">     465 </span>        [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         95 :       if (curr_priority &lt; priority)</span></a>
+<a name="465"><span class="lineNum">     465 </span>        [<span class="branchCov" title="Branch 0 was taken 115 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        115 :       if (curr_priority &lt; priority)</span></a>
 <a name="466"><span class="lineNum">     466 </span>                :            :         {</a>
-<a name="467"><span class="lineNum">     467 </span>                :<span class="lineCov">         95 :           priority = curr_priority;</span></a>
-<a name="468"><span class="lineNum">     468 </span>                :<span class="lineCov">         95 :           provider = value;</span></a>
+<a name="467"><span class="lineNum">     467 </span>                :<span class="lineCov">        115 :           priority = curr_priority;</span></a>
+<a name="468"><span class="lineNum">     468 </span>                :<span class="lineCov">        115 :           extension = value;</span></a>
 <a name="469"><span class="lineNum">     469 </span>                :            :         }</a>
 <a name="470"><span class="lineNum">     470 </span>                :            :     }</a>
 <a name="471"><span class="lineNum">     471 </span>                :            : </a>
-<a name="472"><span class="lineNum">     472 </span>                :<span class="lineCov">        155 :   return provider;</span></a>
+<a name="472"><span class="lineNum">     472 </span>                :<span class="lineCov">        195 :   return extension;</span></a>
 <a name="473"><span class="lineNum">     473 </span>                :            : }</a>
 <a name="474"><span class="lineNum">     474 </span>                :            : </a>
 <a name="475"><span class="lineNum">     475 </span>                :            : /**</a>
-<a name="476"><span class="lineNum">     476 </span>                :            :  * valent_component_get_providers:</a>
+<a name="476"><span class="lineNum">     476 </span>                :            :  * valent_component_get_extensions:</a>
 <a name="477"><span class="lineNum">     477 </span>                :            :  * @component: a #ValentComponent</a>
 <a name="478"><span class="lineNum">     478 </span>                :            :  *</a>
-<a name="479"><span class="lineNum">     479 </span>                :            :  * Get a list of the currently loaded providers.</a>
+<a name="479"><span class="lineNum">     479 </span>                :            :  * Get a list of the currently loaded extensions.</a>
 <a name="480"><span class="lineNum">     480 </span>                :            :  *</a>
 <a name="481"><span class="lineNum">     481 </span>                :            :  * Returns: (transfer container) (element-type Peas.Extension): a #GPtrArray</a>
 <a name="482"><span class="lineNum">     482 </span>                :            :  */</a>
 <a name="483"><span class="lineNum">     483 </span>                :            : GPtrArray *</a>
-<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">        125 : valent_component_get_providers (ValentComponent *component)</span></a>
+<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">        185 : valent_component_get_extensions (ValentComponent *component)</span></a>
 <a name="485"><span class="lineNum">     485 </span>                :            : {</a>
-<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">        125 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
-<a name="487"><span class="lineNum">     487 </span>                :            :   GPtrArray *providers;</a>
+<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">        185 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
+<a name="487"><span class="lineNum">     487 </span>                :            :   GPtrArray *extensions;</a>
 <a name="488"><span class="lineNum">     488 </span>                :            :   GHashTableIter iter;</a>
 <a name="489"><span class="lineNum">     489 </span>                :            :   gpointer value;</a>
 <a name="490"><span class="lineNum">     490 </span>                :            : </a>
-<a name="491"><span class="lineNum">     491 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 125 times"> + </span>]:<span class="lineCov">        125 :   g_return_val_if_fail (VALENT_IS_COMPONENT (component), NULL);</span></a>
+<a name="491"><span class="lineNum">     491 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 185 times"> + </span>]:<span class="lineCov">        185 :   g_return_val_if_fail (VALENT_IS_COMPONENT (component), NULL);</span></a>
 <a name="492"><span class="lineNum">     492 </span>                :            : </a>
-<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">        125 :   providers = g_ptr_array_new_with_free_func (g_object_unref);</span></a>
-<a name="494"><span class="lineNum">     494 </span>                :<span class="lineCov">        125 :   g_hash_table_iter_init (&amp;iter, priv-&gt;providers);</span></a>
+<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">        185 :   extensions = g_ptr_array_new_with_free_func (g_object_unref);</span></a>
+<a name="494"><span class="lineNum">     494 </span>                :<span class="lineCov">        185 :   g_hash_table_iter_init (&amp;iter, priv-&gt;extensions);</span></a>
 <a name="495"><span class="lineNum">     495 </span>                :            : </a>
-<a name="496"><span class="lineNum">     496 </span>        [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchCov" title="Branch 1 was taken 125 times"> + </span>]:<span class="lineCov">        220 :   while (g_hash_table_iter_next (&amp;iter, NULL, &amp;value))</span></a>
-<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">         95 :     g_ptr_array_add (providers, g_object_ref (value));</span></a>
+<a name="496"><span class="lineNum">     496 </span>        [<span class="branchCov" title="Branch 0 was taken 125 times"> + </span><span class="branchCov" title="Branch 1 was taken 185 times"> + </span>]:<span class="lineCov">        310 :   while (g_hash_table_iter_next (&amp;iter, NULL, &amp;value))</span></a>
+<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">        125 :     g_ptr_array_add (extensions, g_object_ref (value));</span></a>
 <a name="498"><span class="lineNum">     498 </span>                :            : </a>
-<a name="499"><span class="lineNum">     499 </span>                :<span class="lineCov">        125 :   return providers;</span></a>
+<a name="499"><span class="lineNum">     499 </span>                :<span class="lineCov">        185 :   return extensions;</span></a>
 <a name="500"><span class="lineNum">     500 </span>                :            : }</a>
 <a name="501"><span class="lineNum">     501 </span>                :            : </a>
+<a name="502"><span class="lineNum">     502 </span>                :            : /**</a>
+<a name="503"><span class="lineNum">     503 </span>                :            :  * valent_component_new_settings:</a>
+<a name="504"><span class="lineNum">     504 </span>                :            :  * @context: a #ValentDevice ID</a>
+<a name="505"><span class="lineNum">     505 </span>                :            :  * @module_name: a #PeasPluginInfo module name</a>
+<a name="506"><span class="lineNum">     506 </span>                :            :  *</a>
+<a name="507"><span class="lineNum">     507 </span>                :            :  * A convenience function for components to create a #GSettings object for a</a>
+<a name="508"><span class="lineNum">     508 </span>                :            :  * context and module name.</a>
+<a name="509"><span class="lineNum">     509 </span>                :            :  *</a>
+<a name="510"><span class="lineNum">     510 </span>                :            :  * It is expected that @context is a valid string for a #GSettings path.</a>
+<a name="511"><span class="lineNum">     511 </span>                :            :  *</a>
+<a name="512"><span class="lineNum">     512 </span>                :            :  * Returns: (transfer full): the new #GSettings object</a>
+<a name="513"><span class="lineNum">     513 </span>                :            :  */</a>
+<a name="514"><span class="lineNum">     514 </span>                :            : GSettings *</a>
+<a name="515"><span class="lineNum">     515 </span>                :<span class="lineCov">         35 : valent_component_new_settings (const char *context,</span></a>
+<a name="516"><span class="lineNum">     516 </span>                :            :                                const char *module_name)</a>
+<a name="517"><span class="lineNum">     517 </span>                :            : {</a>
+<a name="518"><span class="lineNum">     518 </span>                :            :   GSettingsSchemaSource *source;</a>
+<a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">         35 :   g_autoptr (GSettingsSchema) schema = NULL;</span></a>
+<a name="520"><span class="lineNum">     520 </span>                :<span class="lineCov">         35 :   g_autofree char *path = NULL;</span></a>
+<a name="521"><span class="lineNum">     521 </span>                :<span class="lineCov">         35 :   g_autofree char *schema_id = NULL;</span></a>
+<a name="522"><span class="lineNum">     522 </span>                :            : </a>
+<a name="523"><span class="lineNum">     523 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (context != NULL, NULL);</span></a>
+<a name="524"><span class="lineNum">     524 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (module_name != NULL, NULL);</span></a>
+<a name="525"><span class="lineNum">     525 </span>                :            : </a>
+<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">         35 :   source = g_settings_schema_source_get_default ();</span></a>
+<a name="527"><span class="lineNum">     527 </span>                :<span class="lineCov">         35 :   schema_id = g_strdup_printf (&quot;ca.andyholmes.Valent.Plugin&quot;);</span></a>
+<a name="528"><span class="lineNum">     528 </span>                :<span class="lineCov">         35 :   schema = g_settings_schema_source_lookup (source, schema_id, TRUE);</span></a>
+<a name="529"><span class="lineNum">     529 </span>                :            : </a>
+<a name="530"><span class="lineNum">     530 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (schema != NULL, NULL);</span></a>
+<a name="531"><span class="lineNum">     531 </span>                :            : </a>
+<a name="532"><span class="lineNum">     532 </span>                :<span class="lineCov">         35 :   path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
+<a name="533"><span class="lineNum">     533 </span>                :            :                           context, module_name);</a>
+<a name="534"><span class="lineNum">     534 </span>                :            : </a>
+<a name="535"><span class="lineNum">     535 </span>                :<span class="lineCov">         35 :   return g_settings_new_full (schema, NULL, path);</span></a>
+<a name="536"><span class="lineNum">     536 </span>                :            : }</a>
+<a name="537"><span class="lineNum">     537 </span>                :            : </a>
 </pre>
       </td>
     </tr>
