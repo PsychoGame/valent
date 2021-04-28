@@ -170,6 +170,9 @@
     <keyword type="function" name="valent_device_plugin_register_actions ()" link="ValentDevicePlugin.html#valent-device-plugin-register-actions"/>
     <keyword type="function" name="valent_device_plugin_unregister_actions ()" link="ValentDevicePlugin.html#valent-device-plugin-unregister-actions"/>
     <keyword type="function" name="valent_device_plugin_toggle_actions ()" link="ValentDevicePlugin.html#valent-device-plugin-toggle-actions"/>
+    <keyword type="function" name="valent_device_plugin_find_menu_item ()" link="ValentDevicePlugin.html#valent-device-plugin-find-menu-item"/>
+    <keyword type="function" name="valent_device_plugin_remove_menu_item ()" link="ValentDevicePlugin.html#valent-device-plugin-remove-menu-item"/>
+    <keyword type="function" name="valent_device_plugin_replace_menu_item ()" link="ValentDevicePlugin.html#valent-device-plugin-replace-menu-item"/>
     <keyword type="function" name="valent_device_plugin_add_menu_entries ()" link="ValentDevicePlugin.html#valent-device-plugin-add-menu-entries"/>
     <keyword type="function" name="valent_device_plugin_remove_menu_entries ()" link="ValentDevicePlugin.html#valent-device-plugin-remove-menu-entries"/>
     <keyword type="function" name="valent_device_plugin_get_incoming ()" link="ValentDevicePlugin.html#valent-device-plugin-get-incoming"/>
@@ -269,9 +272,6 @@
     <keyword type="function" name="valent_in_flatpak ()" link="valent-Utilities.html#valent-in-flatpak"/>
     <keyword type="function" name="valent_load_plugins ()" link="valent-Utilities.html#valent-load-plugins"/>
     <keyword type="function" name="valent_timestamp_ms ()" link="valent-Utilities.html#valent-timestamp-ms"/>
-    <keyword type="function" name="valent_menu_find_item ()" link="valent-Utilities.html#valent-menu-find-item"/>
-    <keyword type="function" name="valent_menu_remove_item ()" link="valent-Utilities.html#valent-menu-remove-item"/>
-    <keyword type="function" name="valent_menu_replace_item ()" link="valent-Utilities.html#valent-menu-replace-item"/>
     <keyword type="function" name="valent_notification_set_device_action ()" link="valent-Utilities.html#valent-notification-set-device-action"/>
     <keyword type="function" name="valent_notification_add_device_button ()" link="valent-Utilities.html#valent-notification-add-device-button"/>
     <keyword type="function" name="valent_clipboard_get_text_async ()" link="ValentClipboard.html#valent-clipboard-get-text-async"/>
