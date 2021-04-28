@@ -31,18 +31,18 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">97</td>
-            <td class="headerCovTableEntry">102</td>
-            <td class="headerCovTableEntryHi">95.1 %</td>
+            <td class="headerCovTableEntry">134</td>
+            <td class="headerCovTableEntry">143</td>
+            <td class="headerCovTableEntryHi">93.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-28 00:48:40</td>
+            <td class="headerValue">2021-04-28 07:23:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntryHi">93.3 %</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntryHi">94.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">52</td>
-            <td class="headerCovTableEntry">100</td>
-            <td class="headerCovTableEntryLo">52.0 %</td>
+            <td class="headerCovTableEntry">73</td>
+            <td class="headerCovTableEntry">141</td>
+            <td class="headerCovTableEntryLo">51.8 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -137,8 +137,8 @@
 <a name="59"><span class="lineNum">      59 </span>                :            :  * remote device's access before pairing.</a>
 <a name="60"><span class="lineNum">      60 </span>                :            :  */</a>
 <a name="61"><span class="lineNum">      61 </span>                :            : </a>
-<a name="62"><span class="lineNum">      62 </span>  [<span class="branchCov" title="Branch 0 was taken 201 times"> + </span><span class="branchCov" title="Branch 1 was taken 39011 times"> + </span><span class="branchCov" title="Branch 2 was taken 201 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      39212 : G_DEFINE_INTERFACE (ValentDevicePlugin, valent_device_plugin, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 201 times"> + </span><span class="branchCov" title="Branch 5 was taken 39011 times"> + </span>]
+<a name="62"><span class="lineNum">      62 </span>  [<span class="branchCov" title="Branch 0 was taken 201 times"> + </span><span class="branchCov" title="Branch 1 was taken 39196 times"> + </span><span class="branchCov" title="Branch 2 was taken 201 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      39397 : G_DEFINE_INTERFACE (ValentDevicePlugin, valent_device_plugin, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 201 times"> + </span><span class="branchCov" title="Branch 5 was taken 39196 times"> + </span>]
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>
 <a name="64"><span class="lineNum">      64 </span>                :            : /**</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :  * ValentDevicePluginInterface:</a>
@@ -288,7 +288,7 @@
 <a name="209"><span class="lineNum">     209 </span>                :            : void</a>
 <a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">        695 : valent_device_plugin_register_actions (ValentDevicePlugin *plugin,</span></a>
 <a name="211"><span class="lineNum">     211 </span>                :            :                                        const GActionEntry *entries,</a>
-<a name="212"><span class="lineNum">     212 </span>                :            :                                        gint                n_entries)</a>
+<a name="212"><span class="lineNum">     212 </span>                :            :                                        int                 n_entries)</a>
 <a name="213"><span class="lineNum">     213 </span>                :            : {</a>
 <a name="214"><span class="lineNum">     214 </span>        [<span class="branchCov" title="Branch 0 was taken 695 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        695 :   g_autoptr (ValentDevice) device = NULL;</span></a>
 <a name="215"><span class="lineNum">     215 </span>                :            :   GActionMap *actions;</a>
@@ -312,21 +312,21 @@
 <a name="233"><span class="lineNum">     233 </span>                :            :  * Unregister #GAction @entries with the #ValentDevice for @plugin.</a>
 <a name="234"><span class="lineNum">     234 </span>                :            :  */</a>
 <a name="235"><span class="lineNum">     235 </span>                :            : void</a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">        598 : valent_device_plugin_unregister_actions (ValentDevicePlugin *plugin,</span></a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">        616 : valent_device_plugin_unregister_actions (ValentDevicePlugin *plugin,</span></a>
 <a name="237"><span class="lineNum">     237 </span>                :            :                                          const GActionEntry *entries,</a>
-<a name="238"><span class="lineNum">     238 </span>                :            :                                          gint                n_entries)</a>
+<a name="238"><span class="lineNum">     238 </span>                :            :                                          int                 n_entries)</a>
 <a name="239"><span class="lineNum">     239 </span>                :            : {</a>
-<a name="240"><span class="lineNum">     240 </span>        [<span class="branchCov" title="Branch 0 was taken 598 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        598 :   g_autoptr (ValentDevice) device = NULL;</span></a>
+<a name="240"><span class="lineNum">     240 </span>        [<span class="branchCov" title="Branch 0 was taken 616 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        616 :   g_autoptr (ValentDevice) device = NULL;</span></a>
 <a name="241"><span class="lineNum">     241 </span>                :            :   GActionMap *actions;</a>
 <a name="242"><span class="lineNum">     242 </span>                :            : </a>
-<a name="243"><span class="lineNum">     243 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 598 times"> + </span>]:<span class="lineCov">        598 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
-<a name="244"><span class="lineNum">     244 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 598 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        598 :   g_return_if_fail (entries != NULL || n_entries == 0);</span></a>
+<a name="243"><span class="lineNum">     243 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 616 times"> + </span>]:<span class="lineCov">        616 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="244"><span class="lineNum">     244 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 616 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        616 :   g_return_if_fail (entries != NULL || n_entries == 0);</span></a>
 <a name="245"><span class="lineNum">     245 </span>                :            : </a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">        598 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">        598 :   actions = G_ACTION_MAP (valent_device_get_actions (device));</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">        616 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">        616 :   actions = G_ACTION_MAP (valent_device_get_actions (device));</span></a>
 <a name="248"><span class="lineNum">     248 </span>                :            : </a>
-<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 871 times"> + </span><span class="branchCov" title="Branch 1 was taken 598 times"> + </span>]:<span class="lineCov">       1469 :   for (int i = 0; i &lt; n_entries; i++)</span></a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        871 :     g_action_map_remove_action (actions, entries[i].name);</span></a>
+<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 913 times"> + </span><span class="branchCov" title="Branch 1 was taken 616 times"> + </span>]:<span class="lineCov">       1529 :   for (int i = 0; i &lt; n_entries; i++)</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        913 :     g_action_map_remove_action (actions, entries[i].name);</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : }</a>
 <a name="252"><span class="lineNum">     252 </span>                :            : </a>
 <a name="253"><span class="lineNum">     253 </span>                :            : /**</a>
@@ -340,28 +340,28 @@
 <a name="261"><span class="lineNum">     261 </span>                :            :  * Enable or disable @actions for @device based on @state.</a>
 <a name="262"><span class="lineNum">     262 </span>                :            :  */</a>
 <a name="263"><span class="lineNum">     263 </span>                :            : void</a>
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">       1728 : valent_device_plugin_toggle_actions (ValentDevicePlugin *plugin,</span></a>
+<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">       1748 : valent_device_plugin_toggle_actions (ValentDevicePlugin *plugin,</span></a>
 <a name="265"><span class="lineNum">     265 </span>                :            :                                      const GActionEntry *entries,</a>
-<a name="266"><span class="lineNum">     266 </span>                :            :                                      gint                n_entries,</a>
+<a name="266"><span class="lineNum">     266 </span>                :            :                                      int                 n_entries,</a>
 <a name="267"><span class="lineNum">     267 </span>                :            :                                      gboolean            state)</a>
 <a name="268"><span class="lineNum">     268 </span>                :            : {</a>
-<a name="269"><span class="lineNum">     269 </span>        [<span class="branchCov" title="Branch 0 was taken 1728 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1728 :   g_autoptr (ValentDevice) device = NULL;</span></a>
+<a name="269"><span class="lineNum">     269 </span>        [<span class="branchCov" title="Branch 0 was taken 1748 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1748 :   g_autoptr (ValentDevice) device = NULL;</span></a>
 <a name="270"><span class="lineNum">     270 </span>                :            :   GActionMap *actions;</a>
 <a name="271"><span class="lineNum">     271 </span>                :            : </a>
-<a name="272"><span class="lineNum">     272 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1728 times"> + </span>]:<span class="lineCov">       1728 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
-<a name="273"><span class="lineNum">     273 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1728 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1728 :   g_return_if_fail (entries != NULL || n_entries == 0);</span></a>
+<a name="272"><span class="lineNum">     272 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1748 times"> + </span>]:<span class="lineCov">       1748 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="273"><span class="lineNum">     273 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1748 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1748 :   g_return_if_fail (entries != NULL || n_entries == 0);</span></a>
 <a name="274"><span class="lineNum">     274 </span>                :            : </a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">       1728 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
-<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">       1728 :   actions = G_ACTION_MAP (valent_device_get_actions (device));</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">       1748 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
+<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">       1748 :   actions = G_ACTION_MAP (valent_device_get_actions (device));</span></a>
 <a name="277"><span class="lineNum">     277 </span>                :            : </a>
-<a name="278"><span class="lineNum">     278 </span>        [<span class="branchCov" title="Branch 0 was taken 2461 times"> + </span><span class="branchCov" title="Branch 1 was taken 1728 times"> + </span>]:<span class="lineCov">       4189 :   for (int i = 0; i &lt; n_entries; i++)</span></a>
+<a name="278"><span class="lineNum">     278 </span>        [<span class="branchCov" title="Branch 0 was taken 2505 times"> + </span><span class="branchCov" title="Branch 1 was taken 1748 times"> + </span>]:<span class="lineCov">       4253 :   for (int i = 0; i &lt; n_entries; i++)</span></a>
 <a name="279"><span class="lineNum">     279 </span>                :            :     {</a>
 <a name="280"><span class="lineNum">     280 </span>                :            :       GAction *action;</a>
 <a name="281"><span class="lineNum">     281 </span>                :            : </a>
-<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">       2461 :       action = g_action_map_lookup_action (actions, entries[i].name);</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">       2505 :       action = g_action_map_lookup_action (actions, entries[i].name);</span></a>
 <a name="283"><span class="lineNum">     283 </span>                :            : </a>
-<a name="284"><span class="lineNum">     284 </span>        [<span class="branchCov" title="Branch 0 was taken 2461 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2461 :       if (action != NULL)</span></a>
-<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">       2461 :         g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);</span></a>
+<a name="284"><span class="lineNum">     284 </span>        [<span class="branchCov" title="Branch 0 was taken 2505 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2505 :       if (action != NULL)</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">       2505 :         g_simple_action_set_enabled (G_SIMPLE_ACTION (action), state);</span></a>
 <a name="286"><span class="lineNum">     286 </span>                :            :     }</a>
 <a name="287"><span class="lineNum">     287 </span>                :            : }</a>
 <a name="288"><span class="lineNum">     288 </span>                :            : </a>
@@ -379,7 +379,7 @@
 <a name="300"><span class="lineNum">     300 </span>                :            : void</a>
 <a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">        570 : valent_device_plugin_add_menu_entries (ValentDevicePlugin    *plugin,</span></a>
 <a name="302"><span class="lineNum">     302 </span>                :            :                                        const ValentMenuEntry *entries,</a>
-<a name="303"><span class="lineNum">     303 </span>                :            :                                        gint                   n_entries)</a>
+<a name="303"><span class="lineNum">     303 </span>                :            :                                        int                    n_entries)</a>
 <a name="304"><span class="lineNum">     304 </span>                :            : {</a>
 <a name="305"><span class="lineNum">     305 </span>        [<span class="branchCov" title="Branch 0 was taken 570 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        570 :   g_autoptr (ValentDevice) device = NULL;</span></a>
 <a name="306"><span class="lineNum">     306 </span>                :            :   GMenu *menu;</a>
@@ -404,26 +404,26 @@
 <a name="325"><span class="lineNum">     325 </span>                :            : }</a>
 <a name="326"><span class="lineNum">     326 </span>                :            : </a>
 <a name="327"><span class="lineNum">     327 </span>                :            : static int</a>
-<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">        517 : _g_menu_find_action (GMenu      *menu,</span></a>
+<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">        532 : _g_menu_find_action (GMenu      *menu,</span></a>
 <a name="329"><span class="lineNum">     329 </span>                :            :                      const char *action)</a>
 <a name="330"><span class="lineNum">     330 </span>                :            : {</a>
-<a name="331"><span class="lineNum">     331 </span>                :<span class="lineCov">        517 :   GMenuModel *model = G_MENU_MODEL (menu);</span></a>
-<a name="332"><span class="lineNum">     332 </span>                :            :   gint i, n_items;</a>
+<a name="331"><span class="lineNum">     331 </span>                :<span class="lineCov">        532 :   GMenuModel *model = G_MENU_MODEL (menu);</span></a>
+<a name="332"><span class="lineNum">     332 </span>                :            :   int i, n_items;</a>
 <a name="333"><span class="lineNum">     333 </span>                :            : </a>
-<a name="334"><span class="lineNum">     334 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 517 times"> + </span><span class="branchCov" title="Branch 2 was taken 517 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        517 :   g_return_val_if_fail (G_IS_MENU (menu), -1);</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 517 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 517 times"> + </span>]
-<a name="335"><span class="lineNum">     335 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 517 times"> + </span>]:<span class="lineCov">        517 :   g_return_val_if_fail (action != NULL, -1);</span></a>
+<a name="334"><span class="lineNum">     334 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 532 times"> + </span><span class="branchCov" title="Branch 2 was taken 532 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        532 :   g_return_val_if_fail (G_IS_MENU (menu), -1);</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 532 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 532 times"> + </span>]
+<a name="335"><span class="lineNum">     335 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 532 times"> + </span>]:<span class="lineCov">        532 :   g_return_val_if_fail (action != NULL, -1);</span></a>
 <a name="336"><span class="lineNum">     336 </span>                :            : </a>
-<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">        517 :   n_items = g_menu_model_get_n_items (model);</span></a>
+<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">        532 :   n_items = g_menu_model_get_n_items (model);</span></a>
 <a name="338"><span class="lineNum">     338 </span>                :            : </a>
-<a name="339"><span class="lineNum">     339 </span>        [<span class="branchCov" title="Branch 0 was taken 612 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        612 :   for (i = 0; i &lt; n_items; i++)</span></a>
+<a name="339"><span class="lineNum">     339 </span>        [<span class="branchCov" title="Branch 0 was taken 617 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        617 :   for (i = 0; i &lt; n_items; i++)</span></a>
 <a name="340"><span class="lineNum">     340 </span>                :            :     {</a>
-<a name="341"><span class="lineNum">     341 </span>        [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchCov" title="Branch 1 was taken 517 times"> + </span>]:<span class="lineCov">        612 :       g_autofree char *item_str = NULL;</span></a>
+<a name="341"><span class="lineNum">     341 </span>        [<span class="branchCov" title="Branch 0 was taken 85 times"> + </span><span class="branchCov" title="Branch 1 was taken 532 times"> + </span>]:<span class="lineCov">        617 :       g_autofree char *item_str = NULL;</span></a>
 <a name="342"><span class="lineNum">     342 </span>                :            : </a>
-<a name="343"><span class="lineNum">     343 </span>                :<span class="lineCov">        612 :       g_menu_model_get_item_attribute (model, i, &quot;action&quot;, &quot;s&quot;, &amp;item_str);</span></a>
+<a name="343"><span class="lineNum">     343 </span>                :<span class="lineCov">        617 :       g_menu_model_get_item_attribute (model, i, &quot;action&quot;, &quot;s&quot;, &amp;item_str);</span></a>
 <a name="344"><span class="lineNum">     344 </span>                :            : </a>
-<a name="345"><span class="lineNum">     345 </span>        [<span class="branchCov" title="Branch 0 was taken 517 times"> + </span><span class="branchCov" title="Branch 1 was taken 95 times"> + </span>]:<span class="lineCov">        612 :       if (g_strcmp0 (item_str, action) == 0)</span></a>
-<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">        517 :         return i;</span></a>
+<a name="345"><span class="lineNum">     345 </span>        [<span class="branchCov" title="Branch 0 was taken 532 times"> + </span><span class="branchCov" title="Branch 1 was taken 85 times"> + </span>]:<span class="lineCov">        617 :       if (g_strcmp0 (item_str, action) == 0)</span></a>
+<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">        532 :         return i;</span></a>
 <a name="347"><span class="lineNum">     347 </span>                :            :     }</a>
 <a name="348"><span class="lineNum">     348 </span>                :            : </a>
 <a name="349"><span class="lineNum">     349 </span>                :<span class="lineNoCov">          0 :   return -1;</span></a>
@@ -439,114 +439,232 @@
 <a name="359"><span class="lineNum">     359 </span>                :            :  * A counterpart to valent_device_plugin_add_menu_entries().</a>
 <a name="360"><span class="lineNum">     360 </span>                :            :  */</a>
 <a name="361"><span class="lineNum">     361 </span>                :            : void</a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">        500 : valent_device_plugin_remove_menu_entries (ValentDevicePlugin    *plugin,</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">        513 : valent_device_plugin_remove_menu_entries (ValentDevicePlugin    *plugin,</span></a>
 <a name="363"><span class="lineNum">     363 </span>                :            :                                           const ValentMenuEntry *entries,</a>
-<a name="364"><span class="lineNum">     364 </span>                :            :                                           gint                   n_entries)</a>
+<a name="364"><span class="lineNum">     364 </span>                :            :                                           int                    n_entries)</a>
 <a name="365"><span class="lineNum">     365 </span>                :            : {</a>
-<a name="366"><span class="lineNum">     366 </span>        [<span class="branchCov" title="Branch 0 was taken 500 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        500 :   g_autoptr (ValentDevice) device = NULL;</span></a>
+<a name="366"><span class="lineNum">     366 </span>        [<span class="branchCov" title="Branch 0 was taken 513 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        513 :   g_autoptr (ValentDevice) device = NULL;</span></a>
 <a name="367"><span class="lineNum">     367 </span>                :            :   GMenu *menu;</a>
 <a name="368"><span class="lineNum">     368 </span>                :            : </a>
-<a name="369"><span class="lineNum">     369 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 500 times"> + </span>]:<span class="lineCov">        500 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
-<a name="370"><span class="lineNum">     370 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 500 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        500 :   g_return_if_fail (entries != NULL || n_entries == 0);</span></a>
+<a name="369"><span class="lineNum">     369 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 513 times"> + </span>]:<span class="lineCov">        513 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="370"><span class="lineNum">     370 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 513 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        513 :   g_return_if_fail (entries != NULL || n_entries == 0);</span></a>
 <a name="371"><span class="lineNum">     371 </span>                :            : </a>
-<a name="372"><span class="lineNum">     372 </span>                :<span class="lineCov">        500 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">        500 :   menu = G_MENU (valent_device_get_menu (device));</span></a>
+<a name="372"><span class="lineNum">     372 </span>                :<span class="lineCov">        513 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">        513 :   menu = G_MENU (valent_device_get_menu (device));</span></a>
 <a name="374"><span class="lineNum">     374 </span>                :            : </a>
-<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 517 times"> + </span><span class="branchCov" title="Branch 1 was taken 500 times"> + </span>]:<span class="lineCov">       1017 :   for (int i = 0; i &lt; n_entries; i++)</span></a>
+<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 532 times"> + </span><span class="branchCov" title="Branch 1 was taken 513 times"> + </span>]:<span class="lineCov">       1045 :   for (int i = 0; i &lt; n_entries; i++)</span></a>
 <a name="376"><span class="lineNum">     376 </span>                :            :     {</a>
-<a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">        517 :       int index = _g_menu_find_action (menu, entries[i].action);</span></a>
+<a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">        532 :       int index = _g_menu_find_action (menu, entries[i].action);</span></a>
 <a name="378"><span class="lineNum">     378 </span>                :            : </a>
-<a name="379"><span class="lineNum">     379 </span>        [<span class="branchCov" title="Branch 0 was taken 517 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        517 :       if (index &gt; -1)</span></a>
-<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">        517 :         g_menu_remove (menu, index);</span></a>
+<a name="379"><span class="lineNum">     379 </span>        [<span class="branchCov" title="Branch 0 was taken 532 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        532 :       if (index &gt; -1)</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">        532 :         g_menu_remove (menu, index);</span></a>
 <a name="381"><span class="lineNum">     381 </span>                :            :     }</a>
 <a name="382"><span class="lineNum">     382 </span>                :            : }</a>
 <a name="383"><span class="lineNum">     383 </span>                :            : </a>
 <a name="384"><span class="lineNum">     384 </span>                :            : /**</a>
-<a name="385"><span class="lineNum">     385 </span>                :            :  * valent_device_plugin_enable: (virtual enable)</a>
+<a name="385"><span class="lineNum">     385 </span>                :            :  * valent_device_plugin_find_menu_item:</a>
 <a name="386"><span class="lineNum">     386 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
-<a name="387"><span class="lineNum">     387 </span>                :            :  *</a>
-<a name="388"><span class="lineNum">     388 </span>                :            :  * Enables the plugin. This will register the plugin as the handler for any</a>
-<a name="389"><span class="lineNum">     389 </span>                :            :  * packets the it claims to support then call the plugin's implementation.</a>
-<a name="390"><span class="lineNum">     390 </span>                :            :  *</a>
-<a name="391"><span class="lineNum">     391 </span>                :            :  * This function is called after the extension is loaded and should prepare</a>
-<a name="392"><span class="lineNum">     392 </span>                :            :  * anything the plugin needs to handle and provide packets once the device is</a>
-<a name="393"><span class="lineNum">     393 </span>                :            :  * connected.</a>
+<a name="387"><span class="lineNum">     387 </span>                :            :  * @attribute: an attribute name to match</a>
+<a name="388"><span class="lineNum">     388 </span>                :            :  * @value: an attribute value to match</a>
+<a name="389"><span class="lineNum">     389 </span>                :            :  *</a>
+<a name="390"><span class="lineNum">     390 </span>                :            :  * Search the top-level of a #GMenuModel for the index of an item with the</a>
+<a name="391"><span class="lineNum">     391 </span>                :            :  * attribute @name holding @value.</a>
+<a name="392"><span class="lineNum">     392 </span>                :            :  *</a>
+<a name="393"><span class="lineNum">     393 </span>                :            :  * Returns: position of the item or -1 if not found</a>
 <a name="394"><span class="lineNum">     394 </span>                :            :  */</a>
-<a name="395"><span class="lineNum">     395 </span>                :            : void</a>
-<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">        715 : valent_device_plugin_enable (ValentDevicePlugin *plugin)</span></a>
-<a name="397"><span class="lineNum">     397 </span>                :            : {</a>
-<a name="398"><span class="lineNum">     398 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 715 times"> + </span>]:<span class="lineCov">        715 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
-<a name="399"><span class="lineNum">     399 </span>                :            : </a>
-<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">        715 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;enable (plugin);</span></a>
-<a name="401"><span class="lineNum">     401 </span>                :            : }</a>
-<a name="402"><span class="lineNum">     402 </span>                :            : </a>
-<a name="403"><span class="lineNum">     403 </span>                :            : /**</a>
-<a name="404"><span class="lineNum">     404 </span>                :            :  * valent_device_plugin_disable: (virtual disable)</a>
-<a name="405"><span class="lineNum">     405 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
-<a name="406"><span class="lineNum">     406 </span>                :            :  *</a>
-<a name="407"><span class="lineNum">     407 </span>                :            :  * This function is called before the extension is unloaded and should clean up</a>
-<a name="408"><span class="lineNum">     408 </span>                :            :  * any resources that were allocated in valent_device_plugin_enable() or</a>
-<a name="409"><span class="lineNum">     409 </span>                :            :  * valent_device_plugin_update_state().</a>
-<a name="410"><span class="lineNum">     410 </span>                :            :  *</a>
-<a name="411"><span class="lineNum">     411 </span>                :            :  * It is guaranteed that this function will be called if</a>
-<a name="412"><span class="lineNum">     412 </span>                :            :  * valent_device_plugin_enable() has been called.</a>
-<a name="413"><span class="lineNum">     413 </span>                :            :  */</a>
-<a name="414"><span class="lineNum">     414 </span>                :            : void</a>
-<a name="415"><span class="lineNum">     415 </span>                :<span class="lineCov">        615 : valent_device_plugin_disable (ValentDevicePlugin *plugin)</span></a>
-<a name="416"><span class="lineNum">     416 </span>                :            : {</a>
-<a name="417"><span class="lineNum">     417 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 615 times"> + </span>]:<span class="lineCov">        615 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="395"><span class="lineNum">     395 </span>                :            : int</a>
+<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">          5 : valent_device_plugin_find_menu_item (ValentDevicePlugin *plugin,</span></a>
+<a name="397"><span class="lineNum">     397 </span>                :            :                                      const char         *attribute,</a>
+<a name="398"><span class="lineNum">     398 </span>                :            :                                      const GVariant     *value)</a>
+<a name="399"><span class="lineNum">     399 </span>                :            : {</a>
+<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">          5 :   g_autoptr (ValentDevice) device = NULL;</span></a>
+<a name="401"><span class="lineNum">     401 </span>                :            :   GMenuModel *model;</a>
+<a name="402"><span class="lineNum">     402 </span>                :            :   int i, n_items;</a>
+<a name="403"><span class="lineNum">     403 </span>                :            : </a>
+<a name="404"><span class="lineNum">     404 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin), -1);</span></a>
+<a name="405"><span class="lineNum">     405 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (attribute != NULL, -1);</span></a>
+<a name="406"><span class="lineNum">     406 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (value != NULL, -1);</span></a>
+<a name="407"><span class="lineNum">     407 </span>                :            : </a>
+<a name="408"><span class="lineNum">     408 </span>                :<span class="lineCov">          5 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
+<a name="409"><span class="lineNum">     409 </span>                :<span class="lineCov">          5 :   model = valent_device_get_menu (device);</span></a>
+<a name="410"><span class="lineNum">     410 </span>                :            : </a>
+<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">          5 :   n_items = g_menu_model_get_n_items (model);</span></a>
+<a name="412"><span class="lineNum">     412 </span>                :            : </a>
+<a name="413"><span class="lineNum">     413 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :   for (i = 0; i &lt; n_items; i++)</span></a>
+<a name="414"><span class="lineNum">     414 </span>                :            :     {</a>
+<a name="415"><span class="lineNum">     415 </span>     [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">          5 :       g_autoptr (GVariant) ivar = NULL;</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :            : </a>
+<a name="417"><span class="lineNum">     417 </span>                :<span class="lineCov">          5 :       ivar = g_menu_model_get_item_attribute_value (model, i, attribute, NULL);</span></a>
 <a name="418"><span class="lineNum">     418 </span>                :            : </a>
-<a name="419"><span class="lineNum">     419 </span>                :<span class="lineCov">        615 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;disable (plugin);</span></a>
-<a name="420"><span class="lineNum">     420 </span>                :            : }</a>
+<a name="419"><span class="lineNum">     419 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :       if (ivar == NULL)</span></a>
+<a name="420"><span class="lineNum">     420 </span>                :<span class="lineNoCov">          0 :         continue;</span></a>
 <a name="421"><span class="lineNum">     421 </span>                :            : </a>
-<a name="422"><span class="lineNum">     422 </span>                :            : /**</a>
-<a name="423"><span class="lineNum">     423 </span>                :            :  * valent_device_plugin_handle_packet: (virtual handle_packet)</a>
-<a name="424"><span class="lineNum">     424 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
-<a name="425"><span class="lineNum">     425 </span>                :            :  * @type: the packet type</a>
-<a name="426"><span class="lineNum">     426 </span>                :            :  * @packet: a #JsonNode</a>
-<a name="427"><span class="lineNum">     427 </span>                :            :  *</a>
-<a name="428"><span class="lineNum">     428 </span>                :            :  * This is called when the device receives a packet type included in the</a>
-<a name="429"><span class="lineNum">     429 </span>                :            :  * `X-IncomingCapabilities` field of the `.plugin` file for @plugin.</a>
-<a name="430"><span class="lineNum">     430 </span>                :            :  *</a>
-<a name="431"><span class="lineNum">     431 </span>                :            :  * This is optional for #ValentDevicePlugin implementations which do not</a>
-<a name="432"><span class="lineNum">     432 </span>                :            :  * register any incoming capabilities, such as plugins that do not provide</a>
-<a name="433"><span class="lineNum">     433 </span>                :            :  * packet-based functionality.</a>
-<a name="434"><span class="lineNum">     434 </span>                :            :  */</a>
-<a name="435"><span class="lineNum">     435 </span>                :            : void</a>
-<a name="436"><span class="lineNum">     436 </span>                :<span class="lineCov">       9900 : valent_device_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
-<a name="437"><span class="lineNum">     437 </span>                :            :                                     const char         *type,</a>
-<a name="438"><span class="lineNum">     438 </span>                :            :                                     JsonNode           *packet)</a>
-<a name="439"><span class="lineNum">     439 </span>                :            : {</a>
-<a name="440"><span class="lineNum">     440 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 9900 times"> + </span>]:<span class="lineCov">       9900 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
-<a name="441"><span class="lineNum">     441 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 9900 times"> + </span>]:<span class="lineCov">       9900 :   g_return_if_fail (type != NULL);</span></a>
-<a name="442"><span class="lineNum">     442 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 9900 times"> + </span>]:<span class="lineCov">       9900 :   g_return_if_fail (VALENT_IS_PACKET (packet));</span></a>
-<a name="443"><span class="lineNum">     443 </span>                :            : </a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">       9900 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;handle_packet (plugin, type, packet);</span></a>
-<a name="445"><span class="lineNum">     445 </span>                :            : }</a>
-<a name="446"><span class="lineNum">     446 </span>                :            : </a>
-<a name="447"><span class="lineNum">     447 </span>                :            : /**</a>
-<a name="448"><span class="lineNum">     448 </span>                :            :  * valent_device_plugin_update_state: (virtual update_state)</a>
-<a name="449"><span class="lineNum">     449 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
-<a name="450"><span class="lineNum">     450 </span>                :            :  *</a>
-<a name="451"><span class="lineNum">     451 </span>                :            :  * This function is called when the device's connected or paired state changes.</a>
-<a name="452"><span class="lineNum">     452 </span>                :            :  * It should be used to prepare or release resources only needed during active</a>
-<a name="453"><span class="lineNum">     453 </span>                :            :  * use. Usually this means disabling or enabling any plugin actions and sending</a>
-<a name="454"><span class="lineNum">     454 </span>                :            :  * or requesting data from the device.</a>
-<a name="455"><span class="lineNum">     455 </span>                :            :  *</a>
-<a name="456"><span class="lineNum">     456 </span>                :            :  * It is guaranteed that this function will only be called after</a>
-<a name="457"><span class="lineNum">     457 </span>                :            :  * valent_device_plugin_enable() and never after valent_device_plugin_disable().</a>
-<a name="458"><span class="lineNum">     458 </span>                :            :  *</a>
-<a name="459"><span class="lineNum">     459 </span>                :            :  * This is an optional for #ValentDevicePlugin implementations as plugins aren't</a>
-<a name="460"><span class="lineNum">     460 </span>                :            :  * required to be packet handlers.</a>
-<a name="461"><span class="lineNum">     461 </span>                :            :  */</a>
-<a name="462"><span class="lineNum">     462 </span>                :            : void</a>
-<a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">       1800 : valent_device_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
-<a name="464"><span class="lineNum">     464 </span>                :            : {</a>
-<a name="465"><span class="lineNum">     465 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1800 times"> + </span>]:<span class="lineCov">       1800 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
-<a name="466"><span class="lineNum">     466 </span>                :            : </a>
-<a name="467"><span class="lineNum">     467 </span>                :<span class="lineCov">       1800 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;update_state (plugin);</span></a>
-<a name="468"><span class="lineNum">     468 </span>                :            : }</a>
-<a name="469"><span class="lineNum">     469 </span>                :            : </a>
+<a name="422"><span class="lineNum">     422 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :       if (g_variant_equal (value, ivar))</span></a>
+<a name="423"><span class="lineNum">     423 </span>                :<span class="lineNoCov">          0 :         return i;</span></a>
+<a name="424"><span class="lineNum">     424 </span>                :            :     }</a>
+<a name="425"><span class="lineNum">     425 </span>                :            : </a>
+<a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">          5 :   return -1;</span></a>
+<a name="427"><span class="lineNum">     427 </span>                :            : }</a>
+<a name="428"><span class="lineNum">     428 </span>                :            : </a>
+<a name="429"><span class="lineNum">     429 </span>                :            : /**</a>
+<a name="430"><span class="lineNum">     430 </span>                :            :  * valent_device_plugin_remove_menu_item:</a>
+<a name="431"><span class="lineNum">     431 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
+<a name="432"><span class="lineNum">     432 </span>                :            :  * @attribute: an attribute name to match</a>
+<a name="433"><span class="lineNum">     433 </span>                :            :  * @value: an attribute value to match</a>
+<a name="434"><span class="lineNum">     434 </span>                :            :  *</a>
+<a name="435"><span class="lineNum">     435 </span>                :            :  * Removes an item in @menu with a the specified attribute and value. If @menu</a>
+<a name="436"><span class="lineNum">     436 </span>                :            :  * contains a top-level item with @attribute holding @value it is removed.</a>
+<a name="437"><span class="lineNum">     437 </span>                :            :  *</a>
+<a name="438"><span class="lineNum">     438 </span>                :            :  * Returns: the index of the removed item or -1 if not found.</a>
+<a name="439"><span class="lineNum">     439 </span>                :            :  */</a>
+<a name="440"><span class="lineNum">     440 </span>                :            : int</a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">          5 : valent_device_plugin_remove_menu_item (ValentDevicePlugin *plugin,</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :            :                                        const char         *attribute,</a>
+<a name="443"><span class="lineNum">     443 </span>                :            :                                        const GVariant     *value)</a>
+<a name="444"><span class="lineNum">     444 </span>                :            : {</a>
+<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">          5 :   g_autoptr (ValentDevice) device = NULL;</span></a>
+<a name="446"><span class="lineNum">     446 </span>                :            :   GMenu *menu;</a>
+<a name="447"><span class="lineNum">     447 </span>                :            :   int position;</a>
+<a name="448"><span class="lineNum">     448 </span>                :            : </a>
+<a name="449"><span class="lineNum">     449 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin), -1);</span></a>
+<a name="450"><span class="lineNum">     450 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (attribute != NULL, -1);</span></a>
+<a name="451"><span class="lineNum">     451 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (value != NULL, -1);</span></a>
+<a name="452"><span class="lineNum">     452 </span>                :            : </a>
+<a name="453"><span class="lineNum">     453 </span>                :<span class="lineCov">          5 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
+<a name="454"><span class="lineNum">     454 </span>                :<span class="lineCov">          5 :   menu = G_MENU (valent_device_get_menu (device));</span></a>
+<a name="455"><span class="lineNum">     455 </span>                :<span class="lineCov">          5 :   position = valent_device_plugin_find_menu_item (plugin, attribute, value);</span></a>
+<a name="456"><span class="lineNum">     456 </span>                :            : </a>
+<a name="457"><span class="lineNum">     457 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (position &gt; -1)</span></a>
+<a name="458"><span class="lineNum">     458 </span>                :<span class="lineNoCov">          0 :     g_menu_remove (menu, position);</span></a>
+<a name="459"><span class="lineNum">     459 </span>                :            : </a>
+<a name="460"><span class="lineNum">     460 </span>                :<span class="lineCov">          5 :   return position;</span></a>
+<a name="461"><span class="lineNum">     461 </span>                :            : }</a>
+<a name="462"><span class="lineNum">     462 </span>                :            : </a>
+<a name="463"><span class="lineNum">     463 </span>                :            : /**</a>
+<a name="464"><span class="lineNum">     464 </span>                :            :  * valent_device_plugin_replace_menu_item:</a>
+<a name="465"><span class="lineNum">     465 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
+<a name="466"><span class="lineNum">     466 </span>                :            :  * @item: a #GMenuItem</a>
+<a name="467"><span class="lineNum">     467 </span>                :            :  * @attribute: an attribute name to match</a>
+<a name="468"><span class="lineNum">     468 </span>                :            :  *</a>
+<a name="469"><span class="lineNum">     469 </span>                :            :  * Replaces an item in @menu with @item.</a>
+<a name="470"><span class="lineNum">     470 </span>                :            :  *</a>
+<a name="471"><span class="lineNum">     471 </span>                :            :  * If @menu contains a top-level item with the same action name as @item, it is</a>
+<a name="472"><span class="lineNum">     472 </span>                :            :  * removed and @item is inserted at the same position. Otherwise @item is</a>
+<a name="473"><span class="lineNum">     473 </span>                :            :  * appended to @menu.</a>
+<a name="474"><span class="lineNum">     474 </span>                :            :  */</a>
+<a name="475"><span class="lineNum">     475 </span>                :            : void</a>
+<a name="476"><span class="lineNum">     476 </span>                :<span class="lineCov">          5 : valent_device_plugin_replace_menu_item (ValentDevicePlugin *plugin,</span></a>
+<a name="477"><span class="lineNum">     477 </span>                :            :                                         GMenuItem          *item,</a>
+<a name="478"><span class="lineNum">     478 </span>                :            :                                         const char         *attribute)</a>
+<a name="479"><span class="lineNum">     479 </span>                :            : {</a>
+<a name="480"><span class="lineNum">     480 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   g_autoptr (ValentDevice) device = NULL;</span></a>
+<a name="481"><span class="lineNum">     481 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   g_autoptr (GVariant) value = NULL;</span></a>
+<a name="482"><span class="lineNum">     482 </span>                :            :   GMenu *menu;</a>
+<a name="483"><span class="lineNum">     483 </span>                :<span class="lineCov">          5 :   int position = -1;</span></a>
+<a name="484"><span class="lineNum">     484 </span>                :            : </a>
+<a name="485"><span class="lineNum">     485 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="486"><span class="lineNum">     486 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   g_return_if_fail (G_IS_MENU_ITEM (item));</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>]
+<a name="487"><span class="lineNum">     487 </span>                :            : </a>
+<a name="488"><span class="lineNum">     488 </span>                :<span class="lineCov">          5 :   g_object_get (plugin, &quot;device&quot;, &amp;device, NULL);</span></a>
+<a name="489"><span class="lineNum">     489 </span>                :<span class="lineCov">          5 :   menu = G_MENU (valent_device_get_menu (device));</span></a>
+<a name="490"><span class="lineNum">     490 </span>                :<span class="lineCov">          5 :   value = g_menu_item_get_attribute_value (item, attribute, NULL);</span></a>
+<a name="491"><span class="lineNum">     491 </span>                :            : </a>
+<a name="492"><span class="lineNum">     492 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (value != NULL)</span></a>
+<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">          5 :     position = valent_device_plugin_remove_menu_item (plugin, attribute, value);</span></a>
+<a name="494"><span class="lineNum">     494 </span>                :            : </a>
+<a name="495"><span class="lineNum">     495 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (position &gt; -1)</span></a>
+<a name="496"><span class="lineNum">     496 </span>                :<span class="lineNoCov">          0 :     g_menu_insert_item (menu, position, item);</span></a>
+<a name="497"><span class="lineNum">     497 </span>                :            :   else</a>
+<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">          5 :     g_menu_append_item (menu, item);</span></a>
+<a name="499"><span class="lineNum">     499 </span>                :            : }</a>
+<a name="500"><span class="lineNum">     500 </span>                :            : </a>
+<a name="501"><span class="lineNum">     501 </span>                :            : /**</a>
+<a name="502"><span class="lineNum">     502 </span>                :            :  * valent_device_plugin_enable: (virtual enable)</a>
+<a name="503"><span class="lineNum">     503 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
+<a name="504"><span class="lineNum">     504 </span>                :            :  *</a>
+<a name="505"><span class="lineNum">     505 </span>                :            :  * Enables the plugin. This will register the plugin as the handler for any</a>
+<a name="506"><span class="lineNum">     506 </span>                :            :  * packets the it claims to support then call the plugin's implementation.</a>
+<a name="507"><span class="lineNum">     507 </span>                :            :  *</a>
+<a name="508"><span class="lineNum">     508 </span>                :            :  * This function is called after the extension is loaded and should prepare</a>
+<a name="509"><span class="lineNum">     509 </span>                :            :  * anything the plugin needs to handle and provide packets once the device is</a>
+<a name="510"><span class="lineNum">     510 </span>                :            :  * connected.</a>
+<a name="511"><span class="lineNum">     511 </span>                :            :  */</a>
+<a name="512"><span class="lineNum">     512 </span>                :            : void</a>
+<a name="513"><span class="lineNum">     513 </span>                :<span class="lineCov">        715 : valent_device_plugin_enable (ValentDevicePlugin *plugin)</span></a>
+<a name="514"><span class="lineNum">     514 </span>                :            : {</a>
+<a name="515"><span class="lineNum">     515 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 715 times"> + </span>]:<span class="lineCov">        715 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="516"><span class="lineNum">     516 </span>                :            : </a>
+<a name="517"><span class="lineNum">     517 </span>                :<span class="lineCov">        715 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;enable (plugin);</span></a>
+<a name="518"><span class="lineNum">     518 </span>                :            : }</a>
+<a name="519"><span class="lineNum">     519 </span>                :            : </a>
+<a name="520"><span class="lineNum">     520 </span>                :            : /**</a>
+<a name="521"><span class="lineNum">     521 </span>                :            :  * valent_device_plugin_disable: (virtual disable)</a>
+<a name="522"><span class="lineNum">     522 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
+<a name="523"><span class="lineNum">     523 </span>                :            :  *</a>
+<a name="524"><span class="lineNum">     524 </span>                :            :  * This function is called before the extension is unloaded and should clean up</a>
+<a name="525"><span class="lineNum">     525 </span>                :            :  * any resources that were allocated in valent_device_plugin_enable() or</a>
+<a name="526"><span class="lineNum">     526 </span>                :            :  * valent_device_plugin_update_state().</a>
+<a name="527"><span class="lineNum">     527 </span>                :            :  *</a>
+<a name="528"><span class="lineNum">     528 </span>                :            :  * It is guaranteed that this function will be called if</a>
+<a name="529"><span class="lineNum">     529 </span>                :            :  * valent_device_plugin_enable() has been called.</a>
+<a name="530"><span class="lineNum">     530 </span>                :            :  */</a>
+<a name="531"><span class="lineNum">     531 </span>                :            : void</a>
+<a name="532"><span class="lineNum">     532 </span>                :<span class="lineCov">        633 : valent_device_plugin_disable (ValentDevicePlugin *plugin)</span></a>
+<a name="533"><span class="lineNum">     533 </span>                :            : {</a>
+<a name="534"><span class="lineNum">     534 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 633 times"> + </span>]:<span class="lineCov">        633 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="535"><span class="lineNum">     535 </span>                :            : </a>
+<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">        633 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;disable (plugin);</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :            : }</a>
+<a name="538"><span class="lineNum">     538 </span>                :            : </a>
+<a name="539"><span class="lineNum">     539 </span>                :            : /**</a>
+<a name="540"><span class="lineNum">     540 </span>                :            :  * valent_device_plugin_handle_packet: (virtual handle_packet)</a>
+<a name="541"><span class="lineNum">     541 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
+<a name="542"><span class="lineNum">     542 </span>                :            :  * @type: the packet type</a>
+<a name="543"><span class="lineNum">     543 </span>                :            :  * @packet: a #JsonNode</a>
+<a name="544"><span class="lineNum">     544 </span>                :            :  *</a>
+<a name="545"><span class="lineNum">     545 </span>                :            :  * This is called when the device receives a packet type included in the</a>
+<a name="546"><span class="lineNum">     546 </span>                :            :  * `X-IncomingCapabilities` field of the `.plugin` file for @plugin.</a>
+<a name="547"><span class="lineNum">     547 </span>                :            :  *</a>
+<a name="548"><span class="lineNum">     548 </span>                :            :  * This is optional for #ValentDevicePlugin implementations which do not</a>
+<a name="549"><span class="lineNum">     549 </span>                :            :  * register any incoming capabilities, such as plugins that do not provide</a>
+<a name="550"><span class="lineNum">     550 </span>                :            :  * packet-based functionality.</a>
+<a name="551"><span class="lineNum">     551 </span>                :            :  */</a>
+<a name="552"><span class="lineNum">     552 </span>                :            : void</a>
+<a name="553"><span class="lineNum">     553 </span>                :<span class="lineCov">       9900 : valent_device_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
+<a name="554"><span class="lineNum">     554 </span>                :            :                                     const char         *type,</a>
+<a name="555"><span class="lineNum">     555 </span>                :            :                                     JsonNode           *packet)</a>
+<a name="556"><span class="lineNum">     556 </span>                :            : {</a>
+<a name="557"><span class="lineNum">     557 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 9900 times"> + </span>]:<span class="lineCov">       9900 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="558"><span class="lineNum">     558 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 9900 times"> + </span>]:<span class="lineCov">       9900 :   g_return_if_fail (type != NULL);</span></a>
+<a name="559"><span class="lineNum">     559 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 9900 times"> + </span>]:<span class="lineCov">       9900 :   g_return_if_fail (VALENT_IS_PACKET (packet));</span></a>
+<a name="560"><span class="lineNum">     560 </span>                :            : </a>
+<a name="561"><span class="lineNum">     561 </span>                :<span class="lineCov">       9900 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;handle_packet (plugin, type, packet);</span></a>
+<a name="562"><span class="lineNum">     562 </span>                :            : }</a>
+<a name="563"><span class="lineNum">     563 </span>                :            : </a>
+<a name="564"><span class="lineNum">     564 </span>                :            : /**</a>
+<a name="565"><span class="lineNum">     565 </span>                :            :  * valent_device_plugin_update_state: (virtual update_state)</a>
+<a name="566"><span class="lineNum">     566 </span>                :            :  * @plugin: a #ValentDevicePlugin</a>
+<a name="567"><span class="lineNum">     567 </span>                :            :  *</a>
+<a name="568"><span class="lineNum">     568 </span>                :            :  * This function is called when the device's connected or paired state changes.</a>
+<a name="569"><span class="lineNum">     569 </span>                :            :  * It should be used to prepare or release resources only needed during active</a>
+<a name="570"><span class="lineNum">     570 </span>                :            :  * use. Usually this means disabling or enabling any plugin actions and sending</a>
+<a name="571"><span class="lineNum">     571 </span>                :            :  * or requesting data from the device.</a>
+<a name="572"><span class="lineNum">     572 </span>                :            :  *</a>
+<a name="573"><span class="lineNum">     573 </span>                :            :  * It is guaranteed that this function will only be called after</a>
+<a name="574"><span class="lineNum">     574 </span>                :            :  * valent_device_plugin_enable() and never after valent_device_plugin_disable().</a>
+<a name="575"><span class="lineNum">     575 </span>                :            :  *</a>
+<a name="576"><span class="lineNum">     576 </span>                :            :  * This is an optional for #ValentDevicePlugin implementations as plugins aren't</a>
+<a name="577"><span class="lineNum">     577 </span>                :            :  * required to be packet handlers.</a>
+<a name="578"><span class="lineNum">     578 </span>                :            :  */</a>
+<a name="579"><span class="lineNum">     579 </span>                :            : void</a>
+<a name="580"><span class="lineNum">     580 </span>                :<span class="lineCov">       1820 : valent_device_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
+<a name="581"><span class="lineNum">     581 </span>                :            : {</a>
+<a name="582"><span class="lineNum">     582 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1820 times"> + </span>]:<span class="lineCov">       1820 :   g_return_if_fail (VALENT_IS_DEVICE_PLUGIN (plugin));</span></a>
+<a name="583"><span class="lineNum">     583 </span>                :            : </a>
+<a name="584"><span class="lineNum">     584 </span>                :<span class="lineCov">       1820 :   VALENT_DEVICE_PLUGIN_GET_IFACE (plugin)-&gt;update_state (plugin);</span></a>
+<a name="585"><span class="lineNum">     585 </span>                :            : }</a>
+<a name="586"><span class="lineNum">     586 </span>                :            : </a>
 </pre>
       </td>
     </tr>

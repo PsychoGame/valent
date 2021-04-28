@@ -31,18 +31,18 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">87</td>
-            <td class="headerCovTableEntry">109</td>
-            <td class="headerCovTableEntryMed">79.8 %</td>
+            <td class="headerCovTableEntry">58</td>
+            <td class="headerCovTableEntry">76</td>
+            <td class="headerCovTableEntryMed">76.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-28 00:48:40</td>
+            <td class="headerValue">2021-04-28 07:23:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">11</td>
-            <td class="headerCovTableEntry">13</td>
-            <td class="headerCovTableEntryMed">84.6 %</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryMed">80.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">63</td>
-            <td class="headerCovTableEntry">119</td>
-            <td class="headerCovTableEntryLo">52.9 %</td>
+            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntry">62</td>
+            <td class="headerCovTableEntryLo">54.8 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -135,9 +135,9 @@
 <a name="57"><span class="lineNum">      57 </span>                :            :  * Returns: (transfer none): a #GThread</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :  */</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : GThread *</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1965 : valent_get_main_thread (void)</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1994 : valent_get_main_thread (void)</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : {</a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1965 :   return main_thread;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1994 :   return main_thread;</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : }</a>
 <a name="64"><span class="lineNum">      64 </span>                :            : </a>
 <a name="65"><span class="lineNum">      65 </span>                :            : /**</a>
@@ -287,199 +287,92 @@
 <a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        835 :   return peas_engine_get_default ();</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            : }</a>
 <a name="211"><span class="lineNum">     211 </span>                :            : </a>
-<a name="212"><span class="lineNum">     212 </span>                :            : /**</a>
-<a name="213"><span class="lineNum">     213 </span>                :            :  * valent_menu_find_item:</a>
-<a name="214"><span class="lineNum">     214 </span>                :            :  * @menu: a #GMenu</a>
-<a name="215"><span class="lineNum">     215 </span>                :            :  * @attribute: an attribute name to match</a>
-<a name="216"><span class="lineNum">     216 </span>                :            :  * @value: an attribute value to match</a>
-<a name="217"><span class="lineNum">     217 </span>                :            :  *</a>
-<a name="218"><span class="lineNum">     218 </span>                :            :  * Search the top-level of a #GMenuModel for the index of an item with the</a>
-<a name="219"><span class="lineNum">     219 </span>                :            :  * attribute @name holding @value.</a>
+<a name="212"><span class="lineNum">     212 </span>                :            : // TODO move to libvalent-notification</a>
+<a name="213"><span class="lineNum">     213 </span>                :            : </a>
+<a name="214"><span class="lineNum">     214 </span>                :            : /**</a>
+<a name="215"><span class="lineNum">     215 </span>                :            :  * valent_notification_set_device_action:</a>
+<a name="216"><span class="lineNum">     216 </span>                :            :  * @notification: a #GNotification</a>
+<a name="217"><span class="lineNum">     217 </span>                :            :  * @device: a #ValentDevice</a>
+<a name="218"><span class="lineNum">     218 </span>                :            :  * @action: the device action name</a>
+<a name="219"><span class="lineNum">     219 </span>                :            :  * @target: (nullable): the action target</a>
 <a name="220"><span class="lineNum">     220 </span>                :            :  *</a>
-<a name="221"><span class="lineNum">     221 </span>                :            :  * Returns: position of the item or -1 if not found</a>
-<a name="222"><span class="lineNum">     222 </span>                :            :  */</a>
-<a name="223"><span class="lineNum">     223 </span>                :            : gint</a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">          5 : valent_menu_find_item (GMenu          *menu,</span></a>
-<a name="225"><span class="lineNum">     225 </span>                :            :                        const char     *attribute,</a>
-<a name="226"><span class="lineNum">     226 </span>                :            :                        const GVariant *value)</a>
-<a name="227"><span class="lineNum">     227 </span>                :            : {</a>
-<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">          5 :   GMenuModel *model = G_MENU_MODEL (menu);</span></a>
-<a name="229"><span class="lineNum">     229 </span>                :            :   gint i, n_items;</a>
-<a name="230"><span class="lineNum">     230 </span>                :            : </a>
-<a name="231"><span class="lineNum">     231 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   g_assert (G_IS_MENU (menu));</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :            :  * Set the default action for @notification. @action is wrapped in the special</a>
+<a name="222"><span class="lineNum">     222 </span>                :            :  * `device` action for @device, which allows it to be activated from the `app`</a>
+<a name="223"><span class="lineNum">     223 </span>                :            :  * action scope.</a>
+<a name="224"><span class="lineNum">     224 </span>                :            :  */</a>
+<a name="225"><span class="lineNum">     225 </span>                :            : void</a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">          5 : valent_notification_set_device_action (GNotification *notification,</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :            :                                        ValentDevice  *device,</a>
+<a name="228"><span class="lineNum">     228 </span>                :            :                                        const char    *action,</a>
+<a name="229"><span class="lineNum">     229 </span>                :            :                                        GVariant      *target)</a>
+<a name="230"><span class="lineNum">     230 </span>                :            : {</a>
+<a name="231"><span class="lineNum">     231 </span>                :            :   const char *device_id;</a>
+<a name="232"><span class="lineNum">     232 </span>                :            :   gboolean has_target;</a>
+<a name="233"><span class="lineNum">     233 </span>                :            : </a>
+<a name="234"><span class="lineNum">     234 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   g_return_if_fail (G_IS_NOTIFICATION (notification));</span></a>
 <span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>]
-<a name="232"><span class="lineNum">     232 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_assert (attribute != NULL);</span></a>
-<a name="233"><span class="lineNum">     233 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_assert (value != NULL);</span></a>
-<a name="234"><span class="lineNum">     234 </span>                :            : </a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">          5 :   n_items = g_menu_model_get_n_items (model);</span></a>
-<a name="236"><span class="lineNum">     236 </span>                :            : </a>
-<a name="237"><span class="lineNum">     237 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :   for (i = 0; i &lt; n_items; i++)</span></a>
-<a name="238"><span class="lineNum">     238 </span>                :            :     {</a>
-<a name="239"><span class="lineNum">     239 </span>     [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">          5 :       g_autoptr (GVariant) ivar = NULL;</span></a>
+<a name="235"><span class="lineNum">     235 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_if_fail (action != NULL);</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :            : </a>
+<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">          5 :   device_id = valent_device_get_id (device);</span></a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">          5 :   has_target = (target != NULL);</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">          5 :       ivar = g_menu_model_get_item_attribute_value (model, i, attribute, NULL);</span></a>
-<a name="242"><span class="lineNum">     242 </span>                :            : </a>
-<a name="243"><span class="lineNum">     243 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :       if (ivar == NULL)</span></a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineNoCov">          0 :         continue;</span></a>
-<a name="245"><span class="lineNum">     245 </span>                :            : </a>
-<a name="246"><span class="lineNum">     246 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :       if (g_variant_equal (value, ivar))</span></a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineNoCov">          0 :         return i;</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :            :     }</a>
-<a name="249"><span class="lineNum">     249 </span>                :            : </a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">          5 :   return -1;</span></a>
+<a name="241"><span class="lineNum">     241 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (!has_target)</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineNoCov">          0 :     target = g_variant_new_string (&quot;&quot;);</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :            : </a>
+<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">          5 :   g_notification_set_default_action_and_target (notification,</span></a>
+<a name="245"><span class="lineNum">     245 </span>                :            :                                                 &quot;app.device&quot;,</a>
+<a name="246"><span class="lineNum">     246 </span>                :            :                                                 &quot;(ssbv)&quot;,</a>
+<a name="247"><span class="lineNum">     247 </span>                :            :                                                 device_id,</a>
+<a name="248"><span class="lineNum">     248 </span>                :            :                                                 action,</a>
+<a name="249"><span class="lineNum">     249 </span>                :            :                                                 has_target,</a>
+<a name="250"><span class="lineNum">     250 </span>                :            :                                                 target);</a>
 <a name="251"><span class="lineNum">     251 </span>                :            : }</a>
 <a name="252"><span class="lineNum">     252 </span>                :            : </a>
 <a name="253"><span class="lineNum">     253 </span>                :            : /**</a>
-<a name="254"><span class="lineNum">     254 </span>                :            :  * valent_menu_remove_item:</a>
-<a name="255"><span class="lineNum">     255 </span>                :            :  * @menu: a #GMenu</a>
-<a name="256"><span class="lineNum">     256 </span>                :            :  * @attribute: an attribute name to match</a>
-<a name="257"><span class="lineNum">     257 </span>                :            :  * @value: an attribute value to match</a>
-<a name="258"><span class="lineNum">     258 </span>                :            :  *</a>
-<a name="259"><span class="lineNum">     259 </span>                :            :  * Removes an item in @menu with a the specified attribute and value. If @menu</a>
-<a name="260"><span class="lineNum">     260 </span>                :            :  * contains a top-level item with @attribute holding @value it is removed.</a>
-<a name="261"><span class="lineNum">     261 </span>                :            :  *</a>
-<a name="262"><span class="lineNum">     262 </span>                :            :  * Returns: the index of the removed item or -1 if not found.</a>
-<a name="263"><span class="lineNum">     263 </span>                :            :  */</a>
-<a name="264"><span class="lineNum">     264 </span>                :            : gint</a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">          5 : valent_menu_remove_item (GMenu          *menu,</span></a>
-<a name="266"><span class="lineNum">     266 </span>                :            :                          const char     *attribute,</a>
-<a name="267"><span class="lineNum">     267 </span>                :            :                          const GVariant *value)</a>
-<a name="268"><span class="lineNum">     268 </span>                :            : {</a>
-<a name="269"><span class="lineNum">     269 </span>                :            :   gint position;</a>
-<a name="270"><span class="lineNum">     270 </span>                :            : </a>
-<a name="271"><span class="lineNum">     271 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   g_return_val_if_fail (G_IS_MENU (menu), -1);</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>]
-<a name="272"><span class="lineNum">     272 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (attribute != NULL, -1);</span></a>
-<a name="273"><span class="lineNum">     273 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_val_if_fail (value != NULL, -1);</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :            :  * valent_notification_add_device_button:</a>
+<a name="255"><span class="lineNum">     255 </span>                :            :  * @notification: a #GNotification</a>
+<a name="256"><span class="lineNum">     256 </span>                :            :  * @device: a #ValentDevice</a>
+<a name="257"><span class="lineNum">     257 </span>                :            :  * @label: the button label</a>
+<a name="258"><span class="lineNum">     258 </span>                :            :  * @action: the device action name</a>
+<a name="259"><span class="lineNum">     259 </span>                :            :  * @target: (nullable): the action target</a>
+<a name="260"><span class="lineNum">     260 </span>                :            :  *</a>
+<a name="261"><span class="lineNum">     261 </span>                :            :  * Add an action button to @notification. @action is wrapped in the special</a>
+<a name="262"><span class="lineNum">     262 </span>                :            :  * `device` action for @device, which allows it to be activated from the `app`</a>
+<a name="263"><span class="lineNum">     263 </span>                :            :  * action scope.</a>
+<a name="264"><span class="lineNum">     264 </span>                :            :  */</a>
+<a name="265"><span class="lineNum">     265 </span>                :            : void</a>
+<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">         50 : valent_notification_add_device_button (GNotification *notification,</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :            :                                        ValentDevice  *device,</a>
+<a name="268"><span class="lineNum">     268 </span>                :            :                                        const char    *label,</a>
+<a name="269"><span class="lineNum">     269 </span>                :            :                                        const char    *action,</a>
+<a name="270"><span class="lineNum">     270 </span>                :            :                                        GVariant      *target)</a>
+<a name="271"><span class="lineNum">     271 </span>                :            : {</a>
+<a name="272"><span class="lineNum">     272 </span>                :            :   const char *device_id;</a>
+<a name="273"><span class="lineNum">     273 </span>                :            :   gboolean has_target;</a>
 <a name="274"><span class="lineNum">     274 </span>                :            : </a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">          5 :   position = valent_menu_find_item (menu, attribute, value);</span></a>
-<a name="276"><span class="lineNum">     276 </span>                :            : </a>
-<a name="277"><span class="lineNum">     277 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (position &gt; -1)</span></a>
-<a name="278"><span class="lineNum">     278 </span>                :<span class="lineNoCov">          0 :     g_menu_remove (menu, position);</span></a>
-<a name="279"><span class="lineNum">     279 </span>                :            : </a>
-<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">          5 :   return position;</span></a>
-<a name="281"><span class="lineNum">     281 </span>                :            : }</a>
-<a name="282"><span class="lineNum">     282 </span>                :            : </a>
-<a name="283"><span class="lineNum">     283 </span>                :            : /**</a>
-<a name="284"><span class="lineNum">     284 </span>                :            :  * valent_menu_replace_item:</a>
-<a name="285"><span class="lineNum">     285 </span>                :            :  * @menu: a #GMenu</a>
-<a name="286"><span class="lineNum">     286 </span>                :            :  * @item: a #GMenuItem</a>
-<a name="287"><span class="lineNum">     287 </span>                :            :  * @attribute: an attribute name to match</a>
-<a name="288"><span class="lineNum">     288 </span>                :            :  *</a>
-<a name="289"><span class="lineNum">     289 </span>                :            :  * Replaces an item in @menu with @item. If @menu contains a top-level item with</a>
-<a name="290"><span class="lineNum">     290 </span>                :            :  * the same action name as @item, it is removed and @item is inserted at the</a>
-<a name="291"><span class="lineNum">     291 </span>                :            :  * same position. Otherwise @item is appended to @menu.</a>
-<a name="292"><span class="lineNum">     292 </span>                :            :  */</a>
-<a name="293"><span class="lineNum">     293 </span>                :            : void</a>
-<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">          5 : valent_menu_replace_item (GMenu      *menu,</span></a>
-<a name="295"><span class="lineNum">     295 </span>                :            :                           GMenuItem  *item,</a>
-<a name="296"><span class="lineNum">     296 </span>                :            :                           const char *attribute)</a>
-<a name="297"><span class="lineNum">     297 </span>                :            : {</a>
-<a name="298"><span class="lineNum">     298 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   g_autoptr (GVariant) value = NULL;</span></a>
-<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">          5 :   gint position = -1;</span></a>
-<a name="300"><span class="lineNum">     300 </span>                :            : </a>
-<a name="301"><span class="lineNum">     301 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   g_return_if_fail (G_IS_MENU (menu));</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>]
-<a name="302"><span class="lineNum">     302 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   g_return_if_fail (G_IS_MENU_ITEM (item));</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>]
-<a name="303"><span class="lineNum">     303 </span>                :            : </a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">          5 :   value = g_menu_item_get_attribute_value (item, attribute, NULL);</span></a>
-<a name="305"><span class="lineNum">     305 </span>                :            : </a>
-<a name="306"><span class="lineNum">     306 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (value != NULL)</span></a>
-<a name="307"><span class="lineNum">     307 </span>                :<span class="lineCov">          5 :     position = valent_menu_remove_item (menu, attribute, value);</span></a>
-<a name="308"><span class="lineNum">     308 </span>                :            : </a>
-<a name="309"><span class="lineNum">     309 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (position &gt; -1)</span></a>
-<a name="310"><span class="lineNum">     310 </span>                :<span class="lineNoCov">          0 :     g_menu_insert_item (menu, position, item);</span></a>
-<a name="311"><span class="lineNum">     311 </span>                :            :   else</a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">          5 :     g_menu_append_item (menu, item);</span></a>
-<a name="313"><span class="lineNum">     313 </span>                :            : }</a>
-<a name="314"><span class="lineNum">     314 </span>                :            : </a>
-<a name="315"><span class="lineNum">     315 </span>                :            : // TODO move to libvalent-notification</a>
-<a name="316"><span class="lineNum">     316 </span>                :            : </a>
-<a name="317"><span class="lineNum">     317 </span>                :            : /**</a>
-<a name="318"><span class="lineNum">     318 </span>                :            :  * valent_notification_set_device_action:</a>
-<a name="319"><span class="lineNum">     319 </span>                :            :  * @notification: a #GNotification</a>
-<a name="320"><span class="lineNum">     320 </span>                :            :  * @device: a #ValentDevice</a>
-<a name="321"><span class="lineNum">     321 </span>                :            :  * @action: the device action name</a>
-<a name="322"><span class="lineNum">     322 </span>                :            :  * @target: (nullable): the action target</a>
-<a name="323"><span class="lineNum">     323 </span>                :            :  *</a>
-<a name="324"><span class="lineNum">     324 </span>                :            :  * Set the default action for @notification. @action is wrapped in the special</a>
-<a name="325"><span class="lineNum">     325 </span>                :            :  * `device` action for @device, which allows it to be activated from the `app`</a>
-<a name="326"><span class="lineNum">     326 </span>                :            :  * action scope.</a>
-<a name="327"><span class="lineNum">     327 </span>                :            :  */</a>
-<a name="328"><span class="lineNum">     328 </span>                :            : void</a>
-<a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">          5 : valent_notification_set_device_action (GNotification *notification,</span></a>
-<a name="330"><span class="lineNum">     330 </span>                :            :                                        ValentDevice  *device,</a>
-<a name="331"><span class="lineNum">     331 </span>                :            :                                        const char    *action,</a>
-<a name="332"><span class="lineNum">     332 </span>                :            :                                        GVariant      *target)</a>
-<a name="333"><span class="lineNum">     333 </span>                :            : {</a>
-<a name="334"><span class="lineNum">     334 </span>                :            :   const char *device_id;</a>
-<a name="335"><span class="lineNum">     335 </span>                :            :   gboolean has_target;</a>
-<a name="336"><span class="lineNum">     336 </span>                :            : </a>
-<a name="337"><span class="lineNum">     337 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   g_return_if_fail (G_IS_NOTIFICATION (notification));</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span>]
-<a name="338"><span class="lineNum">     338 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
-<a name="339"><span class="lineNum">     339 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   g_return_if_fail (action != NULL);</span></a>
-<a name="340"><span class="lineNum">     340 </span>                :            : </a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">          5 :   device_id = valent_device_get_id (device);</span></a>
-<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">          5 :   has_target = (target != NULL);</span></a>
-<a name="343"><span class="lineNum">     343 </span>                :            : </a>
-<a name="344"><span class="lineNum">     344 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (!has_target)</span></a>
-<a name="345"><span class="lineNum">     345 </span>                :<span class="lineNoCov">          0 :     target = g_variant_new_string (&quot;&quot;);</span></a>
-<a name="346"><span class="lineNum">     346 </span>                :            : </a>
-<a name="347"><span class="lineNum">     347 </span>                :<span class="lineCov">          5 :   g_notification_set_default_action_and_target (notification,</span></a>
-<a name="348"><span class="lineNum">     348 </span>                :            :                                                 &quot;app.device&quot;,</a>
-<a name="349"><span class="lineNum">     349 </span>                :            :                                                 &quot;(ssbv)&quot;,</a>
-<a name="350"><span class="lineNum">     350 </span>                :            :                                                 device_id,</a>
-<a name="351"><span class="lineNum">     351 </span>                :            :                                                 action,</a>
-<a name="352"><span class="lineNum">     352 </span>                :            :                                                 has_target,</a>
-<a name="353"><span class="lineNum">     353 </span>                :            :                                                 target);</a>
-<a name="354"><span class="lineNum">     354 </span>                :            : }</a>
-<a name="355"><span class="lineNum">     355 </span>                :            : </a>
-<a name="356"><span class="lineNum">     356 </span>                :            : /**</a>
-<a name="357"><span class="lineNum">     357 </span>                :            :  * valent_notification_add_device_button:</a>
-<a name="358"><span class="lineNum">     358 </span>                :            :  * @notification: a #GNotification</a>
-<a name="359"><span class="lineNum">     359 </span>                :            :  * @device: a #ValentDevice</a>
-<a name="360"><span class="lineNum">     360 </span>                :            :  * @label: the button label</a>
-<a name="361"><span class="lineNum">     361 </span>                :            :  * @action: the device action name</a>
-<a name="362"><span class="lineNum">     362 </span>                :            :  * @target: (nullable): the action target</a>
-<a name="363"><span class="lineNum">     363 </span>                :            :  *</a>
-<a name="364"><span class="lineNum">     364 </span>                :            :  * Add an action button to @notification. @action is wrapped in the special</a>
-<a name="365"><span class="lineNum">     365 </span>                :            :  * `device` action for @device, which allows it to be activated from the `app`</a>
-<a name="366"><span class="lineNum">     366 </span>                :            :  * action scope.</a>
-<a name="367"><span class="lineNum">     367 </span>                :            :  */</a>
-<a name="368"><span class="lineNum">     368 </span>                :            : void</a>
-<a name="369"><span class="lineNum">     369 </span>                :<span class="lineCov">         50 : valent_notification_add_device_button (GNotification *notification,</span></a>
-<a name="370"><span class="lineNum">     370 </span>                :            :                                        ValentDevice  *device,</a>
-<a name="371"><span class="lineNum">     371 </span>                :            :                                        const char    *label,</a>
-<a name="372"><span class="lineNum">     372 </span>                :            :                                        const char    *action,</a>
-<a name="373"><span class="lineNum">     373 </span>                :            :                                        GVariant      *target)</a>
-<a name="374"><span class="lineNum">     374 </span>                :            : {</a>
-<a name="375"><span class="lineNum">     375 </span>                :            :   const char *device_id;</a>
-<a name="376"><span class="lineNum">     376 </span>                :            :   gboolean has_target;</a>
-<a name="377"><span class="lineNum">     377 </span>                :            : </a>
-<a name="378"><span class="lineNum">     378 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span><span class="branchCov" title="Branch 2 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         50 :   g_return_if_fail (G_IS_NOTIFICATION (notification));</span></a>
+<a name="275"><span class="lineNum">     275 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span><span class="branchCov" title="Branch 2 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         50 :   g_return_if_fail (G_IS_NOTIFICATION (notification));</span></a>
 <span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 50 times"> + </span>]
-<a name="379"><span class="lineNum">     379 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
-<a name="380"><span class="lineNum">     380 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (label != NULL);</span></a>
-<a name="381"><span class="lineNum">     381 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (action != NULL);</span></a>
-<a name="382"><span class="lineNum">     382 </span>                :            : </a>
-<a name="383"><span class="lineNum">     383 </span>                :<span class="lineCov">         50 :   device_id = valent_device_get_id (device);</span></a>
-<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">         50 :   has_target = (target != NULL);</span></a>
-<a name="385"><span class="lineNum">     385 </span>                :            : </a>
-<a name="386"><span class="lineNum">     386 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         50 :   if (!has_target)</span></a>
-<a name="387"><span class="lineNum">     387 </span>                :<span class="lineCov">         15 :     target = g_variant_new_string (&quot;&quot;);</span></a>
-<a name="388"><span class="lineNum">     388 </span>                :            : </a>
-<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">         50 :   g_notification_add_button_with_target (notification,</span></a>
-<a name="390"><span class="lineNum">     390 </span>                :            :                                          label,</a>
-<a name="391"><span class="lineNum">     391 </span>                :            :                                          &quot;app.device&quot;,</a>
-<a name="392"><span class="lineNum">     392 </span>                :            :                                          &quot;(ssbv)&quot;,</a>
-<a name="393"><span class="lineNum">     393 </span>                :            :                                          device_id,</a>
-<a name="394"><span class="lineNum">     394 </span>                :            :                                          action,</a>
-<a name="395"><span class="lineNum">     395 </span>                :            :                                          has_target,</a>
-<a name="396"><span class="lineNum">     396 </span>                :            :                                          target);</a>
-<a name="397"><span class="lineNum">     397 </span>                :            : }</a>
-<a name="398"><span class="lineNum">     398 </span>                :            : </a>
+<a name="276"><span class="lineNum">     276 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
+<a name="277"><span class="lineNum">     277 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (label != NULL);</span></a>
+<a name="278"><span class="lineNum">     278 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (action != NULL);</span></a>
+<a name="279"><span class="lineNum">     279 </span>                :            : </a>
+<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">         50 :   device_id = valent_device_get_id (device);</span></a>
+<a name="281"><span class="lineNum">     281 </span>                :<span class="lineCov">         50 :   has_target = (target != NULL);</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :            : </a>
+<a name="283"><span class="lineNum">     283 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         50 :   if (!has_target)</span></a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">         15 :     target = g_variant_new_string (&quot;&quot;);</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :            : </a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">         50 :   g_notification_add_button_with_target (notification,</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :            :                                          label,</a>
+<a name="288"><span class="lineNum">     288 </span>                :            :                                          &quot;app.device&quot;,</a>
+<a name="289"><span class="lineNum">     289 </span>                :            :                                          &quot;(ssbv)&quot;,</a>
+<a name="290"><span class="lineNum">     290 </span>                :            :                                          device_id,</a>
+<a name="291"><span class="lineNum">     291 </span>                :            :                                          action,</a>
+<a name="292"><span class="lineNum">     292 </span>                :            :                                          has_target,</a>
+<a name="293"><span class="lineNum">     293 </span>                :            :                                          target);</a>
+<a name="294"><span class="lineNum">     294 </span>                :            : }</a>
+<a name="295"><span class="lineNum">     295 </span>                :            : </a>
 </pre>
       </td>
     </tr>
