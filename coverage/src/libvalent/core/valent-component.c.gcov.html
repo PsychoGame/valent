@@ -31,13 +31,13 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">159</td>
-            <td class="headerCovTableEntry">177</td>
-            <td class="headerCovTableEntryMed">89.8 %</td>
+            <td class="headerCovTableEntry">153</td>
+            <td class="headerCovTableEntry">171</td>
+            <td class="headerCovTableEntryMed">89.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-04-28 07:23:40</td>
+            <td class="headerValue">2021-04-29 21:29:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">57</td>
-            <td class="headerCovTableEntry">100</td>
-            <td class="headerCovTableEntryLo">57.0 %</td>
+            <td class="headerCovTableEntry">56</td>
+            <td class="headerCovTableEntry">98</td>
+            <td class="headerCovTableEntryLo">57.1 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -191,7 +191,7 @@
 <a name="112"><span class="lineNum">     112 </span>                :            : </a>
 <a name="113"><span class="lineNum">     113 </span>                :            : static void</a>
 <a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">         70 : valent_component_disable_extension (ValentComponent *component,</span></a>
-<a name="115"><span class="lineNum">     115 </span>                :            :                                    PeasPluginInfo  *info)</a>
+<a name="115"><span class="lineNum">     115 </span>                :            :                                     PeasPluginInfo  *info)</a>
 <a name="116"><span class="lineNum">     116 </span>                :            : {</a>
 <a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">         70 :   ValentComponentPrivate *priv = valent_component_get_instance_private (component);</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   gpointer extension;</a>
@@ -598,26 +598,17 @@
 <a name="516"><span class="lineNum">     516 </span>                :<span class="lineCov">         35 : valent_component_new_settings (const char *context,</span></a>
 <a name="517"><span class="lineNum">     517 </span>                :            :                                const char *module_name)</a>
 <a name="518"><span class="lineNum">     518 </span>                :            : {</a>
-<a name="519"><span class="lineNum">     519 </span>                :            :   GSettingsSchemaSource *source;</a>
-<a name="520"><span class="lineNum">     520 </span>                :<span class="lineCov">         35 :   g_autoptr (GSettingsSchema) schema = NULL;</span></a>
-<a name="521"><span class="lineNum">     521 </span>                :<span class="lineCov">         35 :   g_autofree char *path = NULL;</span></a>
-<a name="522"><span class="lineNum">     522 </span>                :<span class="lineCov">         35 :   g_autofree char *schema_id = NULL;</span></a>
+<a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">         35 :   g_autofree char *path = NULL;</span></a>
+<a name="520"><span class="lineNum">     520 </span>                :            : </a>
+<a name="521"><span class="lineNum">     521 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (context != NULL, NULL);</span></a>
+<a name="522"><span class="lineNum">     522 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (module_name != NULL, NULL);</span></a>
 <a name="523"><span class="lineNum">     523 </span>                :            : </a>
-<a name="524"><span class="lineNum">     524 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (context != NULL, NULL);</span></a>
-<a name="525"><span class="lineNum">     525 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (module_name != NULL, NULL);</span></a>
+<a name="524"><span class="lineNum">     524 </span>                :<span class="lineCov">         35 :   path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
+<a name="525"><span class="lineNum">     525 </span>                :            :                           context, module_name);</a>
 <a name="526"><span class="lineNum">     526 </span>                :            : </a>
-<a name="527"><span class="lineNum">     527 </span>                :<span class="lineCov">         35 :   source = g_settings_schema_source_get_default ();</span></a>
-<a name="528"><span class="lineNum">     528 </span>                :<span class="lineCov">         35 :   schema_id = g_strdup_printf (&quot;ca.andyholmes.Valent.Plugin&quot;);</span></a>
-<a name="529"><span class="lineNum">     529 </span>                :<span class="lineCov">         35 :   schema = g_settings_schema_source_lookup (source, schema_id, TRUE);</span></a>
-<a name="530"><span class="lineNum">     530 </span>                :            : </a>
-<a name="531"><span class="lineNum">     531 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (schema != NULL, NULL);</span></a>
-<a name="532"><span class="lineNum">     532 </span>                :            : </a>
-<a name="533"><span class="lineNum">     533 </span>                :<span class="lineCov">         35 :   path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
-<a name="534"><span class="lineNum">     534 </span>                :            :                           context, module_name);</a>
-<a name="535"><span class="lineNum">     535 </span>                :            : </a>
-<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">         35 :   return g_settings_new_full (schema, NULL, path);</span></a>
-<a name="537"><span class="lineNum">     537 </span>                :            : }</a>
-<a name="538"><span class="lineNum">     538 </span>                :            : </a>
+<a name="527"><span class="lineNum">     527 </span>                :<span class="lineCov">         35 :   return g_settings_new_with_path (&quot;ca.andyholmes.Valent.Plugin&quot;, path);</span></a>
+<a name="528"><span class="lineNum">     528 </span>                :            : }</a>
+<a name="529"><span class="lineNum">     529 </span>                :            : </a>
 </pre>
       </td>
     </tr>
