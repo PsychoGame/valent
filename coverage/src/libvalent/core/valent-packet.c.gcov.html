@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-01 10:05:47</td>
+            <td class="headerValue">2021-05-01 10:48:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">16</td>
@@ -313,25 +313,25 @@
 <a name="229"><span class="lineNum">     229 </span>                :            :  * Returns: (transfer full) (nullable): A #JsonBuilder object</a>
 <a name="230"><span class="lineNum">     230 </span>                :            :  */</a>
 <a name="231"><span class="lineNum">     231 </span>                :            : JsonBuilder *</a>
-<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">       2405 : valent_packet_start (const char *type)</span></a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">       2406 : valent_packet_start (const char *type)</span></a>
 <a name="233"><span class="lineNum">     233 </span>                :            : {</a>
 <a name="234"><span class="lineNum">     234 </span>                :            :   JsonBuilder *builder;</a>
 <a name="235"><span class="lineNum">     235 </span>                :            : </a>
-<a name="236"><span class="lineNum">     236 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2405 times"> + </span>]:<span class="lineCov">       2405 :   g_return_val_if_fail (type != NULL, NULL);</span></a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2406 times"> + </span>]:<span class="lineCov">       2406 :   g_return_val_if_fail (type != NULL, NULL);</span></a>
 <a name="237"><span class="lineNum">     237 </span>                :            : </a>
-<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">       2405 :   builder = json_builder_new ();</span></a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">       2405 :   json_builder_begin_object (builder);</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">       2406 :   builder = json_builder_new ();</span></a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">       2406 :   json_builder_begin_object (builder);</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">       2405 :   json_builder_set_member_name (builder, &quot;id&quot;);</span></a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">       2405 :   json_builder_add_int_value (builder, 0);</span></a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">       2405 :   json_builder_set_member_name (builder, &quot;type&quot;);</span></a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">       2405 :   json_builder_add_string_value (builder, type);</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">       2406 :   json_builder_set_member_name (builder, &quot;id&quot;);</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">       2406 :   json_builder_add_int_value (builder, 0);</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">       2406 :   json_builder_set_member_name (builder, &quot;type&quot;);</span></a>
+<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">       2406 :   json_builder_add_string_value (builder, type);</span></a>
 <a name="245"><span class="lineNum">     245 </span>                :            : </a>
 <a name="246"><span class="lineNum">     246 </span>                :            :   /* body */</a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">       2405 :   json_builder_set_member_name (builder, &quot;body&quot;);</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">       2405 :   json_builder_begin_object (builder);</span></a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">       2406 :   json_builder_set_member_name (builder, &quot;body&quot;);</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">       2406 :   json_builder_begin_object (builder);</span></a>
 <a name="249"><span class="lineNum">     249 </span>                :            : </a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">       2405 :   return builder;</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">       2406 :   return builder;</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : }</a>
 <a name="252"><span class="lineNum">     252 </span>                :            : </a>
 <a name="253"><span class="lineNum">     253 </span>                :            : /**</a>
@@ -344,22 +344,22 @@
 <a name="260"><span class="lineNum">     260 </span>                :            :  * Returns: (transfer full): A #JsonNode object</a>
 <a name="261"><span class="lineNum">     261 </span>                :            :  */</a>
 <a name="262"><span class="lineNum">     262 </span>                :            : JsonNode *</a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">       2405 : valent_packet_finish (JsonBuilder *builder)</span></a>
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">       2406 : valent_packet_finish (JsonBuilder *builder)</span></a>
 <a name="264"><span class="lineNum">     264 </span>                :            : {</a>
 <a name="265"><span class="lineNum">     265 </span>                :            :   JsonNode *packet;</a>
 <a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2405 times"> + </span><span class="branchCov" title="Branch 2 was taken 2405 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2405 :   g_return_val_if_fail (JSON_IS_BUILDER (builder), NULL);</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 2405 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 2405 times"> + </span>]
+<a name="267"><span class="lineNum">     267 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2406 times"> + </span><span class="branchCov" title="Branch 2 was taken 2406 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2406 :   g_return_val_if_fail (JSON_IS_BUILDER (builder), NULL);</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 2406 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 2406 times"> + </span>]
 <a name="268"><span class="lineNum">     268 </span>                :            : </a>
 <a name="269"><span class="lineNum">     269 </span>                :            :   /* Finish the &quot;body&quot; object and packet object */</a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">       2405 :   json_builder_end_object (builder);</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">       2405 :   json_builder_end_object (builder);</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">       2406 :   json_builder_end_object (builder);</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">       2406 :   json_builder_end_object (builder);</span></a>
 <a name="272"><span class="lineNum">     272 </span>                :            : </a>
 <a name="273"><span class="lineNum">     273 </span>                :            :   /* Get the root object and consume the builder */</a>
-<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">       2405 :   packet = json_builder_get_root (builder);</span></a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">       2405 :   g_object_unref (builder);</span></a>
+<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">       2406 :   packet = json_builder_get_root (builder);</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">       2406 :   g_object_unref (builder);</span></a>
 <a name="276"><span class="lineNum">     276 </span>                :            : </a>
-<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">       2405 :   return packet;</span></a>
+<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">       2406 :   return packet;</span></a>
 <a name="278"><span class="lineNum">     278 </span>                :            : }</a>
 <a name="279"><span class="lineNum">     279 </span>                :            : </a>
 <a name="280"><span class="lineNum">     280 </span>                :            : /**</a>

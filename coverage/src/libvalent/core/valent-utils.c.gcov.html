@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-01 10:05:47</td>
+            <td class="headerValue">2021-05-01 10:48:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -135,9 +135,9 @@
 <a name="57"><span class="lineNum">      57 </span>                :            :  * Returns: (transfer none): a #GThread</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :  */</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : GThread *</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1955 : valent_get_main_thread (void)</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1961 : valent_get_main_thread (void)</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : {</a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1955 :   return main_thread;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1961 :   return main_thread;</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : }</a>
 <a name="64"><span class="lineNum">      64 </span>                :            : </a>
 <a name="65"><span class="lineNum">      65 </span>                :            : /**</a>
@@ -212,15 +212,15 @@
 <a name="134"><span class="lineNum">     134 </span>                :            :  * Initialize the global #PeasEngine and load plugins.</a>
 <a name="135"><span class="lineNum">     135 </span>                :            :  */</a>
 <a name="136"><span class="lineNum">     136 </span>                :            : void</a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        835 : valent_load_plugins (PeasEngine *engine)</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        840 : valent_load_plugins (PeasEngine *engine)</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            : {</a>
-<a name="139"><span class="lineNum">     139 </span>        [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchCov" title="Branch 1 was taken 635 times"> + </span>]:<span class="lineCov">        835 :   g_autofree char *user_dir = NULL;</span></a>
-<a name="140"><span class="lineNum">     140 </span>        [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchCov" title="Branch 1 was taken 635 times"> + </span>]:<span class="lineCov">        835 :   g_autoptr (GError) error = NULL;</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">        835 :   const GList *plugins = NULL;</span></a>
+<a name="139"><span class="lineNum">     139 </span>        [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchCov" title="Branch 1 was taken 640 times"> + </span>]:<span class="lineCov">        840 :   g_autofree char *user_dir = NULL;</span></a>
+<a name="140"><span class="lineNum">     140 </span>        [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchCov" title="Branch 1 was taken 640 times"> + </span>]:<span class="lineCov">        840 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">        840 :   const GList *plugins = NULL;</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   static gboolean loaded = FALSE;</a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
-<a name="144"><span class="lineNum">     144 </span>        [<span class="branchCov" title="Branch 0 was taken 635 times"> + </span><span class="branchCov" title="Branch 1 was taken 200 times"> + </span>]:<span class="lineCov">        835 :   if (loaded)</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">        635 :     return;</span></a>
+<a name="144"><span class="lineNum">     144 </span>        [<span class="branchCov" title="Branch 0 was taken 640 times"> + </span><span class="branchCov" title="Branch 1 was taken 200 times"> + </span>]:<span class="lineCov">        840 :   if (loaded)</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">        640 :     return;</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            : </a>
 <a name="147"><span class="lineNum">     147 </span>        [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        200 :   if (engine == NULL)</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">        200 :     engine = peas_engine_get_default ();</span></a>
@@ -280,11 +280,11 @@
 <a name="202"><span class="lineNum">     202 </span>                :            :  * Returns: (transfer none): a #PeasEngine</a>
 <a name="203"><span class="lineNum">     203 </span>                :            :  */</a>
 <a name="204"><span class="lineNum">     204 </span>                :            : PeasEngine *</a>
-<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        835 : valent_get_engine (void)</span></a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        840 : valent_get_engine (void)</span></a>
 <a name="206"><span class="lineNum">     206 </span>                :            : {</a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        835 :   valent_load_plugins (NULL);</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        840 :   valent_load_plugins (NULL);</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :            : </a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        835 :   return peas_engine_get_default ();</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        840 :   return peas_engine_get_default ();</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            : }</a>
 <a name="211"><span class="lineNum">     211 </span>                :            : </a>
 <a name="212"><span class="lineNum">     212 </span>                :            : // TODO move to libvalent-notification</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-01 10:05:47</td>
+            <td class="headerValue">2021-05-01 10:48:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
@@ -595,18 +595,18 @@
 <a name="513"><span class="lineNum">     513 </span>                :            :  * Returns: (transfer full): the new #GSettings object</a>
 <a name="514"><span class="lineNum">     514 </span>                :            :  */</a>
 <a name="515"><span class="lineNum">     515 </span>                :            : GSettings *</a>
-<a name="516"><span class="lineNum">     516 </span>                :<span class="lineCov">         35 : valent_component_new_settings (const char *context,</span></a>
+<a name="516"><span class="lineNum">     516 </span>                :<span class="lineCov">         40 : valent_component_new_settings (const char *context,</span></a>
 <a name="517"><span class="lineNum">     517 </span>                :            :                                const char *module_name)</a>
 <a name="518"><span class="lineNum">     518 </span>                :            : {</a>
-<a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">         35 :   g_autofree char *path = NULL;</span></a>
+<a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">         40 :   g_autofree char *path = NULL;</span></a>
 <a name="520"><span class="lineNum">     520 </span>                :            : </a>
-<a name="521"><span class="lineNum">     521 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (context != NULL, NULL);</span></a>
-<a name="522"><span class="lineNum">     522 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_val_if_fail (module_name != NULL, NULL);</span></a>
+<a name="521"><span class="lineNum">     521 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">         40 :   g_return_val_if_fail (context != NULL, NULL);</span></a>
+<a name="522"><span class="lineNum">     522 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">         40 :   g_return_val_if_fail (module_name != NULL, NULL);</span></a>
 <a name="523"><span class="lineNum">     523 </span>                :            : </a>
-<a name="524"><span class="lineNum">     524 </span>                :<span class="lineCov">         35 :   path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
+<a name="524"><span class="lineNum">     524 </span>                :<span class="lineCov">         40 :   path = g_strdup_printf (&quot;/ca/andyholmes/valent/%s/plugin/%s/&quot;,</span></a>
 <a name="525"><span class="lineNum">     525 </span>                :            :                           context, module_name);</a>
 <a name="526"><span class="lineNum">     526 </span>                :            : </a>
-<a name="527"><span class="lineNum">     527 </span>                :<span class="lineCov">         35 :   return g_settings_new_with_path (&quot;ca.andyholmes.Valent.Plugin&quot;, path);</span></a>
+<a name="527"><span class="lineNum">     527 </span>                :<span class="lineCov">         40 :   return g_settings_new_with_path (&quot;ca.andyholmes.Valent.Plugin&quot;, path);</span></a>
 <a name="528"><span class="lineNum">     528 </span>                :            : }</a>
 <a name="529"><span class="lineNum">     529 </span>                :            : </a>
 </pre>
