@@ -68,14 +68,6 @@ mentioned in the release notes for the affected release.
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
-<a class="link" href="ValentChannel.html#valent-channel-set-base-stream" title="valent_channel_set_base_stream ()">valent_channel_set_base_stream</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
 <span class="returnvalue">JsonNode</span> *
 </td>
 <td class="function_name">
@@ -84,26 +76,10 @@ mentioned in the release notes for the affected release.
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
-<a class="link" href="ValentChannel.html#valent-channel-set-identity" title="valent_channel_set_identity ()">valent_channel_set_identity</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
 <span class="returnvalue">JsonNode</span> *
 </td>
 <td class="function_name">
 <a class="link" href="ValentChannel.html#valent-channel-get-peer-identity" title="valent_channel_get_peer_identity ()">valent_channel_get_peer_identity</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
-<a class="link" href="ValentChannel.html#valent-channel-set-peer-identity" title="valent_channel_set_peer_identity ()">valent_channel_set_peer_identity</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -119,6 +95,13 @@ mentioned in the release notes for the affected release.
 </td>
 <td class="function_name">
 <a class="link" href="ValentChannel.html#valent-channel-set-uri" title="valent_channel_set_uri ()">valent_channel_set_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="ValentChannel.html#valent-channel-get-verification-key" title="valent_channel_get_verification_key ()">valent_channel_get_verification_key</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -178,13 +161,6 @@ mentioned in the release notes for the affected release.
 </td>
 </tr>
 <tr>
-<td class="function_type">const <span class="returnvalue">char</span> *
-</td>
-<td class="function_name">
-<a class="link" href="ValentChannel.html#valent-channel-get-verification-key" title="valent_channel_get_verification_key ()">valent_channel_get_verification_key</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
 <td class="function_type">
 <span class="returnvalue">GIOStream</span> *
 </td>
@@ -224,19 +200,19 @@ mentioned in the release notes for the affected release.
 <td class="property_type">
 <span class="type">GIOStream</span> *</td>
 <td class="property_name"><a class="link" href="ValentChannel.html#ValentChannel--base-stream" title="The “base-stream” property">base-stream</a></td>
-<td class="property_flags">Read / Write</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <span class="type">JsonNode</span> *</td>
 <td class="property_name"><a class="link" href="ValentChannel.html#ValentChannel--identity" title="The “identity” property">identity</a></td>
-<td class="property_flags">Read / Write</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <span class="type">JsonNode</span> *</td>
 <td class="property_name"><a class="link" href="ValentChannel.html#ValentChannel--peer-identity" title="The “peer-identity” property">peer-identity</a></td>
-<td class="property_flags">Read / Write</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
@@ -322,39 +298,6 @@ valent_channel_get_base_stream (<em class="parameter"><code><a class="link" href
 </div>
 <hr>
 <div class="refsect2">
-<a name="valent-channel-set-base-stream"></a><h3>valent_channel_set_base_stream ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-valent_channel_set_base_stream (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>,
-                                <em class="parameter"><code><span class="type">GIOStream</span> *stream</code></em>);</pre>
-<p>Sets the <a class="link" href="ValentChannel.html#ValentChannel--base-stream" title="The “base-stream” property"><span class="type">“base-stream”</span></a> property. <em class="parameter"><code>channel</code></em>
- will hold a reference
-to <em class="parameter"><code>stream</code></em>
-.</p>
-<div class="refsect3">
-<a name="valent-channel-set-base-stream.parameters"></a><h4>Parameters</h4>
-<div class="informaltable"><table class="informaltable" width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody>
-<tr>
-<td class="parameter_name"><p>channel</p></td>
-<td class="parameter_description"><p>a <a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>stream</p></td>
-<td class="parameter_description"><p>a <span class="type">GIOStream</span> for the channel</p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-</tbody>
-</table></div>
-</div>
-</div>
-<hr>
-<div class="refsect2">
 <a name="valent-channel-get-identity"></a><h3>valent_channel_get_identity ()</h3>
 <pre class="programlisting"><span class="returnvalue">JsonNode</span> *
 valent_channel_get_identity (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>);</pre>
@@ -382,39 +325,6 @@ valent_channel_get_identity (<em class="parameter"><code><a class="link" href="V
 </div>
 <hr>
 <div class="refsect2">
-<a name="valent-channel-set-identity"></a><h3>valent_channel_set_identity ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-valent_channel_set_identity (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>,
-                             <em class="parameter"><code><span class="type">JsonNode</span> *packet</code></em>);</pre>
-<p>Sets the identity for this channel. <em class="parameter"><code>channel</code></em>
- will hold a reference to
-<em class="parameter"><code>packet</code></em>
-.</p>
-<div class="refsect3">
-<a name="valent-channel-set-identity.parameters"></a><h4>Parameters</h4>
-<div class="informaltable"><table class="informaltable" width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody>
-<tr>
-<td class="parameter_name"><p>channel</p></td>
-<td class="parameter_description"><p>a <a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>packet</p></td>
-<td class="parameter_description"><p>a <span class="type">JsonNode</span></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-</tbody>
-</table></div>
-</div>
-</div>
-<hr>
-<div class="refsect2">
 <a name="valent-channel-get-peer-identity"></a><h3>valent_channel_get_peer_identity ()</h3>
 <pre class="programlisting"><span class="returnvalue">JsonNode</span> *
 valent_channel_get_peer_identity (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>);</pre>
@@ -438,37 +348,6 @@ valent_channel_get_peer_identity (<em class="parameter"><code><a class="link" hr
 <a name="valent-channel-get-peer-identity.returns"></a><h4>Returns</h4>
 <p>The identity <span class="type">JsonNode</span> for this channel. </p>
 <p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="valent-channel-set-peer-identity"></a><h3>valent_channel_set_peer_identity ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-valent_channel_set_peer_identity (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>,
-                                  <em class="parameter"><code><span class="type">JsonNode</span> *packet</code></em>);</pre>
-<p>Sets the identity for this channel. <em class="parameter"><code>packet</code></em>
- will be duplicated.</p>
-<div class="refsect3">
-<a name="valent-channel-set-peer-identity.parameters"></a><h4>Parameters</h4>
-<div class="informaltable"><table class="informaltable" width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody>
-<tr>
-<td class="parameter_name"><p>channel</p></td>
-<td class="parameter_description"><p>a <a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>packet</p></td>
-<td class="parameter_description"><p>a <span class="type">JsonNode</span></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-</tbody>
-</table></div>
 </div>
 </div>
 <hr>
@@ -532,6 +411,36 @@ the device, by passing to <a class="link" href="ValentChannelService.html#valent
 </tr>
 </tbody>
 </table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="valent-channel-get-verification-key"></a><h3>valent_channel_get_verification_key ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+valent_channel_get_verification_key (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>);</pre>
+<p>Get a verification key for the connection.</p>
+<p>Implementations should return a string for the user to confirm the connection
+is being made by a particular device, similar to a Bluetooth PIN.</p>
+<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> get_verification_key]</span></p>
+<div class="refsect3">
+<a name="valent-channel-get-verification-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>channel</p></td>
+<td class="parameter_description"><p>a <a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="valent-channel-get-verification-key.returns"></a><h4>Returns</h4>
+<p>a verification key. </p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -839,36 +748,6 @@ set</p>
 </div>
 <hr>
 <div class="refsect2">
-<a name="valent-channel-get-verification-key"></a><h3>valent_channel_get_verification_key ()</h3>
-<pre class="programlisting">const <span class="returnvalue">char</span> *
-valent_channel_get_verification_key (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>);</pre>
-<p>Get a verification key for the connection.</p>
-<p>Implementations should return a string for the user to confirm the connection
-is being made by a particular device, similar to a Bluetooth PIN.</p>
-<p><span class="annotation">[<acronym title="This is the invoker for a virtual method."><span class="acronym">virtual</span></acronym> get_verification_key]</span></p>
-<div class="refsect3">
-<a name="valent-channel-get-verification-key.parameters"></a><h4>Parameters</h4>
-<div class="informaltable"><table class="informaltable" width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>channel</p></td>
-<td class="parameter_description"><p>a <a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="valent-channel-get-verification-key.returns"></a><h4>Returns</h4>
-<p>a verification key. </p>
-<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
 <a name="valent-channel-download"></a><h3>valent_channel_download ()</h3>
 <pre class="programlisting"><span class="returnvalue">GIOStream</span> *
 valent_channel_download (<em class="parameter"><code><a class="link" href="ValentChannel.html" title="ValentChannel"><span class="type">ValentChannel</span></a> *channel</code></em>,
@@ -1082,7 +961,7 @@ implementations should chain-up to retain that behaviour.</p>
 <pre class="programlisting">  “base-stream”              <span class="type">GIOStream</span> *</pre>
 <p>The base <span class="type">GIOStream</span> for the channel.</p>
 <p>Owner: ValentChannel</p>
-<p>Flags: Read / Write</p>
+<p>Flags: Read / Write / Construct Only</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1091,7 +970,7 @@ implementations should chain-up to retain that behaviour.</p>
 <p>The identity packet sent by the <a class="link" href="ValentChannelService.html" title="ValentChannelService"><span class="type">ValentChannelService</span></a> during connection
 negotiation.</p>
 <p>Owner: ValentChannel</p>
-<p>Flags: Read / Write</p>
+<p>Flags: Read / Write / Construct Only</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1099,7 +978,7 @@ negotiation.</p>
 <pre class="programlisting">  “peer-identity”            <span class="type">JsonNode</span> *</pre>
 <p>The identity packet sent by the peer during connection negotiation.</p>
 <p>Owner: ValentChannel</p>
-<p>Flags: Read / Write</p>
+<p>Flags: Read / Write / Construct Only</p>
 </div>
 <hr>
 <div class="refsect2">
