@@ -75,6 +75,7 @@
     <keyword type="function" name="valent_channel_get_identity ()" link="ValentChannel.html#valent-channel-get-identity"/>
     <keyword type="function" name="valent_channel_get_peer_identity ()" link="ValentChannel.html#valent-channel-get-peer-identity"/>
     <keyword type="function" name="valent_channel_get_uri ()" link="ValentChannel.html#valent-channel-get-uri"/>
+    <keyword type="function" name="valent_channel_set_uri ()" link="ValentChannel.html#valent-channel-set-uri"/>
     <keyword type="function" name="valent_channel_get_verification_key ()" link="ValentChannel.html#valent-channel-get-verification-key"/>
     <keyword type="function" name="valent_channel_read_packet ()" link="ValentChannel.html#valent-channel-read-packet"/>
     <keyword type="function" name="valent_channel_read_packet_finish ()" link="ValentChannel.html#valent-channel-read-packet-finish"/>
