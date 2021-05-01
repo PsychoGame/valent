@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-01 10:48:48</td>
+            <td class="headerValue">2021-05-01 22:43:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -104,8 +104,8 @@
 <a name="26"><span class="lineNum">      26 </span>                :            : </a>
 <a name="27"><span class="lineNum">      27 </span>                :            : static void valent_device_plugin_iface_init (ValentDevicePluginInterface *iface);</a>
 <a name="28"><span class="lineNum">      28 </span>                :            : </a>
-<a name="29"><span class="lineNum">      29 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1392 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1402 : G_DEFINE_TYPE_WITH_CODE (ValentLockPlugin, valent_lock_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 1387 times"> + </span>]
+<a name="29"><span class="lineNum">      29 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1399 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1409 : G_DEFINE_TYPE_WITH_CODE (ValentLockPlugin, valent_lock_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 1394 times"> + </span>]
 <a name="30"><span class="lineNum">      30 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="31"><span class="lineNum">      31 </span>                :            : </a>
 <a name="32"><span class="lineNum">      32 </span>                :            : static void valent_lock_plugin_request_state (ValentLockPlugin *self);</a>
@@ -289,52 +289,52 @@
 <a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">         20 : }</span></a>
 <a name="211"><span class="lineNum">     211 </span>                :            : </a>
 <a name="212"><span class="lineNum">     212 </span>                :            : static void</a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         16 : valent_lock_plugin_disable (ValentDevicePlugin *plugin)</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         17 : valent_lock_plugin_disable (ValentDevicePlugin *plugin)</span></a>
 <a name="214"><span class="lineNum">     214 </span>                :            : {</a>
-<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">         16 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (plugin);</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">         17 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (plugin);</span></a>
 <a name="216"><span class="lineNum">     216 </span>                :            : </a>
-<a name="217"><span class="lineNum">     217 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         16 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
+<a name="217"><span class="lineNum">     217 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         17 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
-<a name="219"><span class="lineNum">     219 </span>                :<span class="lineCov">         16 :   g_signal_handlers_disconnect_by_data (self-&gt;session, self);</span></a>
+<a name="219"><span class="lineNum">     219 </span>                :<span class="lineCov">         17 :   g_signal_handlers_disconnect_by_data (self-&gt;session, self);</span></a>
 <a name="220"><span class="lineNum">     220 </span>                :            : </a>
 <a name="221"><span class="lineNum">     221 </span>                :            :   /* Unregister GMenu items */</a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         16 :   valent_device_plugin_remove_menu_entries (plugin,</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         17 :   valent_device_plugin_remove_menu_entries (plugin,</span></a>
 <a name="223"><span class="lineNum">     223 </span>                :            :                                             items,</a>
 <a name="224"><span class="lineNum">     224 </span>                :            :                                             G_N_ELEMENTS (items));</a>
 <a name="225"><span class="lineNum">     225 </span>                :            : </a>
 <a name="226"><span class="lineNum">     226 </span>                :            :   /* Unregister GActions */</a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">         16 :   valent_device_plugin_unregister_actions (plugin,</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">         17 :   valent_device_plugin_unregister_actions (plugin,</span></a>
 <a name="228"><span class="lineNum">     228 </span>                :            :                                            actions,</a>
 <a name="229"><span class="lineNum">     229 </span>                :            :                                            G_N_ELEMENTS (actions));</a>
-<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">         16 : }</span></a>
+<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">         17 : }</span></a>
 <a name="231"><span class="lineNum">     231 </span>                :            : </a>
 <a name="232"><span class="lineNum">     232 </span>                :            : static void</a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         46 : valent_lock_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         47 : valent_lock_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
 <a name="234"><span class="lineNum">     234 </span>                :            : {</a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">         46 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (plugin);</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">         47 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (plugin);</span></a>
 <a name="236"><span class="lineNum">     236 </span>                :            :   gboolean connected;</a>
 <a name="237"><span class="lineNum">     237 </span>                :            :   gboolean paired;</a>
 <a name="238"><span class="lineNum">     238 </span>                :            :   gboolean available;</a>
 <a name="239"><span class="lineNum">     239 </span>                :            : </a>
-<a name="240"><span class="lineNum">     240 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         46 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
+<a name="240"><span class="lineNum">     240 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 47 times"> + </span>]:<span class="lineCov">         47 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
 <a name="241"><span class="lineNum">     241 </span>                :            : </a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         46 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">         46 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
-<a name="244"><span class="lineNum">     244 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span><span class="branchCov" title="Branch 2 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         46 :   available = (connected &amp;&amp; paired);</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         47 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">         47 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
+<a name="244"><span class="lineNum">     244 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 32 times"> + </span><span class="branchCov" title="Branch 2 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         47 :   available = (connected &amp;&amp; paired);</span></a>
 <a name="245"><span class="lineNum">     245 </span>                :            : </a>
 <a name="246"><span class="lineNum">     246 </span>                :            :   /* GActions */</a>
-<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">         46 :   if (available)</span></a>
+<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 32 times"> + </span>]:<span class="lineCov">         47 :   if (available)</span></a>
 <a name="248"><span class="lineNum">     248 </span>                :            :     {</a>
 <a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">         15 :       update_actions (self);</span></a>
 <a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">         15 :       valent_lock_plugin_request_state (self);</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            :     }</a>
 <a name="252"><span class="lineNum">     252 </span>                :            :   else</a>
 <a name="253"><span class="lineNum">     253 </span>                :            :     {</a>
-<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">         31 :       valent_device_plugin_toggle_actions (plugin,</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">         32 :       valent_device_plugin_toggle_actions (plugin,</span></a>
 <a name="255"><span class="lineNum">     255 </span>                :            :                                            actions, G_N_ELEMENTS (actions),</a>
 <a name="256"><span class="lineNum">     256 </span>                :            :                                            available);</a>
 <a name="257"><span class="lineNum">     257 </span>                :            :     }</a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         46 : }</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         47 : }</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
 <a name="260"><span class="lineNum">     260 </span>                :            : static void</a>
 <a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">        355 : valent_lock_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
@@ -368,23 +368,23 @@
 <a name="289"><span class="lineNum">     289 </span>                :            :  * GObject</a>
 <a name="290"><span class="lineNum">     290 </span>                :            :  */</a>
 <a name="291"><span class="lineNum">     291 </span>                :            : static void</a>
-<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">        103 : valent_lock_plugin_get_property (GObject    *object,</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">        106 : valent_lock_plugin_get_property (GObject    *object,</span></a>
 <a name="293"><span class="lineNum">     293 </span>                :            :                                  guint       prop_id,</a>
 <a name="294"><span class="lineNum">     294 </span>                :            :                                  GValue     *value,</a>
 <a name="295"><span class="lineNum">     295 </span>                :            :                                  GParamSpec *pspec)</a>
 <a name="296"><span class="lineNum">     296 </span>                :            : {</a>
-<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">        103 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (object);</span></a>
+<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">        106 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (object);</span></a>
 <a name="298"><span class="lineNum">     298 </span>                :            : </a>
-<a name="299"><span class="lineNum">     299 </span>        [<span class="branchCov" title="Branch 0 was taken 103 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        103 :   switch (prop_id)</span></a>
+<a name="299"><span class="lineNum">     299 </span>        [<span class="branchCov" title="Branch 0 was taken 106 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        106 :   switch (prop_id)</span></a>
 <a name="300"><span class="lineNum">     300 </span>                :            :     {</a>
-<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">        103 :     case PROP_DEVICE:</span></a>
-<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">        103 :       g_value_set_object (value, self-&gt;device);</span></a>
-<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">        103 :       break;</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">        106 :     case PROP_DEVICE:</span></a>
+<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">        106 :       g_value_set_object (value, self-&gt;device);</span></a>
+<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">        106 :       break;</span></a>
 <a name="304"><span class="lineNum">     304 </span>                :            : </a>
 <a name="305"><span class="lineNum">     305 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="306"><span class="lineNum">     306 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
 <a name="307"><span class="lineNum">     307 </span>                :            :     }</a>
-<a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">        103 : }</span></a>
+<a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">        106 : }</span></a>
 <a name="309"><span class="lineNum">     309 </span>                :            : </a>
 <a name="310"><span class="lineNum">     310 </span>                :            : static void</a>
 <a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">         20 : valent_lock_plugin_set_property (GObject      *object,</span></a>
