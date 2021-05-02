@@ -31,18 +31,18 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">223</td>
+            <td class="headerCovTableEntry">216</td>
             <td class="headerCovTableEntry">292</td>
-            <td class="headerCovTableEntryMed">76.4 %</td>
+            <td class="headerCovTableEntryLo">74.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-01 22:43:45</td>
+            <td class="headerValue">2021-05-02 00:01:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">26</td>
             <td class="headerCovTableEntry">33</td>
-            <td class="headerCovTableEntryMed">81.8 %</td>
+            <td class="headerCovTableEntryMed">78.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">95</td>
+            <td class="headerCovTableEntry">92</td>
             <td class="headerCovTableEntry">222</td>
-            <td class="headerCovTableEntryLo">42.8 %</td>
+            <td class="headerCovTableEntryLo">41.4 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -133,8 +133,8 @@
 <a name="55"><span class="lineNum">      55 </span>                :            :   GQueue         write_queue;</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : } ValentChannelPrivate;</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 322 times"> + </span><span class="branchCov" title="Branch 1 was taken 21669 times"> + </span><span class="branchCov" title="Branch 2 was taken 201 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      38028 : G_DEFINE_TYPE_WITH_PRIVATE (ValentChannel, valent_channel, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 201 times"> + </span><span class="branchCov" title="Branch 5 was taken 21669 times"> + </span>]
+<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 322 times"> + </span><span class="branchCov" title="Branch 1 was taken 21667 times"> + </span><span class="branchCov" title="Branch 2 was taken 201 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      38004 : G_DEFINE_TYPE_WITH_PRIVATE (ValentChannel, valent_channel, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 201 times"> + </span><span class="branchCov" title="Branch 5 was taken 21667 times"> + </span>]
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
 <a name="60"><span class="lineNum">      60 </span>                :            : /**</a>
 <a name="61"><span class="lineNum">      61 </span>                :            :  * ValentChannelClass:</a>
@@ -162,16 +162,16 @@
 <a name="83"><span class="lineNum">      83 </span>                :            :  * Packet Buffer</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :  */</a>
 <a name="85"><span class="lineNum">      85 </span>                :            : static inline gsize</a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">       1179 : channel_buffer_find_lf (ValentChannelPrivate *priv,</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">       1177 : channel_buffer_find_lf (ValentChannelPrivate *priv,</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            :                         gsize                *cursor_out)</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : {</a>
-<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 62735 times"> + </span><span class="branchCov" title="Branch 1 was taken 704 times"> + </span>]:<span class="lineCov">      63439 :   for (gsize cursor = *cursor_out; cursor &lt; priv-&gt;end; cursor++)</span></a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 62735 times"> + </span><span class="branchCov" title="Branch 1 was taken 702 times"> + </span>]:<span class="lineCov">      63437 :   for (gsize cursor = *cursor_out; cursor &lt; priv-&gt;end; cursor++)</span></a>
 <a name="90"><span class="lineNum">      90 </span>                :            :     {</a>
 <a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 475 times"> + </span><span class="branchCov" title="Branch 1 was taken 62260 times"> + </span>]:<span class="lineCov">      62735 :       if G_UNLIKELY (priv-&gt;buffer[cursor] == '\n')</span></a>
 <a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">        475 :         return cursor;</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            :     }</a>
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        704 :   return 0;</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        702 :   return 0;</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            : }</a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <a name="98"><span class="lineNum">      98 </span>                :            : static JsonNode *</a>
@@ -185,7 +185,7 @@
 <a name="106"><span class="lineNum">     106 </span>                :            :   gsize cursor;</a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   const char *packet_str;</a>
 <a name="108"><span class="lineNum">     108 </span>                :            :   gssize packet_len;</a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        719 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        721 :   g_autoptr (JsonNode) packet = NULL;</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            : </a>
 <a name="111"><span class="lineNum">     111 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span>]:<span class="lineCov">        725 :   if G_UNLIKELY (priv-&gt;base_stream == NULL)</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            :     {</a>
@@ -200,12 +200,12 @@
 <a name="121"><span class="lineNum">     121 </span>                :            : </a>
 <a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">        725 :   cursor = priv-&gt;pos;</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            : </a>
-<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 704 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">       1179 :   while ((lf_pos = channel_buffer_find_lf (priv, &amp;cursor)) == 0)</span></a>
+<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 702 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">       1177 :   while ((lf_pos = channel_buffer_find_lf (priv, &amp;cursor)) == 0)</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            :     {</a>
 <a name="126"><span class="lineNum">     126 </span>                :            :       gssize n_read;</a>
 <a name="127"><span class="lineNum">     127 </span>                :            : </a>
 <a name="128"><span class="lineNum">     128 </span>                :            :       /* Compact or extend the buffer */</a>
-<a name="129"><span class="lineNum">     129 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 704 times"> + </span>]:<span class="lineCov">        704 :       if G_UNLIKELY (priv-&gt;buffer_size - priv-&gt;end == 0)</span></a>
+<a name="129"><span class="lineNum">     129 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 702 times"> + </span>]:<span class="lineCov">        702 :       if G_UNLIKELY (priv-&gt;buffer_size - priv-&gt;end == 0)</span></a>
 <a name="130"><span class="lineNum">     130 </span>                :            :         {</a>
 <a name="131"><span class="lineNum">     131 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if G_LIKELY (priv-&gt;pos)</span></a>
 <a name="132"><span class="lineNum">     132 </span>                :            :             {</a>
@@ -226,29 +226,29 @@
 <a name="147"><span class="lineNum">     147 </span>                :            :         }</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
 <a name="149"><span class="lineNum">     149 </span>                :            :       /* Fill the buffer */</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        704 :       n_read = g_input_stream_read (input_stream,</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        704 :                                     priv-&gt;buffer + priv-&gt;end,</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">        704 :                                     priv-&gt;buffer_size - priv-&gt;end,</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        702 :       n_read = g_input_stream_read (input_stream,</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        702 :                                     priv-&gt;buffer + priv-&gt;end,</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">        702 :                                     priv-&gt;buffer_size - priv-&gt;end,</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :                                     cancellable,</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :                                     error);</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :       /* Success; loop to check for an LF */</a>
-<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 454 times"> + </span><span class="branchCov" title="Branch 1 was taken 244 times"> + </span>]:<span class="lineCov">        698 :       if (n_read &gt; 0)</span></a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        454 :         priv-&gt;end = priv-&gt;end + n_read;</span></a>
+<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 452 times"> + </span><span class="branchCov" title="Branch 1 was taken 246 times"> + </span>]:<span class="lineCov">        698 :       if (n_read &gt; 0)</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        452 :         priv-&gt;end = priv-&gt;end + n_read;</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            : </a>
 <a name="160"><span class="lineNum">     160 </span>                :            :       /* End of stream; report connection closed */</a>
-<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 191 times"> + </span><span class="branchCov" title="Branch 1 was taken 53 times"> + </span>]:<span class="lineCov">        244 :       else if (n_read == 0)</span></a>
+<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 187 times"> + </span><span class="branchCov" title="Branch 1 was taken 59 times"> + </span>]:<span class="lineCov">        246 :       else if (n_read == 0)</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            :         {</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        191 :           g_set_error (error,</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        187 :           g_set_error (error,</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            :                        G_IO_ERROR,</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :                        G_IO_ERROR_CONNECTION_CLOSED,</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :                        &quot;Channel is closed&quot;);</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        191 :           return NULL;</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        187 :           return NULL;</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :         }</a>
 <a name="169"><span class="lineNum">     169 </span>                :            : </a>
 <a name="170"><span class="lineNum">     170 </span>                :            :       /* There was a genuine error */</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :       else</a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         53 :         return NULL;</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         59 :         return NULL;</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            :     }</a>
 <a name="174"><span class="lineNum">     174 </span>                :            : </a>
 <a name="175"><span class="lineNum">     175 </span>                :            :   /* Size the line and compact buffer */</a>
@@ -387,38 +387,38 @@
 <a name="308"><span class="lineNum">     308 </span>                :            :  * GObject</a>
 <a name="309"><span class="lineNum">     309 </span>                :            :  */</a>
 <a name="310"><span class="lineNum">     310 </span>                :            : static void</a>
-<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        613 : valent_channel_dispose (GObject *object)</span></a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        617 : valent_channel_dispose (GObject *object)</span></a>
 <a name="312"><span class="lineNum">     312 </span>                :            : {</a>
-<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">        613 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
-<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        613 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
+<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">        617 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        617 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
 <a name="315"><span class="lineNum">     315 </span>                :            : </a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">        613 :   g_queue_foreach (&amp;priv-&gt;write_queue, (GFunc)g_object_unref, NULL);</span></a>
-<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">        613 :   g_queue_clear (&amp;priv-&gt;write_queue);</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">        617 :   g_queue_foreach (&amp;priv-&gt;write_queue, (GFunc)g_object_unref, NULL);</span></a>
+<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">        617 :   g_queue_clear (&amp;priv-&gt;write_queue);</span></a>
 <a name="318"><span class="lineNum">     318 </span>                :            : </a>
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">        613 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;dispose (object);</span></a>
-<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">        613 : }</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">        617 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;dispose (object);</span></a>
+<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">        617 : }</span></a>
 <a name="321"><span class="lineNum">     321 </span>                :            : </a>
 <a name="322"><span class="lineNum">     322 </span>                :            : static void</a>
-<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">        613 : valent_channel_finalize (GObject *object)</span></a>
+<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">        617 : valent_channel_finalize (GObject *object)</span></a>
 <a name="324"><span class="lineNum">     324 </span>                :            : {</a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">        613 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
-<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">        613 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">        617 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
+<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">        617 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
 <a name="327"><span class="lineNum">     327 </span>                :            : </a>
-<a name="328"><span class="lineNum">     328 </span>        [<span class="branchCov" title="Branch 0 was taken 613 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        613 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
+<a name="328"><span class="lineNum">     328 </span>        [<span class="branchCov" title="Branch 0 was taken 617 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        617 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
 <a name="329"><span class="lineNum">     329 </span>                :            : </a>
 <a name="330"><span class="lineNum">     330 </span>                :            :   /* Channel metadata */</a>
-<a name="331"><span class="lineNum">     331 </span>        [<span class="branchCov" title="Branch 0 was taken 523 times"> + </span><span class="branchCov" title="Branch 1 was taken 90 times"> + </span>]:<span class="lineCov">        613 :   g_clear_pointer (&amp;priv-&gt;identity, json_node_unref);</span></a>
-<a name="332"><span class="lineNum">     332 </span>        [<span class="branchCov" title="Branch 0 was taken 568 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">        613 :   g_clear_pointer (&amp;priv-&gt;peer_identity, json_node_unref);</span></a>
-<a name="333"><span class="lineNum">     333 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 583 times"> + </span>]:<span class="lineCov">        613 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
+<a name="331"><span class="lineNum">     331 </span>        [<span class="branchCov" title="Branch 0 was taken 527 times"> + </span><span class="branchCov" title="Branch 1 was taken 90 times"> + </span>]:<span class="lineCov">        617 :   g_clear_pointer (&amp;priv-&gt;identity, json_node_unref);</span></a>
+<a name="332"><span class="lineNum">     332 </span>        [<span class="branchCov" title="Branch 0 was taken 572 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">        617 :   g_clear_pointer (&amp;priv-&gt;peer_identity, json_node_unref);</span></a>
+<a name="333"><span class="lineNum">     333 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 587 times"> + </span>]:<span class="lineCov">        617 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            : </a>
 <a name="335"><span class="lineNum">     335 </span>                :            :   /* Packet Buffer */</a>
-<a name="336"><span class="lineNum">     336 </span>        [<span class="branchCov" title="Branch 0 was taken 613 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        613 :   g_clear_pointer (&amp;priv-&gt;buffer, g_free);</span></a>
-<a name="337"><span class="lineNum">     337 </span>        [<span class="branchCov" title="Branch 0 was taken 613 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        613 :   g_clear_object (&amp;priv-&gt;parser);</span></a>
-<a name="338"><span class="lineNum">     338 </span>        [<span class="branchCov" title="Branch 0 was taken 613 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        613 :   g_clear_object (&amp;priv-&gt;generator);</span></a>
-<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">        613 :   g_mutex_clear (&amp;priv-&gt;write_lock);</span></a>
+<a name="336"><span class="lineNum">     336 </span>        [<span class="branchCov" title="Branch 0 was taken 617 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        617 :   g_clear_pointer (&amp;priv-&gt;buffer, g_free);</span></a>
+<a name="337"><span class="lineNum">     337 </span>        [<span class="branchCov" title="Branch 0 was taken 617 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        617 :   g_clear_object (&amp;priv-&gt;parser);</span></a>
+<a name="338"><span class="lineNum">     338 </span>        [<span class="branchCov" title="Branch 0 was taken 617 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        617 :   g_clear_object (&amp;priv-&gt;generator);</span></a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">        617 :   g_mutex_clear (&amp;priv-&gt;write_lock);</span></a>
 <a name="340"><span class="lineNum">     340 </span>                :            : </a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">        613 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;finalize (object);</span></a>
-<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">        613 : }</span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">        617 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;finalize (object);</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">        617 : }</span></a>
 <a name="343"><span class="lineNum">     343 </span>                :            : </a>
 <a name="344"><span class="lineNum">     344 </span>                :            : static void</a>
 <a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">          5 : valent_channel_get_property (GObject    *object,</span></a>
@@ -478,7 +478,7 @@
 <a name="397"><span class="lineNum">     397 </span>                :<span class="lineCov">        670 :       break;</span></a>
 <a name="398"><span class="lineNum">     398 </span>                :            : </a>
 <a name="399"><span class="lineNum">     399 </span>                :<span class="lineCov">         30 :     case PROP_URI:</span></a>
-<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">         30 :       valent_channel_set_uri (self, g_value_get_string (value));</span></a>
+<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">         30 :       priv-&gt;uri = g_value_dup_string (value);</span></a>
 <a name="401"><span class="lineNum">     401 </span>                :<span class="lineCov">         30 :       break;</span></a>
 <a name="402"><span class="lineNum">     402 </span>                :            : </a>
 <a name="403"><span class="lineNum">     403 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
@@ -606,501 +606,502 @@
 <a name="525"><span class="lineNum">     525 </span>                :            :  * valent_channel_get_identity:</a>
 <a name="526"><span class="lineNum">     526 </span>                :            :  * @channel: A #ValentChannel</a>
 <a name="527"><span class="lineNum">     527 </span>                :            :  *</a>
-<a name="528"><span class="lineNum">     528 </span>                :            :  * Gets the identity packet for this channel is associated with.</a>
-<a name="529"><span class="lineNum">     529 </span>                :            :  *</a>
-<a name="530"><span class="lineNum">     530 </span>                :            :  * Returns: (transfer none): The identity #JsonNode for this channel</a>
-<a name="531"><span class="lineNum">     531 </span>                :            :  */</a>
-<a name="532"><span class="lineNum">     532 </span>                :            : JsonNode *</a>
-<a name="533"><span class="lineNum">     533 </span>                :<span class="lineNoCov">          0 : valent_channel_get_identity (ValentChannel *channel)</span></a>
-<a name="534"><span class="lineNum">     534 </span>                :            : {</a>
-<a name="535"><span class="lineNum">     535 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="536"><span class="lineNum">     536 </span>                :            : </a>
-<a name="537"><span class="lineNum">     537 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
-<a name="538"><span class="lineNum">     538 </span>                :            : </a>
-<a name="539"><span class="lineNum">     539 </span>                :<span class="lineNoCov">          0 :   return priv-&gt;identity;</span></a>
-<a name="540"><span class="lineNum">     540 </span>                :            : }</a>
-<a name="541"><span class="lineNum">     541 </span>                :            : </a>
-<a name="542"><span class="lineNum">     542 </span>                :            : /**</a>
-<a name="543"><span class="lineNum">     543 </span>                :            :  * valent_channel_get_peer_identity:</a>
-<a name="544"><span class="lineNum">     544 </span>                :            :  * @channel: A #ValentChannel</a>
-<a name="545"><span class="lineNum">     545 </span>                :            :  *</a>
-<a name="546"><span class="lineNum">     546 </span>                :            :  * Gets the identity packet for this channel is associated with.</a>
-<a name="547"><span class="lineNum">     547 </span>                :            :  *</a>
-<a name="548"><span class="lineNum">     548 </span>                :            :  * Returns: (transfer none): The identity #JsonNode for this channel</a>
-<a name="549"><span class="lineNum">     549 </span>                :            :  */</a>
-<a name="550"><span class="lineNum">     550 </span>                :            : JsonNode *</a>
-<a name="551"><span class="lineNum">     551 </span>                :<span class="lineCov">        255 : valent_channel_get_peer_identity (ValentChannel *channel)</span></a>
-<a name="552"><span class="lineNum">     552 </span>                :            : {</a>
-<a name="553"><span class="lineNum">     553 </span>                :<span class="lineCov">        255 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="554"><span class="lineNum">     554 </span>                :            : </a>
-<a name="555"><span class="lineNum">     555 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 255 times"> + </span>]:<span class="lineCov">        255 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
-<a name="556"><span class="lineNum">     556 </span>                :            : </a>
-<a name="557"><span class="lineNum">     557 </span>                :<span class="lineCov">        255 :   return priv-&gt;peer_identity;</span></a>
-<a name="558"><span class="lineNum">     558 </span>                :            : }</a>
-<a name="559"><span class="lineNum">     559 </span>                :            : </a>
-<a name="560"><span class="lineNum">     560 </span>                :            : /**</a>
-<a name="561"><span class="lineNum">     561 </span>                :            :  * valent_channel_get_uri:</a>
-<a name="562"><span class="lineNum">     562 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="563"><span class="lineNum">     563 </span>                :            :  *</a>
-<a name="564"><span class="lineNum">     564 </span>                :            :  * Return a string representation of @channel that can be used to reconnect to</a>
-<a name="565"><span class="lineNum">     565 </span>                :            :  * the device, by passing to valent_channel_service_identify().</a>
-<a name="566"><span class="lineNum">     566 </span>                :            :  *</a>
-<a name="567"><span class="lineNum">     567 </span>                :            :  * This may be %NULL if the @channel does not support reconnection.</a>
-<a name="568"><span class="lineNum">     568 </span>                :            :  *</a>
-<a name="569"><span class="lineNum">     569 </span>                :            :  * Returns: (transfer none) (nullable): a reconnection string</a>
-<a name="570"><span class="lineNum">     570 </span>                :            :  */</a>
-<a name="571"><span class="lineNum">     571 </span>                :            : const char *</a>
-<a name="572"><span class="lineNum">     572 </span>                :<span class="lineNoCov">          0 : valent_channel_get_uri (ValentChannel *channel)</span></a>
-<a name="573"><span class="lineNum">     573 </span>                :            : {</a>
-<a name="574"><span class="lineNum">     574 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="575"><span class="lineNum">     575 </span>                :            : </a>
-<a name="576"><span class="lineNum">     576 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
-<a name="577"><span class="lineNum">     577 </span>                :            : </a>
-<a name="578"><span class="lineNum">     578 </span>                :<span class="lineNoCov">          0 :   return priv-&gt;uri;</span></a>
-<a name="579"><span class="lineNum">     579 </span>                :            : }</a>
-<a name="580"><span class="lineNum">     580 </span>                :            : </a>
-<a name="581"><span class="lineNum">     581 </span>                :            : /**</a>
-<a name="582"><span class="lineNum">     582 </span>                :            :  * valent_channel_set_uri:</a>
-<a name="583"><span class="lineNum">     583 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="584"><span class="lineNum">     584 </span>                :            :  * @uri: (nullable): a reconnect URI</a>
-<a name="585"><span class="lineNum">     585 </span>                :            :  *</a>
-<a name="586"><span class="lineNum">     586 </span>                :            :  * Set the string representation of @channel that can be used to reconnect to</a>
-<a name="587"><span class="lineNum">     587 </span>                :            :  * the device, by passing to valent_channel_service_identify().</a>
-<a name="588"><span class="lineNum">     588 </span>                :            :  */</a>
-<a name="589"><span class="lineNum">     589 </span>                :            : void</a>
-<a name="590"><span class="lineNum">     590 </span>                :<span class="lineCov">         30 : valent_channel_set_uri (ValentChannel *channel,</span></a>
-<a name="591"><span class="lineNum">     591 </span>                :            :                         const char    *uri)</a>
-<a name="592"><span class="lineNum">     592 </span>                :            : {</a>
-<a name="593"><span class="lineNum">     593 </span>                :<span class="lineCov">         30 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="594"><span class="lineNum">     594 </span>                :            : </a>
-<a name="595"><span class="lineNum">     595 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="596"><span class="lineNum">     596 </span>                :            : </a>
-<a name="597"><span class="lineNum">     597 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   if (g_strcmp0 (priv-&gt;uri, uri) == 0)</span></a>
-<a name="598"><span class="lineNum">     598 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
-<a name="599"><span class="lineNum">     599 </span>                :            : </a>
-<a name="600"><span class="lineNum">     600 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
-<a name="601"><span class="lineNum">     601 </span>                :<span class="lineCov">         30 :   priv-&gt;uri = g_strdup (uri);</span></a>
-<a name="602"><span class="lineNum">     602 </span>                :<span class="lineCov">         30 :   g_object_notify_by_pspec (G_OBJECT (channel), properties [PROP_URI]);</span></a>
-<a name="603"><span class="lineNum">     603 </span>                :            : }</a>
-<a name="604"><span class="lineNum">     604 </span>                :            : </a>
-<a name="605"><span class="lineNum">     605 </span>                :            : /**</a>
-<a name="606"><span class="lineNum">     606 </span>                :            :  * valent_channel_get_verification_key: (virtual get_verification_key)</a>
-<a name="607"><span class="lineNum">     607 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="608"><span class="lineNum">     608 </span>                :            :  *</a>
-<a name="609"><span class="lineNum">     609 </span>                :            :  * Get a verification key for the connection.</a>
-<a name="610"><span class="lineNum">     610 </span>                :            :  *</a>
-<a name="611"><span class="lineNum">     611 </span>                :            :  * Implementations should return a string for the user to confirm the connection</a>
-<a name="612"><span class="lineNum">     612 </span>                :            :  * is being made by a particular device, similar to a Bluetooth PIN.</a>
-<a name="613"><span class="lineNum">     613 </span>                :            :  *</a>
-<a name="614"><span class="lineNum">     614 </span>                :            :  * Returns: (transfer none): a verification key</a>
-<a name="615"><span class="lineNum">     615 </span>                :            :  */</a>
-<a name="616"><span class="lineNum">     616 </span>                :            : const char *</a>
-<a name="617"><span class="lineNum">     617 </span>                :<span class="lineCov">         15 : valent_channel_get_verification_key (ValentChannel *channel)</span></a>
-<a name="618"><span class="lineNum">     618 </span>                :            : {</a>
-<a name="619"><span class="lineNum">     619 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
-<a name="620"><span class="lineNum">     620 </span>                :            : </a>
-<a name="621"><span class="lineNum">     621 </span>                :<span class="lineCov">         15 :   return VALENT_CHANNEL_GET_CLASS (channel)-&gt;get_verification_key (channel);</span></a>
-<a name="622"><span class="lineNum">     622 </span>                :            : }</a>
-<a name="623"><span class="lineNum">     623 </span>                :            : </a>
-<a name="624"><span class="lineNum">     624 </span>                :            : static void</a>
-<a name="625"><span class="lineNum">     625 </span>                :<span class="lineCov">        725 : read_packet_task (GTask        *task,</span></a>
-<a name="626"><span class="lineNum">     626 </span>                :            :                   gpointer      source_object,</a>
-<a name="627"><span class="lineNum">     627 </span>                :            :                   gpointer      task_data,</a>
-<a name="628"><span class="lineNum">     628 </span>                :            :                   GCancellable *cancellable)</a>
-<a name="629"><span class="lineNum">     629 </span>                :            : {</a>
-<a name="630"><span class="lineNum">     630 </span>                :<span class="lineCov">        725 :   ValentChannel *channel = source_object;</span></a>
-<a name="631"><span class="lineNum">     631 </span>                :<span class="lineCov">        725 :   GError *error = NULL;</span></a>
-<a name="632"><span class="lineNum">     632 </span>                :            :   JsonNode *packet;</a>
-<a name="633"><span class="lineNum">     633 </span>                :            : </a>
-<a name="634"><span class="lineNum">     634 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span>]:<span class="lineCov">        725 :   if (g_task_return_error_if_cancelled (task))</span></a>
-<a name="635"><span class="lineNum">     635 </span>                :<span class="lineCov">        244 :     return;</span></a>
-<a name="636"><span class="lineNum">     636 </span>                :            : </a>
-<a name="637"><span class="lineNum">     637 </span>                :<span class="lineCov">        725 :   packet = valent_channel_read_packet_internal (channel, cancellable, &amp;error);</span></a>
-<a name="638"><span class="lineNum">     638 </span>                :            : </a>
-<a name="639"><span class="lineNum">     639 </span>        [<span class="branchCov" title="Branch 0 was taken 244 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">        719 :   if (packet == NULL)</span></a>
-<a name="640"><span class="lineNum">     640 </span>                :<span class="lineCov">        244 :     return g_task_return_error (task, error);</span></a>
-<a name="641"><span class="lineNum">     641 </span>                :            : </a>
-<a name="642"><span class="lineNum">     642 </span>                :<span class="lineCov">        475 :   g_task_return_pointer (task, packet, (GDestroyNotify)json_node_unref);</span></a>
-<a name="643"><span class="lineNum">     643 </span>                :            : }</a>
-<a name="644"><span class="lineNum">     644 </span>                :            : </a>
-<a name="645"><span class="lineNum">     645 </span>                :            : /**</a>
-<a name="646"><span class="lineNum">     646 </span>                :            :  * valent_channel_read_packet:</a>
-<a name="647"><span class="lineNum">     647 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="648"><span class="lineNum">     648 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
-<a name="649"><span class="lineNum">     649 </span>                :            :  * @callback: (scope async): a #GAsyncReadyCallback</a>
-<a name="650"><span class="lineNum">     650 </span>                :            :  * @user_data: (closure): user supplied data</a>
-<a name="651"><span class="lineNum">     651 </span>                :            :  *</a>
-<a name="652"><span class="lineNum">     652 </span>                :            :  * Asynchronously read the next #JsonNode packet from @channel. Call</a>
-<a name="653"><span class="lineNum">     653 </span>                :            :  * valent_channel_read_packet_finish() to get the result.</a>
-<a name="654"><span class="lineNum">     654 </span>                :            :  */</a>
-<a name="655"><span class="lineNum">     655 </span>                :            : void</a>
-<a name="656"><span class="lineNum">     656 </span>                :<span class="lineCov">        725 : valent_channel_read_packet (ValentChannel       *channel,</span></a>
-<a name="657"><span class="lineNum">     657 </span>                :            :                             GCancellable        *cancellable,</a>
-<a name="658"><span class="lineNum">     658 </span>                :            :                             GAsyncReadyCallback  callback,</a>
-<a name="659"><span class="lineNum">     659 </span>                :            :                             gpointer             user_data)</a>
-<a name="660"><span class="lineNum">     660 </span>                :            : {</a>
-<a name="661"><span class="lineNum">     661 </span>                :<span class="lineCov">        725 :   g_autoptr (GTask) task = NULL;</span></a>
-<a name="662"><span class="lineNum">     662 </span>                :            : </a>
-<a name="663"><span class="lineNum">     663 </span>                :            :   VALENT_ENTRY;</a>
-<a name="664"><span class="lineNum">     664 </span>                :            : </a>
-<a name="665"><span class="lineNum">     665 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span>]:<span class="lineCov">        725 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="666"><span class="lineNum">     666 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        725 :   g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
+<a name="528"><span class="lineNum">     528 </span>                :            :  * Gets the identity packet sent by the #ValentChannelService during connection</a>
+<a name="529"><span class="lineNum">     529 </span>                :            :  * negotiation.</a>
+<a name="530"><span class="lineNum">     530 </span>                :            :  *</a>
+<a name="531"><span class="lineNum">     531 </span>                :            :  * Returns: (transfer none): The identity</a>
+<a name="532"><span class="lineNum">     532 </span>                :            :  */</a>
+<a name="533"><span class="lineNum">     533 </span>                :            : JsonNode *</a>
+<a name="534"><span class="lineNum">     534 </span>                :<span class="lineNoCov">          0 : valent_channel_get_identity (ValentChannel *channel)</span></a>
+<a name="535"><span class="lineNum">     535 </span>                :            : {</a>
+<a name="536"><span class="lineNum">     536 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :            : </a>
+<a name="538"><span class="lineNum">     538 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
+<a name="539"><span class="lineNum">     539 </span>                :            : </a>
+<a name="540"><span class="lineNum">     540 </span>                :<span class="lineNoCov">          0 :   return priv-&gt;identity;</span></a>
+<a name="541"><span class="lineNum">     541 </span>                :            : }</a>
+<a name="542"><span class="lineNum">     542 </span>                :            : </a>
+<a name="543"><span class="lineNum">     543 </span>                :            : /**</a>
+<a name="544"><span class="lineNum">     544 </span>                :            :  * valent_channel_get_peer_identity:</a>
+<a name="545"><span class="lineNum">     545 </span>                :            :  * @channel: A #ValentChannel</a>
+<a name="546"><span class="lineNum">     546 </span>                :            :  *</a>
+<a name="547"><span class="lineNum">     547 </span>                :            :  * Gets the identity packet sent by the peer during connection negotiation.</a>
+<a name="548"><span class="lineNum">     548 </span>                :            :  *</a>
+<a name="549"><span class="lineNum">     549 </span>                :            :  * Returns: (transfer none): The peer identity</a>
+<a name="550"><span class="lineNum">     550 </span>                :            :  */</a>
+<a name="551"><span class="lineNum">     551 </span>                :            : JsonNode *</a>
+<a name="552"><span class="lineNum">     552 </span>                :<span class="lineCov">        255 : valent_channel_get_peer_identity (ValentChannel *channel)</span></a>
+<a name="553"><span class="lineNum">     553 </span>                :            : {</a>
+<a name="554"><span class="lineNum">     554 </span>                :<span class="lineCov">        255 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="555"><span class="lineNum">     555 </span>                :            : </a>
+<a name="556"><span class="lineNum">     556 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 255 times"> + </span>]:<span class="lineCov">        255 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
+<a name="557"><span class="lineNum">     557 </span>                :            : </a>
+<a name="558"><span class="lineNum">     558 </span>                :<span class="lineCov">        255 :   return priv-&gt;peer_identity;</span></a>
+<a name="559"><span class="lineNum">     559 </span>                :            : }</a>
+<a name="560"><span class="lineNum">     560 </span>                :            : </a>
+<a name="561"><span class="lineNum">     561 </span>                :            : /**</a>
+<a name="562"><span class="lineNum">     562 </span>                :            :  * valent_channel_get_uri:</a>
+<a name="563"><span class="lineNum">     563 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="564"><span class="lineNum">     564 </span>                :            :  *</a>
+<a name="565"><span class="lineNum">     565 </span>                :            :  * Return a string representation of @channel that can be used to reconnect to</a>
+<a name="566"><span class="lineNum">     566 </span>                :            :  * the device, by passing to valent_channel_service_identify().</a>
+<a name="567"><span class="lineNum">     567 </span>                :            :  *</a>
+<a name="568"><span class="lineNum">     568 </span>                :            :  * This may be %NULL if the @channel does not support reconnection.</a>
+<a name="569"><span class="lineNum">     569 </span>                :            :  *</a>
+<a name="570"><span class="lineNum">     570 </span>                :            :  * Returns: (transfer none) (nullable): a reconnection string</a>
+<a name="571"><span class="lineNum">     571 </span>                :            :  */</a>
+<a name="572"><span class="lineNum">     572 </span>                :            : const char *</a>
+<a name="573"><span class="lineNum">     573 </span>                :<span class="lineNoCov">          0 : valent_channel_get_uri (ValentChannel *channel)</span></a>
+<a name="574"><span class="lineNum">     574 </span>                :            : {</a>
+<a name="575"><span class="lineNum">     575 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="576"><span class="lineNum">     576 </span>                :            : </a>
+<a name="577"><span class="lineNum">     577 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
+<a name="578"><span class="lineNum">     578 </span>                :            : </a>
+<a name="579"><span class="lineNum">     579 </span>                :<span class="lineNoCov">          0 :   return priv-&gt;uri;</span></a>
+<a name="580"><span class="lineNum">     580 </span>                :            : }</a>
+<a name="581"><span class="lineNum">     581 </span>                :            : </a>
+<a name="582"><span class="lineNum">     582 </span>                :            : /**</a>
+<a name="583"><span class="lineNum">     583 </span>                :            :  * valent_channel_set_uri:</a>
+<a name="584"><span class="lineNum">     584 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="585"><span class="lineNum">     585 </span>                :            :  * @uri: (nullable): a reconnect URI</a>
+<a name="586"><span class="lineNum">     586 </span>                :            :  *</a>
+<a name="587"><span class="lineNum">     587 </span>                :            :  * Set the string representation of @channel that can be used to reconnect to</a>
+<a name="588"><span class="lineNum">     588 </span>                :            :  * the device, by passing to valent_channel_service_identify().</a>
+<a name="589"><span class="lineNum">     589 </span>                :            :  */</a>
+<a name="590"><span class="lineNum">     590 </span>                :            : void</a>
+<a name="591"><span class="lineNum">     591 </span>                :<span class="lineNoCov">          0 : valent_channel_set_uri (ValentChannel *channel,</span></a>
+<a name="592"><span class="lineNum">     592 </span>                :            :                         const char    *uri)</a>
+<a name="593"><span class="lineNum">     593 </span>                :            : {</a>
+<a name="594"><span class="lineNum">     594 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="595"><span class="lineNum">     595 </span>                :            : </a>
+<a name="596"><span class="lineNum">     596 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="597"><span class="lineNum">     597 </span>                :            : </a>
+<a name="598"><span class="lineNum">     598 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (g_strcmp0 (priv-&gt;uri, uri) == 0)</span></a>
+<a name="599"><span class="lineNum">     599 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
+<a name="600"><span class="lineNum">     600 </span>                :            : </a>
+<a name="601"><span class="lineNum">     601 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
+<a name="602"><span class="lineNum">     602 </span>                :<span class="lineNoCov">          0 :   priv-&gt;uri = g_strdup (uri);</span></a>
+<a name="603"><span class="lineNum">     603 </span>                :<span class="lineNoCov">          0 :   g_object_notify_by_pspec (G_OBJECT (channel), properties [PROP_URI]);</span></a>
+<a name="604"><span class="lineNum">     604 </span>                :            : }</a>
+<a name="605"><span class="lineNum">     605 </span>                :            : </a>
+<a name="606"><span class="lineNum">     606 </span>                :            : /**</a>
+<a name="607"><span class="lineNum">     607 </span>                :            :  * valent_channel_get_verification_key: (virtual get_verification_key)</a>
+<a name="608"><span class="lineNum">     608 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="609"><span class="lineNum">     609 </span>                :            :  *</a>
+<a name="610"><span class="lineNum">     610 </span>                :            :  * Get a verification key for the connection.</a>
+<a name="611"><span class="lineNum">     611 </span>                :            :  *</a>
+<a name="612"><span class="lineNum">     612 </span>                :            :  * Implementations should return a string for the user to confirm the connection</a>
+<a name="613"><span class="lineNum">     613 </span>                :            :  * is being made by a particular device, similar to a Bluetooth PIN.</a>
+<a name="614"><span class="lineNum">     614 </span>                :            :  *</a>
+<a name="615"><span class="lineNum">     615 </span>                :            :  * Returns: (transfer none): a verification key</a>
+<a name="616"><span class="lineNum">     616 </span>                :            :  */</a>
+<a name="617"><span class="lineNum">     617 </span>                :            : const char *</a>
+<a name="618"><span class="lineNum">     618 </span>                :<span class="lineCov">         15 : valent_channel_get_verification_key (ValentChannel *channel)</span></a>
+<a name="619"><span class="lineNum">     619 </span>                :            : {</a>
+<a name="620"><span class="lineNum">     620 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), NULL);</span></a>
+<a name="621"><span class="lineNum">     621 </span>                :            : </a>
+<a name="622"><span class="lineNum">     622 </span>                :<span class="lineCov">         15 :   return VALENT_CHANNEL_GET_CLASS (channel)-&gt;get_verification_key (channel);</span></a>
+<a name="623"><span class="lineNum">     623 </span>                :            : }</a>
+<a name="624"><span class="lineNum">     624 </span>                :            : </a>
+<a name="625"><span class="lineNum">     625 </span>                :            : static void</a>
+<a name="626"><span class="lineNum">     626 </span>                :<span class="lineCov">        725 : read_packet_task (GTask        *task,</span></a>
+<a name="627"><span class="lineNum">     627 </span>                :            :                   gpointer      source_object,</a>
+<a name="628"><span class="lineNum">     628 </span>                :            :                   gpointer      task_data,</a>
+<a name="629"><span class="lineNum">     629 </span>                :            :                   GCancellable *cancellable)</a>
+<a name="630"><span class="lineNum">     630 </span>                :            : {</a>
+<a name="631"><span class="lineNum">     631 </span>                :<span class="lineCov">        725 :   ValentChannel *channel = source_object;</span></a>
+<a name="632"><span class="lineNum">     632 </span>                :<span class="lineCov">        725 :   GError *error = NULL;</span></a>
+<a name="633"><span class="lineNum">     633 </span>                :            :   JsonNode *packet;</a>
+<a name="634"><span class="lineNum">     634 </span>                :            : </a>
+<a name="635"><span class="lineNum">     635 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span>]:<span class="lineCov">        725 :   if (g_task_return_error_if_cancelled (task))</span></a>
+<a name="636"><span class="lineNum">     636 </span>                :<span class="lineCov">        246 :     return;</span></a>
+<a name="637"><span class="lineNum">     637 </span>                :            : </a>
+<a name="638"><span class="lineNum">     638 </span>                :<span class="lineCov">        725 :   packet = valent_channel_read_packet_internal (channel, cancellable, &amp;error);</span></a>
+<a name="639"><span class="lineNum">     639 </span>                :            : </a>
+<a name="640"><span class="lineNum">     640 </span>        [<span class="branchCov" title="Branch 0 was taken 246 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">        721 :   if (packet == NULL)</span></a>
+<a name="641"><span class="lineNum">     641 </span>                :<span class="lineCov">        246 :     return g_task_return_error (task, error);</span></a>
+<a name="642"><span class="lineNum">     642 </span>                :            : </a>
+<a name="643"><span class="lineNum">     643 </span>                :<span class="lineCov">        475 :   g_task_return_pointer (task, packet, (GDestroyNotify)json_node_unref);</span></a>
+<a name="644"><span class="lineNum">     644 </span>                :            : }</a>
+<a name="645"><span class="lineNum">     645 </span>                :            : </a>
+<a name="646"><span class="lineNum">     646 </span>                :            : /**</a>
+<a name="647"><span class="lineNum">     647 </span>                :            :  * valent_channel_read_packet:</a>
+<a name="648"><span class="lineNum">     648 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="649"><span class="lineNum">     649 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
+<a name="650"><span class="lineNum">     650 </span>                :            :  * @callback: (scope async): a #GAsyncReadyCallback</a>
+<a name="651"><span class="lineNum">     651 </span>                :            :  * @user_data: (closure): user supplied data</a>
+<a name="652"><span class="lineNum">     652 </span>                :            :  *</a>
+<a name="653"><span class="lineNum">     653 </span>                :            :  * Asynchronously read the next #JsonNode packet from @channel. Call</a>
+<a name="654"><span class="lineNum">     654 </span>                :            :  * valent_channel_read_packet_finish() to get the result.</a>
+<a name="655"><span class="lineNum">     655 </span>                :            :  */</a>
+<a name="656"><span class="lineNum">     656 </span>                :            : void</a>
+<a name="657"><span class="lineNum">     657 </span>                :<span class="lineCov">        725 : valent_channel_read_packet (ValentChannel       *channel,</span></a>
+<a name="658"><span class="lineNum">     658 </span>                :            :                             GCancellable        *cancellable,</a>
+<a name="659"><span class="lineNum">     659 </span>                :            :                             GAsyncReadyCallback  callback,</a>
+<a name="660"><span class="lineNum">     660 </span>                :            :                             gpointer             user_data)</a>
+<a name="661"><span class="lineNum">     661 </span>                :            : {</a>
+<a name="662"><span class="lineNum">     662 </span>                :<span class="lineCov">        725 :   g_autoptr (GTask) task = NULL;</span></a>
+<a name="663"><span class="lineNum">     663 </span>                :            : </a>
+<a name="664"><span class="lineNum">     664 </span>                :            :   VALENT_ENTRY;</a>
+<a name="665"><span class="lineNum">     665 </span>                :            : </a>
+<a name="666"><span class="lineNum">     666 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span>]:<span class="lineCov">        725 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="667"><span class="lineNum">     667 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        725 :   g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
-<a name="667"><span class="lineNum">     667 </span>                :            : </a>
-<a name="668"><span class="lineNum">     668 </span>                :<span class="lineCov">        725 :   task = g_task_new (channel, cancellable, callback, user_data);</span></a>
-<a name="669"><span class="lineNum">     669 </span>        [<span class="branchCov" title="Branch 0 was taken 725 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        725 :   g_task_set_source_tag (task, valent_channel_read_packet);</span></a>
-<a name="670"><span class="lineNum">     670 </span>                :<span class="lineCov">        725 :   g_task_run_in_thread (task, read_packet_task);</span></a>
-<a name="671"><span class="lineNum">     671 </span>                :            : </a>
-<a name="672"><span class="lineNum">     672 </span>                :<span class="lineCov">        725 :   VALENT_EXIT;</span></a>
-<a name="673"><span class="lineNum">     673 </span>                :            : }</a>
-<a name="674"><span class="lineNum">     674 </span>                :            : </a>
-<a name="675"><span class="lineNum">     675 </span>                :            : /**</a>
-<a name="676"><span class="lineNum">     676 </span>                :            :  * valent_channel_read_packet_finish:</a>
-<a name="677"><span class="lineNum">     677 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="678"><span class="lineNum">     678 </span>                :            :  * @result: a #GAsyncResult</a>
-<a name="679"><span class="lineNum">     679 </span>                :            :  * @error: (nullable): a #GError</a>
-<a name="680"><span class="lineNum">     680 </span>                :            :  *</a>
-<a name="681"><span class="lineNum">     681 </span>                :            :  * Finishes an operation started by valent_channel_read_packet().</a>
-<a name="682"><span class="lineNum">     682 </span>                :            :  *</a>
-<a name="683"><span class="lineNum">     683 </span>                :            :  * Returns: (transfer full): a #JsonNode or %NULL with @error set</a>
-<a name="684"><span class="lineNum">     684 </span>                :            :  */</a>
-<a name="685"><span class="lineNum">     685 </span>                :            : JsonNode *</a>
-<a name="686"><span class="lineNum">     686 </span>                :<span class="lineCov">        670 : valent_channel_read_packet_finish (ValentChannel  *channel,</span></a>
-<a name="687"><span class="lineNum">     687 </span>                :            :                                    GAsyncResult   *result,</a>
-<a name="688"><span class="lineNum">     688 </span>                :            :                                    GError        **error)</a>
-<a name="689"><span class="lineNum">     689 </span>                :            : {</a>
-<a name="690"><span class="lineNum">     690 </span>                :            :   JsonNode *ret;</a>
-<a name="691"><span class="lineNum">     691 </span>                :            : </a>
-<a name="692"><span class="lineNum">     692 </span>                :            :   VALENT_ENTRY;</a>
-<a name="693"><span class="lineNum">     693 </span>                :            : </a>
-<a name="694"><span class="lineNum">     694 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 670 times"> + </span>]:<span class="lineCov">        670 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
-<a name="695"><span class="lineNum">     695 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 670 times"> + </span>]:<span class="lineCov">        670 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
-<a name="696"><span class="lineNum">     696 </span>  [<span class="branchCov" title="Branch 0 was taken 670 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 670 times"> + </span>]:<span class="lineCov">        670 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
-<a name="697"><span class="lineNum">     697 </span>                :            : </a>
-<a name="698"><span class="lineNum">     698 </span>                :<span class="lineCov">        670 :   ret = g_task_propagate_pointer (G_TASK (result), error);</span></a>
-<a name="699"><span class="lineNum">     699 </span>                :            : </a>
-<a name="700"><span class="lineNum">     700 </span>                :<span class="lineCov">        670 :   VALENT_RETURN (ret);</span></a>
-<a name="701"><span class="lineNum">     701 </span>                :            : }</a>
-<a name="702"><span class="lineNum">     702 </span>                :            : </a>
-<a name="703"><span class="lineNum">     703 </span>                :            : static gboolean</a>
-<a name="704"><span class="lineNum">     704 </span>                :<span class="lineCov">       4332 : write_packet_next (gpointer data)</span></a>
-<a name="705"><span class="lineNum">     705 </span>                :            : {</a>
-<a name="706"><span class="lineNum">     706 </span>                :<span class="lineCov">       4332 :   ValentChannel *channel = VALENT_CHANNEL (data);</span></a>
-<a name="707"><span class="lineNum">     707 </span>                :<span class="lineCov">       4332 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="708"><span class="lineNum">     708 </span>                :<span class="lineCov">       4332 :   g_autoptr (GTask) task = NULL;</span></a>
-<a name="709"><span class="lineNum">     709 </span>                :            : </a>
-<a name="710"><span class="lineNum">     710 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4332 times"> + </span>]:<span class="lineCov">       4332 :   g_assert (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="711"><span class="lineNum">     711 </span>                :            : </a>
-<a name="712"><span class="lineNum">     712 </span>        [<span class="branchCov" title="Branch 0 was taken 2144 times"> + </span><span class="branchCov" title="Branch 1 was taken 2188 times"> + </span>]:<span class="lineCov">       4332 :   if (priv-&gt;write_queue.length == 0)</span></a>
-<a name="713"><span class="lineNum">     713 </span>                :<span class="lineCov">       2144 :     return FALSE;</span></a>
-<a name="714"><span class="lineNum">     714 </span>                :            : </a>
-<a name="715"><span class="lineNum">     715 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2188 :   if (!g_mutex_trylock (&amp;priv-&gt;write_lock))</span></a>
-<a name="716"><span class="lineNum">     716 </span>                :<span class="lineCov">         22 :     return FALSE;</span></a>
-<a name="717"><span class="lineNum">     717 </span>                :            : </a>
-<a name="718"><span class="lineNum">     718 </span>                :<span class="lineCov">       2166 :   task = g_queue_pop_head (&amp;priv-&gt;write_queue);</span></a>
-<a name="719"><span class="lineNum">     719 </span>                :<span class="lineCov">       2166 :   g_task_run_in_thread (task, write_packet_task);</span></a>
-<a name="720"><span class="lineNum">     720 </span>                :            : </a>
-<a name="721"><span class="lineNum">     721 </span>                :<span class="lineCov">       2166 :   return FALSE;</span></a>
-<a name="722"><span class="lineNum">     722 </span>                :            : }</a>
-<a name="723"><span class="lineNum">     723 </span>                :            : </a>
-<a name="724"><span class="lineNum">     724 </span>                :            : static void</a>
-<a name="725"><span class="lineNum">     725 </span>                :<span class="lineCov">       2166 : write_packet_task (GTask        *task,</span></a>
-<a name="726"><span class="lineNum">     726 </span>                :            :                    gpointer      source_object,</a>
-<a name="727"><span class="lineNum">     727 </span>                :            :                    gpointer      task_data,</a>
-<a name="728"><span class="lineNum">     728 </span>                :            :                    GCancellable *cancellable)</a>
-<a name="729"><span class="lineNum">     729 </span>                :            : {</a>
-<a name="730"><span class="lineNum">     730 </span>                :<span class="lineCov">       2166 :   ValentChannel *channel = source_object;</span></a>
-<a name="731"><span class="lineNum">     731 </span>                :<span class="lineCov">       2166 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="732"><span class="lineNum">     732 </span>                :<span class="lineCov">       2166 :   JsonNode *packet = task_data;</span></a>
-<a name="733"><span class="lineNum">     733 </span>                :<span class="lineCov">       2166 :   GError *error = NULL;</span></a>
-<a name="734"><span class="lineNum">     734 </span>                :            : </a>
-<a name="735"><span class="lineNum">     735 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2166 :   if (g_task_return_error_if_cancelled (task))</span></a>
-<a name="736"><span class="lineNum">     736 </span>                :<span class="lineNoCov">          0 :     return g_mutex_unlock (&amp;priv-&gt;write_lock);</span></a>
-<a name="737"><span class="lineNum">     737 </span>                :            : </a>
-<a name="738"><span class="lineNum">     738 </span>        [<span class="branchCov" title="Branch 0 was taken 1881 times"> + </span><span class="branchCov" title="Branch 1 was taken 285 times"> + </span>]:<span class="lineCov">       2166 :   if (valent_channel_write_packet_internal (channel, packet, cancellable, &amp;error))</span></a>
-<a name="739"><span class="lineNum">     739 </span>                :<span class="lineCov">       1881 :     g_task_return_boolean (task, TRUE);</span></a>
-<a name="740"><span class="lineNum">     740 </span>                :            :   else</a>
-<a name="741"><span class="lineNum">     741 </span>                :<span class="lineCov">        285 :     g_task_return_error (task, error);</span></a>
-<a name="742"><span class="lineNum">     742 </span>                :            : </a>
-<a name="743"><span class="lineNum">     743 </span>                :<span class="lineCov">       2166 :   g_mutex_unlock (&amp;priv-&gt;write_lock);</span></a>
-<a name="744"><span class="lineNum">     744 </span>                :<span class="lineCov">       2166 :   write_packet_next (channel);</span></a>
-<a name="745"><span class="lineNum">     745 </span>                :            : }</a>
-<a name="746"><span class="lineNum">     746 </span>                :            : </a>
-<a name="747"><span class="lineNum">     747 </span>                :            : /**</a>
-<a name="748"><span class="lineNum">     748 </span>                :            :  * valent_channel_write_packet:</a>
-<a name="749"><span class="lineNum">     749 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="750"><span class="lineNum">     750 </span>                :            :  * @packet: a #JsonNode</a>
-<a name="751"><span class="lineNum">     751 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
-<a name="752"><span class="lineNum">     752 </span>                :            :  * @callback: (scope async): a #GAsyncReadyCallback</a>
-<a name="753"><span class="lineNum">     753 </span>                :            :  * @user_data: (closure): user supplied data</a>
-<a name="754"><span class="lineNum">     754 </span>                :            :  *</a>
-<a name="755"><span class="lineNum">     755 </span>                :            :  * Asynchronously write the #JsonNode @packet to @channel. Call</a>
-<a name="756"><span class="lineNum">     756 </span>                :            :  * valent_channel_write_packet_finish() to get the result.</a>
-<a name="757"><span class="lineNum">     757 </span>                :            :  */</a>
-<a name="758"><span class="lineNum">     758 </span>                :            : void</a>
-<a name="759"><span class="lineNum">     759 </span>                :<span class="lineCov">       2166 : valent_channel_write_packet (ValentChannel       *channel,</span></a>
-<a name="760"><span class="lineNum">     760 </span>                :            :                              JsonNode            *packet,</a>
-<a name="761"><span class="lineNum">     761 </span>                :            :                              GCancellable        *cancellable,</a>
-<a name="762"><span class="lineNum">     762 </span>                :            :                              GAsyncReadyCallback  callback,</a>
-<a name="763"><span class="lineNum">     763 </span>                :            :                              gpointer             user_data)</a>
-<a name="764"><span class="lineNum">     764 </span>                :            : {</a>
-<a name="765"><span class="lineNum">     765 </span>                :<span class="lineCov">       2166 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="766"><span class="lineNum">     766 </span>                :<span class="lineCov">       2166 :   g_autoptr (GTask) task = NULL;</span></a>
-<a name="767"><span class="lineNum">     767 </span>                :            : </a>
-<a name="768"><span class="lineNum">     768 </span>                :            :   VALENT_ENTRY;</a>
-<a name="769"><span class="lineNum">     769 </span>                :            : </a>
-<a name="770"><span class="lineNum">     770 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2166 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="771"><span class="lineNum">     771 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2166 :   g_return_if_fail (VALENT_IS_PACKET (packet));</span></a>
-<a name="772"><span class="lineNum">     772 </span>  [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 2136 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 30 times"> + </span> :<span class="lineCov">       2166 :   g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
+<a name="668"><span class="lineNum">     668 </span>                :            : </a>
+<a name="669"><span class="lineNum">     669 </span>                :<span class="lineCov">        725 :   task = g_task_new (channel, cancellable, callback, user_data);</span></a>
+<a name="670"><span class="lineNum">     670 </span>        [<span class="branchCov" title="Branch 0 was taken 725 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        725 :   g_task_set_source_tag (task, valent_channel_read_packet);</span></a>
+<a name="671"><span class="lineNum">     671 </span>                :<span class="lineCov">        725 :   g_task_run_in_thread (task, read_packet_task);</span></a>
+<a name="672"><span class="lineNum">     672 </span>                :            : </a>
+<a name="673"><span class="lineNum">     673 </span>                :<span class="lineCov">        725 :   VALENT_EXIT;</span></a>
+<a name="674"><span class="lineNum">     674 </span>                :            : }</a>
+<a name="675"><span class="lineNum">     675 </span>                :            : </a>
+<a name="676"><span class="lineNum">     676 </span>                :            : /**</a>
+<a name="677"><span class="lineNum">     677 </span>                :            :  * valent_channel_read_packet_finish:</a>
+<a name="678"><span class="lineNum">     678 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="679"><span class="lineNum">     679 </span>                :            :  * @result: a #GAsyncResult</a>
+<a name="680"><span class="lineNum">     680 </span>                :            :  * @error: (nullable): a #GError</a>
+<a name="681"><span class="lineNum">     681 </span>                :            :  *</a>
+<a name="682"><span class="lineNum">     682 </span>                :            :  * Finishes an operation started by valent_channel_read_packet().</a>
+<a name="683"><span class="lineNum">     683 </span>                :            :  *</a>
+<a name="684"><span class="lineNum">     684 </span>                :            :  * Returns: (transfer full): a #JsonNode or %NULL with @error set</a>
+<a name="685"><span class="lineNum">     685 </span>                :            :  */</a>
+<a name="686"><span class="lineNum">     686 </span>                :            : JsonNode *</a>
+<a name="687"><span class="lineNum">     687 </span>                :<span class="lineCov">        676 : valent_channel_read_packet_finish (ValentChannel  *channel,</span></a>
+<a name="688"><span class="lineNum">     688 </span>                :            :                                    GAsyncResult   *result,</a>
+<a name="689"><span class="lineNum">     689 </span>                :            :                                    GError        **error)</a>
+<a name="690"><span class="lineNum">     690 </span>                :            : {</a>
+<a name="691"><span class="lineNum">     691 </span>                :            :   JsonNode *ret;</a>
+<a name="692"><span class="lineNum">     692 </span>                :            : </a>
+<a name="693"><span class="lineNum">     693 </span>                :            :   VALENT_ENTRY;</a>
+<a name="694"><span class="lineNum">     694 </span>                :            : </a>
+<a name="695"><span class="lineNum">     695 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 676 times"> + </span>]:<span class="lineCov">        676 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
+<a name="696"><span class="lineNum">     696 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 676 times"> + </span>]:<span class="lineCov">        676 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
+<a name="697"><span class="lineNum">     697 </span>  [<span class="branchCov" title="Branch 0 was taken 676 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 676 times"> + </span>]:<span class="lineCov">        676 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
+<a name="698"><span class="lineNum">     698 </span>                :            : </a>
+<a name="699"><span class="lineNum">     699 </span>                :<span class="lineCov">        676 :   ret = g_task_propagate_pointer (G_TASK (result), error);</span></a>
+<a name="700"><span class="lineNum">     700 </span>                :            : </a>
+<a name="701"><span class="lineNum">     701 </span>                :<span class="lineCov">        676 :   VALENT_RETURN (ret);</span></a>
+<a name="702"><span class="lineNum">     702 </span>                :            : }</a>
+<a name="703"><span class="lineNum">     703 </span>                :            : </a>
+<a name="704"><span class="lineNum">     704 </span>                :            : static gboolean</a>
+<a name="705"><span class="lineNum">     705 </span>                :<span class="lineCov">       4332 : write_packet_next (gpointer data)</span></a>
+<a name="706"><span class="lineNum">     706 </span>                :            : {</a>
+<a name="707"><span class="lineNum">     707 </span>                :<span class="lineCov">       4332 :   ValentChannel *channel = VALENT_CHANNEL (data);</span></a>
+<a name="708"><span class="lineNum">     708 </span>                :<span class="lineCov">       4332 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="709"><span class="lineNum">     709 </span>                :<span class="lineCov">       4332 :   g_autoptr (GTask) task = NULL;</span></a>
+<a name="710"><span class="lineNum">     710 </span>                :            : </a>
+<a name="711"><span class="lineNum">     711 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4332 times"> + </span>]:<span class="lineCov">       4332 :   g_assert (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="712"><span class="lineNum">     712 </span>                :            : </a>
+<a name="713"><span class="lineNum">     713 </span>        [<span class="branchCov" title="Branch 0 was taken 2146 times"> + </span><span class="branchCov" title="Branch 1 was taken 2186 times"> + </span>]:<span class="lineCov">       4332 :   if (priv-&gt;write_queue.length == 0)</span></a>
+<a name="714"><span class="lineNum">     714 </span>                :<span class="lineCov">       2146 :     return FALSE;</span></a>
+<a name="715"><span class="lineNum">     715 </span>                :            : </a>
+<a name="716"><span class="lineNum">     716 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2186 :   if (!g_mutex_trylock (&amp;priv-&gt;write_lock))</span></a>
+<a name="717"><span class="lineNum">     717 </span>                :<span class="lineCov">         20 :     return FALSE;</span></a>
+<a name="718"><span class="lineNum">     718 </span>                :            : </a>
+<a name="719"><span class="lineNum">     719 </span>                :<span class="lineCov">       2166 :   task = g_queue_pop_head (&amp;priv-&gt;write_queue);</span></a>
+<a name="720"><span class="lineNum">     720 </span>                :<span class="lineCov">       2166 :   g_task_run_in_thread (task, write_packet_task);</span></a>
+<a name="721"><span class="lineNum">     721 </span>                :            : </a>
+<a name="722"><span class="lineNum">     722 </span>                :<span class="lineCov">       2166 :   return FALSE;</span></a>
+<a name="723"><span class="lineNum">     723 </span>                :            : }</a>
+<a name="724"><span class="lineNum">     724 </span>                :            : </a>
+<a name="725"><span class="lineNum">     725 </span>                :            : static void</a>
+<a name="726"><span class="lineNum">     726 </span>                :<span class="lineCov">       2166 : write_packet_task (GTask        *task,</span></a>
+<a name="727"><span class="lineNum">     727 </span>                :            :                    gpointer      source_object,</a>
+<a name="728"><span class="lineNum">     728 </span>                :            :                    gpointer      task_data,</a>
+<a name="729"><span class="lineNum">     729 </span>                :            :                    GCancellable *cancellable)</a>
+<a name="730"><span class="lineNum">     730 </span>                :            : {</a>
+<a name="731"><span class="lineNum">     731 </span>                :<span class="lineCov">       2166 :   ValentChannel *channel = source_object;</span></a>
+<a name="732"><span class="lineNum">     732 </span>                :<span class="lineCov">       2166 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="733"><span class="lineNum">     733 </span>                :<span class="lineCov">       2166 :   JsonNode *packet = task_data;</span></a>
+<a name="734"><span class="lineNum">     734 </span>                :<span class="lineCov">       2166 :   GError *error = NULL;</span></a>
+<a name="735"><span class="lineNum">     735 </span>                :            : </a>
+<a name="736"><span class="lineNum">     736 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2166 :   if (g_task_return_error_if_cancelled (task))</span></a>
+<a name="737"><span class="lineNum">     737 </span>                :<span class="lineNoCov">          0 :     return g_mutex_unlock (&amp;priv-&gt;write_lock);</span></a>
+<a name="738"><span class="lineNum">     738 </span>                :            : </a>
+<a name="739"><span class="lineNum">     739 </span>        [<span class="branchCov" title="Branch 0 was taken 1881 times"> + </span><span class="branchCov" title="Branch 1 was taken 285 times"> + </span>]:<span class="lineCov">       2166 :   if (valent_channel_write_packet_internal (channel, packet, cancellable, &amp;error))</span></a>
+<a name="740"><span class="lineNum">     740 </span>                :<span class="lineCov">       1881 :     g_task_return_boolean (task, TRUE);</span></a>
+<a name="741"><span class="lineNum">     741 </span>                :            :   else</a>
+<a name="742"><span class="lineNum">     742 </span>                :<span class="lineCov">        285 :     g_task_return_error (task, error);</span></a>
+<a name="743"><span class="lineNum">     743 </span>                :            : </a>
+<a name="744"><span class="lineNum">     744 </span>                :<span class="lineCov">       2166 :   g_mutex_unlock (&amp;priv-&gt;write_lock);</span></a>
+<a name="745"><span class="lineNum">     745 </span>                :<span class="lineCov">       2166 :   write_packet_next (channel);</span></a>
+<a name="746"><span class="lineNum">     746 </span>                :            : }</a>
+<a name="747"><span class="lineNum">     747 </span>                :            : </a>
+<a name="748"><span class="lineNum">     748 </span>                :            : /**</a>
+<a name="749"><span class="lineNum">     749 </span>                :            :  * valent_channel_write_packet:</a>
+<a name="750"><span class="lineNum">     750 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="751"><span class="lineNum">     751 </span>                :            :  * @packet: a #JsonNode</a>
+<a name="752"><span class="lineNum">     752 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
+<a name="753"><span class="lineNum">     753 </span>                :            :  * @callback: (scope async): a #GAsyncReadyCallback</a>
+<a name="754"><span class="lineNum">     754 </span>                :            :  * @user_data: (closure): user supplied data</a>
+<a name="755"><span class="lineNum">     755 </span>                :            :  *</a>
+<a name="756"><span class="lineNum">     756 </span>                :            :  * Asynchronously write the #JsonNode @packet to @channel. Call</a>
+<a name="757"><span class="lineNum">     757 </span>                :            :  * valent_channel_write_packet_finish() to get the result.</a>
+<a name="758"><span class="lineNum">     758 </span>                :            :  */</a>
+<a name="759"><span class="lineNum">     759 </span>                :            : void</a>
+<a name="760"><span class="lineNum">     760 </span>                :<span class="lineCov">       2166 : valent_channel_write_packet (ValentChannel       *channel,</span></a>
+<a name="761"><span class="lineNum">     761 </span>                :            :                              JsonNode            *packet,</a>
+<a name="762"><span class="lineNum">     762 </span>                :            :                              GCancellable        *cancellable,</a>
+<a name="763"><span class="lineNum">     763 </span>                :            :                              GAsyncReadyCallback  callback,</a>
+<a name="764"><span class="lineNum">     764 </span>                :            :                              gpointer             user_data)</a>
+<a name="765"><span class="lineNum">     765 </span>                :            : {</a>
+<a name="766"><span class="lineNum">     766 </span>                :<span class="lineCov">       2166 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="767"><span class="lineNum">     767 </span>                :<span class="lineCov">       2166 :   g_autoptr (GTask) task = NULL;</span></a>
+<a name="768"><span class="lineNum">     768 </span>                :            : </a>
+<a name="769"><span class="lineNum">     769 </span>                :            :   VALENT_ENTRY;</a>
+<a name="770"><span class="lineNum">     770 </span>                :            : </a>
+<a name="771"><span class="lineNum">     771 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2166 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="772"><span class="lineNum">     772 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2166 times"> + </span>]:<span class="lineCov">       2166 :   g_return_if_fail (VALENT_IS_PACKET (packet));</span></a>
+<a name="773"><span class="lineNum">     773 </span>  [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 2136 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 30 times"> + </span> :<span class="lineCov">       2166 :   g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 30 times"> + </span>]
-<a name="773"><span class="lineNum">     773 </span>                :            : </a>
-<a name="774"><span class="lineNum">     774 </span>                :<span class="lineCov">       2166 :   task = g_task_new (channel, cancellable, callback, user_data);</span></a>
-<a name="775"><span class="lineNum">     775 </span>        [<span class="branchCov" title="Branch 0 was taken 2166 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2166 :   g_task_set_source_tag (task, valent_channel_write_packet);</span></a>
-<a name="776"><span class="lineNum">     776 </span>                :<span class="lineCov">       2166 :   g_task_set_task_data (task, json_node_ref (packet), (GDestroyNotify)json_node_unref);</span></a>
-<a name="777"><span class="lineNum">     777 </span>                :            : </a>
-<a name="778"><span class="lineNum">     778 </span>                :<span class="lineCov">       2166 :   g_queue_push_tail (&amp;priv-&gt;write_queue, g_steal_pointer (&amp;task));</span></a>
-<a name="779"><span class="lineNum">     779 </span>                :<span class="lineCov">       2166 :   write_packet_next (channel);</span></a>
-<a name="780"><span class="lineNum">     780 </span>                :            : </a>
-<a name="781"><span class="lineNum">     781 </span>                :<span class="lineCov">       2166 :   VALENT_EXIT;</span></a>
-<a name="782"><span class="lineNum">     782 </span>                :            : }</a>
-<a name="783"><span class="lineNum">     783 </span>                :            : </a>
-<a name="784"><span class="lineNum">     784 </span>                :            : /**</a>
-<a name="785"><span class="lineNum">     785 </span>                :            :  * valent_channel_write_packet_finish:</a>
-<a name="786"><span class="lineNum">     786 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="787"><span class="lineNum">     787 </span>                :            :  * @result: a #GAsyncResult</a>
-<a name="788"><span class="lineNum">     788 </span>                :            :  * @error: (nullable): a #GError</a>
-<a name="789"><span class="lineNum">     789 </span>                :            :  *</a>
-<a name="790"><span class="lineNum">     790 </span>                :            :  * Finishes an async operation started by valent_channel_write_packet().</a>
-<a name="791"><span class="lineNum">     791 </span>                :            :  *</a>
-<a name="792"><span class="lineNum">     792 </span>                :            :  * Returns: %TRUE or %FALSE with @error set</a>
-<a name="793"><span class="lineNum">     793 </span>                :            :  */</a>
-<a name="794"><span class="lineNum">     794 </span>                :            : gboolean</a>
-<a name="795"><span class="lineNum">     795 </span>                :<span class="lineCov">       2101 : valent_channel_write_packet_finish (ValentChannel  *channel,</span></a>
-<a name="796"><span class="lineNum">     796 </span>                :            :                                     GAsyncResult   *result,</a>
-<a name="797"><span class="lineNum">     797 </span>                :            :                                     GError        **error)</a>
-<a name="798"><span class="lineNum">     798 </span>                :            : {</a>
-<a name="799"><span class="lineNum">     799 </span>                :            :   gboolean ret;</a>
-<a name="800"><span class="lineNum">     800 </span>                :            : </a>
-<a name="801"><span class="lineNum">     801 </span>                :            :   VALENT_ENTRY;</a>
-<a name="802"><span class="lineNum">     802 </span>                :            : </a>
-<a name="803"><span class="lineNum">     803 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2101 times"> + </span>]:<span class="lineCov">       2101 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
-<a name="804"><span class="lineNum">     804 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2101 times"> + </span>]:<span class="lineCov">       2101 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
-<a name="805"><span class="lineNum">     805 </span>  [<span class="branchCov" title="Branch 0 was taken 2101 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2101 times"> + </span>]:<span class="lineCov">       2101 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
-<a name="806"><span class="lineNum">     806 </span>                :            : </a>
-<a name="807"><span class="lineNum">     807 </span>                :<span class="lineCov">       2101 :   ret = g_task_propagate_boolean (G_TASK (result), error);</span></a>
-<a name="808"><span class="lineNum">     808 </span>                :            : </a>
-<a name="809"><span class="lineNum">     809 </span>                :<span class="lineCov">       2101 :   VALENT_RETURN (ret);</span></a>
-<a name="810"><span class="lineNum">     810 </span>                :            : }</a>
-<a name="811"><span class="lineNum">     811 </span>                :            : </a>
-<a name="812"><span class="lineNum">     812 </span>                :            : /**</a>
-<a name="813"><span class="lineNum">     813 </span>                :            :  * valent_channel_close:</a>
-<a name="814"><span class="lineNum">     814 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="815"><span class="lineNum">     815 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
-<a name="816"><span class="lineNum">     816 </span>                :            :  * @error: (nullable): a #GError</a>
-<a name="817"><span class="lineNum">     817 </span>                :            :  *</a>
-<a name="818"><span class="lineNum">     818 </span>                :            :  * Synchronously close @channel.</a>
-<a name="819"><span class="lineNum">     819 </span>                :            :  *</a>
-<a name="820"><span class="lineNum">     820 </span>                :            :  * Returns: %TRUE or %FALSE with @error set</a>
-<a name="821"><span class="lineNum">     821 </span>                :            :  */</a>
-<a name="822"><span class="lineNum">     822 </span>                :            : gboolean</a>
-<a name="823"><span class="lineNum">     823 </span>                :<span class="lineNoCov">          0 : valent_channel_close (ValentChannel  *channel,</span></a>
-<a name="824"><span class="lineNum">     824 </span>                :            :                       GCancellable   *cancellable,</a>
-<a name="825"><span class="lineNum">     825 </span>                :            :                       GError        **error)</a>
-<a name="826"><span class="lineNum">     826 </span>                :            : {</a>
-<a name="827"><span class="lineNum">     827 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="828"><span class="lineNum">     828 </span>                :            : </a>
-<a name="829"><span class="lineNum">     829 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="830"><span class="lineNum">     830 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   g_assert (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
+<a name="774"><span class="lineNum">     774 </span>                :            : </a>
+<a name="775"><span class="lineNum">     775 </span>                :<span class="lineCov">       2166 :   task = g_task_new (channel, cancellable, callback, user_data);</span></a>
+<a name="776"><span class="lineNum">     776 </span>        [<span class="branchCov" title="Branch 0 was taken 2166 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2166 :   g_task_set_source_tag (task, valent_channel_write_packet);</span></a>
+<a name="777"><span class="lineNum">     777 </span>                :<span class="lineCov">       2166 :   g_task_set_task_data (task, json_node_ref (packet), (GDestroyNotify)json_node_unref);</span></a>
+<a name="778"><span class="lineNum">     778 </span>                :            : </a>
+<a name="779"><span class="lineNum">     779 </span>                :<span class="lineCov">       2166 :   g_queue_push_tail (&amp;priv-&gt;write_queue, g_steal_pointer (&amp;task));</span></a>
+<a name="780"><span class="lineNum">     780 </span>                :<span class="lineCov">       2166 :   write_packet_next (channel);</span></a>
+<a name="781"><span class="lineNum">     781 </span>                :            : </a>
+<a name="782"><span class="lineNum">     782 </span>                :<span class="lineCov">       2166 :   VALENT_EXIT;</span></a>
+<a name="783"><span class="lineNum">     783 </span>                :            : }</a>
+<a name="784"><span class="lineNum">     784 </span>                :            : </a>
+<a name="785"><span class="lineNum">     785 </span>                :            : /**</a>
+<a name="786"><span class="lineNum">     786 </span>                :            :  * valent_channel_write_packet_finish:</a>
+<a name="787"><span class="lineNum">     787 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="788"><span class="lineNum">     788 </span>                :            :  * @result: a #GAsyncResult</a>
+<a name="789"><span class="lineNum">     789 </span>                :            :  * @error: (nullable): a #GError</a>
+<a name="790"><span class="lineNum">     790 </span>                :            :  *</a>
+<a name="791"><span class="lineNum">     791 </span>                :            :  * Finishes an async operation started by valent_channel_write_packet().</a>
+<a name="792"><span class="lineNum">     792 </span>                :            :  *</a>
+<a name="793"><span class="lineNum">     793 </span>                :            :  * Returns: %TRUE or %FALSE with @error set</a>
+<a name="794"><span class="lineNum">     794 </span>                :            :  */</a>
+<a name="795"><span class="lineNum">     795 </span>                :            : gboolean</a>
+<a name="796"><span class="lineNum">     796 </span>                :<span class="lineCov">       2102 : valent_channel_write_packet_finish (ValentChannel  *channel,</span></a>
+<a name="797"><span class="lineNum">     797 </span>                :            :                                     GAsyncResult   *result,</a>
+<a name="798"><span class="lineNum">     798 </span>                :            :                                     GError        **error)</a>
+<a name="799"><span class="lineNum">     799 </span>                :            : {</a>
+<a name="800"><span class="lineNum">     800 </span>                :            :   gboolean ret;</a>
+<a name="801"><span class="lineNum">     801 </span>                :            : </a>
+<a name="802"><span class="lineNum">     802 </span>                :            :   VALENT_ENTRY;</a>
+<a name="803"><span class="lineNum">     803 </span>                :            : </a>
+<a name="804"><span class="lineNum">     804 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2102 times"> + </span>]:<span class="lineCov">       2102 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
+<a name="805"><span class="lineNum">     805 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2102 times"> + </span>]:<span class="lineCov">       2102 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
+<a name="806"><span class="lineNum">     806 </span>  [<span class="branchCov" title="Branch 0 was taken 2102 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2102 times"> + </span>]:<span class="lineCov">       2102 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
+<a name="807"><span class="lineNum">     807 </span>                :            : </a>
+<a name="808"><span class="lineNum">     808 </span>                :<span class="lineCov">       2102 :   ret = g_task_propagate_boolean (G_TASK (result), error);</span></a>
+<a name="809"><span class="lineNum">     809 </span>                :            : </a>
+<a name="810"><span class="lineNum">     810 </span>                :<span class="lineCov">       2102 :   VALENT_RETURN (ret);</span></a>
+<a name="811"><span class="lineNum">     811 </span>                :            : }</a>
+<a name="812"><span class="lineNum">     812 </span>                :            : </a>
+<a name="813"><span class="lineNum">     813 </span>                :            : /**</a>
+<a name="814"><span class="lineNum">     814 </span>                :            :  * valent_channel_close:</a>
+<a name="815"><span class="lineNum">     815 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="816"><span class="lineNum">     816 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
+<a name="817"><span class="lineNum">     817 </span>                :            :  * @error: (nullable): a #GError</a>
+<a name="818"><span class="lineNum">     818 </span>                :            :  *</a>
+<a name="819"><span class="lineNum">     819 </span>                :            :  * Synchronously close @channel.</a>
+<a name="820"><span class="lineNum">     820 </span>                :            :  *</a>
+<a name="821"><span class="lineNum">     821 </span>                :            :  * Returns: %TRUE or %FALSE with @error set</a>
+<a name="822"><span class="lineNum">     822 </span>                :            :  */</a>
+<a name="823"><span class="lineNum">     823 </span>                :            : gboolean</a>
+<a name="824"><span class="lineNum">     824 </span>                :<span class="lineNoCov">          0 : valent_channel_close (ValentChannel  *channel,</span></a>
+<a name="825"><span class="lineNum">     825 </span>                :            :                       GCancellable   *cancellable,</a>
+<a name="826"><span class="lineNum">     826 </span>                :            :                       GError        **error)</a>
+<a name="827"><span class="lineNum">     827 </span>                :            : {</a>
+<a name="828"><span class="lineNum">     828 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="829"><span class="lineNum">     829 </span>                :            : </a>
+<a name="830"><span class="lineNum">     830 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="831"><span class="lineNum">     831 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   g_assert (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
 <span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 9 was not executed"> # </span>]
-<a name="831"><span class="lineNum">     831 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (error == NULL || *error == NULL);</span></a>
-<a name="832"><span class="lineNum">     832 </span>                :            : </a>
-<a name="833"><span class="lineNum">     833 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (priv-&gt;base_stream == NULL)</span></a>
-<a name="834"><span class="lineNum">     834 </span>                :<span class="lineNoCov">          0 :     return TRUE;</span></a>
-<a name="835"><span class="lineNum">     835 </span>                :            : </a>
-<a name="836"><span class="lineNum">     836 </span>                :<span class="lineNoCov">          0 :   return g_io_stream_close (priv-&gt;base_stream, cancellable, error);</span></a>
-<a name="837"><span class="lineNum">     837 </span>                :            : }</a>
-<a name="838"><span class="lineNum">     838 </span>                :            : </a>
-<a name="839"><span class="lineNum">     839 </span>                :            : static void</a>
-<a name="840"><span class="lineNum">     840 </span>                :<span class="lineNoCov">          0 : close_async_cb (GIOStream    *stream,</span></a>
-<a name="841"><span class="lineNum">     841 </span>                :            :                 GAsyncResult *result,</a>
-<a name="842"><span class="lineNum">     842 </span>                :            :                 gpointer      user_data)</a>
-<a name="843"><span class="lineNum">     843 </span>                :            : {</a>
-<a name="844"><span class="lineNum">     844 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_autoptr (GTask) task = G_TASK (user_data);</span></a>
-<a name="845"><span class="lineNum">     845 </span>                :<span class="lineNoCov">          0 :   GError *error = NULL;</span></a>
-<a name="846"><span class="lineNum">     846 </span>                :            : </a>
-<a name="847"><span class="lineNum">     847 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (g_task_is_valid (result, stream));</span></a>
-<a name="848"><span class="lineNum">     848 </span>                :            : </a>
-<a name="849"><span class="lineNum">     849 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (!g_io_stream_close_finish (stream, result, &amp;error))</span></a>
-<a name="850"><span class="lineNum">     850 </span>                :<span class="lineNoCov">          0 :     return g_task_return_error (task, error);</span></a>
-<a name="851"><span class="lineNum">     851 </span>                :            : </a>
-<a name="852"><span class="lineNum">     852 </span>                :<span class="lineNoCov">          0 :   g_task_return_boolean (task, TRUE);</span></a>
-<a name="853"><span class="lineNum">     853 </span>                :            : }</a>
-<a name="854"><span class="lineNum">     854 </span>                :            : </a>
-<a name="855"><span class="lineNum">     855 </span>                :            : /**</a>
-<a name="856"><span class="lineNum">     856 </span>                :            :  * valent_channel_close_async:</a>
-<a name="857"><span class="lineNum">     857 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="858"><span class="lineNum">     858 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
-<a name="859"><span class="lineNum">     859 </span>                :            :  * @callback: (scope async): a #GAsyncReadyCallback</a>
-<a name="860"><span class="lineNum">     860 </span>                :            :  * @user_data: (closure): user supplied data</a>
-<a name="861"><span class="lineNum">     861 </span>                :            :  *</a>
-<a name="862"><span class="lineNum">     862 </span>                :            :  * This is the asynchronous version of valent_channel_close().</a>
-<a name="863"><span class="lineNum">     863 </span>                :            :  */</a>
-<a name="864"><span class="lineNum">     864 </span>                :            : void</a>
-<a name="865"><span class="lineNum">     865 </span>                :<span class="lineNoCov">          0 : valent_channel_close_async (ValentChannel       *channel,</span></a>
-<a name="866"><span class="lineNum">     866 </span>                :            :                             GCancellable        *cancellable,</a>
-<a name="867"><span class="lineNum">     867 </span>                :            :                             GAsyncReadyCallback  callback,</a>
-<a name="868"><span class="lineNum">     868 </span>                :            :                             gpointer             user_data)</a>
-<a name="869"><span class="lineNum">     869 </span>                :            : {</a>
-<a name="870"><span class="lineNum">     870 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="871"><span class="lineNum">     871 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_autoptr (GTask) task = NULL;</span></a>
-<a name="872"><span class="lineNum">     872 </span>                :            : </a>
-<a name="873"><span class="lineNum">     873 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="874"><span class="lineNum">     874 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
+<a name="832"><span class="lineNum">     832 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (error == NULL || *error == NULL);</span></a>
+<a name="833"><span class="lineNum">     833 </span>                :            : </a>
+<a name="834"><span class="lineNum">     834 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (priv-&gt;base_stream == NULL)</span></a>
+<a name="835"><span class="lineNum">     835 </span>                :<span class="lineNoCov">          0 :     return TRUE;</span></a>
+<a name="836"><span class="lineNum">     836 </span>                :            : </a>
+<a name="837"><span class="lineNum">     837 </span>                :<span class="lineNoCov">          0 :   return g_io_stream_close (priv-&gt;base_stream, cancellable, error);</span></a>
+<a name="838"><span class="lineNum">     838 </span>                :            : }</a>
+<a name="839"><span class="lineNum">     839 </span>                :            : </a>
+<a name="840"><span class="lineNum">     840 </span>                :            : static void</a>
+<a name="841"><span class="lineNum">     841 </span>                :<span class="lineNoCov">          0 : close_async_cb (GIOStream    *stream,</span></a>
+<a name="842"><span class="lineNum">     842 </span>                :            :                 GAsyncResult *result,</a>
+<a name="843"><span class="lineNum">     843 </span>                :            :                 gpointer      user_data)</a>
+<a name="844"><span class="lineNum">     844 </span>                :            : {</a>
+<a name="845"><span class="lineNum">     845 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_autoptr (GTask) task = G_TASK (user_data);</span></a>
+<a name="846"><span class="lineNum">     846 </span>                :<span class="lineNoCov">          0 :   GError *error = NULL;</span></a>
+<a name="847"><span class="lineNum">     847 </span>                :            : </a>
+<a name="848"><span class="lineNum">     848 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (g_task_is_valid (result, stream));</span></a>
+<a name="849"><span class="lineNum">     849 </span>                :            : </a>
+<a name="850"><span class="lineNum">     850 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (!g_io_stream_close_finish (stream, result, &amp;error))</span></a>
+<a name="851"><span class="lineNum">     851 </span>                :<span class="lineNoCov">          0 :     return g_task_return_error (task, error);</span></a>
+<a name="852"><span class="lineNum">     852 </span>                :            : </a>
+<a name="853"><span class="lineNum">     853 </span>                :<span class="lineNoCov">          0 :   g_task_return_boolean (task, TRUE);</span></a>
+<a name="854"><span class="lineNum">     854 </span>                :            : }</a>
+<a name="855"><span class="lineNum">     855 </span>                :            : </a>
+<a name="856"><span class="lineNum">     856 </span>                :            : /**</a>
+<a name="857"><span class="lineNum">     857 </span>                :            :  * valent_channel_close_async:</a>
+<a name="858"><span class="lineNum">     858 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="859"><span class="lineNum">     859 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
+<a name="860"><span class="lineNum">     860 </span>                :            :  * @callback: (scope async): a #GAsyncReadyCallback</a>
+<a name="861"><span class="lineNum">     861 </span>                :            :  * @user_data: (closure): user supplied data</a>
+<a name="862"><span class="lineNum">     862 </span>                :            :  *</a>
+<a name="863"><span class="lineNum">     863 </span>                :            :  * This is the asynchronous version of valent_channel_close().</a>
+<a name="864"><span class="lineNum">     864 </span>                :            :  */</a>
+<a name="865"><span class="lineNum">     865 </span>                :            : void</a>
+<a name="866"><span class="lineNum">     866 </span>                :<span class="lineNoCov">          0 : valent_channel_close_async (ValentChannel       *channel,</span></a>
+<a name="867"><span class="lineNum">     867 </span>                :            :                             GCancellable        *cancellable,</a>
+<a name="868"><span class="lineNum">     868 </span>                :            :                             GAsyncReadyCallback  callback,</a>
+<a name="869"><span class="lineNum">     869 </span>                :            :                             gpointer             user_data)</a>
+<a name="870"><span class="lineNum">     870 </span>                :            : {</a>
+<a name="871"><span class="lineNum">     871 </span>                :<span class="lineNoCov">          0 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
+<a name="872"><span class="lineNum">     872 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_autoptr (GTask) task = NULL;</span></a>
+<a name="873"><span class="lineNum">     873 </span>                :            : </a>
+<a name="874"><span class="lineNum">     874 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="875"><span class="lineNum">     875 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
 <span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 9 was not executed"> # </span>]
-<a name="875"><span class="lineNum">     875 </span>                :            : </a>
-<a name="876"><span class="lineNum">     876 </span>                :<span class="lineNoCov">          0 :   task = g_task_new (channel, cancellable, callback, user_data);</span></a>
-<a name="877"><span class="lineNum">     877 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_task_set_source_tag (task, valent_channel_close_async);</span></a>
-<a name="878"><span class="lineNum">     878 </span>                :            : </a>
-<a name="879"><span class="lineNum">     879 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (priv-&gt;base_stream == NULL)</span></a>
-<a name="880"><span class="lineNum">     880 </span>                :<span class="lineNoCov">          0 :     return g_task_return_boolean (task, TRUE);</span></a>
-<a name="881"><span class="lineNum">     881 </span>                :            : </a>
-<a name="882"><span class="lineNum">     882 </span>                :<span class="lineNoCov">          0 :   g_io_stream_close_async (priv-&gt;base_stream,</span></a>
-<a name="883"><span class="lineNum">     883 </span>                :            :                            G_PRIORITY_DEFAULT,</a>
-<a name="884"><span class="lineNum">     884 </span>                :            :                            cancellable,</a>
-<a name="885"><span class="lineNum">     885 </span>                :            :                            (GAsyncReadyCallback)close_async_cb,</a>
-<a name="886"><span class="lineNum">     886 </span>                :            :                            g_steal_pointer (&amp;task));</a>
-<a name="887"><span class="lineNum">     887 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
-<a name="888"><span class="lineNum">     888 </span>                :            : }</a>
-<a name="889"><span class="lineNum">     889 </span>                :            : </a>
-<a name="890"><span class="lineNum">     890 </span>                :            : /**</a>
-<a name="891"><span class="lineNum">     891 </span>                :            :  * valent_channel_close_finish:</a>
-<a name="892"><span class="lineNum">     892 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="893"><span class="lineNum">     893 </span>                :            :  * @result: a #GAsyncResult</a>
-<a name="894"><span class="lineNum">     894 </span>                :            :  * @error: (nullable): a #GError</a>
-<a name="895"><span class="lineNum">     895 </span>                :            :  *</a>
-<a name="896"><span class="lineNum">     896 </span>                :            :  * Finishes an async operation started by valent_channel_close_async().</a>
-<a name="897"><span class="lineNum">     897 </span>                :            :  *</a>
-<a name="898"><span class="lineNum">     898 </span>                :            :  * Returns: %TRUE or %FALSE with @error set</a>
-<a name="899"><span class="lineNum">     899 </span>                :            :  */</a>
-<a name="900"><span class="lineNum">     900 </span>                :            : gboolean</a>
-<a name="901"><span class="lineNum">     901 </span>                :<span class="lineNoCov">          0 : valent_channel_close_finish (ValentChannel  *channel,</span></a>
-<a name="902"><span class="lineNum">     902 </span>                :            :                              GAsyncResult   *result,</a>
-<a name="903"><span class="lineNum">     903 </span>                :            :                              GError        **error)</a>
-<a name="904"><span class="lineNum">     904 </span>                :            : {</a>
-<a name="905"><span class="lineNum">     905 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
-<a name="906"><span class="lineNum">     906 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
-<a name="907"><span class="lineNum">     907 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
-<a name="908"><span class="lineNum">     908 </span>                :            : </a>
-<a name="909"><span class="lineNum">     909 </span>                :<span class="lineNoCov">          0 :   return g_task_propagate_boolean (G_TASK (result), error);</span></a>
-<a name="910"><span class="lineNum">     910 </span>                :            : }</a>
-<a name="911"><span class="lineNum">     911 </span>                :            : </a>
-<a name="912"><span class="lineNum">     912 </span>                :            : /**</a>
-<a name="913"><span class="lineNum">     913 </span>                :            :  * valent_channel_store_data: (virtual store_data)</a>
-<a name="914"><span class="lineNum">     914 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="915"><span class="lineNum">     915 </span>                :            :  * @data: a #ValentData</a>
-<a name="916"><span class="lineNum">     916 </span>                :            :  *</a>
-<a name="917"><span class="lineNum">     917 </span>                :            :  * This is called when a device is paired, allowing implementations to store</a>
-<a name="918"><span class="lineNum">     918 </span>                :            :  * data required to authenticate during later connections.</a>
-<a name="919"><span class="lineNum">     919 </span>                :            :  *</a>
-<a name="920"><span class="lineNum">     920 </span>                :            :  * The default implementation stores the remote identity packet, so</a>
-<a name="921"><span class="lineNum">     921 </span>                :            :  * implementations should chain-up to retain that behaviour.</a>
-<a name="922"><span class="lineNum">     922 </span>                :            :  */</a>
-<a name="923"><span class="lineNum">     923 </span>                :            : void</a>
-<a name="924"><span class="lineNum">     924 </span>                :<span class="lineCov">         25 : valent_channel_store_data (ValentChannel *channel,</span></a>
-<a name="925"><span class="lineNum">     925 </span>                :            :                            ValentData    *data)</a>
-<a name="926"><span class="lineNum">     926 </span>                :            : {</a>
-<a name="927"><span class="lineNum">     927 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="928"><span class="lineNum">     928 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_return_if_fail (VALENT_IS_DATA (data));</span></a>
-<a name="929"><span class="lineNum">     929 </span>                :            : </a>
-<a name="930"><span class="lineNum">     930 </span>                :<span class="lineCov">         25 :   VALENT_CHANNEL_GET_CLASS (channel)-&gt;store_data (channel, data);</span></a>
-<a name="931"><span class="lineNum">     931 </span>                :            : }</a>
-<a name="932"><span class="lineNum">     932 </span>                :            : </a>
-<a name="933"><span class="lineNum">     933 </span>                :            : /**</a>
-<a name="934"><span class="lineNum">     934 </span>                :            :  * valent_channel_download: (virtual download)</a>
-<a name="935"><span class="lineNum">     935 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="936"><span class="lineNum">     936 </span>                :            :  * @packet: a #JsonNode packet</a>
-<a name="937"><span class="lineNum">     937 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
-<a name="938"><span class="lineNum">     938 </span>                :            :  * @error: (nullable): a #GError</a>
-<a name="939"><span class="lineNum">     939 </span>                :            :  *</a>
-<a name="940"><span class="lineNum">     940 </span>                :            :  * Accept a connection from the remote device. The remote device is expected to</a>
-<a name="941"><span class="lineNum">     941 </span>                :            :  * populate @packet with the information necessary for implementations to</a>
-<a name="942"><span class="lineNum">     942 </span>                :            :  * negotiate an appropriate connection.</a>
-<a name="943"><span class="lineNum">     943 </span>                :            :  *</a>
-<a name="944"><span class="lineNum">     944 </span>                :            :  * Typically the #GInputStream of the result will be used to read the contents</a>
-<a name="945"><span class="lineNum">     945 </span>                :            :  * of a payload, while the #GInputStream is left unused.</a>
-<a name="946"><span class="lineNum">     946 </span>                :            :  *</a>
-<a name="947"><span class="lineNum">     947 </span>                :            :  * Returns: (transfer full) (nullable): a #GIOStream</a>
-<a name="948"><span class="lineNum">     948 </span>                :            :  */</a>
-<a name="949"><span class="lineNum">     949 </span>                :            : GIOStream *</a>
-<a name="950"><span class="lineNum">     950 </span>                :<span class="lineCov">         50 : valent_channel_download (ValentChannel  *channel,</span></a>
-<a name="951"><span class="lineNum">     951 </span>                :            :                          JsonNode       *packet,</a>
-<a name="952"><span class="lineNum">     952 </span>                :            :                          GCancellable   *cancellable,</a>
-<a name="953"><span class="lineNum">     953 </span>                :            :                          GError        **error)</a>
-<a name="954"><span class="lineNum">     954 </span>                :            : {</a>
-<a name="955"><span class="lineNum">     955 </span>                :            :   GIOStream *ret;</a>
-<a name="956"><span class="lineNum">     956 </span>                :            : </a>
-<a name="957"><span class="lineNum">     957 </span>                :            :   VALENT_ENTRY;</a>
-<a name="958"><span class="lineNum">     958 </span>                :            : </a>
-<a name="959"><span class="lineNum">     959 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
-<a name="960"><span class="lineNum">     960 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_PACKET (packet), FALSE);</span></a>
-<a name="961"><span class="lineNum">     961 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 10 times"> + </span> :<span class="lineCov">         50 :   g_return_val_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable), FALSE);</span></a>
+<a name="876"><span class="lineNum">     876 </span>                :            : </a>
+<a name="877"><span class="lineNum">     877 </span>                :<span class="lineNoCov">          0 :   task = g_task_new (channel, cancellable, callback, user_data);</span></a>
+<a name="878"><span class="lineNum">     878 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_task_set_source_tag (task, valent_channel_close_async);</span></a>
+<a name="879"><span class="lineNum">     879 </span>                :            : </a>
+<a name="880"><span class="lineNum">     880 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (priv-&gt;base_stream == NULL)</span></a>
+<a name="881"><span class="lineNum">     881 </span>                :<span class="lineNoCov">          0 :     return g_task_return_boolean (task, TRUE);</span></a>
+<a name="882"><span class="lineNum">     882 </span>                :            : </a>
+<a name="883"><span class="lineNum">     883 </span>                :<span class="lineNoCov">          0 :   g_io_stream_close_async (priv-&gt;base_stream,</span></a>
+<a name="884"><span class="lineNum">     884 </span>                :            :                            G_PRIORITY_DEFAULT,</a>
+<a name="885"><span class="lineNum">     885 </span>                :            :                            cancellable,</a>
+<a name="886"><span class="lineNum">     886 </span>                :            :                            (GAsyncReadyCallback)close_async_cb,</a>
+<a name="887"><span class="lineNum">     887 </span>                :            :                            g_steal_pointer (&amp;task));</a>
+<a name="888"><span class="lineNum">     888 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
+<a name="889"><span class="lineNum">     889 </span>                :            : }</a>
+<a name="890"><span class="lineNum">     890 </span>                :            : </a>
+<a name="891"><span class="lineNum">     891 </span>                :            : /**</a>
+<a name="892"><span class="lineNum">     892 </span>                :            :  * valent_channel_close_finish:</a>
+<a name="893"><span class="lineNum">     893 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="894"><span class="lineNum">     894 </span>                :            :  * @result: a #GAsyncResult</a>
+<a name="895"><span class="lineNum">     895 </span>                :            :  * @error: (nullable): a #GError</a>
+<a name="896"><span class="lineNum">     896 </span>                :            :  *</a>
+<a name="897"><span class="lineNum">     897 </span>                :            :  * Finishes an async operation started by valent_channel_close_async().</a>
+<a name="898"><span class="lineNum">     898 </span>                :            :  *</a>
+<a name="899"><span class="lineNum">     899 </span>                :            :  * Returns: %TRUE or %FALSE with @error set</a>
+<a name="900"><span class="lineNum">     900 </span>                :            :  */</a>
+<a name="901"><span class="lineNum">     901 </span>                :            : gboolean</a>
+<a name="902"><span class="lineNum">     902 </span>                :<span class="lineNoCov">          0 : valent_channel_close_finish (ValentChannel  *channel,</span></a>
+<a name="903"><span class="lineNum">     903 </span>                :            :                              GAsyncResult   *result,</a>
+<a name="904"><span class="lineNum">     904 </span>                :            :                              GError        **error)</a>
+<a name="905"><span class="lineNum">     905 </span>                :            : {</a>
+<a name="906"><span class="lineNum">     906 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
+<a name="907"><span class="lineNum">     907 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (g_task_is_valid (result, channel), FALSE);</span></a>
+<a name="908"><span class="lineNum">     908 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
+<a name="909"><span class="lineNum">     909 </span>                :            : </a>
+<a name="910"><span class="lineNum">     910 </span>                :<span class="lineNoCov">          0 :   return g_task_propagate_boolean (G_TASK (result), error);</span></a>
+<a name="911"><span class="lineNum">     911 </span>                :            : }</a>
+<a name="912"><span class="lineNum">     912 </span>                :            : </a>
+<a name="913"><span class="lineNum">     913 </span>                :            : /**</a>
+<a name="914"><span class="lineNum">     914 </span>                :            :  * valent_channel_store_data: (virtual store_data)</a>
+<a name="915"><span class="lineNum">     915 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="916"><span class="lineNum">     916 </span>                :            :  * @data: a #ValentData</a>
+<a name="917"><span class="lineNum">     917 </span>                :            :  *</a>
+<a name="918"><span class="lineNum">     918 </span>                :            :  * This is called when a device is paired, allowing implementations to store</a>
+<a name="919"><span class="lineNum">     919 </span>                :            :  * data required to authenticate during later connections.</a>
+<a name="920"><span class="lineNum">     920 </span>                :            :  *</a>
+<a name="921"><span class="lineNum">     921 </span>                :            :  * The default implementation stores the remote identity packet, so</a>
+<a name="922"><span class="lineNum">     922 </span>                :            :  * implementations should chain-up to retain that behaviour.</a>
+<a name="923"><span class="lineNum">     923 </span>                :            :  */</a>
+<a name="924"><span class="lineNum">     924 </span>                :            : void</a>
+<a name="925"><span class="lineNum">     925 </span>                :<span class="lineCov">         25 : valent_channel_store_data (ValentChannel *channel,</span></a>
+<a name="926"><span class="lineNum">     926 </span>                :            :                            ValentData    *data)</a>
+<a name="927"><span class="lineNum">     927 </span>                :            : {</a>
+<a name="928"><span class="lineNum">     928 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="929"><span class="lineNum">     929 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_return_if_fail (VALENT_IS_DATA (data));</span></a>
+<a name="930"><span class="lineNum">     930 </span>                :            : </a>
+<a name="931"><span class="lineNum">     931 </span>                :<span class="lineCov">         25 :   VALENT_CHANNEL_GET_CLASS (channel)-&gt;store_data (channel, data);</span></a>
+<a name="932"><span class="lineNum">     932 </span>                :            : }</a>
+<a name="933"><span class="lineNum">     933 </span>                :            : </a>
+<a name="934"><span class="lineNum">     934 </span>                :            : /**</a>
+<a name="935"><span class="lineNum">     935 </span>                :            :  * valent_channel_download: (virtual download)</a>
+<a name="936"><span class="lineNum">     936 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="937"><span class="lineNum">     937 </span>                :            :  * @packet: a #JsonNode packet</a>
+<a name="938"><span class="lineNum">     938 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
+<a name="939"><span class="lineNum">     939 </span>                :            :  * @error: (nullable): a #GError</a>
+<a name="940"><span class="lineNum">     940 </span>                :            :  *</a>
+<a name="941"><span class="lineNum">     941 </span>                :            :  * Accept a connection from the remote device. The remote device is expected to</a>
+<a name="942"><span class="lineNum">     942 </span>                :            :  * populate @packet with the information necessary for implementations to</a>
+<a name="943"><span class="lineNum">     943 </span>                :            :  * negotiate an appropriate connection.</a>
+<a name="944"><span class="lineNum">     944 </span>                :            :  *</a>
+<a name="945"><span class="lineNum">     945 </span>                :            :  * Typically the #GInputStream of the result will be used to read the contents</a>
+<a name="946"><span class="lineNum">     946 </span>                :            :  * of a payload, while the #GInputStream is left unused.</a>
+<a name="947"><span class="lineNum">     947 </span>                :            :  *</a>
+<a name="948"><span class="lineNum">     948 </span>                :            :  * Returns: (transfer full) (nullable): a #GIOStream</a>
+<a name="949"><span class="lineNum">     949 </span>                :            :  */</a>
+<a name="950"><span class="lineNum">     950 </span>                :            : GIOStream *</a>
+<a name="951"><span class="lineNum">     951 </span>                :<span class="lineCov">         50 : valent_channel_download (ValentChannel  *channel,</span></a>
+<a name="952"><span class="lineNum">     952 </span>                :            :                          JsonNode       *packet,</a>
+<a name="953"><span class="lineNum">     953 </span>                :            :                          GCancellable   *cancellable,</a>
+<a name="954"><span class="lineNum">     954 </span>                :            :                          GError        **error)</a>
+<a name="955"><span class="lineNum">     955 </span>                :            : {</a>
+<a name="956"><span class="lineNum">     956 </span>                :            :   GIOStream *ret;</a>
+<a name="957"><span class="lineNum">     957 </span>                :            : </a>
+<a name="958"><span class="lineNum">     958 </span>                :            :   VALENT_ENTRY;</a>
+<a name="959"><span class="lineNum">     959 </span>                :            : </a>
+<a name="960"><span class="lineNum">     960 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
+<a name="961"><span class="lineNum">     961 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_PACKET (packet), FALSE);</span></a>
+<a name="962"><span class="lineNum">     962 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 10 times"> + </span> :<span class="lineCov">         50 :   g_return_val_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable), FALSE);</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 10 times"> + </span>]
-<a name="962"><span class="lineNum">     962 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
-<a name="963"><span class="lineNum">     963 </span>                :            : </a>
-<a name="964"><span class="lineNum">     964 </span>                :<span class="lineCov">         50 :   ret = VALENT_CHANNEL_GET_CLASS (channel)-&gt;download (channel,</span></a>
-<a name="965"><span class="lineNum">     965 </span>                :            :                                                       packet,</a>
-<a name="966"><span class="lineNum">     966 </span>                :            :                                                       cancellable,</a>
-<a name="967"><span class="lineNum">     967 </span>                :            :                                                       error);</a>
-<a name="968"><span class="lineNum">     968 </span>                :            : </a>
-<a name="969"><span class="lineNum">     969 </span>                :<span class="lineCov">         50 :   VALENT_RETURN (ret);</span></a>
-<a name="970"><span class="lineNum">     970 </span>                :            : }</a>
-<a name="971"><span class="lineNum">     971 </span>                :            : </a>
-<a name="972"><span class="lineNum">     972 </span>                :            : /**</a>
-<a name="973"><span class="lineNum">     973 </span>                :            :  * valent_channel_upload: (virtual upload)</a>
-<a name="974"><span class="lineNum">     974 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="975"><span class="lineNum">     975 </span>                :            :  * @packet: a #JsonNode packet to send with payload info</a>
-<a name="976"><span class="lineNum">     976 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
-<a name="977"><span class="lineNum">     977 </span>                :            :  * @error: (nullable): a #GError</a>
-<a name="978"><span class="lineNum">     978 </span>                :            :  *</a>
-<a name="979"><span class="lineNum">     979 </span>                :            :  * Open a connection to the remote device. Implementations are expected to</a>
-<a name="980"><span class="lineNum">     980 </span>                :            :  * populate @packet with the information necessary for the remote device to</a>
-<a name="981"><span class="lineNum">     981 </span>                :            :  * negotiate an appropriate connection.</a>
-<a name="982"><span class="lineNum">     982 </span>                :            :  *</a>
-<a name="983"><span class="lineNum">     983 </span>                :            :  * Typically the #GOutputStream of the result will be used to write the contents</a>
-<a name="984"><span class="lineNum">     984 </span>                :            :  * of a payload, while the #GInputStream is left unused.</a>
-<a name="985"><span class="lineNum">     985 </span>                :            :  *</a>
-<a name="986"><span class="lineNum">     986 </span>                :            :  * Returns: (transfer full) (nullable): a #GIOStream</a>
-<a name="987"><span class="lineNum">     987 </span>                :            :  */</a>
-<a name="988"><span class="lineNum">     988 </span>                :            : GIOStream *</a>
-<a name="989"><span class="lineNum">     989 </span>                :<span class="lineCov">         50 : valent_channel_upload (ValentChannel  *channel,</span></a>
-<a name="990"><span class="lineNum">     990 </span>                :            :                        JsonNode       *packet,</a>
-<a name="991"><span class="lineNum">     991 </span>                :            :                        GCancellable   *cancellable,</a>
-<a name="992"><span class="lineNum">     992 </span>                :            :                        GError        **error)</a>
-<a name="993"><span class="lineNum">     993 </span>                :            : {</a>
-<a name="994"><span class="lineNum">     994 </span>                :            :   GIOStream *ret;</a>
-<a name="995"><span class="lineNum">     995 </span>                :            : </a>
-<a name="996"><span class="lineNum">     996 </span>                :            :   VALENT_ENTRY;</a>
-<a name="997"><span class="lineNum">     997 </span>                :            : </a>
-<a name="998"><span class="lineNum">     998 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
-<a name="999"><span class="lineNum">     999 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_PACKET (packet), FALSE);</span></a>
-<a name="1000"><span class="lineNum">    1000 </span>  [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 30 times"> + </span> :<span class="lineCov">         50 :   g_return_val_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable), FALSE);</span></a>
+<a name="963"><span class="lineNum">     963 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
+<a name="964"><span class="lineNum">     964 </span>                :            : </a>
+<a name="965"><span class="lineNum">     965 </span>                :<span class="lineCov">         50 :   ret = VALENT_CHANNEL_GET_CLASS (channel)-&gt;download (channel,</span></a>
+<a name="966"><span class="lineNum">     966 </span>                :            :                                                       packet,</a>
+<a name="967"><span class="lineNum">     967 </span>                :            :                                                       cancellable,</a>
+<a name="968"><span class="lineNum">     968 </span>                :            :                                                       error);</a>
+<a name="969"><span class="lineNum">     969 </span>                :            : </a>
+<a name="970"><span class="lineNum">     970 </span>                :<span class="lineCov">         50 :   VALENT_RETURN (ret);</span></a>
+<a name="971"><span class="lineNum">     971 </span>                :            : }</a>
+<a name="972"><span class="lineNum">     972 </span>                :            : </a>
+<a name="973"><span class="lineNum">     973 </span>                :            : /**</a>
+<a name="974"><span class="lineNum">     974 </span>                :            :  * valent_channel_upload: (virtual upload)</a>
+<a name="975"><span class="lineNum">     975 </span>                :            :  * @channel: a #ValentChannel</a>
+<a name="976"><span class="lineNum">     976 </span>                :            :  * @packet: a #JsonNode packet to send with payload info</a>
+<a name="977"><span class="lineNum">     977 </span>                :            :  * @cancellable: (nullable): a #GCancellable</a>
+<a name="978"><span class="lineNum">     978 </span>                :            :  * @error: (nullable): a #GError</a>
+<a name="979"><span class="lineNum">     979 </span>                :            :  *</a>
+<a name="980"><span class="lineNum">     980 </span>                :            :  * Open a connection to the remote device. Implementations are expected to</a>
+<a name="981"><span class="lineNum">     981 </span>                :            :  * populate @packet with the information necessary for the remote device to</a>
+<a name="982"><span class="lineNum">     982 </span>                :            :  * negotiate an appropriate connection.</a>
+<a name="983"><span class="lineNum">     983 </span>                :            :  *</a>
+<a name="984"><span class="lineNum">     984 </span>                :            :  * Typically the #GOutputStream of the result will be used to write the contents</a>
+<a name="985"><span class="lineNum">     985 </span>                :            :  * of a payload, while the #GInputStream is left unused.</a>
+<a name="986"><span class="lineNum">     986 </span>                :            :  *</a>
+<a name="987"><span class="lineNum">     987 </span>                :            :  * Returns: (transfer full) (nullable): a #GIOStream</a>
+<a name="988"><span class="lineNum">     988 </span>                :            :  */</a>
+<a name="989"><span class="lineNum">     989 </span>                :            : GIOStream *</a>
+<a name="990"><span class="lineNum">     990 </span>                :<span class="lineCov">         50 : valent_channel_upload (ValentChannel  *channel,</span></a>
+<a name="991"><span class="lineNum">     991 </span>                :            :                        JsonNode       *packet,</a>
+<a name="992"><span class="lineNum">     992 </span>                :            :                        GCancellable   *cancellable,</a>
+<a name="993"><span class="lineNum">     993 </span>                :            :                        GError        **error)</a>
+<a name="994"><span class="lineNum">     994 </span>                :            : {</a>
+<a name="995"><span class="lineNum">     995 </span>                :            :   GIOStream *ret;</a>
+<a name="996"><span class="lineNum">     996 </span>                :            : </a>
+<a name="997"><span class="lineNum">     997 </span>                :            :   VALENT_ENTRY;</a>
+<a name="998"><span class="lineNum">     998 </span>                :            : </a>
+<a name="999"><span class="lineNum">     999 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_CHANNEL (channel), FALSE);</span></a>
+<a name="1000"><span class="lineNum">    1000 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (VALENT_IS_PACKET (packet), FALSE);</span></a>
+<a name="1001"><span class="lineNum">    1001 </span>  [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 30 times"> + </span> :<span class="lineCov">         50 :   g_return_val_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable), FALSE);</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 30 times"> + </span>]
-<a name="1001"><span class="lineNum">    1001 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
-<a name="1002"><span class="lineNum">    1002 </span>                :            : </a>
-<a name="1003"><span class="lineNum">    1003 </span>                :<span class="lineCov">         50 :   ret = VALENT_CHANNEL_GET_CLASS (channel)-&gt;upload (channel,</span></a>
-<a name="1004"><span class="lineNum">    1004 </span>                :            :                                                     packet,</a>
-<a name="1005"><span class="lineNum">    1005 </span>                :            :                                                     cancellable,</a>
-<a name="1006"><span class="lineNum">    1006 </span>                :            :                                                     error);</a>
-<a name="1007"><span class="lineNum">    1007 </span>                :            : </a>
-<a name="1008"><span class="lineNum">    1008 </span>                :<span class="lineCov">         50 :   VALENT_RETURN (ret);</span></a>
-<a name="1009"><span class="lineNum">    1009 </span>                :            : }</a>
-<a name="1010"><span class="lineNum">    1010 </span>                :            : </a>
+<a name="1002"><span class="lineNum">    1002 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);</span></a>
+<a name="1003"><span class="lineNum">    1003 </span>                :            : </a>
+<a name="1004"><span class="lineNum">    1004 </span>                :<span class="lineCov">         50 :   ret = VALENT_CHANNEL_GET_CLASS (channel)-&gt;upload (channel,</span></a>
+<a name="1005"><span class="lineNum">    1005 </span>                :            :                                                     packet,</a>
+<a name="1006"><span class="lineNum">    1006 </span>                :            :                                                     cancellable,</a>
+<a name="1007"><span class="lineNum">    1007 </span>                :            :                                                     error);</a>
+<a name="1008"><span class="lineNum">    1008 </span>                :            : </a>
+<a name="1009"><span class="lineNum">    1009 </span>                :<span class="lineCov">         50 :   VALENT_RETURN (ret);</span></a>
+<a name="1010"><span class="lineNum">    1010 </span>                :            : }</a>
+<a name="1011"><span class="lineNum">    1011 </span>                :            : </a>
 </pre>
       </td>
     </tr>
