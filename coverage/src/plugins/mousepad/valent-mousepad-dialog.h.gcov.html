@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - Code Coverage - src/plugins/mousepad/valent-input-dialog.h</title>
+  <title>LCOV - Code Coverage - src/plugins/mousepad/valent-mousepad-dialog.h</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -19,7 +19,7 @@
         <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="35%" class="headerValue"><a href="../../../index.html">top level</a> - <a href="index.html">src/plugins/mousepad</a> - valent-input-dialog.h<span style="font-size: 80%;"> (source / <a href="valent-input-dialog.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="35%" class="headerValue"><a href="../../../index.html">top level</a> - <a href="index.html">src/plugins/mousepad</a> - valent-mousepad-dialog.h<span style="font-size: 80%;"> (source / <a href="valent-mousepad-dialog.h.func-sort-c.html">functions</a>)</span></td>
             <td width="5%"></td>
             <td width="15%"></td>
             <td width="10%" class="headerCovTableHead">Hit</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-07 03:01:17</td>
+            <td class="headerValue">2021-05-08 11:37:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -81,29 +81,27 @@
 <a name="3"><span class="lineNum">       3 </span>                :            : </a>
 <a name="4"><span class="lineNum">       4 </span>                :            : #pragma once</a>
 <a name="5"><span class="lineNum">       5 </span>                :            : </a>
-<a name="6"><span class="lineNum">       6 </span>                :            : #include &quot;valent-mousepad-plugin.h&quot;</a>
-<a name="7"><span class="lineNum">       7 </span>                :            : </a>
-<a name="8"><span class="lineNum">       8 </span>                :            : #include &lt;adwaita.h&gt;</a>
-<a name="9"><span class="lineNum">       9 </span>                :            : #include &lt;gtk/gtk.h&gt;</a>
-<a name="10"><span class="lineNum">      10 </span>                :            : #include &lt;json-glib/json-glib.h&gt;</a>
+<a name="6"><span class="lineNum">       6 </span>                :            : #include &lt;adwaita.h&gt;</a>
+<a name="7"><span class="lineNum">       7 </span>                :            : #include &lt;gtk/gtk.h&gt;</a>
+<a name="8"><span class="lineNum">       8 </span>                :            : #include &lt;libvalent-core.h&gt;</a>
+<a name="9"><span class="lineNum">       9 </span>                :            : </a>
+<a name="10"><span class="lineNum">      10 </span>                :            : G_BEGIN_DECLS</a>
 <a name="11"><span class="lineNum">      11 </span>                :            : </a>
-<a name="12"><span class="lineNum">      12 </span>                :            : G_BEGIN_DECLS</a>
+<a name="12"><span class="lineNum">      12 </span>                :            : #define VALENT_TYPE_MOUSEPAD_DIALOG (valent_mousepad_dialog_get_type())</a>
 <a name="13"><span class="lineNum">      13 </span>                :            : </a>
-<a name="14"><span class="lineNum">      14 </span>                :            : #define VALENT_TYPE_INPUT_DIALOG (valent_input_dialog_get_type())</a>
-<a name="15"><span class="lineNum">      15 </span>                :            : </a>
-<a name="16"><span class="lineNum">      16 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 : G_DECLARE_FINAL_TYPE (ValentInputDialog, valent_input_dialog, VALENT, INPUT_DIALOG, AdwWindow)</span></a>
+<a name="14"><span class="lineNum">      14 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 : G_DECLARE_FINAL_TYPE (ValentMousepadDialog, valent_mousepad_dialog, VALENT, MOUSEPAD_DIALOG, AdwWindow)</span></a>
 <span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
+<a name="15"><span class="lineNum">      15 </span>                :            : </a>
+<a name="16"><span class="lineNum">      16 </span>                :            : ValentMousepadDialog * valent_mousepad_dialog_new          (ValentDevice         *device);</a>
 <a name="17"><span class="lineNum">      17 </span>                :            : </a>
-<a name="18"><span class="lineNum">      18 </span>                :            : ValentInputDialog * valent_input_dialog_new          (ValentMousepadPlugin *plugin);</a>
-<a name="19"><span class="lineNum">      19 </span>                :            : </a>
-<a name="20"><span class="lineNum">      20 </span>                :            : void                valent_input_dialog_echo_key     (ValentInputDialog  *dialog,</a>
-<a name="21"><span class="lineNum">      21 </span>                :            :                                                       const char         *key,</a>
-<a name="22"><span class="lineNum">      22 </span>                :            :                                                       GdkModifierType     mask);</a>
-<a name="23"><span class="lineNum">      23 </span>                :            : void                valent_input_dialog_echo_special (ValentInputDialog  *dialog,</a>
-<a name="24"><span class="lineNum">      24 </span>                :            :                                                       unsigned int        keyval,</a>
-<a name="25"><span class="lineNum">      25 </span>                :            :                                                       GdkModifierType     mask);</a>
-<a name="26"><span class="lineNum">      26 </span>                :            : </a>
-<a name="27"><span class="lineNum">      27 </span>                :            : G_END_DECLS</a>
+<a name="18"><span class="lineNum">      18 </span>                :            : void                   valent_mousepad_dialog_echo_key     (ValentMousepadDialog *dialog,</a>
+<a name="19"><span class="lineNum">      19 </span>                :            :                                                             const char           *key,</a>
+<a name="20"><span class="lineNum">      20 </span>                :            :                                                             GdkModifierType       mask);</a>
+<a name="21"><span class="lineNum">      21 </span>                :            : void                   valent_mousepad_dialog_echo_special (ValentMousepadDialog *dialog,</a>
+<a name="22"><span class="lineNum">      22 </span>                :            :                                                             unsigned int          keyval,</a>
+<a name="23"><span class="lineNum">      23 </span>                :            :                                                             GdkModifierType       mask);</a>
+<a name="24"><span class="lineNum">      24 </span>                :            : </a>
+<a name="25"><span class="lineNum">      25 </span>                :            : G_END_DECLS</a>
 </pre>
       </td>
     </tr>
