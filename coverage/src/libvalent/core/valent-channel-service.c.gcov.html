@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-08 11:37:19</td>
+            <td class="headerValue">2021-05-09 03:20:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -136,8 +136,8 @@
 <a name="58"><span class="lineNum">      58 </span>                :            :   JsonNode       *identity;</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : } ValentChannelServicePrivate;</a>
 <a name="60"><span class="lineNum">      60 </span>                :            : </a>
-<a name="61"><span class="lineNum">      61 </span>  [<span class="branchCov" title="Branch 0 was taken 402 times"> + </span><span class="branchCov" title="Branch 1 was taken 1346 times"> + </span><span class="branchCov" title="Branch 2 was taken 201 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2404 : G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (ValentChannelService, valent_channel_service, G_TYPE_OBJECT);</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 201 times"> + </span><span class="branchCov" title="Branch 5 was taken 1346 times"> + </span>]
+<a name="61"><span class="lineNum">      61 </span>  [<span class="branchCov" title="Branch 0 was taken 412 times"> + </span><span class="branchCov" title="Branch 1 was taken 1361 times"> + </span><span class="branchCov" title="Branch 2 was taken 206 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2434 : G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (ValentChannelService, valent_channel_service, G_TYPE_OBJECT);</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 206 times"> + </span><span class="branchCov" title="Branch 5 was taken 1361 times"> + </span>]
 <a name="62"><span class="lineNum">      62 </span>                :            : </a>
 <a name="63"><span class="lineNum">      63 </span>                :            : /**</a>
 <a name="64"><span class="lineNum">      64 </span>                :            :  * ValentChannelServiceClass:</a>
@@ -563,29 +563,29 @@
 <a name="481"><span class="lineNum">     481 </span>                :<span class="lineCov">         90 : }</span></a>
 <a name="482"><span class="lineNum">     482 </span>                :            : </a>
 <a name="483"><span class="lineNum">     483 </span>                :            : static void</a>
-<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">        201 : valent_channel_service_class_init (ValentChannelServiceClass *klass)</span></a>
+<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">        206 : valent_channel_service_class_init (ValentChannelServiceClass *klass)</span></a>
 <a name="485"><span class="lineNum">     485 </span>                :            : {</a>
-<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">        201 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">        201 :   ValentChannelServiceClass *service_class = VALENT_CHANNEL_SERVICE_CLASS (klass);</span></a>
+<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">        206 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">        206 :   ValentChannelServiceClass *service_class = VALENT_CHANNEL_SERVICE_CLASS (klass);</span></a>
 <a name="488"><span class="lineNum">     488 </span>                :            : </a>
-<a name="489"><span class="lineNum">     489 </span>                :<span class="lineCov">        201 :   object_class-&gt;constructed = valent_channel_service_constructed;</span></a>
-<a name="490"><span class="lineNum">     490 </span>                :<span class="lineCov">        201 :   object_class-&gt;dispose = valent_channel_service_dispose;</span></a>
-<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">        201 :   object_class-&gt;finalize = valent_channel_service_finalize;</span></a>
-<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">        201 :   object_class-&gt;get_property = valent_channel_service_get_property;</span></a>
-<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">        201 :   object_class-&gt;set_property = valent_channel_service_set_property;</span></a>
+<a name="489"><span class="lineNum">     489 </span>                :<span class="lineCov">        206 :   object_class-&gt;constructed = valent_channel_service_constructed;</span></a>
+<a name="490"><span class="lineNum">     490 </span>                :<span class="lineCov">        206 :   object_class-&gt;dispose = valent_channel_service_dispose;</span></a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">        206 :   object_class-&gt;finalize = valent_channel_service_finalize;</span></a>
+<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">        206 :   object_class-&gt;get_property = valent_channel_service_get_property;</span></a>
+<a name="493"><span class="lineNum">     493 </span>                :<span class="lineCov">        206 :   object_class-&gt;set_property = valent_channel_service_set_property;</span></a>
 <a name="494"><span class="lineNum">     494 </span>                :            : </a>
-<a name="495"><span class="lineNum">     495 </span>                :<span class="lineCov">        201 :   service_class-&gt;build_identity = valent_channel_service_real_build_identity;</span></a>
-<a name="496"><span class="lineNum">     496 </span>                :<span class="lineCov">        201 :   service_class-&gt;identify = valent_channel_service_real_identify;</span></a>
-<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">        201 :   service_class-&gt;start = valent_channel_service_real_start;</span></a>
-<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">        201 :   service_class-&gt;stop = valent_channel_service_real_stop;</span></a>
+<a name="495"><span class="lineNum">     495 </span>                :<span class="lineCov">        206 :   service_class-&gt;build_identity = valent_channel_service_real_build_identity;</span></a>
+<a name="496"><span class="lineNum">     496 </span>                :<span class="lineCov">        206 :   service_class-&gt;identify = valent_channel_service_real_identify;</span></a>
+<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">        206 :   service_class-&gt;start = valent_channel_service_real_start;</span></a>
+<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">        206 :   service_class-&gt;stop = valent_channel_service_real_stop;</span></a>
 <a name="499"><span class="lineNum">     499 </span>                :            : </a>
 <a name="500"><span class="lineNum">     500 </span>                :            :   /**</a>
 <a name="501"><span class="lineNum">     501 </span>                :            :    * ValentChannelService:data:</a>
 <a name="502"><span class="lineNum">     502 </span>                :            :    *</a>
 <a name="503"><span class="lineNum">     503 </span>                :            :    * The data manager for the service.</a>
 <a name="504"><span class="lineNum">     504 </span>                :            :    */</a>
-<a name="505"><span class="lineNum">     505 </span>                :<span class="lineCov">        201 :   properties [PROP_DATA] =</span></a>
-<a name="506"><span class="lineNum">     506 </span>                :<span class="lineCov">        201 :     g_param_spec_object (&quot;data&quot;,</span></a>
+<a name="505"><span class="lineNum">     505 </span>                :<span class="lineCov">        206 :   properties [PROP_DATA] =</span></a>
+<a name="506"><span class="lineNum">     506 </span>                :<span class="lineCov">        206 :     g_param_spec_object (&quot;data&quot;,</span></a>
 <a name="507"><span class="lineNum">     507 </span>                :            :                          &quot;Data&quot;,</a>
 <a name="508"><span class="lineNum">     508 </span>                :            :                          &quot;The data manager for the service&quot;,</a>
 <a name="509"><span class="lineNum">     509 </span>                :            :                          VALENT_TYPE_DATA,</a>
@@ -600,8 +600,8 @@
 <a name="518"><span class="lineNum">     518 </span>                :            :    * The local ID string used to uniquely identify the service to the remote</a>
 <a name="519"><span class="lineNum">     519 </span>                :            :    * device.</a>
 <a name="520"><span class="lineNum">     520 </span>                :            :    */</a>
-<a name="521"><span class="lineNum">     521 </span>                :<span class="lineCov">        201 :   properties [PROP_ID] =</span></a>
-<a name="522"><span class="lineNum">     522 </span>                :<span class="lineCov">        201 :     g_param_spec_string (&quot;id&quot;,</span></a>
+<a name="521"><span class="lineNum">     521 </span>                :<span class="lineCov">        206 :   properties [PROP_ID] =</span></a>
+<a name="522"><span class="lineNum">     522 </span>                :<span class="lineCov">        206 :     g_param_spec_string (&quot;id&quot;,</span></a>
 <a name="523"><span class="lineNum">     523 </span>                :            :                          &quot;ID&quot;,</a>
 <a name="524"><span class="lineNum">     524 </span>                :            :                          &quot;The service ID string&quot;,</a>
 <a name="525"><span class="lineNum">     525 </span>                :            :                          NULL,</a>
@@ -615,8 +615,8 @@
 <a name="533"><span class="lineNum">     533 </span>                :            :    *</a>
 <a name="534"><span class="lineNum">     534 </span>                :            :    * The local identity packet used to identify the service to the remote device.</a>
 <a name="535"><span class="lineNum">     535 </span>                :            :    */</a>
-<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">        201 :   properties [PROP_IDENTITY] =</span></a>
-<a name="537"><span class="lineNum">     537 </span>                :<span class="lineCov">        201 :     g_param_spec_boxed (&quot;identity&quot;,</span></a>
+<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">        206 :   properties [PROP_IDENTITY] =</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :<span class="lineCov">        206 :     g_param_spec_boxed (&quot;identity&quot;,</span></a>
 <a name="538"><span class="lineNum">     538 </span>                :            :                         &quot;Identity&quot;,</a>
 <a name="539"><span class="lineNum">     539 </span>                :            :                         &quot;Identity&quot;,</a>
 <a name="540"><span class="lineNum">     540 </span>                :            :                         JSON_TYPE_NODE,</a>
@@ -629,8 +629,8 @@
 <a name="547"><span class="lineNum">     547 </span>                :            :    *</a>
 <a name="548"><span class="lineNum">     548 </span>                :            :    * The #PeasPluginInfo describing this channel service.</a>
 <a name="549"><span class="lineNum">     549 </span>                :            :    */</a>
-<a name="550"><span class="lineNum">     550 </span>                :<span class="lineCov">        201 :   properties [PROP_PLUGIN_INFO] =</span></a>
-<a name="551"><span class="lineNum">     551 </span>                :<span class="lineCov">        201 :     g_param_spec_boxed (&quot;plugin-info&quot;,</span></a>
+<a name="550"><span class="lineNum">     550 </span>                :<span class="lineCov">        206 :   properties [PROP_PLUGIN_INFO] =</span></a>
+<a name="551"><span class="lineNum">     551 </span>                :<span class="lineCov">        206 :     g_param_spec_boxed (&quot;plugin-info&quot;,</span></a>
 <a name="552"><span class="lineNum">     552 </span>                :            :                         &quot;Plugin Info&quot;,</a>
 <a name="553"><span class="lineNum">     553 </span>                :            :                         &quot;Plugin Info&quot;,</a>
 <a name="554"><span class="lineNum">     554 </span>                :            :                         PEAS_TYPE_PLUGIN_INFO,</a>
@@ -639,7 +639,7 @@
 <a name="557"><span class="lineNum">     557 </span>                :            :                          G_PARAM_EXPLICIT_NOTIFY |</a>
 <a name="558"><span class="lineNum">     558 </span>                :            :                          G_PARAM_STATIC_STRINGS));</a>
 <a name="559"><span class="lineNum">     559 </span>                :            : </a>
-<a name="560"><span class="lineNum">     560 </span>                :<span class="lineCov">        201 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
+<a name="560"><span class="lineNum">     560 </span>                :<span class="lineCov">        206 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
 <a name="561"><span class="lineNum">     561 </span>                :            : </a>
 <a name="562"><span class="lineNum">     562 </span>                :            :   /**</a>
 <a name="563"><span class="lineNum">     563 </span>                :            :    * ValentChannelService::channel:</a>
@@ -654,18 +654,18 @@
 <a name="572"><span class="lineNum">     572 </span>                :            :    * Implementations may drop their reference after the signal handlers return</a>
 <a name="573"><span class="lineNum">     573 </span>                :            :    * unless they have some other reason to track the channel state.</a>
 <a name="574"><span class="lineNum">     574 </span>                :            :    */</a>
-<a name="575"><span class="lineNum">     575 </span>                :<span class="lineCov">        201 :   signals [CHANNEL] =</span></a>
-<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">        201 :     g_signal_new (&quot;channel&quot;,</span></a>
+<a name="575"><span class="lineNum">     575 </span>                :<span class="lineCov">        206 :   signals [CHANNEL] =</span></a>
+<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">        206 :     g_signal_new (&quot;channel&quot;,</span></a>
 <a name="577"><span class="lineNum">     577 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
 <a name="578"><span class="lineNum">     578 </span>                :            :                   G_SIGNAL_RUN_LAST,</a>
 <a name="579"><span class="lineNum">     579 </span>                :            :                   G_STRUCT_OFFSET (ValentChannelServiceClass, channel),</a>
 <a name="580"><span class="lineNum">     580 </span>                :            :                   NULL, NULL,</a>
 <a name="581"><span class="lineNum">     581 </span>                :            :                   g_cclosure_marshal_VOID__OBJECT,</a>
 <a name="582"><span class="lineNum">     582 </span>                :            :                   G_TYPE_NONE, 1, VALENT_TYPE_CHANNEL);</a>
-<a name="583"><span class="lineNum">     583 </span>                :<span class="lineCov">        201 :   g_signal_set_va_marshaller (signals [CHANNEL],</span></a>
+<a name="583"><span class="lineNum">     583 </span>                :<span class="lineCov">        206 :   g_signal_set_va_marshaller (signals [CHANNEL],</span></a>
 <a name="584"><span class="lineNum">     584 </span>                :            :                               G_TYPE_FROM_CLASS (klass),</a>
 <a name="585"><span class="lineNum">     585 </span>                :            :                               g_cclosure_marshal_VOID__OBJECTv);</a>
-<a name="586"><span class="lineNum">     586 </span>                :<span class="lineCov">        201 : }</span></a>
+<a name="586"><span class="lineNum">     586 </span>                :<span class="lineCov">        206 : }</span></a>
 <a name="587"><span class="lineNum">     587 </span>                :            : </a>
 <a name="588"><span class="lineNum">     588 </span>                :            : static void</a>
 <a name="589"><span class="lineNum">     589 </span>                :<span class="lineCov">         30 : valent_channel_service_init (ValentChannelService *self)</span></a>
