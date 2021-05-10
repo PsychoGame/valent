@@ -237,6 +237,7 @@
     <keyword type="function" name="valent_object_list_free ()" link="valent-valent-object-utils.html#valent-object-list-free"/>
     <keyword type="function" name="valent_object_slist_free ()" link="valent-valent-object-utils.html#valent-object-slist-free"/>
     <keyword type="function" name="valent_packet_error_quark ()" link="valent-Packet-Utilities.html#valent-packet-error-quark"/>
+    <keyword type="function" name="valent_packet_new ()" link="valent-Packet-Utilities.html#valent-packet-new"/>
     <keyword type="function" name="valent_packet_start ()" link="valent-Packet-Utilities.html#valent-packet-start"/>
     <keyword type="function" name="valent_packet_finish ()" link="valent-Packet-Utilities.html#valent-packet-finish"/>
     <keyword type="function" name="valent_packet_from_stream ()" link="valent-Packet-Utilities.html#valent-packet-from-stream"/>
