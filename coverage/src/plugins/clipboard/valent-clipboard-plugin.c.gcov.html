@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-09 03:20:27</td>
+            <td class="headerValue">2021-05-10 10:39:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -130,7 +130,7 @@
 <a name="51"><span class="lineNum">      51 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_assert (VALENT_IS_CLIPBOARD_PLUGIN (self));</span></a>
 <a name="52"><span class="lineNum">      52 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            : </a>
-<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">         10 :   body = json_object_get_object_member (json_node_get_object (packet), &quot;body&quot;);</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">         10 :   body = valent_packet_get_body (packet);</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :            : </a>
 <a name="56"><span class="lineNum">      56 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   if G_UNLIKELY ((node = json_object_get_member (body, &quot;content&quot;)) == NULL ||</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            :                  json_node_get_value_type (node) != G_TYPE_STRING)</a>
