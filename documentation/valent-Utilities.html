@@ -82,14 +82,6 @@ mentioned in the release notes for the affected release.
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">char</span> *
-</td>
-<td class="function_name">
-<a class="link" href="valent-Utilities.html#valent-get-host-path" title="valent_get_host_path ()">valent_get_host_path</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
 <span class="returnvalue">GThread</span> *
 </td>
 <td class="function_name">
@@ -174,35 +166,6 @@ engine and loads the plugins.</p>
 <a name="valent-get-engine.returns"></a><h4>Returns</h4>
 <p>a <span class="type">PeasEngine</span>. </p>
 <p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="valent-get-host-path"></a><h3>valent_get_host_path ()</h3>
-<pre class="programlisting"><span class="returnvalue">char</span> *
-valent_get_host_path (<em class="parameter"><code>const <span class="type">char</span> *path</code></em>);</pre>
-<p>Gets the path to a resource that may be relocatable at runtime. When used for
-targetting files in a flatpak sandbox, the prefix is empty (eg. <code class="literal">/usr/bin</code> is
-just <code class="literal">/bin</code>).</p>
-<div class="refsect3">
-<a name="valent-get-host-path.parameters"></a><h4>Parameters</h4>
-<div class="informaltable"><table class="informaltable" width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>path</p></td>
-<td class="parameter_description"><p>a relocatable path</p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="valent-get-host-path.returns"></a><h4>Returns</h4>
-<p>a new string containing the path. </p>
-<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
 <hr>

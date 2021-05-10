@@ -264,7 +264,6 @@
     <keyword type="function" name="valent_debug_init ()" link="valent-Utilities.html#valent-debug-init"/>
     <keyword type="function" name="valent_debug_clear ()" link="valent-Utilities.html#valent-debug-clear"/>
     <keyword type="function" name="valent_get_engine ()" link="valent-Utilities.html#valent-get-engine"/>
-    <keyword type="function" name="valent_get_host_path ()" link="valent-Utilities.html#valent-get-host-path"/>
     <keyword type="function" name="valent_get_main_thread ()" link="valent-Utilities.html#valent-get-main-thread"/>
     <keyword type="function" name="valent_in_flatpak ()" link="valent-Utilities.html#valent-in-flatpak"/>
     <keyword type="function" name="valent_load_plugins ()" link="valent-Utilities.html#valent-load-plugins"/>
