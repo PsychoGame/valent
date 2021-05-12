@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-12 10:30:27</td>
+            <td class="headerValue">2021-05-12 20:44:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">53</td>
@@ -158,8 +158,8 @@
 <a name="80"><span class="lineNum">      80 </span>                :            : static void valent_device_reload_plugins (ValentDevice *device);</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : static void valent_device_update_plugins (ValentDevice *device);</a>
 <a name="82"><span class="lineNum">      82 </span>                :            : </a>
-<a name="83"><span class="lineNum">      83 </span>  [<span class="branchCov" title="Branch 0 was taken 206 times"> + </span><span class="branchCov" title="Branch 1 was taken 48107 times"> + </span><span class="branchCov" title="Branch 2 was taken 206 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      48519 : G_DEFINE_TYPE (ValentDevice, valent_device, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 206 times"> + </span><span class="branchCov" title="Branch 5 was taken 47981 times"> + </span>]
+<a name="83"><span class="lineNum">      83 </span>  [<span class="branchCov" title="Branch 0 was taken 206 times"> + </span><span class="branchCov" title="Branch 1 was taken 48084 times"> + </span><span class="branchCov" title="Branch 2 was taken 206 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      48496 : G_DEFINE_TYPE (ValentDevice, valent_device, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 206 times"> + </span><span class="branchCov" title="Branch 5 was taken 47958 times"> + </span>]
 <a name="84"><span class="lineNum">      84 </span>                :            : </a>
 <a name="85"><span class="lineNum">      85 </span>                :            : </a>
 <a name="86"><span class="lineNum">      86 </span>                :            : enum {</a>
@@ -1101,21 +1101,21 @@
 <a name="1017"><span class="lineNum">    1017 </span>                :            :  * For cancellable or failable packet transfer, see valent_device_send_packet().</a>
 <a name="1018"><span class="lineNum">    1018 </span>                :            :  */</a>
 <a name="1019"><span class="lineNum">    1019 </span>                :            : void</a>
-<a name="1020"><span class="lineNum">    1020 </span>                :<span class="lineCov">       2067 : valent_device_queue_packet (ValentDevice *device,</span></a>
+<a name="1020"><span class="lineNum">    1020 </span>                :<span class="lineCov">       2065 : valent_device_queue_packet (ValentDevice *device,</span></a>
 <a name="1021"><span class="lineNum">    1021 </span>                :            :                             JsonNode     *packet)</a>
 <a name="1022"><span class="lineNum">    1022 </span>                :            : {</a>
-<a name="1023"><span class="lineNum">    1023 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2067 times"> + </span>]:<span class="lineCov">       2067 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
-<a name="1024"><span class="lineNum">    1024 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2067 times"> + </span>]:<span class="lineCov">       2067 :   g_return_if_fail (VALENT_IS_PACKET (packet));</span></a>
+<a name="1023"><span class="lineNum">    1023 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2065 times"> + </span>]:<span class="lineCov">       2065 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
+<a name="1024"><span class="lineNum">    1024 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2065 times"> + </span>]:<span class="lineCov">       2065 :   g_return_if_fail (VALENT_IS_PACKET (packet));</span></a>
 <a name="1025"><span class="lineNum">    1025 </span>                :            : </a>
-<a name="1026"><span class="lineNum">    1026 </span>  [<span class="branchCov" title="Branch 0 was taken 2067 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2067 times"> + </span>]:<span class="lineCov">       2067 :   if G_UNLIKELY (!device-&gt;connected || !device-&gt;paired)</span></a>
+<a name="1026"><span class="lineNum">    1026 </span>  [<span class="branchCov" title="Branch 0 was taken 2065 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2065 times"> + </span>]:<span class="lineCov">       2065 :   if G_UNLIKELY (!device-&gt;connected || !device-&gt;paired)</span></a>
 <a name="1027"><span class="lineNum">    1027 </span>                :            :     {</a>
 <a name="1028"><span class="lineNum">    1028 </span>                :<span class="lineNoCov">          0 :       g_warning (&quot;[%s] %s: discarding packet&quot;, G_STRFUNC, device-&gt;name);</span></a>
 <a name="1029"><span class="lineNum">    1029 </span>                :<span class="lineNoCov">          0 :       return;</span></a>
 <a name="1030"><span class="lineNum">    1030 </span>                :            :     }</a>
 <a name="1031"><span class="lineNum">    1031 </span>                :            : </a>
-<a name="1032"><span class="lineNum">    1032 </span>                :<span class="lineCov">       2067 :   VALENT_DEBUG_PACKET (packet, device-&gt;name);</span></a>
+<a name="1032"><span class="lineNum">    1032 </span>                :<span class="lineCov">       2065 :   VALENT_DEBUG_PACKET (packet, device-&gt;name);</span></a>
 <a name="1033"><span class="lineNum">    1033 </span>                :            : </a>
-<a name="1034"><span class="lineNum">    1034 </span>                :<span class="lineCov">       2067 :   valent_channel_write_packet (device-&gt;channel,</span></a>
+<a name="1034"><span class="lineNum">    1034 </span>                :<span class="lineCov">       2065 :   valent_channel_write_packet (device-&gt;channel,</span></a>
 <a name="1035"><span class="lineNum">    1035 </span>                :            :                                packet,</a>
 <a name="1036"><span class="lineNum">    1036 </span>                :            :                                NULL,</a>
 <a name="1037"><span class="lineNum">    1037 </span>                :            :                                (GAsyncReadyCallback)queue_packet_cb,</a>
@@ -1282,11 +1282,11 @@
 <a name="1197"><span class="lineNum">    1197 </span>                :            :  * Returns: (transfer none): the #GActionGroup</a>
 <a name="1198"><span class="lineNum">    1198 </span>                :            :  */</a>
 <a name="1199"><span class="lineNum">    1199 </span>                :            : GActionGroup *</a>
-<a name="1200"><span class="lineNum">    1200 </span>                :<span class="lineCov">       3737 : valent_device_get_actions (ValentDevice *device)</span></a>
+<a name="1200"><span class="lineNum">    1200 </span>                :<span class="lineCov">       3735 : valent_device_get_actions (ValentDevice *device)</span></a>
 <a name="1201"><span class="lineNum">    1201 </span>                :            : {</a>
-<a name="1202"><span class="lineNum">    1202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3737 times"> + </span>]:<span class="lineCov">       3737 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), NULL);</span></a>
+<a name="1202"><span class="lineNum">    1202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3735 times"> + </span>]:<span class="lineCov">       3735 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), NULL);</span></a>
 <a name="1203"><span class="lineNum">    1203 </span>                :            : </a>
-<a name="1204"><span class="lineNum">    1204 </span>                :<span class="lineCov">       3737 :   return G_ACTION_GROUP (device-&gt;actions);</span></a>
+<a name="1204"><span class="lineNum">    1204 </span>                :<span class="lineCov">       3735 :   return G_ACTION_GROUP (device-&gt;actions);</span></a>
 <a name="1205"><span class="lineNum">    1205 </span>                :            : }</a>
 <a name="1206"><span class="lineNum">    1206 </span>                :            : </a>
 <a name="1207"><span class="lineNum">    1207 </span>                :            : /**</a>
@@ -1306,21 +1306,21 @@
 <a name="1221"><span class="lineNum">    1221 </span>                :            : }</a>
 <a name="1222"><span class="lineNum">    1222 </span>                :            : </a>
 <a name="1223"><span class="lineNum">    1223 </span>                :            : static void</a>
-<a name="1224"><span class="lineNum">    1224 </span>                :<span class="lineCov">        225 : read_packet_cb (ValentChannel *channel,</span></a>
+<a name="1224"><span class="lineNum">    1224 </span>                :<span class="lineCov">        223 : read_packet_cb (ValentChannel *channel,</span></a>
 <a name="1225"><span class="lineNum">    1225 </span>                :            :                 GAsyncResult  *result,</a>
 <a name="1226"><span class="lineNum">    1226 </span>                :            :                 ValentDevice  *device)</a>
 <a name="1227"><span class="lineNum">    1227 </span>                :            : {</a>
-<a name="1228"><span class="lineNum">    1228 </span>                :<span class="lineCov">        225 :   g_autoptr (GError) error = NULL;</span></a>
-<a name="1229"><span class="lineNum">    1229 </span>                :<span class="lineCov">        225 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="1228"><span class="lineNum">    1228 </span>                :<span class="lineCov">        223 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="1229"><span class="lineNum">    1229 </span>                :<span class="lineCov">        223 :   g_autoptr (JsonNode) packet = NULL;</span></a>
 <a name="1230"><span class="lineNum">    1230 </span>                :            : </a>
-<a name="1231"><span class="lineNum">    1231 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 225 times"> + </span>]:<span class="lineCov">        225 :   g_assert (VALENT_IS_CHANNEL (channel));</span></a>
-<a name="1232"><span class="lineNum">    1232 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 225 times"> + </span>]:<span class="lineCov">        225 :   g_assert (g_task_is_valid (result, channel));</span></a>
-<a name="1233"><span class="lineNum">    1233 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 225 times"> + </span>]:<span class="lineCov">        225 :   g_assert (VALENT_IS_DEVICE (device));</span></a>
+<a name="1231"><span class="lineNum">    1231 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 223 times"> + </span>]:<span class="lineCov">        223 :   g_assert (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="1232"><span class="lineNum">    1232 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 223 times"> + </span>]:<span class="lineCov">        223 :   g_assert (g_task_is_valid (result, channel));</span></a>
+<a name="1233"><span class="lineNum">    1233 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 223 times"> + </span>]:<span class="lineCov">        223 :   g_assert (VALENT_IS_DEVICE (device));</span></a>
 <a name="1234"><span class="lineNum">    1234 </span>                :            : </a>
-<a name="1235"><span class="lineNum">    1235 </span>                :<span class="lineCov">        225 :   packet = valent_channel_read_packet_finish (channel, result, &amp;error);</span></a>
+<a name="1235"><span class="lineNum">    1235 </span>                :<span class="lineCov">        223 :   packet = valent_channel_read_packet_finish (channel, result, &amp;error);</span></a>
 <a name="1236"><span class="lineNum">    1236 </span>                :            : </a>
 <a name="1237"><span class="lineNum">    1237 </span>                :            :   /* On success, queue another read before handling the packet */</a>
-<a name="1238"><span class="lineNum">    1238 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 200 times"> + </span>]:<span class="lineCov">        225 :   if (packet != NULL)</span></a>
+<a name="1238"><span class="lineNum">    1238 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 198 times"> + </span>]:<span class="lineCov">        223 :   if (packet != NULL)</span></a>
 <a name="1239"><span class="lineNum">    1239 </span>                :            :     {</a>
 <a name="1240"><span class="lineNum">    1240 </span>                :<span class="lineCov">         25 :       valent_channel_read_packet (channel,</span></a>
 <a name="1241"><span class="lineNum">    1241 </span>                :            :                                   NULL,</a>
@@ -1333,15 +1333,15 @@
 <a name="1248"><span class="lineNum">    1248 </span>                :            :   /* On failure, drop our reference if it's still the active channel */</a>
 <a name="1249"><span class="lineNum">    1249 </span>                :            :   else</a>
 <a name="1250"><span class="lineNum">    1250 </span>                :            :     {</a>
-<a name="1251"><span class="lineNum">    1251 </span>  [<span class="branchCov" title="Branch 0 was taken 200 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 200 times"> + </span>]:<span class="lineCov">        200 :       if G_UNLIKELY (error &amp;&amp; error-&gt;domain != G_IO_ERROR)</span></a>
+<a name="1251"><span class="lineNum">    1251 </span>  [<span class="branchCov" title="Branch 0 was taken 198 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 198 times"> + </span>]:<span class="lineCov">        198 :       if G_UNLIKELY (error &amp;&amp; error-&gt;domain != G_IO_ERROR)</span></a>
 <a name="1252"><span class="lineNum">    1252 </span>                :<span class="lineNoCov">          0 :         VALENT_TRACE_MSG (&quot;%s: %s&quot;, device-&gt;name, error-&gt;message);</span></a>
 <a name="1253"><span class="lineNum">    1253 </span>                :            : </a>
-<a name="1254"><span class="lineNum">    1254 </span>        [<span class="branchCov" title="Branch 0 was taken 175 times"> + </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">        200 :       if (device-&gt;channel == channel)</span></a>
-<a name="1255"><span class="lineNum">    1255 </span>                :<span class="lineCov">        175 :         valent_device_set_channel (device, NULL);</span></a>
+<a name="1254"><span class="lineNum">    1254 </span>        [<span class="branchCov" title="Branch 0 was taken 173 times"> + </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">        198 :       if (device-&gt;channel == channel)</span></a>
+<a name="1255"><span class="lineNum">    1255 </span>                :<span class="lineCov">        173 :         valent_device_set_channel (device, NULL);</span></a>
 <a name="1256"><span class="lineNum">    1256 </span>                :            :     }</a>
 <a name="1257"><span class="lineNum">    1257 </span>                :            : </a>
-<a name="1258"><span class="lineNum">    1258 </span>                :<span class="lineCov">        225 :   g_object_unref (device);</span></a>
-<a name="1259"><span class="lineNum">    1259 </span>                :<span class="lineCov">        225 : }</span></a>
+<a name="1258"><span class="lineNum">    1258 </span>                :<span class="lineCov">        223 :   g_object_unref (device);</span></a>
+<a name="1259"><span class="lineNum">    1259 </span>                :<span class="lineCov">        223 : }</span></a>
 <a name="1260"><span class="lineNum">    1260 </span>                :            : </a>
 <a name="1261"><span class="lineNum">    1261 </span>                :            : /**</a>
 <a name="1262"><span class="lineNum">    1262 </span>                :            :  * valent_device_set_channel:</a>
@@ -1351,18 +1351,18 @@
 <a name="1266"><span class="lineNum">    1266 </span>                :            :  * Sets the active packet exchange channel for @device to @channel.</a>
 <a name="1267"><span class="lineNum">    1267 </span>                :            :  */</a>
 <a name="1268"><span class="lineNum">    1268 </span>                :            : void</a>
-<a name="1269"><span class="lineNum">    1269 </span>                :<span class="lineCov">        455 : valent_device_set_channel (ValentDevice  *device,</span></a>
+<a name="1269"><span class="lineNum">    1269 </span>                :<span class="lineCov">        453 : valent_device_set_channel (ValentDevice  *device,</span></a>
 <a name="1270"><span class="lineNum">    1270 </span>                :            :                            ValentChannel *channel)</a>
 <a name="1271"><span class="lineNum">    1271 </span>                :            : {</a>
-<a name="1272"><span class="lineNum">    1272 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 455 times"> + </span>]:<span class="lineCov">        455 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
-<a name="1273"><span class="lineNum">    1273 </span>  [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchCov" title="Branch 1 was taken 205 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 250 times"> + </span>]:<span class="lineCov">        455 :   g_return_if_fail (channel == NULL || VALENT_IS_CHANNEL (channel));</span></a>
+<a name="1272"><span class="lineNum">    1272 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 453 times"> + </span>]:<span class="lineCov">        453 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
+<a name="1273"><span class="lineNum">    1273 </span>  [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchCov" title="Branch 1 was taken 203 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 250 times"> + </span>]:<span class="lineCov">        453 :   g_return_if_fail (channel == NULL || VALENT_IS_CHANNEL (channel));</span></a>
 <a name="1274"><span class="lineNum">    1274 </span>                :            : </a>
-<a name="1275"><span class="lineNum">    1275 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 450 times"> + </span>]:<span class="lineCov">        455 :   if (!g_set_object (&amp;device-&gt;channel, channel))</span></a>
+<a name="1275"><span class="lineNum">    1275 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 448 times"> + </span>]:<span class="lineCov">        453 :   if (!g_set_object (&amp;device-&gt;channel, channel))</span></a>
 <a name="1276"><span class="lineNum">    1276 </span>                :<span class="lineCov">          5 :     return;</span></a>
 <a name="1277"><span class="lineNum">    1277 </span>                :            : </a>
 <a name="1278"><span class="lineNum">    1278 </span>                :            :   /* If there's a new channel bind to the cancellable and handle the peer</a>
 <a name="1279"><span class="lineNum">    1279 </span>                :            :    * identity, before calling valent_device_set_connected(). */</a>
-<a name="1280"><span class="lineNum">    1280 </span>        [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchCov" title="Branch 1 was taken 200 times"> + </span>]:<span class="lineCov">        450 :   if (device-&gt;channel != NULL)</span></a>
+<a name="1280"><span class="lineNum">    1280 </span>        [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchCov" title="Branch 1 was taken 198 times"> + </span>]:<span class="lineCov">        448 :   if (device-&gt;channel != NULL)</span></a>
 <a name="1281"><span class="lineNum">    1281 </span>                :            :     {</a>
 <a name="1282"><span class="lineNum">    1282 </span>                :            :       JsonNode *peer_identity;</a>
 <a name="1283"><span class="lineNum">    1283 </span>                :            : </a>
@@ -1377,7 +1377,7 @@
 <a name="1292"><span class="lineNum">    1292 </span>                :            :                                   g_object_ref (device));</a>
 <a name="1293"><span class="lineNum">    1293 </span>                :            :     }</a>
 <a name="1294"><span class="lineNum">    1294 </span>                :            : </a>
-<a name="1295"><span class="lineNum">    1295 </span>                :<span class="lineCov">        450 :   valent_device_set_connected (device, VALENT_IS_CHANNEL (device-&gt;channel));</span></a>
+<a name="1295"><span class="lineNum">    1295 </span>                :<span class="lineCov">        448 :   valent_device_set_connected (device, VALENT_IS_CHANNEL (device-&gt;channel));</span></a>
 <a name="1296"><span class="lineNum">    1296 </span>                :            : }</a>
 <a name="1297"><span class="lineNum">    1297 </span>                :            : </a>
 <a name="1298"><span class="lineNum">    1298 </span>                :            : /**</a>
@@ -1389,11 +1389,11 @@
 <a name="1304"><span class="lineNum">    1304 </span>                :            :  * Returns: %TRUE if the device has an active connection.</a>
 <a name="1305"><span class="lineNum">    1305 </span>                :            :  */</a>
 <a name="1306"><span class="lineNum">    1306 </span>                :            : gboolean</a>
-<a name="1307"><span class="lineNum">    1307 </span>                :<span class="lineCov">       1935 : valent_device_get_connected (ValentDevice *device)</span></a>
+<a name="1307"><span class="lineNum">    1307 </span>                :<span class="lineCov">       1931 : valent_device_get_connected (ValentDevice *device)</span></a>
 <a name="1308"><span class="lineNum">    1308 </span>                :            : {</a>
-<a name="1309"><span class="lineNum">    1309 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1935 times"> + </span>]:<span class="lineCov">       1935 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), FALSE);</span></a>
+<a name="1309"><span class="lineNum">    1309 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1931 times"> + </span>]:<span class="lineCov">       1931 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), FALSE);</span></a>
 <a name="1310"><span class="lineNum">    1310 </span>                :            : </a>
-<a name="1311"><span class="lineNum">    1311 </span>                :<span class="lineCov">       1935 :   return device-&gt;connected;</span></a>
+<a name="1311"><span class="lineNum">    1311 </span>                :<span class="lineCov">       1931 :   return device-&gt;connected;</span></a>
 <a name="1312"><span class="lineNum">    1312 </span>                :            : }</a>
 <a name="1313"><span class="lineNum">    1313 </span>                :            : </a>
 <a name="1314"><span class="lineNum">    1314 </span>                :            : /**</a>
@@ -1404,20 +1404,20 @@
 <a name="1319"><span class="lineNum">    1319 </span>                :            :  * Set the connected state for @device.</a>
 <a name="1320"><span class="lineNum">    1320 </span>                :            :  */</a>
 <a name="1321"><span class="lineNum">    1321 </span>                :            : static void</a>
-<a name="1322"><span class="lineNum">    1322 </span>                :<span class="lineCov">        450 : valent_device_set_connected (ValentDevice *device,</span></a>
+<a name="1322"><span class="lineNum">    1322 </span>                :<span class="lineCov">        448 : valent_device_set_connected (ValentDevice *device,</span></a>
 <a name="1323"><span class="lineNum">    1323 </span>                :            :                              gboolean      connected)</a>
 <a name="1324"><span class="lineNum">    1324 </span>                :            : {</a>
-<a name="1325"><span class="lineNum">    1325 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 450 times"> + </span>]:<span class="lineCov">        450 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
+<a name="1325"><span class="lineNum">    1325 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 448 times"> + </span>]:<span class="lineCov">        448 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
 <a name="1326"><span class="lineNum">    1326 </span>                :            : </a>
-<a name="1327"><span class="lineNum">    1327 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 450 times"> + </span>]:<span class="lineCov">        450 :   if (device-&gt;connected == connected)</span></a>
+<a name="1327"><span class="lineNum">    1327 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 448 times"> + </span>]:<span class="lineCov">        448 :   if (device-&gt;connected == connected)</span></a>
 <a name="1328"><span class="lineNum">    1328 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
 <a name="1329"><span class="lineNum">    1329 </span>                :            : </a>
 <a name="1330"><span class="lineNum">    1330 </span>                :            :   /* Ensure plugins are updated before emitting */</a>
-<a name="1331"><span class="lineNum">    1331 </span>                :<span class="lineCov">        450 :   device-&gt;connected = connected;</span></a>
-<a name="1332"><span class="lineNum">    1332 </span>                :<span class="lineCov">        450 :   valent_device_update_plugins (device);</span></a>
+<a name="1331"><span class="lineNum">    1331 </span>                :<span class="lineCov">        448 :   device-&gt;connected = connected;</span></a>
+<a name="1332"><span class="lineNum">    1332 </span>                :<span class="lineCov">        448 :   valent_device_update_plugins (device);</span></a>
 <a name="1333"><span class="lineNum">    1333 </span>                :            : </a>
-<a name="1334"><span class="lineNum">    1334 </span>                :<span class="lineCov">        450 :   valent_object_notify_by_pspec (G_OBJECT (device), properties [PROP_CONNECTED]);</span></a>
-<a name="1335"><span class="lineNum">    1335 </span>                :<span class="lineCov">        450 :   valent_object_notify_by_pspec (G_OBJECT (device), properties [PROP_STATE]);</span></a>
+<a name="1334"><span class="lineNum">    1334 </span>                :<span class="lineCov">        448 :   valent_object_notify_by_pspec (G_OBJECT (device), properties [PROP_CONNECTED]);</span></a>
+<a name="1335"><span class="lineNum">    1335 </span>                :<span class="lineCov">        448 :   valent_object_notify_by_pspec (G_OBJECT (device), properties [PROP_STATE]);</span></a>
 <a name="1336"><span class="lineNum">    1336 </span>                :            : }</a>
 <a name="1337"><span class="lineNum">    1337 </span>                :            : </a>
 <a name="1338"><span class="lineNum">    1338 </span>                :            : /**</a>
@@ -1492,11 +1492,11 @@
 <a name="1407"><span class="lineNum">    1407 </span>                :            :  * Returns: (transfer none): a #GMenuModel</a>
 <a name="1408"><span class="lineNum">    1408 </span>                :            :  */</a>
 <a name="1409"><span class="lineNum">    1409 </span>                :            : GMenuModel *</a>
-<a name="1410"><span class="lineNum">    1410 </span>                :<span class="lineCov">       1113 : valent_device_get_menu (ValentDevice *device)</span></a>
+<a name="1410"><span class="lineNum">    1410 </span>                :<span class="lineCov">       1110 : valent_device_get_menu (ValentDevice *device)</span></a>
 <a name="1411"><span class="lineNum">    1411 </span>                :            : {</a>
-<a name="1412"><span class="lineNum">    1412 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1113 times"> + </span>]:<span class="lineCov">       1113 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), NULL);</span></a>
+<a name="1412"><span class="lineNum">    1412 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1110 times"> + </span>]:<span class="lineCov">       1110 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), NULL);</span></a>
 <a name="1413"><span class="lineNum">    1413 </span>                :            : </a>
-<a name="1414"><span class="lineNum">    1414 </span>                :<span class="lineCov">       1113 :   return G_MENU_MODEL (device-&gt;menu);</span></a>
+<a name="1414"><span class="lineNum">    1414 </span>                :<span class="lineCov">       1110 :   return G_MENU_MODEL (device-&gt;menu);</span></a>
 <a name="1415"><span class="lineNum">    1415 </span>                :            : }</a>
 <a name="1416"><span class="lineNum">    1416 </span>                :            : </a>
 <a name="1417"><span class="lineNum">    1417 </span>                :            : /**</a>
@@ -1524,11 +1524,11 @@
 <a name="1439"><span class="lineNum">    1439 </span>                :            :  * Returns: %TRUE if the device is paired.</a>
 <a name="1440"><span class="lineNum">    1440 </span>                :            :  */</a>
 <a name="1441"><span class="lineNum">    1441 </span>                :            : gboolean</a>
-<a name="1442"><span class="lineNum">    1442 </span>                :<span class="lineCov">       1920 : valent_device_get_paired (ValentDevice *device)</span></a>
+<a name="1442"><span class="lineNum">    1442 </span>                :<span class="lineCov">       1916 : valent_device_get_paired (ValentDevice *device)</span></a>
 <a name="1443"><span class="lineNum">    1443 </span>                :            : {</a>
-<a name="1444"><span class="lineNum">    1444 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1920 times"> + </span>]:<span class="lineCov">       1920 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), FALSE);</span></a>
+<a name="1444"><span class="lineNum">    1444 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1916 times"> + </span>]:<span class="lineCov">       1916 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), FALSE);</span></a>
 <a name="1445"><span class="lineNum">    1445 </span>                :            : </a>
-<a name="1446"><span class="lineNum">    1446 </span>                :<span class="lineCov">       1920 :   return device-&gt;paired;</span></a>
+<a name="1446"><span class="lineNum">    1446 </span>                :<span class="lineCov">       1916 :   return device-&gt;paired;</span></a>
 <a name="1447"><span class="lineNum">    1447 </span>                :            : }</a>
 <a name="1448"><span class="lineNum">    1448 </span>                :            : </a>
 <a name="1449"><span class="lineNum">    1449 </span>                :            : /**</a>
@@ -1742,23 +1742,23 @@
 <a name="1657"><span class="lineNum">    1657 </span>                :            :  * Call valent_device_plugin_update_state() on each enabled plugin.</a>
 <a name="1658"><span class="lineNum">    1658 </span>                :            :  */</a>
 <a name="1659"><span class="lineNum">    1659 </span>                :            : static void</a>
-<a name="1660"><span class="lineNum">    1660 </span>                :<span class="lineCov">        600 : valent_device_update_plugins (ValentDevice *device)</span></a>
+<a name="1660"><span class="lineNum">    1660 </span>                :<span class="lineCov">        598 : valent_device_update_plugins (ValentDevice *device)</span></a>
 <a name="1661"><span class="lineNum">    1661 </span>                :            : {</a>
 <a name="1662"><span class="lineNum">    1662 </span>                :            :   GHashTableIter iter;</a>
 <a name="1663"><span class="lineNum">    1663 </span>                :            :   gpointer value;</a>
 <a name="1664"><span class="lineNum">    1664 </span>                :            : </a>
-<a name="1665"><span class="lineNum">    1665 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 600 times"> + </span>]:<span class="lineCov">        600 :   g_assert (VALENT_IS_DEVICE (device));</span></a>
+<a name="1665"><span class="lineNum">    1665 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 598 times"> + </span>]:<span class="lineCov">        598 :   g_assert (VALENT_IS_DEVICE (device));</span></a>
 <a name="1666"><span class="lineNum">    1666 </span>                :            : </a>
-<a name="1667"><span class="lineNum">    1667 </span>                :<span class="lineCov">        600 :   g_hash_table_iter_init (&amp;iter, device-&gt;plugins);</span></a>
+<a name="1667"><span class="lineNum">    1667 </span>                :<span class="lineCov">        598 :   g_hash_table_iter_init (&amp;iter, device-&gt;plugins);</span></a>
 <a name="1668"><span class="lineNum">    1668 </span>                :            : </a>
-<a name="1669"><span class="lineNum">    1669 </span>        [<span class="branchCov" title="Branch 0 was taken 1095 times"> + </span><span class="branchCov" title="Branch 1 was taken 600 times"> + </span>]:<span class="lineCov">       1695 :   while (g_hash_table_iter_next (&amp;iter, NULL, &amp;value))</span></a>
+<a name="1669"><span class="lineNum">    1669 </span>        [<span class="branchCov" title="Branch 0 was taken 1091 times"> + </span><span class="branchCov" title="Branch 1 was taken 598 times"> + </span>]:<span class="lineCov">       1689 :   while (g_hash_table_iter_next (&amp;iter, NULL, &amp;value))</span></a>
 <a name="1670"><span class="lineNum">    1670 </span>                :            :     {</a>
-<a name="1671"><span class="lineNum">    1671 </span>                :<span class="lineCov">       1095 :       PeasExtension *extension = ((DevicePlugin *)value)-&gt;extension;</span></a>
+<a name="1671"><span class="lineNum">    1671 </span>                :<span class="lineCov">       1091 :       PeasExtension *extension = ((DevicePlugin *)value)-&gt;extension;</span></a>
 <a name="1672"><span class="lineNum">    1672 </span>                :            : </a>
-<a name="1673"><span class="lineNum">    1673 </span>        [<span class="branchCov" title="Branch 0 was taken 1095 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1095 :       if (extension != NULL)</span></a>
-<a name="1674"><span class="lineNum">    1674 </span>                :<span class="lineCov">       1095 :         valent_device_plugin_update_state (VALENT_DEVICE_PLUGIN (extension));</span></a>
+<a name="1673"><span class="lineNum">    1673 </span>        [<span class="branchCov" title="Branch 0 was taken 1091 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1091 :       if (extension != NULL)</span></a>
+<a name="1674"><span class="lineNum">    1674 </span>                :<span class="lineCov">       1091 :         valent_device_plugin_update_state (VALENT_DEVICE_PLUGIN (extension));</span></a>
 <a name="1675"><span class="lineNum">    1675 </span>                :            :     }</a>
-<a name="1676"><span class="lineNum">    1676 </span>                :<span class="lineCov">        600 : }</span></a>
+<a name="1676"><span class="lineNum">    1676 </span>                :<span class="lineCov">        598 : }</span></a>
 <a name="1677"><span class="lineNum">    1677 </span>                :            : </a>
 <a name="1678"><span class="lineNum">    1678 </span>                :            : /**</a>
 <a name="1679"><span class="lineNum">    1679 </span>                :            :  * valent_device_supports_plugin:</a>
