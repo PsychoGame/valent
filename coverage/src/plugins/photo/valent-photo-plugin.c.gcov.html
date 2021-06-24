@@ -31,13 +31,13 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">92</td>
-            <td class="headerCovTableEntry">112</td>
-            <td class="headerCovTableEntryMed">82.1 %</td>
+            <td class="headerCovTableEntry">90</td>
+            <td class="headerCovTableEntry">110</td>
+            <td class="headerCovTableEntryMed">81.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-12 20:44:20</td>
+            <td class="headerValue">2021-06-24 07:45:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">16</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">31</td>
-            <td class="headerCovTableEntry">52</td>
-            <td class="headerCovTableEntryLo">59.6 %</td>
+            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntry">50</td>
+            <td class="headerCovTableEntryLo">60.0 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -99,8 +99,8 @@
 <a name="21"><span class="lineNum">      21 </span>                :            : </a>
 <a name="22"><span class="lineNum">      22 </span>                :            : static void valent_device_plugin_iface_init (ValentDevicePluginInterface *iface);</a>
 <a name="23"><span class="lineNum">      23 </span>                :            : </a>
-<a name="24"><span class="lineNum">      24 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 695 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        705 : G_DEFINE_TYPE_WITH_CODE (ValentPhotoPlugin, valent_photo_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 690 times"> + </span>]
+<a name="24"><span class="lineNum">      24 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 665 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        675 : G_DEFINE_TYPE_WITH_CODE (ValentPhotoPlugin, valent_photo_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 660 times"> + </span>]
 <a name="25"><span class="lineNum">      25 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="26"><span class="lineNum">      26 </span>                :            : </a>
 <a name="27"><span class="lineNum">      27 </span>                :            : enum {</a>
@@ -241,140 +241,136 @@
 <a name="162"><span class="lineNum">     162 </span>                :            : static void</a>
 <a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         15 : valent_photo_plugin_enable (ValentDevicePlugin *plugin)</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : {</a>
-<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">         15 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (plugin);</span></a>
-<a name="166"><span class="lineNum">     166 </span>                :            : </a>
-<a name="167"><span class="lineNum">     167 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_PHOTO_PLUGIN (self));</span></a>
-<a name="168"><span class="lineNum">     168 </span>                :            : </a>
-<a name="169"><span class="lineNum">     169 </span>                :            :   /* Register GActions */</a>
-<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">         15 :   valent_device_plugin_register_actions (plugin,</span></a>
-<a name="171"><span class="lineNum">     171 </span>                :            :                                          actions,</a>
-<a name="172"><span class="lineNum">     172 </span>                :            :                                          G_N_ELEMENTS (actions));</a>
-<a name="173"><span class="lineNum">     173 </span>                :            : </a>
-<a name="174"><span class="lineNum">     174 </span>                :            :   /* Register GMenu items */</a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">         15 :   valent_device_plugin_add_menu_entries (plugin,</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :            :                                          items,</a>
-<a name="177"><span class="lineNum">     177 </span>                :            :                                          G_N_ELEMENTS (items));</a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">         15 : }</span></a>
-<a name="179"><span class="lineNum">     179 </span>                :            : </a>
-<a name="180"><span class="lineNum">     180 </span>                :            : static void</a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">         10 : valent_photo_plugin_disable (ValentDevicePlugin *plugin)</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :            : {</a>
-<a name="183"><span class="lineNum">     183 </span>                :            :   /* Unregister GMenu items */</a>
-<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">         10 :   valent_device_plugin_remove_menu_entries (plugin,</span></a>
-<a name="185"><span class="lineNum">     185 </span>                :            :                                             items,</a>
-<a name="186"><span class="lineNum">     186 </span>                :            :                                             G_N_ELEMENTS (items));</a>
-<a name="187"><span class="lineNum">     187 </span>                :            : </a>
-<a name="188"><span class="lineNum">     188 </span>                :            :   /* Unregister GActions */</a>
-<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">         10 :   valent_device_plugin_unregister_actions (plugin,</span></a>
-<a name="190"><span class="lineNum">     190 </span>                :            :                                            actions,</a>
-<a name="191"><span class="lineNum">     191 </span>                :            :                                            G_N_ELEMENTS (actions));</a>
-<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         10 : }</span></a>
-<a name="193"><span class="lineNum">     193 </span>                :            : </a>
-<a name="194"><span class="lineNum">     194 </span>                :            : static void</a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         30 : valent_photo_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
-<a name="196"><span class="lineNum">     196 </span>                :            : {</a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">         30 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (plugin);</span></a>
-<a name="198"><span class="lineNum">     198 </span>                :            :   gboolean connected;</a>
-<a name="199"><span class="lineNum">     199 </span>                :            :   gboolean paired;</a>
-<a name="200"><span class="lineNum">     200 </span>                :            :   gboolean available;</a>
+<a name="165"><span class="lineNum">     165 </span>                :            :   /* Register GActions */</a>
+<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">         15 :   valent_device_plugin_register_actions (plugin,</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :            :                                          actions,</a>
+<a name="168"><span class="lineNum">     168 </span>                :            :                                          G_N_ELEMENTS (actions));</a>
+<a name="169"><span class="lineNum">     169 </span>                :            : </a>
+<a name="170"><span class="lineNum">     170 </span>                :            :   /* Register GMenu items */</a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">         15 :   valent_device_plugin_add_menu_entries (plugin,</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :            :                                          items,</a>
+<a name="173"><span class="lineNum">     173 </span>                :            :                                          G_N_ELEMENTS (items));</a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :            : </a>
+<a name="176"><span class="lineNum">     176 </span>                :            : static void</a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">         10 : valent_photo_plugin_disable (ValentDevicePlugin *plugin)</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :            : {</a>
+<a name="179"><span class="lineNum">     179 </span>                :            :   /* Unregister GMenu items */</a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">         10 :   valent_device_plugin_remove_menu_entries (plugin,</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :            :                                             items,</a>
+<a name="182"><span class="lineNum">     182 </span>                :            :                                             G_N_ELEMENTS (items));</a>
+<a name="183"><span class="lineNum">     183 </span>                :            : </a>
+<a name="184"><span class="lineNum">     184 </span>                :            :   /* Unregister GActions */</a>
+<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">         10 :   valent_device_plugin_unregister_actions (plugin,</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :            :                                            actions,</a>
+<a name="187"><span class="lineNum">     187 </span>                :            :                                            G_N_ELEMENTS (actions));</a>
+<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">         10 : }</span></a>
+<a name="189"><span class="lineNum">     189 </span>                :            : </a>
+<a name="190"><span class="lineNum">     190 </span>                :            : static void</a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">         30 : valent_photo_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :            : {</a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         30 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (plugin);</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :            :   gboolean connected;</a>
+<a name="195"><span class="lineNum">     195 </span>                :            :   gboolean paired;</a>
+<a name="196"><span class="lineNum">     196 </span>                :            :   gboolean available;</a>
+<a name="197"><span class="lineNum">     197 </span>                :            : </a>
+<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">         30 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">         30 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
+<a name="200"><span class="lineNum">     200 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         30 :   available = (connected &amp;&amp; paired);</span></a>
 <a name="201"><span class="lineNum">     201 </span>                :            : </a>
-<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">         30 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
-<a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">         30 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
-<a name="204"><span class="lineNum">     204 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         30 :   available = (connected &amp;&amp; paired);</span></a>
-<a name="205"><span class="lineNum">     205 </span>                :            : </a>
-<a name="206"><span class="lineNum">     206 </span>                :            :   /* GActions */</a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">         30 :   valent_device_plugin_toggle_actions (plugin,</span></a>
-<a name="208"><span class="lineNum">     208 </span>                :            :                                        actions, G_N_ELEMENTS (actions),</a>
-<a name="209"><span class="lineNum">     209 </span>                :            :                                        available);</a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">         30 : }</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :            : </a>
-<a name="212"><span class="lineNum">     212 </span>                :            : static void</a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">        175 : valent_photo_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
-<a name="214"><span class="lineNum">     214 </span>                :            :                                    const char         *type,</a>
-<a name="215"><span class="lineNum">     215 </span>                :            :                                    JsonNode           *packet)</a>
-<a name="216"><span class="lineNum">     216 </span>                :            : {</a>
-<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">        175 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (plugin);</span></a>
+<a name="202"><span class="lineNum">     202 </span>                :            :   /* GActions */</a>
+<a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">         30 :   valent_device_plugin_toggle_actions (plugin,</span></a>
+<a name="204"><span class="lineNum">     204 </span>                :            :                                        actions, G_N_ELEMENTS (actions),</a>
+<a name="205"><span class="lineNum">     205 </span>                :            :                                        available);</a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">         30 : }</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :            : </a>
+<a name="208"><span class="lineNum">     208 </span>                :            : static void</a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        175 : valent_photo_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :            :                                    const char         *type,</a>
+<a name="211"><span class="lineNum">     211 </span>                :            :                                    JsonNode           *packet)</a>
+<a name="212"><span class="lineNum">     212 </span>                :            : {</a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">        175 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (plugin);</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :            : </a>
+<a name="215"><span class="lineNum">     215 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 175 times"> + </span>]:<span class="lineCov">        175 :   g_assert (VALENT_IS_PHOTO_PLUGIN (plugin));</span></a>
+<a name="216"><span class="lineNum">     216 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 175 times"> + </span>]:<span class="lineCov">        175 :   g_assert (type != NULL);</span></a>
+<a name="217"><span class="lineNum">     217 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 175 times"> + </span>]:<span class="lineCov">        175 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
-<a name="219"><span class="lineNum">     219 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 175 times"> + </span>]:<span class="lineCov">        175 :   g_assert (VALENT_IS_PHOTO_PLUGIN (plugin));</span></a>
-<a name="220"><span class="lineNum">     220 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 175 times"> + </span>]:<span class="lineCov">        175 :   g_assert (type != NULL);</span></a>
-<a name="221"><span class="lineNum">     221 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 175 times"> + </span>]:<span class="lineCov">        175 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :            : </a>
-<a name="223"><span class="lineNum">     223 </span>        [<span class="branchCov" title="Branch 0 was taken 135 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        175 :   if (g_strcmp0 (type, &quot;kdeconnect.photo&quot;) == 0)</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">        135 :     valent_photo_plugin_handle_photo (self, packet);</span></a>
-<a name="225"><span class="lineNum">     225 </span>                :            : </a>
-<a name="226"><span class="lineNum">     226 </span>        [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :   else if (g_strcmp0 (type, &quot;kdeconnect.photo.request&quot;) == 0)</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">         40 :     valent_photo_plugin_handle_photo_request (self, packet);</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 135 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        175 :   if (g_strcmp0 (type, &quot;kdeconnect.photo&quot;) == 0)</span></a>
+<a name="220"><span class="lineNum">     220 </span>                :<span class="lineCov">        135 :     valent_photo_plugin_handle_photo (self, packet);</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :            : </a>
+<a name="222"><span class="lineNum">     222 </span>        [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :   else if (g_strcmp0 (type, &quot;kdeconnect.photo.request&quot;) == 0)</span></a>
+<a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">         40 :     valent_photo_plugin_handle_photo_request (self, packet);</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :            : </a>
+<a name="225"><span class="lineNum">     225 </span>                :            :   else</a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineNoCov">          0 :     g_assert_not_reached ();</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">        175 : }</span></a>
 <a name="228"><span class="lineNum">     228 </span>                :            : </a>
-<a name="229"><span class="lineNum">     229 </span>                :            :   else</a>
-<a name="230"><span class="lineNum">     230 </span>                :<span class="lineNoCov">          0 :     g_assert_not_reached ();</span></a>
-<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">        175 : }</span></a>
-<a name="232"><span class="lineNum">     232 </span>                :            : </a>
-<a name="233"><span class="lineNum">     233 </span>                :            : static void</a>
-<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">          5 : valent_device_plugin_iface_init (ValentDevicePluginInterface *iface)</span></a>
-<a name="235"><span class="lineNum">     235 </span>                :            : {</a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">          5 :   iface-&gt;enable = valent_photo_plugin_enable;</span></a>
-<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">          5 :   iface-&gt;disable = valent_photo_plugin_disable;</span></a>
-<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">          5 :   iface-&gt;handle_packet = valent_photo_plugin_handle_packet;</span></a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">          5 :   iface-&gt;update_state = valent_photo_plugin_update_state;</span></a>
-<a name="240"><span class="lineNum">     240 </span>                :<span class="lineCov">          5 : }</span></a>
-<a name="241"><span class="lineNum">     241 </span>                :            : </a>
-<a name="242"><span class="lineNum">     242 </span>                :            : /**</a>
-<a name="243"><span class="lineNum">     243 </span>                :            :  * GObject</a>
-<a name="244"><span class="lineNum">     244 </span>                :            :  */</a>
-<a name="245"><span class="lineNum">     245 </span>                :            : static void</a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">         80 : valent_photo_plugin_get_property (GObject    *object,</span></a>
-<a name="247"><span class="lineNum">     247 </span>                :            :                                   guint       prop_id,</a>
-<a name="248"><span class="lineNum">     248 </span>                :            :                                   GValue     *value,</a>
-<a name="249"><span class="lineNum">     249 </span>                :            :                                   GParamSpec *pspec)</a>
-<a name="250"><span class="lineNum">     250 </span>                :            : {</a>
-<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">         80 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (object);</span></a>
-<a name="252"><span class="lineNum">     252 </span>                :            : </a>
-<a name="253"><span class="lineNum">     253 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         80 :   switch (prop_id)</span></a>
-<a name="254"><span class="lineNum">     254 </span>                :            :     {</a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">         80 :     case PROP_DEVICE:</span></a>
-<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">         80 :       g_value_set_object (value, self-&gt;device);</span></a>
-<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">         80 :       break;</span></a>
-<a name="258"><span class="lineNum">     258 </span>                :            : </a>
-<a name="259"><span class="lineNum">     259 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="260"><span class="lineNum">     260 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="261"><span class="lineNum">     261 </span>                :            :     }</a>
-<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">         80 : }</span></a>
-<a name="263"><span class="lineNum">     263 </span>                :            : </a>
-<a name="264"><span class="lineNum">     264 </span>                :            : static void</a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">         15 : valent_photo_plugin_set_property (GObject      *object,</span></a>
-<a name="266"><span class="lineNum">     266 </span>                :            :                                   guint         prop_id,</a>
-<a name="267"><span class="lineNum">     267 </span>                :            :                                   const GValue *value,</a>
-<a name="268"><span class="lineNum">     268 </span>                :            :                                   GParamSpec   *pspec)</a>
-<a name="269"><span class="lineNum">     269 </span>                :            : {</a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">         15 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (object);</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :            : </a>
-<a name="272"><span class="lineNum">     272 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   switch (prop_id)</span></a>
-<a name="273"><span class="lineNum">     273 </span>                :            :     {</a>
-<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">         15 :     case PROP_DEVICE:</span></a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">         15 :       self-&gt;device = g_value_get_object (value);</span></a>
-<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">         15 :       break;</span></a>
-<a name="277"><span class="lineNum">     277 </span>                :            : </a>
-<a name="278"><span class="lineNum">     278 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="279"><span class="lineNum">     279 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="280"><span class="lineNum">     280 </span>                :            :     }</a>
-<a name="281"><span class="lineNum">     281 </span>                :<span class="lineCov">         15 : }</span></a>
-<a name="282"><span class="lineNum">     282 </span>                :            : </a>
-<a name="283"><span class="lineNum">     283 </span>                :            : static void</a>
-<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">          5 : valent_photo_plugin_class_init (ValentPhotoPluginClass *klass)</span></a>
-<a name="285"><span class="lineNum">     285 </span>                :            : {</a>
-<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">          5 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="287"><span class="lineNum">     287 </span>                :            : </a>
-<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          5 :   object_class-&gt;get_property = valent_photo_plugin_get_property;</span></a>
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">          5 :   object_class-&gt;set_property = valent_photo_plugin_set_property;</span></a>
-<a name="290"><span class="lineNum">     290 </span>                :            : </a>
-<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">          5 :   g_object_class_override_property (object_class, PROP_DEVICE, &quot;device&quot;);</span></a>
-<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">          5 : }</span></a>
-<a name="293"><span class="lineNum">     293 </span>                :            : </a>
-<a name="294"><span class="lineNum">     294 </span>                :            : static void</a>
-<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">         15 : valent_photo_plugin_init (ValentPhotoPlugin *self)</span></a>
-<a name="296"><span class="lineNum">     296 </span>                :            : {</a>
-<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">         15 : }</span></a>
-<a name="298"><span class="lineNum">     298 </span>                :            : </a>
+<a name="229"><span class="lineNum">     229 </span>                :            : static void</a>
+<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">          5 : valent_device_plugin_iface_init (ValentDevicePluginInterface *iface)</span></a>
+<a name="231"><span class="lineNum">     231 </span>                :            : {</a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">          5 :   iface-&gt;enable = valent_photo_plugin_enable;</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">          5 :   iface-&gt;disable = valent_photo_plugin_disable;</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">          5 :   iface-&gt;handle_packet = valent_photo_plugin_handle_packet;</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">          5 :   iface-&gt;update_state = valent_photo_plugin_update_state;</span></a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :            : </a>
+<a name="238"><span class="lineNum">     238 </span>                :            : /**</a>
+<a name="239"><span class="lineNum">     239 </span>                :            :  * GObject</a>
+<a name="240"><span class="lineNum">     240 </span>                :            :  */</a>
+<a name="241"><span class="lineNum">     241 </span>                :            : static void</a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         80 : valent_photo_plugin_get_property (GObject    *object,</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :            :                                   guint       prop_id,</a>
+<a name="244"><span class="lineNum">     244 </span>                :            :                                   GValue     *value,</a>
+<a name="245"><span class="lineNum">     245 </span>                :            :                                   GParamSpec *pspec)</a>
+<a name="246"><span class="lineNum">     246 </span>                :            : {</a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">         80 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (object);</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :            : </a>
+<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         80 :   switch (prop_id)</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :            :     {</a>
+<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">         80 :     case PROP_DEVICE:</span></a>
+<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         80 :       g_value_set_object (value, self-&gt;device);</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">         80 :       break;</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :            : </a>
+<a name="255"><span class="lineNum">     255 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="256"><span class="lineNum">     256 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="257"><span class="lineNum">     257 </span>                :            :     }</a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         80 : }</span></a>
+<a name="259"><span class="lineNum">     259 </span>                :            : </a>
+<a name="260"><span class="lineNum">     260 </span>                :            : static void</a>
+<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">         15 : valent_photo_plugin_set_property (GObject      *object,</span></a>
+<a name="262"><span class="lineNum">     262 </span>                :            :                                   guint         prop_id,</a>
+<a name="263"><span class="lineNum">     263 </span>                :            :                                   const GValue *value,</a>
+<a name="264"><span class="lineNum">     264 </span>                :            :                                   GParamSpec   *pspec)</a>
+<a name="265"><span class="lineNum">     265 </span>                :            : {</a>
+<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">         15 :   ValentPhotoPlugin *self = VALENT_PHOTO_PLUGIN (object);</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :            : </a>
+<a name="268"><span class="lineNum">     268 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   switch (prop_id)</span></a>
+<a name="269"><span class="lineNum">     269 </span>                :            :     {</a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">         15 :     case PROP_DEVICE:</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">         15 :       self-&gt;device = g_value_get_object (value);</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">         15 :       break;</span></a>
+<a name="273"><span class="lineNum">     273 </span>                :            : </a>
+<a name="274"><span class="lineNum">     274 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="276"><span class="lineNum">     276 </span>                :            :     }</a>
+<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="278"><span class="lineNum">     278 </span>                :            : </a>
+<a name="279"><span class="lineNum">     279 </span>                :            : static void</a>
+<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">          5 : valent_photo_plugin_class_init (ValentPhotoPluginClass *klass)</span></a>
+<a name="281"><span class="lineNum">     281 </span>                :            : {</a>
+<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">          5 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :            : </a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">          5 :   object_class-&gt;get_property = valent_photo_plugin_get_property;</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">          5 :   object_class-&gt;set_property = valent_photo_plugin_set_property;</span></a>
+<a name="286"><span class="lineNum">     286 </span>                :            : </a>
+<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">          5 :   g_object_class_override_property (object_class, PROP_DEVICE, &quot;device&quot;);</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :            : </a>
+<a name="290"><span class="lineNum">     290 </span>                :            : static void</a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">         15 : valent_photo_plugin_init (ValentPhotoPlugin *self)</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :            : {</a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="294"><span class="lineNum">     294 </span>                :            : </a>
 </pre>
       </td>
     </tr>

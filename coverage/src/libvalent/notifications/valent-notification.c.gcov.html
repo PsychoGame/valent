@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-05-12 20:44:20</td>
+            <td class="headerValue">2021-06-24 07:45:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">34</td>
@@ -1046,7 +1046,7 @@
 <a name="962"><span class="lineNum">     962 </span>                :            :       GVariant *button;</a>
 <a name="963"><span class="lineNum">     963 </span>                :            : </a>
 <a name="964"><span class="lineNum">     964 </span>                :<span class="lineCov">          5 :       n_buttons = g_variant_iter_init (&amp;iter, buttons);</span></a>
-<a name="965"><span class="lineNum">     965 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :       g_assert (n_buttons &lt;= 3);</span></a>
+<a name="965"><span class="lineNum">     965 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :       g_warn_if_fail (n_buttons &lt;= 3);</span></a>
 <a name="966"><span class="lineNum">     966 </span>                :            : </a>
 <a name="967"><span class="lineNum">     967 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :       while (g_variant_iter_next (&amp;iter, &quot;@a{sv}&quot;, &amp;button))</span></a>
 <a name="968"><span class="lineNum">     968 </span>                :            :         {</a>
