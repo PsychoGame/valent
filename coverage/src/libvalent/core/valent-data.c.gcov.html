@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-24 07:45:18</td>
+            <td class="headerValue">2021-06-24 19:25:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -116,8 +116,8 @@
 <a name="38"><span class="lineNum">      38 </span>                :            :   char       *context;</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : } ValentDataPrivate;</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
-<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 352 times"> + </span><span class="branchCov" title="Branch 1 was taken 2793 times"> + </span><span class="branchCov" title="Branch 2 was taken 211 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       5365 : G_DEFINE_TYPE_WITH_PRIVATE (ValentData, valent_data, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 211 times"> + </span><span class="branchCov" title="Branch 5 was taken 2793 times"> + </span>]
+<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 352 times"> + </span><span class="branchCov" title="Branch 1 was taken 2800 times"> + </span><span class="branchCov" title="Branch 2 was taken 211 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       5379 : G_DEFINE_TYPE_WITH_PRIVATE (ValentData, valent_data, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 211 times"> + </span><span class="branchCov" title="Branch 5 was taken 2800 times"> + </span>]
 <a name="42"><span class="lineNum">      42 </span>                :            : </a>
 <a name="43"><span class="lineNum">      43 </span>                :            : /**</a>
 <a name="44"><span class="lineNum">      44 </span>                :            :  * ValentDataClass:</a>
@@ -248,19 +248,19 @@
 <a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        430 : }</span></a>
 <a name="167"><span class="lineNum">     167 </span>                :            : </a>
 <a name="168"><span class="lineNum">     168 </span>                :            : static void</a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        374 : valent_data_finalize (GObject *object)</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        381 : valent_data_finalize (GObject *object)</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            : {</a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">        374 :   ValentData *self = VALENT_DATA (object);</span></a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        374 :   ValentDataPrivate *priv = valent_data_get_instance_private (self);</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">        381 :   ValentData *self = VALENT_DATA (object);</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        381 :   ValentDataPrivate *priv = valent_data_get_instance_private (self);</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            : </a>
-<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 374 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        374 :   g_clear_pointer (&amp;priv-&gt;cache_path, g_free);</span></a>
-<a name="175"><span class="lineNum">     175 </span>        [<span class="branchCov" title="Branch 0 was taken 374 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        374 :   g_clear_pointer (&amp;priv-&gt;config_path, g_free);</span></a>
-<a name="176"><span class="lineNum">     176 </span>        [<span class="branchCov" title="Branch 0 was taken 374 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        374 :   g_clear_pointer (&amp;priv-&gt;data_path, g_free);</span></a>
-<a name="177"><span class="lineNum">     177 </span>        [<span class="branchCov" title="Branch 0 was taken 334 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        374 :   g_clear_pointer (&amp;priv-&gt;context, g_free);</span></a>
-<a name="178"><span class="lineNum">     178 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 344 times"> + </span>]:<span class="lineCov">        374 :   g_clear_object (&amp;priv-&gt;parent);</span></a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 381 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        381 :   g_clear_pointer (&amp;priv-&gt;cache_path, g_free);</span></a>
+<a name="175"><span class="lineNum">     175 </span>        [<span class="branchCov" title="Branch 0 was taken 381 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        381 :   g_clear_pointer (&amp;priv-&gt;config_path, g_free);</span></a>
+<a name="176"><span class="lineNum">     176 </span>        [<span class="branchCov" title="Branch 0 was taken 381 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        381 :   g_clear_pointer (&amp;priv-&gt;data_path, g_free);</span></a>
+<a name="177"><span class="lineNum">     177 </span>        [<span class="branchCov" title="Branch 0 was taken 341 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        381 :   g_clear_pointer (&amp;priv-&gt;context, g_free);</span></a>
+<a name="178"><span class="lineNum">     178 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 351 times"> + </span>]:<span class="lineCov">        381 :   g_clear_object (&amp;priv-&gt;parent);</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :            : </a>
-<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">        374 :   G_OBJECT_CLASS (valent_data_parent_class)-&gt;finalize (object);</span></a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        374 : }</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">        381 :   G_OBJECT_CLASS (valent_data_parent_class)-&gt;finalize (object);</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        381 : }</span></a>
 <a name="182"><span class="lineNum">     182 </span>                :            : </a>
 <a name="183"><span class="lineNum">     183 </span>                :            : static void</a>
 <a name="184"><span class="lineNum">     184 </span>                :<span class="lineNoCov">          0 : valent_data_get_property (GObject    *object,</span></a>
