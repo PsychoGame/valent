@@ -172,6 +172,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-component.c#L15">[src]</a>
+          
         </h4>
 
         <pre><code>abstract class Valent.Component : GObject.Object {
@@ -179,7 +181,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentComponent</code> is a base class for session and system components, such as
+the clipboard or volume control. Each <code>ValentComponent</code> is typically a
+singleton representing a unique resource, but may be backed by one or more
+extensions implemented by <code>PeasExtensions</code>.</p>
         </div>
 
         <div class="docblock">

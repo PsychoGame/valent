@@ -150,6 +150,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/clipboard/valent-clipboard.c#L16">[src]</a>
+          
         </h4>
 
         <pre><code>final class Valent.Clipboard : Valent.Component {
@@ -157,7 +159,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentClipboard</code> is an aggregator of desktop clipboard sources, with a simple
+<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p>
+<p>Plugins can provide adapters for clipboard selections by subclassing the
+<code>ValentClipboardSource</code> base class. The priority of clipboard sources is
+determined by the <code>.plugin</code> file key <code>X-ClipboardSourcePriority</code>.</p>
         </div>
 
         <div class="docblock">

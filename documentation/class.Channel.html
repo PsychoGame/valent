@@ -188,6 +188,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-channel.c#L20">[src]</a>
+          
         </h4>
 
         <pre><code>class Valent.Channel : GObject.Object {
@@ -195,7 +197,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p>The <code>ValentChannel</code> object is a base class for implementations of device
+connections in Valent. Typically these are created by a <code>ValentChannelService</code>
+implementation that wraps a <code>GIOStream</code> connection before emitting
+<code>ValentChannelService::channel</code>.</p>
+<p>Implementations will usually implement at least valent_channel_download() and
+valent_channel_upload() for data transfer between devices. They may also
+implement valent_channel_store_data() for storing channel specific data when
+a devices is paired (eg. a <span class="caps">TLS</span>&nbsp;certificate).</p>
         </div>
 
         <div class="docblock">

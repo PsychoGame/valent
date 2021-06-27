@@ -177,6 +177,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/notifications/valent-notification-source.c#L14">[src]</a>
+          
         </h4>
 
         <pre><code>abstract class Valent.NotificationSource : GObject.Object {
@@ -184,7 +186,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentNotificationSource</code> is a base class for notification sources, which typically monitor the
+DBus interface of notification servers. Implementations emit
+<code>ValentNotificationSource::notification-added</code> and <code>ValentNotificationSource::notification-removed</code>
+to indicate&nbsp;changes.</p>
+<p>It is possible to implement valent_notification_source_add_notification() and
+valent_notification_source_remove_notification() to expose the ability to send notifications and
+remove notifications on a specific service, but the methods provided by <code>ValentDevice</code> and
+<code>GApplication</code> are more useful if you just want to send notifications to the host&nbsp;device.</p>
         </div>
 
         <div class="docblock">

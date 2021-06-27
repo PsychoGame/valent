@@ -126,12 +126,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/ui/valent-device-activity.c#L13">[src]</a>
+          
         </h4>
 
         <pre><code>interface Valent.DeviceActivity : GObject.Object</code></pre>
 
         <div class="docblock">
-          No description available.
+          <p>The <code>ValentDeviceActivity</code> interface is typically implemented by device
+plugins that need a large widget to display&nbsp;controls.</p>
+<p>A consumer of <code>ValentDeviceActivity</code> widgets should typically present these
+as pages in a <code>GtkStack</code> or the content of a <code>GtkDialog</code>.</p>
         </div>
 
         <div class="docblock">

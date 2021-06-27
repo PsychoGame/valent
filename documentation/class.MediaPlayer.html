@@ -241,6 +241,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/media/valent-media-player.c#L15">[src]</a>
+          
         </h4>
 
         <pre><code>class Valent.MediaPlayer : GObject.Object {
@@ -248,7 +250,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p>A <code>ValentMediaPlayer</code> is a base class for media players that more or less mirrors the MPRISv2
+specification. The primary difference is that media player control is not spread across several
+interfaces as is the case with the application, player, playlist and tracklist interfaces
+described by <span class="caps">MPRIS</span>.</p>
+<p>The Valent <span class="caps">MPRIS</span> plugin already provides support for MPRISv2 compatible players exposed on DBus,
+so it is primarily made available to allow other media players to be supported by&nbsp;plugins.</p>
         </div>
 
         <div class="docblock">

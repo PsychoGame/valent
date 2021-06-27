@@ -291,28 +291,35 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <tr class="section-item">
             <td><a title="Application" class="symbol" href="class.Application.html">Application</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentApplication</code> is the primary application class for&nbsp;Valent.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Channel" class="symbol" href="class.Channel.html">Channel</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentChannel</code> object is a base class for implementations of device
+connections in Valent. Typically these are created by a <code>ValentChannelService</code>
+implementation that wraps a <code>GIOStream</code> connection before emitting
+<code>ValentChannelService::channel</code>.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="ChannelService" class="symbol" href="class.ChannelService.html">ChannelService</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentChannelService</code> is base class for services that provide <code>ValentChannel</code>
+objects, analagous to to <code>GSocketService</code> and <code>GSocketConnection</code>. In the
+context of the protocol, <code>ValentChannelService</code> serves as the counterpart to
+<code>ValentDevice</code> by representing the local&nbsp;device.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Clipboard" class="symbol" href="class.Clipboard.html">Clipboard</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentClipboard</code> is an aggregator of desktop clipboard sources, with a simple
+<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
             
           </tr>
           
@@ -326,147 +333,178 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <tr class="section-item">
             <td><a title="Component" class="symbol" href="class.Component.html">Component</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentComponent</code> is a base class for session and system components, such as
+the clipboard or volume control. Each <code>ValentComponent</code> is typically a
+singleton representing a unique resource, but may be backed by one or more
+extensions implemented by <code>PeasExtensions</code>.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Contacts" class="symbol" href="class.Contacts.html">Contacts</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentContacts</code> is an abstraction of desktop contact sources, with a simple
+<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="ContactStore" class="symbol" href="class.ContactStore.html">ContactStore</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentContactStore</code> class is a simple implementation of <code>ValentContactStore</code>
+that is effectively a wrapper around <code>ESource</code> and <code>EBookCache</code>.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="ContactStoreProvider" class="symbol" href="class.ContactStoreProvider.html">ContactStoreProvider</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentContactStoreProvider</code> is an interface for sources that provide objects
+that implement <code>ValentContactStore</code>. The interface is very simple and only
+requires that returned objects are implementations of <code>ValentContactStore</code>.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Data" class="symbol" href="class.Data.html">Data</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentData</code> class is intended to abstract storing and loading data for a
+given context, such as a device or&nbsp;plugin.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Device" class="symbol" href="class.Device.html">Device</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentDevice</code> object represents a remote device such as a smartphone,
+tablet or&nbsp;desktop.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Input" class="symbol" href="class.Input.html">Input</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentInput</code> is an abstraction of input controllers, with a simple <span class="caps">API</span>
+generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Manager" class="symbol" href="class.Manager.html">Manager</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentManager</code> effectively represents an instance of Valent, including the
+available <code>ValentChannelService</code> implementations that provide <code>ValentChannel</code>
+instances passed to <code>ValentDevice</code> instances.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Media" class="symbol" href="class.Media.html">Media</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentMedia</code> is an aggregator of desktop media players, with a simple <span class="caps">API</span>
+generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="MediaPlayer" class="symbol" href="class.MediaPlayer.html">MediaPlayer</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>A <code>ValentMediaPlayer</code> is a base class for media players that more or less mirrors the MPRISv2
+specification. The primary difference is that media player control is not spread across several
+interfaces as is the case with the application, player, playlist and tracklist interfaces
+described by <span class="caps">MPRIS</span>.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="MediaPlayerProvider" class="symbol" href="class.MediaPlayerProvider.html">MediaPlayerProvider</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentMediaPlayerProvider</code> is base class for services that provide <code>ValentMediaPlayer</code> objects.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Mixer" class="symbol" href="class.Mixer.html">Mixer</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentMixer</code> is an aggregator of mixer controls, with a simple <span class="caps">API</span> generally
+intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="MixerControl" class="symbol" href="class.MixerControl.html">MixerControl</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentMixerControl</code> is an base class for audio mixer&nbsp;controls.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="MixerStream" class="symbol" href="class.MixerStream.html">MixerStream</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentMixerStream</code> is a base class for mixer&nbsp;streams.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Notification" class="symbol" href="class.Notification.html">Notification</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentNotification</code> class is intended to abstract notifications with the intent of allowing
+them to be presented to the user in different ways. For example as a desktop <code>GNotification</code>,
+in-app notification or other&nbsp;method.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Notifications" class="symbol" href="class.Notifications.html">Notifications</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentNotifications</code> is an aggregator for notification services, with a
+simple <span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code>
+implementations.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="NotificationSource" class="symbol" href="class.NotificationSource.html">NotificationSource</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentNotificationSource</code> is a base class for notification sources, which typically monitor the
+DBus interface of notification servers. Implementations emit
+<code>ValentNotificationSource::notification-added</code> and <code>ValentNotificationSource::notification-removed</code>
+to indicate&nbsp;changes.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Panel" class="symbol" href="class.Panel.html">Panel</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentPanel</code> is a convenience widget for scrollable panels. Widgets can be
+added to the scrollable area with valent_panel_append() and
+valent_panel_prepend(). Header and footer widgets can be set with
+valent_panel_set_header() and valent_panel_set_footer() that will always
+stay in&nbsp;view.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Session" class="symbol" href="class.Session.html">Session</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentSession</code> is an aggregator of desktop sessions, with a simple
+<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="SessionAdapter" class="symbol" href="class.SessionAdapter.html">SessionAdapter</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentSessionAdapter</code> interface should be implemented by libpeas
+plugins that operate at the desktop level. This generally means providing
+access to the desktop&nbsp;session.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="Transfer" class="symbol" href="class.Transfer.html">Transfer</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentTransfer</code> object represents a data transfer to or from a&nbsp;device.</p></td>
             
           </tr>
           
@@ -491,35 +529,44 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <tr class="section-item">
             <td><a title="DeviceActivity" class="symbol" href="iface.DeviceActivity.html">DeviceActivity</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentDeviceActivity</code> interface is typically implemented by device
+plugins that need a large widget to display&nbsp;controls.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="DeviceGadget" class="symbol" href="iface.DeviceGadget.html">DeviceGadget</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentDeviceGadget</code> interface is typically implemented by device
+plugins that need a small widget to display&nbsp;controls.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="DevicePlugin" class="symbol" href="iface.DevicePlugin.html">DevicePlugin</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentDevicePlugin</code> interface should be implemented by libpeas plugins
+that operate in the scope of a single device. This generally means sending
+and receiving packets with other&nbsp;devices.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="InputController" class="symbol" href="iface.InputController.html">InputController</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentInputController</code> is an interface for virtual input controllers.
+Implementations must override valent_input_controller_keyboard_keysym(),
+valent_input_controller_pointer_button() and valent_input_controller_pointer_motion()&nbsp;methods.</p></td>
             
           </tr>
           
           <tr class="section-item">
             <td><a title="PluginPreferences" class="symbol" href="iface.PluginPreferences.html">PluginPreferences</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p>The <code>ValentPluginPreferences</code> interface should be implemented by extensions
+that want to provide a <span class="caps">GUI</span> for configuration. How the interface is used and
+presented is dependant on the extension type, as the interface may be used to
+configure a device plugin, a channel provider or session&nbsp;component.</p></td>
             
           </tr>
           

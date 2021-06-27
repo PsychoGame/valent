@@ -171,6 +171,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/session/valent-session-adapter.c#L15">[src]</a>
+          
         </h4>
 
         <pre><code>abstract class Valent.SessionAdapter : GObject.Object {
@@ -178,7 +180,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p>The <code>ValentSessionAdapter</code> interface should be implemented by libpeas
+plugins that operate at the desktop level. This generally means providing
+access to the desktop&nbsp;session.</p>
+<h2 id="plugin-file">.plugin File<a class="md-anchor" href="#plugin-file" title="Permanent link"></a></h2>
+<p>Session adapter require no special entries in the <code>.plugin</code> file.</p>
         </div>
 
         <div class="docblock">

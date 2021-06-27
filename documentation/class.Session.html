@@ -150,6 +150,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/session/valent-session.c#L16">[src]</a>
+          
         </h4>
 
         <pre><code>final class Valent.Session : Valent.Component {
@@ -157,7 +159,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentSession</code> is an aggregator of desktop sessions, with a simple
+<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p>
+<p>Plugins can provide adapters for session selections by subclassing the
+<code>ValentSeesionAdapter</code> base class. The priority of session adapters is
+determined by the <code>.plugin</code> file key <code>X-SessionAdapterPriority</code>.</p>
         </div>
 
         <div class="docblock">

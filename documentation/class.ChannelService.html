@@ -185,6 +185,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-channel-service.c#L20">[src]</a>
+          
         </h4>
 
         <pre><code>abstract class Valent.ChannelService : GObject.Object {
@@ -192,7 +194,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentChannelService</code> is base class for services that provide <code>ValentChannel</code>
+objects, analagous to to <code>GSocketService</code> and <code>GSocketConnection</code>. In the
+context of the protocol, <code>ValentChannelService</code> serves as the counterpart to
+<code>ValentDevice</code> by representing the local&nbsp;device.</p>
+<p>The interface is intentionally abstract, to allow channel services for very
+different protocols. All that is required is for the service to emit
+<code>ValentChannelService::channel</code> when a <code>ValentChannel</code> is ready to be used by a
+<code>ValentDevice</code>.</p>
+<h1 id="plugin-file"><code>.plugin</code> File<a class="md-anchor" href="#plugin-file" title="Permanent link"></a></h1>
+<p><code>ValentChannelService</code> implementations should define the <code>X-ChannelProtocol</code>
+key to indicate the underlying protocol. This is used when constructing the
+identity packet to filter device plugins with inherent requirements, such as
+<span class="caps">SFTP</span>.</p>
+<p>Currently recognized values are <code>tcp</code> and <code>bluetooth</code>. If the plugin is
+missing this key, it will be assumed supported and its incoming and outgoing
+capabilities included in the identity&nbsp;packet.</p>
         </div>
 
         <div class="docblock">

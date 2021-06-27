@@ -203,6 +203,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-device.c#L32">[src]</a>
+          
         </h4>
 
         <pre><code>final class Valent.Device : GObject.Object {
@@ -210,7 +212,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p>The <code>ValentDevice</code> object represents a remote device such as a smartphone,
+tablet or&nbsp;desktop.</p>
+<p><code>ValentDevice</code> implements <code>GActionGroup</code> and <code>GActionMap</code>, while providing a
+<code>GMenu</code>. <code>ValentDevicePlugin</code> implementations can add <code>GActions</code> and <code>GMenuItems</code> to
+expose plugin&nbsp;activities.</p>
         </div>
 
         <div class="docblock">

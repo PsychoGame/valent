@@ -154,6 +154,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contacts.c#L17">[src]</a>
+          
         </h4>
 
         <pre><code>final class Valent.Contacts : Valent.Component {
@@ -161,7 +163,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentContacts</code> is an abstraction of desktop contact sources, with a simple
+<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p>
+<h2 id="providers-and-models">Providers and Models<a class="md-anchor" href="#providers-and-models" title="Permanent link"></a></h2>
+<p><code>ValentContacts</code> loads and tracks implementations of
+<code>ValentContactStoreProvider</code> known to the default <code>ValentEngine</code>. Each
+<code>ValentContactStoreProvider</code> may provide stores implementing
+<code>ValentContactStore</code> and create new stores backed by that&nbsp;provider.</p>
+<p>For example, the Evolution Data Server (<code>eds</code>) plugin implements
+<code>ValentContactStoreProvider</code> in <code>ValentEBookProvider</code> and provides a
+<code>ValentEBookStore</code> for each address book known to Evolution. If no other
+provider is available, <code>ValentContacts</code> will fallback to providing
+<code>ValentContactStore</code> objects, a simple <code>EBookCache</code> implementation of
+<code>ValentContactStore</code>.</p>
         </div>
 
         <div class="docblock">

@@ -135,12 +135,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/ui/valent-plugin-preferences.c#L15">[src]</a>
+          
         </h4>
 
         <pre><code>interface Valent.PluginPreferences : GObject.Object</code></pre>
 
         <div class="docblock">
-          No description available.
+          <p>The <code>ValentPluginPreferences</code> interface should be implemented by extensions
+that want to provide a <span class="caps">GUI</span> for configuration. How the interface is used and
+presented is dependant on the extension type, as the interface may be used to
+configure a device plugin, a channel provider or session&nbsp;component.</p>
         </div>
 
         <div class="docblock">

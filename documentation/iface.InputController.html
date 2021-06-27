@@ -151,12 +151,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/input/valent-input-controller.c#L15">[src]</a>
+          
         </h4>
 
         <pre><code>interface Valent.InputController : GObject.Object</code></pre>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentInputController</code> is an interface for virtual input controllers.
+Implementations must override valent_input_controller_keyboard_keysym(),
+valent_input_controller_pointer_button() and valent_input_controller_pointer_motion()&nbsp;methods.</p>
+<p>There are additional interface methods that may be overridden if the
+implementation can perform them more efficiently, otherwise they will be
+approximated with the required&nbsp;methods.</p>
         </div>
 
         <div class="docblock">

@@ -151,6 +151,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/input/valent-input.c#L16">[src]</a>
+          
         </h4>
 
         <pre><code>final class Valent.Input : Valent.Component {
@@ -158,7 +160,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentInput</code> is an abstraction of input controllers, with a simple <span class="caps">API</span>
+generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p>
+<p>Plugins can provide adapters for input controllers by subclassing the
+<code>ValentInputController</code> base class. The priority of input controllers is
+determined by the <code>.plugin</code> file key <code>X-InputControllerPriority</code>.</p>
         </div>
 
         <div class="docblock">

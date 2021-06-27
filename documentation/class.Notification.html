@@ -213,6 +213,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/notifications/valent-notification.c#L12">[src]</a>
+          
         </h4>
 
         <pre><code>final class Valent.Notification : GObject.Object {
@@ -220,7 +222,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p>The <code>ValentNotification</code> class is intended to abstract notifications with the intent of allowing
+them to be presented to the user in different ways. For example as a desktop <code>GNotification</code>,
+in-app notification or other&nbsp;method.</p>
+<p><code>ValentNotification</code> is effectively a super-set of <code>GNotification</code> that includes a few properties
+normally found in libnotify notifications, while being more read-write friendly than
+<code>GNotification</code>.</p>
         </div>
 
         <div class="docblock">

@@ -158,6 +158,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/media/valent-media.c#L16">[src]</a>
+          
         </h4>
 
         <pre><code>final class Valent.Media : Valent.Component {
@@ -165,7 +167,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          No description available.
+          <p><code>ValentMedia</code> is an aggregator of desktop media players, with a simple <span class="caps">API</span>
+generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p>
+<p>Plugins can provide adapters for media players by subclassing the
+<code>ValentMediaPlayerProvider</code> base class to register <code>ValentMediaPlayer</code>
+instances by emitting <code>ValentMediaPlayerProvider::player-added</code>.</p>
         </div>
 
         <div class="docblock">
