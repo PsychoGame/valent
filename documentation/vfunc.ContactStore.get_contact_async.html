@@ -1,0 +1,280 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Valent.ContactStore.get_contact_async</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="valent-logo.svg"/>
+  <meta property="og:image:alt" content="Valent-0"/>
+  
+
+  
+  <meta property="og:title" content="Valent.ContactStore.get_contact_async"/>
+  <meta property="og:description" content="Reference for Valent.ContactStore.get_contact_async"/>
+  <meta name="twitter:title" content="Valent.ContactStore.get_contact_async"/>
+  <meta name="twitter:description" content="Reference for Valent.ContactStore.get_contact_async"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="valent-logo.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Valent</a></h3>
+        <p>API Version: 0</p>
+        
+        <p>Library Version: 0.1.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.ContactStore.html">ContactStore</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.ContactStore.add.html">add</a>
+  
+    <a class="method" href="vfunc.ContactStore.add_async.html">add_async</a>
+  
+    <a class="method" href="vfunc.ContactStore.contact_added.html">contact_added</a>
+  
+    <a class="method" href="vfunc.ContactStore.contact_removed.html">contact_removed</a>
+  
+    <a class="method" href="vfunc.ContactStore.get_contact.html">get_contact</a>
+  
+    <a class="method current" href="vfunc.ContactStore.get_contact_async.html">get_contact_async</a>
+  
+    <a class="method" href="vfunc.ContactStore.prepare_backend.html">prepare_backend</a>
+  
+    <a class="method" href="vfunc.ContactStore.query.html">query</a>
+  
+    <a class="method" href="vfunc.ContactStore.query_async.html">query_async</a>
+  
+    <a class="method" href="vfunc.ContactStore.remove.html">remove</a>
+  
+    <a class="method" href="vfunc.ContactStore.remove_async.html">remove_async</a>
+  
+  </div>
+</div>
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Virtual Method</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ContactStore.html">ContactStore</a><span class="sep"></span>get_contact_async</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 id="declaration">
+        Declaration
+        <a href="#declaration" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.h#L56">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="n">get_contact_async</span> <span class="p">(</span>
+  <span class="n">ValentContactStore</span><span class="o">*</span> <span class="n">store</span><span class="p">,</span>
+  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">uid</span><span class="p">,</span>
+  <span class="n">GCancellable</span><span class="o">*</span> <span class="n">cancellable</span><span class="p">,</span>
+  <span class="n">GAsyncReadyCallback</span> <span class="n">callback</span><span class="p">,</span>
+  <span class="n">gpointer</span> <span class="n">user_data</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 id="description">
+        Description
+        <a href="#description" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.c#L1037">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Asynchronous version of valent_contact_store_get_contact(). Call
+valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
+      </div>
+
+      <div class="docblock">
+        <table>
+          
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>uid</code></td>
+            <td><code>const char*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A contact <span class="caps">UID</span>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
+          
+          <tr class="arg-name">
+            <td><code>cancellable</code></td>
+            <td><code>GCancellable*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>GCancellable</code>.</p></td>
+          </tr>
+          
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          
+          
+          <tr class="arg-name">
+            <td><code>callback</code></td>
+            <td><code>GAsyncReadyCallback</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <code>GAsyncReadyCallback</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>user_data</code></td>
+            <td><code>gpointer</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>User supplied&nbsp;data.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

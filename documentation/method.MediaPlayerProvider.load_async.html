@@ -1,0 +1,255 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Valent.MediaPlayerProvider.load_async</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="valent-logo.svg"/>
+  <meta property="og:image:alt" content="Valent-0"/>
+  
+
+  
+  <meta priority="og:title" content="Valent.MediaPlayerProvider.load_async"/>
+  <meta priority="og:description" content="Reference for Valent.MediaPlayerProvider.load_async"/>
+  <meta name="twitter:title" content="Valent.MediaPlayerProvider.load_async"/>
+  <meta name="twitter:description" content="Reference for Valent.MediaPlayerProvider.load_async"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="valent-logo.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Valent</a></h3>
+        <p>API Version: 0</p>
+        
+        <p>Library Version: 0.1.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.MediaPlayerProvider.html">MediaPlayerProvider</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.MediaPlayerProvider.emit_player_added.html">emit_player_added</a>
+  
+    <a class="method" href="method.MediaPlayerProvider.emit_player_removed.html">emit_player_removed</a>
+  
+    <a class="method" href="method.MediaPlayerProvider.get_players.html">get_players</a>
+  
+    <a class="method current" href="method.MediaPlayerProvider.load_async.html">load_async</a>
+  
+    <a class="method" href="method.MediaPlayerProvider.load_finish.html">load_finish</a>
+  
+  </div>
+</div>
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.MediaPlayerProvider.html">MediaPlayerProvider</a><span class="sep"></span>load_async</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/media/valent-media-player-provider.h#L45">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="n">valent_media_player_provider_load_async</span> <span class="p">(</span>
+  <span class="n">ValentMediaPlayerProvider</span><span class="o">*</span> <span class="n">provider</span><span class="p">,</span>
+  <span class="n">GCancellable</span><span class="o">*</span> <span class="n">cancellable</span><span class="p">,</span>
+  <span class="n">GAsyncReadyCallback</span> <span class="n">callback</span><span class="p">,</span>
+  <span class="n">gpointer</span> <span class="n">user_data</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/media/valent-media-player-provider.c#L294">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Requests that the <code>ValentMediaPlayerProvider</code> asynchronously load any known&nbsp;players.</p>
+<p>This should only be called once on an <code>ValentMediaPlayerProvider</code>. It is an error
+to call this function more than once for a single <code>ValentMediaPlayerProvider</code>.</p>
+<p><code>ValentMediaPlayerProvider</code> implementations are expected to emit the
+<code>ValentMediaPlayerProvider::media_player-added</code> signal for each media_player they&#8217;ve discovered.
+That should be done for known players before returning from the asynchronous
+operation so that the media_player manager does not need to wait for additional
+players to enter the &#8220;settled&#8221;&nbsp;state.</p>
+      </div>
+
+      <div class="docblock">
+        <table>
+          
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>cancellable</code></td>
+            <td><code>GCancellable*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <code>GCancellable</code>.</p></td>
+          </tr>
+          
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          
+          
+          <tr class="arg-name">
+            <td><code>callback</code></td>
+            <td><code>GAsyncReadyCallback</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <code>GAsyncReadyCallback</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>user_data</code></td>
+            <td><code>gpointer</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>User supplied&nbsp;data.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

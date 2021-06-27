@@ -1,0 +1,252 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Valent.PhoneNumberFlags</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="valent-logo.svg"/>
+  <meta property="og:image:alt" content="Valent-0"/>
+  
+
+  
+  <meta property="og:title" content="Valent.PhoneNumberFlags"/>
+  <meta property="og:description" content="Reference for Valent.PhoneNumberFlags"/>
+  <meta name="twitter:title" content="Valent.PhoneNumberFlags"/>
+  <meta name="twitter:description" content="Reference for Valent.PhoneNumberFlags"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="valent-logo.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Valent</a></h3>
+        <p>API Version: 0</p>
+        
+        <p>Library Version: 0.1.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="flags.PhoneNumberFlags.html">PhoneNumberFlags</a>
+  </div>
+</div>
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Enumeration</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span>PhoneNumberFlags</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a href="#declaration" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>flags Valent.PhoneNumberFlags</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a href="#description" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contacts.h#L17">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+      <p>Flags that describe a <code>ValentPhoneNumber</code> type, capabilites or other attributes
+such as whether the number is the preferred or primary&nbsp;number.</p>
+<p>These values are based on <span class="caps">RFC2426</span> (vCard 3.0), however only <code>HOME</code>, <code>CELL</code>,
+<code>WORK</code> and <code>PREF</code> are used in&nbsp;Valent.</p>
+      </div>
+
+      <div class="docblock">
+        <table class="attributes">
+          
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    <div class="members toggle-wrapper">
+      <h4 id="members">
+        Members
+        <a href="#members" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      <table class="enum-members">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 0">VALENT_PHONE_NUMBER_UNKNOWN</code></td>
+          <td><p>Equivalent to <code>VALENT_PHONE_NUMBER_VOICE</code></p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 1">VALENT_PHONE_NUMBER_BBS</code></td>
+          <td><p>A <span class="caps">BBS</span>&nbsp;system.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 2">VALENT_PHONE_NUMBER_CAR</code></td>
+          <td><p>A car phone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 4">VALENT_PHONE_NUMBER_CELL</code></td>
+          <td><p>A cellular or mobile phone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 8">VALENT_PHONE_NUMBER_FAX</code></td>
+          <td><p>A fax machine&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 16">VALENT_PHONE_NUMBER_HOME</code></td>
+          <td><p>A home or landline phone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 32">VALENT_PHONE_NUMBER_ISDN</code></td>
+          <td><p>An <span class="caps">ISDN</span> service telephone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 64">VALENT_PHONE_NUMBER_MODEM</code></td>
+          <td><p>A <span class="caps">MODEM</span> connected telephone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 128">VALENT_PHONE_NUMBER_MSG</code></td>
+          <td><p>A telephone number with voice messaging&nbsp;support.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 256">VALENT_PHONE_NUMBER_PAGER</code></td>
+          <td><p>A paging device telephone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 512">VALENT_PHONE_NUMBER_PCS</code></td>
+          <td><p>A personal communication services telephone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 1024">VALENT_PHONE_NUMBER_PREF</code></td>
+          <td><p>Indicates a preferred or primary&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 2048">VALENT_PHONE_NUMBER_VIDEO</code></td>
+          <td><p>A video conferencing telephone&nbsp;number.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 4096">VALENT_PHONE_NUMBER_VOICE</code></td>
+          <td><p>A voice capable phone number; the default&nbsp;type.</p></td>
+        </tr>
+      
+        <tr>
+          <td><code title="Value: 8192">VALENT_PHONE_NUMBER_WORK</code></td>
+          <td><p>A work or office phone&nbsp;number.</p></td>
+        </tr>
+      
+      </table>
+      </div>
+    </div>
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

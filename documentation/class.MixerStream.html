@@ -1,0 +1,666 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Valent.MixerStream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="valent-logo.svg"/>
+  <meta property="og:image:alt" content="Valent-0"/>
+  
+
+  
+  <meta property="og:title" content="Valent.MixerStream"/>
+  <meta property="og:description" content="Reference for Valent.MixerStream"/>
+  <meta name="twitter:title" content="Valent.MixerStream"/>
+  <meta name="twitter:description" content="Reference for Valent.MixerStream"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="valent-logo.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Valent</a></h3>
+        <p>API Version: 0</p>
+        
+        <p>Library Version: 0.1.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.MixerStream.html#description">MixerStream</a>
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.MixerStream.get_description.html">get_description</a>
+  
+    <a class="method" href="method.MixerStream.get_flags.html">get_flags</a>
+  
+    <a class="method" href="method.MixerStream.get_level.html">get_level</a>
+  
+    <a class="method" href="method.MixerStream.get_muted.html">get_muted</a>
+  
+    <a class="method" href="method.MixerStream.get_name.html">get_name</a>
+  
+    <a class="method" href="method.MixerStream.set_level.html">set_level</a>
+  
+    <a class="method" href="method.MixerStream.set_muted.html">set_muted</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.MixerStream.description.html">description</a>
+  
+    <a class="property" href="property.MixerStream.flags.html">flags</a>
+  
+    <a class="property" href="property.MixerStream.level.html">level</a>
+  
+    <a class="property" href="property.MixerStream.muted.html">muted</a>
+  
+    <a class="property" href="property.MixerStream.name.html">name</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.MixerStream.input_quark.html">input_quark</a>
+  
+    <a class="func" href="type_func.MixerStream.output_quark.html">output_quark</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.MixerStream.get_description.html">get_description</a>
+  
+    <a class="method" href="vfunc.MixerStream.get_level.html">get_level</a>
+  
+    <a class="method" href="vfunc.MixerStream.get_muted.html">get_muted</a>
+  
+    <a class="method" href="vfunc.MixerStream.get_name.html">get_name</a>
+  
+    <a class="method" href="vfunc.MixerStream.set_level.html">set_level</a>
+  
+    <a class="method" href="vfunc.MixerStream.set_muted.html">set_muted</a>
+  
+  </div>
+</div>
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Valent</a><span class="sep" role="presentation"></span>MixerStream</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+        </h4>
+
+        <pre><code>class Valent.MixerStream : GObject.Object {
+  parent_instance: GObject
+}</pre></code>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.MixerStream.get_description.html">valent_mixer_stream_get_description</a></h6>
+          <div class="docblock">
+            <p>Get the human-readable label for <code>stream</code>.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MixerStream.get_flags.html">valent_mixer_stream_get_flags</a></h6>
+          <div class="docblock">
+            <p>Get the type flags for the&nbsp;stream.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MixerStream.get_level.html">valent_mixer_stream_get_level</a></h6>
+          <div class="docblock">
+            <p>Get the level of the stream (eg. speaker volume, microphone&nbsp;sensitivity).</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MixerStream.get_muted.html">valent_mixer_stream_get_muted</a></h6>
+          <div class="docblock">
+            <p>Get the muted state of the default input stream (eg. microphone&nbsp;on/off).</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MixerStream.get_name.html">valent_mixer_stream_get_name</a></h6>
+          <div class="docblock">
+            <p>Get the unique stream name. For strings to display to users, see
+valent_mixer_stream_dup_label(), valent_mixer_stream_get_primary_text() and&nbsp;valent_mixer_stream_get_secondary_text().</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MixerStream.set_level.html">valent_mixer_stream_set_level</a></h6>
+          <div class="docblock">
+            <p>Set the level of the stream (eg. speaker volume, microphone&nbsp;sensitivity).</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MixerStream.set_muted.html">valent_mixer_stream_set_muted</a></h6>
+          <div class="docblock">
+            <p>Set the muted state of the default input stream (eg. microphone&nbsp;on/off).</p>
+          </div>
+          
+        </div>
+      
+      </div>
+
+      
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.MixerStream.description.html">Valent.MixerStream:description</a></h6>
+
+          <div class="docblock">
+            <p>The &#8220;description&#8221; property holds the human-readable label of the&nbsp;stream.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.MixerStream.flags.html">Valent.MixerStream:flags</a></h6>
+
+          <div class="docblock">
+            <p>The &#8220;falgs&#8221; property holds the input or output level of the&nbsp;stream.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.MixerStream.level.html">Valent.MixerStream:level</a></h6>
+
+          <div class="docblock">
+            <p>The &#8220;level&#8221; property holds the input or output level of the&nbsp;stream.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.MixerStream.muted.html">Valent.MixerStream:muted</a></h6>
+
+          <div class="docblock">
+            <p>The &#8220;muted&#8221; property indicates whether the stream is&nbsp;muted.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="property.MixerStream.name.html">Valent.MixerStream:name</a></h6>
+
+          <div class="docblock">
+            <p>The &#8220;name&#8221; property holds the unique name of the&nbsp;stream.</p>
+          </div>
+
+          
+        </div>
+      
+      </div>
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ValentMixerStreamClass {
+  GObjectClass parent_class;
+  const char* (* get_name) (
+    ValentMixerStream* stream
+  );
+  const char* (* get_description) (
+    ValentMixerStream* stream
+  );
+  unsigned int (* get_level) (
+    ValentMixerStream* stream
+  );
+  void (* set_level) (
+    ValentMixerStream* stream,
+    unsigned int level
+  );
+  gboolean (* get_muted) (
+    ValentMixerStream* stream
+  );
+  void (* set_muted) (
+    ValentMixerStream* stream,
+    gboolean state
+  );
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <table class="members">
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_class</code></td>
+          <td style="vertical-align:top"><pre><code>GObjectClass</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_name</code></td>
+          <td style="vertical-align:top"><pre><code>const char* (* get_name) (
+    ValentMixerStream* stream
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_description</code></td>
+          <td style="vertical-align:top"><pre><code>const char* (* get_description) (
+    ValentMixerStream* stream
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_level</code></td>
+          <td style="vertical-align:top"><pre><code>unsigned int (* get_level) (
+    ValentMixerStream* stream
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>set_level</code></td>
+          <td style="vertical-align:top"><pre><code>void (* set_level) (
+    ValentMixerStream* stream,
+    unsigned int level
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_muted</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* get_muted) (
+    ValentMixerStream* stream
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>set_muted</code></td>
+          <td style="vertical-align:top"><pre><code>void (* set_muted) (
+    ValentMixerStream* stream,
+    gboolean state
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-get_description"><a href="vfunc.MixerStream.get_description.html">Valent.MixerStreamClass.get_description</a></h6>
+
+        <div class="docblock">
+          <p>Get the human-readable label for <code>stream</code>.</p>
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_level"><a href="vfunc.MixerStream.get_level.html">Valent.MixerStreamClass.get_level</a></h6>
+
+        <div class="docblock">
+          <p>Get the level of the stream (eg. speaker volume, microphone&nbsp;sensitivity).</p>
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_muted"><a href="vfunc.MixerStream.get_muted.html">Valent.MixerStreamClass.get_muted</a></h6>
+
+        <div class="docblock">
+          <p>Get the muted state of the default input stream (eg. microphone&nbsp;on/off).</p>
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_name"><a href="vfunc.MixerStream.get_name.html">Valent.MixerStreamClass.get_name</a></h6>
+
+        <div class="docblock">
+          <p>Get the unique stream name. For strings to display to users, see
+valent_mixer_stream_dup_label(), valent_mixer_stream_get_primary_text() and&nbsp;valent_mixer_stream_get_secondary_text().</p>
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-set_level"><a href="vfunc.MixerStream.set_level.html">Valent.MixerStreamClass.set_level</a></h6>
+
+        <div class="docblock">
+          <p>Set the level of the stream (eg. speaker volume, microphone&nbsp;sensitivity).</p>
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-set_muted"><a href="vfunc.MixerStream.set_muted.html">Valent.MixerStreamClass.set_muted</a></h6>
+
+        <div class="docblock">
+          <p>Set the muted state of the default input stream (eg. microphone&nbsp;on/off).</p>
+        </div>
+
+          
+      </div>
+      
+      </div>
+    </div>
+    
+
+     
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.MixerStream.input_quark.html">valent_mixer_stream_input_quark</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.MixerStream.output_quark.html">valent_mixer_stream_output_quark</a></h6>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

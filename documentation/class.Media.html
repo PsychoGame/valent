@@ -1,0 +1,482 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Valent.Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="valent-logo.svg"/>
+  <meta property="og:image:alt" content="Valent-0"/>
+  
+
+  
+  <meta property="og:title" content="Valent.Media"/>
+  <meta property="og:description" content="Reference for Valent.Media"/>
+  <meta name="twitter:title" content="Valent.Media"/>
+  <meta name="twitter:description" content="Reference for Valent.Media"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="valent-logo.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Valent</a></h3>
+        <p>API Version: 0</p>
+        
+        <p>Library Version: 0.1.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Media.html#description">Media</a>
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Media.get_player_by_name.html">get_player_by_name</a>
+  
+    <a class="method" href="method.Media.get_players.html">get_players</a>
+  
+    <a class="method" href="method.Media.pause.html">pause</a>
+  
+    <a class="method" href="method.Media.unpause.html">unpause</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.Media.player-added.html">player-added</a>
+  
+    <a class="signal" href="signal.Media.player-changed.html">player-changed</a>
+  
+    <a class="signal" href="signal.Media.player-removed.html">player-removed</a>
+  
+    <a class="signal" href="signal.Media.player-seeked.html">player-seeked</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Media.get_default.html">get_default</a>
+  
+  </div>
+</div>
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Valent</a><span class="sep" role="presentation"></span>Media</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+        </h4>
+
+        <pre><code>final class Valent.Media : Valent.Component {
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          No description available.
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.Component.html" title="Component">ValentComponent</a></li>
+          
+        
+          
+          <li class="class">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Media.get_player_by_name.html">valent_media_get_player_by_name</a></h6>
+          <div class="docblock">
+            <p>Get the <code>ValentMediaPlayer</code> with the identity <code>name</code>.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Media.get_players.html">valent_media_get_players</a></h6>
+          <div class="docblock">
+            <p>Get a list of all the <code>ValentMediaPlayer</code> instances currently known to <code>media</code>.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Media.pause.html">valent_media_pause</a></h6>
+          <div class="docblock">
+            <p>Pause any playing media players. Any player whose playback status is changed
+will be tracked so that playback may be resumed with&nbsp;valent_media_play().</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Media.unpause.html">valent_media_unpause</a></h6>
+          <div class="docblock">
+            <p>Unpause any media players we previously&nbsp;paused.</p>
+          </div>
+          
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Component.html">ValentComponent</a> (2)</h5>
+
+          
+          <div class="docblock">
+          
+            <h6><a href="method.Component.get_extensions.html">valent_component_get_extensions</a></h6>
+            <div class="docblock">
+              <p>Get a list of the currently loaded&nbsp;extensions.</p>
+            </div>
+            
+          
+            <h6><a href="method.Component.get_priority_provider.html">valent_component_get_priority_provider</a></h6>
+            <div class="docblock">
+              <p>Get the extension with the highest priority for <code>component</code>. The default
+value for extensions is <code>0</code>; the lower the value the higher the&nbsp;priority.</p>
+            </div>
+            
+          
+          </div>
+          
+        </div>
+        
+      
+        
+      
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.Media.player-added.html">Valent.Media::player-added</a></h6>
+          <div class="docblock">
+            <p>The &#8220;player-added&#8221; signal is emitted when a provider has discovered a
+player has become&nbsp;available.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Media.player-changed.html">Valent.Media::player-changed</a></h6>
+          <div class="docblock">
+            <p>The <code>ValentMedia::player-changed</code> signal is emitted when an <span class="caps">MPRIS</span> player&#8217;s
+state changes in some&nbsp;way.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Media.player-removed.html">Valent.Media::player-removed</a></h6>
+          <div class="docblock">
+            <p>The &#8220;player-removed&#8221; signal is emitted when a provider has discovered a
+player is no longer&nbsp;available.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Media.player-seeked.html">Valent.Media::player-seeked</a></h6>
+          <div class="docblock">
+            <p>The <code>ValentMedia::player-seeked</code> signal is emitted when an <span class="caps">MPRIS</span> player&#8217;s
+position is changed by explicit&nbsp;action.</p>
+          </div>
+          
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          <h5 style="display:block;">Signals inherited from <a href="class.Component.html">ValentComponent</a> (2)</h5>
+
+          
+          <div class="docblock">
+          
+            <h6><a href="signal.Component.extension-added.html">Valent.Component::extension-added</a></h6>
+            <div class="docblock">
+              <p>The &#8220;extension-added&#8221; signal is emitted when <code>component</code> has enabled a
+supported&nbsp;extension.</p>
+            </div>
+            
+          
+            <h6><a href="signal.Component.extension-removed.html">Valent.Component::extension-removed</a></h6>
+            <div class="docblock">
+              <p>The &#8220;extension-removed&#8221; signal is emitted when a extension has discovered a
+extension is no longer&nbsp;available.</p>
+            </div>
+            
+          
+          </div>
+          
+        </div>
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ValentMediaClass {
+  ValentComponentClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <table class="members">
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_class</code></td>
+          <td style="vertical-align:top"><pre><code>ValentComponentClass</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+     
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Media.get_default.html">valent_media_get_default</a></h6>
+
+        <div class="docblock">
+          <p>Get the default <code>ValentMedia</code>.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
