@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-16 03:18:55</td>
+            <td class="headerValue">2021-07-16 08:01:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -116,13 +116,13 @@
 <a name="38"><span class="lineNum">      38 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
 <a name="40"><span class="lineNum">      40 </span>                :            : static gboolean</a>
-<a name="41"><span class="lineNum">      41 </span>                :<span class="lineCov">      17167 : ringer_source_func (GstBus     *bus,</span></a>
+<a name="41"><span class="lineNum">      41 </span>                :<span class="lineCov">      15444 : ringer_source_func (GstBus     *bus,</span></a>
 <a name="42"><span class="lineNum">      42 </span>                :            :                     GstMessage *message,</a>
 <a name="43"><span class="lineNum">      43 </span>                :            :                     gpointer    user_data)</a>
 <a name="44"><span class="lineNum">      44 </span>                :            : {</a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">      17167 :   ValentFindmyphoneRinger *ringer = user_data;</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">      15444 :   ValentFindmyphoneRinger *ringer = user_data;</span></a>
 <a name="46"><span class="lineNum">      46 </span>                :            : </a>
-<a name="47"><span class="lineNum">      47 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 17167 times"> + </span>]:<span class="lineCov">      17167 :   if (message-&gt;type == GST_MESSAGE_ERROR)</span></a>
+<a name="47"><span class="lineNum">      47 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15444 times"> + </span>]:<span class="lineCov">      15444 :   if (message-&gt;type == GST_MESSAGE_ERROR)</span></a>
 <a name="48"><span class="lineNum">      48 </span>                :            :     {</a>
 <a name="49"><span class="lineNum">      49 </span>                :<span class="lineNoCov">          0 :       g_autoptr (GError) error = NULL;</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :<span class="lineNoCov">          0 :       g_autofree char *debug = NULL;</span></a>
@@ -135,28 +135,28 @@
 <a name="57"><span class="lineNum">      57 </span>                :            :     }</a>
 <a name="58"><span class="lineNum">      58 </span>                :            : </a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   /* Rewind to beginning */</a>
-<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 1123 times"> + </span><span class="branchCov" title="Branch 1 was taken 16044 times"> + </span>]:<span class="lineCov">      17167 :   if (message-&gt;type == GST_MESSAGE_EOS)</span></a>
+<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 1009 times"> + </span><span class="branchCov" title="Branch 1 was taken 14435 times"> + </span>]:<span class="lineCov">      15444 :   if (message-&gt;type == GST_MESSAGE_EOS)</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            :     {</a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1123 :       return gst_element_seek_simple (ringer-&gt;playbin,</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1009 :       return gst_element_seek_simple (ringer-&gt;playbin,</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            :                                       GST_FORMAT_TIME,</a>
 <a name="64"><span class="lineNum">      64 </span>                :            :                                       GST_SEEK_FLAG_FLUSH,</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :                                       0);</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :     }</a>
 <a name="67"><span class="lineNum">      67 </span>                :            : </a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">      16044 :   return G_SOURCE_CONTINUE;</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">      14435 :   return G_SOURCE_CONTINUE;</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : }</a>
 <a name="70"><span class="lineNum">      70 </span>                :            : </a>
 <a name="71"><span class="lineNum">      71 </span>                :            : static void</a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">         10 : valent_findmyphone_ringer_free (gpointer data)</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">         11 : valent_findmyphone_ringer_free (gpointer data)</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :            : {</a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">         10 :   ValentFindmyphoneRinger *ringer = data;</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">         11 :   ValentFindmyphoneRinger *ringer = data;</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
-<a name="76"><span class="lineNum">      76 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_clear_pointer (&amp;ringer-&gt;dialog, gtk_window_destroy);</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         10 :   gst_element_set_state (ringer-&gt;playbin, GST_STATE_NULL);</span></a>
-<a name="78"><span class="lineNum">      78 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   gst_clear_object (&amp;ringer-&gt;playbin);</span></a>
+<a name="76"><span class="lineNum">      76 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         11 :   g_clear_pointer (&amp;ringer-&gt;dialog, gtk_window_destroy);</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         11 :   gst_element_set_state (ringer-&gt;playbin, GST_STATE_NULL);</span></a>
+<a name="78"><span class="lineNum">      78 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   gst_clear_object (&amp;ringer-&gt;playbin);</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">         10 :   default_ringer = NULL;</span></a>
-<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">         10 : }</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">         11 :   default_ringer = NULL;</span></a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">         11 : }</span></a>
 <a name="82"><span class="lineNum">      82 </span>                :            : </a>
 <a name="83"><span class="lineNum">      83 </span>                :            : /**</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :  * valent_findmyphone_ringer_new:</a>
@@ -203,11 +203,11 @@
 <a name="125"><span class="lineNum">     125 </span>                :            :  * Returns: (transfer none) (nullable) (type GObject.Object): a #GObject</a>
 <a name="126"><span class="lineNum">     126 </span>                :            :  */</a>
 <a name="127"><span class="lineNum">     127 </span>                :            : gpointer</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         25 : valent_findmyphone_ringer_get_owner (ValentFindmyphoneRinger *ringer)</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         26 : valent_findmyphone_ringer_get_owner (ValentFindmyphoneRinger *ringer)</span></a>
 <a name="129"><span class="lineNum">     129 </span>                :            : {</a>
-<a name="130"><span class="lineNum">     130 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_return_val_if_fail (ringer != NULL, NULL);</span></a>
+<a name="130"><span class="lineNum">     130 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span>]:<span class="lineCov">         26 :   g_return_val_if_fail (ringer != NULL, NULL);</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            : </a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         25 :   return ringer-&gt;owner;</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         26 :   return ringer-&gt;owner;</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            : }</a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
 <a name="135"><span class="lineNum">     135 </span>                :            : /**</a>
@@ -373,13 +373,13 @@
 <a name="295"><span class="lineNum">     295 </span>                :            :  * Release a reference on the default #ValentFindmyphoneRinger.</a>
 <a name="296"><span class="lineNum">     296 </span>                :            :  */</a>
 <a name="297"><span class="lineNum">     297 </span>                :            : void</a>
-<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">         15 : valent_findmyphone_ringer_release (gpointer data)</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">         16 : valent_findmyphone_ringer_release (gpointer data)</span></a>
 <a name="299"><span class="lineNum">     299 </span>                :            : {</a>
-<a name="300"><span class="lineNum">     300 </span>                :<span class="lineCov">         15 :   ValentFindmyphoneRinger *ringer = data;</span></a>
+<a name="300"><span class="lineNum">     300 </span>                :<span class="lineCov">         16 :   ValentFindmyphoneRinger *ringer = data;</span></a>
 <a name="301"><span class="lineNum">     301 </span>                :            : </a>
-<a name="302"><span class="lineNum">     302 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_return_if_fail (ringer != NULL);</span></a>
+<a name="302"><span class="lineNum">     302 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         16 :   g_return_if_fail (ringer != NULL);</span></a>
 <a name="303"><span class="lineNum">     303 </span>                :            : </a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">         15 :   g_rc_box_release_full (ringer, valent_findmyphone_ringer_free);</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">         16 :   g_rc_box_release_full (ringer, valent_findmyphone_ringer_free);</span></a>
 <a name="305"><span class="lineNum">     305 </span>                :            : }</a>
 <a name="306"><span class="lineNum">     306 </span>                :            : </a>
 <a name="307"><span class="lineNum">     307 </span>                :            : /**</a>
