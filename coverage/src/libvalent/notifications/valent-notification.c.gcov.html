@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-16 08:01:29</td>
+            <td class="headerValue">2021-07-18 23:06:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">34</td>
@@ -133,8 +133,8 @@
 <a name="55"><span class="lineNum">      55 </span>                :            :   N_PROPERTIES</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : };</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 206 times"> + </span><span class="branchCov" title="Branch 1 was taken 723 times"> + </span><span class="branchCov" title="Branch 2 was taken 206 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1135 : G_DEFINE_TYPE (ValentNotification, valent_notification, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 206 times"> + </span><span class="branchCov" title="Branch 5 was taken 712 times"> + </span>]
+<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 206 times"> + </span><span class="branchCov" title="Branch 1 was taken 730 times"> + </span><span class="branchCov" title="Branch 2 was taken 206 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1142 : G_DEFINE_TYPE (ValentNotification, valent_notification, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 206 times"> + </span><span class="branchCov" title="Branch 5 was taken 719 times"> + </span>]
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
 <a name="60"><span class="lineNum">      60 </span>                :            : static GParamSpec *properties[N_PROPERTIES] = { NULL, };</a>
 <a name="61"><span class="lineNum">      61 </span>                :            : </a>
@@ -539,11 +539,11 @@
 <a name="457"><span class="lineNum">     457 </span>                :            :  * Returns: (transfer none) (nullable): the notifying application name</a>
 <a name="458"><span class="lineNum">     458 </span>                :            :  */</a>
 <a name="459"><span class="lineNum">     459 </span>                :            : const char *</a>
-<a name="460"><span class="lineNum">     460 </span>                :<span class="lineCov">        100 : valent_notification_get_application (ValentNotification *notification)</span></a>
+<a name="460"><span class="lineNum">     460 </span>                :<span class="lineCov">        102 : valent_notification_get_application (ValentNotification *notification)</span></a>
 <a name="461"><span class="lineNum">     461 </span>                :            : {</a>
-<a name="462"><span class="lineNum">     462 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 100 times"> + </span>]:<span class="lineCov">        100 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
+<a name="462"><span class="lineNum">     462 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 102 times"> + </span>]:<span class="lineCov">        102 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
 <a name="463"><span class="lineNum">     463 </span>                :            : </a>
-<a name="464"><span class="lineNum">     464 </span>                :<span class="lineCov">        100 :   return notification-&gt;application;</span></a>
+<a name="464"><span class="lineNum">     464 </span>                :<span class="lineCov">        102 :   return notification-&gt;application;</span></a>
 <a name="465"><span class="lineNum">     465 </span>                :            : }</a>
 <a name="466"><span class="lineNum">     466 </span>                :            : </a>
 <a name="467"><span class="lineNum">     467 </span>                :            : /**</a>
@@ -576,11 +576,11 @@
 <a name="494"><span class="lineNum">     494 </span>                :            :  * Returns: (transfer none) (nullable): the notification body</a>
 <a name="495"><span class="lineNum">     495 </span>                :            :  */</a>
 <a name="496"><span class="lineNum">     496 </span>                :            : const char *</a>
-<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">         30 : valent_notification_get_body (ValentNotification *notification)</span></a>
+<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">         31 : valent_notification_get_body (ValentNotification *notification)</span></a>
 <a name="498"><span class="lineNum">     498 </span>                :            : {</a>
-<a name="499"><span class="lineNum">     499 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
+<a name="499"><span class="lineNum">     499 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">         31 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
 <a name="500"><span class="lineNum">     500 </span>                :            : </a>
-<a name="501"><span class="lineNum">     501 </span>                :<span class="lineCov">         30 :   return notification-&gt;body;</span></a>
+<a name="501"><span class="lineNum">     501 </span>                :<span class="lineCov">         31 :   return notification-&gt;body;</span></a>
 <a name="502"><span class="lineNum">     502 </span>                :            : }</a>
 <a name="503"><span class="lineNum">     503 </span>                :            : </a>
 <a name="504"><span class="lineNum">     504 </span>                :            : /**</a>
@@ -613,11 +613,11 @@
 <a name="531"><span class="lineNum">     531 </span>                :            :  * Returns: (transfer none) (type Gio.Icon): the</a>
 <a name="532"><span class="lineNum">     532 </span>                :            :  */</a>
 <a name="533"><span class="lineNum">     533 </span>                :            : GIcon *</a>
-<a name="534"><span class="lineNum">     534 </span>                :<span class="lineCov">         75 : valent_notification_get_icon (ValentNotification *notification)</span></a>
+<a name="534"><span class="lineNum">     534 </span>                :<span class="lineCov">         76 : valent_notification_get_icon (ValentNotification *notification)</span></a>
 <a name="535"><span class="lineNum">     535 </span>                :            : {</a>
-<a name="536"><span class="lineNum">     536 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span>]:<span class="lineCov">         75 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
+<a name="536"><span class="lineNum">     536 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 76 times"> + </span>]:<span class="lineCov">         76 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
 <a name="537"><span class="lineNum">     537 </span>                :            : </a>
-<a name="538"><span class="lineNum">     538 </span>                :<span class="lineCov">         75 :   return notification-&gt;icon;</span></a>
+<a name="538"><span class="lineNum">     538 </span>                :<span class="lineCov">         76 :   return notification-&gt;icon;</span></a>
 <a name="539"><span class="lineNum">     539 </span>                :            : }</a>
 <a name="540"><span class="lineNum">     540 </span>                :            : </a>
 <a name="541"><span class="lineNum">     541 </span>                :            : /**</a>
@@ -676,12 +676,12 @@
 <a name="592"><span class="lineNum">     592 </span>                :            :  * Returns: (transfer none) (not nullable): the notification id</a>
 <a name="593"><span class="lineNum">     593 </span>                :            :  */</a>
 <a name="594"><span class="lineNum">     594 </span>                :            : const char *</a>
-<a name="595"><span class="lineNum">     595 </span>                :<span class="lineCov">         30 : valent_notification_get_id (ValentNotification *notification)</span></a>
+<a name="595"><span class="lineNum">     595 </span>                :<span class="lineCov">         31 : valent_notification_get_id (ValentNotification *notification)</span></a>
 <a name="596"><span class="lineNum">     596 </span>                :            : {</a>
-<a name="597"><span class="lineNum">     597 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
-<a name="598"><span class="lineNum">     598 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_assert (notification-&gt;id != NULL);</span></a>
+<a name="597"><span class="lineNum">     597 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">         31 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
+<a name="598"><span class="lineNum">     598 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">         31 :   g_assert (notification-&gt;id != NULL);</span></a>
 <a name="599"><span class="lineNum">     599 </span>                :            : </a>
-<a name="600"><span class="lineNum">     600 </span>                :<span class="lineCov">         30 :   return notification-&gt;id;</span></a>
+<a name="600"><span class="lineNum">     600 </span>                :<span class="lineCov">         31 :   return notification-&gt;id;</span></a>
 <a name="601"><span class="lineNum">     601 </span>                :            : }</a>
 <a name="602"><span class="lineNum">     602 </span>                :            : </a>
 <a name="603"><span class="lineNum">     603 </span>                :            : /**</a>
@@ -787,11 +787,11 @@
 <a name="703"><span class="lineNum">     703 </span>                :            :  * Returns: (transfer none) (not nullable): the notification title</a>
 <a name="704"><span class="lineNum">     704 </span>                :            :  */</a>
 <a name="705"><span class="lineNum">     705 </span>                :            : const char *</a>
-<a name="706"><span class="lineNum">     706 </span>                :<span class="lineCov">         30 : valent_notification_get_title (ValentNotification *notification)</span></a>
+<a name="706"><span class="lineNum">     706 </span>                :<span class="lineCov">         31 : valent_notification_get_title (ValentNotification *notification)</span></a>
 <a name="707"><span class="lineNum">     707 </span>                :            : {</a>
-<a name="708"><span class="lineNum">     708 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         30 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
+<a name="708"><span class="lineNum">     708 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">         31 :   g_return_val_if_fail (VALENT_IS_NOTIFICATION (notification), NULL);</span></a>
 <a name="709"><span class="lineNum">     709 </span>                :            : </a>
-<a name="710"><span class="lineNum">     710 </span>                :<span class="lineCov">         30 :   return notification-&gt;title;</span></a>
+<a name="710"><span class="lineNum">     710 </span>                :<span class="lineCov">         31 :   return notification-&gt;title;</span></a>
 <a name="711"><span class="lineNum">     711 </span>                :            : }</a>
 <a name="712"><span class="lineNum">     712 </span>                :            : </a>
 <a name="713"><span class="lineNum">     713 </span>                :            : /**</a>
