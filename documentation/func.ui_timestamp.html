@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.ui_pixbuf_from_base64</title>
+  <title>Valent.ui_timestamp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Valent.ui_pixbuf_from_base64"/>
-  <meta property="og:description" content="Reference for Valent.ui_pixbuf_from_base64"/>
-  <meta name="twitter:title" content="Valent.ui_pixbuf_from_base64"/>
-  <meta name="twitter:description" content="Reference for Valent.ui_pixbuf_from_base64"/>
+  <meta property="og:title" content="Valent.ui_timestamp"/>
+  <meta property="og:description" content="Reference for Valent.ui_timestamp"/>
+  <meta name="twitter:title" content="Valent.ui_timestamp"/>
+  <meta name="twitter:description" content="Reference for Valent.ui_timestamp"/>
 
 
   
@@ -96,7 +96,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Function </h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span>ui_pixbuf_from_base64</h1>
+    <h1><a href="index.html">Valent</a><span class="sep"></span>ui_timestamp</h1>
   </header>
 
   <section>
@@ -105,15 +105,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/ui/valent-ui-utils.h#L10">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/ui/valent-ui-utils.h#L13">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">GdkPixbuf</span><span class="o">*</span>
-<span class="n">valent_ui_pixbuf_from_base64</span> <span class="p">(</span>
-  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">base64</span><span class="p">,</span>
-  <span class="n">GError</span><span class="o">**</span> <span class="n">error</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">char</span><span class="o">*</span>
+<span class="n">valent_ui_timestamp</span> <span class="p">(</span>
+  <span class="n">gint64</span> <span class="n">timestamp</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -125,12 +124,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/ui/valent-ui-utils.c#L25">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/ui/valent-ui-utils.c#L55">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Create a new <code>GdkPixbuf</code> for <code>base64</code>.</p>
+        <p>Create a user friendly date-time string for <code>timestamp</code>, in a relative&nbsp;format.</p>
+<p>Examples:
+    - &#8220;Just now&#8221;
+    - &#8220;15 minutes&#8221;
+    - &#8220;11:45 <span class="caps">PM</span>&#8221;
+    - &#8220;Yesterday · 11:45 <span class="caps">PM</span>&#8221;
+    - &#8220;Tuesday&#8221;
+    - &#8220;February&nbsp;29&#8221;</p>
       </div>
 
       <div class="docblock">
@@ -155,12 +161,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>base64</code></td>
-            <td><code>const char*</code></td>
+            <td><code>timestamp</code></td>
+            <td><code>gint64</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p><span class="caps">BASE64</span> encoded&nbsp;data.</p></td>
+            <td><p>A <span class="caps">UNIX</span> epoch timestamp&nbsp;(ms)</p></td>
           </tr>
           
           
@@ -169,18 +175,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
           
           
-          <tr class="arg-name">
-            <td><code>error</code></td>
-            <td><code>GError **</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
-          </tr>
+          
           
         </table>
       </div>
@@ -198,18 +195,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="returns">
           <tr class="arg-name">
             <td>Returns:</td>
-            <td><code>GdkPixbuf*</code></td>
+            <td><code>char*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>A new <code>GdkPixbuf</code>.</p></td>
+            <td><p>A new&nbsp;string.</p></td>
           </tr>
           
           
           
           <tr><td>&nbsp;</td><td title="transfer: full">The caller of the function takes ownership of the data, and is responsible for freeing it.</td></tr>
-          <tr><td>&nbsp;</td><td>The return value can be <code>NULL</code>.</td></tr>
           
+          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
         </table>
       </div>
     </div>
