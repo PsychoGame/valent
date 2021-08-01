@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-31 22:41:31</td>
+            <td class="headerValue">2021-08-01 05:16:01</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -112,8 +112,8 @@
 <a name="34"><span class="lineNum">      34 </span>                :            : </a>
 <a name="35"><span class="lineNum">      35 </span>                :            : static void valent_device_plugin_iface_init (ValentDevicePluginInterface *iface);</a>
 <a name="36"><span class="lineNum">      36 </span>                :            : </a>
-<a name="37"><span class="lineNum">      37 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 7142 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       7162 : G_DEFINE_TYPE_WITH_CODE (ValentMousepadPlugin, valent_mousepad_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 7132 times"> + </span>]
+<a name="37"><span class="lineNum">      37 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 7149 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       7169 : G_DEFINE_TYPE_WITH_CODE (ValentMousepadPlugin, valent_mousepad_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 7139 times"> + </span>]
 <a name="38"><span class="lineNum">      38 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
 <a name="40"><span class="lineNum">      40 </span>                :            : enum {</a>
@@ -560,49 +560,49 @@
 <a name="481"><span class="lineNum">     481 </span>                :<span class="lineCov">         30 : }</span></a>
 <a name="482"><span class="lineNum">     482 </span>                :            : </a>
 <a name="483"><span class="lineNum">     483 </span>                :            : static void</a>
-<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">         21 : valent_mousepad_plugin_disable (ValentDevicePlugin *plugin)</span></a>
+<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">         22 : valent_mousepad_plugin_disable (ValentDevicePlugin *plugin)</span></a>
 <a name="485"><span class="lineNum">     485 </span>                :            : {</a>
-<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">         21 :   ValentMousepadPlugin *self = VALENT_MOUSEPAD_PLUGIN (plugin);</span></a>
+<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">         22 :   ValentMousepadPlugin *self = VALENT_MOUSEPAD_PLUGIN (plugin);</span></a>
 <a name="487"><span class="lineNum">     487 </span>                :            : </a>
-<a name="488"><span class="lineNum">     488 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span>]:<span class="lineCov">         21 :   g_assert (VALENT_IS_MOUSEPAD_PLUGIN (self));</span></a>
+<a name="488"><span class="lineNum">     488 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 22 times"> + </span>]:<span class="lineCov">         22 :   g_assert (VALENT_IS_MOUSEPAD_PLUGIN (self));</span></a>
 <a name="489"><span class="lineNum">     489 </span>                :            : </a>
 <a name="490"><span class="lineNum">     490 </span>                :            :   /* Unregister GMenu items */</a>
-<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">         21 :   valent_device_plugin_remove_menu_entries (plugin,</span></a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">         22 :   valent_device_plugin_remove_menu_entries (plugin,</span></a>
 <a name="492"><span class="lineNum">     492 </span>                :            :                                             items,</a>
 <a name="493"><span class="lineNum">     493 </span>                :            :                                             G_N_ELEMENTS (items));</a>
 <a name="494"><span class="lineNum">     494 </span>                :            : </a>
 <a name="495"><span class="lineNum">     495 </span>                :            :   /* Unregister GActions */</a>
-<a name="496"><span class="lineNum">     496 </span>                :<span class="lineCov">         21 :   valent_device_plugin_unregister_actions (plugin,</span></a>
+<a name="496"><span class="lineNum">     496 </span>                :<span class="lineCov">         22 :   valent_device_plugin_unregister_actions (plugin,</span></a>
 <a name="497"><span class="lineNum">     497 </span>                :            :                                            actions,</a>
 <a name="498"><span class="lineNum">     498 </span>                :            :                                            G_N_ELEMENTS (actions));</a>
 <a name="499"><span class="lineNum">     499 </span>                :            : </a>
-<a name="500"><span class="lineNum">     500 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span>]:<span class="lineCov">         21 :   if (self-&gt;dialog != NULL)</span></a>
+<a name="500"><span class="lineNum">     500 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 22 times"> + </span>]:<span class="lineCov">         22 :   if (self-&gt;dialog != NULL)</span></a>
 <a name="501"><span class="lineNum">     501 </span>                :<span class="lineNoCov">          0 :     gtk_window_destroy (GTK_WINDOW (self-&gt;dialog));</span></a>
-<a name="502"><span class="lineNum">     502 </span>                :<span class="lineCov">         21 : }</span></a>
+<a name="502"><span class="lineNum">     502 </span>                :<span class="lineCov">         22 : }</span></a>
 <a name="503"><span class="lineNum">     503 </span>                :            : </a>
 <a name="504"><span class="lineNum">     504 </span>                :            : static void</a>
-<a name="505"><span class="lineNum">     505 </span>                :<span class="lineCov">         76 : valent_mousepad_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
+<a name="505"><span class="lineNum">     505 </span>                :<span class="lineCov">         77 : valent_mousepad_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
 <a name="506"><span class="lineNum">     506 </span>                :            : {</a>
-<a name="507"><span class="lineNum">     507 </span>                :<span class="lineCov">         76 :   ValentMousepadPlugin *self = VALENT_MOUSEPAD_PLUGIN (plugin);</span></a>
+<a name="507"><span class="lineNum">     507 </span>                :<span class="lineCov">         77 :   ValentMousepadPlugin *self = VALENT_MOUSEPAD_PLUGIN (plugin);</span></a>
 <a name="508"><span class="lineNum">     508 </span>                :            :   gboolean connected;</a>
 <a name="509"><span class="lineNum">     509 </span>                :            :   gboolean paired;</a>
 <a name="510"><span class="lineNum">     510 </span>                :            :   gboolean available;</a>
 <a name="511"><span class="lineNum">     511 </span>                :            : </a>
-<a name="512"><span class="lineNum">     512 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 76 times"> + </span>]:<span class="lineCov">         76 :   g_assert (VALENT_IS_MOUSEPAD_PLUGIN (self));</span></a>
+<a name="512"><span class="lineNum">     512 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 77 times"> + </span>]:<span class="lineCov">         77 :   g_assert (VALENT_IS_MOUSEPAD_PLUGIN (self));</span></a>
 <a name="513"><span class="lineNum">     513 </span>                :            : </a>
-<a name="514"><span class="lineNum">     514 </span>                :<span class="lineCov">         76 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
-<a name="515"><span class="lineNum">     515 </span>                :<span class="lineCov">         76 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
-<a name="516"><span class="lineNum">     516 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 51 times"> + </span><span class="branchCov" title="Branch 2 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         76 :   available = (connected &amp;&amp; paired);</span></a>
+<a name="514"><span class="lineNum">     514 </span>                :<span class="lineCov">         77 :   connected = valent_device_get_connected (self-&gt;device);</span></a>
+<a name="515"><span class="lineNum">     515 </span>                :<span class="lineCov">         77 :   paired = valent_device_get_paired (self-&gt;device);</span></a>
+<a name="516"><span class="lineNum">     516 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 52 times"> + </span><span class="branchCov" title="Branch 2 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         77 :   available = (connected &amp;&amp; paired);</span></a>
 <a name="517"><span class="lineNum">     517 </span>                :            : </a>
-<a name="518"><span class="lineNum">     518 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 51 times"> + </span>]:<span class="lineCov">         76 :   if (available)</span></a>
+<a name="518"><span class="lineNum">     518 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 52 times"> + </span>]:<span class="lineCov">         77 :   if (available)</span></a>
 <a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">         25 :     valent_mousepad_plugin_mousepad_keyboardstate (self);</span></a>
 <a name="520"><span class="lineNum">     520 </span>                :            : </a>
 <a name="521"><span class="lineNum">     521 </span>                :            :   /* GActions */</a>
-<a name="522"><span class="lineNum">     522 </span>                :<span class="lineCov">         76 :   valent_device_plugin_toggle_actions (plugin,</span></a>
+<a name="522"><span class="lineNum">     522 </span>                :<span class="lineCov">         77 :   valent_device_plugin_toggle_actions (plugin,</span></a>
 <a name="523"><span class="lineNum">     523 </span>                :            :                                        actions,</a>
 <a name="524"><span class="lineNum">     524 </span>                :            :                                        G_N_ELEMENTS (actions),</a>
 <a name="525"><span class="lineNum">     525 </span>                :            :                                        available);</a>
-<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">         76 : }</span></a>
+<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">         77 : }</span></a>
 <a name="527"><span class="lineNum">     527 </span>                :            : </a>
 <a name="528"><span class="lineNum">     528 </span>                :            : static void</a>
 <a name="529"><span class="lineNum">     529 </span>                :<span class="lineCov">       2210 : valent_mousepad_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
@@ -644,23 +644,23 @@
 <a name="565"><span class="lineNum">     565 </span>                :            :  * GObject</a>
 <a name="566"><span class="lineNum">     566 </span>                :            :  */</a>
 <a name="567"><span class="lineNum">     567 </span>                :            : static void</a>
-<a name="568"><span class="lineNum">     568 </span>                :<span class="lineCov">        178 : valent_mousepad_plugin_get_property (GObject    *object,</span></a>
+<a name="568"><span class="lineNum">     568 </span>                :<span class="lineCov">        181 : valent_mousepad_plugin_get_property (GObject    *object,</span></a>
 <a name="569"><span class="lineNum">     569 </span>                :            :                                      guint       prop_id,</a>
 <a name="570"><span class="lineNum">     570 </span>                :            :                                      GValue     *value,</a>
 <a name="571"><span class="lineNum">     571 </span>                :            :                                      GParamSpec *pspec)</a>
 <a name="572"><span class="lineNum">     572 </span>                :            : {</a>
-<a name="573"><span class="lineNum">     573 </span>                :<span class="lineCov">        178 :   ValentMousepadPlugin *self = VALENT_MOUSEPAD_PLUGIN (object);</span></a>
+<a name="573"><span class="lineNum">     573 </span>                :<span class="lineCov">        181 :   ValentMousepadPlugin *self = VALENT_MOUSEPAD_PLUGIN (object);</span></a>
 <a name="574"><span class="lineNum">     574 </span>                :            : </a>
-<a name="575"><span class="lineNum">     575 </span>        [<span class="branchCov" title="Branch 0 was taken 178 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        178 :   switch (prop_id)</span></a>
+<a name="575"><span class="lineNum">     575 </span>        [<span class="branchCov" title="Branch 0 was taken 181 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        181 :   switch (prop_id)</span></a>
 <a name="576"><span class="lineNum">     576 </span>                :            :     {</a>
-<a name="577"><span class="lineNum">     577 </span>                :<span class="lineCov">        178 :     case PROP_DEVICE:</span></a>
-<a name="578"><span class="lineNum">     578 </span>                :<span class="lineCov">        178 :       g_value_set_object (value, self-&gt;device);</span></a>
-<a name="579"><span class="lineNum">     579 </span>                :<span class="lineCov">        178 :       break;</span></a>
+<a name="577"><span class="lineNum">     577 </span>                :<span class="lineCov">        181 :     case PROP_DEVICE:</span></a>
+<a name="578"><span class="lineNum">     578 </span>                :<span class="lineCov">        181 :       g_value_set_object (value, self-&gt;device);</span></a>
+<a name="579"><span class="lineNum">     579 </span>                :<span class="lineCov">        181 :       break;</span></a>
 <a name="580"><span class="lineNum">     580 </span>                :            : </a>
 <a name="581"><span class="lineNum">     581 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="582"><span class="lineNum">     582 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
 <a name="583"><span class="lineNum">     583 </span>                :            :     }</a>
-<a name="584"><span class="lineNum">     584 </span>                :<span class="lineCov">        178 : }</span></a>
+<a name="584"><span class="lineNum">     584 </span>                :<span class="lineCov">        181 : }</span></a>
 <a name="585"><span class="lineNum">     585 </span>                :            : </a>
 <a name="586"><span class="lineNum">     586 </span>                :            : static void</a>
 <a name="587"><span class="lineNum">     587 </span>                :<span class="lineCov">         30 : valent_mousepad_plugin_set_property (GObject      *object,</span></a>
