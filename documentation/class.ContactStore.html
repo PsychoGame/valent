@@ -93,9 +93,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.ContactStore.add.html">add</a>
+    <a class="method" href="method.ContactStore.add_contact.html">add_contact</a>
   
-    <a class="method" href="method.ContactStore.add_async.html">add_async</a>
+    <a class="method" href="method.ContactStore.add_contacts.html">add_contacts</a>
   
     <a class="method" href="method.ContactStore.add_finish.html">add_finish</a>
   
@@ -111,11 +111,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.ContactStore.get_contact.html">get_contact</a>
   
-    <a class="method" href="method.ContactStore.get_contact_async.html">get_contact_async</a>
-  
     <a class="method" href="method.ContactStore.get_contact_finish.html">get_contact_finish</a>
   
-    <a class="method" href="method.ContactStore.get_contacts_async.html">get_contacts_async</a>
+    <a class="method" href="method.ContactStore.get_contacts.html">get_contacts</a>
   
     <a class="method" href="method.ContactStore.get_name.html">get_name</a>
   
@@ -125,13 +123,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.ContactStore.query.html">query</a>
   
-    <a class="method" href="method.ContactStore.query_async.html">query_async</a>
-  
     <a class="method" href="method.ContactStore.query_finish.html">query_finish</a>
   
-    <a class="method" href="method.ContactStore.remove.html">remove</a>
+    <a class="method" href="method.ContactStore.query_sync.html">query_sync</a>
   
-    <a class="method" href="method.ContactStore.remove_async.html">remove_async</a>
+    <a class="method" href="method.ContactStore.remove_contact.html">remove_contact</a>
   
     <a class="method" href="method.ContactStore.remove_finish.html">remove_finish</a>
   
@@ -178,9 +174,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.ContactStore.add.html">add</a>
-  
-    <a class="method" href="vfunc.ContactStore.add_async.html">add_async</a>
+    <a class="method" href="vfunc.ContactStore.add_contacts.html">add_contacts</a>
   
     <a class="method" href="vfunc.ContactStore.contact_added.html">contact_added</a>
   
@@ -188,17 +182,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="vfunc.ContactStore.get_contact.html">get_contact</a>
   
-    <a class="method" href="vfunc.ContactStore.get_contact_async.html">get_contact_async</a>
-  
     <a class="method" href="vfunc.ContactStore.prepare_backend.html">prepare_backend</a>
   
     <a class="method" href="vfunc.ContactStore.query.html">query</a>
   
-    <a class="method" href="vfunc.ContactStore.query_async.html">query_async</a>
+    <a class="method" href="vfunc.ContactStore.query_sync.html">query_sync</a>
   
-    <a class="method" href="vfunc.ContactStore.remove.html">remove</a>
-  
-    <a class="method" href="vfunc.ContactStore.remove_async.html">remove_async</a>
+    <a class="method" href="vfunc.ContactStore.remove_contact.html">remove_contact</a>
   
   </div>
 </div>
@@ -232,8 +222,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>The <code>ValentContactStore</code> class is a simple implementation of <code>ValentContactStore</code>
-that is effectively a wrapper around <code>ESource</code> and <code>EBookCache</code>.</p>
+          <p>The <code>ValentContactStore</code> class is a base class for objects providing <code>EContact</code>
+instances.</p>
+<p>If instantiated directly it is effectively a wrapper around <code>EBookCache</code>,
+providing a file-based fallback when Evolution Data Server is not&nbsp;available.</p>
+<p>If subclasses for another provider, all virtual function must be&nbsp;overridden.</p>
         </div>
 
         <div class="docblock">
@@ -283,19 +276,17 @@ that is effectively a wrapper around <code>ESource</code> and <code>EBookCache</
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.ContactStore.add.html">valent_contact_store_add</a></h6>
+          <h6><a href="method.ContactStore.add_contact.html">valent_contact_store_add_contact</a></h6>
           <div class="docblock">
-            <p>Add <code>contact</code> to <code>store</code>. This is optional and should only be implemented by
-writable address&nbsp;books.</p>
+            No description available.
           </div>
           
         </div>
       
         <div class="">
-          <h6><a href="method.ContactStore.add_async.html">valent_contact_store_add_async</a></h6>
+          <h6><a href="method.ContactStore.add_contacts.html">valent_contact_store_add_contacts</a></h6>
           <div class="docblock">
-            <p>Asynchronous version of valent_contact_store_add(). Call
-valent_contact_store_add_finish() to get the&nbsp;result.</p>
+            <p>Add <code>contacts</code> to <code>store</code>. Call valent_contact_store_add_finish() to get the&nbsp;result.</p>
           </div>
           
         </div>
@@ -303,7 +294,7 @@ valent_contact_store_add_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.ContactStore.add_finish.html">valent_contact_store_add_finish</a></h6>
           <div class="docblock">
-            <p>Finish an operation started by&nbsp;valent_contact_store_add_async().</p>
+            <p>Finish an operation started by valent_contact_store_add_contact() or&nbsp;valent_contact_store_add_contacts().</p>
           </div>
           
         </div>
@@ -337,7 +328,7 @@ valent_contact_store_dup_for_phone_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.ContactStore.emit_contact_added.html">valent_contact_store_emit_contact_added</a></h6>
           <div class="docblock">
-            <p>Emits the <code>ValentContacttModel::contact-added</code> signal on <code>list</code>.</p>
+            <p>Emits the <code>ValentContactStore::contact-added</code> signal on <code>list</code>.</p>
           </div>
           
         </div>
@@ -345,21 +336,13 @@ valent_contact_store_dup_for_phone_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.ContactStore.emit_contact_removed.html">valent_contact_store_emit_contact_removed</a></h6>
           <div class="docblock">
-            <p>Emits the <code>ValentContacttModel::contact-removed</code> signal on <code>list</code>.</p>
+            <p>Emits the <code>ValentContactStore::contact-removed</code> signal on <code>list</code>.</p>
           </div>
           
         </div>
       
         <div class="">
           <h6><a href="method.ContactStore.get_contact.html">valent_contact_store_get_contact</a></h6>
-          <div class="docblock">
-            <p>Get the <code>EContact</code> in <code>store</code> by <code>uid</code>, or <code>NULL</code> if it doesn&#8217;t&nbsp;exist.</p>
-          </div>
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="method.ContactStore.get_contact_async.html">valent_contact_store_get_contact_async</a></h6>
           <div class="docblock">
             <p>Asynchronous version of valent_contact_store_get_contact(). Call
 valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
@@ -370,16 +353,16 @@ valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.ContactStore.get_contact_finish.html">valent_contact_store_get_contact_finish</a></h6>
           <div class="docblock">
-            <p>Finish an operation started by&nbsp;valent_contact_store_get_contact_async().</p>
+            <p>Finish an operation started by&nbsp;valent_contact_store_get_contact().</p>
           </div>
           
         </div>
       
         <div class="">
-          <h6><a href="method.ContactStore.get_contacts_async.html">valent_contact_store_get_contacts_async</a></h6>
+          <h6><a href="method.ContactStore.get_contacts.html">valent_contact_store_get_contacts</a></h6>
           <div class="docblock">
-            <p>A convenience wrapper around valent_contact_store_query_async() for searching contacts by <span class="caps">UID</span>.
-Call valent_contact_store_query_finish() to get the&nbsp;result.</p>
+            <p>A convenience wrapper around valent_contact_store_query() for searching
+contacts by <span class="caps">UID</span>. Call valent_contact_store_query_finish() to get the&nbsp;result.</p>
           </div>
           
         </div>
@@ -411,14 +394,6 @@ Call valent_contact_store_query_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.ContactStore.query.html">valent_contact_store_query</a></h6>
           <div class="docblock">
-            <p>Search <code>store</code> for contacts matching <code>query</code>.</p>
-          </div>
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="method.ContactStore.query_async.html">valent_contact_store_query_async</a></h6>
-          <div class="docblock">
             <p>Asynchronous version of valent_contact_store_query(). Call
 valent_contact_store_query_finish() to get the&nbsp;result.</p>
           </div>
@@ -428,24 +403,24 @@ valent_contact_store_query_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.ContactStore.query_finish.html">valent_contact_store_query_finish</a></h6>
           <div class="docblock">
-            <p>Finish an operation started by&nbsp;valent_contact_store_query_async().</p>
+            <p>Finish an operation started by&nbsp;valent_contact_store_query().</p>
           </div>
           
         </div>
       
         <div class="">
-          <h6><a href="method.ContactStore.remove.html">valent_contact_store_remove</a></h6>
+          <h6><a href="method.ContactStore.query_sync.html">valent_contact_store_query_sync</a></h6>
           <div class="docblock">
-            <p>Remove the <code>contact</code> from the address&nbsp;book.</p>
+            <p>Search <code>store</code> for contacts matching <code>query</code>.</p>
           </div>
           
         </div>
       
         <div class="">
-          <h6><a href="method.ContactStore.remove_async.html">valent_contact_store_remove_async</a></h6>
+          <h6><a href="method.ContactStore.remove_contact.html">valent_contact_store_remove_contact</a></h6>
           <div class="docblock">
-            <p>Asynchronous version of valent_contact_store_remove(). Call
-valent_contact_store_remove_finish() to get the&nbsp;result.</p>
+            <p>Remove contact <code>uid</code> from <code>store</code>. Call valent_contact_store_remove_finish() to
+get the&nbsp;result.</p>
           </div>
           
         </div>
@@ -453,7 +428,7 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.ContactStore.remove_finish.html">valent_contact_store_remove_finish</a></h6>
           <div class="docblock">
-            <p>Finish an operation started by&nbsp;valent_contact_store_remove_async().</p>
+            <p>Finish an operation started by&nbsp;valent_contact_store_remove_contact().</p>
           </div>
           
         </div>
@@ -572,52 +547,34 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
       <div class="docblock">
         <pre><code>struct ValentContactStoreClass {
   GObjectClass parent_class;
-  gboolean (* add) (
+  void (* add_contacts) (
     ValentContactStore* store,
-    EContact* contact,
-    GCancellable* cancellable,
-    GError** error
-  );
-  void (* add_async) (
-    ValentContactStore* store,
-    EContact* contact,
+    GSList* contacts,
     GCancellable* cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data
   );
-  gboolean (* remove) (
-    ValentContactStore* store,
-    const char* uid,
-    GCancellable* cancellable,
-    GError** error
-  );
-  void (* remove_async) (
+  void (* remove_contact) (
     ValentContactStore* store,
     const char* uid,
     GCancellable* cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data
   );
-  GSList* (* query) (
-    ValentContactStore* store,
-    const char* query,
-    GCancellable* cancellable,
-    GError** error
-  );
-  void (* query_async) (
+  void (* query) (
     ValentContactStore* store,
     const char* query,
     GCancellable* cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data
   );
-  EContact* (* get_contact) (
+  GSList* (* query_sync) (
     ValentContactStore* store,
-    const char* uid,
+    const char* query,
     GCancellable* cancellable,
     GError** error
   );
-  void (* get_contact_async) (
+  void (* get_contact) (
     ValentContactStore* store,
     const char* uid,
     GCancellable* cancellable,
@@ -657,24 +614,10 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>add</code></td>
-          <td style="vertical-align:top"><pre><code>gboolean (* add) (
+          <td style="vertical-align:top"><code>add_contacts</code></td>
+          <td style="vertical-align:top"><pre><code>void (* add_contacts) (
     ValentContactStore* store,
-    EContact* contact,
-    GCancellable* cancellable,
-    GError** error
-  )</code></pre></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td style="vertical-align:top">No description available.</td>
-        </td>
-        
-        <tr>
-          <td style="vertical-align:top"><code>add_async</code></td>
-          <td style="vertical-align:top"><pre><code>void (* add_async) (
-    ValentContactStore* store,
-    EContact* contact,
+    GSList* contacts,
     GCancellable* cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data
@@ -686,22 +629,8 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>remove</code></td>
-          <td style="vertical-align:top"><pre><code>gboolean (* remove) (
-    ValentContactStore* store,
-    const char* uid,
-    GCancellable* cancellable,
-    GError** error
-  )</code></pre></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td style="vertical-align:top">No description available.</td>
-        </td>
-        
-        <tr>
-          <td style="vertical-align:top"><code>remove_async</code></td>
-          <td style="vertical-align:top"><pre><code>void (* remove_async) (
+          <td style="vertical-align:top"><code>remove_contact</code></td>
+          <td style="vertical-align:top"><pre><code>void (* remove_contact) (
     ValentContactStore* store,
     const char* uid,
     GCancellable* cancellable,
@@ -716,21 +645,7 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
         
         <tr>
           <td style="vertical-align:top"><code>query</code></td>
-          <td style="vertical-align:top"><pre><code>GSList* (* query) (
-    ValentContactStore* store,
-    const char* query,
-    GCancellable* cancellable,
-    GError** error
-  )</code></pre></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td style="vertical-align:top">No description available.</td>
-        </td>
-        
-        <tr>
-          <td style="vertical-align:top"><code>query_async</code></td>
-          <td style="vertical-align:top"><pre><code>void (* query_async) (
+          <td style="vertical-align:top"><pre><code>void (* query) (
     ValentContactStore* store,
     const char* query,
     GCancellable* cancellable,
@@ -744,10 +659,10 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>get_contact</code></td>
-          <td style="vertical-align:top"><pre><code>EContact* (* get_contact) (
+          <td style="vertical-align:top"><code>query_sync</code></td>
+          <td style="vertical-align:top"><pre><code>GSList* (* query_sync) (
     ValentContactStore* store,
-    const char* uid,
+    const char* query,
     GCancellable* cancellable,
     GError** error
   )</code></pre></td>
@@ -758,8 +673,8 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>get_contact_async</code></td>
-          <td style="vertical-align:top"><pre><code>void (* get_contact_async) (
+          <td style="vertical-align:top"><code>get_contact</code></td>
+          <td style="vertical-align:top"><pre><code>void (* get_contact) (
     ValentContactStore* store,
     const char* uid,
     GCancellable* cancellable,
@@ -825,22 +740,10 @@ valent_contact_store_remove_finish() to get the&nbsp;result.</p>
       <div class="docblock">
       
       <div class="">
-        <h6 id="vfunc-add"><a href="vfunc.ContactStore.add.html">Valent.ContactStoreClass.add</a></h6>
+        <h6 id="vfunc-add_contacts"><a href="vfunc.ContactStore.add_contacts.html">Valent.ContactStoreClass.add_contacts</a></h6>
 
         <div class="docblock">
-          <p>Add <code>contact</code> to <code>store</code>. This is optional and should only be implemented by
-writable address&nbsp;books.</p>
-        </div>
-
-          
-      </div>
-      
-      <div class="">
-        <h6 id="vfunc-add_async"><a href="vfunc.ContactStore.add_async.html">Valent.ContactStoreClass.add_async</a></h6>
-
-        <div class="docblock">
-          <p>Asynchronous version of valent_contact_store_add(). Call
-valent_contact_store_add_finish() to get the&nbsp;result.</p>
+          <p>Add <code>contacts</code> to <code>store</code>. Call valent_contact_store_add_finish() to get the&nbsp;result.</p>
         </div>
 
           
@@ -870,16 +773,6 @@ valent_contact_store_add_finish() to get the&nbsp;result.</p>
         <h6 id="vfunc-get_contact"><a href="vfunc.ContactStore.get_contact.html">Valent.ContactStoreClass.get_contact</a></h6>
 
         <div class="docblock">
-          <p>Get the <code>EContact</code> in <code>store</code> by <code>uid</code>, or <code>NULL</code> if it doesn&#8217;t&nbsp;exist.</p>
-        </div>
-
-          
-      </div>
-      
-      <div class="">
-        <h6 id="vfunc-get_contact_async"><a href="vfunc.ContactStore.get_contact_async.html">Valent.ContactStoreClass.get_contact_async</a></h6>
-
-        <div class="docblock">
           <p>Asynchronous version of valent_contact_store_get_contact(). Call
 valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
         </div>
@@ -901,16 +794,6 @@ valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
         <h6 id="vfunc-query"><a href="vfunc.ContactStore.query.html">Valent.ContactStoreClass.query</a></h6>
 
         <div class="docblock">
-          <p>Search <code>store</code> for contacts matching <code>query</code>.</p>
-        </div>
-
-          
-      </div>
-      
-      <div class="">
-        <h6 id="vfunc-query_async"><a href="vfunc.ContactStore.query_async.html">Valent.ContactStoreClass.query_async</a></h6>
-
-        <div class="docblock">
           <p>Asynchronous version of valent_contact_store_query(). Call
 valent_contact_store_query_finish() to get the&nbsp;result.</p>
         </div>
@@ -919,21 +802,21 @@ valent_contact_store_query_finish() to get the&nbsp;result.</p>
       </div>
       
       <div class="">
-        <h6 id="vfunc-remove"><a href="vfunc.ContactStore.remove.html">Valent.ContactStoreClass.remove</a></h6>
+        <h6 id="vfunc-query_sync"><a href="vfunc.ContactStore.query_sync.html">Valent.ContactStoreClass.query_sync</a></h6>
 
         <div class="docblock">
-          <p>Remove the <code>contact</code> from the address&nbsp;book.</p>
+          <p>Search <code>store</code> for contacts matching <code>query</code>.</p>
         </div>
 
           
       </div>
       
       <div class="">
-        <h6 id="vfunc-remove_async"><a href="vfunc.ContactStore.remove_async.html">Valent.ContactStoreClass.remove_async</a></h6>
+        <h6 id="vfunc-remove_contact"><a href="vfunc.ContactStore.remove_contact.html">Valent.ContactStoreClass.remove_contact</a></h6>
 
         <div class="docblock">
-          <p>Asynchronous version of valent_contact_store_remove(). Call
-valent_contact_store_remove_finish() to get the&nbsp;result.</p>
+          <p>Remove contact <code>uid</code> from <code>store</code>. Call valent_contact_store_remove_finish() to
+get the&nbsp;result.</p>
         </div>
 
           

@@ -89,9 +89,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.ContactStore.add.html">add</a>
+    <a class="method" href="method.ContactStore.add_contact.html">add_contact</a>
   
-    <a class="method" href="method.ContactStore.add_async.html">add_async</a>
+    <a class="method" href="method.ContactStore.add_contacts.html">add_contacts</a>
   
     <a class="method" href="method.ContactStore.add_finish.html">add_finish</a>
   
@@ -107,11 +107,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.ContactStore.get_contact.html">get_contact</a>
   
-    <a class="method" href="method.ContactStore.get_contact_async.html">get_contact_async</a>
-  
     <a class="method" href="method.ContactStore.get_contact_finish.html">get_contact_finish</a>
   
-    <a class="method" href="method.ContactStore.get_contacts_async.html">get_contacts_async</a>
+    <a class="method" href="method.ContactStore.get_contacts.html">get_contacts</a>
   
     <a class="method" href="method.ContactStore.get_name.html">get_name</a>
   
@@ -121,13 +119,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method current" href="method.ContactStore.query.html">query</a>
   
-    <a class="method" href="method.ContactStore.query_async.html">query_async</a>
-  
     <a class="method" href="method.ContactStore.query_finish.html">query_finish</a>
   
-    <a class="method" href="method.ContactStore.remove.html">remove</a>
+    <a class="method" href="method.ContactStore.query_sync.html">query_sync</a>
   
-    <a class="method" href="method.ContactStore.remove_async.html">remove_async</a>
+    <a class="method" href="method.ContactStore.remove_contact.html">remove_contact</a>
   
     <a class="method" href="method.ContactStore.remove_finish.html">remove_finish</a>
   
@@ -153,17 +149,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.h#L126">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.h#L107">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">GSList</span><span class="o">*</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
 <span class="n">valent_contact_store_query</span> <span class="p">(</span>
   <span class="n">ValentContactStore</span><span class="o">*</span> <span class="n">store</span><span class="p">,</span>
   <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">query</span><span class="p">,</span>
   <span class="n">GCancellable</span><span class="o">*</span> <span class="n">cancellable</span><span class="p">,</span>
-  <span class="n">GError</span><span class="o">**</span> <span class="n">error</span>
+  <span class="n">GAsyncReadyCallback</span> <span class="n">callback</span><span class="p">,</span>
+  <span class="n">gpointer</span> <span class="n">user_data</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -175,12 +172,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.c#L914">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.c#L874">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Search <code>store</code> for contacts matching <code>query</code>.</p>
+        <p>Asynchronous version of valent_contact_store_query(). Call
+valent_contact_store_query_finish() to get the&nbsp;result.</p>
       </div>
 
       <div class="docblock">
@@ -240,47 +238,48 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
-          
           <tr class="arg-name">
-            <td><code>error</code></td>
-            <td><code>GError **</code></td>
+            <td><code>callback</code></td>
+            <td><code>GAsyncReadyCallback</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
+            <td><p>A <code>GAsyncReadyCallback</code>.</p></td>
           </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>user_data</code></td>
+            <td><code>gpointer</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>User supplied&nbsp;data.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
         </table>
       </div>
     </div>
     
 
-    
-    <div class="return-value toggle-wrapper">
-      <h4 id="return-value">
-        Return value
-        <a href="#return-value" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-        <table class="returns">
-          <tr class="arg-name">
-            <td>Returns:</td>
-            <td>A list of&nbsp;<code>EContact*</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>A <code>GSList</code>.</p></td>
-          </tr>
-          
-          
-          
-          <tr><td>&nbsp;</td><td title="transfer: full">The caller of the method takes ownership of the data, and is responsible for freeing it.</td></tr>
-          
-          
-        </table>
-      </div>
-    </div>
     
 
   </section>

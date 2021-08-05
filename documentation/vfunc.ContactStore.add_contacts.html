@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.ContactStore.get_contact_async</title>
+  <title>Valent.ContactStore.add_contacts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Valent.ContactStore.get_contact_async"/>
-  <meta priority="og:description" content="Reference for Valent.ContactStore.get_contact_async"/>
-  <meta name="twitter:title" content="Valent.ContactStore.get_contact_async"/>
-  <meta name="twitter:description" content="Reference for Valent.ContactStore.get_contact_async"/>
+  <meta property="og:title" content="Valent.ContactStore.add_contacts"/>
+  <meta property="og:description" content="Reference for Valent.ContactStore.add_contacts"/>
+  <meta name="twitter:title" content="Valent.ContactStore.add_contacts"/>
+  <meta name="twitter:description" content="Reference for Valent.ContactStore.add_contacts"/>
 
 
   
@@ -86,52 +86,24 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   </div>
 </div>
 <div class="section">
-  <h5>Methods</h5>
+  <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="method.ContactStore.add.html">add</a>
+    <a class="method current" href="vfunc.ContactStore.add_contacts.html">add_contacts</a>
   
-    <a class="method" href="method.ContactStore.add_async.html">add_async</a>
+    <a class="method" href="vfunc.ContactStore.contact_added.html">contact_added</a>
   
-    <a class="method" href="method.ContactStore.add_finish.html">add_finish</a>
+    <a class="method" href="vfunc.ContactStore.contact_removed.html">contact_removed</a>
   
-    <a class="method" href="method.ContactStore.dup_for_phone.html">dup_for_phone</a>
+    <a class="method" href="vfunc.ContactStore.get_contact.html">get_contact</a>
   
-    <a class="method" href="method.ContactStore.dup_for_phone_async.html">dup_for_phone_async</a>
+    <a class="method" href="vfunc.ContactStore.prepare_backend.html">prepare_backend</a>
   
-    <a class="method" href="method.ContactStore.dup_for_phone_finish.html">dup_for_phone_finish</a>
+    <a class="method" href="vfunc.ContactStore.query.html">query</a>
   
-    <a class="method" href="method.ContactStore.emit_contact_added.html">emit_contact_added</a>
+    <a class="method" href="vfunc.ContactStore.query_sync.html">query_sync</a>
   
-    <a class="method" href="method.ContactStore.emit_contact_removed.html">emit_contact_removed</a>
-  
-    <a class="method" href="method.ContactStore.get_contact.html">get_contact</a>
-  
-    <a class="method current" href="method.ContactStore.get_contact_async.html">get_contact_async</a>
-  
-    <a class="method" href="method.ContactStore.get_contact_finish.html">get_contact_finish</a>
-  
-    <a class="method" href="method.ContactStore.get_contacts_async.html">get_contacts_async</a>
-  
-    <a class="method" href="method.ContactStore.get_name.html">get_name</a>
-  
-    <a class="method" href="method.ContactStore.get_source.html">get_source</a>
-  
-    <a class="method" href="method.ContactStore.get_uid.html">get_uid</a>
-  
-    <a class="method" href="method.ContactStore.query.html">query</a>
-  
-    <a class="method" href="method.ContactStore.query_async.html">query_async</a>
-  
-    <a class="method" href="method.ContactStore.query_finish.html">query_finish</a>
-  
-    <a class="method" href="method.ContactStore.remove.html">remove</a>
-  
-    <a class="method" href="method.ContactStore.remove_async.html">remove_async</a>
-  
-    <a class="method" href="method.ContactStore.remove_finish.html">remove_finish</a>
-  
-    <a class="method" href="method.ContactStore.set_name.html">set_name</a>
+    <a class="method" href="vfunc.ContactStore.remove_contact.html">remove_contact</a>
   
   </div>
 </div>
@@ -143,25 +115,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ContactStore.html">ContactStore</a><span class="sep"></span>get_contact_async</h1>
+    <h3>Virtual Method</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ContactStore.html">ContactStore</a><span class="sep"></span>add_contacts</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 style="display:flex;" id="declaration">
+      <h4 id="declaration">
         Declaration
-        <a class="anchor" href="#declaration"></a>
+        <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.h#L113">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.h#L25">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="n">valent_contact_store_get_contact_async</span> <span class="p">(</span>
+<span class="n">add_contacts</span> <span class="p">(</span>
   <span class="n">ValentContactStore</span><span class="o">*</span> <span class="n">store</span><span class="p">,</span>
-  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">uid</span><span class="p">,</span>
+  <span class="n">GSList</span><span class="o">*</span> <span class="n">contacts</span><span class="p">,</span>
   <span class="n">GCancellable</span><span class="o">*</span> <span class="n">cancellable</span><span class="p">,</span>
   <span class="n">GAsyncReadyCallback</span> <span class="n">callback</span><span class="p">,</span>
   <span class="n">gpointer</span> <span class="n">user_data</span>
@@ -172,17 +144,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 style="display:flex;" id="description">
+      <h4 id="description">
         Description
-        <a class="anchor" href="#description"></a>
+        <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.c#L1037">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/contacts/valent-contact-store.c#L751">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Asynchronous version of valent_contact_store_get_contact(). Call
-valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
+        <p>Add <code>contacts</code> to <code>store</code>. Call valent_contact_store_add_finish() to get the&nbsp;result.</p>
       </div>
 
       <div class="docblock">
@@ -207,12 +178,12 @@ valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>uid</code></td>
-            <td><code>const char*</code></td>
+            <td><code>contacts</code></td>
+            <td>A list of&nbsp;<code>EContact*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>A contact <span class="caps">UID</span>.</p></td>
+            <td><p>A <code>GSList</code>.</p></td>
           </tr>
           
           
@@ -222,7 +193,7 @@ valent_contact_store_get_contact_finish() to get the&nbsp;result.</p>
           
           
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
+          
           
           <tr class="arg-name">
             <td><code>cancellable</code></td>
