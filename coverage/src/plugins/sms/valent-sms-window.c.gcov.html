@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 01:56:01</td>
+            <td class="headerValue">2021-08-05 03:16:11</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -301,11 +301,11 @@
 <a name="223"><span class="lineNum">     223 </span>                :<span class="lineNoCov">          0 :   query = e_book_query_or (G_N_ELEMENTS (queries), queries, TRUE);</span></a>
 <a name="224"><span class="lineNum">     224 </span>                :<span class="lineNoCov">          0 :   sexp = e_book_query_to_string (query);</span></a>
 <a name="225"><span class="lineNum">     225 </span>                :            : </a>
-<a name="226"><span class="lineNum">     226 </span>                :<span class="lineNoCov">          0 :   valent_contact_store_query_async (window-&gt;contact_store,</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :            :                                     sexp,</a>
-<a name="228"><span class="lineNum">     228 </span>                :            :                                     NULL,</a>
-<a name="229"><span class="lineNum">     229 </span>                :            :                                     (GAsyncReadyCallback)query_contacts_cb,</a>
-<a name="230"><span class="lineNum">     230 </span>                :            :                                     window);</a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineNoCov">          0 :   valent_contact_store_query (window-&gt;contact_store,</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :            :                               sexp,</a>
+<a name="228"><span class="lineNum">     228 </span>                :            :                               NULL,</a>
+<a name="229"><span class="lineNum">     229 </span>                :            :                               (GAsyncReadyCallback)query_contacts_cb,</a>
+<a name="230"><span class="lineNum">     230 </span>                :            :                               window);</a>
 <a name="231"><span class="lineNum">     231 </span>                :            : }</a>
 <a name="232"><span class="lineNum">     232 </span>                :            : </a>
 <a name="233"><span class="lineNum">     233 </span>                :            : static void</a>
@@ -488,561 +488,564 @@
 <a name="410"><span class="lineNum">     410 </span>                :            : }</a>
 <a name="411"><span class="lineNum">     411 </span>                :            : </a>
 <a name="412"><span class="lineNum">     412 </span>                :            : static void</a>
-<a name="413"><span class="lineNum">     413 </span>                :<span class="lineNoCov">          0 : query_cb (ValentContactStore *store,</span></a>
-<a name="414"><span class="lineNum">     414 </span>                :            :           GAsyncResult       *result,</a>
-<a name="415"><span class="lineNum">     415 </span>                :            :           ValentSmsWindow    *self)</a>
+<a name="413"><span class="lineNum">     413 </span>                :<span class="lineNoCov">          0 : refresh_contacts_cb (ValentContactStore *store,</span></a>
+<a name="414"><span class="lineNum">     414 </span>                :            :                      GAsyncResult       *result,</a>
+<a name="415"><span class="lineNum">     415 </span>                :            :                      ValentSmsWindow    *self)</a>
 <a name="416"><span class="lineNum">     416 </span>                :            : {</a>
-<a name="417"><span class="lineNum">     417 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GError) error = NULL;</span></a>
-<a name="418"><span class="lineNum">     418 </span>                :<span class="lineNoCov">          0 :   g_autoslist (GObject) contacts = NULL;</span></a>
+<a name="417"><span class="lineNum">     417 </span>                :<span class="lineNoCov">          0 :   g_autoslist (GObject) contacts = NULL;</span></a>
+<a name="418"><span class="lineNum">     418 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GError) error = NULL;</span></a>
 <a name="419"><span class="lineNum">     419 </span>                :            : </a>
 <a name="420"><span class="lineNum">     420 </span>                :<span class="lineNoCov">          0 :   contacts = valent_contact_store_query_finish (store, result, &amp;error);</span></a>
 <a name="421"><span class="lineNum">     421 </span>                :            : </a>
 <a name="422"><span class="lineNum">     422 </span>                :<span class="lineNoCov">          0 :   if (error != NULL)</span></a>
-<a name="423"><span class="lineNum">     423 </span>                :<span class="lineNoCov">          0 :     g_warning (&quot;loading contacts: %s&quot;, error-&gt;message);</span></a>
-<a name="424"><span class="lineNum">     424 </span>                :            : </a>
-<a name="425"><span class="lineNum">     425 </span>                :<span class="lineNoCov">          0 :   for (const GSList *iter = contacts; iter; iter = iter-&gt;next)</span></a>
-<a name="426"><span class="lineNum">     426 </span>                :<span class="lineNoCov">          0 :     valent_list_add_contact (self-&gt;contact_search_list, iter-&gt;data);</span></a>
-<a name="427"><span class="lineNum">     427 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="428"><span class="lineNum">     428 </span>                :            : </a>
-<a name="429"><span class="lineNum">     429 </span>                :            : static void</a>
-<a name="430"><span class="lineNum">     430 </span>                :<span class="lineNoCov">          0 : valent_sms_window_refresh_contacts (ValentSmsWindow *self)</span></a>
-<a name="431"><span class="lineNum">     431 </span>                :            : {</a>
-<a name="432"><span class="lineNum">     432 </span>                :            :   GtkWidget *row;</a>
-<a name="433"><span class="lineNum">     433 </span>                :<span class="lineNoCov">          0 :   g_autoptr (EBookQuery) query = NULL;</span></a>
-<a name="434"><span class="lineNum">     434 </span>                :<span class="lineNoCov">          0 :   g_autofree char *sexp = NULL;</span></a>
-<a name="435"><span class="lineNum">     435 </span>                :            : </a>
-<a name="436"><span class="lineNum">     436 </span>                :            :   /* Clear the list */</a>
-<a name="437"><span class="lineNum">     437 </span>                :<span class="lineNoCov">          0 :   while ((row = gtk_widget_get_first_child (GTK_WIDGET (self-&gt;contact_search_list))))</span></a>
-<a name="438"><span class="lineNum">     438 </span>                :<span class="lineNoCov">          0 :     gtk_list_box_remove (self-&gt;contact_search_list, row);</span></a>
-<a name="439"><span class="lineNum">     439 </span>                :            : </a>
-<a name="440"><span class="lineNum">     440 </span>                :<span class="lineNoCov">          0 :   if (self-&gt;contact_store == NULL)</span></a>
-<a name="441"><span class="lineNum">     441 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
+<a name="423"><span class="lineNum">     423 </span>                :            :     {</a>
+<a name="424"><span class="lineNum">     424 </span>                :<span class="lineNoCov">          0 :       g_warning (&quot;loading contacts: %s&quot;, error-&gt;message);</span></a>
+<a name="425"><span class="lineNum">     425 </span>                :<span class="lineNoCov">          0 :       return;</span></a>
+<a name="426"><span class="lineNum">     426 </span>                :            :     }</a>
+<a name="427"><span class="lineNum">     427 </span>                :            : </a>
+<a name="428"><span class="lineNum">     428 </span>                :<span class="lineNoCov">          0 :   for (const GSList *iter = contacts; iter; iter = iter-&gt;next)</span></a>
+<a name="429"><span class="lineNum">     429 </span>                :<span class="lineNoCov">          0 :     valent_list_add_contact (self-&gt;contact_search_list, iter-&gt;data);</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :            : }</a>
+<a name="431"><span class="lineNum">     431 </span>                :            : </a>
+<a name="432"><span class="lineNum">     432 </span>                :            : static void</a>
+<a name="433"><span class="lineNum">     433 </span>                :<span class="lineNoCov">          0 : valent_sms_window_refresh_contacts (ValentSmsWindow *self)</span></a>
+<a name="434"><span class="lineNum">     434 </span>                :            : {</a>
+<a name="435"><span class="lineNum">     435 </span>                :            :   GtkWidget *row;</a>
+<a name="436"><span class="lineNum">     436 </span>                :<span class="lineNoCov">          0 :   g_autoptr (EBookQuery) query = NULL;</span></a>
+<a name="437"><span class="lineNum">     437 </span>                :<span class="lineNoCov">          0 :   g_autofree char *sexp = NULL;</span></a>
+<a name="438"><span class="lineNum">     438 </span>                :            : </a>
+<a name="439"><span class="lineNum">     439 </span>                :            :   /* Clear the list */</a>
+<a name="440"><span class="lineNum">     440 </span>                :<span class="lineNoCov">          0 :   while ((row = gtk_widget_get_first_child (GTK_WIDGET (self-&gt;contact_search_list))))</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineNoCov">          0 :     gtk_list_box_remove (self-&gt;contact_search_list, row);</span></a>
 <a name="442"><span class="lineNum">     442 </span>                :            : </a>
-<a name="443"><span class="lineNum">     443 </span>                :            :   /* Add the contacts */</a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineNoCov">          0 :   query = e_book_query_vcard_field_exists (EVC_TEL);</span></a>
-<a name="445"><span class="lineNum">     445 </span>                :<span class="lineNoCov">          0 :   sexp = e_book_query_to_string (query);</span></a>
-<a name="446"><span class="lineNum">     446 </span>                :            : </a>
-<a name="447"><span class="lineNum">     447 </span>                :<span class="lineNoCov">          0 :   valent_contact_store_query_async (self-&gt;contact_store,</span></a>
-<a name="448"><span class="lineNum">     448 </span>                :            :                                     sexp,</a>
-<a name="449"><span class="lineNum">     449 </span>                :            :                                     NULL,</a>
-<a name="450"><span class="lineNum">     450 </span>                :            :                                     (GAsyncReadyCallback)query_cb,</a>
-<a name="451"><span class="lineNum">     451 </span>                :            :                                     self);</a>
-<a name="452"><span class="lineNum">     452 </span>                :            : }</a>
-<a name="453"><span class="lineNum">     453 </span>                :            : </a>
-<a name="454"><span class="lineNum">     454 </span>                :            : /*</a>
-<a name="455"><span class="lineNum">     455 </span>                :            :  * Conversation List</a>
-<a name="456"><span class="lineNum">     456 </span>                :            :  */</a>
-<a name="457"><span class="lineNum">     457 </span>                :            : static gboolean</a>
-<a name="458"><span class="lineNum">     458 </span>                :<span class="lineNoCov">          0 : on_send_message (GObject          *object,</span></a>
-<a name="459"><span class="lineNum">     459 </span>                :            :                  GList            *participants,</a>
-<a name="460"><span class="lineNum">     460 </span>                :            :                  ValentSmsMessage *message,</a>
-<a name="461"><span class="lineNum">     461 </span>                :            :                  ValentSmsWindow  *window)</a>
-<a name="462"><span class="lineNum">     462 </span>                :            : {</a>
-<a name="463"><span class="lineNum">     463 </span>                :            :   gboolean message_sent;</a>
-<a name="464"><span class="lineNum">     464 </span>                :            : </a>
-<a name="465"><span class="lineNum">     465 </span>                :<span class="lineNoCov">          0 :   g_signal_emit (G_OBJECT (window),</span></a>
-<a name="466"><span class="lineNum">     466 </span>                :            :                  signals [SEND_MESSAGE], 0,</a>
-<a name="467"><span class="lineNum">     467 </span>                :            :                  participants, message,</a>
-<a name="468"><span class="lineNum">     468 </span>                :            :                  &amp;message_sent);</a>
-<a name="469"><span class="lineNum">     469 </span>                :            : </a>
-<a name="470"><span class="lineNum">     470 </span>                :<span class="lineNoCov">          0 :   return message_sent;</span></a>
-<a name="471"><span class="lineNum">     471 </span>                :            : }</a>
+<a name="443"><span class="lineNum">     443 </span>                :<span class="lineNoCov">          0 :   if (self-&gt;contact_store == NULL)</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
+<a name="445"><span class="lineNum">     445 </span>                :            : </a>
+<a name="446"><span class="lineNum">     446 </span>                :            :   /* Add the contacts */</a>
+<a name="447"><span class="lineNum">     447 </span>                :<span class="lineNoCov">          0 :   query = e_book_query_vcard_field_exists (EVC_TEL);</span></a>
+<a name="448"><span class="lineNum">     448 </span>                :<span class="lineNoCov">          0 :   sexp = e_book_query_to_string (query);</span></a>
+<a name="449"><span class="lineNum">     449 </span>                :            : </a>
+<a name="450"><span class="lineNum">     450 </span>                :<span class="lineNoCov">          0 :   valent_contact_store_query (self-&gt;contact_store,</span></a>
+<a name="451"><span class="lineNum">     451 </span>                :            :                               sexp,</a>
+<a name="452"><span class="lineNum">     452 </span>                :            :                               NULL,</a>
+<a name="453"><span class="lineNum">     453 </span>                :            :                               (GAsyncReadyCallback)refresh_contacts_cb,</a>
+<a name="454"><span class="lineNum">     454 </span>                :            :                               self);</a>
+<a name="455"><span class="lineNum">     455 </span>                :            : }</a>
+<a name="456"><span class="lineNum">     456 </span>                :            : </a>
+<a name="457"><span class="lineNum">     457 </span>                :            : /*</a>
+<a name="458"><span class="lineNum">     458 </span>                :            :  * Conversation List</a>
+<a name="459"><span class="lineNum">     459 </span>                :            :  */</a>
+<a name="460"><span class="lineNum">     460 </span>                :            : static gboolean</a>
+<a name="461"><span class="lineNum">     461 </span>                :<span class="lineNoCov">          0 : on_send_message (GObject          *object,</span></a>
+<a name="462"><span class="lineNum">     462 </span>                :            :                  GList            *participants,</a>
+<a name="463"><span class="lineNum">     463 </span>                :            :                  ValentSmsMessage *message,</a>
+<a name="464"><span class="lineNum">     464 </span>                :            :                  ValentSmsWindow  *window)</a>
+<a name="465"><span class="lineNum">     465 </span>                :            : {</a>
+<a name="466"><span class="lineNum">     466 </span>                :            :   gboolean message_sent;</a>
+<a name="467"><span class="lineNum">     467 </span>                :            : </a>
+<a name="468"><span class="lineNum">     468 </span>                :<span class="lineNoCov">          0 :   g_signal_emit (G_OBJECT (window),</span></a>
+<a name="469"><span class="lineNum">     469 </span>                :            :                  signals [SEND_MESSAGE], 0,</a>
+<a name="470"><span class="lineNum">     470 </span>                :            :                  participants, message,</a>
+<a name="471"><span class="lineNum">     471 </span>                :            :                  &amp;message_sent);</a>
 <a name="472"><span class="lineNum">     472 </span>                :            : </a>
-<a name="473"><span class="lineNum">     473 </span>                :            : /*</a>
-<a name="474"><span class="lineNum">     474 </span>                :            :  * Conversation List Callbacks</a>
-<a name="475"><span class="lineNum">     475 </span>                :            :  */</a>
-<a name="476"><span class="lineNum">     476 </span>                :            : static GtkWidget *</a>
-<a name="477"><span class="lineNum">     477 </span>                :<span class="lineNoCov">          0 : conversation_list_create (gpointer item,</span></a>
-<a name="478"><span class="lineNum">     478 </span>                :            :                           gpointer user_data)</a>
-<a name="479"><span class="lineNum">     479 </span>                :            : {</a>
-<a name="480"><span class="lineNum">     480 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *window = VALENT_SMS_WINDOW (user_data);</span></a>
-<a name="481"><span class="lineNum">     481 </span>                :<span class="lineNoCov">          0 :   ValentSmsMessage *message = VALENT_SMS_MESSAGE (item);</span></a>
-<a name="482"><span class="lineNum">     482 </span>                :            :   GtkWidget *row;</a>
-<a name="483"><span class="lineNum">     483 </span>                :            :   GVariant *metadata;</a>
-<a name="484"><span class="lineNum">     484 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GVariant) addresses = NULL;</span></a>
-<a name="485"><span class="lineNum">     485 </span>                :            : </a>
-<a name="486"><span class="lineNum">     486 </span>                :<span class="lineNoCov">          0 :   row = g_object_new (VALENT_TYPE_MESSAGE_ROW,</span></a>
-<a name="487"><span class="lineNum">     487 </span>                :            :                       &quot;message&quot;, message,</a>
-<a name="488"><span class="lineNum">     488 </span>                :            :                       NULL);</a>
-<a name="489"><span class="lineNum">     489 </span>                :            : </a>
-<a name="490"><span class="lineNum">     490 </span>                :<span class="lineNoCov">          0 :   metadata = valent_sms_message_get_metadata (message);</span></a>
-<a name="491"><span class="lineNum">     491 </span>                :            : </a>
-<a name="492"><span class="lineNum">     492 </span>                :<span class="lineNoCov">          0 :   if (g_variant_lookup (metadata, &quot;addresses&quot;, &quot;@aa{sv}&quot;, &amp;addresses))</span></a>
-<a name="493"><span class="lineNum">     493 </span>                :            :     {</a>
-<a name="494"><span class="lineNum">     494 </span>                :<span class="lineNoCov">          0 :       g_autoptr (GVariant) participant = NULL;</span></a>
-<a name="495"><span class="lineNum">     495 </span>                :            :       const char *address;</a>
-<a name="496"><span class="lineNum">     496 </span>                :            : </a>
-<a name="497"><span class="lineNum">     497 </span>                :<span class="lineNoCov">          0 :       participant = g_variant_get_child_value (addresses, 0);</span></a>
-<a name="498"><span class="lineNum">     498 </span>                :            : </a>
-<a name="499"><span class="lineNum">     499 </span>                :<span class="lineNoCov">          0 :       if (g_variant_lookup (participant, &quot;address&quot;, &quot;&amp;s&quot;, &amp;address))</span></a>
-<a name="500"><span class="lineNum">     500 </span>                :<span class="lineNoCov">          0 :         valent_contact_store_dup_for_phone_async (window-&gt;contact_store,</span></a>
-<a name="501"><span class="lineNum">     501 </span>                :            :                                                   address,</a>
-<a name="502"><span class="lineNum">     502 </span>                :            :                                                   NULL,</a>
-<a name="503"><span class="lineNum">     503 </span>                :            :                                                   (GAsyncReadyCallback)phone_lookup_cb,</a>
-<a name="504"><span class="lineNum">     504 </span>                :            :                                                   row);</a>
-<a name="505"><span class="lineNum">     505 </span>                :            :     }</a>
-<a name="506"><span class="lineNum">     506 </span>                :            : </a>
-<a name="507"><span class="lineNum">     507 </span>                :<span class="lineNoCov">          0 :   return row;</span></a>
-<a name="508"><span class="lineNum">     508 </span>                :            : }</a>
+<a name="473"><span class="lineNum">     473 </span>                :<span class="lineNoCov">          0 :   return message_sent;</span></a>
+<a name="474"><span class="lineNum">     474 </span>                :            : }</a>
+<a name="475"><span class="lineNum">     475 </span>                :            : </a>
+<a name="476"><span class="lineNum">     476 </span>                :            : /*</a>
+<a name="477"><span class="lineNum">     477 </span>                :            :  * Conversation List Callbacks</a>
+<a name="478"><span class="lineNum">     478 </span>                :            :  */</a>
+<a name="479"><span class="lineNum">     479 </span>                :            : static GtkWidget *</a>
+<a name="480"><span class="lineNum">     480 </span>                :<span class="lineNoCov">          0 : conversation_list_create (gpointer item,</span></a>
+<a name="481"><span class="lineNum">     481 </span>                :            :                           gpointer user_data)</a>
+<a name="482"><span class="lineNum">     482 </span>                :            : {</a>
+<a name="483"><span class="lineNum">     483 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *window = VALENT_SMS_WINDOW (user_data);</span></a>
+<a name="484"><span class="lineNum">     484 </span>                :<span class="lineNoCov">          0 :   ValentSmsMessage *message = VALENT_SMS_MESSAGE (item);</span></a>
+<a name="485"><span class="lineNum">     485 </span>                :            :   GtkWidget *row;</a>
+<a name="486"><span class="lineNum">     486 </span>                :            :   GVariant *metadata;</a>
+<a name="487"><span class="lineNum">     487 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GVariant) addresses = NULL;</span></a>
+<a name="488"><span class="lineNum">     488 </span>                :            : </a>
+<a name="489"><span class="lineNum">     489 </span>                :<span class="lineNoCov">          0 :   row = g_object_new (VALENT_TYPE_MESSAGE_ROW,</span></a>
+<a name="490"><span class="lineNum">     490 </span>                :            :                       &quot;message&quot;, message,</a>
+<a name="491"><span class="lineNum">     491 </span>                :            :                       NULL);</a>
+<a name="492"><span class="lineNum">     492 </span>                :            : </a>
+<a name="493"><span class="lineNum">     493 </span>                :<span class="lineNoCov">          0 :   metadata = valent_sms_message_get_metadata (message);</span></a>
+<a name="494"><span class="lineNum">     494 </span>                :            : </a>
+<a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 :   if (g_variant_lookup (metadata, &quot;addresses&quot;, &quot;@aa{sv}&quot;, &amp;addresses))</span></a>
+<a name="496"><span class="lineNum">     496 </span>                :            :     {</a>
+<a name="497"><span class="lineNum">     497 </span>                :<span class="lineNoCov">          0 :       g_autoptr (GVariant) participant = NULL;</span></a>
+<a name="498"><span class="lineNum">     498 </span>                :            :       const char *address;</a>
+<a name="499"><span class="lineNum">     499 </span>                :            : </a>
+<a name="500"><span class="lineNum">     500 </span>                :<span class="lineNoCov">          0 :       participant = g_variant_get_child_value (addresses, 0);</span></a>
+<a name="501"><span class="lineNum">     501 </span>                :            : </a>
+<a name="502"><span class="lineNum">     502 </span>                :<span class="lineNoCov">          0 :       if (g_variant_lookup (participant, &quot;address&quot;, &quot;&amp;s&quot;, &amp;address))</span></a>
+<a name="503"><span class="lineNum">     503 </span>                :<span class="lineNoCov">          0 :         valent_contact_store_dup_for_phone_async (window-&gt;contact_store,</span></a>
+<a name="504"><span class="lineNum">     504 </span>                :            :                                                   address,</a>
+<a name="505"><span class="lineNum">     505 </span>                :            :                                                   NULL,</a>
+<a name="506"><span class="lineNum">     506 </span>                :            :                                                   (GAsyncReadyCallback)phone_lookup_cb,</a>
+<a name="507"><span class="lineNum">     507 </span>                :            :                                                   row);</a>
+<a name="508"><span class="lineNum">     508 </span>                :            :     }</a>
 <a name="509"><span class="lineNum">     509 </span>                :            : </a>
-<a name="510"><span class="lineNum">     510 </span>                :            : static void</a>
-<a name="511"><span class="lineNum">     511 </span>                :<span class="lineNoCov">          0 : conversation_list_populate (ValentSmsWindow *window)</span></a>
-<a name="512"><span class="lineNum">     512 </span>                :            : {</a>
-<a name="513"><span class="lineNum">     513 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GListModel) threads = NULL;</span></a>
-<a name="514"><span class="lineNum">     514 </span>                :            : </a>
-<a name="515"><span class="lineNum">     515 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (window));</span></a>
-<a name="516"><span class="lineNum">     516 </span>                :            : </a>
-<a name="517"><span class="lineNum">     517 </span>                :<span class="lineNoCov">          0 :   threads = valent_sms_store_get_summary (window-&gt;message_store);</span></a>
-<a name="518"><span class="lineNum">     518 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_bind_model (window-&gt;conversation_list,</span></a>
-<a name="519"><span class="lineNum">     519 </span>                :            :                            threads,</a>
-<a name="520"><span class="lineNum">     520 </span>                :            :                            conversation_list_create,</a>
-<a name="521"><span class="lineNum">     521 </span>                :            :                            window,</a>
-<a name="522"><span class="lineNum">     522 </span>                :            :                            NULL);</a>
-<a name="523"><span class="lineNum">     523 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="524"><span class="lineNum">     524 </span>                :            : </a>
-<a name="525"><span class="lineNum">     525 </span>                :            : static GtkWidget *</a>
-<a name="526"><span class="lineNum">     526 </span>                :<span class="lineNoCov">          0 : valent_sms_window_ensure_conversation (ValentSmsWindow *window,</span></a>
-<a name="527"><span class="lineNum">     527 </span>                :            :                                        gint64           thread_id)</a>
-<a name="528"><span class="lineNum">     528 </span>                :            : {</a>
-<a name="529"><span class="lineNum">     529 </span>                :            :   GtkWidget *conversation;</a>
-<a name="530"><span class="lineNum">     530 </span>                :<span class="lineNoCov">          0 :   g_autofree char *page_name = NULL;</span></a>
-<a name="531"><span class="lineNum">     531 </span>                :            : </a>
-<a name="532"><span class="lineNum">     532 </span>                :<span class="lineNoCov">          0 :   page_name = g_strdup_printf (&quot;%li&quot;, thread_id);</span></a>
-<a name="533"><span class="lineNum">     533 </span>                :<span class="lineNoCov">          0 :   conversation = gtk_stack_get_child_by_name (window-&gt;content, page_name);</span></a>
+<a name="510"><span class="lineNum">     510 </span>                :<span class="lineNoCov">          0 :   return row;</span></a>
+<a name="511"><span class="lineNum">     511 </span>                :            : }</a>
+<a name="512"><span class="lineNum">     512 </span>                :            : </a>
+<a name="513"><span class="lineNum">     513 </span>                :            : static void</a>
+<a name="514"><span class="lineNum">     514 </span>                :<span class="lineNoCov">          0 : conversation_list_populate (ValentSmsWindow *window)</span></a>
+<a name="515"><span class="lineNum">     515 </span>                :            : {</a>
+<a name="516"><span class="lineNum">     516 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GListModel) threads = NULL;</span></a>
+<a name="517"><span class="lineNum">     517 </span>                :            : </a>
+<a name="518"><span class="lineNum">     518 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (window));</span></a>
+<a name="519"><span class="lineNum">     519 </span>                :            : </a>
+<a name="520"><span class="lineNum">     520 </span>                :<span class="lineNoCov">          0 :   threads = valent_sms_store_get_summary (window-&gt;message_store);</span></a>
+<a name="521"><span class="lineNum">     521 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_bind_model (window-&gt;conversation_list,</span></a>
+<a name="522"><span class="lineNum">     522 </span>                :            :                            threads,</a>
+<a name="523"><span class="lineNum">     523 </span>                :            :                            conversation_list_create,</a>
+<a name="524"><span class="lineNum">     524 </span>                :            :                            window,</a>
+<a name="525"><span class="lineNum">     525 </span>                :            :                            NULL);</a>
+<a name="526"><span class="lineNum">     526 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="527"><span class="lineNum">     527 </span>                :            : </a>
+<a name="528"><span class="lineNum">     528 </span>                :            : static GtkWidget *</a>
+<a name="529"><span class="lineNum">     529 </span>                :<span class="lineNoCov">          0 : valent_sms_window_ensure_conversation (ValentSmsWindow *window,</span></a>
+<a name="530"><span class="lineNum">     530 </span>                :            :                                        gint64           thread_id)</a>
+<a name="531"><span class="lineNum">     531 </span>                :            : {</a>
+<a name="532"><span class="lineNum">     532 </span>                :            :   GtkWidget *conversation;</a>
+<a name="533"><span class="lineNum">     533 </span>                :<span class="lineNoCov">          0 :   g_autofree char *page_name = NULL;</span></a>
 <a name="534"><span class="lineNum">     534 </span>                :            : </a>
-<a name="535"><span class="lineNum">     535 </span>                :<span class="lineNoCov">          0 :   if (conversation == NULL)</span></a>
-<a name="536"><span class="lineNum">     536 </span>                :            :     {</a>
-<a name="537"><span class="lineNum">     537 </span>                :<span class="lineNoCov">          0 :       conversation = g_object_new (VALENT_TYPE_SMS_CONVERSATION,</span></a>
-<a name="538"><span class="lineNum">     538 </span>                :            :                                    &quot;contact-store&quot;, window-&gt;contact_store,</a>
-<a name="539"><span class="lineNum">     539 </span>                :            :                                    &quot;message-store&quot;, window-&gt;message_store,</a>
-<a name="540"><span class="lineNum">     540 </span>                :            :                                    &quot;thread-id&quot;,     thread_id,</a>
-<a name="541"><span class="lineNum">     541 </span>                :            :                                    NULL);</a>
-<a name="542"><span class="lineNum">     542 </span>                :            : </a>
-<a name="543"><span class="lineNum">     543 </span>                :<span class="lineNoCov">          0 :       g_object_bind_property (window,       &quot;contact-store&quot;,</span></a>
-<a name="544"><span class="lineNum">     544 </span>                :            :                               conversation, &quot;contact-store&quot;,</a>
-<a name="545"><span class="lineNum">     545 </span>                :            :                               G_BINDING_DEFAULT);</a>
-<a name="546"><span class="lineNum">     546 </span>                :            : </a>
-<a name="547"><span class="lineNum">     547 </span>                :<span class="lineNoCov">          0 :       g_signal_connect (G_OBJECT (conversation),</span></a>
-<a name="548"><span class="lineNum">     548 </span>                :            :                         &quot;send-message&quot;,</a>
-<a name="549"><span class="lineNum">     549 </span>                :            :                         G_CALLBACK (on_send_message),</a>
-<a name="550"><span class="lineNum">     550 </span>                :            :                         window);</a>
-<a name="551"><span class="lineNum">     551 </span>                :            : </a>
-<a name="552"><span class="lineNum">     552 </span>                :<span class="lineNoCov">          0 :       gtk_stack_add_named (window-&gt;content, conversation, page_name);</span></a>
-<a name="553"><span class="lineNum">     553 </span>                :            :     }</a>
+<a name="535"><span class="lineNum">     535 </span>                :<span class="lineNoCov">          0 :   page_name = g_strdup_printf (&quot;%li&quot;, thread_id);</span></a>
+<a name="536"><span class="lineNum">     536 </span>                :<span class="lineNoCov">          0 :   conversation = gtk_stack_get_child_by_name (window-&gt;content, page_name);</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :            : </a>
+<a name="538"><span class="lineNum">     538 </span>                :<span class="lineNoCov">          0 :   if (conversation == NULL)</span></a>
+<a name="539"><span class="lineNum">     539 </span>                :            :     {</a>
+<a name="540"><span class="lineNum">     540 </span>                :<span class="lineNoCov">          0 :       conversation = g_object_new (VALENT_TYPE_SMS_CONVERSATION,</span></a>
+<a name="541"><span class="lineNum">     541 </span>                :            :                                    &quot;contact-store&quot;, window-&gt;contact_store,</a>
+<a name="542"><span class="lineNum">     542 </span>                :            :                                    &quot;message-store&quot;, window-&gt;message_store,</a>
+<a name="543"><span class="lineNum">     543 </span>                :            :                                    &quot;thread-id&quot;,     thread_id,</a>
+<a name="544"><span class="lineNum">     544 </span>                :            :                                    NULL);</a>
+<a name="545"><span class="lineNum">     545 </span>                :            : </a>
+<a name="546"><span class="lineNum">     546 </span>                :<span class="lineNoCov">          0 :       g_object_bind_property (window,       &quot;contact-store&quot;,</span></a>
+<a name="547"><span class="lineNum">     547 </span>                :            :                               conversation, &quot;contact-store&quot;,</a>
+<a name="548"><span class="lineNum">     548 </span>                :            :                               G_BINDING_DEFAULT);</a>
+<a name="549"><span class="lineNum">     549 </span>                :            : </a>
+<a name="550"><span class="lineNum">     550 </span>                :<span class="lineNoCov">          0 :       g_signal_connect (G_OBJECT (conversation),</span></a>
+<a name="551"><span class="lineNum">     551 </span>                :            :                         &quot;send-message&quot;,</a>
+<a name="552"><span class="lineNum">     552 </span>                :            :                         G_CALLBACK (on_send_message),</a>
+<a name="553"><span class="lineNum">     553 </span>                :            :                         window);</a>
 <a name="554"><span class="lineNum">     554 </span>                :            : </a>
-<a name="555"><span class="lineNum">     555 </span>                :<span class="lineNoCov">          0 :   return conversation;</span></a>
-<a name="556"><span class="lineNum">     556 </span>                :            : }</a>
+<a name="555"><span class="lineNum">     555 </span>                :<span class="lineNoCov">          0 :       gtk_stack_add_named (window-&gt;content, conversation, page_name);</span></a>
+<a name="556"><span class="lineNum">     556 </span>                :            :     }</a>
 <a name="557"><span class="lineNum">     557 </span>                :            : </a>
-<a name="558"><span class="lineNum">     558 </span>                :            : static void</a>
-<a name="559"><span class="lineNum">     559 </span>                :<span class="lineNoCov">          0 : on_conversation_activated (GtkListBox      *box,</span></a>
-<a name="560"><span class="lineNum">     560 </span>                :            :                            GtkListBoxRow   *row,</a>
-<a name="561"><span class="lineNum">     561 </span>                :            :                            ValentSmsWindow *self)</a>
-<a name="562"><span class="lineNum">     562 </span>                :            : {</a>
-<a name="563"><span class="lineNum">     563 </span>                :            :   ValentMessageRow *summary;</a>
-<a name="564"><span class="lineNum">     564 </span>                :            :   gint64 thread_id;</a>
-<a name="565"><span class="lineNum">     565 </span>                :            : </a>
-<a name="566"><span class="lineNum">     566 </span>                :            :   /* Deselect */</a>
-<a name="567"><span class="lineNum">     567 </span>                :<span class="lineNoCov">          0 :   if (row == NULL)</span></a>
-<a name="568"><span class="lineNum">     568 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
-<a name="569"><span class="lineNum">     569 </span>                :            : </a>
-<a name="570"><span class="lineNum">     570 </span>                :<span class="lineNoCov">          0 :   summary = VALENT_MESSAGE_ROW (row);</span></a>
-<a name="571"><span class="lineNum">     571 </span>                :<span class="lineNoCov">          0 :   thread_id = valent_message_row_get_thread_id (summary);</span></a>
+<a name="558"><span class="lineNum">     558 </span>                :<span class="lineNoCov">          0 :   return conversation;</span></a>
+<a name="559"><span class="lineNum">     559 </span>                :            : }</a>
+<a name="560"><span class="lineNum">     560 </span>                :            : </a>
+<a name="561"><span class="lineNum">     561 </span>                :            : static void</a>
+<a name="562"><span class="lineNum">     562 </span>                :<span class="lineNoCov">          0 : on_conversation_activated (GtkListBox      *box,</span></a>
+<a name="563"><span class="lineNum">     563 </span>                :            :                            GtkListBoxRow   *row,</a>
+<a name="564"><span class="lineNum">     564 </span>                :            :                            ValentSmsWindow *self)</a>
+<a name="565"><span class="lineNum">     565 </span>                :            : {</a>
+<a name="566"><span class="lineNum">     566 </span>                :            :   ValentMessageRow *summary;</a>
+<a name="567"><span class="lineNum">     567 </span>                :            :   gint64 thread_id;</a>
+<a name="568"><span class="lineNum">     568 </span>                :            : </a>
+<a name="569"><span class="lineNum">     569 </span>                :            :   /* Deselect */</a>
+<a name="570"><span class="lineNum">     570 </span>                :<span class="lineNoCov">          0 :   if (row == NULL)</span></a>
+<a name="571"><span class="lineNum">     571 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
 <a name="572"><span class="lineNum">     572 </span>                :            : </a>
-<a name="573"><span class="lineNum">     573 </span>                :<span class="lineNoCov">          0 :   valent_sms_window_set_active_thread (self, thread_id);</span></a>
-<a name="574"><span class="lineNum">     574 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_FORWARD);</span></a>
-<a name="575"><span class="lineNum">     575 </span>                :            : }</a>
-<a name="576"><span class="lineNum">     576 </span>                :            : </a>
-<a name="577"><span class="lineNum">     577 </span>                :            : static void</a>
-<a name="578"><span class="lineNum">     578 </span>                :<span class="lineNoCov">          0 : on_message_removed (ValentSmsWindow  *window,</span></a>
-<a name="579"><span class="lineNum">     579 </span>                :            :                     gint64            thread_id,</a>
-<a name="580"><span class="lineNum">     580 </span>                :            :                     ValentSmsMessage *message,</a>
-<a name="581"><span class="lineNum">     581 </span>                :            :                     ValentSmsStore   *model)</a>
-<a name="582"><span class="lineNum">     582 </span>                :            : {</a>
-<a name="583"><span class="lineNum">     583 </span>                :            :   GtkWidget *conversation;</a>
-<a name="584"><span class="lineNum">     584 </span>                :<span class="lineNoCov">          0 :   g_autofree char *thread_str = NULL;</span></a>
-<a name="585"><span class="lineNum">     585 </span>                :            : </a>
-<a name="586"><span class="lineNum">     586 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (window));</span></a>
-<a name="587"><span class="lineNum">     587 </span>                :            : </a>
-<a name="588"><span class="lineNum">     588 </span>                :            :   /* If @message is %NULL, the thread is being removed, which is what we're</a>
-<a name="589"><span class="lineNum">     589 </span>                :            :    * interested in */</a>
-<a name="590"><span class="lineNum">     590 </span>                :<span class="lineNoCov">          0 :   if (message != NULL)</span></a>
-<a name="591"><span class="lineNum">     591 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
-<a name="592"><span class="lineNum">     592 </span>                :            : </a>
-<a name="593"><span class="lineNum">     593 </span>                :            :   /* The GListModel handles the sidebar, so we only destroy the conversation */</a>
-<a name="594"><span class="lineNum">     594 </span>                :<span class="lineNoCov">          0 :   thread_str = g_strdup_printf (&quot;%li&quot;, thread_id);</span></a>
-<a name="595"><span class="lineNum">     595 </span>                :<span class="lineNoCov">          0 :   conversation = gtk_stack_get_child_by_name (window-&gt;content, thread_str);</span></a>
-<a name="596"><span class="lineNum">     596 </span>                :            : </a>
-<a name="597"><span class="lineNum">     597 </span>                :<span class="lineNoCov">          0 :   if (conversation != NULL)</span></a>
-<a name="598"><span class="lineNum">     598 </span>                :<span class="lineNoCov">          0 :     gtk_stack_remove (window-&gt;content, conversation);</span></a>
-<a name="599"><span class="lineNum">     599 </span>                :            : }</a>
-<a name="600"><span class="lineNum">     600 </span>                :            : </a>
-<a name="601"><span class="lineNum">     601 </span>                :            : /*</a>
-<a name="602"><span class="lineNum">     602 </span>                :            :  * GActions</a>
-<a name="603"><span class="lineNum">     603 </span>                :            :  */</a>
-<a name="604"><span class="lineNum">     604 </span>                :            : static void</a>
-<a name="605"><span class="lineNum">     605 </span>                :<span class="lineNoCov">          0 : new_action (GSimpleAction *action,</span></a>
-<a name="606"><span class="lineNum">     606 </span>                :            :             GVariant      *parameter,</a>
-<a name="607"><span class="lineNum">     607 </span>                :            :             gpointer       user_data)</a>
-<a name="608"><span class="lineNum">     608 </span>                :            : {</a>
-<a name="609"><span class="lineNum">     609 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (user_data);</span></a>
-<a name="610"><span class="lineNum">     610 </span>                :            : </a>
-<a name="611"><span class="lineNum">     611 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (self));</span></a>
-<a name="612"><span class="lineNum">     612 </span>                :            : </a>
-<a name="613"><span class="lineNum">     613 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_select_row (self-&gt;conversation_list, NULL);</span></a>
-<a name="614"><span class="lineNum">     614 </span>                :<span class="lineNoCov">          0 :   gtk_label_set_label (self-&gt;content_title, _(&quot;New Conversation&quot;));</span></a>
-<a name="615"><span class="lineNum">     615 </span>                :<span class="lineNoCov">          0 :   gtk_stack_set_visible_child_name (self-&gt;content, &quot;contacts&quot;);</span></a>
-<a name="616"><span class="lineNum">     616 </span>                :<span class="lineNoCov">          0 :   gtk_widget_grab_focus (GTK_WIDGET (self-&gt;contact_search_entry));</span></a>
-<a name="617"><span class="lineNum">     617 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_FORWARD);</span></a>
-<a name="618"><span class="lineNum">     618 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="619"><span class="lineNum">     619 </span>                :            : </a>
-<a name="620"><span class="lineNum">     620 </span>                :            : static void</a>
-<a name="621"><span class="lineNum">     621 </span>                :<span class="lineNoCov">          0 : previous_action (GSimpleAction *action,</span></a>
-<a name="622"><span class="lineNum">     622 </span>                :            :                  GVariant      *parameter,</a>
-<a name="623"><span class="lineNum">     623 </span>                :            :                  gpointer       user_data)</a>
-<a name="624"><span class="lineNum">     624 </span>                :            : {</a>
-<a name="625"><span class="lineNum">     625 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (user_data);</span></a>
-<a name="626"><span class="lineNum">     626 </span>                :            : </a>
-<a name="627"><span class="lineNum">     627 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (self));</span></a>
-<a name="628"><span class="lineNum">     628 </span>                :            : </a>
-<a name="629"><span class="lineNum">     629 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_BACK);</span></a>
-<a name="630"><span class="lineNum">     630 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="573"><span class="lineNum">     573 </span>                :<span class="lineNoCov">          0 :   summary = VALENT_MESSAGE_ROW (row);</span></a>
+<a name="574"><span class="lineNum">     574 </span>                :<span class="lineNoCov">          0 :   thread_id = valent_message_row_get_thread_id (summary);</span></a>
+<a name="575"><span class="lineNum">     575 </span>                :            : </a>
+<a name="576"><span class="lineNum">     576 </span>                :<span class="lineNoCov">          0 :   valent_sms_window_set_active_thread (self, thread_id);</span></a>
+<a name="577"><span class="lineNum">     577 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_FORWARD);</span></a>
+<a name="578"><span class="lineNum">     578 </span>                :            : }</a>
+<a name="579"><span class="lineNum">     579 </span>                :            : </a>
+<a name="580"><span class="lineNum">     580 </span>                :            : static void</a>
+<a name="581"><span class="lineNum">     581 </span>                :<span class="lineNoCov">          0 : on_message_removed (ValentSmsWindow  *window,</span></a>
+<a name="582"><span class="lineNum">     582 </span>                :            :                     gint64            thread_id,</a>
+<a name="583"><span class="lineNum">     583 </span>                :            :                     ValentSmsMessage *message,</a>
+<a name="584"><span class="lineNum">     584 </span>                :            :                     ValentSmsStore   *model)</a>
+<a name="585"><span class="lineNum">     585 </span>                :            : {</a>
+<a name="586"><span class="lineNum">     586 </span>                :            :   GtkWidget *conversation;</a>
+<a name="587"><span class="lineNum">     587 </span>                :<span class="lineNoCov">          0 :   g_autofree char *thread_str = NULL;</span></a>
+<a name="588"><span class="lineNum">     588 </span>                :            : </a>
+<a name="589"><span class="lineNum">     589 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (window));</span></a>
+<a name="590"><span class="lineNum">     590 </span>                :            : </a>
+<a name="591"><span class="lineNum">     591 </span>                :            :   /* If @message is %NULL, the thread is being removed, which is what we're</a>
+<a name="592"><span class="lineNum">     592 </span>                :            :    * interested in */</a>
+<a name="593"><span class="lineNum">     593 </span>                :<span class="lineNoCov">          0 :   if (message != NULL)</span></a>
+<a name="594"><span class="lineNum">     594 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
+<a name="595"><span class="lineNum">     595 </span>                :            : </a>
+<a name="596"><span class="lineNum">     596 </span>                :            :   /* The GListModel handles the sidebar, so we only destroy the conversation */</a>
+<a name="597"><span class="lineNum">     597 </span>                :<span class="lineNoCov">          0 :   thread_str = g_strdup_printf (&quot;%li&quot;, thread_id);</span></a>
+<a name="598"><span class="lineNum">     598 </span>                :<span class="lineNoCov">          0 :   conversation = gtk_stack_get_child_by_name (window-&gt;content, thread_str);</span></a>
+<a name="599"><span class="lineNum">     599 </span>                :            : </a>
+<a name="600"><span class="lineNum">     600 </span>                :<span class="lineNoCov">          0 :   if (conversation != NULL)</span></a>
+<a name="601"><span class="lineNum">     601 </span>                :<span class="lineNoCov">          0 :     gtk_stack_remove (window-&gt;content, conversation);</span></a>
+<a name="602"><span class="lineNum">     602 </span>                :            : }</a>
+<a name="603"><span class="lineNum">     603 </span>                :            : </a>
+<a name="604"><span class="lineNum">     604 </span>                :            : /*</a>
+<a name="605"><span class="lineNum">     605 </span>                :            :  * GActions</a>
+<a name="606"><span class="lineNum">     606 </span>                :            :  */</a>
+<a name="607"><span class="lineNum">     607 </span>                :            : static void</a>
+<a name="608"><span class="lineNum">     608 </span>                :<span class="lineNoCov">          0 : new_action (GSimpleAction *action,</span></a>
+<a name="609"><span class="lineNum">     609 </span>                :            :             GVariant      *parameter,</a>
+<a name="610"><span class="lineNum">     610 </span>                :            :             gpointer       user_data)</a>
+<a name="611"><span class="lineNum">     611 </span>                :            : {</a>
+<a name="612"><span class="lineNum">     612 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (user_data);</span></a>
+<a name="613"><span class="lineNum">     613 </span>                :            : </a>
+<a name="614"><span class="lineNum">     614 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (self));</span></a>
+<a name="615"><span class="lineNum">     615 </span>                :            : </a>
+<a name="616"><span class="lineNum">     616 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_select_row (self-&gt;conversation_list, NULL);</span></a>
+<a name="617"><span class="lineNum">     617 </span>                :<span class="lineNoCov">          0 :   gtk_label_set_label (self-&gt;content_title, _(&quot;New Conversation&quot;));</span></a>
+<a name="618"><span class="lineNum">     618 </span>                :<span class="lineNoCov">          0 :   gtk_stack_set_visible_child_name (self-&gt;content, &quot;contacts&quot;);</span></a>
+<a name="619"><span class="lineNum">     619 </span>                :<span class="lineNoCov">          0 :   gtk_widget_grab_focus (GTK_WIDGET (self-&gt;contact_search_entry));</span></a>
+<a name="620"><span class="lineNum">     620 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_FORWARD);</span></a>
+<a name="621"><span class="lineNum">     621 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="622"><span class="lineNum">     622 </span>                :            : </a>
+<a name="623"><span class="lineNum">     623 </span>                :            : static void</a>
+<a name="624"><span class="lineNum">     624 </span>                :<span class="lineNoCov">          0 : previous_action (GSimpleAction *action,</span></a>
+<a name="625"><span class="lineNum">     625 </span>                :            :                  GVariant      *parameter,</a>
+<a name="626"><span class="lineNum">     626 </span>                :            :                  gpointer       user_data)</a>
+<a name="627"><span class="lineNum">     627 </span>                :            : {</a>
+<a name="628"><span class="lineNum">     628 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (user_data);</span></a>
+<a name="629"><span class="lineNum">     629 </span>                :            : </a>
+<a name="630"><span class="lineNum">     630 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (self));</span></a>
 <a name="631"><span class="lineNum">     631 </span>                :            : </a>
-<a name="632"><span class="lineNum">     632 </span>                :            : static void</a>
-<a name="633"><span class="lineNum">     633 </span>                :<span class="lineNoCov">          0 : search_action (GSimpleAction *action,</span></a>
-<a name="634"><span class="lineNum">     634 </span>                :            :                GVariant      *parameter,</a>
-<a name="635"><span class="lineNum">     635 </span>                :            :                gpointer       user_data)</a>
-<a name="636"><span class="lineNum">     636 </span>                :            : {</a>
-<a name="637"><span class="lineNum">     637 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (user_data);</span></a>
-<a name="638"><span class="lineNum">     638 </span>                :            : </a>
-<a name="639"><span class="lineNum">     639 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (self));</span></a>
-<a name="640"><span class="lineNum">     640 </span>                :            : </a>
-<a name="641"><span class="lineNum">     641 </span>                :<span class="lineNoCov">          0 :   gtk_label_set_label (self-&gt;content_title, _(&quot;Search Messages&quot;));</span></a>
-<a name="642"><span class="lineNum">     642 </span>                :<span class="lineNoCov">          0 :   gtk_stack_set_visible_child_name (self-&gt;content, &quot;search&quot;);</span></a>
-<a name="643"><span class="lineNum">     643 </span>                :<span class="lineNoCov">          0 :   gtk_widget_grab_focus (GTK_WIDGET (self-&gt;message_search_entry));</span></a>
-<a name="644"><span class="lineNum">     644 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_FORWARD);</span></a>
-<a name="645"><span class="lineNum">     645 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="646"><span class="lineNum">     646 </span>                :            : </a>
-<a name="647"><span class="lineNum">     647 </span>                :            : static const GActionEntry actions[] = {</a>
-<a name="648"><span class="lineNum">     648 </span>                :            :     {&quot;new&quot;,      new_action,      NULL, NULL, NULL},</a>
-<a name="649"><span class="lineNum">     649 </span>                :            :     {&quot;previous&quot;, previous_action, NULL, NULL, NULL},</a>
-<a name="650"><span class="lineNum">     650 </span>                :            :     {&quot;search&quot;,   search_action,   NULL, NULL, NULL}</a>
-<a name="651"><span class="lineNum">     651 </span>                :            : };</a>
-<a name="652"><span class="lineNum">     652 </span>                :            : </a>
-<a name="653"><span class="lineNum">     653 </span>                :            : </a>
-<a name="654"><span class="lineNum">     654 </span>                :            : /*</a>
-<a name="655"><span class="lineNum">     655 </span>                :            :  * GObject</a>
-<a name="656"><span class="lineNum">     656 </span>                :            :  */</a>
-<a name="657"><span class="lineNum">     657 </span>                :            : static void</a>
-<a name="658"><span class="lineNum">     658 </span>                :<span class="lineNoCov">          0 : valent_sms_window_constructed (GObject *object)</span></a>
-<a name="659"><span class="lineNum">     659 </span>                :            : {</a>
-<a name="660"><span class="lineNum">     660 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
-<a name="661"><span class="lineNum">     661 </span>                :            : </a>
-<a name="662"><span class="lineNum">     662 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_CONTACT_STORE (self-&gt;contact_store));</span></a>
-<a name="663"><span class="lineNum">     663 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_STORE (self-&gt;message_store));</span></a>
+<a name="632"><span class="lineNum">     632 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_BACK);</span></a>
+<a name="633"><span class="lineNum">     633 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="634"><span class="lineNum">     634 </span>                :            : </a>
+<a name="635"><span class="lineNum">     635 </span>                :            : static void</a>
+<a name="636"><span class="lineNum">     636 </span>                :<span class="lineNoCov">          0 : search_action (GSimpleAction *action,</span></a>
+<a name="637"><span class="lineNum">     637 </span>                :            :                GVariant      *parameter,</a>
+<a name="638"><span class="lineNum">     638 </span>                :            :                gpointer       user_data)</a>
+<a name="639"><span class="lineNum">     639 </span>                :            : {</a>
+<a name="640"><span class="lineNum">     640 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (user_data);</span></a>
+<a name="641"><span class="lineNum">     641 </span>                :            : </a>
+<a name="642"><span class="lineNum">     642 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_WINDOW (self));</span></a>
+<a name="643"><span class="lineNum">     643 </span>                :            : </a>
+<a name="644"><span class="lineNum">     644 </span>                :<span class="lineNoCov">          0 :   gtk_label_set_label (self-&gt;content_title, _(&quot;Search Messages&quot;));</span></a>
+<a name="645"><span class="lineNum">     645 </span>                :<span class="lineNoCov">          0 :   gtk_stack_set_visible_child_name (self-&gt;content, &quot;search&quot;);</span></a>
+<a name="646"><span class="lineNum">     646 </span>                :<span class="lineNoCov">          0 :   gtk_widget_grab_focus (GTK_WIDGET (self-&gt;message_search_entry));</span></a>
+<a name="647"><span class="lineNum">     647 </span>                :<span class="lineNoCov">          0 :   adw_leaflet_navigate (self-&gt;content_box, ADW_NAVIGATION_DIRECTION_FORWARD);</span></a>
+<a name="648"><span class="lineNum">     648 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="649"><span class="lineNum">     649 </span>                :            : </a>
+<a name="650"><span class="lineNum">     650 </span>                :            : static const GActionEntry actions[] = {</a>
+<a name="651"><span class="lineNum">     651 </span>                :            :     {&quot;new&quot;,      new_action,      NULL, NULL, NULL},</a>
+<a name="652"><span class="lineNum">     652 </span>                :            :     {&quot;previous&quot;, previous_action, NULL, NULL, NULL},</a>
+<a name="653"><span class="lineNum">     653 </span>                :            :     {&quot;search&quot;,   search_action,   NULL, NULL, NULL}</a>
+<a name="654"><span class="lineNum">     654 </span>                :            : };</a>
+<a name="655"><span class="lineNum">     655 </span>                :            : </a>
+<a name="656"><span class="lineNum">     656 </span>                :            : </a>
+<a name="657"><span class="lineNum">     657 </span>                :            : /*</a>
+<a name="658"><span class="lineNum">     658 </span>                :            :  * GObject</a>
+<a name="659"><span class="lineNum">     659 </span>                :            :  */</a>
+<a name="660"><span class="lineNum">     660 </span>                :            : static void</a>
+<a name="661"><span class="lineNum">     661 </span>                :<span class="lineNoCov">          0 : valent_sms_window_constructed (GObject *object)</span></a>
+<a name="662"><span class="lineNum">     662 </span>                :            : {</a>
+<a name="663"><span class="lineNum">     663 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
 <a name="664"><span class="lineNum">     664 </span>                :            : </a>
-<a name="665"><span class="lineNum">     665 </span>                :            :   /* Prepare conversation summaries */</a>
-<a name="666"><span class="lineNum">     666 </span>                :<span class="lineNoCov">          0 :   conversation_list_populate (self);</span></a>
-<a name="667"><span class="lineNum">     667 </span>                :<span class="lineNoCov">          0 :   g_signal_connect_swapped (self-&gt;message_store,</span></a>
-<a name="668"><span class="lineNum">     668 </span>                :            :                             &quot;message-removed&quot;,</a>
-<a name="669"><span class="lineNum">     669 </span>                :            :                             G_CALLBACK (on_message_removed),</a>
-<a name="670"><span class="lineNum">     670 </span>                :            :                             self);</a>
-<a name="671"><span class="lineNum">     671 </span>                :            : </a>
-<a name="672"><span class="lineNum">     672 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_sms_window_parent_class)-&gt;constructed (object);</span></a>
-<a name="673"><span class="lineNum">     673 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="665"><span class="lineNum">     665 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_CONTACT_STORE (self-&gt;contact_store));</span></a>
+<a name="666"><span class="lineNum">     666 </span>                :<span class="lineNoCov">          0 :   g_assert (VALENT_IS_SMS_STORE (self-&gt;message_store));</span></a>
+<a name="667"><span class="lineNum">     667 </span>                :            : </a>
+<a name="668"><span class="lineNum">     668 </span>                :            :   /* Prepare conversation summaries */</a>
+<a name="669"><span class="lineNum">     669 </span>                :<span class="lineNoCov">          0 :   conversation_list_populate (self);</span></a>
+<a name="670"><span class="lineNum">     670 </span>                :<span class="lineNoCov">          0 :   g_signal_connect_swapped (self-&gt;message_store,</span></a>
+<a name="671"><span class="lineNum">     671 </span>                :            :                             &quot;message-removed&quot;,</a>
+<a name="672"><span class="lineNum">     672 </span>                :            :                             G_CALLBACK (on_message_removed),</a>
+<a name="673"><span class="lineNum">     673 </span>                :            :                             self);</a>
 <a name="674"><span class="lineNum">     674 </span>                :            : </a>
-<a name="675"><span class="lineNum">     675 </span>                :            : static void</a>
-<a name="676"><span class="lineNum">     676 </span>                :<span class="lineNoCov">          0 : valent_sms_window_finalize (GObject *object)</span></a>
-<a name="677"><span class="lineNum">     677 </span>                :            : {</a>
-<a name="678"><span class="lineNum">     678 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
-<a name="679"><span class="lineNum">     679 </span>                :            : </a>
-<a name="680"><span class="lineNum">     680 </span>                :<span class="lineNoCov">          0 :   g_signal_handlers_disconnect_by_func (self-&gt;message_store,</span></a>
-<a name="681"><span class="lineNum">     681 </span>                :            :                                         on_message_removed,</a>
-<a name="682"><span class="lineNum">     682 </span>                :            :                                         self);</a>
-<a name="683"><span class="lineNum">     683 </span>                :            : </a>
-<a name="684"><span class="lineNum">     684 </span>                :<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;contact_store);</span></a>
-<a name="685"><span class="lineNum">     685 </span>                :<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;message_store);</span></a>
+<a name="675"><span class="lineNum">     675 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_sms_window_parent_class)-&gt;constructed (object);</span></a>
+<a name="676"><span class="lineNum">     676 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="677"><span class="lineNum">     677 </span>                :            : </a>
+<a name="678"><span class="lineNum">     678 </span>                :            : static void</a>
+<a name="679"><span class="lineNum">     679 </span>                :<span class="lineNoCov">          0 : valent_sms_window_finalize (GObject *object)</span></a>
+<a name="680"><span class="lineNum">     680 </span>                :            : {</a>
+<a name="681"><span class="lineNum">     681 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
+<a name="682"><span class="lineNum">     682 </span>                :            : </a>
+<a name="683"><span class="lineNum">     683 </span>                :<span class="lineNoCov">          0 :   g_signal_handlers_disconnect_by_func (self-&gt;message_store,</span></a>
+<a name="684"><span class="lineNum">     684 </span>                :            :                                         on_message_removed,</a>
+<a name="685"><span class="lineNum">     685 </span>                :            :                                         self);</a>
 <a name="686"><span class="lineNum">     686 </span>                :            : </a>
-<a name="687"><span class="lineNum">     687 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_sms_window_parent_class)-&gt;finalize (object);</span></a>
-<a name="688"><span class="lineNum">     688 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="687"><span class="lineNum">     687 </span>                :<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;contact_store);</span></a>
+<a name="688"><span class="lineNum">     688 </span>                :<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;message_store);</span></a>
 <a name="689"><span class="lineNum">     689 </span>                :            : </a>
-<a name="690"><span class="lineNum">     690 </span>                :            : static void</a>
-<a name="691"><span class="lineNum">     691 </span>                :<span class="lineNoCov">          0 : valent_sms_window_get_property (GObject    *object,</span></a>
-<a name="692"><span class="lineNum">     692 </span>                :            :                                 guint       prop_id,</a>
-<a name="693"><span class="lineNum">     693 </span>                :            :                                 GValue     *value,</a>
-<a name="694"><span class="lineNum">     694 </span>                :            :                                 GParamSpec *pspec)</a>
-<a name="695"><span class="lineNum">     695 </span>                :            : {</a>
-<a name="696"><span class="lineNum">     696 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
-<a name="697"><span class="lineNum">     697 </span>                :            : </a>
-<a name="698"><span class="lineNum">     698 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
-<a name="699"><span class="lineNum">     699 </span>                :            :     {</a>
-<a name="700"><span class="lineNum">     700 </span>                :<span class="lineNoCov">          0 :     case PROP_CONTACT_STORE:</span></a>
-<a name="701"><span class="lineNum">     701 </span>                :<span class="lineNoCov">          0 :       g_value_set_object (value, self-&gt;contact_store);</span></a>
-<a name="702"><span class="lineNum">     702 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
-<a name="703"><span class="lineNum">     703 </span>                :            : </a>
-<a name="704"><span class="lineNum">     704 </span>                :<span class="lineNoCov">          0 :     case PROP_MESSAGE_STORE:</span></a>
-<a name="705"><span class="lineNum">     705 </span>                :<span class="lineNoCov">          0 :       g_value_set_object (value, self-&gt;message_store);</span></a>
-<a name="706"><span class="lineNum">     706 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
-<a name="707"><span class="lineNum">     707 </span>                :            : </a>
-<a name="708"><span class="lineNum">     708 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="709"><span class="lineNum">     709 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="710"><span class="lineNum">     710 </span>                :            :     }</a>
-<a name="711"><span class="lineNum">     711 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="712"><span class="lineNum">     712 </span>                :            : </a>
-<a name="713"><span class="lineNum">     713 </span>                :            : static void</a>
-<a name="714"><span class="lineNum">     714 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_property (GObject      *object,</span></a>
-<a name="715"><span class="lineNum">     715 </span>                :            :                                 guint         prop_id,</a>
-<a name="716"><span class="lineNum">     716 </span>                :            :                                 const GValue *value,</a>
-<a name="717"><span class="lineNum">     717 </span>                :            :                                 GParamSpec   *pspec)</a>
-<a name="718"><span class="lineNum">     718 </span>                :            : {</a>
-<a name="719"><span class="lineNum">     719 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
-<a name="720"><span class="lineNum">     720 </span>                :            : </a>
-<a name="721"><span class="lineNum">     721 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
-<a name="722"><span class="lineNum">     722 </span>                :            :     {</a>
-<a name="723"><span class="lineNum">     723 </span>                :<span class="lineNoCov">          0 :     case PROP_CONTACT_STORE:</span></a>
-<a name="724"><span class="lineNum">     724 </span>                :<span class="lineNoCov">          0 :       valent_sms_window_set_contact_store (self, g_value_get_object (value));</span></a>
-<a name="725"><span class="lineNum">     725 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
-<a name="726"><span class="lineNum">     726 </span>                :            : </a>
-<a name="727"><span class="lineNum">     727 </span>                :<span class="lineNoCov">          0 :     case PROP_MESSAGE_STORE:</span></a>
-<a name="728"><span class="lineNum">     728 </span>                :<span class="lineNoCov">          0 :       g_set_object (&amp;self-&gt;message_store, g_value_get_object (value));</span></a>
-<a name="729"><span class="lineNum">     729 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
-<a name="730"><span class="lineNum">     730 </span>                :            : </a>
-<a name="731"><span class="lineNum">     731 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="732"><span class="lineNum">     732 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="733"><span class="lineNum">     733 </span>                :            :     }</a>
-<a name="734"><span class="lineNum">     734 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="735"><span class="lineNum">     735 </span>                :            : </a>
-<a name="736"><span class="lineNum">     736 </span>                :            : static void</a>
-<a name="737"><span class="lineNum">     737 </span>                :<span class="lineNoCov">          0 : valent_sms_window_class_init (ValentSmsWindowClass *klass)</span></a>
-<a name="738"><span class="lineNum">     738 </span>                :            : {</a>
-<a name="739"><span class="lineNum">     739 </span>                :<span class="lineNoCov">          0 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="740"><span class="lineNum">     740 </span>                :<span class="lineNoCov">          0 :   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);</span></a>
-<a name="741"><span class="lineNum">     741 </span>                :            : </a>
-<a name="742"><span class="lineNum">     742 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;constructed = valent_sms_window_constructed;</span></a>
-<a name="743"><span class="lineNum">     743 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;finalize = valent_sms_window_finalize;</span></a>
-<a name="744"><span class="lineNum">     744 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;get_property = valent_sms_window_get_property;</span></a>
-<a name="745"><span class="lineNum">     745 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;set_property = valent_sms_window_set_property;</span></a>
-<a name="746"><span class="lineNum">     746 </span>                :            : </a>
-<a name="747"><span class="lineNum">     747 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_set_template_from_resource (widget_class, &quot;/plugins/sms/valent-sms-window.ui&quot;);</span></a>
-<a name="748"><span class="lineNum">     748 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_box);</span></a>
-<a name="749"><span class="lineNum">     749 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_header);</span></a>
-<a name="750"><span class="lineNum">     750 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, sidebar_header);</span></a>
-<a name="751"><span class="lineNum">     751 </span>                :            : </a>
-<a name="752"><span class="lineNum">     752 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_title);</span></a>
-<a name="753"><span class="lineNum">     753 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_layout);</span></a>
+<a name="690"><span class="lineNum">     690 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_sms_window_parent_class)-&gt;finalize (object);</span></a>
+<a name="691"><span class="lineNum">     691 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="692"><span class="lineNum">     692 </span>                :            : </a>
+<a name="693"><span class="lineNum">     693 </span>                :            : static void</a>
+<a name="694"><span class="lineNum">     694 </span>                :<span class="lineNoCov">          0 : valent_sms_window_get_property (GObject    *object,</span></a>
+<a name="695"><span class="lineNum">     695 </span>                :            :                                 guint       prop_id,</a>
+<a name="696"><span class="lineNum">     696 </span>                :            :                                 GValue     *value,</a>
+<a name="697"><span class="lineNum">     697 </span>                :            :                                 GParamSpec *pspec)</a>
+<a name="698"><span class="lineNum">     698 </span>                :            : {</a>
+<a name="699"><span class="lineNum">     699 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
+<a name="700"><span class="lineNum">     700 </span>                :            : </a>
+<a name="701"><span class="lineNum">     701 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
+<a name="702"><span class="lineNum">     702 </span>                :            :     {</a>
+<a name="703"><span class="lineNum">     703 </span>                :<span class="lineNoCov">          0 :     case PROP_CONTACT_STORE:</span></a>
+<a name="704"><span class="lineNum">     704 </span>                :<span class="lineNoCov">          0 :       g_value_set_object (value, self-&gt;contact_store);</span></a>
+<a name="705"><span class="lineNum">     705 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="706"><span class="lineNum">     706 </span>                :            : </a>
+<a name="707"><span class="lineNum">     707 </span>                :<span class="lineNoCov">          0 :     case PROP_MESSAGE_STORE:</span></a>
+<a name="708"><span class="lineNum">     708 </span>                :<span class="lineNoCov">          0 :       g_value_set_object (value, self-&gt;message_store);</span></a>
+<a name="709"><span class="lineNum">     709 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="710"><span class="lineNum">     710 </span>                :            : </a>
+<a name="711"><span class="lineNum">     711 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="712"><span class="lineNum">     712 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="713"><span class="lineNum">     713 </span>                :            :     }</a>
+<a name="714"><span class="lineNum">     714 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="715"><span class="lineNum">     715 </span>                :            : </a>
+<a name="716"><span class="lineNum">     716 </span>                :            : static void</a>
+<a name="717"><span class="lineNum">     717 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_property (GObject      *object,</span></a>
+<a name="718"><span class="lineNum">     718 </span>                :            :                                 guint         prop_id,</a>
+<a name="719"><span class="lineNum">     719 </span>                :            :                                 const GValue *value,</a>
+<a name="720"><span class="lineNum">     720 </span>                :            :                                 GParamSpec   *pspec)</a>
+<a name="721"><span class="lineNum">     721 </span>                :            : {</a>
+<a name="722"><span class="lineNum">     722 </span>                :<span class="lineNoCov">          0 :   ValentSmsWindow *self = VALENT_SMS_WINDOW (object);</span></a>
+<a name="723"><span class="lineNum">     723 </span>                :            : </a>
+<a name="724"><span class="lineNum">     724 </span>                :<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
+<a name="725"><span class="lineNum">     725 </span>                :            :     {</a>
+<a name="726"><span class="lineNum">     726 </span>                :<span class="lineNoCov">          0 :     case PROP_CONTACT_STORE:</span></a>
+<a name="727"><span class="lineNum">     727 </span>                :<span class="lineNoCov">          0 :       valent_sms_window_set_contact_store (self, g_value_get_object (value));</span></a>
+<a name="728"><span class="lineNum">     728 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="729"><span class="lineNum">     729 </span>                :            : </a>
+<a name="730"><span class="lineNum">     730 </span>                :<span class="lineNoCov">          0 :     case PROP_MESSAGE_STORE:</span></a>
+<a name="731"><span class="lineNum">     731 </span>                :<span class="lineNoCov">          0 :       g_set_object (&amp;self-&gt;message_store, g_value_get_object (value));</span></a>
+<a name="732"><span class="lineNum">     732 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="733"><span class="lineNum">     733 </span>                :            : </a>
+<a name="734"><span class="lineNum">     734 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="735"><span class="lineNum">     735 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="736"><span class="lineNum">     736 </span>                :            :     }</a>
+<a name="737"><span class="lineNum">     737 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="738"><span class="lineNum">     738 </span>                :            : </a>
+<a name="739"><span class="lineNum">     739 </span>                :            : static void</a>
+<a name="740"><span class="lineNum">     740 </span>                :<span class="lineNoCov">          0 : valent_sms_window_class_init (ValentSmsWindowClass *klass)</span></a>
+<a name="741"><span class="lineNum">     741 </span>                :            : {</a>
+<a name="742"><span class="lineNum">     742 </span>                :<span class="lineNoCov">          0 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="743"><span class="lineNum">     743 </span>                :<span class="lineNoCov">          0 :   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);</span></a>
+<a name="744"><span class="lineNum">     744 </span>                :            : </a>
+<a name="745"><span class="lineNum">     745 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;constructed = valent_sms_window_constructed;</span></a>
+<a name="746"><span class="lineNum">     746 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;finalize = valent_sms_window_finalize;</span></a>
+<a name="747"><span class="lineNum">     747 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;get_property = valent_sms_window_get_property;</span></a>
+<a name="748"><span class="lineNum">     748 </span>                :<span class="lineNoCov">          0 :   object_class-&gt;set_property = valent_sms_window_set_property;</span></a>
+<a name="749"><span class="lineNum">     749 </span>                :            : </a>
+<a name="750"><span class="lineNum">     750 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_set_template_from_resource (widget_class, &quot;/plugins/sms/valent-sms-window.ui&quot;);</span></a>
+<a name="751"><span class="lineNum">     751 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_box);</span></a>
+<a name="752"><span class="lineNum">     752 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_header);</span></a>
+<a name="753"><span class="lineNum">     753 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, sidebar_header);</span></a>
 <a name="754"><span class="lineNum">     754 </span>                :            : </a>
-<a name="755"><span class="lineNum">     755 </span>                :            : </a>
-<a name="756"><span class="lineNum">     756 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, conversation_list);</span></a>
-<a name="757"><span class="lineNum">     757 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content);</span></a>
+<a name="755"><span class="lineNum">     755 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_title);</span></a>
+<a name="756"><span class="lineNum">     756 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content_layout);</span></a>
+<a name="757"><span class="lineNum">     757 </span>                :            : </a>
 <a name="758"><span class="lineNum">     758 </span>                :            : </a>
-<a name="759"><span class="lineNum">     759 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_conversation_activated);</span></a>
-<a name="760"><span class="lineNum">     760 </span>                :            : </a>
-<a name="761"><span class="lineNum">     761 </span>                :            :   /* Message Search */</a>
-<a name="762"><span class="lineNum">     762 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, message_search);</span></a>
-<a name="763"><span class="lineNum">     763 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, message_search_entry);</span></a>
-<a name="764"><span class="lineNum">     764 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, message_search_list);</span></a>
-<a name="765"><span class="lineNum">     765 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_message_search_changed);</span></a>
-<a name="766"><span class="lineNum">     766 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_message_selected);</span></a>
-<a name="767"><span class="lineNum">     767 </span>                :            : </a>
-<a name="768"><span class="lineNum">     768 </span>                :            :   /* Contact Search */</a>
-<a name="769"><span class="lineNum">     769 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, contact_search);</span></a>
-<a name="770"><span class="lineNum">     770 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, contact_search_entry);</span></a>
-<a name="771"><span class="lineNum">     771 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, contact_search_list);</span></a>
-<a name="772"><span class="lineNum">     772 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_contact_search_changed);</span></a>
-<a name="773"><span class="lineNum">     773 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_contact_selected);</span></a>
-<a name="774"><span class="lineNum">     774 </span>                :            : </a>
-<a name="775"><span class="lineNum">     775 </span>                :            :   /**</a>
-<a name="776"><span class="lineNum">     776 </span>                :            :    * ValentSmsWindow:contact-store:</a>
-<a name="777"><span class="lineNum">     777 </span>                :            :    *</a>
-<a name="778"><span class="lineNum">     778 </span>                :            :    * The #ValentContactStore providing contacts for the window.</a>
-<a name="779"><span class="lineNum">     779 </span>                :            :    */</a>
-<a name="780"><span class="lineNum">     780 </span>                :<span class="lineNoCov">          0 :   properties [PROP_CONTACT_STORE] =</span></a>
-<a name="781"><span class="lineNum">     781 </span>                :<span class="lineNoCov">          0 :     g_param_spec_object (&quot;contact-store&quot;,</span></a>
-<a name="782"><span class="lineNum">     782 </span>                :            :                          &quot;Contact Store&quot;,</a>
-<a name="783"><span class="lineNum">     783 </span>                :            :                          &quot;The contact model for this window.&quot;,</a>
-<a name="784"><span class="lineNum">     784 </span>                :            :                          VALENT_TYPE_CONTACT_STORE,</a>
-<a name="785"><span class="lineNum">     785 </span>                :            :                          (G_PARAM_READWRITE |</a>
-<a name="786"><span class="lineNum">     786 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
-<a name="787"><span class="lineNum">     787 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
-<a name="788"><span class="lineNum">     788 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
-<a name="789"><span class="lineNum">     789 </span>                :            : </a>
-<a name="790"><span class="lineNum">     790 </span>                :            :   /**</a>
-<a name="791"><span class="lineNum">     791 </span>                :            :    * ValentSmsWindow:message-store:</a>
-<a name="792"><span class="lineNum">     792 </span>                :            :    *</a>
-<a name="793"><span class="lineNum">     793 </span>                :            :    * The #ValentSmsStore providing messages for the window.</a>
-<a name="794"><span class="lineNum">     794 </span>                :            :    */</a>
-<a name="795"><span class="lineNum">     795 </span>                :<span class="lineNoCov">          0 :   properties [PROP_MESSAGE_STORE] =</span></a>
-<a name="796"><span class="lineNum">     796 </span>                :<span class="lineNoCov">          0 :     g_param_spec_object (&quot;message-store&quot;,</span></a>
-<a name="797"><span class="lineNum">     797 </span>                :            :                          &quot;Message Store&quot;,</a>
-<a name="798"><span class="lineNum">     798 </span>                :            :                          &quot;The message store for this window.&quot;,</a>
-<a name="799"><span class="lineNum">     799 </span>                :            :                          VALENT_TYPE_SMS_STORE,</a>
-<a name="800"><span class="lineNum">     800 </span>                :            :                          (G_PARAM_READWRITE |</a>
-<a name="801"><span class="lineNum">     801 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
-<a name="802"><span class="lineNum">     802 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
-<a name="803"><span class="lineNum">     803 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
-<a name="804"><span class="lineNum">     804 </span>                :            : </a>
-<a name="805"><span class="lineNum">     805 </span>                :<span class="lineNoCov">          0 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
-<a name="806"><span class="lineNum">     806 </span>                :            : </a>
-<a name="807"><span class="lineNum">     807 </span>                :            :   /**</a>
-<a name="808"><span class="lineNum">     808 </span>                :            :    * ValentSmsWindow::send-message:</a>
-<a name="809"><span class="lineNum">     809 </span>                :            :    * @window: a #ValentSmsWindow</a>
-<a name="810"><span class="lineNum">     810 </span>                :            :    * @destination: a #GList</a>
-<a name="811"><span class="lineNum">     811 </span>                :            :    * @message: a #ValentSmsMessage</a>
-<a name="812"><span class="lineNum">     812 </span>                :            :    *</a>
-<a name="813"><span class="lineNum">     813 </span>                :            :    * The #ValentSmsWindow::send-message signal is emitted when a child</a>
-<a name="814"><span class="lineNum">     814 </span>                :            :    * #ValentSmsConversation emits #ValentSmsConversation::send-message.</a>
+<a name="759"><span class="lineNum">     759 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, conversation_list);</span></a>
+<a name="760"><span class="lineNum">     760 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, content);</span></a>
+<a name="761"><span class="lineNum">     761 </span>                :            : </a>
+<a name="762"><span class="lineNum">     762 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_conversation_activated);</span></a>
+<a name="763"><span class="lineNum">     763 </span>                :            : </a>
+<a name="764"><span class="lineNum">     764 </span>                :            :   /* Message Search */</a>
+<a name="765"><span class="lineNum">     765 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, message_search);</span></a>
+<a name="766"><span class="lineNum">     766 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, message_search_entry);</span></a>
+<a name="767"><span class="lineNum">     767 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, message_search_list);</span></a>
+<a name="768"><span class="lineNum">     768 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_message_search_changed);</span></a>
+<a name="769"><span class="lineNum">     769 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_message_selected);</span></a>
+<a name="770"><span class="lineNum">     770 </span>                :            : </a>
+<a name="771"><span class="lineNum">     771 </span>                :            :   /* Contact Search */</a>
+<a name="772"><span class="lineNum">     772 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, contact_search);</span></a>
+<a name="773"><span class="lineNum">     773 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, contact_search_entry);</span></a>
+<a name="774"><span class="lineNum">     774 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_child (widget_class, ValentSmsWindow, contact_search_list);</span></a>
+<a name="775"><span class="lineNum">     775 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_contact_search_changed);</span></a>
+<a name="776"><span class="lineNum">     776 </span>                :<span class="lineNoCov">          0 :   gtk_widget_class_bind_template_callback (widget_class, on_contact_selected);</span></a>
+<a name="777"><span class="lineNum">     777 </span>                :            : </a>
+<a name="778"><span class="lineNum">     778 </span>                :            :   /**</a>
+<a name="779"><span class="lineNum">     779 </span>                :            :    * ValentSmsWindow:contact-store:</a>
+<a name="780"><span class="lineNum">     780 </span>                :            :    *</a>
+<a name="781"><span class="lineNum">     781 </span>                :            :    * The #ValentContactStore providing contacts for the window.</a>
+<a name="782"><span class="lineNum">     782 </span>                :            :    */</a>
+<a name="783"><span class="lineNum">     783 </span>                :<span class="lineNoCov">          0 :   properties [PROP_CONTACT_STORE] =</span></a>
+<a name="784"><span class="lineNum">     784 </span>                :<span class="lineNoCov">          0 :     g_param_spec_object (&quot;contact-store&quot;,</span></a>
+<a name="785"><span class="lineNum">     785 </span>                :            :                          &quot;Contact Store&quot;,</a>
+<a name="786"><span class="lineNum">     786 </span>                :            :                          &quot;The contact model for this window.&quot;,</a>
+<a name="787"><span class="lineNum">     787 </span>                :            :                          VALENT_TYPE_CONTACT_STORE,</a>
+<a name="788"><span class="lineNum">     788 </span>                :            :                          (G_PARAM_READWRITE |</a>
+<a name="789"><span class="lineNum">     789 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
+<a name="790"><span class="lineNum">     790 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
+<a name="791"><span class="lineNum">     791 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
+<a name="792"><span class="lineNum">     792 </span>                :            : </a>
+<a name="793"><span class="lineNum">     793 </span>                :            :   /**</a>
+<a name="794"><span class="lineNum">     794 </span>                :            :    * ValentSmsWindow:message-store:</a>
+<a name="795"><span class="lineNum">     795 </span>                :            :    *</a>
+<a name="796"><span class="lineNum">     796 </span>                :            :    * The #ValentSmsStore providing messages for the window.</a>
+<a name="797"><span class="lineNum">     797 </span>                :            :    */</a>
+<a name="798"><span class="lineNum">     798 </span>                :<span class="lineNoCov">          0 :   properties [PROP_MESSAGE_STORE] =</span></a>
+<a name="799"><span class="lineNum">     799 </span>                :<span class="lineNoCov">          0 :     g_param_spec_object (&quot;message-store&quot;,</span></a>
+<a name="800"><span class="lineNum">     800 </span>                :            :                          &quot;Message Store&quot;,</a>
+<a name="801"><span class="lineNum">     801 </span>                :            :                          &quot;The message store for this window.&quot;,</a>
+<a name="802"><span class="lineNum">     802 </span>                :            :                          VALENT_TYPE_SMS_STORE,</a>
+<a name="803"><span class="lineNum">     803 </span>                :            :                          (G_PARAM_READWRITE |</a>
+<a name="804"><span class="lineNum">     804 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
+<a name="805"><span class="lineNum">     805 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
+<a name="806"><span class="lineNum">     806 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
+<a name="807"><span class="lineNum">     807 </span>                :            : </a>
+<a name="808"><span class="lineNum">     808 </span>                :<span class="lineNoCov">          0 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
+<a name="809"><span class="lineNum">     809 </span>                :            : </a>
+<a name="810"><span class="lineNum">     810 </span>                :            :   /**</a>
+<a name="811"><span class="lineNum">     811 </span>                :            :    * ValentSmsWindow::send-message:</a>
+<a name="812"><span class="lineNum">     812 </span>                :            :    * @window: a #ValentSmsWindow</a>
+<a name="813"><span class="lineNum">     813 </span>                :            :    * @destination: a #GList</a>
+<a name="814"><span class="lineNum">     814 </span>                :            :    * @message: a #ValentSmsMessage</a>
 <a name="815"><span class="lineNum">     815 </span>                :            :    *</a>
-<a name="816"><span class="lineNum">     816 </span>                :            :    * @destination is a #GList of target addresses and @message is a #ValentSmsMessage</a>
-<a name="817"><span class="lineNum">     817 </span>                :            :    * containing the content to be sent.</a>
+<a name="816"><span class="lineNum">     816 </span>                :            :    * The #ValentSmsWindow::send-message signal is emitted when a child</a>
+<a name="817"><span class="lineNum">     817 </span>                :            :    * #ValentSmsConversation emits #ValentSmsConversation::send-message.</a>
 <a name="818"><span class="lineNum">     818 </span>                :            :    *</a>
-<a name="819"><span class="lineNum">     819 </span>                :            :    * The signal handler should return a boolean indicating success, although</a>
-<a name="820"><span class="lineNum">     820 </span>                :            :    * this is only used as an indication that the message was sent, not received</a>
-<a name="821"><span class="lineNum">     821 </span>                :            :    * on the other end.</a>
-<a name="822"><span class="lineNum">     822 </span>                :            :    */</a>
-<a name="823"><span class="lineNum">     823 </span>                :<span class="lineNoCov">          0 :   signals [SEND_MESSAGE] =</span></a>
-<a name="824"><span class="lineNum">     824 </span>                :<span class="lineNoCov">          0 :     g_signal_new (&quot;send-message&quot;,</span></a>
-<a name="825"><span class="lineNum">     825 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
-<a name="826"><span class="lineNum">     826 </span>                :            :                   G_SIGNAL_RUN_LAST,</a>
-<a name="827"><span class="lineNum">     827 </span>                :            :                   0,</a>
-<a name="828"><span class="lineNum">     828 </span>                :            :                   NULL, NULL, NULL,</a>
-<a name="829"><span class="lineNum">     829 </span>                :            :                   G_TYPE_BOOLEAN, 2, G_TYPE_POINTER, VALENT_TYPE_SMS_MESSAGE);</a>
-<a name="830"><span class="lineNum">     830 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="831"><span class="lineNum">     831 </span>                :            : </a>
-<a name="832"><span class="lineNum">     832 </span>                :            : static void</a>
-<a name="833"><span class="lineNum">     833 </span>                :<span class="lineNoCov">          0 : valent_sms_window_init (ValentSmsWindow *self)</span></a>
-<a name="834"><span class="lineNum">     834 </span>                :            : {</a>
-<a name="835"><span class="lineNum">     835 </span>                :<span class="lineNoCov">          0 :   gtk_widget_init_template (GTK_WIDGET (self));</span></a>
-<a name="836"><span class="lineNum">     836 </span>                :            : </a>
-<a name="837"><span class="lineNum">     837 </span>                :            :   /* Window Actions */</a>
-<a name="838"><span class="lineNum">     838 </span>                :<span class="lineNoCov">          0 :   g_action_map_add_action_entries (G_ACTION_MAP (self),</span></a>
-<a name="839"><span class="lineNum">     839 </span>                :            :                                    actions, G_N_ELEMENTS (actions),</a>
-<a name="840"><span class="lineNum">     840 </span>                :            :                                    self);</a>
-<a name="841"><span class="lineNum">     841 </span>                :            : </a>
-<a name="842"><span class="lineNum">     842 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_header_func (self-&gt;message_search_list,</span></a>
-<a name="843"><span class="lineNum">     843 </span>                :            :                                 search_header_func,</a>
-<a name="844"><span class="lineNum">     844 </span>                :            :                                 self, NULL);</a>
-<a name="845"><span class="lineNum">     845 </span>                :            : </a>
-<a name="846"><span class="lineNum">     846 </span>                :            :   /* Contacts */</a>
-<a name="847"><span class="lineNum">     847 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_filter_func (self-&gt;contact_search_list,</span></a>
-<a name="848"><span class="lineNum">     848 </span>                :            :                                 (GtkListBoxFilterFunc)contact_search_list_filter,</a>
-<a name="849"><span class="lineNum">     849 </span>                :            :                                 self,</a>
-<a name="850"><span class="lineNum">     850 </span>                :            :                                 NULL);</a>
-<a name="851"><span class="lineNum">     851 </span>                :            : </a>
-<a name="852"><span class="lineNum">     852 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_sort_func (self-&gt;contact_search_list,</span></a>
-<a name="853"><span class="lineNum">     853 </span>                :            :                               (GtkListBoxSortFunc)contact_search_list_sort,</a>
-<a name="854"><span class="lineNum">     854 </span>                :            :                               self,</a>
-<a name="855"><span class="lineNum">     855 </span>                :            :                               NULL);</a>
-<a name="856"><span class="lineNum">     856 </span>                :            : </a>
-<a name="857"><span class="lineNum">     857 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_header_func (self-&gt;contact_search_list,</span></a>
-<a name="858"><span class="lineNum">     858 </span>                :            :                                 valent_contact_row_header_func,</a>
-<a name="859"><span class="lineNum">     859 </span>                :            :                                 self,</a>
-<a name="860"><span class="lineNum">     860 </span>                :            :                                 NULL);</a>
-<a name="861"><span class="lineNum">     861 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="862"><span class="lineNum">     862 </span>                :            : </a>
-<a name="863"><span class="lineNum">     863 </span>                :            : /**</a>
-<a name="864"><span class="lineNum">     864 </span>                :            :  * valent_sms_window_get_contact_store:</a>
-<a name="865"><span class="lineNum">     865 </span>                :            :  * @window: a #ValentSmsWindow</a>
-<a name="866"><span class="lineNum">     866 </span>                :            :  *</a>
-<a name="867"><span class="lineNum">     867 </span>                :            :  * Get the #ValentContactStore providing contacts for @window.</a>
-<a name="868"><span class="lineNum">     868 </span>                :            :  *</a>
-<a name="869"><span class="lineNum">     869 </span>                :            :  * Returns: (transfer none) (nullable): a #ValentContactStore</a>
-<a name="870"><span class="lineNum">     870 </span>                :            :  */</a>
-<a name="871"><span class="lineNum">     871 </span>                :            : ValentContactStore *</a>
-<a name="872"><span class="lineNum">     872 </span>                :<span class="lineNoCov">          0 : valent_sms_window_get_contact_store (ValentSmsWindow *window)</span></a>
-<a name="873"><span class="lineNum">     873 </span>                :            : {</a>
-<a name="874"><span class="lineNum">     874 </span>                :<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_SMS_WINDOW (window), NULL);</span></a>
-<a name="875"><span class="lineNum">     875 </span>                :            : </a>
-<a name="876"><span class="lineNum">     876 </span>                :<span class="lineNoCov">          0 :   return window-&gt;contact_store;</span></a>
-<a name="877"><span class="lineNum">     877 </span>                :            : }</a>
+<a name="819"><span class="lineNum">     819 </span>                :            :    * @destination is a #GList of target addresses and @message is a #ValentSmsMessage</a>
+<a name="820"><span class="lineNum">     820 </span>                :            :    * containing the content to be sent.</a>
+<a name="821"><span class="lineNum">     821 </span>                :            :    *</a>
+<a name="822"><span class="lineNum">     822 </span>                :            :    * The signal handler should return a boolean indicating success, although</a>
+<a name="823"><span class="lineNum">     823 </span>                :            :    * this is only used as an indication that the message was sent, not received</a>
+<a name="824"><span class="lineNum">     824 </span>                :            :    * on the other end.</a>
+<a name="825"><span class="lineNum">     825 </span>                :            :    */</a>
+<a name="826"><span class="lineNum">     826 </span>                :<span class="lineNoCov">          0 :   signals [SEND_MESSAGE] =</span></a>
+<a name="827"><span class="lineNum">     827 </span>                :<span class="lineNoCov">          0 :     g_signal_new (&quot;send-message&quot;,</span></a>
+<a name="828"><span class="lineNum">     828 </span>                :            :                   G_TYPE_FROM_CLASS (klass),</a>
+<a name="829"><span class="lineNum">     829 </span>                :            :                   G_SIGNAL_RUN_LAST,</a>
+<a name="830"><span class="lineNum">     830 </span>                :            :                   0,</a>
+<a name="831"><span class="lineNum">     831 </span>                :            :                   NULL, NULL, NULL,</a>
+<a name="832"><span class="lineNum">     832 </span>                :            :                   G_TYPE_BOOLEAN, 2, G_TYPE_POINTER, VALENT_TYPE_SMS_MESSAGE);</a>
+<a name="833"><span class="lineNum">     833 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="834"><span class="lineNum">     834 </span>                :            : </a>
+<a name="835"><span class="lineNum">     835 </span>                :            : static void</a>
+<a name="836"><span class="lineNum">     836 </span>                :<span class="lineNoCov">          0 : valent_sms_window_init (ValentSmsWindow *self)</span></a>
+<a name="837"><span class="lineNum">     837 </span>                :            : {</a>
+<a name="838"><span class="lineNum">     838 </span>                :<span class="lineNoCov">          0 :   gtk_widget_init_template (GTK_WIDGET (self));</span></a>
+<a name="839"><span class="lineNum">     839 </span>                :            : </a>
+<a name="840"><span class="lineNum">     840 </span>                :            :   /* Window Actions */</a>
+<a name="841"><span class="lineNum">     841 </span>                :<span class="lineNoCov">          0 :   g_action_map_add_action_entries (G_ACTION_MAP (self),</span></a>
+<a name="842"><span class="lineNum">     842 </span>                :            :                                    actions, G_N_ELEMENTS (actions),</a>
+<a name="843"><span class="lineNum">     843 </span>                :            :                                    self);</a>
+<a name="844"><span class="lineNum">     844 </span>                :            : </a>
+<a name="845"><span class="lineNum">     845 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_header_func (self-&gt;message_search_list,</span></a>
+<a name="846"><span class="lineNum">     846 </span>                :            :                                 search_header_func,</a>
+<a name="847"><span class="lineNum">     847 </span>                :            :                                 self, NULL);</a>
+<a name="848"><span class="lineNum">     848 </span>                :            : </a>
+<a name="849"><span class="lineNum">     849 </span>                :            :   /* Contacts */</a>
+<a name="850"><span class="lineNum">     850 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_filter_func (self-&gt;contact_search_list,</span></a>
+<a name="851"><span class="lineNum">     851 </span>                :            :                                 (GtkListBoxFilterFunc)contact_search_list_filter,</a>
+<a name="852"><span class="lineNum">     852 </span>                :            :                                 self,</a>
+<a name="853"><span class="lineNum">     853 </span>                :            :                                 NULL);</a>
+<a name="854"><span class="lineNum">     854 </span>                :            : </a>
+<a name="855"><span class="lineNum">     855 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_sort_func (self-&gt;contact_search_list,</span></a>
+<a name="856"><span class="lineNum">     856 </span>                :            :                               (GtkListBoxSortFunc)contact_search_list_sort,</a>
+<a name="857"><span class="lineNum">     857 </span>                :            :                               self,</a>
+<a name="858"><span class="lineNum">     858 </span>                :            :                               NULL);</a>
+<a name="859"><span class="lineNum">     859 </span>                :            : </a>
+<a name="860"><span class="lineNum">     860 </span>                :<span class="lineNoCov">          0 :   gtk_list_box_set_header_func (self-&gt;contact_search_list,</span></a>
+<a name="861"><span class="lineNum">     861 </span>                :            :                                 valent_contact_row_header_func,</a>
+<a name="862"><span class="lineNum">     862 </span>                :            :                                 self,</a>
+<a name="863"><span class="lineNum">     863 </span>                :            :                                 NULL);</a>
+<a name="864"><span class="lineNum">     864 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="865"><span class="lineNum">     865 </span>                :            : </a>
+<a name="866"><span class="lineNum">     866 </span>                :            : /**</a>
+<a name="867"><span class="lineNum">     867 </span>                :            :  * valent_sms_window_get_contact_store:</a>
+<a name="868"><span class="lineNum">     868 </span>                :            :  * @window: a #ValentSmsWindow</a>
+<a name="869"><span class="lineNum">     869 </span>                :            :  *</a>
+<a name="870"><span class="lineNum">     870 </span>                :            :  * Get the #ValentContactStore providing contacts for @window.</a>
+<a name="871"><span class="lineNum">     871 </span>                :            :  *</a>
+<a name="872"><span class="lineNum">     872 </span>                :            :  * Returns: (transfer none) (nullable): a #ValentContactStore</a>
+<a name="873"><span class="lineNum">     873 </span>                :            :  */</a>
+<a name="874"><span class="lineNum">     874 </span>                :            : ValentContactStore *</a>
+<a name="875"><span class="lineNum">     875 </span>                :<span class="lineNoCov">          0 : valent_sms_window_get_contact_store (ValentSmsWindow *window)</span></a>
+<a name="876"><span class="lineNum">     876 </span>                :            : {</a>
+<a name="877"><span class="lineNum">     877 </span>                :<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_SMS_WINDOW (window), NULL);</span></a>
 <a name="878"><span class="lineNum">     878 </span>                :            : </a>
-<a name="879"><span class="lineNum">     879 </span>                :            : /**</a>
-<a name="880"><span class="lineNum">     880 </span>                :            :  * valent_sms_window_set_contact_store:</a>
-<a name="881"><span class="lineNum">     881 </span>                :            :  * @window: a #ValentSmsWindow</a>
-<a name="882"><span class="lineNum">     882 </span>                :            :  * @store: a #ValentContactStore</a>
-<a name="883"><span class="lineNum">     883 </span>                :            :  *</a>
-<a name="884"><span class="lineNum">     884 </span>                :            :  * Set the #ValentContactStore providing contacts for @window.</a>
-<a name="885"><span class="lineNum">     885 </span>                :            :  */</a>
-<a name="886"><span class="lineNum">     886 </span>                :            : void</a>
-<a name="887"><span class="lineNum">     887 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_contact_store (ValentSmsWindow    *window,</span></a>
-<a name="888"><span class="lineNum">     888 </span>                :            :                                      ValentContactStore *store)</a>
-<a name="889"><span class="lineNum">     889 </span>                :            : {</a>
-<a name="890"><span class="lineNum">     890 </span>                :<span class="lineNoCov">          0 :   if (g_set_object (&amp;window-&gt;contact_store, store))</span></a>
-<a name="891"><span class="lineNum">     891 </span>                :<span class="lineNoCov">          0 :     g_object_notify_by_pspec (G_OBJECT (window), properties[PROP_CONTACT_STORE]);</span></a>
-<a name="892"><span class="lineNum">     892 </span>                :            : </a>
-<a name="893"><span class="lineNum">     893 </span>                :<span class="lineNoCov">          0 :   valent_sms_window_refresh_contacts (window);</span></a>
-<a name="894"><span class="lineNum">     894 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="879"><span class="lineNum">     879 </span>                :<span class="lineNoCov">          0 :   return window-&gt;contact_store;</span></a>
+<a name="880"><span class="lineNum">     880 </span>                :            : }</a>
+<a name="881"><span class="lineNum">     881 </span>                :            : </a>
+<a name="882"><span class="lineNum">     882 </span>                :            : /**</a>
+<a name="883"><span class="lineNum">     883 </span>                :            :  * valent_sms_window_set_contact_store:</a>
+<a name="884"><span class="lineNum">     884 </span>                :            :  * @window: a #ValentSmsWindow</a>
+<a name="885"><span class="lineNum">     885 </span>                :            :  * @store: a #ValentContactStore</a>
+<a name="886"><span class="lineNum">     886 </span>                :            :  *</a>
+<a name="887"><span class="lineNum">     887 </span>                :            :  * Set the #ValentContactStore providing contacts for @window.</a>
+<a name="888"><span class="lineNum">     888 </span>                :            :  */</a>
+<a name="889"><span class="lineNum">     889 </span>                :            : void</a>
+<a name="890"><span class="lineNum">     890 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_contact_store (ValentSmsWindow    *window,</span></a>
+<a name="891"><span class="lineNum">     891 </span>                :            :                                      ValentContactStore *store)</a>
+<a name="892"><span class="lineNum">     892 </span>                :            : {</a>
+<a name="893"><span class="lineNum">     893 </span>                :<span class="lineNoCov">          0 :   if (g_set_object (&amp;window-&gt;contact_store, store))</span></a>
+<a name="894"><span class="lineNum">     894 </span>                :<span class="lineNoCov">          0 :     g_object_notify_by_pspec (G_OBJECT (window), properties[PROP_CONTACT_STORE]);</span></a>
 <a name="895"><span class="lineNum">     895 </span>                :            : </a>
-<a name="896"><span class="lineNum">     896 </span>                :            : /**</a>
-<a name="897"><span class="lineNum">     897 </span>                :            :  * valent_sms_window_get_sms_store:</a>
-<a name="898"><span class="lineNum">     898 </span>                :            :  * @window: a #ValentSmsWindow</a>
-<a name="899"><span class="lineNum">     899 </span>                :            :  *</a>
-<a name="900"><span class="lineNum">     900 </span>                :            :  * Get the #ValentSmsStore providing messages for @window.</a>
-<a name="901"><span class="lineNum">     901 </span>                :            :  *</a>
-<a name="902"><span class="lineNum">     902 </span>                :            :  * Returns: (transfer none) (nullable): a #ValentSmsStore</a>
-<a name="903"><span class="lineNum">     903 </span>                :            :  */</a>
-<a name="904"><span class="lineNum">     904 </span>                :            : ValentSmsStore *</a>
-<a name="905"><span class="lineNum">     905 </span>                :<span class="lineNoCov">          0 : valent_sms_window_get_sms_store (ValentSmsWindow *window)</span></a>
-<a name="906"><span class="lineNum">     906 </span>                :            : {</a>
-<a name="907"><span class="lineNum">     907 </span>                :<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_SMS_WINDOW (window), NULL);</span></a>
-<a name="908"><span class="lineNum">     908 </span>                :            : </a>
-<a name="909"><span class="lineNum">     909 </span>                :<span class="lineNoCov">          0 :   return window-&gt;message_store;</span></a>
-<a name="910"><span class="lineNum">     910 </span>                :            : }</a>
+<a name="896"><span class="lineNum">     896 </span>                :<span class="lineNoCov">          0 :   valent_sms_window_refresh_contacts (window);</span></a>
+<a name="897"><span class="lineNum">     897 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="898"><span class="lineNum">     898 </span>                :            : </a>
+<a name="899"><span class="lineNum">     899 </span>                :            : /**</a>
+<a name="900"><span class="lineNum">     900 </span>                :            :  * valent_sms_window_get_sms_store:</a>
+<a name="901"><span class="lineNum">     901 </span>                :            :  * @window: a #ValentSmsWindow</a>
+<a name="902"><span class="lineNum">     902 </span>                :            :  *</a>
+<a name="903"><span class="lineNum">     903 </span>                :            :  * Get the #ValentSmsStore providing messages for @window.</a>
+<a name="904"><span class="lineNum">     904 </span>                :            :  *</a>
+<a name="905"><span class="lineNum">     905 </span>                :            :  * Returns: (transfer none) (nullable): a #ValentSmsStore</a>
+<a name="906"><span class="lineNum">     906 </span>                :            :  */</a>
+<a name="907"><span class="lineNum">     907 </span>                :            : ValentSmsStore *</a>
+<a name="908"><span class="lineNum">     908 </span>                :<span class="lineNoCov">          0 : valent_sms_window_get_sms_store (ValentSmsWindow *window)</span></a>
+<a name="909"><span class="lineNum">     909 </span>                :            : {</a>
+<a name="910"><span class="lineNum">     910 </span>                :<span class="lineNoCov">          0 :   g_return_val_if_fail (VALENT_IS_SMS_WINDOW (window), NULL);</span></a>
 <a name="911"><span class="lineNum">     911 </span>                :            : </a>
-<a name="912"><span class="lineNum">     912 </span>                :            : /**</a>
-<a name="913"><span class="lineNum">     913 </span>                :            :  * valent_sms_window_set_active_message:</a>
-<a name="914"><span class="lineNum">     914 </span>                :            :  * @window: a #ValentSmsWindow</a>
-<a name="915"><span class="lineNum">     915 </span>                :            :  * @message: a #valentMessage</a>
-<a name="916"><span class="lineNum">     916 </span>                :            :  *</a>
-<a name="917"><span class="lineNum">     917 </span>                :            :  * Set the active conversation to the thread of @message scroll to @message.</a>
-<a name="918"><span class="lineNum">     918 </span>                :            :  */</a>
-<a name="919"><span class="lineNum">     919 </span>                :            : void</a>
-<a name="920"><span class="lineNum">     920 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_active_message (ValentSmsWindow  *window,</span></a>
-<a name="921"><span class="lineNum">     921 </span>                :            :                                       ValentSmsMessage *message)</a>
-<a name="922"><span class="lineNum">     922 </span>                :            : {</a>
-<a name="923"><span class="lineNum">     923 </span>                :            :   GtkWidget *widget;</a>
-<a name="924"><span class="lineNum">     924 </span>                :            :   ValentSmsConversation *conversation;</a>
-<a name="925"><span class="lineNum">     925 </span>                :            :   gint64 thread_id;</a>
-<a name="926"><span class="lineNum">     926 </span>                :            : </a>
-<a name="927"><span class="lineNum">     927 </span>                :<span class="lineNoCov">          0 :   g_return_if_fail (VALENT_IS_SMS_WINDOW (window));</span></a>
-<a name="928"><span class="lineNum">     928 </span>                :            : </a>
-<a name="929"><span class="lineNum">     929 </span>                :            :   /* Select the conversation */</a>
-<a name="930"><span class="lineNum">     930 </span>                :<span class="lineNoCov">          0 :   thread_id = valent_sms_message_get_thread_id (message);</span></a>
-<a name="931"><span class="lineNum">     931 </span>                :<span class="lineNoCov">          0 :   valent_sms_window_set_active_thread (window, thread_id);</span></a>
-<a name="932"><span class="lineNum">     932 </span>                :            : </a>
-<a name="933"><span class="lineNum">     933 </span>                :            :   /* Get the conversation */</a>
-<a name="934"><span class="lineNum">     934 </span>                :<span class="lineNoCov">          0 :   widget = valent_sms_window_ensure_conversation (window, thread_id);</span></a>
-<a name="935"><span class="lineNum">     935 </span>                :<span class="lineNoCov">          0 :   conversation = VALENT_SMS_CONVERSATION (widget);</span></a>
-<a name="936"><span class="lineNum">     936 </span>                :            : </a>
-<a name="937"><span class="lineNum">     937 </span>                :<span class="lineNoCov">          0 :   valent_sms_conversation_scroll_to_message (conversation, message);</span></a>
-<a name="938"><span class="lineNum">     938 </span>                :            : }</a>
+<a name="912"><span class="lineNum">     912 </span>                :<span class="lineNoCov">          0 :   return window-&gt;message_store;</span></a>
+<a name="913"><span class="lineNum">     913 </span>                :            : }</a>
+<a name="914"><span class="lineNum">     914 </span>                :            : </a>
+<a name="915"><span class="lineNum">     915 </span>                :            : /**</a>
+<a name="916"><span class="lineNum">     916 </span>                :            :  * valent_sms_window_set_active_message:</a>
+<a name="917"><span class="lineNum">     917 </span>                :            :  * @window: a #ValentSmsWindow</a>
+<a name="918"><span class="lineNum">     918 </span>                :            :  * @message: a #valentMessage</a>
+<a name="919"><span class="lineNum">     919 </span>                :            :  *</a>
+<a name="920"><span class="lineNum">     920 </span>                :            :  * Set the active conversation to the thread of @message scroll to @message.</a>
+<a name="921"><span class="lineNum">     921 </span>                :            :  */</a>
+<a name="922"><span class="lineNum">     922 </span>                :            : void</a>
+<a name="923"><span class="lineNum">     923 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_active_message (ValentSmsWindow  *window,</span></a>
+<a name="924"><span class="lineNum">     924 </span>                :            :                                       ValentSmsMessage *message)</a>
+<a name="925"><span class="lineNum">     925 </span>                :            : {</a>
+<a name="926"><span class="lineNum">     926 </span>                :            :   GtkWidget *widget;</a>
+<a name="927"><span class="lineNum">     927 </span>                :            :   ValentSmsConversation *conversation;</a>
+<a name="928"><span class="lineNum">     928 </span>                :            :   gint64 thread_id;</a>
+<a name="929"><span class="lineNum">     929 </span>                :            : </a>
+<a name="930"><span class="lineNum">     930 </span>                :<span class="lineNoCov">          0 :   g_return_if_fail (VALENT_IS_SMS_WINDOW (window));</span></a>
+<a name="931"><span class="lineNum">     931 </span>                :            : </a>
+<a name="932"><span class="lineNum">     932 </span>                :            :   /* Select the conversation */</a>
+<a name="933"><span class="lineNum">     933 </span>                :<span class="lineNoCov">          0 :   thread_id = valent_sms_message_get_thread_id (message);</span></a>
+<a name="934"><span class="lineNum">     934 </span>                :<span class="lineNoCov">          0 :   valent_sms_window_set_active_thread (window, thread_id);</span></a>
+<a name="935"><span class="lineNum">     935 </span>                :            : </a>
+<a name="936"><span class="lineNum">     936 </span>                :            :   /* Get the conversation */</a>
+<a name="937"><span class="lineNum">     937 </span>                :<span class="lineNoCov">          0 :   widget = valent_sms_window_ensure_conversation (window, thread_id);</span></a>
+<a name="938"><span class="lineNum">     938 </span>                :<span class="lineNoCov">          0 :   conversation = VALENT_SMS_CONVERSATION (widget);</span></a>
 <a name="939"><span class="lineNum">     939 </span>                :            : </a>
-<a name="940"><span class="lineNum">     940 </span>                :            : /**</a>
-<a name="941"><span class="lineNum">     941 </span>                :            :  * valent_sms_window_set_active_thread:</a>
-<a name="942"><span class="lineNum">     942 </span>                :            :  * @window: a #ValentSmsWindow</a>
-<a name="943"><span class="lineNum">     943 </span>                :            :  * @thread_id: a thread id</a>
-<a name="944"><span class="lineNum">     944 </span>                :            :  *</a>
-<a name="945"><span class="lineNum">     945 </span>                :            :  * Set the active conversation</a>
-<a name="946"><span class="lineNum">     946 </span>                :            :  */</a>
-<a name="947"><span class="lineNum">     947 </span>                :            : void</a>
-<a name="948"><span class="lineNum">     948 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_active_thread (ValentSmsWindow *window,</span></a>
-<a name="949"><span class="lineNum">     949 </span>                :            :                                      gint64           thread_id)</a>
-<a name="950"><span class="lineNum">     950 </span>                :            : {</a>
-<a name="951"><span class="lineNum">     951 </span>                :            :   GtkWidget *conversation;</a>
-<a name="952"><span class="lineNum">     952 </span>                :            :   const char *title;</a>
-<a name="953"><span class="lineNum">     953 </span>                :            : </a>
-<a name="954"><span class="lineNum">     954 </span>                :<span class="lineNoCov">          0 :   g_return_if_fail (VALENT_IS_SMS_WINDOW (window));</span></a>
-<a name="955"><span class="lineNum">     955 </span>                :<span class="lineNoCov">          0 :   g_return_if_fail (thread_id &gt; 0);</span></a>
+<a name="940"><span class="lineNum">     940 </span>                :<span class="lineNoCov">          0 :   valent_sms_conversation_scroll_to_message (conversation, message);</span></a>
+<a name="941"><span class="lineNum">     941 </span>                :            : }</a>
+<a name="942"><span class="lineNum">     942 </span>                :            : </a>
+<a name="943"><span class="lineNum">     943 </span>                :            : /**</a>
+<a name="944"><span class="lineNum">     944 </span>                :            :  * valent_sms_window_set_active_thread:</a>
+<a name="945"><span class="lineNum">     945 </span>                :            :  * @window: a #ValentSmsWindow</a>
+<a name="946"><span class="lineNum">     946 </span>                :            :  * @thread_id: a thread id</a>
+<a name="947"><span class="lineNum">     947 </span>                :            :  *</a>
+<a name="948"><span class="lineNum">     948 </span>                :            :  * Set the active conversation</a>
+<a name="949"><span class="lineNum">     949 </span>                :            :  */</a>
+<a name="950"><span class="lineNum">     950 </span>                :            : void</a>
+<a name="951"><span class="lineNum">     951 </span>                :<span class="lineNoCov">          0 : valent_sms_window_set_active_thread (ValentSmsWindow *window,</span></a>
+<a name="952"><span class="lineNum">     952 </span>                :            :                                      gint64           thread_id)</a>
+<a name="953"><span class="lineNum">     953 </span>                :            : {</a>
+<a name="954"><span class="lineNum">     954 </span>                :            :   GtkWidget *conversation;</a>
+<a name="955"><span class="lineNum">     955 </span>                :            :   const char *title;</a>
 <a name="956"><span class="lineNum">     956 </span>                :            : </a>
-<a name="957"><span class="lineNum">     957 </span>                :            :   /* Ensure a conversation widget exists */</a>
-<a name="958"><span class="lineNum">     958 </span>                :<span class="lineNoCov">          0 :   conversation = valent_sms_window_ensure_conversation (window, thread_id);</span></a>
+<a name="957"><span class="lineNum">     957 </span>                :<span class="lineNoCov">          0 :   g_return_if_fail (VALENT_IS_SMS_WINDOW (window));</span></a>
+<a name="958"><span class="lineNum">     958 </span>                :<span class="lineNoCov">          0 :   g_return_if_fail (thread_id &gt; 0);</span></a>
 <a name="959"><span class="lineNum">     959 </span>                :            : </a>
-<a name="960"><span class="lineNum">     960 </span>                :            :   /* Set the header title */</a>
-<a name="961"><span class="lineNum">     961 </span>                :<span class="lineNoCov">          0 :   title = valent_sms_conversation_get_title (VALENT_SMS_CONVERSATION (conversation));</span></a>
-<a name="962"><span class="lineNum">     962 </span>                :<span class="lineNoCov">          0 :   gtk_label_set_label (window-&gt;content_title, title);</span></a>
-<a name="963"><span class="lineNum">     963 </span>                :            : </a>
-<a name="964"><span class="lineNum">     964 </span>                :            :   /* Switch to conversation widget */</a>
-<a name="965"><span class="lineNum">     965 </span>                :<span class="lineNoCov">          0 :   gtk_stack_set_visible_child (window-&gt;content, conversation);</span></a>
-<a name="966"><span class="lineNum">     966 </span>                :            : }</a>
-<a name="967"><span class="lineNum">     967 </span>                :            : </a>
+<a name="960"><span class="lineNum">     960 </span>                :            :   /* Ensure a conversation widget exists */</a>
+<a name="961"><span class="lineNum">     961 </span>                :<span class="lineNoCov">          0 :   conversation = valent_sms_window_ensure_conversation (window, thread_id);</span></a>
+<a name="962"><span class="lineNum">     962 </span>                :            : </a>
+<a name="963"><span class="lineNum">     963 </span>                :            :   /* Set the header title */</a>
+<a name="964"><span class="lineNum">     964 </span>                :<span class="lineNoCov">          0 :   title = valent_sms_conversation_get_title (VALENT_SMS_CONVERSATION (conversation));</span></a>
+<a name="965"><span class="lineNum">     965 </span>                :<span class="lineNoCov">          0 :   gtk_label_set_label (window-&gt;content_title, title);</span></a>
+<a name="966"><span class="lineNum">     966 </span>                :            : </a>
+<a name="967"><span class="lineNum">     967 </span>                :            :   /* Switch to conversation widget */</a>
+<a name="968"><span class="lineNum">     968 </span>                :<span class="lineNoCov">          0 :   gtk_stack_set_visible_child (window-&gt;content, conversation);</span></a>
+<a name="969"><span class="lineNum">     969 </span>                :            : }</a>
+<a name="970"><span class="lineNum">     970 </span>                :            : </a>
 </pre>
       </td>
     </tr>
