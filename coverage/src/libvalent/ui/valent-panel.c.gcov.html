@@ -31,18 +31,18 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">119</td>
+            <td class="headerCovTableEntry">130</td>
             <td class="headerCovTableEntry">139</td>
-            <td class="headerCovTableEntryMed">85.6 %</td>
+            <td class="headerCovTableEntryHi">93.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-05 03:16:11</td>
+            <td class="headerValue">2021-08-05 09:34:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">22</td>
             <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntryHi">95.7 %</td>
+            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">74</td>
+            <td class="headerCovTableEntry">76</td>
             <td class="headerCovTableEntry">122</td>
-            <td class="headerCovTableEntryLo">60.7 %</td>
+            <td class="headerCovTableEntryLo">62.3 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -115,8 +115,8 @@
 <a name="37"><span class="lineNum">      37 </span>                :            : </a>
 <a name="38"><span class="lineNum">      38 </span>                :            : static void gtk_buildable_iface_init (GtkBuildableIface *iface);</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
-<a name="40"><span class="lineNum">      40 </span>  [<span class="branchCov" title="Branch 0 was taken 32 times"> + </span><span class="branchCov" title="Branch 1 was taken 285 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        583 : G_DEFINE_TYPE_WITH_CODE (ValentPanel, valent_panel, GTK_TYPE_WIDGET,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 16 times"> + </span><span class="branchCov" title="Branch 5 was taken 285 times"> + </span>]
+<a name="40"><span class="lineNum">      40 </span>  [<span class="branchCov" title="Branch 0 was taken 32 times"> + </span><span class="branchCov" title="Branch 1 was taken 295 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        603 : G_DEFINE_TYPE_WITH_CODE (ValentPanel, valent_panel, GTK_TYPE_WIDGET,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 16 times"> + </span><span class="branchCov" title="Branch 5 was taken 295 times"> + </span>]
 <a name="41"><span class="lineNum">      41 </span>                :            :                          G_ADD_PRIVATE (ValentPanel)</a>
 <a name="42"><span class="lineNum">      42 </span>                :            :                          G_IMPLEMENT_INTERFACE (GTK_TYPE_BUILDABLE, gtk_buildable_iface_init))</a>
 <a name="43"><span class="lineNum">      43 </span>                :            : </a>
@@ -208,28 +208,28 @@
 <a name="127"><span class="lineNum">     127 </span>                :<span class="lineCov">         25 : }</span></a>
 <a name="128"><span class="lineNum">     128 </span>                :            : </a>
 <a name="129"><span class="lineNum">     129 </span>                :            : static void</a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineNoCov">          0 : valent_panel_get_property (GObject    *object,</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         10 : valent_panel_get_property (GObject    *object,</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            :                            guint       prop_id,</a>
 <a name="132"><span class="lineNum">     132 </span>                :            :                            GValue     *value,</a>
 <a name="133"><span class="lineNum">     133 </span>                :            :                            GParamSpec *pspec)</a>
 <a name="134"><span class="lineNum">     134 </span>                :            : {</a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineNoCov">          0 :   ValentPanel *self = VALENT_PANEL (object);</span></a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineNoCov">          0 :   ValentPanelPrivate *priv = valent_panel_get_instance_private (self);</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         10 :   ValentPanel *self = VALENT_PANEL (object);</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         10 :   ValentPanelPrivate *priv = valent_panel_get_instance_private (self);</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
-<a name="138"><span class="lineNum">     138 </span>     [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span>]:<span class="lineNoCov">          0 :   switch (prop_id)</span></a>
+<a name="138"><span class="lineNum">     138 </span>     [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">         10 :   switch (prop_id)</span></a>
 <a name="139"><span class="lineNum">     139 </span>                :            :     {</a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineNoCov">          0 :     case PROP_ICON_NAME:</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineNoCov">          0 :       g_value_set_string (value, priv-&gt;icon_name);</span></a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">          5 :     case PROP_ICON_NAME:</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">          5 :       g_value_set_string (value, priv-&gt;icon_name);</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">          5 :       break;</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineNoCov">          0 :     case PROP_TITLE:</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineNoCov">          0 :       g_value_set_string (value, priv-&gt;title);</span></a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">          5 :     case PROP_TITLE:</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">          5 :       g_value_set_string (value, priv-&gt;title);</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">          5 :       break;</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            : </a>
 <a name="148"><span class="lineNum">     148 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :            :     }</a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         10 : }</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
 <a name="153"><span class="lineNum">     153 </span>                :            : static void</a>
 <a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         20 : valent_panel_set_property (GObject      *object,</span></a>
