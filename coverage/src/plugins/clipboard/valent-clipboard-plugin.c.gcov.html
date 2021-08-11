@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-10 01:10:25</td>
+            <td class="headerValue">2021-08-11 11:29:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -106,8 +106,8 @@
 <a name="28"><span class="lineNum">      28 </span>                :            : </a>
 <a name="29"><span class="lineNum">      29 </span>                :            : static void valent_device_plugin_iface_init (ValentDevicePluginInterface *iface);</a>
 <a name="30"><span class="lineNum">      30 </span>                :            : </a>
-<a name="31"><span class="lineNum">      31 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 821 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        841 : G_DEFINE_TYPE_WITH_CODE (ValentClipboardPlugin, valent_clipboard_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 811 times"> + </span>]
+<a name="31"><span class="lineNum">      31 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 820 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        840 : G_DEFINE_TYPE_WITH_CODE (ValentClipboardPlugin, valent_clipboard_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 810 times"> + </span>]
 <a name="32"><span class="lineNum">      32 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="33"><span class="lineNum">      33 </span>                :            : </a>
 <a name="34"><span class="lineNum">      34 </span>                :            : enum {</a>
@@ -242,32 +242,32 @@
 <a name="163"><span class="lineNum">     163 </span>                :            : }</a>
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
 <a name="165"><span class="lineNum">     165 </span>                :            : static void</a>
-<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">         11 : get_text_cb (ValentClipboard       *clipboard,</span></a>
+<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">         10 : get_text_cb (ValentClipboard       *clipboard,</span></a>
 <a name="167"><span class="lineNum">     167 </span>                :            :              GAsyncResult          *result,</a>
 <a name="168"><span class="lineNum">     168 </span>                :            :              ValentClipboardPlugin *self)</a>
 <a name="169"><span class="lineNum">     169 </span>                :            : {</a>
-<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   g_autoptr (GError) error = NULL;</span></a>
-<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   g_autofree char *text = NULL;</span></a>
+<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   g_autofree char *text = NULL;</span></a>
 <a name="172"><span class="lineNum">     172 </span>                :            : </a>
-<a name="173"><span class="lineNum">     173 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         11 :   g_assert (VALENT_IS_CLIPBOARD (clipboard));</span></a>
-<a name="174"><span class="lineNum">     174 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         11 :   g_assert (VALENT_IS_CLIPBOARD_PLUGIN (self));</span></a>
+<a name="173"><span class="lineNum">     173 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_assert (VALENT_IS_CLIPBOARD (clipboard));</span></a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_assert (VALENT_IS_CLIPBOARD_PLUGIN (self));</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :            : </a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         11 :   text = valent_clipboard_get_text_finish (clipboard, result, &amp;error);</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         10 :   text = valent_clipboard_get_text_finish (clipboard, result, &amp;error);</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            : </a>
-<a name="178"><span class="lineNum">     178 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         11 :   if (text == NULL)</span></a>
+<a name="178"><span class="lineNum">     178 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   if (text == NULL)</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :            :     {</a>
 <a name="180"><span class="lineNum">     180 </span>                :<span class="lineNoCov">          0 :       g_warning (&quot;Reading Clipboard: %s&quot;, error-&gt;message);</span></a>
 <a name="181"><span class="lineNum">     181 </span>                :<span class="lineNoCov">          0 :       return;</span></a>
 <a name="182"><span class="lineNum">     182 </span>                :            :     }</a>
 <a name="183"><span class="lineNum">     183 </span>                :            : </a>
-<a name="184"><span class="lineNum">     184 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   if (g_strcmp0 (text, self-&gt;local_text) != 0)</span></a>
+<a name="184"><span class="lineNum">     184 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   if (g_strcmp0 (text, self-&gt;local_text) != 0)</span></a>
 <a name="185"><span class="lineNum">     185 </span>                :            :     {</a>
 <a name="186"><span class="lineNum">     186 </span>                :            :       /* Store the local content */</a>
-<a name="187"><span class="lineNum">     187 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         11 :       g_clear_pointer (&amp;self-&gt;local_text, g_free);</span></a>
-<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">         11 :       self-&gt;local_text = g_steal_pointer (&amp;text);</span></a>
+<a name="187"><span class="lineNum">     187 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :       g_clear_pointer (&amp;self-&gt;local_text, g_free);</span></a>
+<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">         10 :       self-&gt;local_text = g_steal_pointer (&amp;text);</span></a>
 <a name="189"><span class="lineNum">     189 </span>                :            : </a>
 <a name="190"><span class="lineNum">     190 </span>                :            :       /* Inform the device */</a>
-<a name="191"><span class="lineNum">     191 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">         11 :       if (g_settings_get_boolean (self-&gt;settings, &quot;auto-push&quot;))</span></a>
+<a name="191"><span class="lineNum">     191 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :       if (g_settings_get_boolean (self-&gt;settings, &quot;auto-push&quot;))</span></a>
 <a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">          5 :         valent_clipboard_plugin_clipboard (self, self-&gt;local_text);</span></a>
 <a name="193"><span class="lineNum">     193 </span>                :            :     }</a>
 <a name="194"><span class="lineNum">     194 </span>                :            : }</a>
@@ -302,14 +302,14 @@
 <a name="223"><span class="lineNum">     223 </span>                :            : }</a>
 <a name="224"><span class="lineNum">     224 </span>                :            : </a>
 <a name="225"><span class="lineNum">     225 </span>                :            : static void</a>
-<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">         11 : on_clipboard_changed (ValentClipboard       *clipboard,</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">         10 : on_clipboard_changed (ValentClipboard       *clipboard,</span></a>
 <a name="227"><span class="lineNum">     227 </span>                :            :                       ValentClipboardPlugin *self)</a>
 <a name="228"><span class="lineNum">     228 </span>                :            : {</a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">         11 :   valent_clipboard_get_text_async (clipboard,</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">         10 :   valent_clipboard_get_text_async (clipboard,</span></a>
 <a name="230"><span class="lineNum">     230 </span>                :            :                                    NULL,</a>
 <a name="231"><span class="lineNum">     231 </span>                :            :                                    (GAsyncReadyCallback)get_text_cb,</a>
 <a name="232"><span class="lineNum">     232 </span>                :            :                                    self);</a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         11 : }</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         10 : }</span></a>
 <a name="234"><span class="lineNum">     234 </span>                :            : </a>
 <a name="235"><span class="lineNum">     235 </span>                :            : /*</a>
 <a name="236"><span class="lineNum">     236 </span>                :            :  * GActions</a>
