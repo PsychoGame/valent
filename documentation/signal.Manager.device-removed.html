@@ -139,7 +139,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <p><code>ValentManager::device-removed</code> is emitted when a <code>ValentDevice</code> has
 been removed from <code>manager</code>. This usually happens when a device becomes
 both disconnected and unpaired, but also happens during shutdown when
-valent_manager_stop() is&nbsp;called.</p>
+<code>valent_manager_stop()</code> is&nbsp;called.</p>
 <p>Note that the internal state of <code>manager</code> has already be updated when this
 signal is emitted, but the last reference to <code>device</code> won&#8217;t be dropped until
 the last signal handler&nbsp;returns.</p>

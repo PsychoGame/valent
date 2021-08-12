@@ -190,8 +190,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 DBus interface of notification servers. Implementations emit
 <code>ValentNotificationSource::notification-added</code> and <code>ValentNotificationSource::notification-removed</code>
 to indicate&nbsp;changes.</p>
-<p>It is possible to implement valent_notification_source_add_notification() and
-valent_notification_source_remove_notification() to expose the ability to send notifications and
+<p>It is possible to implement <code>valent_notification_source_add_notification()</code> and
+<code>valent_notification_source_remove_notification()</code> to expose the ability to send notifications and
 remove notifications on a specific service, but the methods provided by <code>ValentDevice</code> and
 <code>GApplication</code> are more useful if you just want to send notifications to the host&nbsp;device.</p>
         </div>
@@ -277,7 +277,8 @@ remove notifications on a specific service, but the methods provided by <code>Va
         <div class="">
           <h6><a href="method.NotificationSource.load_finish.html">valent_notification_source_load_finish</a></h6>
           <div class="docblock">
-            <p>Completes an asynchronous request to load known players via&nbsp;valent_notification_source_load_async().</p>
+            <p>Completes an asynchronous request to load known players via
+<code>valent_notification_source_load_async()</code>.</p>
           </div>
           
         </div>
@@ -536,7 +537,8 @@ remove notifications on a specific service, but the methods provided by <code>Va
         <h6 id="vfunc-load_finish"><a href="vfunc.NotificationSource.load_finish.html">Valent.NotificationSourceClass.load_finish</a></h6>
 
         <div class="docblock">
-          <p>Completes an asynchronous request to load known players via&nbsp;valent_notification_source_load_async().</p>
+          <p>Completes an asynchronous request to load known players via
+<code>valent_notification_source_load_async()</code>.</p>
         </div>
 
           

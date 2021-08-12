@@ -195,7 +195,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           <p>The <code>ValentDevicePlugin</code> interface should be implemented by libpeas plugins
 that operate in the scope of a single device. This generally means sending
 and receiving packets with other&nbsp;devices.</p>
-<p>When the device state changes, valent_device_plugin_update_state() is invoked
+<p>When the device state changes, <code>valent_device_plugin_update_state()</code> is invoked
 to allow the plugin to enable or disable any entry points requiring an active&nbsp;connection.</p>
 <h1 id="plugin-file"><code>.plugin</code> File<a class="md-anchor" href="#plugin-file" title="Permanent link"></a></h1>
 <p>Device plugins require extra information in the <code>.plugin</code> file to be
@@ -272,7 +272,8 @@ them to a <code>ValentDevice</code><span class="quo">&#8216;</span>s <code>GMenu
 
         <div class="docblock">
           <p>This function is called before the extension is unloaded and should clean up
-any resources that were allocated in valent_device_plugin_enable() or&nbsp;valent_device_plugin_update_state().</p>
+any resources that were allocated in <code>valent_device_plugin_enable()</code> or
+<code>valent_device_plugin_update_state()</code>.</p>
         </div>
 
         
@@ -326,7 +327,7 @@ passed <code>plugin</code> as the user data for <code>GAction::activate</code>.<
         <h6><a href="method.DevicePlugin.remove_menu_entries.html">valent_device_plugin_remove_menu_entries</a></h6>
 
         <div class="docblock">
-          <p>A counterpart to&nbsp;valent_device_plugin_add_menu_entries().</p>
+          <p>A counterpart to <code>valent_device_plugin_add_menu_entries()</code>.</p>
         </div>
 
         
@@ -568,7 +569,8 @@ or requesting data from the&nbsp;device.</p>
 
         <div class="docblock">
           <p>This function is called before the extension is unloaded and should clean up
-any resources that were allocated in valent_device_plugin_enable() or&nbsp;valent_device_plugin_update_state().</p>
+any resources that were allocated in <code>valent_device_plugin_enable()</code> or
+<code>valent_device_plugin_update_state()</code>.</p>
         </div>
 
         

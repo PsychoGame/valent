@@ -201,9 +201,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 connections in Valent. Typically these are created by a <code>ValentChannelService</code>
 implementation that wraps a <code>GIOStream</code> connection before emitting
 <code>ValentChannelService::channel</code>.</p>
-<p>Implementations will usually implement at least valent_channel_download() and
-valent_channel_upload() for data transfer between devices. They may also
-implement valent_channel_store_data() for storing channel specific data when
+<p>Implementations will usually implement at least <code>valent_channel_download()</code> and
+<code>valent_channel_upload()</code> for data transfer between devices. They may also
+implement <code>valent_channel_store_data()</code> for storing channel specific data when
 a devices is paired (eg. a <span class="caps">TLS</span>&nbsp;certificate).</p>
         </div>
 
@@ -264,7 +264,7 @@ a devices is paired (eg. a <span class="caps">TLS</span>&nbsp;certificate).</p>
         <div class="">
           <h6><a href="method.Channel.close_async.html">valent_channel_close_async</a></h6>
           <div class="docblock">
-            <p>This is the asynchronous version of&nbsp;valent_channel_close().</p>
+            <p>This is the asynchronous version of <code>valent_channel_close()</code>.</p>
           </div>
           
         </div>
@@ -272,7 +272,7 @@ a devices is paired (eg. a <span class="caps">TLS</span>&nbsp;certificate).</p>
         <div class="">
           <h6><a href="method.Channel.close_finish.html">valent_channel_close_finish</a></h6>
           <div class="docblock">
-            <p>Finishes an async operation started by&nbsp;valent_channel_close_async().</p>
+            <p>Finishes an async operation started by <code>valent_channel_close_async()</code>.</p>
           </div>
           
         </div>
@@ -315,7 +315,7 @@ negotiate an appropriate&nbsp;connection.</p>
           <h6><a href="method.Channel.get_uri.html">valent_channel_get_uri</a></h6>
           <div class="docblock">
             <p>Return a string representation of <code>channel</code> that can be used to reconnect to
-the device, by passing to&nbsp;valent_channel_service_identify().</p>
+the device, by passing to <code>valent_channel_service_identify()</code>.</p>
           </div>
           
         </div>
@@ -332,7 +332,7 @@ the device, by passing to&nbsp;valent_channel_service_identify().</p>
           <h6><a href="method.Channel.read_packet.html">valent_channel_read_packet</a></h6>
           <div class="docblock">
             <p>Asynchronously read the next <code>JsonNode</code> packet from <code>channel</code>. Call
-valent_channel_read_packet_finish() to get the&nbsp;result.</p>
+<code>valent_channel_read_packet_finish()</code> to get the&nbsp;result.</p>
           </div>
           
         </div>
@@ -340,7 +340,7 @@ valent_channel_read_packet_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.Channel.read_packet_finish.html">valent_channel_read_packet_finish</a></h6>
           <div class="docblock">
-            <p>Finishes an operation started by&nbsp;valent_channel_read_packet().</p>
+            <p>Finishes an operation started by <code>valent_channel_read_packet()</code>.</p>
           </div>
           
         </div>
@@ -349,7 +349,7 @@ valent_channel_read_packet_finish() to get the&nbsp;result.</p>
           <h6><a href="method.Channel.set_uri.html">valent_channel_set_uri</a></h6>
           <div class="docblock">
             <p>Set the string representation of <code>channel</code> that can be used to reconnect to
-the device, by passing to&nbsp;valent_channel_service_identify().</p>
+the device, by passing to <code>valent_channel_service_identify()</code>.</p>
           </div>
           
         </div>
@@ -377,7 +377,7 @@ negotiate an appropriate&nbsp;connection.</p>
           <h6><a href="method.Channel.write_packet.html">valent_channel_write_packet</a></h6>
           <div class="docblock">
             <p>Asynchronously write the <code>JsonNode</code> <code>packet</code> to <code>channel</code>. Call
-valent_channel_write_packet_finish() to get the&nbsp;result.</p>
+<code>valent_channel_write_packet_finish()</code> to get the&nbsp;result.</p>
           </div>
           
         </div>
@@ -385,7 +385,7 @@ valent_channel_write_packet_finish() to get the&nbsp;result.</p>
         <div class="">
           <h6><a href="method.Channel.write_packet_finish.html">valent_channel_write_packet_finish</a></h6>
           <div class="docblock">
-            <p>Finishes an async operation started by&nbsp;valent_channel_write_packet().</p>
+            <p>Finishes an async operation started by <code>valent_channel_write_packet()</code>.</p>
           </div>
           
         </div>
