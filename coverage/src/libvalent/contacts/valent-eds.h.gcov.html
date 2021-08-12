@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-12 01:24:55</td>
+            <td class="headerValue">2021-08-12 07:58:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -116,6 +116,14 @@
 <a name="38"><span class="lineNum">      38 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        275 : G_DEFINE_AUTOPTR_CLEANUP_FUNC (EContact, g_object_unref)</span></a>
 <a name="39"><span class="lineNum">      39 </span>                :            : #endif</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
+<a name="41"><span class="lineNum">      41 </span>                :            : #ifndef glib_autoptr_clear_EContactPhoto</a>
+<a name="42"><span class="lineNum">      42 </span>                :            : G_DEFINE_AUTOPTR_CLEANUP_FUNC (EContactPhoto, e_contact_photo_free)</a>
+<a name="43"><span class="lineNum">      43 </span>                :            : #endif</a>
+<a name="44"><span class="lineNum">      44 </span>                :            : </a>
+<a name="45"><span class="lineNum">      45 </span>                :            : #ifndef glib_autoptr_clear_EVCardAttribute</a>
+<a name="46"><span class="lineNum">      46 </span>                :            : G_DEFINE_AUTOPTR_CLEANUP_FUNC (EVCardAttribute, e_vcard_attribute_free)</a>
+<a name="47"><span class="lineNum">      47 </span>                :            : #endif</a>
+<a name="48"><span class="lineNum">      48 </span>                :            : </a>
 </pre>
       </td>
     </tr>

@@ -31,13 +31,13 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">222</td>
-            <td class="headerCovTableEntry">268</td>
-            <td class="headerCovTableEntryMed">82.8 %</td>
+            <td class="headerCovTableEntry">223</td>
+            <td class="headerCovTableEntry">269</td>
+            <td class="headerCovTableEntryMed">82.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-12 01:24:55</td>
+            <td class="headerValue">2021-08-12 07:58:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">30</td>
@@ -173,7 +173,7 @@
 <span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 15 times"> + </span>]
 <a name="93"><span class="lineNum">      93 </span>                :            : </a>
 <a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">         20 :   g_signal_emit (G_OBJECT (emission-&gt;store),</span></a>
-<a name="95"><span class="lineNum">      95 </span>                :            :                  emission-&gt;signal_id, 0,</a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">         20 :                  signals [emission-&gt;signal_id], 0,</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            :                  emission-&gt;uid,</a>
 <a name="97"><span class="lineNum">      97 </span>                :            :                  emission-&gt;contact);</a>
 <a name="98"><span class="lineNum">      98 </span>                :            : </a>
@@ -677,7 +677,7 @@
 <a name="596"><span class="lineNum">     596 </span>                :<span class="lineCov">         15 :   emission-&gt;store = g_object_ref (store);</span></a>
 <a name="597"><span class="lineNum">     597 </span>                :<span class="lineCov">         15 :   emission-&gt;uid = g_strdup (uid);</span></a>
 <a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">         15 :   emission-&gt;contact = g_object_ref (contact);</span></a>
-<a name="599"><span class="lineNum">     599 </span>                :<span class="lineCov">         15 :   emission-&gt;signal_id = signals [CONTACT_ADDED];</span></a>
+<a name="599"><span class="lineNum">     599 </span>                :<span class="lineCov">         15 :   emission-&gt;signal_id = CONTACT_ADDED;</span></a>
 <a name="600"><span class="lineNum">     600 </span>                :            : </a>
 <a name="601"><span class="lineNum">     601 </span>                :<span class="lineCov">         15 :   g_timeout_add (0, emit_change_main, g_steal_pointer (&amp;emission));</span></a>
 <a name="602"><span class="lineNum">     602 </span>                :            : }</a>
@@ -715,7 +715,7 @@
 <a name="634"><span class="lineNum">     634 </span>                :<span class="lineCov">          5 :   emission-&gt;uid = g_strdup (uid);</span></a>
 <a name="635"><span class="lineNum">     635 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (contact)</span></a>
 <a name="636"><span class="lineNum">     636 </span>                :<span class="lineNoCov">          0 :     emission-&gt;contact = g_object_ref (contact);</span></a>
-<a name="637"><span class="lineNum">     637 </span>                :<span class="lineCov">          5 :   emission-&gt;signal_id = signals [CONTACT_REMOVED];</span></a>
+<a name="637"><span class="lineNum">     637 </span>                :<span class="lineCov">          5 :   emission-&gt;signal_id = CONTACT_REMOVED;</span></a>
 <a name="638"><span class="lineNum">     638 </span>                :            : </a>
 <a name="639"><span class="lineNum">     639 </span>                :<span class="lineCov">          5 :   g_timeout_add (0, emit_change_main, g_steal_pointer (&amp;emission));</span></a>
 <a name="640"><span class="lineNum">     640 </span>                :            : }</a>
