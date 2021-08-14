@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-14 06:57:30</td>
+            <td class="headerValue">2021-08-14 07:45:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -116,48 +116,42 @@
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
 <a name="39"><span class="lineNum">      39 </span>                :            : #define VALENT_TYPE_DEVICE (valent_device_get_type())</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
-<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 4242 times"> + </span><span class="branchCov" title="Branch 1 was taken 45874 times"> + </span><span class="branchCov" title="Branch 2 was taken 45874 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      56223 : G_DECLARE_FINAL_TYPE (ValentDevice, valent_device, VALENT, DEVICE, GObject)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 45874 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 4217 times"> + </span><span class="branchCov" title="Branch 1 was taken 45790 times"> + </span><span class="branchCov" title="Branch 2 was taken 45790 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      56081 : G_DECLARE_FINAL_TYPE (ValentDevice, valent_device, VALENT, DEVICE, GObject)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 45790 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="42"><span class="lineNum">      42 </span>                :            : </a>
 <a name="43"><span class="lineNum">      43 </span>                :            : ValentDevice      * valent_device_new               (const char           *id);</a>
-<a name="44"><span class="lineNum">      44 </span>                :            : </a>
-<a name="45"><span class="lineNum">      45 </span>                :            : /* Properties */</a>
-<a name="46"><span class="lineNum">      46 </span>                :            : GActionGroup      * valent_device_get_actions       (ValentDevice         *device);</a>
-<a name="47"><span class="lineNum">      47 </span>                :            : ValentChannel     * valent_device_get_channel       (ValentDevice         *device);</a>
-<a name="48"><span class="lineNum">      48 </span>                :            : gboolean            valent_device_get_connected     (ValentDevice         *device);</a>
-<a name="49"><span class="lineNum">      49 </span>                :            : ValentData        * valent_device_get_data          (ValentDevice         *device);</a>
-<a name="50"><span class="lineNum">      50 </span>                :            : const char        * valent_device_get_icon_name     (ValentDevice         *device);</a>
-<a name="51"><span class="lineNum">      51 </span>                :            : const char        * valent_device_get_id            (ValentDevice         *device);</a>
-<a name="52"><span class="lineNum">      52 </span>                :            : GMenuModel        * valent_device_get_menu          (ValentDevice         *device);</a>
-<a name="53"><span class="lineNum">      53 </span>                :            : const char        * valent_device_get_name          (ValentDevice         *device);</a>
-<a name="54"><span class="lineNum">      54 </span>                :            : gboolean            valent_device_get_paired        (ValentDevice         *device);</a>
-<a name="55"><span class="lineNum">      55 </span>                :            : GPtrArray         * valent_device_get_plugins       (ValentDevice         *device);</a>
-<a name="56"><span class="lineNum">      56 </span>                :            : ValentDeviceState   valent_device_get_state         (ValentDevice         *device);</a>
-<a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>                :            : /* Packets */</a>
-<a name="59"><span class="lineNum">      59 </span>                :            : void                valent_device_queue_packet      (ValentDevice         *device,</a>
-<a name="60"><span class="lineNum">      60 </span>                :            :                                                      JsonNode             *packet);</a>
-<a name="61"><span class="lineNum">      61 </span>                :            : void                valent_device_send_packet       (ValentDevice         *device,</a>
-<a name="62"><span class="lineNum">      62 </span>                :            :                                                      JsonNode             *packet,</a>
-<a name="63"><span class="lineNum">      63 </span>                :            :                                                      GCancellable         *cancellable,</a>
-<a name="64"><span class="lineNum">      64 </span>                :            :                                                      GAsyncReadyCallback   callback,</a>
-<a name="65"><span class="lineNum">      65 </span>                :            :                                                      gpointer              user_data);</a>
-<a name="66"><span class="lineNum">      66 </span>                :            : gboolean           valent_device_send_packet_finish (ValentDevice         *device,</a>
-<a name="67"><span class="lineNum">      67 </span>                :            :                                                      GAsyncResult         *result,</a>
-<a name="68"><span class="lineNum">      68 </span>                :            :                                                      GError              **error);</a>
-<a name="69"><span class="lineNum">      69 </span>                :            : </a>
-<a name="70"><span class="lineNum">      70 </span>                :            : /* Notifications */</a>
-<a name="71"><span class="lineNum">      71 </span>                :            : void               valent_device_hide_notification  (ValentDevice         *device,</a>
-<a name="72"><span class="lineNum">      72 </span>                :            :                                                      const char           *id);</a>
-<a name="73"><span class="lineNum">      73 </span>                :            : void               valent_device_show_notification  (ValentDevice         *device,</a>
-<a name="74"><span class="lineNum">      74 </span>                :            :                                                      const char           *id,</a>
-<a name="75"><span class="lineNum">      75 </span>                :            :                                                      GNotification        *notification);</a>
-<a name="76"><span class="lineNum">      76 </span>                :            : GFile            * valent_device_new_download_file  (ValentDevice         *device,</a>
-<a name="77"><span class="lineNum">      77 </span>                :            :                                                      const char           *filename,</a>
-<a name="78"><span class="lineNum">      78 </span>                :            :                                                      gboolean              unique);</a>
-<a name="79"><span class="lineNum">      79 </span>                :            : </a>
-<a name="80"><span class="lineNum">      80 </span>                :            : G_END_DECLS</a>
-<a name="81"><span class="lineNum">      81 </span>                :            : </a>
+<a name="44"><span class="lineNum">      44 </span>                :            : GActionGroup      * valent_device_get_actions       (ValentDevice         *device);</a>
+<a name="45"><span class="lineNum">      45 </span>                :            : ValentChannel     * valent_device_get_channel       (ValentDevice         *device);</a>
+<a name="46"><span class="lineNum">      46 </span>                :            : gboolean            valent_device_get_connected     (ValentDevice         *device);</a>
+<a name="47"><span class="lineNum">      47 </span>                :            : ValentData        * valent_device_get_data          (ValentDevice         *device);</a>
+<a name="48"><span class="lineNum">      48 </span>                :            : const char        * valent_device_get_icon_name     (ValentDevice         *device);</a>
+<a name="49"><span class="lineNum">      49 </span>                :            : const char        * valent_device_get_id            (ValentDevice         *device);</a>
+<a name="50"><span class="lineNum">      50 </span>                :            : GMenuModel        * valent_device_get_menu          (ValentDevice         *device);</a>
+<a name="51"><span class="lineNum">      51 </span>                :            : const char        * valent_device_get_name          (ValentDevice         *device);</a>
+<a name="52"><span class="lineNum">      52 </span>                :            : gboolean            valent_device_get_paired        (ValentDevice         *device);</a>
+<a name="53"><span class="lineNum">      53 </span>                :            : GPtrArray         * valent_device_get_plugins       (ValentDevice         *device);</a>
+<a name="54"><span class="lineNum">      54 </span>                :            : ValentDeviceState   valent_device_get_state         (ValentDevice         *device);</a>
+<a name="55"><span class="lineNum">      55 </span>                :            : void                valent_device_queue_packet      (ValentDevice         *device,</a>
+<a name="56"><span class="lineNum">      56 </span>                :            :                                                      JsonNode             *packet);</a>
+<a name="57"><span class="lineNum">      57 </span>                :            : void                valent_device_send_packet       (ValentDevice         *device,</a>
+<a name="58"><span class="lineNum">      58 </span>                :            :                                                      JsonNode             *packet,</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :                                                      GCancellable         *cancellable,</a>
+<a name="60"><span class="lineNum">      60 </span>                :            :                                                      GAsyncReadyCallback   callback,</a>
+<a name="61"><span class="lineNum">      61 </span>                :            :                                                      gpointer              user_data);</a>
+<a name="62"><span class="lineNum">      62 </span>                :            : gboolean           valent_device_send_packet_finish (ValentDevice         *device,</a>
+<a name="63"><span class="lineNum">      63 </span>                :            :                                                      GAsyncResult         *result,</a>
+<a name="64"><span class="lineNum">      64 </span>                :            :                                                      GError              **error);</a>
+<a name="65"><span class="lineNum">      65 </span>                :            : void               valent_device_hide_notification  (ValentDevice         *device,</a>
+<a name="66"><span class="lineNum">      66 </span>                :            :                                                      const char           *id);</a>
+<a name="67"><span class="lineNum">      67 </span>                :            : void               valent_device_show_notification  (ValentDevice         *device,</a>
+<a name="68"><span class="lineNum">      68 </span>                :            :                                                      const char           *id,</a>
+<a name="69"><span class="lineNum">      69 </span>                :            :                                                      GNotification        *notification);</a>
+<a name="70"><span class="lineNum">      70 </span>                :            : GFile            * valent_device_new_download_file  (ValentDevice         *device,</a>
+<a name="71"><span class="lineNum">      71 </span>                :            :                                                      const char           *filename,</a>
+<a name="72"><span class="lineNum">      72 </span>                :            :                                                      gboolean              unique);</a>
+<a name="73"><span class="lineNum">      73 </span>                :            : </a>
+<a name="74"><span class="lineNum">      74 </span>                :            : G_END_DECLS</a>
+<a name="75"><span class="lineNum">      75 </span>                :            : </a>
 </pre>
       </td>
     </tr>
