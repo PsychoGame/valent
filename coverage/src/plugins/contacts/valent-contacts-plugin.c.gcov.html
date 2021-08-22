@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-14 07:45:45</td>
+            <td class="headerValue">2021-08-22 20:57:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -102,8 +102,8 @@
 <a name="24"><span class="lineNum">      24 </span>                :            : </a>
 <a name="25"><span class="lineNum">      25 </span>                :            : static void valent_device_plugin_iface_init (ValentDevicePluginInterface *iface);</a>
 <a name="26"><span class="lineNum">      26 </span>                :            : </a>
-<a name="27"><span class="lineNum">      27 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 1890 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1910 : G_DEFINE_TYPE_WITH_CODE (ValentContactsPlugin, valent_contacts_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 1880 times"> + </span>]
+<a name="27"><span class="lineNum">      27 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 1888 times"> + </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1908 : G_DEFINE_TYPE_WITH_CODE (ValentContactsPlugin, valent_contacts_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 1878 times"> + </span>]
 <a name="28"><span class="lineNum">      28 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="29"><span class="lineNum">      29 </span>                :            : </a>
 <a name="30"><span class="lineNum">      30 </span>                :            : enum {</a>
@@ -520,22 +520,22 @@
 <a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         15 : }</span></a>
 <a name="442"><span class="lineNum">     442 </span>                :            : </a>
 <a name="443"><span class="lineNum">     443 </span>                :            : static void</a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         15 : valent_contacts_plugin_disable (ValentDevicePlugin *plugin)</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         14 : valent_contacts_plugin_disable (ValentDevicePlugin *plugin)</span></a>
 <a name="445"><span class="lineNum">     445 </span>                :            : {</a>
-<a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">         15 :   ValentContactsPlugin *self = VALENT_CONTACTS_PLUGIN (plugin);</span></a>
+<a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">         14 :   ValentContactsPlugin *self = VALENT_CONTACTS_PLUGIN (plugin);</span></a>
 <a name="447"><span class="lineNum">     447 </span>                :            : </a>
 <a name="448"><span class="lineNum">     448 </span>                :            :   /* Unregister GActions */</a>
-<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">         15 :   valent_device_plugin_unregister_actions (plugin,</span></a>
+<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">         14 :   valent_device_plugin_unregister_actions (plugin,</span></a>
 <a name="450"><span class="lineNum">     450 </span>                :            :                                            actions,</a>
 <a name="451"><span class="lineNum">     451 </span>                :            :                                            G_N_ELEMENTS (actions));</a>
 <a name="452"><span class="lineNum">     452 </span>                :            : </a>
 <a name="453"><span class="lineNum">     453 </span>                :            :   /* Drop Addressbooks */</a>
-<a name="454"><span class="lineNum">     454 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   g_clear_object (&amp;self-&gt;remote_store);</span></a>
+<a name="454"><span class="lineNum">     454 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   g_clear_object (&amp;self-&gt;remote_store);</span></a>
 <a name="455"><span class="lineNum">     455 </span>                :            :   //g_clear_object (&amp;self-&gt;local_store);</a>
 <a name="456"><span class="lineNum">     456 </span>                :            : </a>
 <a name="457"><span class="lineNum">     457 </span>                :            :   /* Dispose GSettings */</a>
-<a name="458"><span class="lineNum">     458 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   g_clear_object (&amp;self-&gt;settings);</span></a>
-<a name="459"><span class="lineNum">     459 </span>                :<span class="lineCov">         15 : }</span></a>
+<a name="458"><span class="lineNum">     458 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   g_clear_object (&amp;self-&gt;settings);</span></a>
+<a name="459"><span class="lineNum">     459 </span>                :<span class="lineCov">         14 : }</span></a>
 <a name="460"><span class="lineNum">     460 </span>                :            : </a>
 <a name="461"><span class="lineNum">     461 </span>                :            : static void</a>
 <a name="462"><span class="lineNum">     462 </span>                :<span class="lineCov">         45 : valent_contacts_plugin_update_state (ValentDevicePlugin *plugin)</span></a>
@@ -602,23 +602,23 @@
 <a name="523"><span class="lineNum">     523 </span>                :            :  * GObject</a>
 <a name="524"><span class="lineNum">     524 </span>                :            :  */</a>
 <a name="525"><span class="lineNum">     525 </span>                :            : static void</a>
-<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">         75 : valent_contacts_plugin_get_property (GObject    *object,</span></a>
+<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">         74 : valent_contacts_plugin_get_property (GObject    *object,</span></a>
 <a name="527"><span class="lineNum">     527 </span>                :            :                                      guint       prop_id,</a>
 <a name="528"><span class="lineNum">     528 </span>                :            :                                      GValue     *value,</a>
 <a name="529"><span class="lineNum">     529 </span>                :            :                                      GParamSpec *pspec)</a>
 <a name="530"><span class="lineNum">     530 </span>                :            : {</a>
-<a name="531"><span class="lineNum">     531 </span>                :<span class="lineCov">         75 :   ValentContactsPlugin *self = VALENT_CONTACTS_PLUGIN (object);</span></a>
+<a name="531"><span class="lineNum">     531 </span>                :<span class="lineCov">         74 :   ValentContactsPlugin *self = VALENT_CONTACTS_PLUGIN (object);</span></a>
 <a name="532"><span class="lineNum">     532 </span>                :            : </a>
-<a name="533"><span class="lineNum">     533 </span>        [<span class="branchCov" title="Branch 0 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         75 :   switch (prop_id)</span></a>
+<a name="533"><span class="lineNum">     533 </span>        [<span class="branchCov" title="Branch 0 was taken 74 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         74 :   switch (prop_id)</span></a>
 <a name="534"><span class="lineNum">     534 </span>                :            :     {</a>
-<a name="535"><span class="lineNum">     535 </span>                :<span class="lineCov">         75 :     case PROP_DEVICE:</span></a>
-<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">         75 :       g_value_set_object (value, self-&gt;device);</span></a>
-<a name="537"><span class="lineNum">     537 </span>                :<span class="lineCov">         75 :       break;</span></a>
+<a name="535"><span class="lineNum">     535 </span>                :<span class="lineCov">         74 :     case PROP_DEVICE:</span></a>
+<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">         74 :       g_value_set_object (value, self-&gt;device);</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :<span class="lineCov">         74 :       break;</span></a>
 <a name="538"><span class="lineNum">     538 </span>                :            : </a>
 <a name="539"><span class="lineNum">     539 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="540"><span class="lineNum">     540 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
 <a name="541"><span class="lineNum">     541 </span>                :            :     }</a>
-<a name="542"><span class="lineNum">     542 </span>                :<span class="lineCov">         75 : }</span></a>
+<a name="542"><span class="lineNum">     542 </span>                :<span class="lineCov">         74 : }</span></a>
 <a name="543"><span class="lineNum">     543 </span>                :            : </a>
 <a name="544"><span class="lineNum">     544 </span>                :            : static void</a>
 <a name="545"><span class="lineNum">     545 </span>                :<span class="lineCov">         15 : valent_contacts_plugin_set_property (GObject      *object,</span></a>
