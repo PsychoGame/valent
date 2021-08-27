@@ -241,7 +241,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/media/valent-media-player.c#L15">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/media/valent-media-player.c#L14">[src]</a>
           
         </h4>
 
@@ -250,12 +250,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A <code>ValentMediaPlayer</code> is a base class for media players that more or less mirrors the MPRISv2
-specification. The primary difference is that media player control is not spread across several
-interfaces as is the case with the application, player, playlist and tracklist interfaces
-described by <span class="caps">MPRIS</span>.</p>
-<p>The Valent <span class="caps">MPRIS</span> plugin already provides support for MPRISv2 compatible players exposed on DBus,
-so it is primarily made available to allow other media players to be supported by&nbsp;plugins.</p>
+          <p>A <code>ValentMediaPlayer</code> is a base class for media players that more or less
+mirrors the MPRISv2 specification. The primary difference is that media
+player control is not spread across several interfaces as is the case with
+the application, player, playlist and tracklist DBus&nbsp;interfaces.</p>
+<p>The built-in <span class="caps">MPRIS</span> plugin provides an implementation for MPRISv2 players, so
+it is primarily an abstraction for the sake of plugins that want to control
+the media state in response to certain&nbsp;events.</p>
         </div>
 
         <div class="docblock">
@@ -579,8 +580,8 @@ must emit <code>ValentMediaPlayer::changed</code>.</p>
         <div class="">
           <h6><a href="signal.MediaPlayer.seeked.html">Valent.MediaPlayer::seeked</a></h6>
           <div class="docblock">
-            <p><code>ValentMediaPlayer::seeked</code> is emitted when the track position has changed in
-a way that is inconsistant with the current playing&nbsp;state.</p>
+            <p><code>ValentMediaPlayer::seeked</code> is emitted when the track position has changed
+in a way that is inconsistant with the current playing&nbsp;state.</p>
           </div>
           
         </div>
