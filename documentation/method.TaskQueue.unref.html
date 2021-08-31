@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.Channel:base-stream</title>
+  <title>Valent.TaskQueue.unref</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Valent.Channel:base-stream"/>
-  <meta property="og:description" content="Reference for property Valent.Channel:base-stream"/>
-  <meta name="twitter:title" content="Valent.Channel:base-stream"/>
-  <meta name="twitter:description" content="Reference for property Valent.Channel:base-stream"/>
+  <meta priority="og:title" content="Valent.TaskQueue.unref"/>
+  <meta priority="og:description" content="Reference for Valent.TaskQueue.unref"/>
+  <meta name="twitter:title" content="Valent.TaskQueue.unref"/>
+  <meta name="twitter:description" content="Reference for Valent.TaskQueue.unref"/>
 
 
   
@@ -82,20 +82,24 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Channel.html">Channel</a>
+    <a href="struct.TaskQueue.html">TaskQueue</a>
   </div>
 </div>
 <div class="section">
-  <h5>Properties</h5>
+  <h5>Methods</h5>
   <div class="links">
   
-    <a class="property current"href="property.Channel.base-stream.html">base-stream</a>
+    <a class="method" href="method.TaskQueue.ref.html">ref</a>
   
-    <a class="property"href="property.Channel.identity.html">identity</a>
+    <a class="method" href="method.TaskQueue.run.html">run</a>
   
-    <a class="property"href="property.Channel.peer-identity.html">peer-identity</a>
+    <a class="method" href="method.TaskQueue.run_check.html">run_check</a>
   
-    <a class="property"href="property.Channel.uri.html">uri</a>
+    <a class="method" href="method.TaskQueue.run_close.html">run_close</a>
+  
+    <a class="method" href="method.TaskQueue.run_sync.html">run_sync</a>
+  
+    <a class="method current" href="method.TaskQueue.unref.html">unref</a>
   
   </div>
 </div>
@@ -107,40 +111,46 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Property</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.Channel.html">Channel</a>:base-stream</h1>
+    <h3>Method</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="struct.TaskQueue.html">TaskQueue</a><span class="sep"></span>unref</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration">
+      <h4 style="display:flex;" id="declaration">
         Declaration
-        <a href="#declaration" class="anchor"></a>
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.h#L38">[src]</a>
+        
       </h4>
 
-      <div class="docblock">
-        <pre><code>property base-stream: Gio.IOStream [ read, write, construct-only ]</code></pre>
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="n">valent_task_queue_unref</span> <span class="p">(</span>
+  <span class="n">ValentTaskQueue</span><span class="o">*</span> <span class="n">queue</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
       </div>
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description">
+      <h4 style="display:flex;" id="description">
         Description
-        <a href="#description" class="anchor"></a>
+        <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-channel.c#L456">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.c#L234">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>The base <code>GIOStream</code> for the&nbsp;channel.</p>
+        <p>Decreases the reference count of <code>queue</code>. When its reference count drops to 0,
+<code>queue</code> will block waiting for any unprocessed tasks to&nbsp;complete.</p>
       </div>
 
       <div class="docblock">
         <table>
-          <tr><td>Type:</td>
-            <td><code>GIOStream*</code></td>
-          </tr>
           
           
           
@@ -150,21 +160,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
     </div>
 
-    <div class="flags toggle-wrapper">
-      <h4 id="flags">
-        Flags
-        <a href="#flags" class="anchor"></a>
-      </h4>
+    
 
-      <div class="docblock">
-      <table>
-        <tr><td>Readable</td><td><b>yes</b></td></tr>
-        <tr><td>Writable</td><td><b>yes</b></td></tr>
-        <tr><td>Construct</td><td><b>no</b></td></tr>
-        <tr><td>Construct only</td><td><b>yes</b></td></tr>
-      </table>
-      </div>
-    </div>
+    
 
   </section>
 </section>

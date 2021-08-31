@@ -1,0 +1,305 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Valent.TaskQueue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Valent-0"/>
+  
+
+  
+  <meta property="og:title" content="Valent.TaskQueue"/>
+  <meta property="og:description" content="Reference for Valent.TaskQueue"/>
+  <meta name="twitter:title" content="Valent.TaskQueue"/>
+  <meta name="twitter:description" content="Reference for Valent.TaskQueue"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <img src="logo.svg" class="logo"/>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Valent</a></h3>
+        <p>API Version: 0</p>
+        
+        <p>Library Version: 0.1.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="struct.TaskQueue.html#description">TaskQueue</a>
+  </div>
+</div>
+
+
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.TaskQueue.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.TaskQueue.ref.html">ref</a>
+  
+    <a class="method" href="method.TaskQueue.run.html">run</a>
+  
+    <a class="method" href="method.TaskQueue.run_check.html">run_check</a>
+  
+    <a class="method" href="method.TaskQueue.run_close.html">run_close</a>
+  
+    <a class="method" href="method.TaskQueue.run_sync.html">run_sync</a>
+  
+    <a class="method" href="method.TaskQueue.unref.html">unref</a>
+  
+  </div>
+</div>
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Struct</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span>TaskQueue</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 style="display:flex;" id="description">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.c#L13">[src]</a>
+          
+        </h4>
+
+        <pre><code><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">ValentTaskQueue</span> <span class="p">{</span>
+  <span class="cm">/* No available fields */</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+
+        <div class="docblock">
+          <p>The <code>ValentTaskQueue</code> class is an execution queue for <code>GTask</code> operations.</p>
+<p>Each <code>ValentTaskQueue</code> instance has a dedicated thread where tasks are
+executed sequentially. Queued tasks are automatically sorted by priority, as
+reported by <code>g_task_get_priority()</code>.</p>
+        </div>
+
+        
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.TaskQueue.new.html">valent_task_queue_new</a></h6>
+
+          <div class="docblock">
+            <p>Create a new <code>ValentTaskQueue</code>.</p>
+          </div>
+
+          
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.TaskQueue.ref.html">valent_task_queue_ref</a></h6>
+
+          <div class="docblock">
+            <p>Increase the reference count of <code>queue</code>.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TaskQueue.run.html">valent_task_queue_run</a></h6>
+
+          <div class="docblock">
+            <p>Push <code>task</code> and <code>task_func</code> onto <code>queue</code>.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TaskQueue.run_check.html">valent_task_queue_run_check</a></h6>
+
+          <div class="docblock">
+            <p>A variant of <code>valent_task_queue_run()</code> that checks if a <code>task</code> succeeds.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TaskQueue.run_close.html">valent_task_queue_run_close</a></h6>
+
+          <div class="docblock">
+            <p>A variant of <code>valent_task_queue_run()</code> that halts <code>queue</code> when <code>task</code> completes.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TaskQueue.run_sync.html">valent_task_queue_run_sync</a></h6>
+
+          <div class="docblock">
+            <p>Push <code>task</code> and <code>task_func</code> onto <code>queue</code> and block until <code>task</code> completes.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TaskQueue.unref.html">valent_task_queue_unref</a></h6>
+
+          <div class="docblock">
+            <p>Decreases the reference count of <code>queue</code>. When its reference count drops to 0,
+<code>queue</code> will block waiting for any unprocessed tasks to&nbsp;complete.</p>
+          </div>
+
+          
+        </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

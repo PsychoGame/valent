@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.Channel.get_identity</title>
+  <title>Valent.TaskQueue.new</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Valent.Channel.get_identity"/>
-  <meta priority="og:description" content="Reference for Valent.Channel.get_identity"/>
-  <meta name="twitter:title" content="Valent.Channel.get_identity"/>
-  <meta name="twitter:description" content="Reference for Valent.Channel.get_identity"/>
+  <meta property="og:title" content="Valent.TaskQueue.new"/>
+  <meta property="og:description" content="Reference for Valent.TaskQueue.new"/>
+  <meta name="twitter:title" content="Valent.TaskQueue.new"/>
+  <meta name="twitter:description" content="Reference for Valent.TaskQueue.new"/>
 
 
   
@@ -82,44 +82,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Channel.html">Channel</a>
+    <a href="struct.TaskQueue.html">TaskQueue</a>
   </div>
 </div>
 <div class="section">
-  <h5>Methods</h5>
+  <h5>Functions</h5>
   <div class="links">
-  
-    <a class="method" href="method.Channel.close.html">close</a>
-  
-    <a class="method" href="method.Channel.close_async.html">close_async</a>
-  
-    <a class="method" href="method.Channel.close_finish.html">close_finish</a>
-  
-    <a class="method" href="method.Channel.download.html">download</a>
-  
-    <a class="method" href="method.Channel.get_base_stream.html">get_base_stream</a>
-  
-    <a class="method current" href="method.Channel.get_identity.html">get_identity</a>
-  
-    <a class="method" href="method.Channel.get_peer_identity.html">get_peer_identity</a>
-  
-    <a class="method" href="method.Channel.get_uri.html">get_uri</a>
-  
-    <a class="method" href="method.Channel.get_verification_key.html">get_verification_key</a>
-  
-    <a class="method" href="method.Channel.read_packet.html">read_packet</a>
-  
-    <a class="method" href="method.Channel.read_packet_finish.html">read_packet_finish</a>
-  
-    <a class="method" href="method.Channel.set_uri.html">set_uri</a>
-  
-    <a class="method" href="method.Channel.store_data.html">store_data</a>
-  
-    <a class="method" href="method.Channel.upload.html">upload</a>
-  
-    <a class="method" href="method.Channel.write_packet.html">write_packet</a>
-  
-    <a class="method" href="method.Channel.write_packet_finish.html">write_packet_finish</a>
   
   </div>
 </div>
@@ -131,24 +99,24 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.Channel.html">Channel</a><span class="sep"></span>get_identity</h1>
+    <h3>Function</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="struct.TaskQueue.html">TaskQueue</a><span class="sep"></span>new</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 style="display:flex;" id="declaration">
+      <h4 id="declaration" style="display:flex;">
         Declaration
-        <a class="anchor" href="#declaration"></a>
+        <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-channel.h#L41">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.h#L24">[src]</a>
         
       </h4>
 
-      <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">JsonNode</span><span class="o">*</span>
-<span class="n">valent_channel_get_identity</span> <span class="p">(</span>
-  <span class="n">ValentChannel</span><span class="o">*</span> <span class="n">channel</span>
+      <div class="docblock">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">ValentTaskQueue</span><span class="o">*</span>
+<span class="n">valent_task_queue_new</span> <span class="p">(</span>
+  <span class="kt">void</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -156,16 +124,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 style="display:flex;" id="description">
+      <h4 id="description" style="display:flex;">
         Description
-        <a class="anchor" href="#description"></a>
+        <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-channel.c#L553">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.c#L189">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Gets the identity packet sent by the <code>ValentChannelService</code> during connection&nbsp;negotiation.</p>
+        <p>Create a new <code>ValentTaskQueue</code>.</p>
       </div>
 
       <div class="docblock">
@@ -192,23 +160,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="returns">
           <tr class="arg-name">
             <td>Returns:</td>
-            <td><code>JsonNode*</code></td>
+            <td><a href="struct.TaskQueue.html"><code>ValentTaskQueue</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The&nbsp;identity.</p></td>
+            <td><p>A <code>ValentTaskQueue</code>.</p></td>
           </tr>
           
           
           
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the instance.</td></tr>
+          <tr><td>&nbsp;</td><td title="transfer: full">The caller of the function takes ownership of the data, and is responsible for freeing it.</td></tr>
           
           
         </table>
       </div>
     </div>
     
-
   </section>
 </section>
 

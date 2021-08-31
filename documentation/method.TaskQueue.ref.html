@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.Channel.get_base_stream</title>
+  <title>Valent.TaskQueue.ref</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Valent.Channel.get_base_stream"/>
-  <meta priority="og:description" content="Reference for Valent.Channel.get_base_stream"/>
-  <meta name="twitter:title" content="Valent.Channel.get_base_stream"/>
-  <meta name="twitter:description" content="Reference for Valent.Channel.get_base_stream"/>
+  <meta priority="og:title" content="Valent.TaskQueue.ref"/>
+  <meta priority="og:description" content="Reference for Valent.TaskQueue.ref"/>
+  <meta name="twitter:title" content="Valent.TaskQueue.ref"/>
+  <meta name="twitter:description" content="Reference for Valent.TaskQueue.ref"/>
 
 
   
@@ -82,44 +82,24 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Channel.html">Channel</a>
+    <a href="struct.TaskQueue.html">TaskQueue</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.Channel.close.html">close</a>
+    <a class="method current" href="method.TaskQueue.ref.html">ref</a>
   
-    <a class="method" href="method.Channel.close_async.html">close_async</a>
+    <a class="method" href="method.TaskQueue.run.html">run</a>
   
-    <a class="method" href="method.Channel.close_finish.html">close_finish</a>
+    <a class="method" href="method.TaskQueue.run_check.html">run_check</a>
   
-    <a class="method" href="method.Channel.download.html">download</a>
+    <a class="method" href="method.TaskQueue.run_close.html">run_close</a>
   
-    <a class="method current" href="method.Channel.get_base_stream.html">get_base_stream</a>
+    <a class="method" href="method.TaskQueue.run_sync.html">run_sync</a>
   
-    <a class="method" href="method.Channel.get_identity.html">get_identity</a>
-  
-    <a class="method" href="method.Channel.get_peer_identity.html">get_peer_identity</a>
-  
-    <a class="method" href="method.Channel.get_uri.html">get_uri</a>
-  
-    <a class="method" href="method.Channel.get_verification_key.html">get_verification_key</a>
-  
-    <a class="method" href="method.Channel.read_packet.html">read_packet</a>
-  
-    <a class="method" href="method.Channel.read_packet_finish.html">read_packet_finish</a>
-  
-    <a class="method" href="method.Channel.set_uri.html">set_uri</a>
-  
-    <a class="method" href="method.Channel.store_data.html">store_data</a>
-  
-    <a class="method" href="method.Channel.upload.html">upload</a>
-  
-    <a class="method" href="method.Channel.write_packet.html">write_packet</a>
-  
-    <a class="method" href="method.Channel.write_packet_finish.html">write_packet_finish</a>
+    <a class="method" href="method.TaskQueue.unref.html">unref</a>
   
   </div>
 </div>
@@ -132,7 +112,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.Channel.html">Channel</a><span class="sep"></span>get_base_stream</h1>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="struct.TaskQueue.html">TaskQueue</a><span class="sep"></span>ref</h1>
   </header>
 
   <section>
@@ -141,14 +121,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-channel.h#L40">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.h#L37">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">GIOStream</span><span class="o">*</span>
-<span class="n">valent_channel_get_base_stream</span> <span class="p">(</span>
-  <span class="n">ValentChannel</span><span class="o">*</span> <span class="n">channel</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">ValentTaskQueue</span><span class="o">*</span>
+<span class="n">valent_task_queue_ref</span> <span class="p">(</span>
+  <span class="n">ValentTaskQueue</span><span class="o">*</span> <span class="n">queue</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -160,12 +140,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-channel.c#L535">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.c#L218">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Gets the <code>GIOStream</code> for the channel, or <span class="caps">NULL</span> if&nbsp;unset.</p>
+        <p>Increase the reference count of <code>queue</code>.</p>
       </div>
 
       <div class="docblock">
@@ -192,17 +172,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="returns">
           <tr class="arg-name">
             <td>Returns:</td>
-            <td><code>GIOStream*</code></td>
+            <td><a href="struct.TaskQueue.html"><code>ValentTaskQueue</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The base <code>GIOStream</code>.</p></td>
+            <td><p>A <code>ValentTaskQueue</code>.</p></td>
           </tr>
           
           
           
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the instance.</td></tr>
-          <tr><td>&nbsp;</td><td>The return value can be <code>NULL</code>.</td></tr>
+          <tr><td>&nbsp;</td><td title="transfer: full">The caller of the method takes ownership of the data, and is responsible for freeing it.</td></tr>
+          
           
         </table>
       </div>
