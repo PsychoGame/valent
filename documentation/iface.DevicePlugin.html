@@ -88,6 +88,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 <div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.DevicePlugin.get_incoming.html">get_incoming</a>
+  
+    <a class="func" href="type_func.DevicePlugin.get_outgoing.html">get_outgoing</a>
+  
+    <a class="func" href="type_func.DevicePlugin.new_settings.html">new_settings</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
   <h5>Instance methods</h5>
   <div class="links">
   
@@ -132,21 +147,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
-
-
-
-<div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.DevicePlugin.get_incoming.html">get_incoming</a>
-  
-    <a class="func" href="type_func.DevicePlugin.get_outgoing.html">get_outgoing</a>
-  
-    <a class="func" href="type_func.DevicePlugin.new_settings.html">new_settings</a>
-  
-  </div>
-</div>
 
 
 
@@ -245,6 +245,50 @@ remote device&#8217;s access before&nbsp;pairing.</p>
         <a data-namespace="GObject" data-link="class.Object.html" href="javascript:void(0)" class="external"><code>GObject</code></a>.</p>
       </div>
     </div>
+
+    
+    <div class="methods toggle-wrapper">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.DevicePlugin.get_incoming.html">valent_device_plugin_get_incoming</a></h6>
+
+        <div class="docblock">
+          <p>Gets the list of incoming packets <code>plugin</code> can&nbsp;handle.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.DevicePlugin.get_outgoing.html">valent_device_plugin_get_outgoing</a></h6>
+
+        <div class="docblock">
+          <p>Gets the list of outgoing packets <code>plugin</code> can&nbsp;provide.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.DevicePlugin.new_settings.html">valent_device_plugin_new_settings</a></h6>
+
+        <div class="docblock">
+          <p>A convenience function for plugins to create a <code>GSettings</code> object for a device
+<span class="caps">ID</span> and module&nbsp;name.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
 
     
     <div class="methods toggle-wrapper">
@@ -512,50 +556,6 @@ or requesting data from the&nbsp;device.</p>
     
 
     
-    <div class="methods toggle-wrapper">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-      <div class="">
-        <h6><a href="type_func.DevicePlugin.get_incoming.html">valent_device_plugin_get_incoming</a></h6>
-
-        <div class="docblock">
-          <p>Gets the list of incoming packets <code>plugin</code> can&nbsp;handle.</p>
-        </div>
-
-        
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.DevicePlugin.get_outgoing.html">valent_device_plugin_get_outgoing</a></h6>
-
-        <div class="docblock">
-          <p>Gets the list of outgoing packets <code>plugin</code> can&nbsp;provide.</p>
-        </div>
-
-        
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.DevicePlugin.new_settings.html">valent_device_plugin_new_settings</a></h6>
-
-        <div class="docblock">
-          <p>A convenience function for plugins to create a <code>GSettings</code> object for a device
-<span class="caps">ID</span> and module&nbsp;name.</p>
-        </div>
-
-        
-      </div>
-      
-      </div>
-    </div>
-    
-
-    
     <div class="toggle-wrapper methods">
       <h4 id="virtual-methods">
         Virtual methods
@@ -620,11 +620,15 @@ or requesting data from the&nbsp;device.</p>
 
 
     
-<div class="toc">
+<div id="toc" class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
       <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
       
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
@@ -636,10 +640,6 @@ or requesting data from the&nbsp;device.</p>
       
 
       
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
 
       
 <li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>

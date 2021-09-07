@@ -90,6 +90,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 <div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Session.get_default.html">get_default</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
   <h5>Instance methods</h5>
   <div class="links">
   
@@ -116,17 +127,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 </div>
 
 
-
-
-
-<div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.Session.get_default.html">get_default</a>
-  
-  </div>
-</div>
 
 
 
@@ -195,7 +195,7 @@ determined by the <code>.plugin</code> file key <code>X-SessionAdapterPriority</
           
         
           
-          <li class="class">GObject</a></li>
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
           
         
         </ul>
@@ -205,6 +205,29 @@ determined by the <code>.plugin</code> file key <code>X-SessionAdapterPriority</
 
     
 
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Session.get_default.html">valent_session_get_default</a></h6>
+
+        <div class="docblock">
+          <p>Get the default <code>ValentSession</code>.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
     
 
     
@@ -246,8 +269,6 @@ determined by the <code>.plugin</code> file key <code>X-SessionAdapterPriority</
         
         <div class="toggle-wrapper default-hide ancestor-methods">
           <h5 style="display:block;">Methods inherited from <a href="class.Component.html">ValentComponent</a> (2)</h5>
-
-          
           <div class="docblock">
           
             <h6><a href="method.Component.get_extensions.html">valent_component_get_extensions</a></h6>
@@ -269,12 +290,60 @@ value for extensions is <code>0</code>; the lower the value the higher the&nbsp;
         
       
         
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
+          
+        </div>
+        
       
 
       
     </div>
     
 
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          
+          <h5 style="display:block;">Properties inherited from <a href="class.Component.html">ValentComponent</a> (2)</h5>
+          
+
+          
+          <div class="docblock">
+          
+            <h6><a href="property.Component.plugin-context.html">Valent.Component:plugin-context</a></h6>
+            <div class="docblock">
+              <p>The context for the component. This is a <code>GSettings</code> safe string such as
+&#8220;contacts&#8221; or &#8220;media&#8221;, used to distinguish the settings and configuration
+files of pluggable&nbsp;extensions.</p>
+            </div>
+            
+          
+            <h6><a href="property.Component.plugin-type.html">Valent.Component:plugin-type</a></h6>
+            <div class="docblock">
+              <p>The <code>GType</code> of the extension this component&nbsp;aggregates.</p>
+            </div>
+            
+          
+          </div>
+          
+        </div>
+        
+      
+        
+      
+
+      
+
+    </div>
     
 
     
@@ -284,6 +353,7 @@ value for extensions is <code>0</code>; the lower the value the higher the&nbsp;
         <a href="#signals" class="anchor"></a>
       </h4>
 
+      
       <div class="docblock">
       
         <div class="">
@@ -296,11 +366,14 @@ changes.</p>
         </div>
       
       </div>
+      
 
       
         
         <div class="toggle-wrapper default-hide ancestor-signals">
+          
           <h5 style="display:block;">Signals inherited from <a href="class.Component.html">ValentComponent</a> (2)</h5>
+          
 
           
           <div class="docblock">
@@ -324,6 +397,14 @@ extension is no longer&nbsp;available.</p>
         </div>
         
       
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          
+          <h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          
+
+          
+        </div>
         
       
 
@@ -371,35 +452,12 @@ extension is no longer&nbsp;available.</p>
 
      
 
-    
-    <div class="toggle-wrapper methods">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-      <div class="">
-        <h6><a href="type_func.Session.get_default.html">valent_session_get_default</a></h6>
-
-        <div class="docblock">
-          <p>Get the default <code>ValentSession</code>.</p>
-        </div>
-
-        
-      </div>
-      
-      </div>
-    </div>
-    
-
   </section>
 </section>
 
 
     
-<div class="toc">
+<div id="toc" class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
@@ -412,6 +470,10 @@ extension is no longer&nbsp;available.</p>
       
 
       
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
 
@@ -422,10 +484,6 @@ extension is no longer&nbsp;available.</p>
 
 
       
-
-      
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
 
       
 
