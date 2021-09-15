@@ -99,21 +99,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 <div class="section">
-  <h5>Functions</h5>
-  <div class="links">
-  
-    <a class="func" href="type_func.Notification.add_device_button.html">add_device_button</a>
-  
-    <a class="func" href="type_func.Notification.deserialize.html">deserialize</a>
-  
-    <a class="func" href="type_func.Notification.set_device_action.html">set_device_action</a>
-  
-  </div>
-</div>
-
-
-
-<div class="section">
   <h5>Instance methods</h5>
   <div class="links">
   
@@ -193,6 +178,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Notification.add_device_button.html">add_device_button</a>
+  
+    <a class="func" href="type_func.Notification.deserialize.html">deserialize</a>
+  
+    <a class="func" href="type_func.Notification.set_device_action.html">set_device_action</a>
+  
+  </div>
+</div>
+
+
+
 
 
     </nav>
@@ -255,7 +255,7 @@ normally found in libnotify notifications, while being more read-write friendly 
         <ul>
         
           
-          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          <li class="class">GObject</a></li>
           
         
         </ul>
@@ -285,55 +285,6 @@ convenience for the case where <code>title</code> is selected from choices&nbsp;
 
           
         </div>
-      
-      </div>
-    </div>
-    
-
-    
-    <div class="toggle-wrapper methods">
-      <h4 id="type-functions">
-        Functions
-        <a href="#type-functions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-      
-      <div class="">
-        <h6><a href="type_func.Notification.add_device_button.html">valent_notification_add_device_button</a></h6>
-
-        <div class="docblock">
-          <p>Add an action button to <code>notification</code>. <code>action</code> is wrapped in the special
-<code>device</code> action for <code>device</code>, which allows it to be activated from the <code>app</code>
-action&nbsp;scope.</p>
-        </div>
-
-        
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Notification.deserialize.html">valent_notification_deserialize</a></h6>
-
-        <div class="docblock">
-          <p>Deserializes <code>variant</code> into a <code>ValentNotification</code>. Since <code>ValentNotificaton</code> is
-effectively a super-set of <code>GNotification</code>, <code>variant</code> may be a serialized
-<code>GNotification</code> or <code>ValentNotification</code>.</p>
-        </div>
-
-        
-      </div>
-      
-      <div class="">
-        <h6><a href="type_func.Notification.set_device_action.html">valent_notification_set_device_action</a></h6>
-
-        <div class="docblock">
-          <p>Set the default action for <code>notification</code>. <code>action</code> is wrapped in the special
-<code>device</code> action for <code>device</code>, which allows it to be activated from the <code>app</code>
-action&nbsp;scope.</p>
-        </div>
-
-        
-      </div>
       
       </div>
     </div>
@@ -514,10 +465,6 @@ detailed action as parse by <code>g_action_parse_detailed_name()</code>.</p>
 
       
         
-        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (42)</h5>
-          
-        </div>
-        
       
 
       
@@ -531,7 +478,6 @@ detailed action as parse by <code>g_action_parse_detailed_name()</code>.</p>
         <a href="#properties" class="anchor"></a>
       </h4>
 
-      
       <div class="docblock">
       
         <div class="">
@@ -625,7 +571,6 @@ detailed action as parse by <code>g_action_parse_detailed_name()</code>.</p>
         </div>
       
       </div>
-      
 
       
         
@@ -636,30 +581,6 @@ detailed action as parse by <code>g_action_parse_detailed_name()</code>.</p>
     </div>
     
 
-    
-    <div class="signals toggle-wrapper">
-      <h4 id="signals">
-        Signals
-        <a href="#signals" class="anchor"></a>
-      </h4>
-
-      
-
-      
-        
-        <div class="toggle-wrapper default-hide ancestor-signals">
-          
-          <h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
-          
-
-          
-        </div>
-        
-      
-
-      
-
-    </div>
     
 
     
@@ -701,12 +622,61 @@ detailed action as parse by <code>g_action_parse_detailed_name()</code>.</p>
 
      
 
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Notification.add_device_button.html">valent_notification_add_device_button</a></h6>
+
+        <div class="docblock">
+          <p>Add an action button to <code>notification</code>. <code>action</code> is wrapped in the special
+<code>device</code> action for <code>device</code>, which allows it to be activated from the <code>app</code>
+action&nbsp;scope.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Notification.deserialize.html">valent_notification_deserialize</a></h6>
+
+        <div class="docblock">
+          <p>Deserializes <code>variant</code> into a <code>ValentNotification</code>. Since <code>ValentNotificaton</code> is
+effectively a super-set of <code>GNotification</code>, <code>variant</code> may be a serialized
+<code>GNotification</code> or <code>ValentNotification</code>.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="type_func.Notification.set_device_action.html">valent_notification_set_device_action</a></h6>
+
+        <div class="docblock">
+          <p>Set the default action for <code>notification</code>. <code>action</code> is wrapped in the special
+<code>device</code> action for <code>device</code>, which allows it to be activated from the <code>app</code>
+action&nbsp;scope.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
   </section>
 </section>
 
 
     
-<div id="toc" class="toc">
+<div class="toc">
   <nav aria-labelledby="toc-title">
     <p id="toc-title">Content</p>
     <ul class="toc-list">
@@ -721,10 +691,6 @@ detailed action as parse by <code>g_action_parse_detailed_name()</code>.</p>
 
 
       
-<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
-
-
-      
 <li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
 
 
@@ -735,6 +701,10 @@ detailed action as parse by <code>g_action_parse_detailed_name()</code>.</p>
       
 
       
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
 
       
 

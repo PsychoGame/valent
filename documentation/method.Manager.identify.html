@@ -125,7 +125,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.h#L33">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.h#L35">[src]</a>
         
       </h4>
 
@@ -145,17 +145,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.c#L1085">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.c#L1082">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Request a connection from the device at <code>uri</code> if given, otherwise ask each
 loaded <code>ValentChannelService</code> to identity itself on its respective&nbsp;network.</p>
-<p>The <code>uri</code> argument is string in the form <code>backend://address</code>, where &#8220;backend&#8221;
-is the module name and &#8220;address&#8221; is some address, DBus path or serialized
-data the backend can use to contact the device. A complete <span class="caps">URI</span> for the Lan
-backend might look like <code>lan://192.168.0.10:1716</code>.</p>
+<p>The <code>uri</code> argument is string in the form <code>plugin://address</code>, such as
+<code>lan://192.168.0.10:1716</code>. The <code>plugin</code> segment should be a module name and
+<code>address</code> should be a format the <code>ValentChannelService</code> understands. Typically
+these URIs are acquired from the <code>ValentChannel:uri</code> property.</p>
       </div>
 
       <div class="docblock">

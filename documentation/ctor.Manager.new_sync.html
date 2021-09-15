@@ -113,7 +113,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.h#L25">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.h#L27">[src]</a>
         
       </h4>
 
@@ -134,12 +134,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.c#L929">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-manager.c#L923">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Create a new <code>ValentManager</code>.</p>
+<p>If given, <code>data</code> will be used as the root <code>ValentData</code> for this instance of&nbsp;Valent.</p>
       </div>
 
       <div class="docblock">
@@ -183,7 +184,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           <tr class="arg-name">
             <td><code>cancellable</code></td>
-            <td><a href="javascript:void(0)" data-link="class.Cancellable.html" data-namespace="Gio" class="external"><code>GCancellable</code></a></td>
+            <td><code>GCancellable*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>

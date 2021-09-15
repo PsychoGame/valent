@@ -4,9 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
  */
 
-@import url("solarized-light.css") (prefers-color-scheme: light);
-@import url("solarized-dark.css") (prefers-color-scheme: dark);
-
+@import url("pygment.css");
 @import url("fonts.css");
 
 /*********************************
@@ -36,7 +34,7 @@
   /* typography */
   --body-font-family: "Red Hat Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   --body-font-scale: 0.95;
-  --body-font-size: calc(var(--body-font-scale) * clamp(16px, 1vw, 18px));
+  --body-font-size: calc(var(--body-font-scale) * clamp(16px, 1vw, 20px));
   --body-font-weight: normal;
 
   --monospace-font-family: "Source Code Pro", monospace;
@@ -84,6 +82,11 @@
     --box-bg: rgba(135, 135, 135, 0.1);
     --box-text-color: #fff;
     --heading-docblock-color: #b7b7b7;
+  }
+
+  /* fix dark theme syntax highlighting with a filter (for now) */
+  .highlight pre span {
+  	filter: brightness(6);
   }
 }
 
