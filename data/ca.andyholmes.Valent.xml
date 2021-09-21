@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <node>
   <interface name="ca.andyholmes.Valent.Device">
     <property type="b" name="Connected" access="read"/>

@@ -89,7 +89,7 @@ get_extension_priority (PeasPluginInfo *info,
 
 
 /*
- * Invoked when a source is enabled or disabled in settings.
+ * Invoked when an extension is enabled or disabled in settings.
  */
 static void
 valent_component_enable_extension (ValentComponent *component,
@@ -103,11 +103,10 @@ valent_component_enable_extension (ValentComponent *component,
                                             priv->plugin_type,
                                             NULL);
 
-  if (extension != NULL)
-    {
-      g_hash_table_replace (priv->extensions, info, extension);
-      g_signal_emit (G_OBJECT (component), signals [EXTENSION_ADDED], 0, extension);
-    }
+  g_return_if_fail (PEAS_IS_EXTENSION (extension));
+
+  g_hash_table_replace (priv->extensions, info, extension);
+  g_signal_emit (G_OBJECT (component), signals [EXTENSION_ADDED], 0, extension);
 }
 
 static void
@@ -117,11 +116,11 @@ valent_component_disable_extension (ValentComponent *component,
   ValentComponentPrivate *priv = valent_component_get_instance_private (component);
   gpointer extension;
 
-  if (g_hash_table_steal_extended (priv->extensions, info, NULL, &extension))
-    {
-      g_signal_emit (G_OBJECT (component), signals [EXTENSION_REMOVED], 0, extension);
-      g_object_unref (extension);
-    }
+  if (!g_hash_table_steal_extended (priv->extensions, info, NULL, &extension))
+    return;
+
+  g_signal_emit (G_OBJECT (component), signals [EXTENSION_REMOVED], 0, extension);
+  g_object_unref (extension);
 }
 
 static void

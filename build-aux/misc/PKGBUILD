@@ -1,4 +1,5 @@
-# Maintainer: Andy Holmes (andyholmes) <andrew.g.r.holmes@gmail.com>
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: No rights reserved
 
 pkgname=valent
 pkgver=0.1.0
@@ -34,6 +35,4 @@ check() {
 package() {
   DESTDIR="$pkgdir" meson install -C build
 }
-
-# vim:set sw=2 et:
 

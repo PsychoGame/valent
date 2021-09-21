@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: No rights reserved
+
 %global glib2_version 2.66.0
 %global gtk4_version 4.0.0
 %global json_glib_version 1.6.0
@@ -16,12 +19,14 @@ Source0:        %{url}/archive/%{name}-%{version}.tar.xz
 
 BuildRequires:  gcc
 BuildRequires:  gettext
+BuildRequires:  gi-docgen
 BuildRequires:  meson
 BuildRequires:  pkgconfig(gio-2.0) >= %{glib2_version}
 BuildRequires:  pkgconfig(gio-unix-2.0) >= %{glib2_version}
 BuildRequires:  pkgconfig(glib-2.0) >= %{glib2_version}
 BuildRequires:  pkgconfig(gtk4) >= %{gtk4_version}
 BuildRequires:  pkgconfig(json-glib-1.0) >= %{json_glib_version}
+BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:  pkgconfig(libpeas-1.0) >= %{libpeas_version}
 BuildRequires:  pkgconfig(libebook-1.2) >= %{libeds_version}
 BuildRequires:  pkgconfig(libebook-contacts-1.2) >= %{libeds_version}
@@ -45,6 +50,7 @@ BuildRequires:  %{_bindir}/appstream-util
 Requires:       glib2%{?_isa} >= %{glib2_version}
 Requires:       gtk4%{?_isa} >= %{gtk4_version}
 Requires:       json-glib%{?_isa} >= %{json_glib_version}
+Requires:       libadwaita%{?_isa}
 Requires:       libpeas%{?_isa} >= %{libpeas_version}
 Requires:       libpeas-loader-python3%{?_isa} >= %{libpeas_version}
 Requires:       evolution-data-server%{?_isa} >= %{libeds_version}
@@ -82,7 +88,7 @@ developing plugins for %{name}.
 %firewalld_reload
 
 %files -f valent.lang
-%doc NEWS README.md
+%doc CHANGELOG.md README.md
 %license COPYING
 %{_bindir}/valent
 %exclude %{_datadir}/gir-1.0/
@@ -92,7 +98,7 @@ developing plugins for %{name}.
 %{_datadir}/glib-2.0/schemas/ca.andyholmes.valent*.gschema.xml
 %{_datadir}/icons/hicolor/scalable/apps/ca.andyholmes.Valent.svg
 %{_datadir}/icons/hicolor/symbolic/apps/ca.andyholmes.Valent-symbolic.svg
-%{_datadir}/metainfo/ca.andyholmes.Valent.appdata.xml
+%{_datadir}/metainfo/ca.andyholmes.Valent.metainfo.xml
 %exclude %{_libdir}/pkgconfig/
 %{_libdir}/firewalld/
 %{_libdir}/girepository-1.0/

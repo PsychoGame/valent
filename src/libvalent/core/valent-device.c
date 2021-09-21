@@ -349,7 +349,7 @@ valent_device_handle_pair (ValentDevice *device,
   if G_UNLIKELY ((node = json_object_get_member (body, "pair")) == NULL ||
                  json_node_get_value_type (node) != G_TYPE_BOOLEAN)
     {
-      g_warning ("%s: malformed pair packet", device->name);
+      g_debug ("%s: %s: malformed packet", G_STRFUNC, device->name);
       return;
     }
 
@@ -1000,8 +1000,7 @@ queue_packet_cb (ValentChannel *channel,
 
   if (!valent_channel_write_packet_finish (channel, result, &error))
     {
-      if G_UNLIKELY (error && error->domain != G_IO_ERROR)
-        VALENT_TRACE_MSG ("%s: %s", device->name, error->message);
+      VALENT_TRACE_MSG ("%s: %s", device->name, error->message);
 
       if (device->channel == channel)
         valent_device_set_channel (device, NULL);
@@ -1064,6 +1063,7 @@ send_packet_cb (ValentChannel *channel,
 
   if (!valent_channel_write_packet_finish (channel, result, &error))
     {
+      VALENT_TRACE_MSG ("%s: %s", device->name, error->message);
       g_task_return_error (task, error);
 
       if (device->channel == channel)
@@ -1297,17 +1297,14 @@ valent_device_set_channel (ValentDevice  *device,
       g_clear_object (&device->channel);
     }
 
-  /* If there's a new channel handle the peer identity and queue the first read
-   * before calling valent_device_set_connected(). */
+  /* Handle the peer identity and queue the first read */
   if (g_set_object (&device->channel, channel))
     {
       JsonNode *peer_identity;
 
-      /* Handle the peer identity packet */
       peer_identity = valent_channel_get_peer_identity (channel);
       valent_device_handle_identity (device, peer_identity);
 
-      /* Start receiving packets */
       valent_channel_read_packet (channel,
                                   NULL,
                                   (GAsyncReadyCallback)read_packet_cb,

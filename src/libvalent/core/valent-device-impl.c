@@ -250,7 +250,7 @@ valent_device_impl_property_get (GDBusConnection  *connection,
   GVariant *value;
 
   if ((value = g_hash_table_lookup (self->cache, property_name)) != NULL)
-    return g_variant_ref (value);
+    return g_variant_ref_sink (value);
 
   g_set_error (error,
                G_DBUS_ERROR,
@@ -362,7 +362,7 @@ valent_device_impl_get_properties (GDBusInterfaceSkeleton *skeleton)
   while (g_hash_table_iter_next (&iter, &key, &value))
     g_variant_builder_add (&builder, "{sv}", key, value);
 
-  return g_variant_builder_end (&builder);
+  return g_variant_ref_sink (g_variant_builder_end (&builder));
 }
 
 static GDBusInterfaceInfo *
