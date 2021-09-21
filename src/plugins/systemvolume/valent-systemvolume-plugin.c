@@ -55,7 +55,8 @@ typedef struct
   char              *name;
   char              *description;
   unsigned int       volume;
-  gboolean           muted;
+  unsigned int       muted : 1;
+  unsigned int       enabled : 1;
 } StreamState;
 
 static StreamState *
@@ -254,6 +255,12 @@ valent_systemvolume_plugin_handle_sink_change (ValentSystemvolumePlugin *self,
     {
       state->muted = json_object_get_boolean_member (body, "muted");
       valent_mixer_stream_set_muted (state->stream, state->muted);
+    }
+
+  if (json_object_has_member (body, "enabled"))
+    {
+      state->enabled = json_object_get_boolean_member (body, "enabled");
+      VALENT_TODO ("Set default audio stream.");
     }
 }
 
