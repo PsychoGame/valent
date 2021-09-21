@@ -140,13 +140,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.c#L234">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/master/src/libvalent/core/valent-task-queue.c#L214">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Decreases the reference count of <code>queue</code>. When its reference count drops to 0,
-<code>queue</code> will block waiting for any unprocessed tasks to&nbsp;complete.</p>
+        <p>Decreases the reference count of <code>queue</code>.</p>
+<p>When the reference count drops to 0, <code>queue</code> will signal its dedicated thread
+to exit and free any&nbsp;resources.</p>
       </div>
 
       <div class="docblock">
