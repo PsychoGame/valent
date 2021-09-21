@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-21 14:49:39</td>
+            <td class="headerValue">2021-09-21 21:17:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">27</td>
@@ -133,8 +133,8 @@
 <a name="55"><span class="lineNum">      55 </span>                :            :   JsonGenerator   *generator;</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : } ValentChannelPrivate;</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 337 times"> + </span><span class="branchCov" title="Branch 1 was taken 8680 times"> + </span><span class="branchCov" title="Branch 2 was taken 211 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      16252 : G_DEFINE_TYPE_WITH_PRIVATE (ValentChannel, valent_channel, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 211 times"> + </span><span class="branchCov" title="Branch 5 was taken 8680 times"> + </span>]
+<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 337 times"> + </span><span class="branchCov" title="Branch 1 was taken 8681 times"> + </span><span class="branchCov" title="Branch 2 was taken 211 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      16254 : G_DEFINE_TYPE_WITH_PRIVATE (ValentChannel, valent_channel, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 211 times"> + </span><span class="branchCov" title="Branch 5 was taken 8681 times"> + </span>]
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
 <a name="60"><span class="lineNum">      60 </span>                :            : /**</a>
 <a name="61"><span class="lineNum">      61 </span>                :            :  * ValentChannelClass:</a>
@@ -162,16 +162,16 @@
 <a name="83"><span class="lineNum">      83 </span>                :            :  * Packet Buffer</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :  */</a>
 <a name="85"><span class="lineNum">      85 </span>                :            : static inline gsize</a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">       1178 : channel_buffer_find_lf (ValentChannelPrivate *priv,</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">       1184 : channel_buffer_find_lf (ValentChannelPrivate *priv,</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            :                         gsize                *cursor_out)</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : {</a>
-<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 62735 times"> + </span><span class="branchCov" title="Branch 1 was taken 703 times"> + </span>]:<span class="lineCov">      63438 :   for (gsize cursor = *cursor_out; cursor &lt; priv-&gt;end; cursor++)</span></a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 62735 times"> + </span><span class="branchCov" title="Branch 1 was taken 709 times"> + </span>]:<span class="lineCov">      63444 :   for (gsize cursor = *cursor_out; cursor &lt; priv-&gt;end; cursor++)</span></a>
 <a name="90"><span class="lineNum">      90 </span>                :            :     {</a>
 <a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 475 times"> + </span><span class="branchCov" title="Branch 1 was taken 62260 times"> + </span>]:<span class="lineCov">      62735 :       if G_UNLIKELY (priv-&gt;buffer[cursor] == '\n')</span></a>
 <a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">        475 :         return cursor;</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            :     }</a>
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        703 :   return 0;</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">        709 :   return 0;</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            : }</a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <a name="98"><span class="lineNum">      98 </span>                :            : static JsonNode *</a>
@@ -187,25 +187,25 @@
 <a name="108"><span class="lineNum">     108 </span>                :            :   gssize packet_len;</a>
 <a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        725 :   g_autoptr (JsonNode) packet = NULL;</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            : </a>
-<a name="111"><span class="lineNum">     111 </span>  [<span class="branchCov" title="Branch 0 was taken 725 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchCov" title="Branch 3 was taken 717 times"> + </span>]:<span class="lineCov">        725 :   if (priv-&gt;base_stream == NULL || g_io_stream_is_closed (priv-&gt;base_stream))</span></a>
+<a name="111"><span class="lineNum">     111 </span>  [<span class="branchCov" title="Branch 0 was taken 725 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchCov" title="Branch 3 was taken 720 times"> + </span>]:<span class="lineCov">        725 :   if (priv-&gt;base_stream == NULL || g_io_stream_is_closed (priv-&gt;base_stream))</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            :     {</a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          8 :       g_set_error (error,</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          5 :       g_set_error (error,</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            :                    G_IO_ERROR,</a>
 <a name="115"><span class="lineNum">     115 </span>                :            :                    G_IO_ERROR_NOT_CONNECTED,</a>
 <a name="116"><span class="lineNum">     116 </span>                :            :                    &quot;Channel is closed&quot;);</a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">          8 :       return NULL;</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">          5 :       return NULL;</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :            :     }</a>
 <a name="119"><span class="lineNum">     119 </span>                :            : </a>
-<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">        717 :   input_stream = g_io_stream_get_input_stream (priv-&gt;base_stream);</span></a>
+<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">        720 :   input_stream = g_io_stream_get_input_stream (priv-&gt;base_stream);</span></a>
 <a name="121"><span class="lineNum">     121 </span>                :            : </a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">        717 :   cursor = priv-&gt;pos;</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">        720 :   cursor = priv-&gt;pos;</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            : </a>
-<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 703 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">       1178 :   while ((lf_pos = channel_buffer_find_lf (priv, &amp;cursor)) == 0)</span></a>
+<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 709 times"> + </span><span class="branchCov" title="Branch 1 was taken 475 times"> + </span>]:<span class="lineCov">       1184 :   while ((lf_pos = channel_buffer_find_lf (priv, &amp;cursor)) == 0)</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            :     {</a>
 <a name="126"><span class="lineNum">     126 </span>                :            :       gssize n_read;</a>
 <a name="127"><span class="lineNum">     127 </span>                :            : </a>
 <a name="128"><span class="lineNum">     128 </span>                :            :       /* Compact or extend the buffer */</a>
-<a name="129"><span class="lineNum">     129 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 703 times"> + </span>]:<span class="lineCov">        703 :       if G_UNLIKELY (priv-&gt;buffer_size - priv-&gt;end == 0)</span></a>
+<a name="129"><span class="lineNum">     129 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 709 times"> + </span>]:<span class="lineCov">        709 :       if G_UNLIKELY (priv-&gt;buffer_size - priv-&gt;end == 0)</span></a>
 <a name="130"><span class="lineNum">     130 </span>                :            :         {</a>
 <a name="131"><span class="lineNum">     131 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if G_LIKELY (priv-&gt;pos)</span></a>
 <a name="132"><span class="lineNum">     132 </span>                :            :             {</a>
@@ -226,29 +226,29 @@
 <a name="147"><span class="lineNum">     147 </span>                :            :         }</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
 <a name="149"><span class="lineNum">     149 </span>                :            :       /* Fill the buffer */</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        703 :       n_read = g_input_stream_read (input_stream,</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        703 :                                     priv-&gt;buffer + priv-&gt;end,</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">        703 :                                     priv-&gt;buffer_size - priv-&gt;end,</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        709 :       n_read = g_input_stream_read (input_stream,</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        709 :                                     priv-&gt;buffer + priv-&gt;end,</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">        709 :                                     priv-&gt;buffer_size - priv-&gt;end,</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :                                     cancellable,</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :                                     error);</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :       /* Success; loop to check for an LF */</a>
-<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 461 times"> + </span><span class="branchCov" title="Branch 1 was taken 242 times"> + </span>]:<span class="lineCov">        703 :       if (n_read &gt; 0)</span></a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        461 :         priv-&gt;end = priv-&gt;end + n_read;</span></a>
+<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 464 times"> + </span><span class="branchCov" title="Branch 1 was taken 245 times"> + </span>]:<span class="lineCov">        709 :       if (n_read &gt; 0)</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        464 :         priv-&gt;end = priv-&gt;end + n_read;</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            : </a>
 <a name="160"><span class="lineNum">     160 </span>                :            :       /* End of stream; report connection closed */</a>
-<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 149 times"> + </span><span class="branchCov" title="Branch 1 was taken 93 times"> + </span>]:<span class="lineCov">        242 :       else if (n_read == 0)</span></a>
+<a name="161"><span class="lineNum">     161 </span>        [<span class="branchCov" title="Branch 0 was taken 144 times"> + </span><span class="branchCov" title="Branch 1 was taken 101 times"> + </span>]:<span class="lineCov">        245 :       else if (n_read == 0)</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            :         {</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        149 :           g_set_error (error,</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        144 :           g_set_error (error,</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            :                        G_IO_ERROR,</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :                        G_IO_ERROR_CONNECTION_CLOSED,</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :                        &quot;Channel is closed&quot;);</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        149 :           return NULL;</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        144 :           return NULL;</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :         }</a>
 <a name="169"><span class="lineNum">     169 </span>                :            : </a>
 <a name="170"><span class="lineNum">     170 </span>                :            :       /* There was a genuine error */</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :       else</a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         93 :         return NULL;</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        101 :         return NULL;</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            :     }</a>
 <a name="174"><span class="lineNum">     174 </span>                :            : </a>
 <a name="175"><span class="lineNum">     175 </span>                :            :   /* Size the line and compact buffer */</a>
@@ -436,23 +436,23 @@
 <a name="357"><span class="lineNum">     357 </span>                :            :  * GObject</a>
 <a name="358"><span class="lineNum">     358 </span>                :            :  */</a>
 <a name="359"><span class="lineNum">     359 </span>                :            : static void</a>
-<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">        679 : valent_channel_finalize (GObject *object)</span></a>
+<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">        680 : valent_channel_finalize (GObject *object)</span></a>
 <a name="361"><span class="lineNum">     361 </span>                :            : {</a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">        679 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
-<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">        679 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">        680 :   ValentChannel *self = VALENT_CHANNEL (object);</span></a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">        680 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (self);</span></a>
 <a name="364"><span class="lineNum">     364 </span>                :            : </a>
-<a name="365"><span class="lineNum">     365 </span>        [<span class="branchCov" title="Branch 0 was taken 679 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        679 :   g_clear_pointer (&amp;priv-&gt;buffer, g_free);</span></a>
-<a name="366"><span class="lineNum">     366 </span>        [<span class="branchCov" title="Branch 0 was taken 679 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        679 :   g_clear_object (&amp;priv-&gt;parser);</span></a>
-<a name="367"><span class="lineNum">     367 </span>        [<span class="branchCov" title="Branch 0 was taken 679 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        679 :   g_clear_pointer (&amp;priv-&gt;output, valent_task_queue_unref);</span></a>
-<a name="368"><span class="lineNum">     368 </span>        [<span class="branchCov" title="Branch 0 was taken 679 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        679 :   g_clear_object (&amp;priv-&gt;generator);</span></a>
+<a name="365"><span class="lineNum">     365 </span>        [<span class="branchCov" title="Branch 0 was taken 680 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        680 :   g_clear_pointer (&amp;priv-&gt;buffer, g_free);</span></a>
+<a name="366"><span class="lineNum">     366 </span>        [<span class="branchCov" title="Branch 0 was taken 680 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        680 :   g_clear_object (&amp;priv-&gt;parser);</span></a>
+<a name="367"><span class="lineNum">     367 </span>        [<span class="branchCov" title="Branch 0 was taken 680 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        680 :   g_clear_pointer (&amp;priv-&gt;output, valent_task_queue_unref);</span></a>
+<a name="368"><span class="lineNum">     368 </span>        [<span class="branchCov" title="Branch 0 was taken 680 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        680 :   g_clear_object (&amp;priv-&gt;generator);</span></a>
 <a name="369"><span class="lineNum">     369 </span>                :            : </a>
-<a name="370"><span class="lineNum">     370 </span>        [<span class="branchCov" title="Branch 0 was taken 679 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        679 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
-<a name="371"><span class="lineNum">     371 </span>        [<span class="branchCov" title="Branch 0 was taken 589 times"> + </span><span class="branchCov" title="Branch 1 was taken 90 times"> + </span>]:<span class="lineCov">        679 :   g_clear_pointer (&amp;priv-&gt;identity, json_node_unref);</span></a>
-<a name="372"><span class="lineNum">     372 </span>        [<span class="branchCov" title="Branch 0 was taken 634 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">        679 :   g_clear_pointer (&amp;priv-&gt;peer_identity, json_node_unref);</span></a>
-<a name="373"><span class="lineNum">     373 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 649 times"> + </span>]:<span class="lineCov">        679 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
+<a name="370"><span class="lineNum">     370 </span>        [<span class="branchCov" title="Branch 0 was taken 680 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        680 :   g_clear_object (&amp;priv-&gt;base_stream);</span></a>
+<a name="371"><span class="lineNum">     371 </span>        [<span class="branchCov" title="Branch 0 was taken 590 times"> + </span><span class="branchCov" title="Branch 1 was taken 90 times"> + </span>]:<span class="lineCov">        680 :   g_clear_pointer (&amp;priv-&gt;identity, json_node_unref);</span></a>
+<a name="372"><span class="lineNum">     372 </span>        [<span class="branchCov" title="Branch 0 was taken 635 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">        680 :   g_clear_pointer (&amp;priv-&gt;peer_identity, json_node_unref);</span></a>
+<a name="373"><span class="lineNum">     373 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 650 times"> + </span>]:<span class="lineCov">        680 :   g_clear_pointer (&amp;priv-&gt;uri, g_free);</span></a>
 <a name="374"><span class="lineNum">     374 </span>                :            : </a>
-<a name="375"><span class="lineNum">     375 </span>                :<span class="lineCov">        679 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;finalize (object);</span></a>
-<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">        679 : }</span></a>
+<a name="375"><span class="lineNum">     375 </span>                :<span class="lineCov">        680 :   G_OBJECT_CLASS (valent_channel_parent_class)-&gt;finalize (object);</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">        680 : }</span></a>
 <a name="377"><span class="lineNum">     377 </span>                :            : </a>
 <a name="378"><span class="lineNum">     378 </span>                :            : static void</a>
 <a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">          5 : valent_channel_get_property (GObject    *object,</span></a>
@@ -894,8 +894,8 @@
 <a name="807"><span class="lineNum">     807 </span>                :            : </a>
 <a name="808"><span class="lineNum">     808 </span>                :<span class="lineCov">        280 :   context = g_task_get_context (task);</span></a>
 <a name="809"><span class="lineNum">     809 </span>                :            : </a>
-<a name="810"><span class="lineNum">     810 </span>        [<span class="branchCov" title="Branch 0 was taken 137552 times"> + </span><span class="branchCov" title="Branch 1 was taken 280 times"> + </span>]:<span class="lineCov">     137832 :   while (!g_task_get_completed (task))</span></a>
-<a name="811"><span class="lineNum">     811 </span>                :<span class="lineCov">     137552 :     g_main_context_iteration (context, FALSE);</span></a>
+<a name="810"><span class="lineNum">     810 </span>        [<span class="branchCov" title="Branch 0 was taken 112434 times"> + </span><span class="branchCov" title="Branch 1 was taken 280 times"> + </span>]:<span class="lineCov">     112714 :   while (!g_task_get_completed (task))</span></a>
+<a name="811"><span class="lineNum">     811 </span>                :<span class="lineCov">     112434 :     g_main_context_iteration (context, FALSE);</span></a>
 <a name="812"><span class="lineNum">     812 </span>                :            : </a>
 <a name="813"><span class="lineNum">     813 </span>                :<span class="lineCov">        280 :   return g_task_propagate_boolean (task, error);</span></a>
 <a name="814"><span class="lineNum">     814 </span>                :            : }</a>
@@ -916,7 +916,7 @@
 <a name="829"><span class="lineNum">     829 </span>                :            :                             gpointer             user_data)</a>
 <a name="830"><span class="lineNum">     830 </span>                :            : {</a>
 <a name="831"><span class="lineNum">     831 </span>                :<span class="lineCov">        530 :   ValentChannelPrivate *priv = valent_channel_get_instance_private (channel);</span></a>
-<a name="832"><span class="lineNum">     832 </span>        [<span class="branchCov" title="Branch 0 was taken 380 times"> + </span><span class="branchCov" title="Branch 1 was taken 150 times"> + </span>]:<span class="lineCov">        530 :   g_autoptr (GTask) task = NULL;</span></a>
+<a name="832"><span class="lineNum">     832 </span>        [<span class="branchCov" title="Branch 0 was taken 382 times"> + </span><span class="branchCov" title="Branch 1 was taken 148 times"> + </span>]:<span class="lineCov">        530 :   g_autoptr (GTask) task = NULL;</span></a>
 <a name="833"><span class="lineNum">     833 </span>                :            : </a>
 <a name="834"><span class="lineNum">     834 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 530 times"> + </span>]:<span class="lineCov">        530 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
 <a name="835"><span class="lineNum">     835 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 530 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        530 :   g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));</span></a>
@@ -926,10 +926,10 @@
 <a name="837"><span class="lineNum">     837 </span>                :<span class="lineCov">        530 :   task = g_task_new (channel, cancellable, callback, user_data);</span></a>
 <a name="838"><span class="lineNum">     838 </span>        [<span class="branchCov" title="Branch 0 was taken 530 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        530 :   g_task_set_source_tag (task, valent_channel_close_async);</span></a>
 <a name="839"><span class="lineNum">     839 </span>                :            : </a>
-<a name="840"><span class="lineNum">     840 </span>  [<span class="branchCov" title="Branch 0 was taken 530 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 150 times"> + </span><span class="branchCov" title="Branch 3 was taken 380 times"> + </span>]:<span class="lineCov">        530 :   if (priv-&gt;base_stream == NULL || g_io_stream_is_closed (priv-&gt;base_stream))</span></a>
-<a name="841"><span class="lineNum">     841 </span>                :<span class="lineCov">        150 :     return g_task_return_boolean (task, TRUE);</span></a>
+<a name="840"><span class="lineNum">     840 </span>  [<span class="branchCov" title="Branch 0 was taken 530 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 148 times"> + </span><span class="branchCov" title="Branch 3 was taken 382 times"> + </span>]:<span class="lineCov">        530 :   if (priv-&gt;base_stream == NULL || g_io_stream_is_closed (priv-&gt;base_stream))</span></a>
+<a name="841"><span class="lineNum">     841 </span>                :<span class="lineCov">        148 :     return g_task_return_boolean (task, TRUE);</span></a>
 <a name="842"><span class="lineNum">     842 </span>                :            : </a>
-<a name="843"><span class="lineNum">     843 </span>                :<span class="lineCov">        380 :   valent_task_queue_run_close (priv-&gt;output, task, valent_channel_close_task);</span></a>
+<a name="843"><span class="lineNum">     843 </span>                :<span class="lineCov">        382 :   valent_task_queue_run_close (priv-&gt;output, task, valent_channel_close_task);</span></a>
 <a name="844"><span class="lineNum">     844 </span>                :            : }</a>
 <a name="845"><span class="lineNum">     845 </span>                :            : </a>
 <a name="846"><span class="lineNum">     846 </span>                :            : /**</a>
