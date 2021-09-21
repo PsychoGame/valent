@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-27 20:52:45</td>
+            <td class="headerValue">2021-09-21 05:05:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -94,8 +94,8 @@
 <a name="16"><span class="lineNum">      16 </span>                :            : </a>
 <a name="17"><span class="lineNum">      17 </span>                :            : #define VALENT_TYPE_CHANNEL (valent_channel_get_type())</a>
 <a name="18"><span class="lineNum">      18 </span>                :            : </a>
-<a name="19"><span class="lineNum">      19 </span>  [<span class="branchCov" title="Branch 0 was taken 431 times"> + </span><span class="branchCov" title="Branch 1 was taken 13740 times"> + </span><span class="branchCov" title="Branch 2 was taken 13740 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      22200 : G_DECLARE_DERIVABLE_TYPE (ValentChannel, valent_channel, VALENT, CHANNEL, GObject)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 665 times"> + </span><span class="branchCov" title="Branch 5 was taken 13075 times"> + </span>]
+<a name="19"><span class="lineNum">      19 </span>  [<span class="branchCov" title="Branch 0 was taken 265 times"> + </span><span class="branchCov" title="Branch 1 was taken 5275 times"> + </span><span class="branchCov" title="Branch 2 was taken 5275 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       8645 : G_DECLARE_DERIVABLE_TYPE (ValentChannel, valent_channel, VALENT, CHANNEL, GObject)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 545 times"> + </span><span class="branchCov" title="Branch 5 was taken 4730 times"> + </span>]
 <a name="20"><span class="lineNum">      20 </span>                :            : </a>
 <a name="21"><span class="lineNum">      21 </span>                :            : struct _ValentChannelClass</a>
 <a name="22"><span class="lineNum">      22 </span>                :            : {</a>
@@ -115,7 +115,7 @@
 <a name="36"><span class="lineNum">      36 </span>                :            :                                           ValentData     *data);</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : };</a>
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
-<a name="39"><span class="lineNum">      39 </span>                :            : /* Properties */</a>
+<a name="39"><span class="lineNum">      39 </span>                :            : </a>
 <a name="40"><span class="lineNum">      40 </span>                :            : GIOStream  * valent_channel_get_base_stream      (ValentChannel        *channel);</a>
 <a name="41"><span class="lineNum">      41 </span>                :            : JsonNode   * valent_channel_get_identity         (ValentChannel        *channel);</a>
 <a name="42"><span class="lineNum">      42 </span>                :            : JsonNode   * valent_channel_get_peer_identity    (ValentChannel        *channel);</a>
@@ -123,48 +123,44 @@
 <a name="44"><span class="lineNum">      44 </span>                :            : void         valent_channel_set_uri              (ValentChannel        *channel,</a>
 <a name="45"><span class="lineNum">      45 </span>                :            :                                                   const char           *uri);</a>
 <a name="46"><span class="lineNum">      46 </span>                :            : const char * valent_channel_get_verification_key (ValentChannel        *channel);</a>
-<a name="47"><span class="lineNum">      47 </span>                :            : </a>
-<a name="48"><span class="lineNum">      48 </span>                :            : /* Packet Exchange */</a>
-<a name="49"><span class="lineNum">      49 </span>                :            : void         valent_channel_read_packet          (ValentChannel        *channel,</a>
-<a name="50"><span class="lineNum">      50 </span>                :            :                                                   GCancellable         *cancellable,</a>
-<a name="51"><span class="lineNum">      51 </span>                :            :                                                   GAsyncReadyCallback   callback,</a>
-<a name="52"><span class="lineNum">      52 </span>                :            :                                                   gpointer              user_data);</a>
-<a name="53"><span class="lineNum">      53 </span>                :            : JsonNode   * valent_channel_read_packet_finish   (ValentChannel        *channel,</a>
-<a name="54"><span class="lineNum">      54 </span>                :            :                                                   GAsyncResult         *result,</a>
-<a name="55"><span class="lineNum">      55 </span>                :            :                                                   GError              **error);</a>
-<a name="56"><span class="lineNum">      56 </span>                :            : void         valent_channel_write_packet         (ValentChannel        *channel,</a>
-<a name="57"><span class="lineNum">      57 </span>                :            :                                                   JsonNode             *packet,</a>
+<a name="47"><span class="lineNum">      47 </span>                :            : GIOStream  * valent_channel_download             (ValentChannel        *channel,</a>
+<a name="48"><span class="lineNum">      48 </span>                :            :                                                   JsonNode             *packet,</a>
+<a name="49"><span class="lineNum">      49 </span>                :            :                                                   GCancellable         *cancellable,</a>
+<a name="50"><span class="lineNum">      50 </span>                :            :                                                   GError              **error);</a>
+<a name="51"><span class="lineNum">      51 </span>                :            : GIOStream  * valent_channel_upload               (ValentChannel        *channel,</a>
+<a name="52"><span class="lineNum">      52 </span>                :            :                                                   JsonNode             *packet,</a>
+<a name="53"><span class="lineNum">      53 </span>                :            :                                                   GCancellable         *cancellable,</a>
+<a name="54"><span class="lineNum">      54 </span>                :            :                                                   GError              **error);</a>
+<a name="55"><span class="lineNum">      55 </span>                :            : void         valent_channel_store_data           (ValentChannel        *channel,</a>
+<a name="56"><span class="lineNum">      56 </span>                :            :                                                   ValentData           *data);</a>
+<a name="57"><span class="lineNum">      57 </span>                :            : void         valent_channel_read_packet          (ValentChannel        *channel,</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :                                                   GCancellable         *cancellable,</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :                                                   GAsyncReadyCallback   callback,</a>
 <a name="60"><span class="lineNum">      60 </span>                :            :                                                   gpointer              user_data);</a>
-<a name="61"><span class="lineNum">      61 </span>                :            : gboolean     valent_channel_write_packet_finish  (ValentChannel        *channel,</a>
+<a name="61"><span class="lineNum">      61 </span>                :            : JsonNode   * valent_channel_read_packet_finish   (ValentChannel        *channel,</a>
 <a name="62"><span class="lineNum">      62 </span>                :            :                                                   GAsyncResult         *result,</a>
 <a name="63"><span class="lineNum">      63 </span>                :            :                                                   GError              **error);</a>
-<a name="64"><span class="lineNum">      64 </span>                :            : gboolean     valent_channel_close                (ValentChannel        *channel,</a>
-<a name="65"><span class="lineNum">      65 </span>                :            :                                                   GCancellable         *cancellable,</a>
-<a name="66"><span class="lineNum">      66 </span>                :            :                                                   GError              **error);</a>
-<a name="67"><span class="lineNum">      67 </span>                :            : void         valent_channel_close_async          (ValentChannel        *channel,</a>
-<a name="68"><span class="lineNum">      68 </span>                :            :                                                   GCancellable         *cancellable,</a>
-<a name="69"><span class="lineNum">      69 </span>                :            :                                                   GAsyncReadyCallback   callback,</a>
-<a name="70"><span class="lineNum">      70 </span>                :            :                                                   gpointer              user_data);</a>
-<a name="71"><span class="lineNum">      71 </span>                :            : gboolean     valent_channel_close_finish         (ValentChannel        *channel,</a>
-<a name="72"><span class="lineNum">      72 </span>                :            :                                                   GAsyncResult         *result,</a>
-<a name="73"><span class="lineNum">      73 </span>                :            :                                                   GError              **error);</a>
-<a name="74"><span class="lineNum">      74 </span>                :            : </a>
-<a name="75"><span class="lineNum">      75 </span>                :            : /* Virtual Functions */</a>
-<a name="76"><span class="lineNum">      76 </span>                :            : GIOStream  * valent_channel_download             (ValentChannel        *channel,</a>
-<a name="77"><span class="lineNum">      77 </span>                :            :                                                   JsonNode             *packet,</a>
-<a name="78"><span class="lineNum">      78 </span>                :            :                                                   GCancellable         *cancellable,</a>
-<a name="79"><span class="lineNum">      79 </span>                :            :                                                   GError              **error);</a>
-<a name="80"><span class="lineNum">      80 </span>                :            : GIOStream  * valent_channel_upload               (ValentChannel        *channel,</a>
-<a name="81"><span class="lineNum">      81 </span>                :            :                                                   JsonNode             *packet,</a>
-<a name="82"><span class="lineNum">      82 </span>                :            :                                                   GCancellable         *cancellable,</a>
-<a name="83"><span class="lineNum">      83 </span>                :            :                                                   GError              **error);</a>
-<a name="84"><span class="lineNum">      84 </span>                :            : void         valent_channel_store_data           (ValentChannel        *channel,</a>
-<a name="85"><span class="lineNum">      85 </span>                :            :                                                   ValentData           *data);</a>
-<a name="86"><span class="lineNum">      86 </span>                :            : </a>
-<a name="87"><span class="lineNum">      87 </span>                :            : G_END_DECLS</a>
-<a name="88"><span class="lineNum">      88 </span>                :            : </a>
+<a name="64"><span class="lineNum">      64 </span>                :            : void         valent_channel_write_packet         (ValentChannel        *channel,</a>
+<a name="65"><span class="lineNum">      65 </span>                :            :                                                   JsonNode             *packet,</a>
+<a name="66"><span class="lineNum">      66 </span>                :            :                                                   GCancellable         *cancellable,</a>
+<a name="67"><span class="lineNum">      67 </span>                :            :                                                   GAsyncReadyCallback   callback,</a>
+<a name="68"><span class="lineNum">      68 </span>                :            :                                                   gpointer              user_data);</a>
+<a name="69"><span class="lineNum">      69 </span>                :            : gboolean     valent_channel_write_packet_finish  (ValentChannel        *channel,</a>
+<a name="70"><span class="lineNum">      70 </span>                :            :                                                   GAsyncResult         *result,</a>
+<a name="71"><span class="lineNum">      71 </span>                :            :                                                   GError              **error);</a>
+<a name="72"><span class="lineNum">      72 </span>                :            : gboolean     valent_channel_close                (ValentChannel        *channel,</a>
+<a name="73"><span class="lineNum">      73 </span>                :            :                                                   GCancellable         *cancellable,</a>
+<a name="74"><span class="lineNum">      74 </span>                :            :                                                   GError              **error);</a>
+<a name="75"><span class="lineNum">      75 </span>                :            : void         valent_channel_close_async          (ValentChannel        *channel,</a>
+<a name="76"><span class="lineNum">      76 </span>                :            :                                                   GCancellable         *cancellable,</a>
+<a name="77"><span class="lineNum">      77 </span>                :            :                                                   GAsyncReadyCallback   callback,</a>
+<a name="78"><span class="lineNum">      78 </span>                :            :                                                   gpointer              user_data);</a>
+<a name="79"><span class="lineNum">      79 </span>                :            : gboolean     valent_channel_close_finish         (ValentChannel        *channel,</a>
+<a name="80"><span class="lineNum">      80 </span>                :            :                                                   GAsyncResult         *result,</a>
+<a name="81"><span class="lineNum">      81 </span>                :            :                                                   GError              **error);</a>
+<a name="82"><span class="lineNum">      82 </span>                :            : </a>
+<a name="83"><span class="lineNum">      83 </span>                :            : G_END_DECLS</a>
+<a name="84"><span class="lineNum">      84 </span>                :            : </a>
 </pre>
       </td>
     </tr>

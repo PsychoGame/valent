@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-27 20:52:45</td>
+            <td class="headerValue">2021-09-21 05:05:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">17</td>
@@ -340,25 +340,25 @@
 <a name="256"><span class="lineNum">     256 </span>                :            :  * Returns: (transfer full) (nullable): A #JsonBuilder object</a>
 <a name="257"><span class="lineNum">     257 </span>                :            :  */</a>
 <a name="258"><span class="lineNum">     258 </span>                :            : JsonBuilder *</a>
-<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">       2405 : valent_packet_start (const char *type)</span></a>
+<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">        550 : valent_packet_start (const char *type)</span></a>
 <a name="260"><span class="lineNum">     260 </span>                :            : {</a>
 <a name="261"><span class="lineNum">     261 </span>                :            :   JsonBuilder *builder;</a>
 <a name="262"><span class="lineNum">     262 </span>                :            : </a>
-<a name="263"><span class="lineNum">     263 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2405 times"> + </span>]:<span class="lineCov">       2405 :   g_return_val_if_fail (type != NULL, NULL);</span></a>
+<a name="263"><span class="lineNum">     263 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 550 times"> + </span>]:<span class="lineCov">        550 :   g_return_val_if_fail (type != NULL, NULL);</span></a>
 <a name="264"><span class="lineNum">     264 </span>                :            : </a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">       2405 :   builder = json_builder_new ();</span></a>
-<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">       2405 :   json_builder_begin_object (builder);</span></a>
+<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">        550 :   builder = json_builder_new ();</span></a>
+<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">        550 :   json_builder_begin_object (builder);</span></a>
 <a name="267"><span class="lineNum">     267 </span>                :            : </a>
-<a name="268"><span class="lineNum">     268 </span>                :<span class="lineCov">       2405 :   json_builder_set_member_name (builder, &quot;id&quot;);</span></a>
-<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">       2405 :   json_builder_add_int_value (builder, 0);</span></a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">       2405 :   json_builder_set_member_name (builder, &quot;type&quot;);</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">       2405 :   json_builder_add_string_value (builder, type);</span></a>
+<a name="268"><span class="lineNum">     268 </span>                :<span class="lineCov">        550 :   json_builder_set_member_name (builder, &quot;id&quot;);</span></a>
+<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">        550 :   json_builder_add_int_value (builder, 0);</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">        550 :   json_builder_set_member_name (builder, &quot;type&quot;);</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">        550 :   json_builder_add_string_value (builder, type);</span></a>
 <a name="272"><span class="lineNum">     272 </span>                :            : </a>
 <a name="273"><span class="lineNum">     273 </span>                :            :   /* body */</a>
-<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">       2405 :   json_builder_set_member_name (builder, &quot;body&quot;);</span></a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">       2405 :   json_builder_begin_object (builder);</span></a>
+<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">        550 :   json_builder_set_member_name (builder, &quot;body&quot;);</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">        550 :   json_builder_begin_object (builder);</span></a>
 <a name="276"><span class="lineNum">     276 </span>                :            : </a>
-<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">       2405 :   return builder;</span></a>
+<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">        550 :   return builder;</span></a>
 <a name="278"><span class="lineNum">     278 </span>                :            : }</a>
 <a name="279"><span class="lineNum">     279 </span>                :            : </a>
 <a name="280"><span class="lineNum">     280 </span>                :            : /**</a>
@@ -371,22 +371,22 @@
 <a name="287"><span class="lineNum">     287 </span>                :            :  * Returns: (transfer full): A #JsonNode object</a>
 <a name="288"><span class="lineNum">     288 </span>                :            :  */</a>
 <a name="289"><span class="lineNum">     289 </span>                :            : JsonNode *</a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">       2405 : valent_packet_finish (JsonBuilder *builder)</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        550 : valent_packet_finish (JsonBuilder *builder)</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            : {</a>
 <a name="292"><span class="lineNum">     292 </span>                :            :   JsonNode *packet;</a>
 <a name="293"><span class="lineNum">     293 </span>                :            : </a>
-<a name="294"><span class="lineNum">     294 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2405 times"> + </span><span class="branchCov" title="Branch 2 was taken 2405 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2405 :   g_return_val_if_fail (JSON_IS_BUILDER (builder), NULL);</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 2405 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 2405 times"> + </span>]
+<a name="294"><span class="lineNum">     294 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 550 times"> + </span><span class="branchCov" title="Branch 2 was taken 550 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        550 :   g_return_val_if_fail (JSON_IS_BUILDER (builder), NULL);</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 550 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 550 times"> + </span>]
 <a name="295"><span class="lineNum">     295 </span>                :            : </a>
 <a name="296"><span class="lineNum">     296 </span>                :            :   /* Finish the &quot;body&quot; object and packet object */</a>
-<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">       2405 :   json_builder_end_object (builder);</span></a>
-<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">       2405 :   json_builder_end_object (builder);</span></a>
+<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">        550 :   json_builder_end_object (builder);</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">        550 :   json_builder_end_object (builder);</span></a>
 <a name="299"><span class="lineNum">     299 </span>                :            : </a>
 <a name="300"><span class="lineNum">     300 </span>                :            :   /* Get the root object and consume the builder */</a>
-<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">       2405 :   packet = json_builder_get_root (builder);</span></a>
-<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">       2405 :   g_object_unref (builder);</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">        550 :   packet = json_builder_get_root (builder);</span></a>
+<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">        550 :   g_object_unref (builder);</span></a>
 <a name="303"><span class="lineNum">     303 </span>                :            : </a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">       2405 :   return packet;</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">        550 :   return packet;</span></a>
 <a name="305"><span class="lineNum">     305 </span>                :            : }</a>
 <a name="306"><span class="lineNum">     306 </span>                :            : </a>
 <a name="307"><span class="lineNum">     307 </span>                :            : /**</a>
@@ -398,20 +398,20 @@
 <a name="313"><span class="lineNum">     313 </span>                :            :  * Returns: a UNIX epoch timestamp</a>
 <a name="314"><span class="lineNum">     314 </span>                :            :  */</a>
 <a name="315"><span class="lineNum">     315 </span>                :            : gint64</a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">        115 : valent_packet_get_id (JsonNode *packet)</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">         15 : valent_packet_get_id (JsonNode *packet)</span></a>
 <a name="317"><span class="lineNum">     317 </span>                :            : {</a>
 <a name="318"><span class="lineNum">     318 </span>                :            :   JsonObject *root;</a>
 <a name="319"><span class="lineNum">     319 </span>                :            :   JsonNode *node;</a>
 <a name="320"><span class="lineNum">     320 </span>                :            : </a>
-<a name="321"><span class="lineNum">     321 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 115 times"> + </span>]:<span class="lineCov">        115 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (packet), 0);</span></a>
+<a name="321"><span class="lineNum">     321 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (packet), 0);</span></a>
 <a name="322"><span class="lineNum">     322 </span>                :            : </a>
-<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">        115 :   root = json_node_get_object (packet);</span></a>
+<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">         15 :   root = json_node_get_object (packet);</span></a>
 <a name="324"><span class="lineNum">     324 </span>                :            : </a>
-<a name="325"><span class="lineNum">     325 </span>  [<span class="branchCov" title="Branch 0 was taken 115 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 115 times"> + </span>]:<span class="lineCov">        115 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;id&quot;)) == NULL ||</span></a>
+<a name="325"><span class="lineNum">     325 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;id&quot;)) == NULL ||</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            :                  json_node_get_value_type (node) != G_TYPE_INT64)</a>
 <a name="327"><span class="lineNum">     327 </span>                :<span class="lineNoCov">          0 :     g_return_val_if_reached (0);</span></a>
 <a name="328"><span class="lineNum">     328 </span>                :            : </a>
-<a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">        115 :   return json_node_get_int (node);</span></a>
+<a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">         15 :   return json_node_get_int (node);</span></a>
 <a name="330"><span class="lineNum">     330 </span>                :            : }</a>
 <a name="331"><span class="lineNum">     331 </span>                :            : </a>
 <a name="332"><span class="lineNum">     332 </span>                :            : /**</a>
@@ -423,20 +423,20 @@
 <a name="338"><span class="lineNum">     338 </span>                :            :  * Returns: (transfer none) (nullable): a KDE Connect capability</a>
 <a name="339"><span class="lineNum">     339 </span>                :            :  */</a>
 <a name="340"><span class="lineNum">     340 </span>                :            : const char *</a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">      19955 : valent_packet_get_type (JsonNode *packet)</span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">      11890 : valent_packet_get_type (JsonNode *packet)</span></a>
 <a name="342"><span class="lineNum">     342 </span>                :            : {</a>
 <a name="343"><span class="lineNum">     343 </span>                :            :   JsonObject *root;</a>
 <a name="344"><span class="lineNum">     344 </span>                :            :   JsonNode *node;</a>
 <a name="345"><span class="lineNum">     345 </span>                :            : </a>
-<a name="346"><span class="lineNum">     346 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 19955 times"> + </span>]:<span class="lineCov">      19955 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (packet), NULL);</span></a>
+<a name="346"><span class="lineNum">     346 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11890 times"> + </span>]:<span class="lineCov">      11890 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (packet), NULL);</span></a>
 <a name="347"><span class="lineNum">     347 </span>                :            : </a>
-<a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">      19955 :   root = json_node_get_object (packet);</span></a>
+<a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">      11890 :   root = json_node_get_object (packet);</span></a>
 <a name="349"><span class="lineNum">     349 </span>                :            : </a>
-<a name="350"><span class="lineNum">     350 </span>  [<span class="branchCov" title="Branch 0 was taken 19955 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 19955 times"> + </span>]:<span class="lineCov">      19955 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;type&quot;)) == NULL ||</span></a>
+<a name="350"><span class="lineNum">     350 </span>  [<span class="branchCov" title="Branch 0 was taken 11890 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 11890 times"> + </span>]:<span class="lineCov">      11890 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;type&quot;)) == NULL ||</span></a>
 <a name="351"><span class="lineNum">     351 </span>                :            :                  json_node_get_value_type (node) != G_TYPE_STRING)</a>
 <a name="352"><span class="lineNum">     352 </span>                :<span class="lineNoCov">          0 :     g_return_val_if_reached (NULL);</span></a>
 <a name="353"><span class="lineNum">     353 </span>                :            : </a>
-<a name="354"><span class="lineNum">     354 </span>                :<span class="lineCov">      19955 :   return json_node_get_string (node);</span></a>
+<a name="354"><span class="lineNum">     354 </span>                :<span class="lineCov">      11890 :   return json_node_get_string (node);</span></a>
 <a name="355"><span class="lineNum">     355 </span>                :            : }</a>
 <a name="356"><span class="lineNum">     356 </span>                :            : </a>
 <a name="357"><span class="lineNum">     357 </span>                :            : /**</a>
@@ -448,20 +448,20 @@
 <a name="363"><span class="lineNum">     363 </span>                :            :  * Returns: (transfer none) (nullable): a #JsonObject</a>
 <a name="364"><span class="lineNum">     364 </span>                :            :  */</a>
 <a name="365"><span class="lineNum">     365 </span>                :            : JsonObject *</a>
-<a name="366"><span class="lineNum">     366 </span>                :<span class="lineCov">      11295 : valent_packet_get_body (JsonNode *packet)</span></a>
+<a name="366"><span class="lineNum">     366 </span>                :<span class="lineCov">       2038 : valent_packet_get_body (JsonNode *packet)</span></a>
 <a name="367"><span class="lineNum">     367 </span>                :            : {</a>
 <a name="368"><span class="lineNum">     368 </span>                :            :   JsonObject *root;</a>
 <a name="369"><span class="lineNum">     369 </span>                :            :   JsonNode *node;</a>
 <a name="370"><span class="lineNum">     370 </span>                :            : </a>
-<a name="371"><span class="lineNum">     371 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11295 times"> + </span>]:<span class="lineCov">      11295 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (packet), NULL);</span></a>
+<a name="371"><span class="lineNum">     371 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2038 times"> + </span>]:<span class="lineCov">       2038 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (packet), NULL);</span></a>
 <a name="372"><span class="lineNum">     372 </span>                :            : </a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">      11295 :   root = json_node_get_object (packet);</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">       2038 :   root = json_node_get_object (packet);</span></a>
 <a name="374"><span class="lineNum">     374 </span>                :            : </a>
-<a name="375"><span class="lineNum">     375 </span>  [<span class="branchCov" title="Branch 0 was taken 11295 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 11295 times"> + </span>]:<span class="lineCov">      11295 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;body&quot;)) == NULL ||</span></a>
+<a name="375"><span class="lineNum">     375 </span>  [<span class="branchCov" title="Branch 0 was taken 2038 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2038 times"> + </span>]:<span class="lineCov">       2038 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;body&quot;)) == NULL ||</span></a>
 <a name="376"><span class="lineNum">     376 </span>                :            :                  json_node_get_node_type (node) != JSON_NODE_OBJECT)</a>
 <a name="377"><span class="lineNum">     377 </span>                :<span class="lineNoCov">          0 :     g_return_val_if_reached (NULL);</span></a>
 <a name="378"><span class="lineNum">     378 </span>                :            : </a>
-<a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">      11295 :   return json_node_get_object (node);</span></a>
+<a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">       2038 :   return json_node_get_object (node);</span></a>
 <a name="380"><span class="lineNum">     380 </span>                :            : }</a>
 <a name="381"><span class="lineNum">     381 </span>                :            : </a>
 <a name="382"><span class="lineNum">     382 </span>                :            : /**</a>
@@ -478,22 +478,22 @@
 <a name="393"><span class="lineNum">     393 </span>                :            :  * Returns: %TRUE if @packet has a payload</a>
 <a name="394"><span class="lineNum">     394 </span>                :            :  */</a>
 <a name="395"><span class="lineNum">     395 </span>                :            : gboolean</a>
-<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">       1430 : valent_packet_has_payload (JsonNode *packet)</span></a>
+<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">        140 : valent_packet_has_payload (JsonNode *packet)</span></a>
 <a name="397"><span class="lineNum">     397 </span>                :            : {</a>
 <a name="398"><span class="lineNum">     398 </span>                :            :   JsonObject *root;</a>
 <a name="399"><span class="lineNum">     399 </span>                :            :   JsonNode *node;</a>
 <a name="400"><span class="lineNum">     400 </span>                :            : </a>
-<a name="401"><span class="lineNum">     401 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1430 times"> + </span>]:<span class="lineCov">       1430 :   g_return_val_if_fail (VALENT_IS_PACKET (packet), FALSE);</span></a>
+<a name="401"><span class="lineNum">     401 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 140 times"> + </span>]:<span class="lineCov">        140 :   g_return_val_if_fail (VALENT_IS_PACKET (packet), FALSE);</span></a>
 <a name="402"><span class="lineNum">     402 </span>                :            : </a>
-<a name="403"><span class="lineNum">     403 </span>                :<span class="lineCov">       1430 :   root = json_node_get_object (packet);</span></a>
+<a name="403"><span class="lineNum">     403 </span>                :<span class="lineCov">        140 :   root = json_node_get_object (packet);</span></a>
 <a name="404"><span class="lineNum">     404 </span>                :            : </a>
-<a name="405"><span class="lineNum">     405 </span>  [<span class="branchCov" title="Branch 0 was taken 65 times"> + </span><span class="branchCov" title="Branch 1 was taken 1365 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 65 times"> + </span>]:<span class="lineCov">       1495 :   if ((node = json_object_get_member (root, &quot;payloadSize&quot;)) != NULL &amp;&amp;</span></a>
+<a name="405"><span class="lineNum">     405 </span>  [<span class="branchCov" title="Branch 0 was taken 65 times"> + </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 65 times"> + </span>]:<span class="lineCov">        205 :   if ((node = json_object_get_member (root, &quot;payloadSize&quot;)) != NULL &amp;&amp;</span></a>
 <a name="406"><span class="lineNum">     406 </span>                :<span class="lineCov">         65 :       json_node_get_value_type (node) != G_TYPE_INT64)</span></a>
 <a name="407"><span class="lineNum">     407 </span>                :<span class="lineNoCov">          0 :     return FALSE;</span></a>
 <a name="408"><span class="lineNum">     408 </span>                :            : </a>
-<a name="409"><span class="lineNum">     409 </span>  [<span class="branchCov" title="Branch 0 was taken 65 times"> + </span><span class="branchCov" title="Branch 1 was taken 1365 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 65 times"> + </span>]:<span class="lineCov">       1495 :   if ((node = json_object_get_member (root, &quot;payloadTransferInfo&quot;)) == NULL ||</span></a>
+<a name="409"><span class="lineNum">     409 </span>  [<span class="branchCov" title="Branch 0 was taken 65 times"> + </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 65 times"> + </span>]:<span class="lineCov">        205 :   if ((node = json_object_get_member (root, &quot;payloadTransferInfo&quot;)) == NULL ||</span></a>
 <a name="410"><span class="lineNum">     410 </span>                :<span class="lineCov">         65 :       json_node_get_node_type (node) != JSON_NODE_OBJECT)</span></a>
-<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">       1365 :     return FALSE;</span></a>
+<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">         75 :     return FALSE;</span></a>
 <a name="412"><span class="lineNum">     412 </span>                :            : </a>
 <a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">         65 :   return TRUE;</span></a>
 <a name="414"><span class="lineNum">     414 </span>                :            : }</a>
@@ -680,26 +680,26 @@
 <a name="595"><span class="lineNum">     595 </span>                :            :  * Returns: (transfer none) (nullable): a device ID</a>
 <a name="596"><span class="lineNum">     596 </span>                :            :  */</a>
 <a name="597"><span class="lineNum">     597 </span>                :            : const char *</a>
-<a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">         45 : valent_identity_get_device_id (JsonNode *identity)</span></a>
+<a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">         40 : valent_identity_get_device_id (JsonNode *identity)</span></a>
 <a name="599"><span class="lineNum">     599 </span>                :            : {</a>
 <a name="600"><span class="lineNum">     600 </span>                :            :   JsonObject *root, *body;</a>
 <a name="601"><span class="lineNum">     601 </span>                :            :   JsonNode *node;</a>
 <a name="602"><span class="lineNum">     602 </span>                :            : </a>
-<a name="603"><span class="lineNum">     603 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (identity), NULL);</span></a>
+<a name="603"><span class="lineNum">     603 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">         40 :   g_return_val_if_fail (JSON_NODE_HOLDS_OBJECT (identity), NULL);</span></a>
 <a name="604"><span class="lineNum">     604 </span>                :            : </a>
-<a name="605"><span class="lineNum">     605 </span>                :<span class="lineCov">         45 :   root = json_node_get_object (identity);</span></a>
+<a name="605"><span class="lineNum">     605 </span>                :<span class="lineCov">         40 :   root = json_node_get_object (identity);</span></a>
 <a name="606"><span class="lineNum">     606 </span>                :            : </a>
-<a name="607"><span class="lineNum">     607 </span>  [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;body&quot;)) == NULL ||</span></a>
+<a name="607"><span class="lineNum">     607 </span>  [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 40 times"> + </span>]:<span class="lineCov">         40 :   if G_UNLIKELY ((node = json_object_get_member (root, &quot;body&quot;)) == NULL ||</span></a>
 <a name="608"><span class="lineNum">     608 </span>                :            :                  json_node_get_node_type (node) != JSON_NODE_OBJECT)</a>
 <a name="609"><span class="lineNum">     609 </span>                :<span class="lineNoCov">          0 :     g_return_val_if_reached (NULL);</span></a>
 <a name="610"><span class="lineNum">     610 </span>                :            : </a>
-<a name="611"><span class="lineNum">     611 </span>                :<span class="lineCov">         45 :   body = json_node_get_object (node);</span></a>
+<a name="611"><span class="lineNum">     611 </span>                :<span class="lineCov">         40 :   body = json_node_get_object (node);</span></a>
 <a name="612"><span class="lineNum">     612 </span>                :            : </a>
-<a name="613"><span class="lineNum">     613 </span>  [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   if G_UNLIKELY ((node = json_object_get_member (body, &quot;deviceId&quot;)) == NULL ||</span></a>
+<a name="613"><span class="lineNum">     613 </span>  [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 40 times"> + </span>]:<span class="lineCov">         40 :   if G_UNLIKELY ((node = json_object_get_member (body, &quot;deviceId&quot;)) == NULL ||</span></a>
 <a name="614"><span class="lineNum">     614 </span>                :            :                  json_node_get_value_type (node) != G_TYPE_STRING)</a>
 <a name="615"><span class="lineNum">     615 </span>                :<span class="lineNoCov">          0 :     g_return_val_if_reached (NULL);</span></a>
 <a name="616"><span class="lineNum">     616 </span>                :            : </a>
-<a name="617"><span class="lineNum">     617 </span>                :<span class="lineCov">         45 :   return json_node_get_string (node);</span></a>
+<a name="617"><span class="lineNum">     617 </span>                :<span class="lineCov">         40 :   return json_node_get_string (node);</span></a>
 <a name="618"><span class="lineNum">     618 </span>                :            : }</a>
 <a name="619"><span class="lineNum">     619 </span>                :            : </a>
 </pre>

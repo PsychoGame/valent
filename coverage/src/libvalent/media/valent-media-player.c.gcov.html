@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-27 20:52:45</td>
+            <td class="headerValue">2021-09-21 05:05:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">27</td>
@@ -106,8 +106,8 @@
 <a name="28"><span class="lineNum">      28 </span>                :            :  * the media state in response to certain events.</a>
 <a name="29"><span class="lineNum">      29 </span>                :            :  */</a>
 <a name="30"><span class="lineNum">      30 </span>                :            : </a>
-<a name="31"><span class="lineNum">      31 </span>  [<span class="branchCov" title="Branch 0 was taken 216 times"> + </span><span class="branchCov" title="Branch 1 was taken 3518 times"> + </span><span class="branchCov" title="Branch 2 was taken 216 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       3950 : G_DEFINE_TYPE (ValentMediaPlayer, valent_media_player, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 216 times"> + </span><span class="branchCov" title="Branch 5 was taken 3497 times"> + </span>]
+<a name="31"><span class="lineNum">      31 </span>  [<span class="branchCov" title="Branch 0 was taken 216 times"> + </span><span class="branchCov" title="Branch 1 was taken 2117 times"> + </span><span class="branchCov" title="Branch 2 was taken 216 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2549 : G_DEFINE_TYPE (ValentMediaPlayer, valent_media_player, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 216 times"> + </span><span class="branchCov" title="Branch 5 was taken 2096 times"> + </span>]
 <a name="32"><span class="lineNum">      32 </span>                :            : </a>
 <a name="33"><span class="lineNum">      33 </span>                :            : /**</a>
 <a name="34"><span class="lineNum">      34 </span>                :            :  * ValentMediaPlayerClass:</a>
@@ -507,9 +507,9 @@
 <a name="427"><span class="lineNum">     427 </span>                :<span class="lineCov">         21 : }</span></a>
 <a name="428"><span class="lineNum">     428 </span>                :            : </a>
 <a name="429"><span class="lineNum">     429 </span>                :            : static void</a>
-<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">        325 : valent_media_player_init (ValentMediaPlayer *self)</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">         80 : valent_media_player_init (ValentMediaPlayer *self)</span></a>
 <a name="431"><span class="lineNum">     431 </span>                :            : {</a>
-<a name="432"><span class="lineNum">     432 </span>                :<span class="lineCov">        325 : }</span></a>
+<a name="432"><span class="lineNum">     432 </span>                :<span class="lineCov">         80 : }</span></a>
 <a name="433"><span class="lineNum">     433 </span>                :            : </a>
 <a name="434"><span class="lineNum">     434 </span>                :            : /**</a>
 <a name="435"><span class="lineNum">     435 </span>                :            :  * valent_media_player_emit_changed:</a>
@@ -518,11 +518,11 @@
 <a name="438"><span class="lineNum">     438 </span>                :            :  * Emit ValentMediaPlayer::changed.</a>
 <a name="439"><span class="lineNum">     439 </span>                :            :  */</a>
 <a name="440"><span class="lineNum">     440 </span>                :            : void</a>
-<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         79 : valent_media_player_emit_changed (ValentMediaPlayer *player)</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         78 : valent_media_player_emit_changed (ValentMediaPlayer *player)</span></a>
 <a name="442"><span class="lineNum">     442 </span>                :            : {</a>
-<a name="443"><span class="lineNum">     443 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 79 times"> + </span>]:<span class="lineCov">         79 :   g_return_if_fail (VALENT_IS_MEDIA_PLAYER (player));</span></a>
+<a name="443"><span class="lineNum">     443 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 78 times"> + </span>]:<span class="lineCov">         78 :   g_return_if_fail (VALENT_IS_MEDIA_PLAYER (player));</span></a>
 <a name="444"><span class="lineNum">     444 </span>                :            : </a>
-<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">         79 :   g_signal_emit (G_OBJECT (player), signals [CHANGED], 0);</span></a>
+<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">         78 :   g_signal_emit (G_OBJECT (player), signals [CHANGED], 0);</span></a>
 <a name="446"><span class="lineNum">     446 </span>                :            : }</a>
 <a name="447"><span class="lineNum">     447 </span>                :            : </a>
 <a name="448"><span class="lineNum">     448 </span>                :            : /**</a>
@@ -550,21 +550,21 @@
 <a name="470"><span class="lineNum">     470 </span>                :            :  * Returns: %TRUE if playing</a>
 <a name="471"><span class="lineNum">     471 </span>                :            :  */</a>
 <a name="472"><span class="lineNum">     472 </span>                :            : gboolean</a>
-<a name="473"><span class="lineNum">     473 </span>                :<span class="lineCov">        725 : valent_media_player_is_playing (ValentMediaPlayer *player)</span></a>
+<a name="473"><span class="lineNum">     473 </span>                :<span class="lineCov">        165 : valent_media_player_is_playing (ValentMediaPlayer *player)</span></a>
 <a name="474"><span class="lineNum">     474 </span>                :            : {</a>
 <a name="475"><span class="lineNum">     475 </span>                :            :   ValentMediaState state;</a>
 <a name="476"><span class="lineNum">     476 </span>                :            : </a>
-<a name="477"><span class="lineNum">     477 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 725 times"> + </span>]:<span class="lineCov">        725 :   g_return_val_if_fail (VALENT_IS_MEDIA_PLAYER (player), FALSE);</span></a>
+<a name="477"><span class="lineNum">     477 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 165 times"> + </span>]:<span class="lineCov">        165 :   g_return_val_if_fail (VALENT_IS_MEDIA_PLAYER (player), FALSE);</span></a>
 <a name="478"><span class="lineNum">     478 </span>                :            : </a>
-<a name="479"><span class="lineNum">     479 </span>                :<span class="lineCov">        725 :   state = valent_media_player_get_state (player);</span></a>
+<a name="479"><span class="lineNum">     479 </span>                :<span class="lineCov">        165 :   state = valent_media_player_get_state (player);</span></a>
 <a name="480"><span class="lineNum">     480 </span>                :            : </a>
-<a name="481"><span class="lineNum">     481 </span>        [<span class="branchCov" title="Branch 0 was taken 115 times"> + </span><span class="branchCov" title="Branch 1 was taken 610 times"> + </span>]:<span class="lineCov">        725 :   if ((state &amp; VALENT_MEDIA_STATE_PAUSED) != 0)</span></a>
-<a name="482"><span class="lineNum">     482 </span>                :<span class="lineCov">        115 :     return FALSE;</span></a>
+<a name="481"><span class="lineNum">     481 </span>        [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchCov" title="Branch 1 was taken 120 times"> + </span>]:<span class="lineCov">        165 :   if ((state &amp; VALENT_MEDIA_STATE_PAUSED) != 0)</span></a>
+<a name="482"><span class="lineNum">     482 </span>                :<span class="lineCov">         45 :     return FALSE;</span></a>
 <a name="483"><span class="lineNum">     483 </span>                :            : </a>
-<a name="484"><span class="lineNum">     484 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchCov" title="Branch 1 was taken 560 times"> + </span>]:<span class="lineCov">        610 :   if ((state &amp; VALENT_MEDIA_STATE_PLAYING) != 0)</span></a>
+<a name="484"><span class="lineNum">     484 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchCov" title="Branch 1 was taken 70 times"> + </span>]:<span class="lineCov">        120 :   if ((state &amp; VALENT_MEDIA_STATE_PLAYING) != 0)</span></a>
 <a name="485"><span class="lineNum">     485 </span>                :<span class="lineCov">         50 :     return TRUE;</span></a>
 <a name="486"><span class="lineNum">     486 </span>                :            : </a>
-<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">        560 :   return FALSE;</span></a>
+<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">         70 :   return FALSE;</span></a>
 <a name="488"><span class="lineNum">     488 </span>                :            : }</a>
 <a name="489"><span class="lineNum">     489 </span>                :            : </a>
 <a name="490"><span class="lineNum">     490 </span>                :            : /**</a>
@@ -665,11 +665,11 @@
 <a name="585"><span class="lineNum">     585 </span>                :            :  * Returns: #ValentMediaState</a>
 <a name="586"><span class="lineNum">     586 </span>                :            :  */</a>
 <a name="587"><span class="lineNum">     587 </span>                :            : ValentMediaState</a>
-<a name="588"><span class="lineNum">     588 </span>                :<span class="lineCov">        745 : valent_media_player_get_state (ValentMediaPlayer *player)</span></a>
+<a name="588"><span class="lineNum">     588 </span>                :<span class="lineCov">        185 : valent_media_player_get_state (ValentMediaPlayer *player)</span></a>
 <a name="589"><span class="lineNum">     589 </span>                :            : {</a>
-<a name="590"><span class="lineNum">     590 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 745 times"> + </span>]:<span class="lineCov">        745 :   g_return_val_if_fail (VALENT_IS_MEDIA_PLAYER (player), VALENT_MEDIA_STATE_STOPPED);</span></a>
+<a name="590"><span class="lineNum">     590 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 185 times"> + </span>]:<span class="lineCov">        185 :   g_return_val_if_fail (VALENT_IS_MEDIA_PLAYER (player), VALENT_MEDIA_STATE_STOPPED);</span></a>
 <a name="591"><span class="lineNum">     591 </span>                :            : </a>
-<a name="592"><span class="lineNum">     592 </span>                :<span class="lineCov">        745 :   return VALENT_MEDIA_PLAYER_GET_CLASS (player)-&gt;get_state (player);</span></a>
+<a name="592"><span class="lineNum">     592 </span>                :<span class="lineCov">        185 :   return VALENT_MEDIA_PLAYER_GET_CLASS (player)-&gt;get_state (player);</span></a>
 <a name="593"><span class="lineNum">     593 </span>                :            : }</a>
 <a name="594"><span class="lineNum">     594 </span>                :            : </a>
 <a name="595"><span class="lineNum">     595 </span>                :            : /**</a>

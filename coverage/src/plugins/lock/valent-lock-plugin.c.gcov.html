@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-27 20:52:45</td>
+            <td class="headerValue">2021-09-21 05:05:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntry">33</td>
             <td class="headerCovTableEntry">52</td>
-            <td class="headerCovTableEntryLo">65.4 %</td>
+            <td class="headerCovTableEntryLo">63.5 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -104,8 +104,8 @@
 <a name="26"><span class="lineNum">      26 </span>                :            : </a>
 <a name="27"><span class="lineNum">      27 </span>                :            : static void valent_device_plugin_iface_init (ValentDevicePluginInterface *iface);</a>
 <a name="28"><span class="lineNum">      28 </span>                :            : </a>
-<a name="29"><span class="lineNum">      29 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1421 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1431 : G_DEFINE_TYPE_WITH_CODE (ValentLockPlugin, valent_lock_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 1416 times"> + </span>]
+<a name="29"><span class="lineNum">      29 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 425 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        435 : G_DEFINE_TYPE_WITH_CODE (ValentLockPlugin, valent_lock_plugin, PEAS_TYPE_EXTENSION_BASE,</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 420 times"> + </span>]
 <a name="30"><span class="lineNum">      30 </span>                :            :                          G_IMPLEMENT_INTERFACE (VALENT_TYPE_DEVICE_PLUGIN, valent_device_plugin_iface_init))</a>
 <a name="31"><span class="lineNum">      31 </span>                :            : </a>
 <a name="32"><span class="lineNum">      32 </span>                :            : static void valent_lock_plugin_request_state (ValentLockPlugin *self);</a>
@@ -119,60 +119,60 @@
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
 <a name="41"><span class="lineNum">      41 </span>                :            : </a>
 <a name="42"><span class="lineNum">      42 </span>                :            : static void</a>
-<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">        290 : update_actions (ValentLockPlugin *self)</span></a>
+<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">         30 : update_actions (ValentLockPlugin *self)</span></a>
 <a name="44"><span class="lineNum">      44 </span>                :            : {</a>
 <a name="45"><span class="lineNum">      45 </span>                :            :   GActionGroup *actions;</a>
 <a name="46"><span class="lineNum">      46 </span>                :            :   GAction *action;</a>
 <a name="47"><span class="lineNum">      47 </span>                :            : </a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">        290 :   actions = valent_device_get_actions (self-&gt;device);</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">         30 :   actions = valent_device_get_actions (self-&gt;device);</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            : </a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">        290 :   action = g_action_map_lookup_action (G_ACTION_MAP (actions), &quot;lock&quot;);</span></a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">        290 :   g_simple_action_set_enabled (G_SIMPLE_ACTION (action), !self-&gt;remote_locked);</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">         30 :   action = g_action_map_lookup_action (G_ACTION_MAP (actions), &quot;lock&quot;);</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">         30 :   g_simple_action_set_enabled (G_SIMPLE_ACTION (action), !self-&gt;remote_locked);</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            : </a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">        290 :   action = g_action_map_lookup_action (G_ACTION_MAP (actions), &quot;unlock&quot;);</span></a>
-<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">        290 :   g_simple_action_set_enabled (G_SIMPLE_ACTION (action), self-&gt;remote_locked);</span></a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">        290 : }</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">         30 :   action = g_action_map_lookup_action (G_ACTION_MAP (actions), &quot;unlock&quot;);</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">         30 :   g_simple_action_set_enabled (G_SIMPLE_ACTION (action), self-&gt;remote_locked);</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">         30 : }</span></a>
 <a name="56"><span class="lineNum">      56 </span>                :            : </a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
 <a name="58"><span class="lineNum">      58 </span>                :            : static void</a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">        275 : valent_lock_plugin_handle_lock (ValentLockPlugin *self,</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         15 : valent_lock_plugin_handle_lock (ValentLockPlugin *self,</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            :                                 JsonNode         *packet)</a>
 <a name="61"><span class="lineNum">      61 </span>                :            : {</a>
 <a name="62"><span class="lineNum">      62 </span>                :            :   JsonObject *body;</a>
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>
-<a name="64"><span class="lineNum">      64 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 275 times"> + </span>]:<span class="lineCov">        275 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
-<a name="65"><span class="lineNum">      65 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 275 times"> + </span>]:<span class="lineCov">        275 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
+<a name="64"><span class="lineNum">      64 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
+<a name="65"><span class="lineNum">      65 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
 <a name="66"><span class="lineNum">      66 </span>                :            : </a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   /* Check for the optional message */</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">        275 :   body = valent_packet_get_body (packet);</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         15 :   body = valent_packet_get_body (packet);</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : </a>
-<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 195 times"> + </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">        275 :   if (json_object_has_member (body, &quot;isLocked&quot;))</span></a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">        195 :     self-&gt;remote_locked = valent_packet_check_boolean (body, &quot;isLocked&quot;);</span></a>
+<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   if (json_object_has_member (body, &quot;isLocked&quot;))</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">         15 :     self-&gt;remote_locked = valent_packet_check_boolean (body, &quot;isLocked&quot;);</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            : </a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">        275 :   update_actions (self);</span></a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">        275 : }</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">         15 :   update_actions (self);</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">         15 : }</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
 <a name="76"><span class="lineNum">      76 </span>                :            : static void</a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         80 : valent_lock_plugin_handle_lock_request (ValentLockPlugin *self,</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         10 : valent_lock_plugin_handle_lock_request (ValentLockPlugin *self,</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            :                                         JsonNode         *packet)</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : {</a>
 <a name="80"><span class="lineNum">      80 </span>                :            :   JsonObject *body;</a>
 <a name="81"><span class="lineNum">      81 </span>                :            :   gboolean state;</a>
 <a name="82"><span class="lineNum">      82 </span>                :            : </a>
-<a name="83"><span class="lineNum">      83 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
-<a name="84"><span class="lineNum">      84 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
+<a name="83"><span class="lineNum">      83 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
+<a name="84"><span class="lineNum">      84 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            : </a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">         80 :   body = valent_packet_get_body (packet);</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">         10 :   body = valent_packet_get_body (packet);</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            : </a>
-<a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span>]:<span class="lineCov">         80 :   if (valent_packet_check_boolean (body, &quot;requestLocked&quot;))</span></a>
+<a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :   if (valent_packet_check_boolean (body, &quot;requestLocked&quot;))</span></a>
 <a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">          5 :     valent_lock_plugin_send_state (self);</span></a>
 <a name="90"><span class="lineNum">      90 </span>                :            : </a>
-<a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 55 times"> + </span>]:<span class="lineCov">         80 :   if (json_object_has_member (body, &quot;setLocked&quot;))</span></a>
+<a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :   if (json_object_has_member (body, &quot;setLocked&quot;))</span></a>
 <a name="92"><span class="lineNum">      92 </span>                :            :     {</a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">         25 :       state = valent_packet_check_boolean (body, &quot;setLocked&quot;);</span></a>
-<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">         25 :       valent_session_set_locked (self-&gt;session, state);</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">          5 :       state = valent_packet_check_boolean (body, &quot;setLocked&quot;);</span></a>
+<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">          5 :       valent_session_set_locked (self-&gt;session, state);</span></a>
 <a name="95"><span class="lineNum">      95 </span>                :            :     }</a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         80 : }</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         10 : }</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <a name="98"><span class="lineNum">      98 </span>                :            : static void</a>
 <a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">         15 : valent_lock_plugin_request_state (ValentLockPlugin *self)</span></a>
@@ -204,23 +204,23 @@
 <a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         10 : }</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            : </a>
 <a name="127"><span class="lineNum">     127 </span>                :            : static void</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         16 : valent_lock_plugin_send_state (ValentLockPlugin *self)</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         10 : valent_lock_plugin_send_state (ValentLockPlugin *self)</span></a>
 <a name="129"><span class="lineNum">     129 </span>                :            : {</a>
 <a name="130"><span class="lineNum">     130 </span>                :            :   JsonBuilder *builder;</a>
-<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">         16 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">         10 :   g_autoptr (JsonNode) packet = NULL;</span></a>
 <a name="132"><span class="lineNum">     132 </span>                :            :   gboolean state;</a>
 <a name="133"><span class="lineNum">     133 </span>                :            : </a>
-<a name="134"><span class="lineNum">     134 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         16 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
+<a name="134"><span class="lineNum">     134 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            : </a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         16 :   state = valent_session_get_locked (self-&gt;session);</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         10 :   state = valent_session_get_locked (self-&gt;session);</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         16 :   builder = valent_packet_start (&quot;kdeconnect.lock&quot;);</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         16 :   json_builder_set_member_name (builder, &quot;isLocked&quot;);</span></a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         16 :   json_builder_add_boolean_value (builder, state);</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         16 :   packet = valent_packet_finish (builder);</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         10 :   builder = valent_packet_start (&quot;kdeconnect.lock&quot;);</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         10 :   json_builder_set_member_name (builder, &quot;isLocked&quot;);</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         10 :   json_builder_add_boolean_value (builder, state);</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         10 :   packet = valent_packet_finish (builder);</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            : </a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         16 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         16 : }</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         10 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         10 : }</span></a>
 <a name="145"><span class="lineNum">     145 </span>                :            : </a>
 <a name="146"><span class="lineNum">     146 </span>                :            : </a>
 <a name="147"><span class="lineNum">     147 </span>                :            : /*</a>
@@ -337,23 +337,23 @@
 <a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         50 : }</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
 <a name="260"><span class="lineNum">     260 </span>                :            : static void</a>
-<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">        355 : valent_lock_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
+<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">         25 : valent_lock_plugin_handle_packet (ValentDevicePlugin *plugin,</span></a>
 <a name="262"><span class="lineNum">     262 </span>                :            :                                   const char         *type,</a>
 <a name="263"><span class="lineNum">     263 </span>                :            :                                   JsonNode           *packet)</a>
 <a name="264"><span class="lineNum">     264 </span>                :            : {</a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">        355 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (plugin);</span></a>
+<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">         25 :   ValentLockPlugin *self = VALENT_LOCK_PLUGIN (plugin);</span></a>
 <a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 355 times"> + </span>]:<span class="lineCov">        355 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
-<a name="268"><span class="lineNum">     268 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 355 times"> + </span>]:<span class="lineCov">        355 :   g_assert (type != NULL);</span></a>
-<a name="269"><span class="lineNum">     269 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 355 times"> + </span>]:<span class="lineCov">        355 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
+<a name="267"><span class="lineNum">     267 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (VALENT_IS_LOCK_PLUGIN (self));</span></a>
+<a name="268"><span class="lineNum">     268 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (type != NULL);</span></a>
+<a name="269"><span class="lineNum">     269 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :   g_assert (VALENT_IS_PACKET (packet));</span></a>
 <a name="270"><span class="lineNum">     270 </span>                :            : </a>
-<a name="271"><span class="lineNum">     271 </span>        [<span class="branchCov" title="Branch 0 was taken 275 times"> + </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">        355 :   if (g_strcmp0 (type, &quot;kdeconnect.lock&quot;) == 0)</span></a>
-<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        275 :     valent_lock_plugin_handle_lock (self, packet);</span></a>
-<a name="273"><span class="lineNum">     273 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         80 :   else if (g_strcmp0 (type, &quot;kdeconnect.lock.request&quot;) == 0)</span></a>
-<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">         80 :     valent_lock_plugin_handle_lock_request (self, packet);</span></a>
+<a name="271"><span class="lineNum">     271 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         25 :   if (g_strcmp0 (type, &quot;kdeconnect.lock&quot;) == 0)</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">         15 :     valent_lock_plugin_handle_lock (self, packet);</span></a>
+<a name="273"><span class="lineNum">     273 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   else if (g_strcmp0 (type, &quot;kdeconnect.lock.request&quot;) == 0)</span></a>
+<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">         10 :     valent_lock_plugin_handle_lock_request (self, packet);</span></a>
 <a name="275"><span class="lineNum">     275 </span>                :            :   else</a>
 <a name="276"><span class="lineNum">     276 </span>                :<span class="lineNoCov">          0 :     g_assert_not_reached ();</span></a>
-<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">        355 : }</span></a>
+<a name="277"><span class="lineNum">     277 </span>                :<span class="lineCov">         25 : }</span></a>
 <a name="278"><span class="lineNum">     278 </span>                :            : </a>
 <a name="279"><span class="lineNum">     279 </span>                :            : static void</a>
 <a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">          5 : valent_device_plugin_iface_init (ValentDevicePluginInterface *iface)</span></a>

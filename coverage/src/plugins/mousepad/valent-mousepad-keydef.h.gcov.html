@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-27 20:52:45</td>
+            <td class="headerValue">2021-09-21 05:05:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -95,7 +95,7 @@
 <a name="17"><span class="lineNum">      17 </span>                :            :  * Returns: a GDK keyval</a>
 <a name="18"><span class="lineNum">      18 </span>                :            :  */</a>
 <a name="19"><span class="lineNum">      19 </span>                :            : static inline unsigned int</a>
-<a name="20"><span class="lineNum">      20 </span>                :<span class="lineCov">         45 : valent_mousepad_keycode_to_keyval (unsigned int keycode)</span></a>
+<a name="20"><span class="lineNum">      20 </span>                :<span class="lineCov">          5 : valent_mousepad_keycode_to_keyval (unsigned int keycode)</span></a>
 <a name="21"><span class="lineNum">      21 </span>                :            : {</a>
 <a name="22"><span class="lineNum">      22 </span>                :            :   static const unsigned int keymap[] = {</a>
 <a name="23"><span class="lineNum">      23 </span>                :            :     0,                   // 0 (Invalid)</a>
@@ -133,10 +133,10 @@
 <a name="55"><span class="lineNum">      55 </span>                :            :     GDK_KEY_F12,         // 32</a>
 <a name="56"><span class="lineNum">      56 </span>                :            :   };</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   if (keycode &gt; 32)</span></a>
+<a name="58"><span class="lineNum">      58 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (keycode &gt; 32)</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :<span class="lineNoCov">          0 :     return 0;</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            : </a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">         45 :   return keymap[keycode];</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">          5 :   return keymap[keycode];</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            : }</a>
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>
 <a name="64"><span class="lineNum">      64 </span>                :            : /**</a>
