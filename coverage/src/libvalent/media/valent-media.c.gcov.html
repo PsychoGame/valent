@@ -31,13 +31,13 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">123</td>
+            <td class="headerCovTableEntry">122</td>
             <td class="headerCovTableEntry">125</td>
-            <td class="headerCovTableEntryHi">98.4 %</td>
+            <td class="headerCovTableEntryHi">97.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-22 10:16:36</td>
+            <td class="headerValue">2021-09-22 16:32:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntry">40</td>
             <td class="headerCovTableEntry">68</td>
-            <td class="headerCovTableEntryLo">61.8 %</td>
+            <td class="headerCovTableEntryLo">58.8 %</td>
           </tr>
           <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -116,8 +116,8 @@
 <a name="38"><span class="lineNum">      38 </span>                :            :   GPtrArray       *paused;</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : };</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
-<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 580 times"> + </span><span class="branchCov" title="Branch 2 was taken 21 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        622 : G_DEFINE_TYPE (ValentMedia, valent_media, VALENT_TYPE_COMPONENT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 21 times"> + </span><span class="branchCov" title="Branch 5 was taken 559 times"> + </span>]
+<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 500 times"> + </span><span class="branchCov" title="Branch 2 was taken 21 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        542 : G_DEFINE_TYPE (ValentMedia, valent_media, VALENT_TYPE_COMPONENT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 21 times"> + </span><span class="branchCov" title="Branch 5 was taken 479 times"> + </span>]
 <a name="42"><span class="lineNum">      42 </span>                :            : </a>
 <a name="43"><span class="lineNum">      43 </span>                :            : enum {</a>
 <a name="44"><span class="lineNum">      44 </span>                :            :   PLAYER_ADDED,</a>
@@ -212,22 +212,22 @@
 <a name="133"><span class="lineNum">     133 </span>                :            : }</a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
 <a name="135"><span class="lineNum">     135 </span>                :            : static void</a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         60 : valent_media_player_provider_load_cb (ValentMediaPlayerProvider *provider,</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         50 : valent_media_player_provider_load_cb (ValentMediaPlayerProvider *provider,</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            :                                       GAsyncResult              *result,</a>
 <a name="138"><span class="lineNum">     138 </span>                :            :                                       ValentMedia               *self)</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : {</a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         60 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         50 :   g_autoptr (GError) error = NULL;</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            : </a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   VALENT_ENTRY;</a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
-<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_assert (VALENT_IS_MEDIA_PLAYER_PROVIDER (provider));</span></a>
-<a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_assert (g_task_is_valid (result, provider));</span></a>
+<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_assert (VALENT_IS_MEDIA_PLAYER_PROVIDER (provider));</span></a>
+<a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_assert (g_task_is_valid (result, provider));</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            : </a>
-<a name="147"><span class="lineNum">     147 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 55 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">         65 :   if (!valent_media_player_provider_load_finish (provider, result, &amp;error) &amp;&amp;</span></a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">          5 :       !valent_error_ignore (error))</span></a>
+<a name="147"><span class="lineNum">     147 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         50 :   if (!valent_media_player_provider_load_finish (provider, result, &amp;error) &amp;&amp;</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineNoCov">          0 :       !valent_error_ignore (error))</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :<span class="lineNoCov">          0 :     g_warning (&quot;%s failed to load: %s&quot;, G_OBJECT_TYPE_NAME (provider), error-&gt;message);</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :            : </a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         60 :   VALENT_EXIT;</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         50 :   VALENT_EXIT;</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : }</a>
 <a name="153"><span class="lineNum">     153 </span>                :            : </a>
 <a name="154"><span class="lineNum">     154 </span>                :            : </a>
@@ -235,59 +235,59 @@
 <a name="156"><span class="lineNum">     156 </span>                :            :  * ValentComponent</a>
 <a name="157"><span class="lineNum">     157 </span>                :            :  */</a>
 <a name="158"><span class="lineNum">     158 </span>                :            : static void</a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">         60 : valent_media_extension_added (ValentComponent *component,</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">         50 : valent_media_extension_added (ValentComponent *component,</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            :                               PeasExtension   *extension)</a>
 <a name="161"><span class="lineNum">     161 </span>                :            : {</a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">         60 :   ValentMedia *self = VALENT_MEDIA (component);</span></a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         60 :   ValentMediaPlayerProvider *provider = VALENT_MEDIA_PLAYER_PROVIDER (extension);</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">         50 :   ValentMedia *self = VALENT_MEDIA (component);</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         50 :   ValentMediaPlayerProvider *provider = VALENT_MEDIA_PLAYER_PROVIDER (extension);</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   VALENT_ENTRY;</a>
 <a name="166"><span class="lineNum">     166 </span>                :            : </a>
-<a name="167"><span class="lineNum">     167 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_assert (VALENT_IS_COMPONENT (component));</span></a>
-<a name="168"><span class="lineNum">     168 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_assert (VALENT_IS_MEDIA_PLAYER_PROVIDER (provider));</span></a>
-<a name="169"><span class="lineNum">     169 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_assert (VALENT_IS_MEDIA (self));</span></a>
+<a name="167"><span class="lineNum">     167 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_assert (VALENT_IS_COMPONENT (component));</span></a>
+<a name="168"><span class="lineNum">     168 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_assert (VALENT_IS_MEDIA_PLAYER_PROVIDER (provider));</span></a>
+<a name="169"><span class="lineNum">     169 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_assert (VALENT_IS_MEDIA (self));</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            : </a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">         60 :   g_signal_connect_object (provider,</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">         50 :   g_signal_connect_object (provider,</span></a>
 <a name="172"><span class="lineNum">     172 </span>                :            :                            &quot;player-added&quot;,</a>
 <a name="173"><span class="lineNum">     173 </span>                :            :                            G_CALLBACK (on_player_added),</a>
 <a name="174"><span class="lineNum">     174 </span>                :            :                            self,</a>
 <a name="175"><span class="lineNum">     175 </span>                :            :                            0);</a>
 <a name="176"><span class="lineNum">     176 </span>                :            : </a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">         60 :   g_signal_connect_object (provider,</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">         50 :   g_signal_connect_object (provider,</span></a>
 <a name="178"><span class="lineNum">     178 </span>                :            :                            &quot;player-removed&quot;,</a>
 <a name="179"><span class="lineNum">     179 </span>                :            :                            G_CALLBACK (on_player_removed),</a>
 <a name="180"><span class="lineNum">     180 </span>                :            :                            self,</a>
 <a name="181"><span class="lineNum">     181 </span>                :            :                            0);</a>
 <a name="182"><span class="lineNum">     182 </span>                :            : </a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         60 :   valent_media_player_provider_load_async (provider,</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         50 :   valent_media_player_provider_load_async (provider,</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            :                                            self-&gt;cancellable,</a>
 <a name="185"><span class="lineNum">     185 </span>                :            :                                            (GAsyncReadyCallback)valent_media_player_provider_load_cb,</a>
 <a name="186"><span class="lineNum">     186 </span>                :            :                                            self);</a>
 <a name="187"><span class="lineNum">     187 </span>                :            : </a>
-<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">         60 :   VALENT_EXIT;</span></a>
+<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">         50 :   VALENT_EXIT;</span></a>
 <a name="189"><span class="lineNum">     189 </span>                :            : }</a>
 <a name="190"><span class="lineNum">     190 </span>                :            : </a>
 <a name="191"><span class="lineNum">     191 </span>                :            : static void</a>
-<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         45 : valent_media_extension_removed (ValentComponent *component,</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         35 : valent_media_extension_removed (ValentComponent *component,</span></a>
 <a name="193"><span class="lineNum">     193 </span>                :            :                                 PeasExtension   *extension)</a>
 <a name="194"><span class="lineNum">     194 </span>                :            : {</a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         45 :   ValentMedia *self = VALENT_MEDIA (component);</span></a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         45 :   ValentMediaPlayerProvider *provider = VALENT_MEDIA_PLAYER_PROVIDER (extension);</span></a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">         45 :   g_autoptr (GPtrArray) players = NULL;</span></a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         35 :   ValentMedia *self = VALENT_MEDIA (component);</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         35 :   ValentMediaPlayerProvider *provider = VALENT_MEDIA_PLAYER_PROVIDER (extension);</span></a>
+<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">         35 :   g_autoptr (GPtrArray) players = NULL;</span></a>
 <a name="198"><span class="lineNum">     198 </span>                :            : </a>
 <a name="199"><span class="lineNum">     199 </span>                :            :   VALENT_ENTRY;</a>
 <a name="200"><span class="lineNum">     200 </span>                :            : </a>
-<a name="201"><span class="lineNum">     201 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_COMPONENT (component));</span></a>
-<a name="202"><span class="lineNum">     202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         45 :   g_assert (VALENT_IS_MEDIA (component));</span></a>
+<a name="201"><span class="lineNum">     201 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_assert (VALENT_IS_COMPONENT (component));</span></a>
+<a name="202"><span class="lineNum">     202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_assert (VALENT_IS_MEDIA (component));</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            : </a>
-<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">         45 :   players = valent_media_player_provider_get_players (provider);</span></a>
+<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">         35 :   players = valent_media_player_provider_get_players (provider);</span></a>
 <a name="205"><span class="lineNum">     205 </span>                :            : </a>
-<a name="206"><span class="lineNum">     206 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         55 :   for (unsigned int i = 0; i &lt; players-&gt;len; i++)</span></a>
+<a name="206"><span class="lineNum">     206 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         45 :   for (unsigned int i = 0; i &lt; players-&gt;len; i++)</span></a>
 <a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">         10 :     valent_media_player_provider_emit_player_removed (provider, g_ptr_array_index (players, i));</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :            : </a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">         45 :   g_signal_handlers_disconnect_by_data (provider, self);</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">         35 :   g_signal_handlers_disconnect_by_data (provider, self);</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            : </a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         45 :   VALENT_EXIT;</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         35 :   VALENT_EXIT;</span></a>
 <a name="212"><span class="lineNum">     212 </span>                :            : }</a>
 <a name="213"><span class="lineNum">     213 </span>                :            : </a>
 <a name="214"><span class="lineNum">     214 </span>                :            : </a>
@@ -295,27 +295,27 @@
 <a name="216"><span class="lineNum">     216 </span>                :            :  * GObject</a>
 <a name="217"><span class="lineNum">     217 </span>                :            :  */</a>
 <a name="218"><span class="lineNum">     218 </span>                :            : static void</a>
-<a name="219"><span class="lineNum">     219 </span>                :<span class="lineCov">         35 : valent_media_dispose (GObject *object)</span></a>
+<a name="219"><span class="lineNum">     219 </span>                :<span class="lineCov">         20 : valent_media_dispose (GObject *object)</span></a>
 <a name="220"><span class="lineNum">     220 </span>                :            : {</a>
-<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">         35 :   ValentMedia *self = VALENT_MEDIA (object);</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">         20 :   ValentMedia *self = VALENT_MEDIA (object);</span></a>
 <a name="222"><span class="lineNum">     222 </span>                :            : </a>
-<a name="223"><span class="lineNum">     223 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         35 :   if (!g_cancellable_is_cancelled (self-&gt;cancellable))</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">         35 :     g_cancellable_cancel (self-&gt;cancellable);</span></a>
+<a name="223"><span class="lineNum">     223 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   if (!g_cancellable_is_cancelled (self-&gt;cancellable))</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">         20 :     g_cancellable_cancel (self-&gt;cancellable);</span></a>
 <a name="225"><span class="lineNum">     225 </span>                :            : </a>
-<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">         35 :   G_OBJECT_CLASS (valent_media_parent_class)-&gt;dispose (object);</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">         35 : }</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">         20 :   G_OBJECT_CLASS (valent_media_parent_class)-&gt;dispose (object);</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">         20 : }</span></a>
 <a name="228"><span class="lineNum">     228 </span>                :            : </a>
 <a name="229"><span class="lineNum">     229 </span>                :            : static void</a>
-<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">         35 : valent_media_finalize (GObject *object)</span></a>
+<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">         20 : valent_media_finalize (GObject *object)</span></a>
 <a name="231"><span class="lineNum">     231 </span>                :            : {</a>
-<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">         35 :   ValentMedia *self = VALENT_MEDIA (object);</span></a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">         20 :   ValentMedia *self = VALENT_MEDIA (object);</span></a>
 <a name="233"><span class="lineNum">     233 </span>                :            : </a>
-<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         35 :   g_clear_object (&amp;self-&gt;cancellable);</span></a>
-<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         35 :   g_clear_pointer (&amp;self-&gt;players, g_ptr_array_unref);</span></a>
-<a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         35 :   g_clear_pointer (&amp;self-&gt;paused, g_ptr_array_unref);</span></a>
+<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_clear_object (&amp;self-&gt;cancellable);</span></a>
+<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_clear_pointer (&amp;self-&gt;players, g_ptr_array_unref);</span></a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   g_clear_pointer (&amp;self-&gt;paused, g_ptr_array_unref);</span></a>
 <a name="237"><span class="lineNum">     237 </span>                :            : </a>
-<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">         35 :   G_OBJECT_CLASS (valent_media_parent_class)-&gt;finalize (object);</span></a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">         35 : }</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">         20 :   G_OBJECT_CLASS (valent_media_parent_class)-&gt;finalize (object);</span></a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">         20 : }</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
 <a name="241"><span class="lineNum">     241 </span>                :            : static void</a>
 <a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         21 : valent_media_class_init (ValentMediaClass *klass)</span></a>
@@ -409,12 +409,12 @@
 <a name="330"><span class="lineNum">     330 </span>                :<span class="lineCov">         21 : }</span></a>
 <a name="331"><span class="lineNum">     331 </span>                :            : </a>
 <a name="332"><span class="lineNum">     332 </span>                :            : static void</a>
-<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">         45 : valent_media_init (ValentMedia *self)</span></a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">         35 : valent_media_init (ValentMedia *self)</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            : {</a>
-<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">         45 :   self-&gt;cancellable = g_cancellable_new ();</span></a>
-<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">         45 :   self-&gt;players = g_ptr_array_new_with_free_func (g_object_unref);</span></a>
-<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">         45 :   self-&gt;paused = g_ptr_array_new ();</span></a>
-<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">         45 : }</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">         35 :   self-&gt;cancellable = g_cancellable_new ();</span></a>
+<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">         35 :   self-&gt;players = g_ptr_array_new_with_free_func (g_object_unref);</span></a>
+<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">         35 :   self-&gt;paused = g_ptr_array_new ();</span></a>
+<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">         35 : }</span></a>
 <a name="339"><span class="lineNum">     339 </span>                :            : </a>
 <a name="340"><span class="lineNum">     340 </span>                :            : /**</a>
 <a name="341"><span class="lineNum">     341 </span>                :            :  * valent_media_get_default:</a>
@@ -426,14 +426,14 @@
 <a name="347"><span class="lineNum">     347 </span>                :            : ValentMedia *</a>
 <a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">         95 : valent_media_get_default (void)</span></a>
 <a name="349"><span class="lineNum">     349 </span>                :            : {</a>
-<a name="350"><span class="lineNum">     350 </span>        [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         95 :   if (default_media == NULL)</span></a>
+<a name="350"><span class="lineNum">     350 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         95 :   if (default_media == NULL)</span></a>
 <a name="351"><span class="lineNum">     351 </span>                :            :     {</a>
-<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">         45 :       default_media = g_object_new (VALENT_TYPE_MEDIA,</span></a>
+<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">         35 :       default_media = g_object_new (VALENT_TYPE_MEDIA,</span></a>
 <a name="353"><span class="lineNum">     353 </span>                :            :                                     &quot;plugin-context&quot;, &quot;media&quot;,</a>
 <a name="354"><span class="lineNum">     354 </span>                :            :                                     &quot;plugin-type&quot;,    VALENT_TYPE_MEDIA_PLAYER_PROVIDER,</a>
 <a name="355"><span class="lineNum">     355 </span>                :            :                                     NULL);</a>
 <a name="356"><span class="lineNum">     356 </span>                :            : </a>
-<a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">         45 :       g_object_add_weak_pointer (G_OBJECT (default_media), (gpointer) &amp;default_media);</span></a>
+<a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">         35 :       g_object_add_weak_pointer (G_OBJECT (default_media), (gpointer) &amp;default_media);</span></a>
 <a name="358"><span class="lineNum">     358 </span>                :            :     }</a>
 <a name="359"><span class="lineNum">     359 </span>                :            : </a>
 <a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         95 :   return default_media;</span></a>
