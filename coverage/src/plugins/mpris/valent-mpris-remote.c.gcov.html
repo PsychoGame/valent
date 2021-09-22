@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-22 00:07:46</td>
+            <td class="headerValue">2021-09-22 00:19:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">49</td>
@@ -130,8 +130,8 @@
 <a name="52"><span class="lineNum">      52 </span>                :            :                                                const char         *name,</a>
 <a name="53"><span class="lineNum">      53 </span>                :            :                                                GVariant           *value);</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : </a>
-<a name="55"><span class="lineNum">      55 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 2202 times"> + </span><span class="branchCov" title="Branch 2 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2232 : G_DEFINE_TYPE (ValentMprisRemote, valent_mpris_remote, VALENT_TYPE_MEDIA_PLAYER)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 15 times"> + </span><span class="branchCov" title="Branch 5 was taken 2187 times"> + </span>]
+<a name="55"><span class="lineNum">      55 </span>  [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 2205 times"> + </span><span class="branchCov" title="Branch 2 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2235 : G_DEFINE_TYPE (ValentMprisRemote, valent_mpris_remote, VALENT_TYPE_MEDIA_PLAYER)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 15 times"> + </span><span class="branchCov" title="Branch 5 was taken 2190 times"> + </span>]
 <a name="56"><span class="lineNum">      56 </span>                :            : </a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
 <a name="58"><span class="lineNum">      58 </span>                :            : enum {</a>
@@ -675,9 +675,9 @@
 <a name="595"><span class="lineNum">     595 </span>                :            :  * Flush player properties.</a>
 <a name="596"><span class="lineNum">     596 </span>                :            :  */</a>
 <a name="597"><span class="lineNum">     597 </span>                :            : static void</a>
-<a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">        102 : valent_mpris_remote_flush (ValentMprisRemote *self)</span></a>
+<a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">        105 : valent_mpris_remote_flush (ValentMprisRemote *self)</span></a>
 <a name="599"><span class="lineNum">     599 </span>                :            : {</a>
-<a name="600"><span class="lineNum">     600 </span>                :<span class="lineCov">        102 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="600"><span class="lineNum">     600 </span>                :<span class="lineCov">        105 :   g_autoptr (GError) error = NULL;</span></a>
 <a name="601"><span class="lineNum">     601 </span>                :            :   GVariant *properties;</a>
 <a name="602"><span class="lineNum">     602 </span>                :            :   GVariantBuilder changed_props;</a>
 <a name="603"><span class="lineNum">     603 </span>                :            :   GVariantBuilder invalidated_props;</a>
@@ -685,27 +685,27 @@
 <a name="605"><span class="lineNum">     605 </span>                :            :   GVariant *value;</a>
 <a name="606"><span class="lineNum">     606 </span>                :            :   char *prop_name;</a>
 <a name="607"><span class="lineNum">     607 </span>                :            : </a>
-<a name="608"><span class="lineNum">     608 </span>        [<span class="branchCov" title="Branch 0 was taken 102 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        102 :   if (self-&gt;bus_name_id &gt; 0)</span></a>
+<a name="608"><span class="lineNum">     608 </span>        [<span class="branchCov" title="Branch 0 was taken 105 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        105 :   if (self-&gt;bus_name_id &gt; 0)</span></a>
 <a name="609"><span class="lineNum">     609 </span>                :            :     {</a>
-<a name="610"><span class="lineNum">     610 </span>                :<span class="lineCov">        102 :       g_variant_builder_init (&amp;changed_props, G_VARIANT_TYPE_VARDICT);</span></a>
-<a name="611"><span class="lineNum">     611 </span>                :<span class="lineCov">        102 :       g_variant_builder_init (&amp;invalidated_props, G_VARIANT_TYPE_STRING_ARRAY);</span></a>
+<a name="610"><span class="lineNum">     610 </span>                :<span class="lineCov">        105 :       g_variant_builder_init (&amp;changed_props, G_VARIANT_TYPE_VARDICT);</span></a>
+<a name="611"><span class="lineNum">     611 </span>                :<span class="lineCov">        105 :       g_variant_builder_init (&amp;invalidated_props, G_VARIANT_TYPE_STRING_ARRAY);</span></a>
 <a name="612"><span class="lineNum">     612 </span>                :            : </a>
-<a name="613"><span class="lineNum">     613 </span>                :<span class="lineCov">        102 :       g_hash_table_iter_init (&amp;iter, self-&gt;player_buffer);</span></a>
+<a name="613"><span class="lineNum">     613 </span>                :<span class="lineCov">        105 :       g_hash_table_iter_init (&amp;iter, self-&gt;player_buffer);</span></a>
 <a name="614"><span class="lineNum">     614 </span>                :            : </a>
-<a name="615"><span class="lineNum">     615 </span>        [<span class="branchCov" title="Branch 0 was taken 394 times"> + </span><span class="branchCov" title="Branch 1 was taken 102 times"> + </span>]:<span class="lineCov">        496 :       while (g_hash_table_iter_next (&amp;iter, (void**)&amp;prop_name, (void**)&amp;value))</span></a>
+<a name="615"><span class="lineNum">     615 </span>        [<span class="branchCov" title="Branch 0 was taken 400 times"> + </span><span class="branchCov" title="Branch 1 was taken 105 times"> + </span>]:<span class="lineCov">        505 :       while (g_hash_table_iter_next (&amp;iter, (void**)&amp;prop_name, (void**)&amp;value))</span></a>
 <a name="616"><span class="lineNum">     616 </span>                :            :         {</a>
-<a name="617"><span class="lineNum">     617 </span>        [<span class="branchCov" title="Branch 0 was taken 394 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        394 :           if (value)</span></a>
-<a name="618"><span class="lineNum">     618 </span>                :<span class="lineCov">        394 :             g_variant_builder_add (&amp;changed_props, &quot;{sv}&quot;, prop_name, value);</span></a>
+<a name="617"><span class="lineNum">     617 </span>        [<span class="branchCov" title="Branch 0 was taken 400 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        400 :           if (value)</span></a>
+<a name="618"><span class="lineNum">     618 </span>                :<span class="lineCov">        400 :             g_variant_builder_add (&amp;changed_props, &quot;{sv}&quot;, prop_name, value);</span></a>
 <a name="619"><span class="lineNum">     619 </span>                :            :           else</a>
 <a name="620"><span class="lineNum">     620 </span>                :<span class="lineNoCov">          0 :             g_variant_builder_add (&amp;invalidated_props, &quot;s&quot;, prop_name);</span></a>
 <a name="621"><span class="lineNum">     621 </span>                :            :         }</a>
 <a name="622"><span class="lineNum">     622 </span>                :            : </a>
-<a name="623"><span class="lineNum">     623 </span>                :<span class="lineCov">        102 :       properties = g_variant_new (&quot;(s@a{sv}@as)&quot;,</span></a>
+<a name="623"><span class="lineNum">     623 </span>                :<span class="lineCov">        105 :       properties = g_variant_new (&quot;(s@a{sv}@as)&quot;,</span></a>
 <a name="624"><span class="lineNum">     624 </span>                :            :                                   &quot;org.mpris.MediaPlayer2.Player&quot;,</a>
 <a name="625"><span class="lineNum">     625 </span>                :            :                                   g_variant_builder_end (&amp;changed_props),</a>
 <a name="626"><span class="lineNum">     626 </span>                :            :                                   g_variant_builder_end (&amp;invalidated_props));</a>
 <a name="627"><span class="lineNum">     627 </span>                :            : </a>
-<a name="628"><span class="lineNum">     628 </span>                :<span class="lineCov">        102 :       g_dbus_connection_emit_signal (self-&gt;connection,</span></a>
+<a name="628"><span class="lineNum">     628 </span>                :<span class="lineCov">        105 :       g_dbus_connection_emit_signal (self-&gt;connection,</span></a>
 <a name="629"><span class="lineNum">     629 </span>                :            :                                      NULL,</a>
 <a name="630"><span class="lineNum">     630 </span>                :            :                                      &quot;/org/mpris/MediaPlayer2&quot;,</a>
 <a name="631"><span class="lineNum">     631 </span>                :            :                                      &quot;org.freedesktop.DBus.Properties&quot;,</a>
@@ -713,22 +713,22 @@
 <a name="633"><span class="lineNum">     633 </span>                :            :                                      properties,</a>
 <a name="634"><span class="lineNum">     634 </span>                :            :                                      &amp;error);</a>
 <a name="635"><span class="lineNum">     635 </span>                :            : </a>
-<a name="636"><span class="lineNum">     636 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 102 times"> + </span>]:<span class="lineCov">        102 :       if (error != NULL)</span></a>
+<a name="636"><span class="lineNum">     636 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 105 times"> + </span>]:<span class="lineCov">        105 :       if (error != NULL)</span></a>
 <a name="637"><span class="lineNum">     637 </span>                :<span class="lineNoCov">          0 :         g_warning (&quot;%s: %s&quot;, G_STRFUNC, error-&gt;message);</span></a>
 <a name="638"><span class="lineNum">     638 </span>                :            :     }</a>
 <a name="639"><span class="lineNum">     639 </span>                :            : </a>
-<a name="640"><span class="lineNum">     640 </span>                :<span class="lineCov">        102 :   g_hash_table_remove_all (self-&gt;player_buffer);</span></a>
-<a name="641"><span class="lineNum">     641 </span>        [<span class="branchCov" title="Branch 0 was taken 97 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">        102 :   g_clear_handle_id (&amp;self-&gt;flush_id, g_source_remove);</span></a>
-<a name="642"><span class="lineNum">     642 </span>                :<span class="lineCov">        102 : }</span></a>
+<a name="640"><span class="lineNum">     640 </span>                :<span class="lineCov">        105 :   g_hash_table_remove_all (self-&gt;player_buffer);</span></a>
+<a name="641"><span class="lineNum">     641 </span>        [<span class="branchCov" title="Branch 0 was taken 100 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">        105 :   g_clear_handle_id (&amp;self-&gt;flush_id, g_source_remove);</span></a>
+<a name="642"><span class="lineNum">     642 </span>                :<span class="lineCov">        105 : }</span></a>
 <a name="643"><span class="lineNum">     643 </span>                :            : </a>
 <a name="644"><span class="lineNum">     644 </span>                :            : static gboolean</a>
-<a name="645"><span class="lineNum">     645 </span>                :<span class="lineCov">         87 : valent_mpris_remote_flush_idle (gpointer data)</span></a>
+<a name="645"><span class="lineNum">     645 </span>                :<span class="lineCov">         90 : valent_mpris_remote_flush_idle (gpointer data)</span></a>
 <a name="646"><span class="lineNum">     646 </span>                :            : {</a>
-<a name="647"><span class="lineNum">     647 </span>                :<span class="lineCov">         87 :   ValentMprisRemote *self = VALENT_MPRIS_REMOTE (data);</span></a>
+<a name="647"><span class="lineNum">     647 </span>                :<span class="lineCov">         90 :   ValentMprisRemote *self = VALENT_MPRIS_REMOTE (data);</span></a>
 <a name="648"><span class="lineNum">     648 </span>                :            : </a>
-<a name="649"><span class="lineNum">     649 </span>                :<span class="lineCov">         87 :   valent_mpris_remote_flush (self);</span></a>
+<a name="649"><span class="lineNum">     649 </span>                :<span class="lineCov">         90 :   valent_mpris_remote_flush (self);</span></a>
 <a name="650"><span class="lineNum">     650 </span>                :            : </a>
-<a name="651"><span class="lineNum">     651 </span>                :<span class="lineCov">         87 :   return G_SOURCE_REMOVE;</span></a>
+<a name="651"><span class="lineNum">     651 </span>                :<span class="lineCov">         90 :   return G_SOURCE_REMOVE;</span></a>
 <a name="652"><span class="lineNum">     652 </span>                :            : }</a>
 <a name="653"><span class="lineNum">     653 </span>                :            : </a>
 <a name="654"><span class="lineNum">     654 </span>                :            : static void</a>
@@ -744,8 +744,8 @@
 <a name="664"><span class="lineNum">     664 </span>                :<span class="lineCov">        490 :                         g_strdup (name),</span></a>
 <a name="665"><span class="lineNum">     665 </span>                :<span class="lineCov">        490 :                         g_variant_ref_sink (value));</span></a>
 <a name="666"><span class="lineNum">     666 </span>                :            : </a>
-<a name="667"><span class="lineNum">     667 </span>        [<span class="branchCov" title="Branch 0 was taken 97 times"> + </span><span class="branchCov" title="Branch 1 was taken 393 times"> + </span>]:<span class="lineCov">        490 :   if (self-&gt;flush_id == 0)</span></a>
-<a name="668"><span class="lineNum">     668 </span>                :<span class="lineCov">         97 :     self-&gt;flush_id = g_idle_add (valent_mpris_remote_flush_idle, self);</span></a>
+<a name="667"><span class="lineNum">     667 </span>        [<span class="branchCov" title="Branch 0 was taken 100 times"> + </span><span class="branchCov" title="Branch 1 was taken 390 times"> + </span>]:<span class="lineCov">        490 :   if (self-&gt;flush_id == 0)</span></a>
+<a name="668"><span class="lineNum">     668 </span>                :<span class="lineCov">        100 :     self-&gt;flush_id = g_idle_add (valent_mpris_remote_flush_idle, self);</span></a>
 <a name="669"><span class="lineNum">     669 </span>                :<span class="lineCov">        490 : }</span></a>
 <a name="670"><span class="lineNum">     670 </span>                :            : </a>
 <a name="671"><span class="lineNum">     671 </span>                :            : static gboolean</a>
