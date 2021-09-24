@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-22 16:32:39</td>
+            <td class="headerValue">2021-09-24 01:29:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
@@ -212,22 +212,22 @@
 <a name="133"><span class="lineNum">     133 </span>                :            : }</a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
 <a name="135"><span class="lineNum">     135 </span>                :            : static void</a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         50 : valent_media_player_provider_load_cb (ValentMediaPlayerProvider *provider,</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         49 : valent_media_player_provider_load_cb (ValentMediaPlayerProvider *provider,</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            :                                       GAsyncResult              *result,</a>
 <a name="138"><span class="lineNum">     138 </span>                :            :                                       ValentMedia               *self)</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : {</a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         50 :   g_autoptr (GError) error = NULL;</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         49 :   g_autoptr (GError) error = NULL;</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            : </a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   VALENT_ENTRY;</a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
-<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_assert (VALENT_IS_MEDIA_PLAYER_PROVIDER (provider));</span></a>
-<a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_assert (g_task_is_valid (result, provider));</span></a>
+<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span>]:<span class="lineCov">         49 :   g_assert (VALENT_IS_MEDIA_PLAYER_PROVIDER (provider));</span></a>
+<a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span>]:<span class="lineCov">         49 :   g_assert (g_task_is_valid (result, provider));</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            : </a>
-<a name="147"><span class="lineNum">     147 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         50 :   if (!valent_media_player_provider_load_finish (provider, result, &amp;error) &amp;&amp;</span></a>
+<a name="147"><span class="lineNum">     147 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         49 :   if (!valent_media_player_provider_load_finish (provider, result, &amp;error) &amp;&amp;</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :<span class="lineNoCov">          0 :       !valent_error_ignore (error))</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :<span class="lineNoCov">          0 :     g_warning (&quot;%s failed to load: %s&quot;, G_OBJECT_TYPE_NAME (provider), error-&gt;message);</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :            : </a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         50 :   VALENT_EXIT;</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         49 :   VALENT_EXIT;</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : }</a>
 <a name="153"><span class="lineNum">     153 </span>                :            : </a>
 <a name="154"><span class="lineNum">     154 </span>                :            : </a>
