@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-24 01:29:09</td>
+            <td class="headerValue">2021-12-01 21:51:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -102,8 +102,8 @@
 <a name="24"><span class="lineNum">      24 </span>                :            : };</a>
 <a name="25"><span class="lineNum">      25 </span>                :            : </a>
 <a name="26"><span class="lineNum">      26 </span>                :            : </a>
-<a name="27"><span class="lineNum">      27 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 255 times"> + </span><span class="branchCov" title="Branch 2 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        325 : G_DEFINE_TYPE (ValentBattery, valent_battery, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 35 times"> + </span><span class="branchCov" title="Branch 5 was taken 220 times"> + </span>]
+<a name="27"><span class="lineNum">      27 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 256 times"> + </span><span class="branchCov" title="Branch 2 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        326 : G_DEFINE_TYPE (ValentBattery, valent_battery, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 35 times"> + </span><span class="branchCov" title="Branch 5 was taken 221 times"> + </span>]
 <a name="28"><span class="lineNum">      28 </span>                :            : </a>
 <a name="29"><span class="lineNum">      29 </span>                :            : enum {</a>
 <a name="30"><span class="lineNum">      30 </span>                :            :   PROP_0,</a>
@@ -129,7 +129,7 @@
 <a name="50"><span class="lineNum">      50 </span>                :            :  * GDBusProxy</a>
 <a name="51"><span class="lineNum">      51 </span>                :            :  */</a>
 <a name="52"><span class="lineNum">      52 </span>                :            : static void</a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">         26 : on_properties_changed (GDBusProxy    *proxy,</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">         27 : on_properties_changed (GDBusProxy    *proxy,</span></a>
 <a name="54"><span class="lineNum">      54 </span>                :            :                        GVariant      *changed_properties,</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :                        GStrv          invalidated_properties,</a>
 <a name="56"><span class="lineNum">      56 </span>                :            :                        ValentBattery *self)</a>
@@ -138,28 +138,28 @@
 <a name="59"><span class="lineNum">      59 </span>                :            :   guint32 state;</a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   guint32 warning;</a>
 <a name="61"><span class="lineNum">      61 </span>                :            : </a>
-<a name="62"><span class="lineNum">      62 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span>]:<span class="lineCov">         26 :   g_assert (VALENT_IS_BATTERY (self));</span></a>
+<a name="62"><span class="lineNum">      62 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 27 times"> + </span>]:<span class="lineCov">         27 :   g_assert (VALENT_IS_BATTERY (self));</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>
-<a name="64"><span class="lineNum">      64 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         26 :   if (g_variant_lookup (changed_properties, &quot;Percentage&quot;, &quot;d&quot;, &amp;level))</span></a>
+<a name="64"><span class="lineNum">      64 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         27 :   if (g_variant_lookup (changed_properties, &quot;Percentage&quot;, &quot;d&quot;, &amp;level))</span></a>
 <a name="65"><span class="lineNum">      65 </span>                :            :     {</a>
-<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">          6 :       self-&gt;level = floor (level);</span></a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">          6 :       g_object_notify_by_pspec (G_OBJECT (self), properties [PROP_LEVEL]);</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">          7 :       self-&gt;level = floor (level);</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">          7 :       g_object_notify_by_pspec (G_OBJECT (self), properties [PROP_LEVEL]);</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            :     }</a>
 <a name="69"><span class="lineNum">      69 </span>                :            : </a>
-<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         26 :   if (g_variant_lookup (changed_properties, &quot;State&quot;, &quot;u&quot;, &amp;state))</span></a>
+<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         27 :   if (g_variant_lookup (changed_properties, &quot;State&quot;, &quot;u&quot;, &amp;state))</span></a>
 <a name="71"><span class="lineNum">      71 </span>                :            :     {</a>
 <a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">         10 :       self-&gt;charging = state == 1;</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">         10 :       g_object_notify_by_pspec (G_OBJECT (self), properties [PROP_CHARGING]);</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            :     }</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
-<a name="76"><span class="lineNum">      76 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         26 :   if (g_variant_lookup (changed_properties, &quot;WarningLevel&quot;, &quot;u&quot;, &amp;warning))</span></a>
+<a name="76"><span class="lineNum">      76 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         27 :   if (g_variant_lookup (changed_properties, &quot;WarningLevel&quot;, &quot;u&quot;, &amp;warning))</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            :     {</a>
 <a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">         10 :       self-&gt;threshold = warning &gt;= 3;</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         10 :       g_object_notify_by_pspec (G_OBJECT (self), properties [PROP_THRESHOLD]);</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            :     }</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         26 :   g_signal_emit (G_OBJECT (self), signals [CHANGED], 0);</span></a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">         26 : }</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         27 :   g_signal_emit (G_OBJECT (self), signals [CHANGED], 0);</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">         27 : }</span></a>
 <a name="84"><span class="lineNum">      84 </span>                :            : </a>
 <a name="85"><span class="lineNum">      85 </span>                :            : static void</a>
 <a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">         19 : valent_battery_init_properties (ValentBattery *self)</span></a>
