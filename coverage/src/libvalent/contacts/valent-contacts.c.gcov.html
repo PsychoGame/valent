@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-08 03:34:34</td>
+            <td class="headerValue">2021-12-09 07:37:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">16</td>
@@ -155,7 +155,7 @@
 <a name="76"><span class="lineNum">      76 </span>                :            : </a>
 <a name="77"><span class="lineNum">      77 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_assert (VALENT_IS_CONTACTS (self));</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            : </a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         20 :   VALENT_TRACE_MSG (&quot;%s: %s&quot;, G_OBJECT_TYPE_NAME (store), valent_contact_store_get_name (store));</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         20 :   VALENT_DEBUG (&quot;%s: %s&quot;, G_OBJECT_TYPE_NAME (store), valent_contact_store_get_name (store));</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            : </a>
 <a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">         20 :   g_ptr_array_add (self-&gt;stores, g_object_ref (store));</span></a>
 <a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         20 :   g_signal_emit (G_OBJECT (self), signals [STORE_ADDED], 0, store);</span></a>
@@ -172,7 +172,7 @@
 <a name="93"><span class="lineNum">      93 </span>                :            : </a>
 <a name="94"><span class="lineNum">      94 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_assert (VALENT_IS_CONTACTS (self));</span></a>
 <a name="95"><span class="lineNum">      95 </span>                :            : </a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         20 :   VALENT_TRACE_MSG (&quot;%s: %s&quot;, G_OBJECT_TYPE_NAME (store), valent_contact_store_get_name (store));</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         20 :   VALENT_DEBUG (&quot;%s: %s&quot;, G_OBJECT_TYPE_NAME (store), valent_contact_store_get_name (store));</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">         20 :   g_ptr_array_remove (self-&gt;stores, store);</span></a>
 <a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">         20 :   g_signal_emit (G_OBJECT (self), signals [STORE_REMOVED], 0, store);</span></a>

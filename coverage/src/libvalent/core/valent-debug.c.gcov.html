@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-08 03:34:34</td>
+            <td class="headerValue">2021-12-09 07:37:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -114,53 +114,53 @@
 <a name="36"><span class="lineNum">      36 </span>                :            : static SysprofCaptureWriter *sysprof = NULL;</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : </a>
 <a name="38"><span class="lineNum">      38 </span>                :            : </a>
-<a name="39"><span class="lineNum">      39 </span>                :            : /**</a>
-<a name="40"><span class="lineNum">      40 </span>                :            :  * valent_trace_mark:</a>
-<a name="41"><span class="lineNum">      41 </span>                :            :  * @strfunc: a string</a>
-<a name="42"><span class="lineNum">      42 </span>                :            :  * @begin_time_usec: start time in microseconds</a>
-<a name="43"><span class="lineNum">      43 </span>                :            :  * @end_time_usec: end time in microseconds</a>
-<a name="44"><span class="lineNum">      44 </span>                :            :  *</a>
-<a name="45"><span class="lineNum">      45 </span>                :            :  * Mark @strfunc in the profiler log.</a>
-<a name="46"><span class="lineNum">      46 </span>                :            :  */</a>
-<a name="47"><span class="lineNum">      47 </span>                :            : void</a>
-<a name="48"><span class="lineNum">      48 </span>                :            : valent_trace_mark (const char *strfunc,</a>
-<a name="49"><span class="lineNum">      49 </span>                :            :                    gint64      begin_time_usec,</a>
-<a name="50"><span class="lineNum">      50 </span>                :            :                    gint64      end_time_usec)</a>
-<a name="51"><span class="lineNum">      51 </span>                :            : {</a>
-<a name="52"><span class="lineNum">      52 </span>                :            :   G_LOCK (sysprof_mutex);</a>
-<a name="53"><span class="lineNum">      53 </span>                :            :   if G_LIKELY (sysprof)</a>
-<a name="54"><span class="lineNum">      54 </span>                :            :     {</a>
-<a name="55"><span class="lineNum">      55 </span>                :            :       /* In case our clock is not reliable */</a>
-<a name="56"><span class="lineNum">      56 </span>                :            :       if (end_time_usec &lt; begin_time_usec)</a>
-<a name="57"><span class="lineNum">      57 </span>                :            :         end_time_usec = begin_time_usec;</a>
-<a name="58"><span class="lineNum">      58 </span>                :            : </a>
-<a name="59"><span class="lineNum">      59 </span>                :            :       sysprof_capture_writer_add_mark (sysprof,</a>
-<a name="60"><span class="lineNum">      60 </span>                :            :                                        begin_time_usec * 1000L,</a>
-<a name="61"><span class="lineNum">      61 </span>                :            :                                        sched_getcpu (),</a>
-<a name="62"><span class="lineNum">      62 </span>                :            :                                        getpid (),</a>
-<a name="63"><span class="lineNum">      63 </span>                :            :                                        (end_time_usec - begin_time_usec) * 1000L,</a>
-<a name="64"><span class="lineNum">      64 </span>                :            :                                        &quot;tracing&quot;,</a>
-<a name="65"><span class="lineNum">      65 </span>                :            :                                        &quot;function&quot;,</a>
-<a name="66"><span class="lineNum">      66 </span>                :            :                                        strfunc);</a>
-<a name="67"><span class="lineNum">      67 </span>                :            :     }</a>
-<a name="68"><span class="lineNum">      68 </span>                :            :   G_UNLOCK (sysprof_mutex);</a>
-<a name="69"><span class="lineNum">      69 </span>                :            : }</a>
-<a name="70"><span class="lineNum">      70 </span>                :            : </a>
-<a name="71"><span class="lineNum">      71 </span>                :            : static void</a>
-<a name="72"><span class="lineNum">      72 </span>                :            : valent_trace_log (const char     *domain,</a>
-<a name="73"><span class="lineNum">      73 </span>                :            :                   GLogLevelFlags  level,</a>
-<a name="74"><span class="lineNum">      74 </span>                :            :                   const char     *message)</a>
-<a name="75"><span class="lineNum">      75 </span>                :            : {</a>
-<a name="76"><span class="lineNum">      76 </span>                :            :   G_LOCK (sysprof_mutex);</a>
-<a name="77"><span class="lineNum">      77 </span>                :            :   if G_LIKELY (sysprof)</a>
-<a name="78"><span class="lineNum">      78 </span>                :            :     {</a>
-<a name="79"><span class="lineNum">      79 </span>                :            :       sysprof_capture_writer_add_log (sysprof,</a>
-<a name="80"><span class="lineNum">      80 </span>                :            :                                       SYSPROF_CAPTURE_CURRENT_TIME,</a>
-<a name="81"><span class="lineNum">      81 </span>                :            :                                       sched_getcpu (),</a>
-<a name="82"><span class="lineNum">      82 </span>                :            :                                       getpid (),</a>
-<a name="83"><span class="lineNum">      83 </span>                :            :                                       level,</a>
-<a name="84"><span class="lineNum">      84 </span>                :            :                                       domain,</a>
-<a name="85"><span class="lineNum">      85 </span>                :            :                                       message);</a>
+<a name="39"><span class="lineNum">      39 </span>                :            : static void</a>
+<a name="40"><span class="lineNum">      40 </span>                :            : valent_trace_log (const char     *domain,</a>
+<a name="41"><span class="lineNum">      41 </span>                :            :                   GLogLevelFlags  level,</a>
+<a name="42"><span class="lineNum">      42 </span>                :            :                   const char     *message)</a>
+<a name="43"><span class="lineNum">      43 </span>                :            : {</a>
+<a name="44"><span class="lineNum">      44 </span>                :            :   G_LOCK (sysprof_mutex);</a>
+<a name="45"><span class="lineNum">      45 </span>                :            :   if G_LIKELY (sysprof)</a>
+<a name="46"><span class="lineNum">      46 </span>                :            :     {</a>
+<a name="47"><span class="lineNum">      47 </span>                :            :       sysprof_capture_writer_add_log (sysprof,</a>
+<a name="48"><span class="lineNum">      48 </span>                :            :                                       SYSPROF_CAPTURE_CURRENT_TIME,</a>
+<a name="49"><span class="lineNum">      49 </span>                :            :                                       sched_getcpu (),</a>
+<a name="50"><span class="lineNum">      50 </span>                :            :                                       getpid (),</a>
+<a name="51"><span class="lineNum">      51 </span>                :            :                                       level,</a>
+<a name="52"><span class="lineNum">      52 </span>                :            :                                       domain,</a>
+<a name="53"><span class="lineNum">      53 </span>                :            :                                       message);</a>
+<a name="54"><span class="lineNum">      54 </span>                :            :     }</a>
+<a name="55"><span class="lineNum">      55 </span>                :            :   G_UNLOCK (sysprof_mutex);</a>
+<a name="56"><span class="lineNum">      56 </span>                :            : }</a>
+<a name="57"><span class="lineNum">      57 </span>                :            : </a>
+<a name="58"><span class="lineNum">      58 </span>                :            : /**</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :  * valent_trace_mark:</a>
+<a name="60"><span class="lineNum">      60 </span>                :            :  * @strfunc: a string</a>
+<a name="61"><span class="lineNum">      61 </span>                :            :  * @begin_time_usec: start time in microseconds</a>
+<a name="62"><span class="lineNum">      62 </span>                :            :  * @end_time_usec: end time in microseconds</a>
+<a name="63"><span class="lineNum">      63 </span>                :            :  *</a>
+<a name="64"><span class="lineNum">      64 </span>                :            :  * Mark @strfunc in the profiler log.</a>
+<a name="65"><span class="lineNum">      65 </span>                :            :  */</a>
+<a name="66"><span class="lineNum">      66 </span>                :            : void</a>
+<a name="67"><span class="lineNum">      67 </span>                :            : valent_trace_mark (const char *strfunc,</a>
+<a name="68"><span class="lineNum">      68 </span>                :            :                    gint64      begin_time_usec,</a>
+<a name="69"><span class="lineNum">      69 </span>                :            :                    gint64      end_time_usec)</a>
+<a name="70"><span class="lineNum">      70 </span>                :            : {</a>
+<a name="71"><span class="lineNum">      71 </span>                :            :   G_LOCK (sysprof_mutex);</a>
+<a name="72"><span class="lineNum">      72 </span>                :            :   if G_LIKELY (sysprof)</a>
+<a name="73"><span class="lineNum">      73 </span>                :            :     {</a>
+<a name="74"><span class="lineNum">      74 </span>                :            :       /* In case our clock is not reliable */</a>
+<a name="75"><span class="lineNum">      75 </span>                :            :       if (end_time_usec &lt; begin_time_usec)</a>
+<a name="76"><span class="lineNum">      76 </span>                :            :         end_time_usec = begin_time_usec;</a>
+<a name="77"><span class="lineNum">      77 </span>                :            : </a>
+<a name="78"><span class="lineNum">      78 </span>                :            :       sysprof_capture_writer_add_mark (sysprof,</a>
+<a name="79"><span class="lineNum">      79 </span>                :            :                                        begin_time_usec * 1000L,</a>
+<a name="80"><span class="lineNum">      80 </span>                :            :                                        sched_getcpu (),</a>
+<a name="81"><span class="lineNum">      81 </span>                :            :                                        getpid (),</a>
+<a name="82"><span class="lineNum">      82 </span>                :            :                                        (end_time_usec - begin_time_usec) * 1000L,</a>
+<a name="83"><span class="lineNum">      83 </span>                :            :                                        &quot;tracing&quot;,</a>
+<a name="84"><span class="lineNum">      84 </span>                :            :                                        &quot;function&quot;,</a>
+<a name="85"><span class="lineNum">      85 </span>                :            :                                        strfunc);</a>
 <a name="86"><span class="lineNum">      86 </span>                :            :     }</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   G_UNLOCK (sysprof_mutex);</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : }</a>
@@ -170,7 +170,7 @@
 <a name="92"><span class="lineNum">      92 </span>                :            : /*</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :  * Debug</a>
 <a name="94"><span class="lineNum">      94 </span>                :            :  */</a>
-<a name="95"><span class="lineNum">      95 </span>                :            : #ifdef VALENT_ENABLE_DEBUG</a>
+<a name="95"><span class="lineNum">      95 </span>                :            : #if defined(VALENT_ENABLE_DEBUG) || defined(VALENT_ENABLE_PROFILING)</a>
 <a name="96"><span class="lineNum">      96 </span>                :            : G_LOCK_DEFINE_STATIC (log_mutex);</a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <a name="98"><span class="lineNum">      98 </span>                :            : GIOChannel *log_channel = NULL;</a>
@@ -189,12 +189,12 @@
 <a name="111"><span class="lineNum">     111 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   switch (((gulong)log_level &amp; G_LOG_LEVEL_MASK))</span></a>
 <span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
 <a name="112"><span class="lineNum">     112 </span>                :            :     {</a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_ERROR:    return &quot;   \033[1;31mERROR\033[0m&quot;;</span></a>
-<a name="114"><span class="lineNum">     114 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_CRITICAL: return &quot;\033[1;35mCRITICAL\033[0m&quot;;</span></a>
-<a name="115"><span class="lineNum">     115 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_WARNING:  return &quot; \033[1;33mWARNING\033[0m&quot;;</span></a>
-<a name="116"><span class="lineNum">     116 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_MESSAGE:  return &quot; \033[1;34mMESSAGE\033[0m&quot;;</span></a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_INFO:     return &quot;    \033[1;32mINFO\033[0m&quot;;</span></a>
-<a name="118"><span class="lineNum">     118 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_DEBUG:    return &quot;   \033[1;32mDEBUG\033[0m&quot;;</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_ERROR:      return &quot;   \033[1;31mERROR\033[0m&quot;;</span></a>
+<a name="114"><span class="lineNum">     114 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_CRITICAL:   return &quot;\033[1;35mCRITICAL\033[0m&quot;;</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_WARNING:    return &quot; \033[1;33mWARNING\033[0m&quot;;</span></a>
+<a name="116"><span class="lineNum">     116 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_MESSAGE:    return &quot; \033[1;34mMESSAGE\033[0m&quot;;</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_INFO:       return &quot;    \033[1;32mINFO\033[0m&quot;;</span></a>
+<a name="118"><span class="lineNum">     118 </span>                :<span class="lineNoCov">          0 :     case G_LOG_LEVEL_DEBUG:      return &quot;   \033[1;32mDEBUG\033[0m&quot;;</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :<span class="lineNoCov">          0 :     case VALENT_LOG_LEVEL_TRACE: return &quot;   \033[1;36mTRACE\033[0m&quot;;</span></a>
 <a name="120"><span class="lineNum">     120 </span>                :            : </a>
 <a name="121"><span class="lineNum">     121 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
@@ -214,7 +214,7 @@
 <a name="135"><span class="lineNum">     135 </span>                :            :   char ftime[32];</a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   char *buffer;</a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
-<a name="138"><span class="lineNum">     138 </span>                :            :   #if VALENT_ENABLE_PROFILING &amp;&amp; VALENT_ENABLE_DEBUG</a>
+<a name="138"><span class="lineNum">     138 </span>                :            :   #ifdef VALENT_ENABLE_PROFILING</a>
 <a name="139"><span class="lineNum">     139 </span>                :            :   /* Relay to sysprof */</a>
 <a name="140"><span class="lineNum">     140 </span>                :            :   if (level == VALENT_LOG_LEVEL_TRACE)</a>
 <a name="141"><span class="lineNum">     141 </span>                :            :     valent_trace_log (domain, level, message);</a>
@@ -255,12 +255,12 @@
 <a name="176"><span class="lineNum">     176 </span>                :            : /**</a>
 <a name="177"><span class="lineNum">     177 </span>                :            :  * valent_debug_init:</a>
 <a name="178"><span class="lineNum">     178 </span>                :            :  *</a>
-<a name="179"><span class="lineNum">     179 </span>                :            :  * Initialize debug tracing and/or profiling.</a>
+<a name="179"><span class="lineNum">     179 </span>                :            :  * Initialize debug logging and/or profiling.</a>
 <a name="180"><span class="lineNum">     180 </span>                :            :  */</a>
 <a name="181"><span class="lineNum">     181 </span>                :            : void</a>
 <a name="182"><span class="lineNum">     182 </span>                :<span class="lineNoCov">          0 : valent_debug_init (void)</span></a>
 <a name="183"><span class="lineNum">     183 </span>                :            : {</a>
-<a name="184"><span class="lineNum">     184 </span>                :            :   #ifdef VALENT_ENABLE_DEBUG</a>
+<a name="184"><span class="lineNum">     184 </span>                :            :   #if defined(VALENT_ENABLE_DEBUG) || defined(VALENT_ENABLE_PROFILING)</a>
 <a name="185"><span class="lineNum">     185 </span>                :<span class="lineNoCov">          0 :   G_LOCK (log_mutex);</span></a>
 <a name="186"><span class="lineNum">     186 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (log_channel == NULL)</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            :     {</a>
@@ -293,12 +293,12 @@
 <a name="214"><span class="lineNum">     214 </span>                :            : void</a>
 <a name="215"><span class="lineNum">     215 </span>                :<span class="lineNoCov">          0 : valent_debug_clear (void)</span></a>
 <a name="216"><span class="lineNum">     216 </span>                :            : {</a>
-<a name="217"><span class="lineNum">     217 </span>                :            :   #ifdef VALENT_ENABLE_DEBUG</a>
+<a name="217"><span class="lineNum">     217 </span>                :            :   #if defined(VALENT_ENABLE_DEBUG) || defined(VALENT_ENABLE_PROFILING)</a>
 <a name="218"><span class="lineNum">     218 </span>                :<span class="lineNoCov">          0 :   G_LOCK (log_mutex);</span></a>
 <a name="219"><span class="lineNum">     219 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (log_channel)</span></a>
 <a name="220"><span class="lineNum">     220 </span>                :            :     {</a>
 <a name="221"><span class="lineNum">     221 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       g_clear_pointer (&amp;log_channel, g_io_channel_unref);</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineNoCov">          0 :       g_log_set_default_handler (valent_log_handler, NULL); // TODO</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineNoCov">          0 :       g_log_set_default_handler (valent_log_handler, NULL);</span></a>
 <a name="223"><span class="lineNum">     223 </span>                :            :     }</a>
 <a name="224"><span class="lineNum">     224 </span>                :<span class="lineNoCov">          0 :   G_UNLOCK (log_mutex);</span></a>
 <a name="225"><span class="lineNum">     225 </span>                :            :   #endif</a>
