@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-09 07:37:26</td>
+            <td class="headerValue">2021-12-10 04:32:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">27</td>
@@ -106,8 +106,8 @@
 <a name="28"><span class="lineNum">      28 </span>                :            :  * the media state in response to certain events.</a>
 <a name="29"><span class="lineNum">      29 </span>                :            :  */</a>
 <a name="30"><span class="lineNum">      30 </span>                :            : </a>
-<a name="31"><span class="lineNum">      31 </span>  [<span class="branchCov" title="Branch 0 was taken 216 times"> + </span><span class="branchCov" title="Branch 1 was taken 2119 times"> + </span><span class="branchCov" title="Branch 2 was taken 216 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2551 : G_DEFINE_TYPE (ValentMediaPlayer, valent_media_player, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 216 times"> + </span><span class="branchCov" title="Branch 5 was taken 2098 times"> + </span>]
+<a name="31"><span class="lineNum">      31 </span>  [<span class="branchCov" title="Branch 0 was taken 216 times"> + </span><span class="branchCov" title="Branch 1 was taken 2118 times"> + </span><span class="branchCov" title="Branch 2 was taken 216 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2550 : G_DEFINE_TYPE (ValentMediaPlayer, valent_media_player, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 216 times"> + </span><span class="branchCov" title="Branch 5 was taken 2097 times"> + </span>]
 <a name="32"><span class="lineNum">      32 </span>                :            : </a>
 <a name="33"><span class="lineNum">      33 </span>                :            : /**</a>
 <a name="34"><span class="lineNum">      34 </span>                :            :  * ValentMediaPlayerClass:</a>
@@ -518,11 +518,11 @@
 <a name="438"><span class="lineNum">     438 </span>                :            :  * Emit ValentMediaPlayer::changed.</a>
 <a name="439"><span class="lineNum">     439 </span>                :            :  */</a>
 <a name="440"><span class="lineNum">     440 </span>                :            : void</a>
-<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         80 : valent_media_player_emit_changed (ValentMediaPlayer *player)</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         79 : valent_media_player_emit_changed (ValentMediaPlayer *player)</span></a>
 <a name="442"><span class="lineNum">     442 </span>                :            : {</a>
-<a name="443"><span class="lineNum">     443 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   g_return_if_fail (VALENT_IS_MEDIA_PLAYER (player));</span></a>
+<a name="443"><span class="lineNum">     443 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 79 times"> + </span>]:<span class="lineCov">         79 :   g_return_if_fail (VALENT_IS_MEDIA_PLAYER (player));</span></a>
 <a name="444"><span class="lineNum">     444 </span>                :            : </a>
-<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">         80 :   g_signal_emit (G_OBJECT (player), signals [CHANGED], 0);</span></a>
+<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">         79 :   g_signal_emit (G_OBJECT (player), signals [CHANGED], 0);</span></a>
 <a name="446"><span class="lineNum">     446 </span>                :            : }</a>
 <a name="447"><span class="lineNum">     447 </span>                :            : </a>
 <a name="448"><span class="lineNum">     448 </span>                :            : /**</a>
