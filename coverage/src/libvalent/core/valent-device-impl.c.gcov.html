@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-10 07:00:40</td>
+            <td class="headerValue">2021-12-13 06:34:40</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">17</td>
@@ -380,22 +380,22 @@
 <a name="301"><span class="lineNum">     301 </span>                :            :   const char *object_path;</a>
 <a name="302"><span class="lineNum">     302 </span>                :            :   GVariantBuilder changed_properties;</a>
 <a name="303"><span class="lineNum">     303 </span>                :            :   GVariantBuilder invalidated_properties;</a>
-<a name="304"><span class="lineNum">     304 </span>                :            :   GHashTableIter iter;</a>
+<a name="304"><span class="lineNum">     304 </span>                :            :   GHashTableIter pending_properties;</a>
 <a name="305"><span class="lineNum">     305 </span>                :            :   gpointer key, value;</a>
 <a name="306"><span class="lineNum">     306 </span>                :            : </a>
 <a name="307"><span class="lineNum">     307 </span>                :            :   /* Collect the pending property changes */</a>
 <a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">          5 :   g_variant_builder_init (&amp;changed_properties, G_VARIANT_TYPE_VARDICT);</span></a>
 <a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">          5 :   g_variant_builder_init (&amp;invalidated_properties, G_VARIANT_TYPE_STRING_ARRAY);</span></a>
-<a name="310"><span class="lineNum">     310 </span>                :<span class="lineCov">          5 :   g_hash_table_iter_init (&amp;iter, self-&gt;pending);</span></a>
+<a name="310"><span class="lineNum">     310 </span>                :<span class="lineCov">          5 :   g_hash_table_iter_init (&amp;pending_properties, self-&gt;pending);</span></a>
 <a name="311"><span class="lineNum">     311 </span>                :            : </a>
-<a name="312"><span class="lineNum">     312 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :   while (g_hash_table_iter_next (&amp;iter, &amp;key, &amp;value))</span></a>
+<a name="312"><span class="lineNum">     312 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :   while (g_hash_table_iter_next (&amp;pending_properties, &amp;key, &amp;value))</span></a>
 <a name="313"><span class="lineNum">     313 </span>                :            :     {</a>
 <a name="314"><span class="lineNum">     314 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :       if (value)</span></a>
 <a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">          5 :         g_variant_builder_add (&amp;changed_properties, &quot;{sv}&quot;, key, value);</span></a>
 <a name="316"><span class="lineNum">     316 </span>                :            :       else</a>
 <a name="317"><span class="lineNum">     317 </span>                :<span class="lineNoCov">          0 :         g_variant_builder_add (&amp;invalidated_properties, &quot;s&quot;, key);</span></a>
 <a name="318"><span class="lineNum">     318 </span>                :            : </a>
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">          5 :       g_hash_table_iter_remove (&amp;iter);</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">          5 :       g_hash_table_iter_remove (&amp;pending_properties);</span></a>
 <a name="320"><span class="lineNum">     320 </span>                :            :     }</a>
 <a name="321"><span class="lineNum">     321 </span>                :            : </a>
 <a name="322"><span class="lineNum">     322 </span>                :<span class="lineCov">          5 :   properties = g_variant_new (&quot;(s@a{sv}@as)&quot;,</span></a>
@@ -465,7 +465,7 @@
 <a name="386"><span class="lineNum">     386 </span>                :            : {</a>
 <a name="387"><span class="lineNum">     387 </span>                :<span class="lineCov">          5 :   ValentDeviceImpl *self = VALENT_DEVICE_IMPL (object);</span></a>
 <a name="388"><span class="lineNum">     388 </span>                :            : </a>
-<a name="389"><span class="lineNum">     389 </span>                :            :   /* Preload properies and watch for changes */</a>
+<a name="389"><span class="lineNum">     389 </span>                :            :   /* Preload properties and watch for changes */</a>
 <a name="390"><span class="lineNum">     390 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         40 :   for (unsigned int i = 0; i &lt; G_N_ELEMENTS (property_map); i++)</span></a>
 <a name="391"><span class="lineNum">     391 </span>                :            :     {</a>
 <a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">         35 :       PropertyMapping mapping = property_map[i];</span></a>
