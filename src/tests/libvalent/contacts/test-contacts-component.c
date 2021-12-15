@@ -320,10 +320,6 @@ test_contacts_component_store (ContactsComponentFixture *fixture,
   g_clear_object (&contact);
   fixture->data = NULL;
 
-  contact = valent_contact_store_dup_for_phone (fixture->store, "+1-123-456-7890");
-  g_assert_cmpstr (e_contact_get_const (contact, E_CONTACT_UID), ==, "test-contact");
-  g_clear_object (&contact);
-
   /* Remove contact */
   g_signal_connect (fixture->store,
                     "contact-removed",

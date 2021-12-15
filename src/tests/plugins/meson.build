@@ -26,6 +26,7 @@ plugin_tests = [
  'ping',
  'runcommand',
  'share',
+ 'sms',
  'systemvolume',
  'telephony',
 ]

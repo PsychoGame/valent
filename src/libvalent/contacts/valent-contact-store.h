@@ -117,8 +117,6 @@ GSList     * valent_contact_store_query_sync           (ValentContactStore   *st
                                                         GCancellable         *cancellable,
                                                         GError              **error);
 
-EContact   * valent_contact_store_dup_for_phone        (ValentContactStore   *store,
-                                                        const char           *number);
 void         valent_contact_store_dup_for_phone_async  (ValentContactStore   *store,
                                                         const char           *number,
                                                         GCancellable         *cancellable,
