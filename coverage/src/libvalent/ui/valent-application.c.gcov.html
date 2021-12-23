@@ -31,18 +31,18 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntry">91</td>
-            <td class="headerCovTableEntryLo">9.9 %</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">95</td>
+            <td class="headerCovTableEntryLo">10.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-18 00:23:54</td>
+            <td class="headerValue">2021-12-23 03:36:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
-            <td class="headerCovTableEntry">16</td>
-            <td class="headerCovTableEntryLo">25.0 %</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntryLo">23.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -230,135 +230,146 @@
 <a name="150"><span class="lineNum">     150 </span>                :            :   { &quot;refresh&quot;,     refresh_action, NULL,     NULL, NULL }</a>
 <a name="151"><span class="lineNum">     151 </span>                :            : };</a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
-<a name="153"><span class="lineNum">     153 </span>                :            : /*</a>
-<a name="154"><span class="lineNum">     154 </span>                :            :  * GApplication</a>
-<a name="155"><span class="lineNum">     155 </span>                :            :  */</a>
-<a name="156"><span class="lineNum">     156 </span>                :            : static void</a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineNoCov">          0 : valent_application_activate (GApplication *application)</span></a>
-<a name="158"><span class="lineNum">     158 </span>                :            : {</a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
-<a name="160"><span class="lineNum">     160 </span>                :            : </a>
-<a name="161"><span class="lineNum">     161 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (self));</span></a>
-<a name="162"><span class="lineNum">     162 </span>                :            : </a>
-<a name="163"><span class="lineNum">     163 </span>                :            :   /* This isn't really ideal for a few reasons:</a>
-<a name="164"><span class="lineNum">     164 </span>                :            :    *</a>
-<a name="165"><span class="lineNum">     165 </span>                :            :    * - Interacting with device notifications can trigger this</a>
-<a name="166"><span class="lineNum">     166 </span>                :            :    * - It happens at startup, which isn't desirable if acting as a service</a>
-<a name="167"><span class="lineNum">     167 </span>                :            :    */</a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineNoCov">          0 :   prefs_action (NULL, NULL, self);</span></a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="170"><span class="lineNum">     170 </span>                :            : </a>
-<a name="171"><span class="lineNum">     171 </span>                :            : static void</a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineNoCov">          0 : valent_application_startup (GApplication *application)</span></a>
-<a name="173"><span class="lineNum">     173 </span>                :            : {</a>
-<a name="174"><span class="lineNum">     174 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
-<a name="175"><span class="lineNum">     175 </span>                :            : </a>
-<a name="176"><span class="lineNum">     176 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (application));</span></a>
-<a name="177"><span class="lineNum">     177 </span>                :            : </a>
-<a name="178"><span class="lineNum">     178 </span>                :            :   /* Chain-up first */</a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineNoCov">          0 :   G_APPLICATION_CLASS (valent_application_parent_class)-&gt;startup (application);</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :            : </a>
+<a name="154"><span class="lineNum">     154 </span>                :            : /*</a>
+<a name="155"><span class="lineNum">     155 </span>                :            :  * GApplication</a>
+<a name="156"><span class="lineNum">     156 </span>                :            :  */</a>
+<a name="157"><span class="lineNum">     157 </span>                :            : static void</a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineNoCov">          0 : valent_application_activate (GApplication *application)</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :            : {</a>
+<a name="160"><span class="lineNum">     160 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :            : </a>
+<a name="162"><span class="lineNum">     162 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (self));</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :            : </a>
+<a name="164"><span class="lineNum">     164 </span>                :            :   /* This isn't really ideal for a few reasons:</a>
+<a name="165"><span class="lineNum">     165 </span>                :            :    *</a>
+<a name="166"><span class="lineNum">     166 </span>                :            :    * - Interacting with device notifications can trigger this</a>
+<a name="167"><span class="lineNum">     167 </span>                :            :    * - It happens at startup, which isn't desirable if acting as a service</a>
+<a name="168"><span class="lineNum">     168 </span>                :            :    */</a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineNoCov">          0 :   prefs_action (NULL, NULL, self);</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :            : </a>
+<a name="172"><span class="lineNum">     172 </span>                :            : static void</a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineNoCov">          0 : valent_application_open (GApplication  *application,</span></a>
+<a name="174"><span class="lineNum">     174 </span>                :            :                          GFile        **files,</a>
+<a name="175"><span class="lineNum">     175 </span>                :            :                          int            n_files,</a>
+<a name="176"><span class="lineNum">     176 </span>                :            :                          const char    *hint)</a>
+<a name="177"><span class="lineNum">     177 </span>                :            : {</a>
+<a name="178"><span class="lineNum">     178 </span>                :<span class="lineNoCov">          0 :   VALENT_TODO (&quot;handle files and URIs&quot;);</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            : </a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineNoCov">          0 :   g_application_hold (application);</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineNoCov">          0 :   adw_init ();</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :            : </a>
-<a name="184"><span class="lineNum">     184 </span>                :            :   /* Service Actions */</a>
-<a name="185"><span class="lineNum">     185 </span>                :<span class="lineNoCov">          0 :   g_action_map_add_action_entries (G_ACTION_MAP (application),</span></a>
-<a name="186"><span class="lineNum">     186 </span>                :            :                                    actions,</a>
-<a name="187"><span class="lineNum">     187 </span>                :            :                                    G_N_ELEMENTS (actions),</a>
-<a name="188"><span class="lineNum">     188 </span>                :            :                                    application);</a>
-<a name="189"><span class="lineNum">     189 </span>                :            : </a>
-<a name="190"><span class="lineNum">     190 </span>                :            :   /* Start the device manager */</a>
-<a name="191"><span class="lineNum">     191 </span>                :<span class="lineNoCov">          0 :   valent_manager_start (self-&gt;manager);</span></a>
-<a name="192"><span class="lineNum">     192 </span>                :            : </a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineNoCov">          0 :   gtk_window_set_default_icon_name (APPLICATION_ID);</span></a>
-<a name="194"><span class="lineNum">     194 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="195"><span class="lineNum">     195 </span>                :            : </a>
-<a name="196"><span class="lineNum">     196 </span>                :            : static void</a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineNoCov">          0 : valent_application_shutdown (GApplication *application)</span></a>
-<a name="198"><span class="lineNum">     198 </span>                :            : {</a>
-<a name="199"><span class="lineNum">     199 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :            : </a>
-<a name="201"><span class="lineNum">     201 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (application));</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :            : static void</a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineNoCov">          0 : valent_application_startup (GApplication *application)</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :            : {</a>
+<a name="184"><span class="lineNum">     184 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
+<a name="185"><span class="lineNum">     185 </span>                :            : </a>
+<a name="186"><span class="lineNum">     186 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (application));</span></a>
+<a name="187"><span class="lineNum">     187 </span>                :            : </a>
+<a name="188"><span class="lineNum">     188 </span>                :            :   /* Chain-up first */</a>
+<a name="189"><span class="lineNum">     189 </span>                :<span class="lineNoCov">          0 :   G_APPLICATION_CLASS (valent_application_parent_class)-&gt;startup (application);</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :            : </a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineNoCov">          0 :   g_application_hold (application);</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :<span class="lineNoCov">          0 :   adw_init ();</span></a>
+<a name="193"><span class="lineNum">     193 </span>                :            : </a>
+<a name="194"><span class="lineNum">     194 </span>                :            :   /* Service Actions */</a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineNoCov">          0 :   g_action_map_add_action_entries (G_ACTION_MAP (application),</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :            :                                    actions,</a>
+<a name="197"><span class="lineNum">     197 </span>                :            :                                    G_N_ELEMENTS (actions),</a>
+<a name="198"><span class="lineNum">     198 </span>                :            :                                    application);</a>
+<a name="199"><span class="lineNum">     199 </span>                :            : </a>
+<a name="200"><span class="lineNum">     200 </span>                :            :   /* Start the device manager */</a>
+<a name="201"><span class="lineNum">     201 </span>                :<span class="lineNoCov">          0 :   valent_manager_start (self-&gt;manager);</span></a>
 <a name="202"><span class="lineNum">     202 </span>                :            : </a>
-<a name="203"><span class="lineNum">     203 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_pointer (&amp;self-&gt;window, gtk_window_destroy);</span></a>
-<a name="204"><span class="lineNum">     204 </span>                :<span class="lineNoCov">          0 :   valent_manager_stop (self-&gt;manager);</span></a>
+<a name="203"><span class="lineNum">     203 </span>                :<span class="lineNoCov">          0 :   gtk_window_set_default_icon_name (APPLICATION_ID);</span></a>
+<a name="204"><span class="lineNum">     204 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="205"><span class="lineNum">     205 </span>                :            : </a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineNoCov">          0 :   G_APPLICATION_CLASS (valent_application_parent_class)-&gt;shutdown (application);</span></a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="208"><span class="lineNum">     208 </span>                :            : </a>
-<a name="209"><span class="lineNum">     209 </span>                :            : static gboolean</a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineNoCov">          0 : valent_application_dbus_register (GApplication     *application,</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :            :                                   GDBusConnection  *connection,</a>
-<a name="212"><span class="lineNum">     212 </span>                :            :                                   const char       *object_path,</a>
-<a name="213"><span class="lineNum">     213 </span>                :            :                                   GError          **error)</a>
-<a name="214"><span class="lineNum">     214 </span>                :            : {</a>
-<a name="215"><span class="lineNum">     215 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
-<a name="216"><span class="lineNum">     216 </span>                :<span class="lineNoCov">          0 :   GApplicationClass *klass = G_APPLICATION_CLASS (valent_application_parent_class);</span></a>
-<a name="217"><span class="lineNum">     217 </span>                :            : </a>
-<a name="218"><span class="lineNum">     218 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (self));</span></a>
-<a name="219"><span class="lineNum">     219 </span>                :            : </a>
-<a name="220"><span class="lineNum">     220 </span>                :            :   /* Chain-up first */</a>
-<a name="221"><span class="lineNum">     221 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (!klass-&gt;dbus_register (application, connection, object_path, error))</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineNoCov">          0 :     return FALSE;</span></a>
-<a name="223"><span class="lineNum">     223 </span>                :            : </a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineNoCov">          0 :   self-&gt;manager = valent_manager_new_sync (NULL, NULL, error);</span></a>
-<a name="225"><span class="lineNum">     225 </span>                :            : </a>
-<a name="226"><span class="lineNum">     226 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (self-&gt;manager == NULL)</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineNoCov">          0 :     return FALSE;</span></a>
-<a name="228"><span class="lineNum">     228 </span>                :            : </a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineNoCov">          0 :   valent_manager_export (self-&gt;manager, connection);</span></a>
-<a name="230"><span class="lineNum">     230 </span>                :            : </a>
-<a name="231"><span class="lineNum">     231 </span>                :<span class="lineNoCov">          0 :   return TRUE;</span></a>
-<a name="232"><span class="lineNum">     232 </span>                :            : }</a>
+<a name="206"><span class="lineNum">     206 </span>                :            : static void</a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineNoCov">          0 : valent_application_shutdown (GApplication *application)</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :            : {</a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :            : </a>
+<a name="211"><span class="lineNum">     211 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (application));</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :            : </a>
+<a name="213"><span class="lineNum">     213 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_pointer (&amp;self-&gt;window, gtk_window_destroy);</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineNoCov">          0 :   valent_manager_stop (self-&gt;manager);</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :            : </a>
+<a name="216"><span class="lineNum">     216 </span>                :<span class="lineNoCov">          0 :   G_APPLICATION_CLASS (valent_application_parent_class)-&gt;shutdown (application);</span></a>
+<a name="217"><span class="lineNum">     217 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="218"><span class="lineNum">     218 </span>                :            : </a>
+<a name="219"><span class="lineNum">     219 </span>                :            : static gboolean</a>
+<a name="220"><span class="lineNum">     220 </span>                :<span class="lineNoCov">          0 : valent_application_dbus_register (GApplication     *application,</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :            :                                   GDBusConnection  *connection,</a>
+<a name="222"><span class="lineNum">     222 </span>                :            :                                   const char       *object_path,</a>
+<a name="223"><span class="lineNum">     223 </span>                :            :                                   GError          **error)</a>
+<a name="224"><span class="lineNum">     224 </span>                :            : {</a>
+<a name="225"><span class="lineNum">     225 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineNoCov">          0 :   GApplicationClass *klass = G_APPLICATION_CLASS (valent_application_parent_class);</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :            : </a>
+<a name="228"><span class="lineNum">     228 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (self));</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :            : </a>
+<a name="230"><span class="lineNum">     230 </span>                :            :   /* Chain-up first */</a>
+<a name="231"><span class="lineNum">     231 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (!klass-&gt;dbus_register (application, connection, object_path, error))</span></a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineNoCov">          0 :     return FALSE;</span></a>
 <a name="233"><span class="lineNum">     233 </span>                :            : </a>
-<a name="234"><span class="lineNum">     234 </span>                :            : static void</a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineNoCov">          0 : valent_application_dbus_unregister (GApplication    *application,</span></a>
-<a name="236"><span class="lineNum">     236 </span>                :            :                                     GDBusConnection *connection,</a>
-<a name="237"><span class="lineNum">     237 </span>                :            :                                     const char      *object_path)</a>
-<a name="238"><span class="lineNum">     238 </span>                :            : {</a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
-<a name="240"><span class="lineNum">     240 </span>                :<span class="lineNoCov">          0 :   GApplicationClass *klass = G_APPLICATION_CLASS (valent_application_parent_class);</span></a>
-<a name="241"><span class="lineNum">     241 </span>                :            : </a>
-<a name="242"><span class="lineNum">     242 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (self));</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineNoCov">          0 :   self-&gt;manager = valent_manager_new_sync (NULL, NULL, error);</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :            : </a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (self-&gt;manager == NULL)</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineNoCov">          0 :     return FALSE;</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :            : </a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineNoCov">          0 :   valent_manager_export (self-&gt;manager, connection);</span></a>
+<a name="240"><span class="lineNum">     240 </span>                :            : </a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineNoCov">          0 :   return TRUE;</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :            : }</a>
 <a name="243"><span class="lineNum">     243 </span>                :            : </a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineNoCov">          0 :   valent_manager_unexport (self-&gt;manager);</span></a>
-<a name="245"><span class="lineNum">     245 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;manager);</span></a>
-<a name="246"><span class="lineNum">     246 </span>                :            : </a>
-<a name="247"><span class="lineNum">     247 </span>                :            :   /* Chain-up last */</a>
-<a name="248"><span class="lineNum">     248 </span>                :<span class="lineNoCov">          0 :   klass-&gt;dbus_unregister (application, connection, object_path);</span></a>
-<a name="249"><span class="lineNum">     249 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="250"><span class="lineNum">     250 </span>                :            : </a>
+<a name="244"><span class="lineNum">     244 </span>                :            : static void</a>
+<a name="245"><span class="lineNum">     245 </span>                :<span class="lineNoCov">          0 : valent_application_dbus_unregister (GApplication    *application,</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :            :                                     GDBusConnection *connection,</a>
+<a name="247"><span class="lineNum">     247 </span>                :            :                                     const char      *object_path)</a>
+<a name="248"><span class="lineNum">     248 </span>                :            : {</a>
+<a name="249"><span class="lineNum">     249 </span>                :<span class="lineNoCov">          0 :   ValentApplication *self = VALENT_APPLICATION (application);</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineNoCov">          0 :   GApplicationClass *klass = G_APPLICATION_CLASS (valent_application_parent_class);</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : </a>
-<a name="252"><span class="lineNum">     252 </span>                :            : /*</a>
-<a name="253"><span class="lineNum">     253 </span>                :            :  * GObject</a>
-<a name="254"><span class="lineNum">     254 </span>                :            :  */</a>
-<a name="255"><span class="lineNum">     255 </span>                :            : static void</a>
-<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">          1 : valent_application_class_init (ValentApplicationClass *klass)</span></a>
-<a name="257"><span class="lineNum">     257 </span>                :            : {</a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">          1 :   GApplicationClass *application_class = G_APPLICATION_CLASS (klass);</span></a>
-<a name="259"><span class="lineNum">     259 </span>                :            : </a>
-<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">          1 :   application_class-&gt;activate = valent_application_activate;</span></a>
-<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">          1 :   application_class-&gt;startup = valent_application_startup;</span></a>
-<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">          1 :   application_class-&gt;shutdown = valent_application_shutdown;</span></a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">          1 :   application_class-&gt;dbus_register = valent_application_dbus_register;</span></a>
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">          1 :   application_class-&gt;dbus_unregister = valent_application_dbus_unregister;</span></a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">          1 : }</span></a>
-<a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>                :            : static void</a>
-<a name="268"><span class="lineNum">     268 </span>                :<span class="lineNoCov">          0 : valent_application_init (ValentApplication *self)</span></a>
-<a name="269"><span class="lineNum">     269 </span>                :            : {</a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :            : </a>
-<a name="272"><span class="lineNum">     272 </span>                :            : ValentApplication *</a>
-<a name="273"><span class="lineNum">     273 </span>                :<span class="lineNoCov">          0 : _valent_application_new (void)</span></a>
-<a name="274"><span class="lineNum">     274 </span>                :            : {</a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineNoCov">          0 :   return g_object_new (VALENT_TYPE_APPLICATION,</span></a>
-<a name="276"><span class="lineNum">     276 </span>                :            :                        &quot;application-id&quot;,     APPLICATION_ID,</a>
-<a name="277"><span class="lineNum">     277 </span>                :            :                        &quot;resource-base-path&quot;, &quot;/ca/andyholmes/Valent&quot;,</a>
-<a name="278"><span class="lineNum">     278 </span>                :            :                        &quot;flags&quot;,              G_APPLICATION_FLAGS_NONE,</a>
-<a name="279"><span class="lineNum">     279 </span>                :            :                        NULL);</a>
-<a name="280"><span class="lineNum">     280 </span>                :            : }</a>
-<a name="281"><span class="lineNum">     281 </span>                :            : </a>
+<a name="252"><span class="lineNum">     252 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_assert (VALENT_IS_APPLICATION (self));</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :            : </a>
+<a name="254"><span class="lineNum">     254 </span>                :<span class="lineNoCov">          0 :   valent_manager_unexport (self-&gt;manager);</span></a>
+<a name="255"><span class="lineNum">     255 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;manager);</span></a>
+<a name="256"><span class="lineNum">     256 </span>                :            : </a>
+<a name="257"><span class="lineNum">     257 </span>                :            :   /* Chain-up last */</a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineNoCov">          0 :   klass-&gt;dbus_unregister (application, connection, object_path);</span></a>
+<a name="259"><span class="lineNum">     259 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="260"><span class="lineNum">     260 </span>                :            : </a>
+<a name="261"><span class="lineNum">     261 </span>                :            : </a>
+<a name="262"><span class="lineNum">     262 </span>                :            : /*</a>
+<a name="263"><span class="lineNum">     263 </span>                :            :  * GObject</a>
+<a name="264"><span class="lineNum">     264 </span>                :            :  */</a>
+<a name="265"><span class="lineNum">     265 </span>                :            : static void</a>
+<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">          1 : valent_application_class_init (ValentApplicationClass *klass)</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :            : {</a>
+<a name="268"><span class="lineNum">     268 </span>                :<span class="lineCov">          1 :   GApplicationClass *application_class = G_APPLICATION_CLASS (klass);</span></a>
+<a name="269"><span class="lineNum">     269 </span>                :            : </a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">          1 :   application_class-&gt;activate = valent_application_activate;</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">          1 :   application_class-&gt;startup = valent_application_startup;</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">          1 :   application_class-&gt;shutdown = valent_application_shutdown;</span></a>
+<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">          1 :   application_class-&gt;open = valent_application_open;</span></a>
+<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">          1 :   application_class-&gt;dbus_register = valent_application_dbus_register;</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">          1 :   application_class-&gt;dbus_unregister = valent_application_dbus_unregister;</span></a>
+<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">          1 : }</span></a>
+<a name="277"><span class="lineNum">     277 </span>                :            : </a>
+<a name="278"><span class="lineNum">     278 </span>                :            : static void</a>
+<a name="279"><span class="lineNum">     279 </span>                :<span class="lineNoCov">          0 : valent_application_init (ValentApplication *self)</span></a>
+<a name="280"><span class="lineNum">     280 </span>                :            : {</a>
+<a name="281"><span class="lineNum">     281 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :            : </a>
+<a name="283"><span class="lineNum">     283 </span>                :            : ValentApplication *</a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineNoCov">          0 : _valent_application_new (void)</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :            : {</a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineNoCov">          0 :   return g_object_new (VALENT_TYPE_APPLICATION,</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :            :                        &quot;application-id&quot;,     APPLICATION_ID,</a>
+<a name="288"><span class="lineNum">     288 </span>                :            :                        &quot;resource-base-path&quot;, &quot;/ca/andyholmes/Valent&quot;,</a>
+<a name="289"><span class="lineNum">     289 </span>                :            :                        &quot;flags&quot;,              G_APPLICATION_HANDLES_OPEN,</a>
+<a name="290"><span class="lineNum">     290 </span>                :            :                        NULL);</a>
+<a name="291"><span class="lineNum">     291 </span>                :            : }</a>
+<a name="292"><span class="lineNum">     292 </span>                :            : </a>
 </pre>
       </td>
     </tr>

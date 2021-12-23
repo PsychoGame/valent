@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-18 00:23:54</td>
+            <td class="headerValue">2021-12-23 03:36:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -353,22 +353,22 @@
 <a name="273"><span class="lineNum">     273 </span>                :            :  * Returns: (nullable): a string</a>
 <a name="274"><span class="lineNum">     274 </span>                :            :  */</a>
 <a name="275"><span class="lineNum">     275 </span>                :            : static inline const char *</a>
-<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">        250 : (valent_packet_check_string) (JsonObject *body,</span></a>
+<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">        258 : (valent_packet_check_string) (JsonObject *body,</span></a>
 <a name="277"><span class="lineNum">     277 </span>                :            :                               const char *member)</a>
 <a name="278"><span class="lineNum">     278 </span>                :            : {</a>
 <a name="279"><span class="lineNum">     279 </span>                :            :   JsonNode *node;</a>
 <a name="280"><span class="lineNum">     280 </span>                :            :   const char *value;</a>
 <a name="281"><span class="lineNum">     281 </span>                :            : </a>
-<a name="282"><span class="lineNum">     282 </span>  [<span class="branchCov" title="Branch 0 was taken 160 times"> + </span><span class="branchCov" title="Branch 1 was taken 90 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 160 times"> + </span>]:<span class="lineCov">        250 :   if G_UNLIKELY ((node = json_object_get_member (body, member)) == NULL ||</span></a>
+<a name="282"><span class="lineNum">     282 </span>  [<span class="branchCov" title="Branch 0 was taken 166 times"> + </span><span class="branchCov" title="Branch 1 was taken 92 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 166 times"> + </span>]:<span class="lineCov">        258 :   if G_UNLIKELY ((node = json_object_get_member (body, member)) == NULL ||</span></a>
 <a name="283"><span class="lineNum">     283 </span>                :            :                  json_node_get_value_type (node) != G_TYPE_STRING)</a>
-<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">         90 :     return NULL;</span></a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">         92 :     return NULL;</span></a>
 <a name="285"><span class="lineNum">     285 </span>                :            : </a>
-<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">        160 :   value = json_node_get_string (node);</span></a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">        166 :   value = json_node_get_string (node);</span></a>
 <a name="287"><span class="lineNum">     287 </span>                :            : </a>
-<a name="288"><span class="lineNum">     288 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 160 times"> + </span>]:<span class="lineCov">        160 :   if G_UNLIKELY (strlen (value) == 0)</span></a>
+<a name="288"><span class="lineNum">     288 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 166 times"> + </span>]:<span class="lineCov">        166 :   if G_UNLIKELY (strlen (value) == 0)</span></a>
 <a name="289"><span class="lineNum">     289 </span>                :<span class="lineNoCov">          0 :     return NULL;</span></a>
 <a name="290"><span class="lineNum">     290 </span>                :            : </a>
-<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">        160 :   return value;</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">        166 :   return value;</span></a>
 <a name="292"><span class="lineNum">     292 </span>                :            : }</a>
 <a name="293"><span class="lineNum">     293 </span>                :            : #define valent_packet_check_string(o,m) (valent_packet_check_string(o,m))</a>
 <a name="294"><span class="lineNum">     294 </span>                :            : </a>

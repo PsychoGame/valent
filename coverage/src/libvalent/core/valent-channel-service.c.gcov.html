@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-18 00:23:54</td>
+            <td class="headerValue">2021-12-23 03:36:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -825,93 +825,96 @@
 <a name="741"><span class="lineNum">     741 </span>                :            :  *</a>
 <a name="742"><span class="lineNum">     742 </span>                :            :  * Stop processing incoming identity packets and prevent the broadcast of the</a>
 <a name="743"><span class="lineNum">     743 </span>                :            :  * local identity which results in the same behaviour from other devices.</a>
-<a name="744"><span class="lineNum">     744 </span>                :            :  */</a>
-<a name="745"><span class="lineNum">     745 </span>                :            : void</a>
-<a name="746"><span class="lineNum">     746 </span>                :<span class="lineCov">         60 : valent_channel_service_stop (ValentChannelService *service)</span></a>
-<a name="747"><span class="lineNum">     747 </span>                :            : {</a>
-<a name="748"><span class="lineNum">     748 </span>                :<span class="lineCov">         60 :   ValentChannelServicePrivate *priv = valent_channel_service_get_instance_private (service);</span></a>
-<a name="749"><span class="lineNum">     749 </span>                :            : </a>
-<a name="750"><span class="lineNum">     750 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_return_if_fail (VALENT_IS_CHANNEL_SERVICE (service));</span></a>
-<a name="751"><span class="lineNum">     751 </span>                :            : </a>
-<a name="752"><span class="lineNum">     752 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         60 :   if (priv-&gt;cancellable == NULL)</span></a>
-<a name="753"><span class="lineNum">     753 </span>                :<span class="lineCov">         30 :     return;</span></a>
+<a name="744"><span class="lineNum">     744 </span>                :            :  *</a>
+<a name="745"><span class="lineNum">     745 </span>                :            :  * Implementations of this method must chain-up and be idempotent; it is called</a>
+<a name="746"><span class="lineNum">     746 </span>                :            :  * automatically when the last reference to @service is dropped.</a>
+<a name="747"><span class="lineNum">     747 </span>                :            :  */</a>
+<a name="748"><span class="lineNum">     748 </span>                :            : void</a>
+<a name="749"><span class="lineNum">     749 </span>                :<span class="lineCov">         60 : valent_channel_service_stop (ValentChannelService *service)</span></a>
+<a name="750"><span class="lineNum">     750 </span>                :            : {</a>
+<a name="751"><span class="lineNum">     751 </span>                :<span class="lineCov">         60 :   ValentChannelServicePrivate *priv = valent_channel_service_get_instance_private (service);</span></a>
+<a name="752"><span class="lineNum">     752 </span>                :            : </a>
+<a name="753"><span class="lineNum">     753 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_return_if_fail (VALENT_IS_CHANNEL_SERVICE (service));</span></a>
 <a name="754"><span class="lineNum">     754 </span>                :            : </a>
-<a name="755"><span class="lineNum">     755 </span>                :<span class="lineCov">         30 :   g_cancellable_cancel (priv-&gt;cancellable);</span></a>
-<a name="756"><span class="lineNum">     756 </span>                :<span class="lineCov">         30 :   VALENT_CHANNEL_SERVICE_GET_CLASS (service)-&gt;stop (service);</span></a>
-<a name="757"><span class="lineNum">     757 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         30 :   g_clear_object (&amp;priv-&gt;cancellable);</span></a>
-<a name="758"><span class="lineNum">     758 </span>                :            : }</a>
-<a name="759"><span class="lineNum">     759 </span>                :            : </a>
-<a name="760"><span class="lineNum">     760 </span>                :            : /**</a>
-<a name="761"><span class="lineNum">     761 </span>                :            :  * valent_channel_service_channel:</a>
-<a name="762"><span class="lineNum">     762 </span>                :            :  * @service: a #ValentChannelService</a>
-<a name="763"><span class="lineNum">     763 </span>                :            :  * @channel: a #ValentChannel</a>
-<a name="764"><span class="lineNum">     764 </span>                :            :  *</a>
-<a name="765"><span class="lineNum">     765 </span>                :            :  * Emits the #ValentChannelService::channel signal on @service, in the main</a>
-<a name="766"><span class="lineNum">     766 </span>                :            :  * thread.</a>
+<a name="755"><span class="lineNum">     755 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         60 :   if (priv-&gt;cancellable == NULL)</span></a>
+<a name="756"><span class="lineNum">     756 </span>                :<span class="lineCov">         30 :     return;</span></a>
+<a name="757"><span class="lineNum">     757 </span>                :            : </a>
+<a name="758"><span class="lineNum">     758 </span>                :<span class="lineCov">         30 :   g_cancellable_cancel (priv-&gt;cancellable);</span></a>
+<a name="759"><span class="lineNum">     759 </span>                :<span class="lineCov">         30 :   VALENT_CHANNEL_SERVICE_GET_CLASS (service)-&gt;stop (service);</span></a>
+<a name="760"><span class="lineNum">     760 </span>        [<span class="branchCov" title="Branch 0 was taken 30 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         30 :   g_clear_object (&amp;priv-&gt;cancellable);</span></a>
+<a name="761"><span class="lineNum">     761 </span>                :            : }</a>
+<a name="762"><span class="lineNum">     762 </span>                :            : </a>
+<a name="763"><span class="lineNum">     763 </span>                :            : /**</a>
+<a name="764"><span class="lineNum">     764 </span>                :            :  * valent_channel_service_channel:</a>
+<a name="765"><span class="lineNum">     765 </span>                :            :  * @service: a #ValentChannelService</a>
+<a name="766"><span class="lineNum">     766 </span>                :            :  * @channel: a #ValentChannel</a>
 <a name="767"><span class="lineNum">     767 </span>                :            :  *</a>
-<a name="768"><span class="lineNum">     768 </span>                :            :  * An implementation of #ValentChannelService should call this when a</a>
-<a name="769"><span class="lineNum">     769 </span>                :            :  * #ValentChannel has completed the connection process and is ready to be</a>
-<a name="770"><span class="lineNum">     770 </span>                :            :  * attached to a #ValentDevice.</a>
-<a name="771"><span class="lineNum">     771 </span>                :            :  */</a>
-<a name="772"><span class="lineNum">     772 </span>                :            : void</a>
-<a name="773"><span class="lineNum">     773 </span>                :<span class="lineCov">         35 : valent_channel_service_emit_channel (ValentChannelService *service,</span></a>
-<a name="774"><span class="lineNum">     774 </span>                :            :                                      ValentChannel        *channel)</a>
-<a name="775"><span class="lineNum">     775 </span>                :            : {</a>
-<a name="776"><span class="lineNum">     776 </span>                :            :   ChannelEmission *emission;</a>
-<a name="777"><span class="lineNum">     777 </span>                :            : </a>
-<a name="778"><span class="lineNum">     778 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_if_fail (VALENT_IS_CHANNEL_SERVICE (service));</span></a>
-<a name="779"><span class="lineNum">     779 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="768"><span class="lineNum">     768 </span>                :            :  * Emits the #ValentChannelService::channel signal on @service, in the main</a>
+<a name="769"><span class="lineNum">     769 </span>                :            :  * thread.</a>
+<a name="770"><span class="lineNum">     770 </span>                :            :  *</a>
+<a name="771"><span class="lineNum">     771 </span>                :            :  * An implementation of #ValentChannelService should call this when a</a>
+<a name="772"><span class="lineNum">     772 </span>                :            :  * #ValentChannel has completed the connection process and is ready to be</a>
+<a name="773"><span class="lineNum">     773 </span>                :            :  * attached to a #ValentDevice.</a>
+<a name="774"><span class="lineNum">     774 </span>                :            :  */</a>
+<a name="775"><span class="lineNum">     775 </span>                :            : void</a>
+<a name="776"><span class="lineNum">     776 </span>                :<span class="lineCov">         35 : valent_channel_service_emit_channel (ValentChannelService *service,</span></a>
+<a name="777"><span class="lineNum">     777 </span>                :            :                                      ValentChannel        *channel)</a>
+<a name="778"><span class="lineNum">     778 </span>                :            : {</a>
+<a name="779"><span class="lineNum">     779 </span>                :            :   ChannelEmission *emission;</a>
 <a name="780"><span class="lineNum">     780 </span>                :            : </a>
-<a name="781"><span class="lineNum">     781 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         35 :   if G_LIKELY (VALENT_IS_MAIN_THREAD ())</span></a>
-<a name="782"><span class="lineNum">     782 </span>                :            :     {</a>
-<a name="783"><span class="lineNum">     783 </span>                :<span class="lineCov">         20 :       g_signal_emit (G_OBJECT (service), signals [CHANNEL], 0, channel);</span></a>
-<a name="784"><span class="lineNum">     784 </span>                :<span class="lineCov">         20 :       return;</span></a>
-<a name="785"><span class="lineNum">     785 </span>                :            :     }</a>
-<a name="786"><span class="lineNum">     786 </span>                :            : </a>
-<a name="787"><span class="lineNum">     787 </span>                :<span class="lineCov">         15 :   emission = g_new0 (ChannelEmission, 1);</span></a>
-<a name="788"><span class="lineNum">     788 </span>                :<span class="lineCov">         15 :   emission-&gt;service = g_object_ref (service);</span></a>
-<a name="789"><span class="lineNum">     789 </span>                :<span class="lineCov">         15 :   emission-&gt;channel = g_object_ref (channel);</span></a>
-<a name="790"><span class="lineNum">     790 </span>                :            : </a>
-<a name="791"><span class="lineNum">     791 </span>                :<span class="lineCov">         15 :   g_timeout_add (0, valent_channel_service_emit_channel_main, emission);</span></a>
-<a name="792"><span class="lineNum">     792 </span>                :            : }</a>
+<a name="781"><span class="lineNum">     781 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_if_fail (VALENT_IS_CHANNEL_SERVICE (service));</span></a>
+<a name="782"><span class="lineNum">     782 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 35 times"> + </span>]:<span class="lineCov">         35 :   g_return_if_fail (VALENT_IS_CHANNEL (channel));</span></a>
+<a name="783"><span class="lineNum">     783 </span>                :            : </a>
+<a name="784"><span class="lineNum">     784 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         35 :   if G_LIKELY (VALENT_IS_MAIN_THREAD ())</span></a>
+<a name="785"><span class="lineNum">     785 </span>                :            :     {</a>
+<a name="786"><span class="lineNum">     786 </span>                :<span class="lineCov">         20 :       g_signal_emit (G_OBJECT (service), signals [CHANNEL], 0, channel);</span></a>
+<a name="787"><span class="lineNum">     787 </span>                :<span class="lineCov">         20 :       return;</span></a>
+<a name="788"><span class="lineNum">     788 </span>                :            :     }</a>
+<a name="789"><span class="lineNum">     789 </span>                :            : </a>
+<a name="790"><span class="lineNum">     790 </span>                :<span class="lineCov">         15 :   emission = g_new0 (ChannelEmission, 1);</span></a>
+<a name="791"><span class="lineNum">     791 </span>                :<span class="lineCov">         15 :   emission-&gt;service = g_object_ref (service);</span></a>
+<a name="792"><span class="lineNum">     792 </span>                :<span class="lineCov">         15 :   emission-&gt;channel = g_object_ref (channel);</span></a>
 <a name="793"><span class="lineNum">     793 </span>                :            : </a>
-<a name="794"><span class="lineNum">     794 </span>                :            : /**</a>
-<a name="795"><span class="lineNum">     795 </span>                :            :  * valent_channel_service_supports_plugin:</a>
-<a name="796"><span class="lineNum">     796 </span>                :            :  * @service: a #ValentChannelService</a>
-<a name="797"><span class="lineNum">     797 </span>                :            :  * @info: a #PeasPluginInfo</a>
-<a name="798"><span class="lineNum">     798 </span>                :            :  *</a>
-<a name="799"><span class="lineNum">     799 </span>                :            :  * Check if the #ValentDevicePlugin described by @info requires a specific</a>
-<a name="800"><span class="lineNum">     800 </span>                :            :  * transport protocol (indicated by a `X-ChannelProtocol` field) and if so that</a>
-<a name="801"><span class="lineNum">     801 </span>                :            :  * @service utilizes that transport protocol.</a>
-<a name="802"><span class="lineNum">     802 </span>                :            :  *</a>
-<a name="803"><span class="lineNum">     803 </span>                :            :  * This is useful for plugins that wrap protocols such as SFTP, which requires</a>
-<a name="804"><span class="lineNum">     804 </span>                :            :  * TCP.</a>
+<a name="794"><span class="lineNum">     794 </span>                :<span class="lineCov">         15 :   g_timeout_add (0, valent_channel_service_emit_channel_main, emission);</span></a>
+<a name="795"><span class="lineNum">     795 </span>                :            : }</a>
+<a name="796"><span class="lineNum">     796 </span>                :            : </a>
+<a name="797"><span class="lineNum">     797 </span>                :            : /**</a>
+<a name="798"><span class="lineNum">     798 </span>                :            :  * valent_channel_service_supports_plugin:</a>
+<a name="799"><span class="lineNum">     799 </span>                :            :  * @service: a #ValentChannelService</a>
+<a name="800"><span class="lineNum">     800 </span>                :            :  * @info: a #PeasPluginInfo</a>
+<a name="801"><span class="lineNum">     801 </span>                :            :  *</a>
+<a name="802"><span class="lineNum">     802 </span>                :            :  * Check if the #ValentDevicePlugin described by @info requires a specific</a>
+<a name="803"><span class="lineNum">     803 </span>                :            :  * transport protocol (indicated by a `X-ChannelProtocol` field) and if so that</a>
+<a name="804"><span class="lineNum">     804 </span>                :            :  * @service utilizes that transport protocol.</a>
 <a name="805"><span class="lineNum">     805 </span>                :            :  *</a>
-<a name="806"><span class="lineNum">     806 </span>                :            :  * Returns: %TRUE if supported</a>
-<a name="807"><span class="lineNum">     807 </span>                :            :  */</a>
-<a name="808"><span class="lineNum">     808 </span>                :            : gboolean</a>
-<a name="809"><span class="lineNum">     809 </span>                :<span class="lineCov">         75 : valent_channel_service_supports_plugin (ValentChannelService *service,</span></a>
-<a name="810"><span class="lineNum">     810 </span>                :            :                                         PeasPluginInfo       *info)</a>
-<a name="811"><span class="lineNum">     811 </span>                :            : {</a>
-<a name="812"><span class="lineNum">     812 </span>                :<span class="lineCov">         75 :   ValentChannelServicePrivate *priv = valent_channel_service_get_instance_private (service);</span></a>
-<a name="813"><span class="lineNum">     813 </span>                :            :   const char *requires;</a>
-<a name="814"><span class="lineNum">     814 </span>                :            :   const char *provides;</a>
-<a name="815"><span class="lineNum">     815 </span>                :            : </a>
-<a name="816"><span class="lineNum">     816 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span>]:<span class="lineCov">         75 :   g_return_val_if_fail (VALENT_IS_CHANNEL_SERVICE (service), FALSE);</span></a>
-<a name="817"><span class="lineNum">     817 </span>                :            : </a>
-<a name="818"><span class="lineNum">     818 </span>                :<span class="lineCov">         75 :   requires = peas_plugin_info_get_external_data (info, &quot;X-ChannelProtocol&quot;);</span></a>
-<a name="819"><span class="lineNum">     819 </span>                :            : </a>
-<a name="820"><span class="lineNum">     820 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         75 :   if (requires == NULL)</span></a>
-<a name="821"><span class="lineNum">     821 </span>                :<span class="lineCov">         60 :     return TRUE;</span></a>
+<a name="806"><span class="lineNum">     806 </span>                :            :  * This is useful for plugins that wrap protocols such as SFTP, which requires</a>
+<a name="807"><span class="lineNum">     807 </span>                :            :  * TCP.</a>
+<a name="808"><span class="lineNum">     808 </span>                :            :  *</a>
+<a name="809"><span class="lineNum">     809 </span>                :            :  * Returns: %TRUE if supported</a>
+<a name="810"><span class="lineNum">     810 </span>                :            :  */</a>
+<a name="811"><span class="lineNum">     811 </span>                :            : gboolean</a>
+<a name="812"><span class="lineNum">     812 </span>                :<span class="lineCov">         75 : valent_channel_service_supports_plugin (ValentChannelService *service,</span></a>
+<a name="813"><span class="lineNum">     813 </span>                :            :                                         PeasPluginInfo       *info)</a>
+<a name="814"><span class="lineNum">     814 </span>                :            : {</a>
+<a name="815"><span class="lineNum">     815 </span>                :<span class="lineCov">         75 :   ValentChannelServicePrivate *priv = valent_channel_service_get_instance_private (service);</span></a>
+<a name="816"><span class="lineNum">     816 </span>                :            :   const char *requires;</a>
+<a name="817"><span class="lineNum">     817 </span>                :            :   const char *provides;</a>
+<a name="818"><span class="lineNum">     818 </span>                :            : </a>
+<a name="819"><span class="lineNum">     819 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span>]:<span class="lineCov">         75 :   g_return_val_if_fail (VALENT_IS_CHANNEL_SERVICE (service), FALSE);</span></a>
+<a name="820"><span class="lineNum">     820 </span>                :            : </a>
+<a name="821"><span class="lineNum">     821 </span>                :<span class="lineCov">         75 :   requires = peas_plugin_info_get_external_data (info, &quot;X-ChannelProtocol&quot;);</span></a>
 <a name="822"><span class="lineNum">     822 </span>                :            : </a>
-<a name="823"><span class="lineNum">     823 </span>                :<span class="lineCov">         15 :   provides = peas_plugin_info_get_external_data (priv-&gt;plugin_info, &quot;X-ChannelProtocol&quot;);</span></a>
-<a name="824"><span class="lineNum">     824 </span>                :            : </a>
-<a name="825"><span class="lineNum">     825 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   if (provides == NULL)</span></a>
-<a name="826"><span class="lineNum">     826 </span>                :<span class="lineNoCov">          0 :     return TRUE;</span></a>
+<a name="823"><span class="lineNum">     823 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         75 :   if (requires == NULL)</span></a>
+<a name="824"><span class="lineNum">     824 </span>                :<span class="lineCov">         60 :     return TRUE;</span></a>
+<a name="825"><span class="lineNum">     825 </span>                :            : </a>
+<a name="826"><span class="lineNum">     826 </span>                :<span class="lineCov">         15 :   provides = peas_plugin_info_get_external_data (priv-&gt;plugin_info, &quot;X-ChannelProtocol&quot;);</span></a>
 <a name="827"><span class="lineNum">     827 </span>                :            : </a>
-<a name="828"><span class="lineNum">     828 </span>                :<span class="lineCov">         15 :   return g_strcmp0 (requires, provides) == 0;</span></a>
-<a name="829"><span class="lineNum">     829 </span>                :            : }</a>
+<a name="828"><span class="lineNum">     828 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   if (provides == NULL)</span></a>
+<a name="829"><span class="lineNum">     829 </span>                :<span class="lineNoCov">          0 :     return TRUE;</span></a>
 <a name="830"><span class="lineNum">     830 </span>                :            : </a>
+<a name="831"><span class="lineNum">     831 </span>                :<span class="lineCov">         15 :   return g_strcmp0 (requires, provides) == 0;</span></a>
+<a name="832"><span class="lineNum">     832 </span>                :            : }</a>
+<a name="833"><span class="lineNum">     833 </span>                :            : </a>
 </pre>
       </td>
     </tr>
