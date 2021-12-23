@@ -280,9 +280,8 @@ a devices is paired (eg. a <span class="caps">TLS</span>&nbsp;certificate).</p>
         <div class="">
           <h6><a href="method.Channel.download.html">valent_channel_download</a></h6>
           <div class="docblock">
-            <p>Accept a connection from the remote device. The remote device is expected to
-populate <code>packet</code> with the information necessary for implementations to
-negotiate an appropriate&nbsp;connection.</p>
+            <p>Open a connection offered by the remote device. The remote device is expected
+to populate <code>packet</code> with information to negotiate the connection (eg.&nbsp;port).</p>
           </div>
           
         </div>
@@ -366,9 +365,8 @@ data required to authenticate during later&nbsp;connections.</p>
         <div class="">
           <h6><a href="method.Channel.upload.html">valent_channel_upload</a></h6>
           <div class="docblock">
-            <p>Open a connection to the remote device. Implementations are expected to
-populate <code>packet</code> with the information necessary for the remote device to
-negotiate an appropriate&nbsp;connection.</p>
+            <p>Offer a connection to the remote device. Implementations are expected to
+populate <code>packet</code> with information to negotiate the connection (eg.&nbsp;port).</p>
           </div>
           
         </div>
@@ -582,9 +580,8 @@ represents the remote&nbsp;device.</p>
         <h6 id="vfunc-download"><a href="vfunc.Channel.download.html">Valent.ChannelClass.download</a></h6>
 
         <div class="docblock">
-          <p>Accept a connection from the remote device. The remote device is expected to
-populate <code>packet</code> with the information necessary for implementations to
-negotiate an appropriate&nbsp;connection.</p>
+          <p>Open a connection offered by the remote device. The remote device is expected
+to populate <code>packet</code> with information to negotiate the connection (eg.&nbsp;port).</p>
         </div>
 
           
@@ -615,9 +612,8 @@ data required to authenticate during later&nbsp;connections.</p>
         <h6 id="vfunc-upload"><a href="vfunc.Channel.upload.html">Valent.ChannelClass.upload</a></h6>
 
         <div class="docblock">
-          <p>Open a connection to the remote device. Implementations are expected to
-populate <code>packet</code> with the information necessary for the remote device to
-negotiate an appropriate&nbsp;connection.</p>
+          <p>Offer a connection to the remote device. Implementations are expected to
+populate <code>packet</code> with information to negotiate the connection (eg.&nbsp;port).</p>
         </div>
 
           

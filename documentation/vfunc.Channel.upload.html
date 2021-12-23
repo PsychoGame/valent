@@ -139,14 +139,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/core/valent-channel.c#L928">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/core/valent-channel.c#L927">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Open a connection to the remote device. Implementations are expected to
-populate <code>packet</code> with the information necessary for the remote device to
-negotiate an appropriate&nbsp;connection.</p>
+        <p>Offer a connection to the remote device. Implementations are expected to
+populate <code>packet</code> with information to negotiate the connection (eg.&nbsp;port).</p>
 <p>Typically the <code>GOutputStream</code> of the result will be used to write the contents
 of a payload, while the <code>GInputStream</code> is left&nbsp;unused.</p>
       </div>
