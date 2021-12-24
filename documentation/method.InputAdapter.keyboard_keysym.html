@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.InputController.pointer_motion</title>
+  <title>Valent.InputAdapter.keyboard_keysym</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Valent.InputController.pointer_motion"/>
-  <meta priority="og:description" content="Reference for Valent.InputController.pointer_motion"/>
-  <meta name="twitter:title" content="Valent.InputController.pointer_motion"/>
-  <meta name="twitter:description" content="Reference for Valent.InputController.pointer_motion"/>
+  <meta priority="og:title" content="Valent.InputAdapter.keyboard_keysym"/>
+  <meta priority="og:description" content="Reference for Valent.InputAdapter.keyboard_keysym"/>
+  <meta name="twitter:title" content="Valent.InputAdapter.keyboard_keysym"/>
+  <meta name="twitter:description" content="Reference for Valent.InputAdapter.keyboard_keysym"/>
 
 
   
@@ -82,22 +82,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="iface.InputController.html">InputController</a>
+    <a href="class.InputAdapter.html">InputAdapter</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.InputController.keyboard_keysym.html">keyboard_keysym</a>
+    <a class="method current" href="method.InputAdapter.keyboard_keysym.html">keyboard_keysym</a>
   
-    <a class="method" href="method.InputController.pointer_axis.html">pointer_axis</a>
+    <a class="method" href="method.InputAdapter.pointer_axis.html">pointer_axis</a>
   
-    <a class="method" href="method.InputController.pointer_button.html">pointer_button</a>
+    <a class="method" href="method.InputAdapter.pointer_button.html">pointer_button</a>
   
-    <a class="method current" href="method.InputController.pointer_motion.html">pointer_motion</a>
+    <a class="method" href="method.InputAdapter.pointer_motion.html">pointer_motion</a>
   
-    <a class="method" href="method.InputController.pointer_position.html">pointer_position</a>
+    <a class="method" href="method.InputAdapter.pointer_position.html">pointer_position</a>
   
   </div>
 </div>
@@ -110,7 +110,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="iface.InputController.html">InputController</a><span class="sep"></span>pointer_motion</h1>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.InputAdapter.html">InputAdapter</a><span class="sep"></span>keyboard_keysym</h1>
   </header>
 
   <section>
@@ -119,16 +119,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/input/valent-input-controller.h#L52">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/input/valent-input-adapter.h#L42">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="n">valent_input_controller_pointer_motion</span> <span class="p">(</span>
-  <span class="n">ValentInputController</span><span class="o">*</span> <span class="n">controller</span><span class="p">,</span>
-  <span class="kt">double</span> <span class="n">dx</span><span class="p">,</span>
-  <span class="kt">double</span> <span class="n">dy</span>
+<span class="n">valent_input_adapter_keyboard_keysym</span> <span class="p">(</span>
+  <span class="n">ValentInputAdapter</span><span class="o">*</span> <span class="n">adapter</span><span class="p">,</span>
+  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">keysym</span><span class="p">,</span>
+  <span class="n">gboolean</span> <span class="n">state</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -140,12 +140,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/input/valent-input-controller.c#L128">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/input/valent-input-adapter.c#L178">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Simulate pointer movement (<code>dx</code>, <code>dy</code>). Implementations should handle any necessary&nbsp;scaling.</p>
+        <p>Simulate a keysym event for <code>keysym</code>.</p>
       </div>
 
       <div class="docblock">
@@ -170,12 +170,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>dx</code></td>
-            <td><code>double</code></td>
+            <td><code>keysym</code></td>
+            <td><code>unsigned int</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Relate movement on&nbsp;x-axis.</p></td>
+            <td><p>A&nbsp;keysym.</p></td>
           </tr>
           
           
@@ -188,12 +188,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           <tr class="arg-name">
-            <td><code>dy</code></td>
-            <td><code>double</code></td>
+            <td><code>state</code></td>
+            <td><code>gboolean</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Relate movement on&nbsp;y-axis.</p></td>
+            <td><p>If&nbsp;pressed.</p></td>
           </tr>
           
           

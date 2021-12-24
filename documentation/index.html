@@ -364,8 +364,17 @@ tablet or&nbsp;desktop.</p></td>
           <tr class="section-item">
             <td><a title="Input" class="symbol" href="class.Input.html">Input</a></td>
             
-            <td class="docblock-summary"><p><code>ValentInput</code> is an abstraction of input controllers, with a simple <span class="caps">API</span>
-generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
+            <td class="docblock-summary"><p><code>ValentInput</code> is an abstraction of the available <code>ValentInputAdapter</code>
+implementations, generally intended to be used by <code>ValentDevicePlugin</code>
+implementations.</p></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="InputAdapter" class="symbol" href="class.InputAdapter.html">InputAdapter</a></td>
+            
+            <td class="docblock-summary"><p><code>ValentInputAdapter</code> is a base class for plugins that provide a means to
+simulate keyboard and pointer events on the host system on behalf of remote&nbsp;devices.</p></td>
             
           </tr>
           
@@ -528,16 +537,6 @@ plugins that need a small widget to display&nbsp;controls.</p></td>
             <td class="docblock-summary"><p>The <code>ValentDevicePlugin</code> interface should be implemented by libpeas plugins
 that operate in the scope of a single device. This generally means sending
 and receiving packets with other&nbsp;devices.</p></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="InputController" class="symbol" href="iface.InputController.html">InputController</a></td>
-            
-            <td class="docblock-summary"><p><code>ValentInputController</code> is an interface for virtual input controllers.
-Implementations must override <code>valent_input_controller_keyboard_keysym()</code>,
-<code>valent_input_controller_pointer_button()</code> and <code>valent_input_controller_pointer_motion()</code>
-methods.</p></td>
             
           </tr>
           

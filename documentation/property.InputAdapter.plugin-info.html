@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.Input.get_default</title>
+  <title>Valent.InputAdapter:plugin-info</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Valent.Input.get_default"/>
-  <meta property="og:description" content="Reference for Valent.Input.get_default"/>
-  <meta name="twitter:title" content="Valent.Input.get_default"/>
-  <meta name="twitter:description" content="Reference for Valent.Input.get_default"/>
+  <meta property="og:title" content="Valent.InputAdapter:plugin-info"/>
+  <meta property="og:description" content="Reference for property Valent.InputAdapter:plugin-info"/>
+  <meta name="twitter:title" content="Valent.InputAdapter:plugin-info"/>
+  <meta name="twitter:description" content="Reference for property Valent.InputAdapter:plugin-info"/>
 
 
   
@@ -82,14 +82,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Input.html">Input</a>
+    <a href="class.InputAdapter.html">InputAdapter</a>
   </div>
 </div>
 <div class="section">
-  <h5>Functions</h5>
+  <h5>Properties</h5>
   <div class="links">
   
-    <a class="method current" href="type_func.Input.get_default.html">get_default</a>
+    <a class="property current"href="property.InputAdapter.plugin-info.html">plugin-info</a>
   
   </div>
 </div>
@@ -101,45 +101,40 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Function</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.Input.html">Input</a><span class="sep"></span>get_default</h1>
+    <h3>Property</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.InputAdapter.html">InputAdapter</a>:plugin-info</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration" style="display:flex;">
+      <h4 id="declaration">
         Declaration
         <a href="#declaration" class="anchor"></a>
-        
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/input/valent-input.h#L22">[src]</a>
-        
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">ValentInput</span><span class="o">*</span>
-<span class="n">valent_input_get_default</span> <span class="p">(</span>
-  <span class="kt">void</span>
-<span class="p">)</span>
-</pre></div>
-</code></pre>
+        <pre><code>property plugin-info: Peas.PluginInfo [ read, write, construct-only ]</code></pre>
       </div>
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description" style="display:flex;">
+      <h4 id="description">
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/input/valent-input.c#L98">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/input/valent-input-adapter.c#L155">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Get the default <code>ValentInput</code>.</p>
+        <p>The <code>PeasPluginInfo</code> describing this&nbsp;adapter.</p>
       </div>
 
       <div class="docblock">
         <table>
+          <tr><td>Type:</td>
+            <td><code>PeasPluginInfo*</code></td>
+          </tr>
           
           
           
@@ -149,35 +144,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
     </div>
 
-    
-
-    
-    <div class="return-value toggle-wrapper">
-      <h4 id="return-value">
-        Return value
-        <a href="#return-value" class="anchor"></a>
+    <div class="flags toggle-wrapper">
+      <h4 id="flags">
+        Flags
+        <a href="#flags" class="anchor"></a>
       </h4>
 
       <div class="docblock">
-        <table class="returns">
-          <tr class="arg-name">
-            <td>Returns:</td>
-            <td><a href="class.Input.html"><code>ValentInput</code></a></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The default&nbsp;input.</p></td>
-          </tr>
-          
-          
-          
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the called function.</td></tr>
-          
-          
-        </table>
+      <table>
+        <tr><td>Readable</td><td><b>yes</b></td></tr>
+        <tr><td>Writable</td><td><b>yes</b></td></tr>
+        <tr><td>Construct</td><td><b>no</b></td></tr>
+        <tr><td>Construct only</td><td><b>yes</b></td></tr>
+      </table>
       </div>
     </div>
-    
+
   </section>
 </section>
 
