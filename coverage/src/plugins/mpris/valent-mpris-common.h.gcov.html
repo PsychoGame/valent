@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-23 03:36:44</td>
+            <td class="headerValue">2021-12-24 01:36:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -151,12 +151,12 @@
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
 <a name="74"><span class="lineNum">      74 </span>                :            : </a>
 <a name="75"><span class="lineNum">      75 </span>                :            : static inline void</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">        124 : valent_mpris_init (void)</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">        125 : valent_mpris_init (void)</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            : {</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   static gsize guard = 0;</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
-<a name="80"><span class="lineNum">      80 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 99 times"> + </span><span class="branchCov" title="Branch 2 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        124 :   if (g_once_init_enter (&amp;guard))</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 25 times"> + </span><span class="branchCov" title="Branch 5 was taken 99 times"> + </span>]
+<a name="80"><span class="lineNum">      80 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 100 times"> + </span><span class="branchCov" title="Branch 2 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        125 :   if (g_once_init_enter (&amp;guard))</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 25 times"> + </span><span class="branchCov" title="Branch 5 was taken 100 times"> + </span>]
 <a name="81"><span class="lineNum">      81 </span>                :            :     {</a>
 <a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         25 :       mpris_info = g_dbus_node_info_new_for_xml (mpris_xml, NULL);</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">         25 :       g_dbus_interface_info_cache_build (mpris_info-&gt;interfaces[0]);</span></a>
@@ -164,7 +164,7 @@
 <a name="85"><span class="lineNum">      85 </span>                :            : </a>
 <a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">         25 :       g_once_init_leave (&amp;guard, 1);</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            :     }</a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">        124 : }</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">        125 : }</span></a>
 <a name="89"><span class="lineNum">      89 </span>                :            : </a>
 <a name="90"><span class="lineNum">      90 </span>                :            : /**</a>
 <a name="91"><span class="lineNum">      91 </span>                :            :  * valent_mpris_get_node_info:</a>
@@ -189,11 +189,11 @@
 <a name="110"><span class="lineNum">     110 </span>                :            :  * Returns: (transfer none): a #GDBusInterfaceInfo</a>
 <a name="111"><span class="lineNum">     111 </span>                :            :  */</a>
 <a name="112"><span class="lineNum">     112 </span>                :            : static inline GDBusInterfaceInfo *</a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         64 : valent_mpris_get_application_iface (void)</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         65 : valent_mpris_get_application_iface (void)</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            : {</a>
-<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">         64 :   valent_mpris_init ();</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">         65 :   valent_mpris_init ();</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            : </a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">         64 :   return mpris_info-&gt;interfaces[0];</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">         65 :   return mpris_info-&gt;interfaces[0];</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :            : }</a>
 <a name="119"><span class="lineNum">     119 </span>                :            : </a>
 <a name="120"><span class="lineNum">     120 </span>                :            : /**</a>
