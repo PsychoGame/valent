@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.ClipboardSource.changed</title>
+  <title>Valent.ClipboardAdapter::changed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Valent.ClipboardSource.changed"/>
-  <meta property="og:description" content="Reference for Valent.ClipboardSource.changed"/>
-  <meta name="twitter:title" content="Valent.ClipboardSource.changed"/>
-  <meta name="twitter:description" content="Reference for Valent.ClipboardSource.changed"/>
+  <meta property="og:title" content="Valent.ClipboardAdapter::changed"/>
+  <meta property="og:description" content="Reference for signal Valent.ClipboardAdapter::changed"/>
+  <meta name="twitter:title" content="Valent.ClipboardAdapter::changed"/>
+  <meta name="twitter:description" content="Reference for signal Valent.ClipboardAdapter::changed"/>
 
 
   
@@ -82,20 +82,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.ClipboardSource.html">ClipboardSource</a>
+    <a href="class.ClipboardAdapter.html">ClipboardAdapter</a>
   </div>
 </div>
 <div class="section">
-  <h5>Virtual methods</h5>
+  <h5>Signals</h5>
   <div class="links">
   
-    <a class="method current" href="vfunc.ClipboardSource.changed.html">changed</a>
-  
-    <a class="method" href="vfunc.ClipboardSource.get_text_async.html">get_text_async</a>
-  
-    <a class="method" href="vfunc.ClipboardSource.get_text_finish.html">get_text_finish</a>
-  
-    <a class="method" href="vfunc.ClipboardSource.set_text.html">set_text</a>
+    <a class="signal current" href="signal.ClipboardAdapter.changed.html">changed</a>
   
   </div>
 </div>
@@ -107,8 +101,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Virtual Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardSource.html">ClipboardSource</a><span class="sep"></span>changed</h1>
+    <h3>Signal</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardAdapter.html">ClipboardAdapter</a>::changed</h1>
   </header>
 
   <section>
@@ -116,15 +110,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <h4 id="declaration">
         Declaration
         <a href="#declaration" class="anchor"></a>
-        
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-source.h#L36">[src]</a>
-        
       </h4>
 
-      <div class="docblock c-decl">
+      <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
 <span class="n">changed</span> <span class="p">(</span>
-  <span class="n">ValentClipboardSource</span><span class="o">*</span> <span class="n">source</span>
+  <span class="n">ValentClipboardAdapter</span><span class="o">*</span> <span class="n">self</span><span class="p">,</span>
+  <span class="n">gpointer</span> <span class="n">user_data</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -132,18 +124,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description">
+      <h4 id="description" style="display:flex;">
         Description
         <a href="#description" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-adapter.c#L176">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        No description available.
+        <p><code>ValentClipboardAdapter::changed</code> is emitted when <code>adapter</code> changes.</p>
       </div>
 
       <div class="docblock">
         <table>
+          <tr><td>Default handler:</td><td> <p>The default handler is called after the handlers added via <code>g_signal_connect()</code>.</p></td></tr>
+          
+          
+          
+          
           
           
           

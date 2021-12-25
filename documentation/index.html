@@ -298,15 +298,17 @@ context of the protocol, <code>ValentChannelService</code> serves as the counter
           <tr class="section-item">
             <td><a title="Clipboard" class="symbol" href="class.Clipboard.html">Clipboard</a></td>
             
-            <td class="docblock-summary"><p><code>ValentClipboard</code> is an aggregator of desktop clipboard sources, with a simple
-<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p></td>
+            <td class="docblock-summary"><p><code>ValentClipboard</code> is an abstraction of the available <code>ValentClipboardAdapter</code>
+implementations, generally intended to be used by <code>ValentDevicePlugin</code>
+implementations.</p></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="ClipboardSource" class="symbol" href="class.ClipboardSource.html">ClipboardSource</a></td>
+            <td><a title="ClipboardAdapter" class="symbol" href="class.ClipboardAdapter.html">ClipboardAdapter</a></td>
             
-            <td class="docblock-summary"></td>
+            <td class="docblock-summary"><p><code>ValentClipboardAdapter</code> is a base class for plugins that provide read-write
+access to the desktop clipboard for use by remote&nbsp;devices.</p></td>
             
           </tr>
           

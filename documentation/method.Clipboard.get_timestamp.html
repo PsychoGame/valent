@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.ClipboardSource:plugin-info</title>
+  <title>Valent.Clipboard.get_timestamp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Valent.ClipboardSource:plugin-info"/>
-  <meta property="og:description" content="Reference for property Valent.ClipboardSource:plugin-info"/>
-  <meta name="twitter:title" content="Valent.ClipboardSource:plugin-info"/>
-  <meta name="twitter:description" content="Reference for property Valent.ClipboardSource:plugin-info"/>
+  <meta priority="og:title" content="Valent.Clipboard.get_timestamp"/>
+  <meta priority="og:description" content="Reference for Valent.Clipboard.get_timestamp"/>
+  <meta name="twitter:title" content="Valent.Clipboard.get_timestamp"/>
+  <meta name="twitter:description" content="Reference for Valent.Clipboard.get_timestamp"/>
 
 
   
@@ -82,14 +82,20 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.ClipboardSource.html">ClipboardSource</a>
+    <a href="class.Clipboard.html">Clipboard</a>
   </div>
 </div>
 <div class="section">
-  <h5>Properties</h5>
+  <h5>Methods</h5>
   <div class="links">
   
-    <a class="property current"href="property.ClipboardSource.plugin-info.html">plugin-info</a>
+    <a class="method" href="method.Clipboard.get_text_async.html">get_text_async</a>
+  
+    <a class="method" href="method.Clipboard.get_text_finish.html">get_text_finish</a>
+  
+    <a class="method current" href="method.Clipboard.get_timestamp.html">get_timestamp</a>
+  
+    <a class="method" href="method.Clipboard.set_text.html">set_text</a>
   
   </div>
 </div>
@@ -101,40 +107,46 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Property</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardSource.html">ClipboardSource</a>:plugin-info</h1>
+    <h3>Method</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.Clipboard.html">Clipboard</a><span class="sep"></span>get_timestamp</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration">
+      <h4 style="display:flex;" id="declaration">
         Declaration
-        <a href="#declaration" class="anchor"></a>
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard.h#L27">[src]</a>
+        
       </h4>
 
-      <div class="docblock">
-        <pre><code>property plugin-info: Peas.PluginInfo [ read, write, construct-only ]</code></pre>
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gint64</span>
+<span class="n">valent_clipboard_get_timestamp</span> <span class="p">(</span>
+  <span class="n">ValentClipboard</span><span class="o">*</span> <span class="n">clipboard</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
       </div>
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description">
+      <h4 style="display:flex;" id="description">
         Description
-        <a href="#description" class="anchor"></a>
+        <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-source.c#L149">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard.c#L288">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>The <code>PeasPluginInfo</code> describing this&nbsp;source.</p>
+        <p>Get the timestamp of the current clipboard content, in milliseconds since the
+<span class="caps">UNIX</span>&nbsp;epoch.</p>
       </div>
 
       <div class="docblock">
         <table>
-          <tr><td>Type:</td>
-            <td><code>PeasPluginInfo*</code></td>
-          </tr>
           
           
           
@@ -144,21 +156,35 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
     </div>
 
-    <div class="flags toggle-wrapper">
-      <h4 id="flags">
-        Flags
-        <a href="#flags" class="anchor"></a>
+    
+
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
       </h4>
 
       <div class="docblock">
-      <table>
-        <tr><td>Readable</td><td><b>yes</b></td></tr>
-        <tr><td>Writable</td><td><b>yes</b></td></tr>
-        <tr><td>Construct</td><td><b>no</b></td></tr>
-        <tr><td>Construct only</td><td><b>yes</b></td></tr>
-      </table>
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gint64</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>A <span class="caps">UNIX</span> epoch timestamp&nbsp;(ms)</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
       </div>
     </div>
+    
 
   </section>
 </section>

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.ClipboardSource.get_text_async</title>
+  <title>Valent.ClipboardAdapter.get_text_async</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Valent.ClipboardSource.get_text_async"/>
-  <meta priority="og:description" content="Reference for Valent.ClipboardSource.get_text_async"/>
-  <meta name="twitter:title" content="Valent.ClipboardSource.get_text_async"/>
-  <meta name="twitter:description" content="Reference for Valent.ClipboardSource.get_text_async"/>
+  <meta property="og:title" content="Valent.ClipboardAdapter.get_text_async"/>
+  <meta property="og:description" content="Reference for Valent.ClipboardAdapter.get_text_async"/>
+  <meta name="twitter:title" content="Valent.ClipboardAdapter.get_text_async"/>
+  <meta name="twitter:description" content="Reference for Valent.ClipboardAdapter.get_text_async"/>
 
 
   
@@ -82,20 +82,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.ClipboardSource.html">ClipboardSource</a>
+    <a href="class.ClipboardAdapter.html">ClipboardAdapter</a>
   </div>
 </div>
 <div class="section">
-  <h5>Methods</h5>
+  <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="method.ClipboardSource.emit_changed.html">emit_changed</a>
+    <a class="method" href="vfunc.ClipboardAdapter.changed.html">changed</a>
   
-    <a class="method current" href="method.ClipboardSource.get_text_async.html">get_text_async</a>
+    <a class="method current" href="vfunc.ClipboardAdapter.get_text_async.html">get_text_async</a>
   
-    <a class="method" href="method.ClipboardSource.get_text_finish.html">get_text_finish</a>
+    <a class="method" href="vfunc.ClipboardAdapter.get_text_finish.html">get_text_finish</a>
   
-    <a class="method" href="method.ClipboardSource.set_text.html">set_text</a>
+    <a class="method" href="vfunc.ClipboardAdapter.get_timestamp.html">get_timestamp</a>
+  
+    <a class="method" href="vfunc.ClipboardAdapter.set_text.html">set_text</a>
   
   </div>
 </div>
@@ -107,24 +109,24 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardSource.html">ClipboardSource</a><span class="sep"></span>get_text_async</h1>
+    <h3>Virtual Method</h3>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardAdapter.html">ClipboardAdapter</a><span class="sep"></span>get_text_async</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 style="display:flex;" id="declaration">
+      <h4 id="declaration">
         Declaration
-        <a class="anchor" href="#declaration"></a>
+        <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-source.h#L40">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-adapter.h#L23">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="n">valent_clipboard_source_get_text_async</span> <span class="p">(</span>
-  <span class="n">ValentClipboardSource</span><span class="o">*</span> <span class="n">source</span><span class="p">,</span>
+<span class="n">get_text_async</span> <span class="p">(</span>
+  <span class="n">ValentClipboardAdapter</span><span class="o">*</span> <span class="n">adapter</span><span class="p">,</span>
   <span class="n">GCancellable</span><span class="o">*</span> <span class="n">cancellable</span><span class="p">,</span>
   <span class="n">GAsyncReadyCallback</span> <span class="n">callback</span><span class="p">,</span>
   <span class="n">gpointer</span> <span class="n">user_data</span>
@@ -135,16 +137,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 style="display:flex;" id="description">
+      <h4 id="description">
         Description
-        <a class="anchor" href="#description"></a>
+        <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-source.c#L200">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-adapter.c#L210">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Get the text content of <code>source</code>.</p>
+        <p>Get the text content of <code>adapter</code>.</p>
       </div>
 
       <div class="docblock">

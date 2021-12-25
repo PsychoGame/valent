@@ -97,6 +97,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.Clipboard.get_text_finish.html">get_text_finish</a>
   
+    <a class="method" href="method.Clipboard.get_timestamp.html">get_timestamp</a>
+  
     <a class="method" href="method.Clipboard.set_text.html">set_text</a>
   
   </div>
@@ -159,11 +161,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p><code>ValentClipboard</code> is an aggregator of desktop clipboard sources, with a simple
-<span class="caps">API</span> generally intended to be used by <code>ValentDevicePlugin</code> implementations.</p>
-<p>Plugins can provide adapters for clipboard selections by subclassing the
-<code>ValentClipboardSource</code> base class. The priority of clipboard sources is
-determined by the <code>.plugin</code> file key <code>X-ClipboardSourcePriority</code>.</p>
+          <p><code>ValentClipboard</code> is an abstraction of the available <code>ValentClipboardAdapter</code>
+implementations, generally intended to be used by <code>ValentDevicePlugin</code>
+implementations.</p>
+<p>Plugins can provide implementations by subclassing the
+<code>ValentClipboardAdapter</code> base class. The priority of implementations is
+determined by the <code>.plugin</code> file key <code>X-ClipboardAdapterPriority</code>, with the
+lowest value taking&nbsp;precedence.</p>
         </div>
 
         <div class="docblock">
@@ -233,6 +237,15 @@ determined by the <code>.plugin</code> file key <code>X-ClipboardSourcePriority<
         </div>
       
         <div class="">
+          <h6><a href="method.Clipboard.get_timestamp.html">valent_clipboard_get_timestamp</a></h6>
+          <div class="docblock">
+            <p>Get the timestamp of the current clipboard content, in milliseconds since the
+<span class="caps">UNIX</span>&nbsp;epoch.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
           <h6><a href="method.Clipboard.set_text.html">valent_clipboard_set_text</a></h6>
           <div class="docblock">
             <p>Set the content of the clipboard to <code>text</code>.</p>
@@ -290,7 +303,7 @@ value for extensions is <code>0</code>; the lower the value the higher the&nbsp;
           <h6><a href="signal.Clipboard.changed.html">Valent.Clipboard::changed</a></h6>
           <div class="docblock">
             <p><code>ValentClipboard::changed</code> is emitted when the content of the default
-<code>ValentClipboardSource</code> changes.</p>
+<code>ValentClipboardAdapter</code> changes.</p>
           </div>
           
         </div>

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.ClipboardSource.set_text</title>
+  <title>Valent.ClipboardAdapter.get_timestamp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Valent.ClipboardSource.set_text"/>
-  <meta property="og:description" content="Reference for Valent.ClipboardSource.set_text"/>
-  <meta name="twitter:title" content="Valent.ClipboardSource.set_text"/>
-  <meta name="twitter:description" content="Reference for Valent.ClipboardSource.set_text"/>
+  <meta property="og:title" content="Valent.ClipboardAdapter.get_timestamp"/>
+  <meta property="og:description" content="Reference for Valent.ClipboardAdapter.get_timestamp"/>
+  <meta name="twitter:title" content="Valent.ClipboardAdapter.get_timestamp"/>
+  <meta name="twitter:description" content="Reference for Valent.ClipboardAdapter.get_timestamp"/>
 
 
   
@@ -82,20 +82,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.ClipboardSource.html">ClipboardSource</a>
+    <a href="class.ClipboardAdapter.html">ClipboardAdapter</a>
   </div>
 </div>
 <div class="section">
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.ClipboardSource.changed.html">changed</a>
+    <a class="method" href="vfunc.ClipboardAdapter.changed.html">changed</a>
   
-    <a class="method" href="vfunc.ClipboardSource.get_text_async.html">get_text_async</a>
+    <a class="method" href="vfunc.ClipboardAdapter.get_text_async.html">get_text_async</a>
   
-    <a class="method" href="vfunc.ClipboardSource.get_text_finish.html">get_text_finish</a>
+    <a class="method" href="vfunc.ClipboardAdapter.get_text_finish.html">get_text_finish</a>
   
-    <a class="method current" href="vfunc.ClipboardSource.set_text.html">set_text</a>
+    <a class="method current" href="vfunc.ClipboardAdapter.get_timestamp.html">get_timestamp</a>
+  
+    <a class="method" href="vfunc.ClipboardAdapter.set_text.html">set_text</a>
   
   </div>
 </div>
@@ -108,7 +110,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Virtual Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardSource.html">ClipboardSource</a><span class="sep"></span>set_text</h1>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardAdapter.html">ClipboardAdapter</a><span class="sep"></span>get_timestamp</h1>
   </header>
 
   <section>
@@ -117,15 +119,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-source.h#L32">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-adapter.h#L32">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="n">set_text</span> <span class="p">(</span>
-  <span class="n">ValentClipboardSource</span><span class="o">*</span> <span class="n">source</span><span class="p">,</span>
-  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">text</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gint64</span>
+<span class="n">get_timestamp</span> <span class="p">(</span>
+  <span class="n">ValentClipboardAdapter</span><span class="o">*</span> <span class="n">adapter</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -137,13 +138,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-source.c#L254">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-adapter.c#L285">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Set the text content of <code>source</code> to <code>text</code>. The default handler simply caches
-<code>text</code> and emits <code>GObject::notify</code>.</p>
+        <p>Get the timestamp of the current clipboard content, in milliseconds since the
+<span class="caps">UNIX</span>&nbsp;epoch.</p>
       </div>
 
       <div class="docblock">
@@ -158,39 +159,33 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     
-    <div class="parameters toggle-wrapper">
-      <h4 id="parameters">
-        Parameters
-        <a href="#parameters" class="anchor"></a>
+
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
       </h4>
 
       <div class="docblock">
-        <table class="arguments">
-          
+        <table class="returns">
           <tr class="arg-name">
-            <td><code>text</code></td>
-            <td><code>const char*</code></td>
+            <td>Returns:</td>
+            <td><code>gint64</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Text&nbsp;content.</p></td>
+            <td><p>A <span class="caps">UNIX</span> epoch timestamp&nbsp;(ms)</p></td>
           </tr>
           
-          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
           
           
           
-          
-          
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
           
           
         </table>
       </div>
     </div>
-    
-
     
 
   </section>

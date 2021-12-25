@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Valent.Clipboard.set_text</title>
+  <title>Valent.ClipboardAdapter.get_text_finish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -29,10 +29,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Valent.Clipboard.set_text"/>
-  <meta priority="og:description" content="Reference for Valent.Clipboard.set_text"/>
-  <meta name="twitter:title" content="Valent.Clipboard.set_text"/>
-  <meta name="twitter:description" content="Reference for Valent.Clipboard.set_text"/>
+  <meta priority="og:title" content="Valent.ClipboardAdapter.get_text_finish"/>
+  <meta priority="og:description" content="Reference for Valent.ClipboardAdapter.get_text_finish"/>
+  <meta name="twitter:title" content="Valent.ClipboardAdapter.get_text_finish"/>
+  <meta name="twitter:description" content="Reference for Valent.ClipboardAdapter.get_text_finish"/>
 
 
   
@@ -82,20 +82,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.Clipboard.html">Clipboard</a>
+    <a href="class.ClipboardAdapter.html">ClipboardAdapter</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.Clipboard.get_text_async.html">get_text_async</a>
+    <a class="method" href="method.ClipboardAdapter.emit_changed.html">emit_changed</a>
   
-    <a class="method" href="method.Clipboard.get_text_finish.html">get_text_finish</a>
+    <a class="method" href="method.ClipboardAdapter.get_text_async.html">get_text_async</a>
   
-    <a class="method" href="method.Clipboard.get_timestamp.html">get_timestamp</a>
+    <a class="method current" href="method.ClipboardAdapter.get_text_finish.html">get_text_finish</a>
   
-    <a class="method current" href="method.Clipboard.set_text.html">set_text</a>
+    <a class="method" href="method.ClipboardAdapter.get_timestamp.html">get_timestamp</a>
+  
+    <a class="method" href="method.ClipboardAdapter.set_text.html">set_text</a>
   
   </div>
 </div>
@@ -108,7 +110,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.Clipboard.html">Clipboard</a><span class="sep"></span>set_text</h1>
+    <h1><a href="index.html">Valent</a><span class="sep"></span><a href="class.ClipboardAdapter.html">ClipboardAdapter</a><span class="sep"></span>get_text_finish</h1>
   </header>
 
   <section>
@@ -117,15 +119,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard.h#L25">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-adapter.h#L43">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
-<span class="n">valent_clipboard_set_text</span> <span class="p">(</span>
-  <span class="n">ValentClipboard</span><span class="o">*</span> <span class="n">clipboard</span><span class="p">,</span>
-  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">text</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">char</span><span class="o">*</span>
+<span class="n">valent_clipboard_adapter_get_text_finish</span> <span class="p">(</span>
+  <span class="n">ValentClipboardAdapter</span><span class="o">*</span> <span class="n">adapter</span><span class="p">,</span>
+  <span class="n">GAsyncResult</span><span class="o">*</span> <span class="n">result</span><span class="p">,</span>
+  <span class="n">GError</span><span class="o">**</span> <span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -137,12 +140,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard.c#L262">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/andyholmes/valent/blob/main/src/libvalent/clipboard/valent-clipboard-adapter.c#L236">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Set the content of the clipboard to <code>text</code>.</p>
+        <p>Get the text content of <code>adapter</code>.</p>
       </div>
 
       <div class="docblock">
@@ -167,29 +170,64 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>text</code></td>
-            <td><code>const char*</code></td>
+            <td><code>result</code></td>
+            <td><code>GAsyncResult*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Text&nbsp;content.</p></td>
+            <td><p>A <code>GAsyncResult</code>.</p></td>
           </tr>
           
-          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
+          
           
           
           
           
           
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
           
+          
+          
+          <tr class="arg-name">
+            <td><code>error</code></td>
+            <td><code>GError **</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
+          </tr>
           
         </table>
       </div>
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>char*</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The text&nbsp;content.</p></td>
+          </tr>
+          
+          
+          
+          <tr><td>&nbsp;</td><td title="transfer: full">The caller of the method takes ownership of the data, and is responsible for freeing it.</td></tr>
+          <tr><td>&nbsp;</td><td>The return value can be <code>NULL</code>.</td></tr>
+          <tr><td>&nbsp;</td><td>The string is a NUL terminated UTF-8 string.</td></tr>
+        </table>
+      </div>
+    </div>
     
 
   </section>
