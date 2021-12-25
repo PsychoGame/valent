@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">114</td>
-            <td class="headerCovTableEntry">332</td>
-            <td class="headerCovTableEntryLo">34.3 %</td>
+            <td class="headerCovTableEntry">333</td>
+            <td class="headerCovTableEntryLo">34.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-25 03:54:19</td>
+            <td class="headerValue">2021-12-25 06:33:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
@@ -166,8 +166,8 @@
 <a name="87"><span class="lineNum">      87 </span>                :            :  */</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : static gboolean</a>
 <a name="89"><span class="lineNum">      89 </span>                :<span class="lineNoCov">          0 : on_key_pressed (GtkEventControllerKey *controller,</span></a>
-<a name="90"><span class="lineNum">      90 </span>                :            :                 guint                  keyval,</a>
-<a name="91"><span class="lineNum">      91 </span>                :            :                 guint                  keycode,</a>
+<a name="90"><span class="lineNum">      90 </span>                :            :                 unsigned int           keyval,</a>
+<a name="91"><span class="lineNum">      91 </span>                :            :                 unsigned int           keycode,</a>
 <a name="92"><span class="lineNum">      92 </span>                :            :                 GdkModifierType        state,</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :                 ValentMousepadDialog  *self)</a>
 <a name="94"><span class="lineNum">      94 </span>                :            : {</a>
@@ -252,7 +252,7 @@
 <a name="173"><span class="lineNum">     173 </span>                :            : static void</a>
 <a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">         40 : move_cursor (ValentMousepadDialog *dialog,</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :            :              GtkMovementStep       step,</a>
-<a name="176"><span class="lineNum">     176 </span>                :            :              gint                  count)</a>
+<a name="176"><span class="lineNum">     176 </span>                :            :              int                   count)</a>
 <a name="177"><span class="lineNum">     177 </span>                :            : {</a>
 <a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">         40 :   g_signal_emit_by_name (dialog-&gt;editor, &quot;move-cursor&quot;, step, count, FALSE);</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">         40 : }</span></a>
@@ -434,7 +434,7 @@
 <a name="354"><span class="lineNum">     354 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_x = x;</span></a>
 <a name="355"><span class="lineNum">     355 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_y = y;</span></a>
 <a name="356"><span class="lineNum">     356 </span>                :            : </a>
-<a name="357"><span class="lineNum">     357 </span>                :<span class="lineNoCov">          0 :   valent_mousepad_dialog_pointer_axis (self, 0.0, round (dy));</span></a>
+<a name="357"><span class="lineNum">     357 </span>                :<span class="lineNoCov">          0 :   valent_mousepad_dialog_pointer_axis (self, round (dx), round (dy));</span></a>
 <a name="358"><span class="lineNum">     358 </span>                :            : }</a>
 <a name="359"><span class="lineNum">     359 </span>                :            : </a>
 <a name="360"><span class="lineNum">     360 </span>                :            : static void</a>
@@ -469,430 +469,433 @@
 <a name="389"><span class="lineNum">     389 </span>                :            :   JsonBuilder *builder;</a>
 <a name="390"><span class="lineNum">     390 </span>                :<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
 <a name="391"><span class="lineNum">     391 </span>                :            : </a>
-<a name="392"><span class="lineNum">     392 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
-<a name="393"><span class="lineNum">     393 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dx&quot;);</span></a>
-<a name="394"><span class="lineNum">     394 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dx);</span></a>
-<a name="395"><span class="lineNum">     395 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dy&quot;);</span></a>
-<a name="396"><span class="lineNum">     396 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dy);</span></a>
-<a name="397"><span class="lineNum">     397 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;scroll&quot;);</span></a>
-<a name="398"><span class="lineNum">     398 </span>                :<span class="lineNoCov">          0 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="399"><span class="lineNum">     399 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
-<a name="400"><span class="lineNum">     400 </span>                :            : </a>
-<a name="401"><span class="lineNum">     401 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="402"><span class="lineNum">     402 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="392"><span class="lineNum">     392 </span>                :            :   /* NOTE: We only support the Y-axis */</a>
+<a name="393"><span class="lineNum">     393 </span>                :<span class="lineNoCov">          0 :   dx = 0.0;</span></a>
+<a name="394"><span class="lineNum">     394 </span>                :            : </a>
+<a name="395"><span class="lineNum">     395 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
+<a name="396"><span class="lineNum">     396 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dx&quot;);</span></a>
+<a name="397"><span class="lineNum">     397 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dx);</span></a>
+<a name="398"><span class="lineNum">     398 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dy&quot;);</span></a>
+<a name="399"><span class="lineNum">     399 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dy);</span></a>
+<a name="400"><span class="lineNum">     400 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;scroll&quot;);</span></a>
+<a name="401"><span class="lineNum">     401 </span>                :<span class="lineNoCov">          0 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="402"><span class="lineNum">     402 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
 <a name="403"><span class="lineNum">     403 </span>                :            : </a>
-<a name="404"><span class="lineNum">     404 </span>                :            : static void</a>
-<a name="405"><span class="lineNum">     405 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_button (ValentMousepadDialog *self,</span></a>
-<a name="406"><span class="lineNum">     406 </span>                :            :                                        unsigned int          button,</a>
-<a name="407"><span class="lineNum">     407 </span>                :            :                                        unsigned int          n_press)</a>
-<a name="408"><span class="lineNum">     408 </span>                :            : {</a>
-<a name="409"><span class="lineNum">     409 </span>                :            :   JsonBuilder *builder;</a>
-<a name="410"><span class="lineNum">     410 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
-<a name="411"><span class="lineNum">     411 </span>                :            : </a>
-<a name="412"><span class="lineNum">     412 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (n_press == 1)</span></a>
-<a name="413"><span class="lineNum">     413 </span>                :            :     {</a>
-<a name="414"><span class="lineNum">     414 </span>                :<span class="lineNoCov">          0 :       builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
-<a name="415"><span class="lineNum">     415 </span>                :            : </a>
-<a name="416"><span class="lineNum">     416 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       switch (button)</span></a>
-<a name="417"><span class="lineNum">     417 </span>                :            :         {</a>
-<a name="418"><span class="lineNum">     418 </span>                :<span class="lineNoCov">          0 :         case GDK_BUTTON_PRIMARY:</span></a>
-<a name="419"><span class="lineNum">     419 </span>                :<span class="lineNoCov">          0 :           json_builder_set_member_name (builder, &quot;singleclick&quot;);</span></a>
-<a name="420"><span class="lineNum">     420 </span>                :<span class="lineNoCov">          0 :           json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="421"><span class="lineNum">     421 </span>                :<span class="lineNoCov">          0 :           break;</span></a>
-<a name="422"><span class="lineNum">     422 </span>                :            : </a>
-<a name="423"><span class="lineNum">     423 </span>                :<span class="lineNoCov">          0 :         case GDK_BUTTON_MIDDLE:</span></a>
-<a name="424"><span class="lineNum">     424 </span>                :<span class="lineNoCov">          0 :           json_builder_set_member_name (builder, &quot;middleclick&quot;);</span></a>
-<a name="425"><span class="lineNum">     425 </span>                :<span class="lineNoCov">          0 :           json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="426"><span class="lineNum">     426 </span>                :<span class="lineNoCov">          0 :           break;</span></a>
-<a name="427"><span class="lineNum">     427 </span>                :            : </a>
-<a name="428"><span class="lineNum">     428 </span>                :<span class="lineNoCov">          0 :         case GDK_BUTTON_SECONDARY:</span></a>
-<a name="429"><span class="lineNum">     429 </span>                :<span class="lineNoCov">          0 :           json_builder_set_member_name (builder, &quot;rightclick&quot;);</span></a>
-<a name="430"><span class="lineNum">     430 </span>                :<span class="lineNoCov">          0 :           json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="431"><span class="lineNum">     431 </span>                :<span class="lineNoCov">          0 :           break;</span></a>
-<a name="432"><span class="lineNum">     432 </span>                :            : </a>
-<a name="433"><span class="lineNum">     433 </span>                :<span class="lineNoCov">          0 :         default:</span></a>
-<a name="434"><span class="lineNum">     434 </span>                :<span class="lineNoCov">          0 :           g_object_unref (builder);</span></a>
-<a name="435"><span class="lineNum">     435 </span>                :<span class="lineNoCov">          0 :           g_return_if_reached ();</span></a>
-<a name="436"><span class="lineNum">     436 </span>                :            :         }</a>
-<a name="437"><span class="lineNum">     437 </span>                :            : </a>
-<a name="438"><span class="lineNum">     438 </span>                :<span class="lineNoCov">          0 :       packet = valent_packet_finish (builder);</span></a>
-<a name="439"><span class="lineNum">     439 </span>                :            :     }</a>
-<a name="440"><span class="lineNum">     440 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   else if (button == GDK_BUTTON_PRIMARY &amp;&amp; n_press == 2)</span></a>
-<a name="441"><span class="lineNum">     441 </span>                :            :     {</a>
-<a name="442"><span class="lineNum">     442 </span>                :<span class="lineNoCov">          0 :       builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
-<a name="443"><span class="lineNum">     443 </span>                :<span class="lineNoCov">          0 :       json_builder_set_member_name (builder, &quot;doubleclick&quot;);</span></a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineNoCov">          0 :       json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="445"><span class="lineNum">     445 </span>                :<span class="lineNoCov">          0 :       packet = valent_packet_finish (builder);</span></a>
-<a name="446"><span class="lineNum">     446 </span>                :            :     }</a>
-<a name="447"><span class="lineNum">     447 </span>                :            : </a>
-<a name="448"><span class="lineNum">     448 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (packet != NULL)</span></a>
-<a name="449"><span class="lineNum">     449 </span>                :<span class="lineNoCov">          0 :     valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="450"><span class="lineNum">     450 </span>                :            : }</a>
-<a name="451"><span class="lineNum">     451 </span>                :            : </a>
-<a name="452"><span class="lineNum">     452 </span>                :            : static void</a>
-<a name="453"><span class="lineNum">     453 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_motion (ValentMousepadDialog *self,</span></a>
-<a name="454"><span class="lineNum">     454 </span>                :            :                                        double                dx,</a>
-<a name="455"><span class="lineNum">     455 </span>                :            :                                        double                dy)</a>
-<a name="456"><span class="lineNum">     456 </span>                :            : {</a>
-<a name="457"><span class="lineNum">     457 </span>                :            :   JsonBuilder *builder;</a>
-<a name="458"><span class="lineNum">     458 </span>                :<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
-<a name="459"><span class="lineNum">     459 </span>                :            : </a>
-<a name="460"><span class="lineNum">     460 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
-<a name="461"><span class="lineNum">     461 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dx&quot;);</span></a>
-<a name="462"><span class="lineNum">     462 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dx);</span></a>
-<a name="463"><span class="lineNum">     463 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dy&quot;);</span></a>
-<a name="464"><span class="lineNum">     464 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dy);</span></a>
-<a name="465"><span class="lineNum">     465 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
-<a name="466"><span class="lineNum">     466 </span>                :            : </a>
-<a name="467"><span class="lineNum">     467 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="468"><span class="lineNum">     468 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="404"><span class="lineNum">     404 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="405"><span class="lineNum">     405 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="406"><span class="lineNum">     406 </span>                :            : </a>
+<a name="407"><span class="lineNum">     407 </span>                :            : static void</a>
+<a name="408"><span class="lineNum">     408 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_button (ValentMousepadDialog *self,</span></a>
+<a name="409"><span class="lineNum">     409 </span>                :            :                                        unsigned int          button,</a>
+<a name="410"><span class="lineNum">     410 </span>                :            :                                        unsigned int          n_press)</a>
+<a name="411"><span class="lineNum">     411 </span>                :            : {</a>
+<a name="412"><span class="lineNum">     412 </span>                :            :   JsonBuilder *builder;</a>
+<a name="413"><span class="lineNum">     413 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="414"><span class="lineNum">     414 </span>                :            : </a>
+<a name="415"><span class="lineNum">     415 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (n_press == 1)</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :            :     {</a>
+<a name="417"><span class="lineNum">     417 </span>                :<span class="lineNoCov">          0 :       builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
+<a name="418"><span class="lineNum">     418 </span>                :            : </a>
+<a name="419"><span class="lineNum">     419 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       switch (button)</span></a>
+<a name="420"><span class="lineNum">     420 </span>                :            :         {</a>
+<a name="421"><span class="lineNum">     421 </span>                :<span class="lineNoCov">          0 :         case GDK_BUTTON_PRIMARY:</span></a>
+<a name="422"><span class="lineNum">     422 </span>                :<span class="lineNoCov">          0 :           json_builder_set_member_name (builder, &quot;singleclick&quot;);</span></a>
+<a name="423"><span class="lineNum">     423 </span>                :<span class="lineNoCov">          0 :           json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="424"><span class="lineNum">     424 </span>                :<span class="lineNoCov">          0 :           break;</span></a>
+<a name="425"><span class="lineNum">     425 </span>                :            : </a>
+<a name="426"><span class="lineNum">     426 </span>                :<span class="lineNoCov">          0 :         case GDK_BUTTON_MIDDLE:</span></a>
+<a name="427"><span class="lineNum">     427 </span>                :<span class="lineNoCov">          0 :           json_builder_set_member_name (builder, &quot;middleclick&quot;);</span></a>
+<a name="428"><span class="lineNum">     428 </span>                :<span class="lineNoCov">          0 :           json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="429"><span class="lineNum">     429 </span>                :<span class="lineNoCov">          0 :           break;</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :            : </a>
+<a name="431"><span class="lineNum">     431 </span>                :<span class="lineNoCov">          0 :         case GDK_BUTTON_SECONDARY:</span></a>
+<a name="432"><span class="lineNum">     432 </span>                :<span class="lineNoCov">          0 :           json_builder_set_member_name (builder, &quot;rightclick&quot;);</span></a>
+<a name="433"><span class="lineNum">     433 </span>                :<span class="lineNoCov">          0 :           json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="434"><span class="lineNum">     434 </span>                :<span class="lineNoCov">          0 :           break;</span></a>
+<a name="435"><span class="lineNum">     435 </span>                :            : </a>
+<a name="436"><span class="lineNum">     436 </span>                :<span class="lineNoCov">          0 :         default:</span></a>
+<a name="437"><span class="lineNum">     437 </span>                :<span class="lineNoCov">          0 :           g_object_unref (builder);</span></a>
+<a name="438"><span class="lineNum">     438 </span>                :<span class="lineNoCov">          0 :           g_return_if_reached ();</span></a>
+<a name="439"><span class="lineNum">     439 </span>                :            :         }</a>
+<a name="440"><span class="lineNum">     440 </span>                :            : </a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineNoCov">          0 :       packet = valent_packet_finish (builder);</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :            :     }</a>
+<a name="443"><span class="lineNum">     443 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   else if (button == GDK_BUTTON_PRIMARY &amp;&amp; n_press == 2)</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :            :     {</a>
+<a name="445"><span class="lineNum">     445 </span>                :<span class="lineNoCov">          0 :       builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
+<a name="446"><span class="lineNum">     446 </span>                :<span class="lineNoCov">          0 :       json_builder_set_member_name (builder, &quot;doubleclick&quot;);</span></a>
+<a name="447"><span class="lineNum">     447 </span>                :<span class="lineNoCov">          0 :       json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="448"><span class="lineNum">     448 </span>                :<span class="lineNoCov">          0 :       packet = valent_packet_finish (builder);</span></a>
+<a name="449"><span class="lineNum">     449 </span>                :            :     }</a>
+<a name="450"><span class="lineNum">     450 </span>                :            : </a>
+<a name="451"><span class="lineNum">     451 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (packet != NULL)</span></a>
+<a name="452"><span class="lineNum">     452 </span>                :<span class="lineNoCov">          0 :     valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="453"><span class="lineNum">     453 </span>                :            : }</a>
+<a name="454"><span class="lineNum">     454 </span>                :            : </a>
+<a name="455"><span class="lineNum">     455 </span>                :            : static void</a>
+<a name="456"><span class="lineNum">     456 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_motion (ValentMousepadDialog *self,</span></a>
+<a name="457"><span class="lineNum">     457 </span>                :            :                                        double                dx,</a>
+<a name="458"><span class="lineNum">     458 </span>                :            :                                        double                dy)</a>
+<a name="459"><span class="lineNum">     459 </span>                :            : {</a>
+<a name="460"><span class="lineNum">     460 </span>                :            :   JsonBuilder *builder;</a>
+<a name="461"><span class="lineNum">     461 </span>                :<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="462"><span class="lineNum">     462 </span>                :            : </a>
+<a name="463"><span class="lineNum">     463 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
+<a name="464"><span class="lineNum">     464 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dx&quot;);</span></a>
+<a name="465"><span class="lineNum">     465 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dx);</span></a>
+<a name="466"><span class="lineNum">     466 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;dy&quot;);</span></a>
+<a name="467"><span class="lineNum">     467 </span>                :<span class="lineNoCov">          0 :   json_builder_add_double_value (builder, dy);</span></a>
+<a name="468"><span class="lineNum">     468 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
 <a name="469"><span class="lineNum">     469 </span>                :            : </a>
-<a name="470"><span class="lineNum">     470 </span>                :            : static void</a>
-<a name="471"><span class="lineNum">     471 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_press (ValentMousepadDialog *self)</span></a>
-<a name="472"><span class="lineNum">     472 </span>                :            : {</a>
-<a name="473"><span class="lineNum">     473 </span>                :            :   JsonBuilder *builder;</a>
-<a name="474"><span class="lineNum">     474 </span>                :<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
-<a name="475"><span class="lineNum">     475 </span>                :            : </a>
-<a name="476"><span class="lineNum">     476 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
-<a name="477"><span class="lineNum">     477 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;singlehold&quot;);</span></a>
-<a name="478"><span class="lineNum">     478 </span>                :<span class="lineNoCov">          0 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="479"><span class="lineNum">     479 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
-<a name="480"><span class="lineNum">     480 </span>                :            : </a>
-<a name="481"><span class="lineNum">     481 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="482"><span class="lineNum">     482 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="470"><span class="lineNum">     470 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="471"><span class="lineNum">     471 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="472"><span class="lineNum">     472 </span>                :            : </a>
+<a name="473"><span class="lineNum">     473 </span>                :            : static void</a>
+<a name="474"><span class="lineNum">     474 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_press (ValentMousepadDialog *self)</span></a>
+<a name="475"><span class="lineNum">     475 </span>                :            : {</a>
+<a name="476"><span class="lineNum">     476 </span>                :            :   JsonBuilder *builder;</a>
+<a name="477"><span class="lineNum">     477 </span>                :<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="478"><span class="lineNum">     478 </span>                :            : </a>
+<a name="479"><span class="lineNum">     479 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
+<a name="480"><span class="lineNum">     480 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;singlehold&quot;);</span></a>
+<a name="481"><span class="lineNum">     481 </span>                :<span class="lineNoCov">          0 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="482"><span class="lineNum">     482 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
 <a name="483"><span class="lineNum">     483 </span>                :            : </a>
-<a name="484"><span class="lineNum">     484 </span>                :            : static void</a>
-<a name="485"><span class="lineNum">     485 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_release (ValentMousepadDialog *self)</span></a>
-<a name="486"><span class="lineNum">     486 </span>                :            : {</a>
-<a name="487"><span class="lineNum">     487 </span>                :            :   JsonBuilder *builder;</a>
-<a name="488"><span class="lineNum">     488 </span>                :<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
-<a name="489"><span class="lineNum">     489 </span>                :            : </a>
-<a name="490"><span class="lineNum">     490 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
-<a name="491"><span class="lineNum">     491 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;singlerelease&quot;);</span></a>
-<a name="492"><span class="lineNum">     492 </span>                :<span class="lineNoCov">          0 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
-<a name="493"><span class="lineNum">     493 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
-<a name="494"><span class="lineNum">     494 </span>                :            : </a>
-<a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
-<a name="496"><span class="lineNum">     496 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="484"><span class="lineNum">     484 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="485"><span class="lineNum">     485 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="486"><span class="lineNum">     486 </span>                :            : </a>
+<a name="487"><span class="lineNum">     487 </span>                :            : static void</a>
+<a name="488"><span class="lineNum">     488 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_pointer_release (ValentMousepadDialog *self)</span></a>
+<a name="489"><span class="lineNum">     489 </span>                :            : {</a>
+<a name="490"><span class="lineNum">     490 </span>                :            :   JsonBuilder *builder;</a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineNoCov">          0 :   g_autoptr (JsonNode) packet = NULL;</span></a>
+<a name="492"><span class="lineNum">     492 </span>                :            : </a>
+<a name="493"><span class="lineNum">     493 </span>                :<span class="lineNoCov">          0 :   builder = valent_packet_start (&quot;kdeconnect.mousepad.request&quot;);</span></a>
+<a name="494"><span class="lineNum">     494 </span>                :<span class="lineNoCov">          0 :   json_builder_set_member_name (builder, &quot;singlerelease&quot;);</span></a>
+<a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 :   json_builder_add_boolean_value (builder, TRUE);</span></a>
+<a name="496"><span class="lineNum">     496 </span>                :<span class="lineNoCov">          0 :   packet = valent_packet_finish (builder);</span></a>
 <a name="497"><span class="lineNum">     497 </span>                :            : </a>
-<a name="498"><span class="lineNum">     498 </span>                :            : static void</a>
-<a name="499"><span class="lineNum">     499 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_reset (ValentMousepadDialog *self)</span></a>
-<a name="500"><span class="lineNum">     500 </span>                :            : {</a>
-<a name="501"><span class="lineNum">     501 </span>                :<span class="lineNoCov">          0 :   self-&gt;claimed = FALSE;</span></a>
-<a name="502"><span class="lineNum">     502 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_t = 0;</span></a>
-<a name="503"><span class="lineNum">     503 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_v = 0.0;</span></a>
-<a name="504"><span class="lineNum">     504 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_x = 0.0;</span></a>
-<a name="505"><span class="lineNum">     505 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_y = 0.0;</span></a>
-<a name="506"><span class="lineNum">     506 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_handle_id (&amp;self-&gt;longpress_id, g_source_remove);</span></a>
-<a name="507"><span class="lineNum">     507 </span>                :<span class="lineNoCov">          0 : }</span></a>
-<a name="508"><span class="lineNum">     508 </span>                :            : </a>
-<a name="509"><span class="lineNum">     509 </span>                :            : /*</a>
-<a name="510"><span class="lineNum">     510 </span>                :            :  * GObject</a>
-<a name="511"><span class="lineNum">     511 </span>                :            :  */</a>
-<a name="512"><span class="lineNum">     512 </span>                :            : static void</a>
-<a name="513"><span class="lineNum">     513 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_dispose (GObject *object)</span></a>
-<a name="514"><span class="lineNum">     514 </span>                :            : {</a>
-<a name="515"><span class="lineNum">     515 </span>                :<span class="lineNoCov">          0 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
-<a name="516"><span class="lineNum">     516 </span>                :            : </a>
-<a name="517"><span class="lineNum">     517 </span>                :<span class="lineNoCov">          0 :   valent_mousepad_dialog_reset (self);</span></a>
-<a name="518"><span class="lineNum">     518 </span>                :            : </a>
-<a name="519"><span class="lineNum">     519 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_mousepad_dialog_parent_class)-&gt;dispose (object);</span></a>
-<a name="520"><span class="lineNum">     520 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="498"><span class="lineNum">     498 </span>                :<span class="lineNoCov">          0 :   valent_device_queue_packet (self-&gt;device, packet);</span></a>
+<a name="499"><span class="lineNum">     499 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="500"><span class="lineNum">     500 </span>                :            : </a>
+<a name="501"><span class="lineNum">     501 </span>                :            : static void</a>
+<a name="502"><span class="lineNum">     502 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_reset (ValentMousepadDialog *self)</span></a>
+<a name="503"><span class="lineNum">     503 </span>                :            : {</a>
+<a name="504"><span class="lineNum">     504 </span>                :<span class="lineNoCov">          0 :   self-&gt;claimed = FALSE;</span></a>
+<a name="505"><span class="lineNum">     505 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_t = 0;</span></a>
+<a name="506"><span class="lineNum">     506 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_v = 0.0;</span></a>
+<a name="507"><span class="lineNum">     507 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_x = 0.0;</span></a>
+<a name="508"><span class="lineNum">     508 </span>                :<span class="lineNoCov">          0 :   self-&gt;last_y = 0.0;</span></a>
+<a name="509"><span class="lineNum">     509 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_handle_id (&amp;self-&gt;longpress_id, g_source_remove);</span></a>
+<a name="510"><span class="lineNum">     510 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="511"><span class="lineNum">     511 </span>                :            : </a>
+<a name="512"><span class="lineNum">     512 </span>                :            : /*</a>
+<a name="513"><span class="lineNum">     513 </span>                :            :  * GObject</a>
+<a name="514"><span class="lineNum">     514 </span>                :            :  */</a>
+<a name="515"><span class="lineNum">     515 </span>                :            : static void</a>
+<a name="516"><span class="lineNum">     516 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_dispose (GObject *object)</span></a>
+<a name="517"><span class="lineNum">     517 </span>                :            : {</a>
+<a name="518"><span class="lineNum">     518 </span>                :<span class="lineNoCov">          0 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
+<a name="519"><span class="lineNum">     519 </span>                :            : </a>
+<a name="520"><span class="lineNum">     520 </span>                :<span class="lineNoCov">          0 :   valent_mousepad_dialog_reset (self);</span></a>
 <a name="521"><span class="lineNum">     521 </span>                :            : </a>
-<a name="522"><span class="lineNum">     522 </span>                :            : static void</a>
-<a name="523"><span class="lineNum">     523 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_finalize (GObject *object)</span></a>
-<a name="524"><span class="lineNum">     524 </span>                :            : {</a>
-<a name="525"><span class="lineNum">     525 </span>                :<span class="lineNoCov">          0 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
-<a name="526"><span class="lineNum">     526 </span>                :            : </a>
-<a name="527"><span class="lineNum">     527 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;device);</span></a>
-<a name="528"><span class="lineNum">     528 </span>                :            : </a>
-<a name="529"><span class="lineNum">     529 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_mousepad_dialog_parent_class)-&gt;finalize (object);</span></a>
-<a name="530"><span class="lineNum">     530 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="522"><span class="lineNum">     522 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_mousepad_dialog_parent_class)-&gt;dispose (object);</span></a>
+<a name="523"><span class="lineNum">     523 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="524"><span class="lineNum">     524 </span>                :            : </a>
+<a name="525"><span class="lineNum">     525 </span>                :            : static void</a>
+<a name="526"><span class="lineNum">     526 </span>                :<span class="lineNoCov">          0 : valent_mousepad_dialog_finalize (GObject *object)</span></a>
+<a name="527"><span class="lineNum">     527 </span>                :            : {</a>
+<a name="528"><span class="lineNum">     528 </span>                :<span class="lineNoCov">          0 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
+<a name="529"><span class="lineNum">     529 </span>                :            : </a>
+<a name="530"><span class="lineNum">     530 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   g_clear_object (&amp;self-&gt;device);</span></a>
 <a name="531"><span class="lineNum">     531 </span>                :            : </a>
-<a name="532"><span class="lineNum">     532 </span>                :            : static void</a>
-<a name="533"><span class="lineNum">     533 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_get_property (GObject    *object,</span></a>
-<a name="534"><span class="lineNum">     534 </span>                :            :                                      guint       prop_id,</a>
-<a name="535"><span class="lineNum">     535 </span>                :            :                                      GValue     *value,</a>
-<a name="536"><span class="lineNum">     536 </span>                :            :                                      GParamSpec *pspec)</a>
-<a name="537"><span class="lineNum">     537 </span>                :            : {</a>
-<a name="538"><span class="lineNum">     538 </span>                :<span class="lineCov">          5 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
-<a name="539"><span class="lineNum">     539 </span>                :            : </a>
-<a name="540"><span class="lineNum">     540 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   switch (prop_id)</span></a>
-<a name="541"><span class="lineNum">     541 </span>                :            :     {</a>
-<a name="542"><span class="lineNum">     542 </span>                :<span class="lineCov">          5 :     case PROP_DEVICE:</span></a>
-<a name="543"><span class="lineNum">     543 </span>                :<span class="lineCov">          5 :       g_value_set_object (value, self-&gt;device);</span></a>
-<a name="544"><span class="lineNum">     544 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="545"><span class="lineNum">     545 </span>                :            : </a>
-<a name="546"><span class="lineNum">     546 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="547"><span class="lineNum">     547 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="548"><span class="lineNum">     548 </span>                :            :     }</a>
-<a name="549"><span class="lineNum">     549 </span>                :<span class="lineCov">          5 : }</span></a>
-<a name="550"><span class="lineNum">     550 </span>                :            : </a>
-<a name="551"><span class="lineNum">     551 </span>                :            : static void</a>
-<a name="552"><span class="lineNum">     552 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_set_property (GObject      *object,</span></a>
-<a name="553"><span class="lineNum">     553 </span>                :            :                                      guint         prop_id,</a>
-<a name="554"><span class="lineNum">     554 </span>                :            :                                      const GValue *value,</a>
-<a name="555"><span class="lineNum">     555 </span>                :            :                                      GParamSpec   *pspec)</a>
-<a name="556"><span class="lineNum">     556 </span>                :            : {</a>
-<a name="557"><span class="lineNum">     557 </span>                :<span class="lineCov">          5 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
-<a name="558"><span class="lineNum">     558 </span>                :            : </a>
-<a name="559"><span class="lineNum">     559 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   switch (prop_id)</span></a>
-<a name="560"><span class="lineNum">     560 </span>                :            :     {</a>
-<a name="561"><span class="lineNum">     561 </span>                :<span class="lineCov">          5 :     case PROP_DEVICE:</span></a>
-<a name="562"><span class="lineNum">     562 </span>                :<span class="lineCov">          5 :       self-&gt;device = g_value_dup_object (value);</span></a>
-<a name="563"><span class="lineNum">     563 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="564"><span class="lineNum">     564 </span>                :            : </a>
-<a name="565"><span class="lineNum">     565 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
-<a name="566"><span class="lineNum">     566 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
-<a name="567"><span class="lineNum">     567 </span>                :            :     }</a>
-<a name="568"><span class="lineNum">     568 </span>                :<span class="lineCov">          5 : }</span></a>
-<a name="569"><span class="lineNum">     569 </span>                :            : </a>
-<a name="570"><span class="lineNum">     570 </span>                :            : static void</a>
-<a name="571"><span class="lineNum">     571 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_class_init (ValentMousepadDialogClass *klass)</span></a>
-<a name="572"><span class="lineNum">     572 </span>                :            : {</a>
-<a name="573"><span class="lineNum">     573 </span>                :<span class="lineCov">          5 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
-<a name="574"><span class="lineNum">     574 </span>                :<span class="lineCov">          5 :   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);</span></a>
-<a name="575"><span class="lineNum">     575 </span>                :            : </a>
-<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">          5 :   object_class-&gt;dispose = valent_mousepad_dialog_dispose;</span></a>
-<a name="577"><span class="lineNum">     577 </span>                :<span class="lineCov">          5 :   object_class-&gt;finalize = valent_mousepad_dialog_finalize;</span></a>
-<a name="578"><span class="lineNum">     578 </span>                :<span class="lineCov">          5 :   object_class-&gt;get_property = valent_mousepad_dialog_get_property;</span></a>
-<a name="579"><span class="lineNum">     579 </span>                :<span class="lineCov">          5 :   object_class-&gt;set_property = valent_mousepad_dialog_set_property;</span></a>
-<a name="580"><span class="lineNum">     580 </span>                :            : </a>
-<a name="581"><span class="lineNum">     581 </span>                :<span class="lineCov">          5 :   gtk_widget_class_set_template_from_resource (widget_class, &quot;/plugins/mousepad/valent-mousepad-dialog.ui&quot;);</span></a>
-<a name="582"><span class="lineNum">     582 </span>                :<span class="lineCov">          5 :   gtk_widget_class_bind_template_child (widget_class, ValentMousepadDialog, editor);</span></a>
-<a name="583"><span class="lineNum">     583 </span>                :<span class="lineCov">          5 :   gtk_widget_class_bind_template_child (widget_class, ValentMousepadDialog, touchpad);</span></a>
-<a name="584"><span class="lineNum">     584 </span>                :            : </a>
-<a name="585"><span class="lineNum">     585 </span>                :<span class="lineCov">          5 :   properties [PROP_DEVICE] =</span></a>
-<a name="586"><span class="lineNum">     586 </span>                :<span class="lineCov">          5 :     g_param_spec_object (&quot;device&quot;,</span></a>
-<a name="587"><span class="lineNum">     587 </span>                :            :                          &quot;Device&quot;,</a>
-<a name="588"><span class="lineNum">     588 </span>                :            :                          &quot;The target device&quot;,</a>
-<a name="589"><span class="lineNum">     589 </span>                :            :                          VALENT_TYPE_DEVICE,</a>
-<a name="590"><span class="lineNum">     590 </span>                :            :                          (G_PARAM_READWRITE |</a>
-<a name="591"><span class="lineNum">     591 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
-<a name="592"><span class="lineNum">     592 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
-<a name="593"><span class="lineNum">     593 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
-<a name="594"><span class="lineNum">     594 </span>                :            : </a>
-<a name="595"><span class="lineNum">     595 </span>                :<span class="lineCov">          5 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
-<a name="596"><span class="lineNum">     596 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="532"><span class="lineNum">     532 </span>                :<span class="lineNoCov">          0 :   G_OBJECT_CLASS (valent_mousepad_dialog_parent_class)-&gt;finalize (object);</span></a>
+<a name="533"><span class="lineNum">     533 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="534"><span class="lineNum">     534 </span>                :            : </a>
+<a name="535"><span class="lineNum">     535 </span>                :            : static void</a>
+<a name="536"><span class="lineNum">     536 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_get_property (GObject    *object,</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :            :                                      guint       prop_id,</a>
+<a name="538"><span class="lineNum">     538 </span>                :            :                                      GValue     *value,</a>
+<a name="539"><span class="lineNum">     539 </span>                :            :                                      GParamSpec *pspec)</a>
+<a name="540"><span class="lineNum">     540 </span>                :            : {</a>
+<a name="541"><span class="lineNum">     541 </span>                :<span class="lineCov">          5 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
+<a name="542"><span class="lineNum">     542 </span>                :            : </a>
+<a name="543"><span class="lineNum">     543 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   switch (prop_id)</span></a>
+<a name="544"><span class="lineNum">     544 </span>                :            :     {</a>
+<a name="545"><span class="lineNum">     545 </span>                :<span class="lineCov">          5 :     case PROP_DEVICE:</span></a>
+<a name="546"><span class="lineNum">     546 </span>                :<span class="lineCov">          5 :       g_value_set_object (value, self-&gt;device);</span></a>
+<a name="547"><span class="lineNum">     547 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="548"><span class="lineNum">     548 </span>                :            : </a>
+<a name="549"><span class="lineNum">     549 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="550"><span class="lineNum">     550 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="551"><span class="lineNum">     551 </span>                :            :     }</a>
+<a name="552"><span class="lineNum">     552 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="553"><span class="lineNum">     553 </span>                :            : </a>
+<a name="554"><span class="lineNum">     554 </span>                :            : static void</a>
+<a name="555"><span class="lineNum">     555 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_set_property (GObject      *object,</span></a>
+<a name="556"><span class="lineNum">     556 </span>                :            :                                      guint         prop_id,</a>
+<a name="557"><span class="lineNum">     557 </span>                :            :                                      const GValue *value,</a>
+<a name="558"><span class="lineNum">     558 </span>                :            :                                      GParamSpec   *pspec)</a>
+<a name="559"><span class="lineNum">     559 </span>                :            : {</a>
+<a name="560"><span class="lineNum">     560 </span>                :<span class="lineCov">          5 :   ValentMousepadDialog *self = VALENT_MOUSEPAD_DIALOG (object);</span></a>
+<a name="561"><span class="lineNum">     561 </span>                :            : </a>
+<a name="562"><span class="lineNum">     562 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   switch (prop_id)</span></a>
+<a name="563"><span class="lineNum">     563 </span>                :            :     {</a>
+<a name="564"><span class="lineNum">     564 </span>                :<span class="lineCov">          5 :     case PROP_DEVICE:</span></a>
+<a name="565"><span class="lineNum">     565 </span>                :<span class="lineCov">          5 :       self-&gt;device = g_value_dup_object (value);</span></a>
+<a name="566"><span class="lineNum">     566 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="567"><span class="lineNum">     567 </span>                :            : </a>
+<a name="568"><span class="lineNum">     568 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
+<a name="569"><span class="lineNum">     569 </span>                :<span class="lineNoCov">          0 :       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);</span></a>
+<a name="570"><span class="lineNum">     570 </span>                :            :     }</a>
+<a name="571"><span class="lineNum">     571 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="572"><span class="lineNum">     572 </span>                :            : </a>
+<a name="573"><span class="lineNum">     573 </span>                :            : static void</a>
+<a name="574"><span class="lineNum">     574 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_class_init (ValentMousepadDialogClass *klass)</span></a>
+<a name="575"><span class="lineNum">     575 </span>                :            : {</a>
+<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">          5 :   GObjectClass *object_class = G_OBJECT_CLASS (klass);</span></a>
+<a name="577"><span class="lineNum">     577 </span>                :<span class="lineCov">          5 :   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);</span></a>
+<a name="578"><span class="lineNum">     578 </span>                :            : </a>
+<a name="579"><span class="lineNum">     579 </span>                :<span class="lineCov">          5 :   object_class-&gt;dispose = valent_mousepad_dialog_dispose;</span></a>
+<a name="580"><span class="lineNum">     580 </span>                :<span class="lineCov">          5 :   object_class-&gt;finalize = valent_mousepad_dialog_finalize;</span></a>
+<a name="581"><span class="lineNum">     581 </span>                :<span class="lineCov">          5 :   object_class-&gt;get_property = valent_mousepad_dialog_get_property;</span></a>
+<a name="582"><span class="lineNum">     582 </span>                :<span class="lineCov">          5 :   object_class-&gt;set_property = valent_mousepad_dialog_set_property;</span></a>
+<a name="583"><span class="lineNum">     583 </span>                :            : </a>
+<a name="584"><span class="lineNum">     584 </span>                :<span class="lineCov">          5 :   gtk_widget_class_set_template_from_resource (widget_class, &quot;/plugins/mousepad/valent-mousepad-dialog.ui&quot;);</span></a>
+<a name="585"><span class="lineNum">     585 </span>                :<span class="lineCov">          5 :   gtk_widget_class_bind_template_child (widget_class, ValentMousepadDialog, editor);</span></a>
+<a name="586"><span class="lineNum">     586 </span>                :<span class="lineCov">          5 :   gtk_widget_class_bind_template_child (widget_class, ValentMousepadDialog, touchpad);</span></a>
+<a name="587"><span class="lineNum">     587 </span>                :            : </a>
+<a name="588"><span class="lineNum">     588 </span>                :<span class="lineCov">          5 :   properties [PROP_DEVICE] =</span></a>
+<a name="589"><span class="lineNum">     589 </span>                :<span class="lineCov">          5 :     g_param_spec_object (&quot;device&quot;,</span></a>
+<a name="590"><span class="lineNum">     590 </span>                :            :                          &quot;Device&quot;,</a>
+<a name="591"><span class="lineNum">     591 </span>                :            :                          &quot;The target device&quot;,</a>
+<a name="592"><span class="lineNum">     592 </span>                :            :                          VALENT_TYPE_DEVICE,</a>
+<a name="593"><span class="lineNum">     593 </span>                :            :                          (G_PARAM_READWRITE |</a>
+<a name="594"><span class="lineNum">     594 </span>                :            :                           G_PARAM_CONSTRUCT_ONLY |</a>
+<a name="595"><span class="lineNum">     595 </span>                :            :                           G_PARAM_EXPLICIT_NOTIFY |</a>
+<a name="596"><span class="lineNum">     596 </span>                :            :                           G_PARAM_STATIC_STRINGS));</a>
 <a name="597"><span class="lineNum">     597 </span>                :            : </a>
-<a name="598"><span class="lineNum">     598 </span>                :            : static void</a>
-<a name="599"><span class="lineNum">     599 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_init (ValentMousepadDialog *self)</span></a>
-<a name="600"><span class="lineNum">     600 </span>                :            : {</a>
-<a name="601"><span class="lineNum">     601 </span>                :            :   GtkEventController *scroll;</a>
-<a name="602"><span class="lineNum">     602 </span>                :            : </a>
-<a name="603"><span class="lineNum">     603 </span>                :<span class="lineCov">          5 :   gtk_widget_init_template (GTK_WIDGET (self));</span></a>
-<a name="604"><span class="lineNum">     604 </span>                :<span class="lineCov">          5 :   self-&gt;scale = gtk_widget_get_scale_factor (GTK_WIDGET (self));</span></a>
+<a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">          5 :   g_object_class_install_properties (object_class, N_PROPERTIES, properties);</span></a>
+<a name="599"><span class="lineNum">     599 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="600"><span class="lineNum">     600 </span>                :            : </a>
+<a name="601"><span class="lineNum">     601 </span>                :            : static void</a>
+<a name="602"><span class="lineNum">     602 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_init (ValentMousepadDialog *self)</span></a>
+<a name="603"><span class="lineNum">     603 </span>                :            : {</a>
+<a name="604"><span class="lineNum">     604 </span>                :            :   GtkEventController *scroll;</a>
 <a name="605"><span class="lineNum">     605 </span>                :            : </a>
-<a name="606"><span class="lineNum">     606 </span>                :            :   /* Keyboard */</a>
-<a name="607"><span class="lineNum">     607 </span>                :<span class="lineCov">          5 :   self-&gt;keyboard = g_object_new (GTK_TYPE_EVENT_CONTROLLER_KEY,</span></a>
-<a name="608"><span class="lineNum">     608 </span>                :            :                                  &quot;name&quot;, &quot;keyboard&quot;,</a>
-<a name="609"><span class="lineNum">     609 </span>                :            :                                  NULL);</a>
-<a name="610"><span class="lineNum">     610 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;keyboard,</span></a>
-<a name="611"><span class="lineNum">     611 </span>                :            :                     &quot;key-pressed&quot;,</a>
-<a name="612"><span class="lineNum">     612 </span>                :            :                     G_CALLBACK (on_key_pressed),</a>
-<a name="613"><span class="lineNum">     613 </span>                :            :                     self);</a>
-<a name="614"><span class="lineNum">     614 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (GTK_WIDGET (self), self-&gt;keyboard);</span></a>
-<a name="615"><span class="lineNum">     615 </span>                :            : </a>
-<a name="616"><span class="lineNum">     616 </span>                :            :   /* Pointer */</a>
-<a name="617"><span class="lineNum">     617 </span>                :<span class="lineCov">          5 :   scroll = g_object_new (GTK_TYPE_EVENT_CONTROLLER_SCROLL,</span></a>
-<a name="618"><span class="lineNum">     618 </span>                :            :                          &quot;name&quot;,  &quot;pointer-scroll&quot;,</a>
-<a name="619"><span class="lineNum">     619 </span>                :            :                          &quot;flags&quot;, GTK_EVENT_CONTROLLER_SCROLL_VERTICAL,</a>
-<a name="620"><span class="lineNum">     620 </span>                :            :                          NULL);</a>
-<a name="621"><span class="lineNum">     621 </span>                :<span class="lineCov">          5 :   g_signal_connect (scroll,</span></a>
-<a name="622"><span class="lineNum">     622 </span>                :            :                     &quot;scroll&quot;,</a>
-<a name="623"><span class="lineNum">     623 </span>                :            :                     G_CALLBACK (on_scroll),</a>
-<a name="624"><span class="lineNum">     624 </span>                :            :                     self);</a>
-<a name="625"><span class="lineNum">     625 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad, GTK_EVENT_CONTROLLER (scroll));</span></a>
-<a name="626"><span class="lineNum">     626 </span>                :            : </a>
-<a name="627"><span class="lineNum">     627 </span>                :<span class="lineCov">          5 :   self-&gt;touch1 = g_object_new (GTK_TYPE_GESTURE_DRAG,</span></a>
-<a name="628"><span class="lineNum">     628 </span>                :            :                                &quot;name&quot;,     &quot;touch-single&quot;,</a>
-<a name="629"><span class="lineNum">     629 </span>                :            :                                &quot;n-points&quot;, 1,</a>
-<a name="630"><span class="lineNum">     630 </span>                :            :                                &quot;button&quot;,   0,</a>
-<a name="631"><span class="lineNum">     631 </span>                :            :                                NULL);</a>
-<a name="632"><span class="lineNum">     632 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch1,</span></a>
-<a name="633"><span class="lineNum">     633 </span>                :            :                     &quot;drag-begin&quot;,</a>
-<a name="634"><span class="lineNum">     634 </span>                :            :                     G_CALLBACK (on_single_begin),</a>
-<a name="635"><span class="lineNum">     635 </span>                :            :                     self);</a>
-<a name="636"><span class="lineNum">     636 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch1,</span></a>
-<a name="637"><span class="lineNum">     637 </span>                :            :                     &quot;update&quot;,</a>
-<a name="638"><span class="lineNum">     638 </span>                :            :                     G_CALLBACK (on_single_update),</a>
-<a name="639"><span class="lineNum">     639 </span>                :            :                     self);</a>
-<a name="640"><span class="lineNum">     640 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch1,</span></a>
-<a name="641"><span class="lineNum">     641 </span>                :            :                     &quot;drag-end&quot;,</a>
-<a name="642"><span class="lineNum">     642 </span>                :            :                     G_CALLBACK (on_single_end),</a>
-<a name="643"><span class="lineNum">     643 </span>                :            :                     self);</a>
-<a name="644"><span class="lineNum">     644 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad,</span></a>
-<a name="645"><span class="lineNum">     645 </span>                :<span class="lineCov">          5 :                              GTK_EVENT_CONTROLLER (self-&gt;touch1));</span></a>
-<a name="646"><span class="lineNum">     646 </span>                :            : </a>
-<a name="647"><span class="lineNum">     647 </span>                :<span class="lineCov">          5 :   self-&gt;touch2 = g_object_new (GTK_TYPE_GESTURE_DRAG,</span></a>
-<a name="648"><span class="lineNum">     648 </span>                :            :                                &quot;name&quot;,       &quot;touch-double&quot;,</a>
-<a name="649"><span class="lineNum">     649 </span>                :            :                                &quot;n-points&quot;,   2,</a>
-<a name="650"><span class="lineNum">     650 </span>                :            :                                &quot;touch-only&quot;, TRUE,</a>
-<a name="651"><span class="lineNum">     651 </span>                :            :                                NULL);</a>
-<a name="652"><span class="lineNum">     652 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch2,</span></a>
-<a name="653"><span class="lineNum">     653 </span>                :            :                     &quot;drag-begin&quot;,</a>
-<a name="654"><span class="lineNum">     654 </span>                :            :                     G_CALLBACK (on_double_begin),</a>
-<a name="655"><span class="lineNum">     655 </span>                :            :                     self);</a>
-<a name="656"><span class="lineNum">     656 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch2,</span></a>
-<a name="657"><span class="lineNum">     657 </span>                :            :                     &quot;update&quot;,</a>
-<a name="658"><span class="lineNum">     658 </span>                :            :                     G_CALLBACK (on_double_update),</a>
-<a name="659"><span class="lineNum">     659 </span>                :            :                     self);</a>
-<a name="660"><span class="lineNum">     660 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch2,</span></a>
-<a name="661"><span class="lineNum">     661 </span>                :            :                     &quot;drag-end&quot;,</a>
-<a name="662"><span class="lineNum">     662 </span>                :            :                     G_CALLBACK (on_double_end),</a>
-<a name="663"><span class="lineNum">     663 </span>                :            :                     self);</a>
-<a name="664"><span class="lineNum">     664 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad,</span></a>
-<a name="665"><span class="lineNum">     665 </span>                :<span class="lineCov">          5 :                              GTK_EVENT_CONTROLLER (self-&gt;touch2));</span></a>
-<a name="666"><span class="lineNum">     666 </span>                :            : </a>
-<a name="667"><span class="lineNum">     667 </span>                :<span class="lineCov">          5 :   self-&gt;touch3 = g_object_new (GTK_TYPE_GESTURE_DRAG,</span></a>
-<a name="668"><span class="lineNum">     668 </span>                :            :                                &quot;name&quot;,       &quot;touch-triple&quot;,</a>
-<a name="669"><span class="lineNum">     669 </span>                :            :                                &quot;n-points&quot;,   3,</a>
-<a name="670"><span class="lineNum">     670 </span>                :            :                                &quot;touch-only&quot;, TRUE,</a>
-<a name="671"><span class="lineNum">     671 </span>                :            :                                NULL);</a>
-<a name="672"><span class="lineNum">     672 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch3,</span></a>
-<a name="673"><span class="lineNum">     673 </span>                :            :                     &quot;drag-end&quot;,</a>
-<a name="674"><span class="lineNum">     674 </span>                :            :                     G_CALLBACK (on_triple_end),</a>
-<a name="675"><span class="lineNum">     675 </span>                :            :                     self);</a>
-<a name="676"><span class="lineNum">     676 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad,</span></a>
-<a name="677"><span class="lineNum">     677 </span>                :<span class="lineCov">          5 :                              GTK_EVENT_CONTROLLER (self-&gt;touch3));</span></a>
-<a name="678"><span class="lineNum">     678 </span>                :            : </a>
-<a name="679"><span class="lineNum">     679 </span>                :<span class="lineCov">          5 :   gtk_gesture_group (self-&gt;touch1, self-&gt;touch2);</span></a>
-<a name="680"><span class="lineNum">     680 </span>                :<span class="lineCov">          5 :   gtk_gesture_group (self-&gt;touch1, self-&gt;touch3);</span></a>
-<a name="681"><span class="lineNum">     681 </span>                :<span class="lineCov">          5 : }</span></a>
-<a name="682"><span class="lineNum">     682 </span>                :            : </a>
-<a name="683"><span class="lineNum">     683 </span>                :            : /**</a>
-<a name="684"><span class="lineNum">     684 </span>                :            :  * valent_mousepad_dialog_new:</a>
-<a name="685"><span class="lineNum">     685 </span>                :            :  * @device: a #ValentDevice</a>
-<a name="686"><span class="lineNum">     686 </span>                :            :  *</a>
-<a name="687"><span class="lineNum">     687 </span>                :            :  * Create a new input dialog for sending input events to @device.</a>
-<a name="688"><span class="lineNum">     688 </span>                :            :  *</a>
-<a name="689"><span class="lineNum">     689 </span>                :            :  * Returns: (transfer full): a new #ValentMousepadDialog</a>
-<a name="690"><span class="lineNum">     690 </span>                :            :  */</a>
-<a name="691"><span class="lineNum">     691 </span>                :            : ValentMousepadDialog *</a>
-<a name="692"><span class="lineNum">     692 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_new (ValentDevice *device)</span></a>
-<a name="693"><span class="lineNum">     693 </span>                :            : {</a>
-<a name="694"><span class="lineNum">     694 </span>                :            :   GApplication *application;</a>
-<a name="695"><span class="lineNum">     695 </span>                :<span class="lineCov">          5 :   GtkWindow *window = NULL;</span></a>
-<a name="696"><span class="lineNum">     696 </span>                :            : </a>
-<a name="697"><span class="lineNum">     697 </span>                :<span class="lineCov">          5 :   application = g_application_get_default ();</span></a>
-<a name="698"><span class="lineNum">     698 </span>                :            : </a>
-<a name="699"><span class="lineNum">     699 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (application != NULL)</span></a>
-<a name="700"><span class="lineNum">     700 </span>                :<span class="lineNoCov">          0 :     window = gtk_application_get_active_window (GTK_APPLICATION (application));</span></a>
+<a name="606"><span class="lineNum">     606 </span>                :<span class="lineCov">          5 :   gtk_widget_init_template (GTK_WIDGET (self));</span></a>
+<a name="607"><span class="lineNum">     607 </span>                :<span class="lineCov">          5 :   self-&gt;scale = gtk_widget_get_scale_factor (GTK_WIDGET (self));</span></a>
+<a name="608"><span class="lineNum">     608 </span>                :            : </a>
+<a name="609"><span class="lineNum">     609 </span>                :            :   /* Keyboard */</a>
+<a name="610"><span class="lineNum">     610 </span>                :<span class="lineCov">          5 :   self-&gt;keyboard = g_object_new (GTK_TYPE_EVENT_CONTROLLER_KEY,</span></a>
+<a name="611"><span class="lineNum">     611 </span>                :            :                                  &quot;name&quot;, &quot;keyboard&quot;,</a>
+<a name="612"><span class="lineNum">     612 </span>                :            :                                  NULL);</a>
+<a name="613"><span class="lineNum">     613 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;keyboard,</span></a>
+<a name="614"><span class="lineNum">     614 </span>                :            :                     &quot;key-pressed&quot;,</a>
+<a name="615"><span class="lineNum">     615 </span>                :            :                     G_CALLBACK (on_key_pressed),</a>
+<a name="616"><span class="lineNum">     616 </span>                :            :                     self);</a>
+<a name="617"><span class="lineNum">     617 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (GTK_WIDGET (self), self-&gt;keyboard);</span></a>
+<a name="618"><span class="lineNum">     618 </span>                :            : </a>
+<a name="619"><span class="lineNum">     619 </span>                :            :   /* Pointer */</a>
+<a name="620"><span class="lineNum">     620 </span>                :<span class="lineCov">          5 :   scroll = g_object_new (GTK_TYPE_EVENT_CONTROLLER_SCROLL,</span></a>
+<a name="621"><span class="lineNum">     621 </span>                :            :                          &quot;name&quot;,  &quot;pointer-scroll&quot;,</a>
+<a name="622"><span class="lineNum">     622 </span>                :            :                          &quot;flags&quot;, GTK_EVENT_CONTROLLER_SCROLL_VERTICAL,</a>
+<a name="623"><span class="lineNum">     623 </span>                :            :                          NULL);</a>
+<a name="624"><span class="lineNum">     624 </span>                :<span class="lineCov">          5 :   g_signal_connect (scroll,</span></a>
+<a name="625"><span class="lineNum">     625 </span>                :            :                     &quot;scroll&quot;,</a>
+<a name="626"><span class="lineNum">     626 </span>                :            :                     G_CALLBACK (on_scroll),</a>
+<a name="627"><span class="lineNum">     627 </span>                :            :                     self);</a>
+<a name="628"><span class="lineNum">     628 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad, GTK_EVENT_CONTROLLER (scroll));</span></a>
+<a name="629"><span class="lineNum">     629 </span>                :            : </a>
+<a name="630"><span class="lineNum">     630 </span>                :<span class="lineCov">          5 :   self-&gt;touch1 = g_object_new (GTK_TYPE_GESTURE_DRAG,</span></a>
+<a name="631"><span class="lineNum">     631 </span>                :            :                                &quot;name&quot;,     &quot;touch-single&quot;,</a>
+<a name="632"><span class="lineNum">     632 </span>                :            :                                &quot;n-points&quot;, 1,</a>
+<a name="633"><span class="lineNum">     633 </span>                :            :                                &quot;button&quot;,   0,</a>
+<a name="634"><span class="lineNum">     634 </span>                :            :                                NULL);</a>
+<a name="635"><span class="lineNum">     635 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch1,</span></a>
+<a name="636"><span class="lineNum">     636 </span>                :            :                     &quot;drag-begin&quot;,</a>
+<a name="637"><span class="lineNum">     637 </span>                :            :                     G_CALLBACK (on_single_begin),</a>
+<a name="638"><span class="lineNum">     638 </span>                :            :                     self);</a>
+<a name="639"><span class="lineNum">     639 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch1,</span></a>
+<a name="640"><span class="lineNum">     640 </span>                :            :                     &quot;update&quot;,</a>
+<a name="641"><span class="lineNum">     641 </span>                :            :                     G_CALLBACK (on_single_update),</a>
+<a name="642"><span class="lineNum">     642 </span>                :            :                     self);</a>
+<a name="643"><span class="lineNum">     643 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch1,</span></a>
+<a name="644"><span class="lineNum">     644 </span>                :            :                     &quot;drag-end&quot;,</a>
+<a name="645"><span class="lineNum">     645 </span>                :            :                     G_CALLBACK (on_single_end),</a>
+<a name="646"><span class="lineNum">     646 </span>                :            :                     self);</a>
+<a name="647"><span class="lineNum">     647 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad,</span></a>
+<a name="648"><span class="lineNum">     648 </span>                :<span class="lineCov">          5 :                              GTK_EVENT_CONTROLLER (self-&gt;touch1));</span></a>
+<a name="649"><span class="lineNum">     649 </span>                :            : </a>
+<a name="650"><span class="lineNum">     650 </span>                :<span class="lineCov">          5 :   self-&gt;touch2 = g_object_new (GTK_TYPE_GESTURE_DRAG,</span></a>
+<a name="651"><span class="lineNum">     651 </span>                :            :                                &quot;name&quot;,       &quot;touch-double&quot;,</a>
+<a name="652"><span class="lineNum">     652 </span>                :            :                                &quot;n-points&quot;,   2,</a>
+<a name="653"><span class="lineNum">     653 </span>                :            :                                &quot;touch-only&quot;, TRUE,</a>
+<a name="654"><span class="lineNum">     654 </span>                :            :                                NULL);</a>
+<a name="655"><span class="lineNum">     655 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch2,</span></a>
+<a name="656"><span class="lineNum">     656 </span>                :            :                     &quot;drag-begin&quot;,</a>
+<a name="657"><span class="lineNum">     657 </span>                :            :                     G_CALLBACK (on_double_begin),</a>
+<a name="658"><span class="lineNum">     658 </span>                :            :                     self);</a>
+<a name="659"><span class="lineNum">     659 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch2,</span></a>
+<a name="660"><span class="lineNum">     660 </span>                :            :                     &quot;update&quot;,</a>
+<a name="661"><span class="lineNum">     661 </span>                :            :                     G_CALLBACK (on_double_update),</a>
+<a name="662"><span class="lineNum">     662 </span>                :            :                     self);</a>
+<a name="663"><span class="lineNum">     663 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch2,</span></a>
+<a name="664"><span class="lineNum">     664 </span>                :            :                     &quot;drag-end&quot;,</a>
+<a name="665"><span class="lineNum">     665 </span>                :            :                     G_CALLBACK (on_double_end),</a>
+<a name="666"><span class="lineNum">     666 </span>                :            :                     self);</a>
+<a name="667"><span class="lineNum">     667 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad,</span></a>
+<a name="668"><span class="lineNum">     668 </span>                :<span class="lineCov">          5 :                              GTK_EVENT_CONTROLLER (self-&gt;touch2));</span></a>
+<a name="669"><span class="lineNum">     669 </span>                :            : </a>
+<a name="670"><span class="lineNum">     670 </span>                :<span class="lineCov">          5 :   self-&gt;touch3 = g_object_new (GTK_TYPE_GESTURE_DRAG,</span></a>
+<a name="671"><span class="lineNum">     671 </span>                :            :                                &quot;name&quot;,       &quot;touch-triple&quot;,</a>
+<a name="672"><span class="lineNum">     672 </span>                :            :                                &quot;n-points&quot;,   3,</a>
+<a name="673"><span class="lineNum">     673 </span>                :            :                                &quot;touch-only&quot;, TRUE,</a>
+<a name="674"><span class="lineNum">     674 </span>                :            :                                NULL);</a>
+<a name="675"><span class="lineNum">     675 </span>                :<span class="lineCov">          5 :   g_signal_connect (self-&gt;touch3,</span></a>
+<a name="676"><span class="lineNum">     676 </span>                :            :                     &quot;drag-end&quot;,</a>
+<a name="677"><span class="lineNum">     677 </span>                :            :                     G_CALLBACK (on_triple_end),</a>
+<a name="678"><span class="lineNum">     678 </span>                :            :                     self);</a>
+<a name="679"><span class="lineNum">     679 </span>                :<span class="lineCov">          5 :   gtk_widget_add_controller (self-&gt;touchpad,</span></a>
+<a name="680"><span class="lineNum">     680 </span>                :<span class="lineCov">          5 :                              GTK_EVENT_CONTROLLER (self-&gt;touch3));</span></a>
+<a name="681"><span class="lineNum">     681 </span>                :            : </a>
+<a name="682"><span class="lineNum">     682 </span>                :<span class="lineCov">          5 :   gtk_gesture_group (self-&gt;touch1, self-&gt;touch2);</span></a>
+<a name="683"><span class="lineNum">     683 </span>                :<span class="lineCov">          5 :   gtk_gesture_group (self-&gt;touch1, self-&gt;touch3);</span></a>
+<a name="684"><span class="lineNum">     684 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="685"><span class="lineNum">     685 </span>                :            : </a>
+<a name="686"><span class="lineNum">     686 </span>                :            : /**</a>
+<a name="687"><span class="lineNum">     687 </span>                :            :  * valent_mousepad_dialog_new:</a>
+<a name="688"><span class="lineNum">     688 </span>                :            :  * @device: a #ValentDevice</a>
+<a name="689"><span class="lineNum">     689 </span>                :            :  *</a>
+<a name="690"><span class="lineNum">     690 </span>                :            :  * Create a new input dialog for sending input events to @device.</a>
+<a name="691"><span class="lineNum">     691 </span>                :            :  *</a>
+<a name="692"><span class="lineNum">     692 </span>                :            :  * Returns: (transfer full): a new #ValentMousepadDialog</a>
+<a name="693"><span class="lineNum">     693 </span>                :            :  */</a>
+<a name="694"><span class="lineNum">     694 </span>                :            : ValentMousepadDialog *</a>
+<a name="695"><span class="lineNum">     695 </span>                :<span class="lineCov">          5 : valent_mousepad_dialog_new (ValentDevice *device)</span></a>
+<a name="696"><span class="lineNum">     696 </span>                :            : {</a>
+<a name="697"><span class="lineNum">     697 </span>                :            :   GApplication *application;</a>
+<a name="698"><span class="lineNum">     698 </span>                :<span class="lineCov">          5 :   GtkWindow *window = NULL;</span></a>
+<a name="699"><span class="lineNum">     699 </span>                :            : </a>
+<a name="700"><span class="lineNum">     700 </span>                :<span class="lineCov">          5 :   application = g_application_get_default ();</span></a>
 <a name="701"><span class="lineNum">     701 </span>                :            : </a>
-<a name="702"><span class="lineNum">     702 </span>                :<span class="lineCov">          5 :   return g_object_new (VALENT_TYPE_MOUSEPAD_DIALOG,</span></a>
-<a name="703"><span class="lineNum">     703 </span>                :            :                        &quot;device&quot;,        device,</a>
-<a name="704"><span class="lineNum">     704 </span>                :            :                        &quot;transient-for&quot;, window,</a>
-<a name="705"><span class="lineNum">     705 </span>                :            :                        NULL);</a>
-<a name="706"><span class="lineNum">     706 </span>                :            : }</a>
-<a name="707"><span class="lineNum">     707 </span>                :            : </a>
-<a name="708"><span class="lineNum">     708 </span>                :            : /**</a>
-<a name="709"><span class="lineNum">     709 </span>                :            :  * valent_mousepad_dialog_echo_key:</a>
-<a name="710"><span class="lineNum">     710 </span>                :            :  * @dialog: a #ValentMousepadDialog</a>
-<a name="711"><span class="lineNum">     711 </span>                :            :  * @packet: a #JsonNode</a>
-<a name="712"><span class="lineNum">     712 </span>                :            :  *</a>
-<a name="713"><span class="lineNum">     713 </span>                :            :  * Handle the remote device's acknowledgement of a key we sent.</a>
-<a name="714"><span class="lineNum">     714 </span>                :            :  */</a>
-<a name="715"><span class="lineNum">     715 </span>                :            : void</a>
-<a name="716"><span class="lineNum">     716 </span>                :<span class="lineCov">         10 : valent_mousepad_dialog_echo_key (ValentMousepadDialog *dialog,</span></a>
-<a name="717"><span class="lineNum">     717 </span>                :            :                                  const char           *key,</a>
-<a name="718"><span class="lineNum">     718 </span>                :            :                                  GdkModifierType       mask)</a>
-<a name="719"><span class="lineNum">     719 </span>                :            : {</a>
-<a name="720"><span class="lineNum">     720 </span>                :            :   GtkTextBuffer *buffer;</a>
-<a name="721"><span class="lineNum">     721 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   g_autofree char *old_text = NULL;</span></a>
-<a name="722"><span class="lineNum">     722 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   g_autofree char *new_text = NULL;</span></a>
-<a name="723"><span class="lineNum">     723 </span>                :            : </a>
-<a name="724"><span class="lineNum">     724 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_return_if_fail (VALENT_IS_MOUSEPAD_DIALOG (dialog));</span></a>
-<a name="725"><span class="lineNum">     725 </span>                :            : </a>
-<a name="726"><span class="lineNum">     726 </span>                :<span class="lineCov">         10 :   buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (dialog-&gt;editor));</span></a>
-<a name="727"><span class="lineNum">     727 </span>                :            : </a>
-<a name="728"><span class="lineNum">     728 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         10 :   if (!!(mask &amp; GDK_CONTROL_MASK) &amp;&amp; g_strcmp0 (key, &quot;a&quot;) == 0)</span></a>
-<a name="729"><span class="lineNum">     729 </span>                :            :     {</a>
-<a name="730"><span class="lineNum">     730 </span>                :<span class="lineCov">          5 :       g_signal_emit_by_name (dialog-&gt;editor,</span></a>
-<a name="731"><span class="lineNum">     731 </span>                :            :                              &quot;select-all&quot;,</a>
-<a name="732"><span class="lineNum">     732 </span>                :<span class="lineCov">          5 :                              !!(mask &amp; GDK_SHIFT_MASK));</span></a>
-<a name="733"><span class="lineNum">     733 </span>                :            :     }</a>
-<a name="734"><span class="lineNum">     734 </span>                :            :   else</a>
-<a name="735"><span class="lineNum">     735 </span>                :            :     {</a>
-<a name="736"><span class="lineNum">     736 </span>                :<span class="lineCov">          5 :       g_object_get (buffer, &quot;text&quot;, &amp;old_text, NULL);</span></a>
-<a name="737"><span class="lineNum">     737 </span>                :<span class="lineCov">          5 :       new_text = g_strjoin (&quot;&quot;, old_text, key, NULL);</span></a>
-<a name="738"><span class="lineNum">     738 </span>                :<span class="lineCov">          5 :       g_object_set (buffer, &quot;text&quot;, new_text, NULL);</span></a>
-<a name="739"><span class="lineNum">     739 </span>                :            :     }</a>
-<a name="740"><span class="lineNum">     740 </span>                :            : }</a>
-<a name="741"><span class="lineNum">     741 </span>                :            : </a>
-<a name="742"><span class="lineNum">     742 </span>                :            : /**</a>
-<a name="743"><span class="lineNum">     743 </span>                :            :  * valent_mousepad_dialog_echo_special:</a>
-<a name="744"><span class="lineNum">     744 </span>                :            :  * @dialog: a #ValentMousepadDialog</a>
-<a name="745"><span class="lineNum">     745 </span>                :            :  * @packet: a #JsonNode</a>
-<a name="746"><span class="lineNum">     746 </span>                :            :  *</a>
-<a name="747"><span class="lineNum">     747 </span>                :            :  * Handle the remote device's acknowledgement of a special key we sent.</a>
-<a name="748"><span class="lineNum">     748 </span>                :            :  */</a>
-<a name="749"><span class="lineNum">     749 </span>                :            : void</a>
-<a name="750"><span class="lineNum">     750 </span>                :<span class="lineCov">         50 : valent_mousepad_dialog_echo_special (ValentMousepadDialog *dialog,</span></a>
-<a name="751"><span class="lineNum">     751 </span>                :            :                                      guint                 keyval,</a>
-<a name="752"><span class="lineNum">     752 </span>                :            :                                      GdkModifierType       mask)</a>
-<a name="753"><span class="lineNum">     753 </span>                :            : {</a>
-<a name="754"><span class="lineNum">     754 </span>                :            :   GtkTextBuffer *buffer;</a>
-<a name="755"><span class="lineNum">     755 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :   g_autofree char *old_text = NULL;</span></a>
-<a name="756"><span class="lineNum">     756 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :   g_autofree char *new_text = NULL;</span></a>
-<a name="757"><span class="lineNum">     757 </span>                :            : </a>
-<a name="758"><span class="lineNum">     758 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (VALENT_IS_MOUSEPAD_DIALOG (dialog));</span></a>
-<a name="759"><span class="lineNum">     759 </span>                :            : </a>
-<a name="760"><span class="lineNum">     760 </span>                :<span class="lineCov">         50 :   buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (dialog-&gt;editor));</span></a>
-<a name="761"><span class="lineNum">     761 </span>                :            : </a>
-<a name="762"><span class="lineNum">     762 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span> :<span class="lineCov">         50 :   switch (keyval)</span></a>
+<a name="702"><span class="lineNum">     702 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :   if (application != NULL)</span></a>
+<a name="703"><span class="lineNum">     703 </span>                :<span class="lineNoCov">          0 :     window = gtk_application_get_active_window (GTK_APPLICATION (application));</span></a>
+<a name="704"><span class="lineNum">     704 </span>                :            : </a>
+<a name="705"><span class="lineNum">     705 </span>                :<span class="lineCov">          5 :   return g_object_new (VALENT_TYPE_MOUSEPAD_DIALOG,</span></a>
+<a name="706"><span class="lineNum">     706 </span>                :            :                        &quot;device&quot;,        device,</a>
+<a name="707"><span class="lineNum">     707 </span>                :            :                        &quot;transient-for&quot;, window,</a>
+<a name="708"><span class="lineNum">     708 </span>                :            :                        NULL);</a>
+<a name="709"><span class="lineNum">     709 </span>                :            : }</a>
+<a name="710"><span class="lineNum">     710 </span>                :            : </a>
+<a name="711"><span class="lineNum">     711 </span>                :            : /**</a>
+<a name="712"><span class="lineNum">     712 </span>                :            :  * valent_mousepad_dialog_echo_key:</a>
+<a name="713"><span class="lineNum">     713 </span>                :            :  * @dialog: a #ValentMousepadDialog</a>
+<a name="714"><span class="lineNum">     714 </span>                :            :  * @packet: a #JsonNode</a>
+<a name="715"><span class="lineNum">     715 </span>                :            :  *</a>
+<a name="716"><span class="lineNum">     716 </span>                :            :  * Handle the remote device's acknowledgement of a key we sent.</a>
+<a name="717"><span class="lineNum">     717 </span>                :            :  */</a>
+<a name="718"><span class="lineNum">     718 </span>                :            : void</a>
+<a name="719"><span class="lineNum">     719 </span>                :<span class="lineCov">         10 : valent_mousepad_dialog_echo_key (ValentMousepadDialog *dialog,</span></a>
+<a name="720"><span class="lineNum">     720 </span>                :            :                                  const char           *key,</a>
+<a name="721"><span class="lineNum">     721 </span>                :            :                                  GdkModifierType       mask)</a>
+<a name="722"><span class="lineNum">     722 </span>                :            : {</a>
+<a name="723"><span class="lineNum">     723 </span>                :            :   GtkTextBuffer *buffer;</a>
+<a name="724"><span class="lineNum">     724 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   g_autofree char *old_text = NULL;</span></a>
+<a name="725"><span class="lineNum">     725 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :   g_autofree char *new_text = NULL;</span></a>
+<a name="726"><span class="lineNum">     726 </span>                :            : </a>
+<a name="727"><span class="lineNum">     727 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :   g_return_if_fail (VALENT_IS_MOUSEPAD_DIALOG (dialog));</span></a>
+<a name="728"><span class="lineNum">     728 </span>                :            : </a>
+<a name="729"><span class="lineNum">     729 </span>                :<span class="lineCov">         10 :   buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (dialog-&gt;editor));</span></a>
+<a name="730"><span class="lineNum">     730 </span>                :            : </a>
+<a name="731"><span class="lineNum">     731 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         10 :   if (!!(mask &amp; GDK_CONTROL_MASK) &amp;&amp; g_strcmp0 (key, &quot;a&quot;) == 0)</span></a>
+<a name="732"><span class="lineNum">     732 </span>                :            :     {</a>
+<a name="733"><span class="lineNum">     733 </span>                :<span class="lineCov">          5 :       g_signal_emit_by_name (dialog-&gt;editor,</span></a>
+<a name="734"><span class="lineNum">     734 </span>                :            :                              &quot;select-all&quot;,</a>
+<a name="735"><span class="lineNum">     735 </span>                :<span class="lineCov">          5 :                              !!(mask &amp; GDK_SHIFT_MASK));</span></a>
+<a name="736"><span class="lineNum">     736 </span>                :            :     }</a>
+<a name="737"><span class="lineNum">     737 </span>                :            :   else</a>
+<a name="738"><span class="lineNum">     738 </span>                :            :     {</a>
+<a name="739"><span class="lineNum">     739 </span>                :<span class="lineCov">          5 :       g_object_get (buffer, &quot;text&quot;, &amp;old_text, NULL);</span></a>
+<a name="740"><span class="lineNum">     740 </span>                :<span class="lineCov">          5 :       new_text = g_strjoin (&quot;&quot;, old_text, key, NULL);</span></a>
+<a name="741"><span class="lineNum">     741 </span>                :<span class="lineCov">          5 :       g_object_set (buffer, &quot;text&quot;, new_text, NULL);</span></a>
+<a name="742"><span class="lineNum">     742 </span>                :            :     }</a>
+<a name="743"><span class="lineNum">     743 </span>                :            : }</a>
+<a name="744"><span class="lineNum">     744 </span>                :            : </a>
+<a name="745"><span class="lineNum">     745 </span>                :            : /**</a>
+<a name="746"><span class="lineNum">     746 </span>                :            :  * valent_mousepad_dialog_echo_special:</a>
+<a name="747"><span class="lineNum">     747 </span>                :            :  * @dialog: a #ValentMousepadDialog</a>
+<a name="748"><span class="lineNum">     748 </span>                :            :  * @packet: a #JsonNode</a>
+<a name="749"><span class="lineNum">     749 </span>                :            :  *</a>
+<a name="750"><span class="lineNum">     750 </span>                :            :  * Handle the remote device's acknowledgement of a special key we sent.</a>
+<a name="751"><span class="lineNum">     751 </span>                :            :  */</a>
+<a name="752"><span class="lineNum">     752 </span>                :            : void</a>
+<a name="753"><span class="lineNum">     753 </span>                :<span class="lineCov">         50 : valent_mousepad_dialog_echo_special (ValentMousepadDialog *dialog,</span></a>
+<a name="754"><span class="lineNum">     754 </span>                :            :                                      unsigned int          keyval,</a>
+<a name="755"><span class="lineNum">     755 </span>                :            :                                      GdkModifierType       mask)</a>
+<a name="756"><span class="lineNum">     756 </span>                :            : {</a>
+<a name="757"><span class="lineNum">     757 </span>                :            :   GtkTextBuffer *buffer;</a>
+<a name="758"><span class="lineNum">     758 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :   g_autofree char *old_text = NULL;</span></a>
+<a name="759"><span class="lineNum">     759 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :   g_autofree char *new_text = NULL;</span></a>
+<a name="760"><span class="lineNum">     760 </span>                :            : </a>
+<a name="761"><span class="lineNum">     761 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (VALENT_IS_MOUSEPAD_DIALOG (dialog));</span></a>
+<a name="762"><span class="lineNum">     762 </span>                :            : </a>
+<a name="763"><span class="lineNum">     763 </span>                :<span class="lineCov">         50 :   buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (dialog-&gt;editor));</span></a>
+<a name="764"><span class="lineNum">     764 </span>                :            : </a>
+<a name="765"><span class="lineNum">     765 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span> :<span class="lineCov">         50 :   switch (keyval)</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 5 times"> + </span><span class="branchCov" title="Branch 6 was taken 5 times"> + </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span><span class="branchCov" title="Branch 8 was taken 5 times"> + </span> 
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 9 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span>]
-<a name="763"><span class="lineNum">     763 </span>                :            :     {</a>
-<a name="764"><span class="lineNum">     764 </span>                :<span class="lineCov">          5 :     case GDK_KEY_BackSpace:</span></a>
-<a name="765"><span class="lineNum">     765 </span>                :<span class="lineCov">          5 :       g_signal_emit_by_name (dialog-&gt;editor, &quot;backspace&quot;);</span></a>
-<a name="766"><span class="lineNum">     766 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="767"><span class="lineNum">     767 </span>                :            : </a>
-<a name="768"><span class="lineNum">     768 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Linefeed:</span></a>
-<a name="769"><span class="lineNum">     769 </span>                :            :     case GDK_KEY_Return:</a>
-<a name="770"><span class="lineNum">     770 </span>                :            :     case GDK_KEY_KP_Enter:</a>
-<a name="771"><span class="lineNum">     771 </span>                :<span class="lineCov">          5 :       g_object_get (buffer, &quot;text&quot;, &amp;old_text, NULL);</span></a>
-<a name="772"><span class="lineNum">     772 </span>                :<span class="lineCov">          5 :       new_text = g_strjoin (&quot;&quot;, old_text, &quot;\n&quot;, NULL);</span></a>
-<a name="773"><span class="lineNum">     773 </span>                :<span class="lineCov">          5 :       g_object_set (buffer, &quot;text&quot;, new_text, NULL);</span></a>
-<a name="774"><span class="lineNum">     774 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="775"><span class="lineNum">     775 </span>                :            : </a>
-<a name="776"><span class="lineNum">     776 </span>                :            :     /* Home/End in terms of &quot;real lines&quot;, since the other side probably doesn't</a>
-<a name="777"><span class="lineNum">     777 </span>                :            :      * work in terms of &quot;display lines&quot;.</a>
-<a name="778"><span class="lineNum">     778 </span>                :            :      */</a>
-<a name="779"><span class="lineNum">     779 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Home:</span></a>
-<a name="780"><span class="lineNum">     780 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPH_ENDS, -1);</span></a>
-<a name="781"><span class="lineNum">     781 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="782"><span class="lineNum">     782 </span>                :            : </a>
-<a name="783"><span class="lineNum">     783 </span>                :<span class="lineCov">          5 :     case GDK_KEY_End:</span></a>
-<a name="784"><span class="lineNum">     784 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPH_ENDS, 1);</span></a>
-<a name="785"><span class="lineNum">     785 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="786"><span class="lineNum">     786 </span>                :            : </a>
-<a name="787"><span class="lineNum">     787 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Page_Up:</span></a>
-<a name="788"><span class="lineNum">     788 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PAGES, -1);</span></a>
-<a name="789"><span class="lineNum">     789 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="790"><span class="lineNum">     790 </span>                :            : </a>
-<a name="791"><span class="lineNum">     791 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Page_Down:</span></a>
-<a name="792"><span class="lineNum">     792 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PAGES, 1);</span></a>
-<a name="793"><span class="lineNum">     793 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="794"><span class="lineNum">     794 </span>                :            : </a>
-<a name="795"><span class="lineNum">     795 </span>                :            :     /* We Up/Down in terms of &quot;real lines&quot;, for the same reason as above. */</a>
-<a name="796"><span class="lineNum">     796 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Up:</span></a>
-<a name="797"><span class="lineNum">     797 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPHS, -1);</span></a>
-<a name="798"><span class="lineNum">     798 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="799"><span class="lineNum">     799 </span>                :            : </a>
-<a name="800"><span class="lineNum">     800 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Down:</span></a>
-<a name="801"><span class="lineNum">     801 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPHS, 1);</span></a>
-<a name="802"><span class="lineNum">     802 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="803"><span class="lineNum">     803 </span>                :            : </a>
-<a name="804"><span class="lineNum">     804 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Left:</span></a>
-<a name="805"><span class="lineNum">     805 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_VISUAL_POSITIONS, -1);</span></a>
-<a name="806"><span class="lineNum">     806 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="807"><span class="lineNum">     807 </span>                :            : </a>
-<a name="808"><span class="lineNum">     808 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Right:</span></a>
-<a name="809"><span class="lineNum">     809 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_VISUAL_POSITIONS, 1);</span></a>
-<a name="810"><span class="lineNum">     810 </span>                :<span class="lineCov">          5 :       break;</span></a>
-<a name="811"><span class="lineNum">     811 </span>                :            :     }</a>
-<a name="812"><span class="lineNum">     812 </span>                :            : }</a>
-<a name="813"><span class="lineNum">     813 </span>                :            : </a>
+<a name="766"><span class="lineNum">     766 </span>                :            :     {</a>
+<a name="767"><span class="lineNum">     767 </span>                :<span class="lineCov">          5 :     case GDK_KEY_BackSpace:</span></a>
+<a name="768"><span class="lineNum">     768 </span>                :<span class="lineCov">          5 :       g_signal_emit_by_name (dialog-&gt;editor, &quot;backspace&quot;);</span></a>
+<a name="769"><span class="lineNum">     769 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="770"><span class="lineNum">     770 </span>                :            : </a>
+<a name="771"><span class="lineNum">     771 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Linefeed:</span></a>
+<a name="772"><span class="lineNum">     772 </span>                :            :     case GDK_KEY_Return:</a>
+<a name="773"><span class="lineNum">     773 </span>                :            :     case GDK_KEY_KP_Enter:</a>
+<a name="774"><span class="lineNum">     774 </span>                :<span class="lineCov">          5 :       g_object_get (buffer, &quot;text&quot;, &amp;old_text, NULL);</span></a>
+<a name="775"><span class="lineNum">     775 </span>                :<span class="lineCov">          5 :       new_text = g_strjoin (&quot;&quot;, old_text, &quot;\n&quot;, NULL);</span></a>
+<a name="776"><span class="lineNum">     776 </span>                :<span class="lineCov">          5 :       g_object_set (buffer, &quot;text&quot;, new_text, NULL);</span></a>
+<a name="777"><span class="lineNum">     777 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="778"><span class="lineNum">     778 </span>                :            : </a>
+<a name="779"><span class="lineNum">     779 </span>                :            :     /* Home/End in terms of &quot;real lines&quot;, since the other side probably doesn't</a>
+<a name="780"><span class="lineNum">     780 </span>                :            :      * work in terms of &quot;display lines&quot;.</a>
+<a name="781"><span class="lineNum">     781 </span>                :            :      */</a>
+<a name="782"><span class="lineNum">     782 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Home:</span></a>
+<a name="783"><span class="lineNum">     783 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPH_ENDS, -1);</span></a>
+<a name="784"><span class="lineNum">     784 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="785"><span class="lineNum">     785 </span>                :            : </a>
+<a name="786"><span class="lineNum">     786 </span>                :<span class="lineCov">          5 :     case GDK_KEY_End:</span></a>
+<a name="787"><span class="lineNum">     787 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPH_ENDS, 1);</span></a>
+<a name="788"><span class="lineNum">     788 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="789"><span class="lineNum">     789 </span>                :            : </a>
+<a name="790"><span class="lineNum">     790 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Page_Up:</span></a>
+<a name="791"><span class="lineNum">     791 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PAGES, -1);</span></a>
+<a name="792"><span class="lineNum">     792 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="793"><span class="lineNum">     793 </span>                :            : </a>
+<a name="794"><span class="lineNum">     794 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Page_Down:</span></a>
+<a name="795"><span class="lineNum">     795 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PAGES, 1);</span></a>
+<a name="796"><span class="lineNum">     796 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="797"><span class="lineNum">     797 </span>                :            : </a>
+<a name="798"><span class="lineNum">     798 </span>                :            :     /* We Up/Down in terms of &quot;real lines&quot;, for the same reason as above. */</a>
+<a name="799"><span class="lineNum">     799 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Up:</span></a>
+<a name="800"><span class="lineNum">     800 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPHS, -1);</span></a>
+<a name="801"><span class="lineNum">     801 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="802"><span class="lineNum">     802 </span>                :            : </a>
+<a name="803"><span class="lineNum">     803 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Down:</span></a>
+<a name="804"><span class="lineNum">     804 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_PARAGRAPHS, 1);</span></a>
+<a name="805"><span class="lineNum">     805 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="806"><span class="lineNum">     806 </span>                :            : </a>
+<a name="807"><span class="lineNum">     807 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Left:</span></a>
+<a name="808"><span class="lineNum">     808 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_VISUAL_POSITIONS, -1);</span></a>
+<a name="809"><span class="lineNum">     809 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="810"><span class="lineNum">     810 </span>                :            : </a>
+<a name="811"><span class="lineNum">     811 </span>                :<span class="lineCov">          5 :     case GDK_KEY_Right:</span></a>
+<a name="812"><span class="lineNum">     812 </span>                :<span class="lineCov">          5 :       move_cursor (dialog, GTK_MOVEMENT_VISUAL_POSITIONS, 1);</span></a>
+<a name="813"><span class="lineNum">     813 </span>                :<span class="lineCov">          5 :       break;</span></a>
+<a name="814"><span class="lineNum">     814 </span>                :            :     }</a>
+<a name="815"><span class="lineNum">     815 </span>                :            : }</a>
+<a name="816"><span class="lineNum">     816 </span>                :            : </a>
 </pre>
       </td>
     </tr>

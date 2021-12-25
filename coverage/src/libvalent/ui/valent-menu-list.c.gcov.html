@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-25 03:54:19</td>
+            <td class="headerValue">2021-12-25 06:33:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -115,7 +115,7 @@
 <a name="36"><span class="lineNum">      36 </span>                :            : </a>
 <a name="37"><span class="lineNum">      37 </span>                :            : static void</a>
 <a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">         20 : valent_menu_list_add_row (ValentMenuList *self,</span></a>
-<a name="39"><span class="lineNum">      39 </span>                :            :                           gint            index)</a>
+<a name="39"><span class="lineNum">      39 </span>                :            :                           int             index)</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : {</a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   GtkWidget *row;</a>
 <a name="42"><span class="lineNum">      42 </span>                :            :   GtkGrid *grid;</a>
@@ -198,7 +198,7 @@
 <a name="119"><span class="lineNum">     119 </span>                :            : </a>
 <a name="120"><span class="lineNum">     120 </span>                :            : static void</a>
 <a name="121"><span class="lineNum">     121 </span>                :<span class="lineNoCov">          0 : valent_menu_list_add_section (ValentMenuList *self,</span></a>
-<a name="122"><span class="lineNum">     122 </span>                :            :                               gint            index,</a>
+<a name="122"><span class="lineNum">     122 </span>                :            :                               int             index,</a>
 <a name="123"><span class="lineNum">     123 </span>                :            :                               GMenuModel     *model)</a>
 <a name="124"><span class="lineNum">     124 </span>                :            : {</a>
 <a name="125"><span class="lineNum">     125 </span>                :            :   GtkListBoxRow *row;</a>
@@ -221,7 +221,7 @@
 <a name="141"><span class="lineNum">     141 </span>                :            : </a>
 <a name="142"><span class="lineNum">     142 </span>                :            : static void</a>
 <a name="143"><span class="lineNum">     143 </span>                :<span class="lineNoCov">          0 : valent_menu_list_add_submenu (ValentMenuList *self,</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :            :                               gint            index,</a>
+<a name="144"><span class="lineNum">     144 </span>                :            :                               int             index,</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :                               GMenuModel     *model)</a>
 <a name="146"><span class="lineNum">     146 </span>                :            : {</a>
 <a name="147"><span class="lineNum">     147 </span>                :            :   GtkWidget *stack;</a>
@@ -261,7 +261,7 @@
 <a name="180"><span class="lineNum">     180 </span>                :            : </a>
 <a name="181"><span class="lineNum">     181 </span>                :            : static void</a>
 <a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">         20 : valent_menu_list_add (ValentMenuList *self,</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :            :                       gint            index)</a>
+<a name="183"><span class="lineNum">     183 </span>                :            :                       int             index)</a>
 <a name="184"><span class="lineNum">     184 </span>                :            : {</a>
 <a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">         20 :   g_autoptr (GMenuLinkIter) iter = NULL;</span></a>
 <a name="186"><span class="lineNum">     186 </span>                :            :   const char *link_name;</a>
@@ -286,7 +286,7 @@
 <a name="205"><span class="lineNum">     205 </span>                :            : </a>
 <a name="206"><span class="lineNum">     206 </span>                :            : static void</a>
 <a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">          5 : valent_menu_list_remove (ValentMenuList *self,</span></a>
-<a name="208"><span class="lineNum">     208 </span>                :            :                          gint            index)</a>
+<a name="208"><span class="lineNum">     208 </span>                :            :                          int             index)</a>
 <a name="209"><span class="lineNum">     209 </span>                :            : {</a>
 <a name="210"><span class="lineNum">     210 </span>                :            :   GtkListBoxRow *row;</a>
 <a name="211"><span class="lineNum">     211 </span>                :            : </a>
@@ -298,27 +298,27 @@
 <a name="217"><span class="lineNum">     217 </span>                :            : </a>
 <a name="218"><span class="lineNum">     218 </span>                :            : static void</a>
 <a name="219"><span class="lineNum">     219 </span>                :<span class="lineCov">         15 : on_items_changed (GMenuModel     *model,</span></a>
-<a name="220"><span class="lineNum">     220 </span>                :            :                   gint            position,</a>
-<a name="221"><span class="lineNum">     221 </span>                :            :                   gint            removed,</a>
-<a name="222"><span class="lineNum">     222 </span>                :            :                   gint            added,</a>
+<a name="220"><span class="lineNum">     220 </span>                :            :                   int             position,</a>
+<a name="221"><span class="lineNum">     221 </span>                :            :                   int             removed,</a>
+<a name="222"><span class="lineNum">     222 </span>                :            :                   int             added,</a>
 <a name="223"><span class="lineNum">     223 </span>                :            :                   ValentMenuList *self)</a>
 <a name="224"><span class="lineNum">     224 </span>                :            : {</a>
-<a name="225"><span class="lineNum">     225 </span>                :            :   gint i, index;</a>
-<a name="226"><span class="lineNum">     226 </span>                :            : </a>
-<a name="227"><span class="lineNum">     227 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span><span class="branchCov" title="Branch 2 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         15 :   g_assert (G_IS_MENU_MODEL (model));</span></a>
+<a name="225"><span class="lineNum">     225 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span><span class="branchCov" title="Branch 2 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         15 :   g_assert (G_IS_MENU_MODEL (model));</span></a>
 <span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 15 times"> + </span>]
-<a name="228"><span class="lineNum">     228 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_MENU_LIST (self));</span></a>
-<a name="229"><span class="lineNum">     229 </span>                :            : </a>
-<a name="230"><span class="lineNum">     230 </span>                :            :   // Remove items</a>
-<a name="231"><span class="lineNum">     231 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         20 :   while (removed &gt; 0)</span></a>
-<a name="232"><span class="lineNum">     232 </span>                :            :     {</a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">          5 :       valent_menu_list_remove (self, position);</span></a>
-<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">          5 :       removed--;</span></a>
-<a name="235"><span class="lineNum">     235 </span>                :            :     }</a>
-<a name="236"><span class="lineNum">     236 </span>                :            : </a>
-<a name="237"><span class="lineNum">     237 </span>                :            :   // Add items</a>
-<a name="238"><span class="lineNum">     238 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         35 :   for (i = 0; i &lt; added; i++)</span></a>
-<a name="239"><span class="lineNum">     239 </span>                :            :     {</a>
+<a name="226"><span class="lineNum">     226 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         15 :   g_assert (VALENT_IS_MENU_LIST (self));</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :            : </a>
+<a name="228"><span class="lineNum">     228 </span>                :            :   // Remove items</a>
+<a name="229"><span class="lineNum">     229 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         20 :   while (removed &gt; 0)</span></a>
+<a name="230"><span class="lineNum">     230 </span>                :            :     {</a>
+<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">          5 :       valent_menu_list_remove (self, position);</span></a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">          5 :       removed--;</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :            :     }</a>
+<a name="234"><span class="lineNum">     234 </span>                :            : </a>
+<a name="235"><span class="lineNum">     235 </span>                :            :   // Add items</a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         35 :   for (int i = 0; i &lt; added; i++)</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :            :     {</a>
+<a name="238"><span class="lineNum">     238 </span>                :            :       int index;</a>
+<a name="239"><span class="lineNum">     239 </span>                :            : </a>
 <a name="240"><span class="lineNum">     240 </span>                :<span class="lineCov">         20 :       index = i + position;</span></a>
 <a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">         20 :       valent_menu_list_add (self, index);</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            :     }</a>
@@ -529,7 +529,7 @@
 <a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">         20 : valent_menu_list_set_model (ValentMenuList *list,</span></a>
 <a name="447"><span class="lineNum">     447 </span>                :            :                             GMenuModel     *model)</a>
 <a name="448"><span class="lineNum">     448 </span>                :            : {</a>
-<a name="449"><span class="lineNum">     449 </span>                :            :   guint n_items;</a>
+<a name="449"><span class="lineNum">     449 </span>                :            :   unsigned int n_items;</a>
 <a name="450"><span class="lineNum">     450 </span>                :            : </a>
 <a name="451"><span class="lineNum">     451 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   g_return_if_fail (VALENT_IS_MENU_LIST (list));</span></a>
 <a name="452"><span class="lineNum">     452 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 10 times"> + </span> :<span class="lineCov">         20 :   g_return_if_fail (model == NULL || G_IS_MENU_MODEL (model));</span></a>

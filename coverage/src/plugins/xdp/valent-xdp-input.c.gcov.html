@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-25 03:54:19</td>
+            <td class="headerValue">2021-12-25 06:33:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -145,7 +145,7 @@
 <a name="67"><span class="lineNum">      67 </span>                :            : {</a>
 <a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 :   ValentXdpInput *self = VALENT_XDP_INPUT (user_data);</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GDateTime) now = NULL;</span></a>
-<a name="70"><span class="lineNum">      70 </span>                :            :   gint remainder;</a>
+<a name="70"><span class="lineNum">      70 </span>                :            :   int remainder;</a>
 <a name="71"><span class="lineNum">      71 </span>                :            : </a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   /* If the session has been used recently, schedule a new expiry */</a>
 <a name="73"><span class="lineNum">      73 </span>                :<span class="lineNoCov">          0 :   now = g_date_time_new_now_local ();</span></a>
@@ -299,7 +299,7 @@
 <a name="221"><span class="lineNum">     221 </span>                :<span class="lineNoCov">          0 :   xdp_session_keyboard_key (self-&gt;session, TRUE, keysym, state);</span></a>
 <a name="222"><span class="lineNum">     222 </span>                :            : }</a>
 <a name="223"><span class="lineNum">     223 </span>                :            : </a>
-<a name="224"><span class="lineNum">     224 </span>                :            : static gint</a>
+<a name="224"><span class="lineNum">     224 </span>                :            : static int</a>
 <a name="225"><span class="lineNum">     225 </span>                :<span class="lineNoCov">          0 : translate_pointer_button (ValentPointerButton button)</span></a>
 <a name="226"><span class="lineNum">     226 </span>                :            : {</a>
 <a name="227"><span class="lineNum">     227 </span>                :<span class="lineNoCov">          0 :   switch (button)</span></a>

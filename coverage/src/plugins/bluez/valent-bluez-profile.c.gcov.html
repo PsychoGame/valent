@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-25 03:54:19</td>
+            <td class="headerValue">2021-12-25 06:33:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -147,7 +147,7 @@
 <a name="69"><span class="lineNum">      69 </span>                :            : static void</a>
 <a name="70"><span class="lineNum">      70 </span>                :<span class="lineNoCov">          0 : valent_bluez_profile_new_connection (ValentBluezProfile *profile,</span></a>
 <a name="71"><span class="lineNum">      71 </span>                :            :                                      const char         *device,</a>
-<a name="72"><span class="lineNum">      72 </span>                :            :                                      gint                fd,</a>
+<a name="72"><span class="lineNum">      72 </span>                :            :                                      int                 fd,</a>
 <a name="73"><span class="lineNum">      73 </span>                :            :                                      GVariant           *fd_properties)</a>
 <a name="74"><span class="lineNum">      74 </span>                :            : {</a>
 <a name="75"><span class="lineNum">      75 </span>                :<span class="lineNoCov">          0 :   g_autoptr (GError) error = NULL;</span></a>
@@ -253,7 +253,7 @@
 <a name="175"><span class="lineNum">     175 </span>                :            :       gint32 fd_idx;</a>
 <a name="176"><span class="lineNum">     176 </span>                :            :       GDBusMessage *message;</a>
 <a name="177"><span class="lineNum">     177 </span>                :            :       GUnixFDList *fd_list;</a>
-<a name="178"><span class="lineNum">     178 </span>                :            :       gint fd;</a>
+<a name="178"><span class="lineNum">     178 </span>                :            :       int fd;</a>
 <a name="179"><span class="lineNum">     179 </span>                :<span class="lineNoCov">          0 :       g_autoptr (GVariant) fd_props = NULL;</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            : </a>
 <a name="181"><span class="lineNum">     181 </span>                :<span class="lineNoCov">          0 :       if (!g_variant_is_of_type (parameters, G_VARIANT_TYPE (&quot;(oha{sv})&quot;)))</span></a>
