@@ -31,13 +31,13 @@
             <td class="headerValue">Code Coverage</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">544</td>
-            <td class="headerCovTableEntry">588</td>
+            <td class="headerCovTableEntry">542</td>
+            <td class="headerCovTableEntry">586</td>
             <td class="headerCovTableEntryHi">92.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-25 06:33:05</td>
+            <td class="headerValue">2021-12-27 14:38:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">53</td>
@@ -159,8 +159,8 @@
 <a name="81"><span class="lineNum">      81 </span>                :            : static void valent_device_reload_plugins (ValentDevice *device);</a>
 <a name="82"><span class="lineNum">      82 </span>                :            : static void valent_device_update_plugins (ValentDevice *device);</a>
 <a name="83"><span class="lineNum">      83 </span>                :            : </a>
-<a name="84"><span class="lineNum">      84 </span>  [<span class="branchCov" title="Branch 0 was taken 211 times"> + </span><span class="branchCov" title="Branch 1 was taken 36246 times"> + </span><span class="branchCov" title="Branch 2 was taken 211 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      36668 : G_DEFINE_TYPE (ValentDevice, valent_device, G_TYPE_OBJECT)</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 211 times"> + </span><span class="branchCov" title="Branch 5 was taken 36120 times"> + </span>]
+<a name="84"><span class="lineNum">      84 </span>  [<span class="branchCov" title="Branch 0 was taken 211 times"> + </span><span class="branchCov" title="Branch 1 was taken 36235 times"> + </span><span class="branchCov" title="Branch 2 was taken 211 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      36657 : G_DEFINE_TYPE (ValentDevice, valent_device, G_TYPE_OBJECT)</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 211 times"> + </span><span class="branchCov" title="Branch 5 was taken 36109 times"> + </span>]
 <a name="85"><span class="lineNum">      85 </span>                :            : </a>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <a name="87"><span class="lineNum">      87 </span>                :            : enum {</a>
@@ -1187,7 +1187,7 @@
 <a name="1103"><span class="lineNum">    1103 </span>                :            :                                     valent_device_send_packet,</a>
 <a name="1104"><span class="lineNum">    1104 </span>                :            :                                     G_IO_ERROR,</a>
 <a name="1105"><span class="lineNum">    1105 </span>                :            :                                     G_IO_ERROR_NOT_CONNECTED,</a>
-<a name="1106"><span class="lineNum">    1106 </span>                :<span class="lineCov">          5 :                                     _(&quot;%s is disconnected&quot;), device-&gt;name);</span></a>
+<a name="1106"><span class="lineNum">    1106 </span>                :            :                                     &quot;%s is disconnected&quot;, device-&gt;name);</a>
 <a name="1107"><span class="lineNum">    1107 </span>                :            : </a>
 <a name="1108"><span class="lineNum">    1108 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :   if G_UNLIKELY (!device-&gt;paired)</span></a>
 <a name="1109"><span class="lineNum">    1109 </span>                :<span class="lineCov">          5 :     return g_task_report_new_error (device,</span></a>
@@ -1196,7 +1196,7 @@
 <a name="1112"><span class="lineNum">    1112 </span>                :            :                                     valent_device_send_packet,</a>
 <a name="1113"><span class="lineNum">    1113 </span>                :            :                                     G_IO_ERROR,</a>
 <a name="1114"><span class="lineNum">    1114 </span>                :            :                                     G_IO_ERROR_PERMISSION_DENIED,</a>
-<a name="1115"><span class="lineNum">    1115 </span>                :<span class="lineCov">          5 :                                     _(&quot;%s is unpaired&quot;), device-&gt;name);</span></a>
+<a name="1115"><span class="lineNum">    1115 </span>                :            :                                     &quot;%s is unpaired&quot;, device-&gt;name);</a>
 <a name="1116"><span class="lineNum">    1116 </span>                :            : </a>
 <a name="1117"><span class="lineNum">    1117 </span>                :<span class="lineCov">          5 :   task = g_task_new (device, cancellable, callback, user_data);</span></a>
 <a name="1118"><span class="lineNum">    1118 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   g_task_set_source_tag (task, valent_device_send_packet);</span></a>
@@ -1242,20 +1242,20 @@
 <a name="1158"><span class="lineNum">    1158 </span>                :            :  * specific device to be shown.</a>
 <a name="1159"><span class="lineNum">    1159 </span>                :            :  */</a>
 <a name="1160"><span class="lineNum">    1160 </span>                :            : void</a>
-<a name="1161"><span class="lineNum">    1161 </span>                :<span class="lineCov">         91 : valent_device_show_notification (ValentDevice  *device,</span></a>
+<a name="1161"><span class="lineNum">    1161 </span>                :<span class="lineCov">         80 : valent_device_show_notification (ValentDevice  *device,</span></a>
 <a name="1162"><span class="lineNum">    1162 </span>                :            :                                  const char    *id,</a>
 <a name="1163"><span class="lineNum">    1163 </span>                :            :                                  GNotification *notification)</a>
 <a name="1164"><span class="lineNum">    1164 </span>                :            : {</a>
-<a name="1165"><span class="lineNum">    1165 </span>                :<span class="lineCov">         91 :   GApplication *application = g_application_get_default ();</span></a>
-<a name="1166"><span class="lineNum">    1166 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 91 times"> + </span>]:<span class="lineCov">         91 :   g_autofree char *notification_id = NULL;</span></a>
+<a name="1165"><span class="lineNum">    1165 </span>                :<span class="lineCov">         80 :   GApplication *application = g_application_get_default ();</span></a>
+<a name="1166"><span class="lineNum">    1166 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   g_autofree char *notification_id = NULL;</span></a>
 <a name="1167"><span class="lineNum">    1167 </span>                :            : </a>
-<a name="1168"><span class="lineNum">    1168 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 91 times"> + </span>]:<span class="lineCov">         91 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
-<a name="1169"><span class="lineNum">    1169 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 91 times"> + </span>]:<span class="lineCov">         91 :   g_return_if_fail (id != NULL);</span></a>
-<a name="1170"><span class="lineNum">    1170 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 91 times"> + </span><span class="branchCov" title="Branch 2 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         91 :   g_return_if_fail (G_IS_NOTIFICATION (notification));</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 91 times"> + </span>]
+<a name="1168"><span class="lineNum">    1168 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
+<a name="1169"><span class="lineNum">    1169 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">         80 :   g_return_if_fail (id != NULL);</span></a>
+<a name="1170"><span class="lineNum">    1170 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span><span class="branchCov" title="Branch 2 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         80 :   g_return_if_fail (G_IS_NOTIFICATION (notification));</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 80 times"> + </span>]
 <a name="1171"><span class="lineNum">    1171 </span>                :            : </a>
-<a name="1172"><span class="lineNum">    1172 </span>        [<span class="branchCov" title="Branch 0 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         91 :   if G_UNLIKELY (application == NULL)</span></a>
-<a name="1173"><span class="lineNum">    1173 </span>                :<span class="lineCov">         91 :     return;</span></a>
+<a name="1172"><span class="lineNum">    1172 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         80 :   if G_UNLIKELY (application == NULL)</span></a>
+<a name="1173"><span class="lineNum">    1173 </span>                :<span class="lineCov">         80 :     return;</span></a>
 <a name="1174"><span class="lineNum">    1174 </span>                :            : </a>
 <a name="1175"><span class="lineNum">    1175 </span>                :            :   /* Prefix the GNotification Id with the deviceId */</a>
 <a name="1176"><span class="lineNum">    1176 </span>                :<span class="lineNoCov">          0 :   notification_id = g_strdup_printf (&quot;%s|%s&quot;, device-&gt;id, id);</span></a>
@@ -1272,17 +1272,17 @@
 <a name="1187"><span class="lineNum">    1187 </span>                :            :  * specific device to be hidden.</a>
 <a name="1188"><span class="lineNum">    1188 </span>                :            :  */</a>
 <a name="1189"><span class="lineNum">    1189 </span>                :            : void</a>
-<a name="1190"><span class="lineNum">    1190 </span>                :<span class="lineCov">         50 : valent_device_hide_notification (ValentDevice *device,</span></a>
+<a name="1190"><span class="lineNum">    1190 </span>                :<span class="lineCov">         60 : valent_device_hide_notification (ValentDevice *device,</span></a>
 <a name="1191"><span class="lineNum">    1191 </span>                :            :                                  const char   *id)</a>
 <a name="1192"><span class="lineNum">    1192 </span>                :            : {</a>
-<a name="1193"><span class="lineNum">    1193 </span>                :<span class="lineCov">         50 :   GApplication *application = g_application_get_default ();</span></a>
-<a name="1194"><span class="lineNum">    1194 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_autofree char *notification_id = NULL;</span></a>
+<a name="1193"><span class="lineNum">    1193 </span>                :<span class="lineCov">         60 :   GApplication *application = g_application_get_default ();</span></a>
+<a name="1194"><span class="lineNum">    1194 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_autofree char *notification_id = NULL;</span></a>
 <a name="1195"><span class="lineNum">    1195 </span>                :            : </a>
-<a name="1196"><span class="lineNum">    1196 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
-<a name="1197"><span class="lineNum">    1197 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   g_return_if_fail (id != NULL);</span></a>
+<a name="1196"><span class="lineNum">    1196 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_return_if_fail (VALENT_IS_DEVICE (device));</span></a>
+<a name="1197"><span class="lineNum">    1197 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_return_if_fail (id != NULL);</span></a>
 <a name="1198"><span class="lineNum">    1198 </span>                :            : </a>
-<a name="1199"><span class="lineNum">    1199 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :   if G_UNLIKELY (application == NULL)</span></a>
-<a name="1200"><span class="lineNum">    1200 </span>                :<span class="lineCov">         50 :     return;</span></a>
+<a name="1199"><span class="lineNum">    1199 </span>        [<span class="branchCov" title="Branch 0 was taken 60 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         60 :   if G_UNLIKELY (application == NULL)</span></a>
+<a name="1200"><span class="lineNum">    1200 </span>                :<span class="lineCov">         60 :     return;</span></a>
 <a name="1201"><span class="lineNum">    1201 </span>                :            : </a>
 <a name="1202"><span class="lineNum">    1202 </span>                :<span class="lineNoCov">          0 :   notification_id = g_strdup_printf (&quot;%s|%s&quot;, device-&gt;id, id);</span></a>
 <a name="1203"><span class="lineNum">    1203 </span>                :<span class="lineNoCov">          0 :   g_application_withdraw_notification (application, notification_id);</span></a>
@@ -1530,11 +1530,11 @@
 <a name="1445"><span class="lineNum">    1445 </span>                :            :  * Returns: (transfer none): the name, or NULL.</a>
 <a name="1446"><span class="lineNum">    1446 </span>                :            :  */</a>
 <a name="1447"><span class="lineNum">    1447 </span>                :            : const char *</a>
-<a name="1448"><span class="lineNum">    1448 </span>                :<span class="lineCov">         70 : valent_device_get_name (ValentDevice *device)</span></a>
+<a name="1448"><span class="lineNum">    1448 </span>                :<span class="lineCov">         60 : valent_device_get_name (ValentDevice *device)</span></a>
 <a name="1449"><span class="lineNum">    1449 </span>                :            : {</a>
-<a name="1450"><span class="lineNum">    1450 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 70 times"> + </span>]:<span class="lineCov">         70 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), NULL);</span></a>
+<a name="1450"><span class="lineNum">    1450 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         60 :   g_return_val_if_fail (VALENT_IS_DEVICE (device), NULL);</span></a>
 <a name="1451"><span class="lineNum">    1451 </span>                :            : </a>
-<a name="1452"><span class="lineNum">    1452 </span>                :<span class="lineCov">         70 :   return device-&gt;name;</span></a>
+<a name="1452"><span class="lineNum">    1452 </span>                :<span class="lineCov">         60 :   return device-&gt;name;</span></a>
 <a name="1453"><span class="lineNum">    1453 </span>                :            : }</a>
 <a name="1454"><span class="lineNum">    1454 </span>                :            : </a>
 <a name="1455"><span class="lineNum">    1455 </span>                :            : /**</a>
