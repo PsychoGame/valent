@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-12-27 14:38:07</td>
+            <td class="headerValue">2021-12-27 22:12:03</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -144,31 +144,31 @@
 <a name="65"><span class="lineNum">      65 </span>                :            : } ValentTaskClosure;</a>
 <a name="66"><span class="lineNum">      66 </span>                :            : </a>
 <a name="67"><span class="lineNum">      67 </span>                :            : static inline void</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">       1403 : valent_task_closure_free (gpointer data)</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">       1410 : valent_task_closure_free (gpointer data)</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : {</a>
-<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">       1403 :   ValentTaskClosure *closure = data;</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">       1410 :   ValentTaskClosure *closure = data;</span></a>
 <a name="71"><span class="lineNum">      71 </span>                :            : </a>
-<a name="72"><span class="lineNum">      72 </span>        [<span class="branchCov" title="Branch 0 was taken 1303 times"> + </span><span class="branchCov" title="Branch 1 was taken 100 times"> + </span>]:<span class="lineCov">       1403 :   g_clear_object (&amp;closure-&gt;task);</span></a>
-<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 1403 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1403 :   g_clear_pointer (&amp;closure, g_free);</span></a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">       1403 : }</span></a>
+<a name="72"><span class="lineNum">      72 </span>        [<span class="branchCov" title="Branch 0 was taken 1310 times"> + </span><span class="branchCov" title="Branch 1 was taken 100 times"> + </span>]:<span class="lineCov">       1410 :   g_clear_object (&amp;closure-&gt;task);</span></a>
+<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 1410 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1410 :   g_clear_pointer (&amp;closure, g_free);</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">       1410 : }</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
 <a name="76"><span class="lineNum">      76 </span>                :            : static inline void</a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         73 : valent_task_closure_cancel (gpointer data)</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         80 : valent_task_closure_cancel (gpointer data)</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            : {</a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         73 :   ValentTaskClosure *closure = data;</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         80 :   ValentTaskClosure *closure = data;</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            : </a>
-<a name="81"><span class="lineNum">      81 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 68 times"> + </span><span class="branchCov" title="Branch 2 was taken 68 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         73 :   if (G_IS_TASK (closure-&gt;task) &amp;&amp; !g_task_get_completed (closure-&gt;task))</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 68 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 68 times"> + </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span><span class="branchCov" title="Branch 8 was taken 68 times"> + </span> 
+<a name="81"><span class="lineNum">      81 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 75 times"> + </span><span class="branchCov" title="Branch 2 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         80 :   if (G_IS_TASK (closure-&gt;task) &amp;&amp; !g_task_get_completed (closure-&gt;task))</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 75 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 75 times"> + </span><span class="branchCov" title="Branch 7 was taken 5 times"> + </span><span class="branchCov" title="Branch 8 was taken 75 times"> + </span> 
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
 <a name="82"><span class="lineNum">      82 </span>                :            :     {</a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">         68 :       g_task_return_new_error (closure-&gt;task,</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">         75 :       g_task_return_new_error (closure-&gt;task,</span></a>
 <a name="84"><span class="lineNum">      84 </span>                :            :                                G_IO_ERROR,</a>
 <a name="85"><span class="lineNum">      85 </span>                :            :                                G_IO_ERROR_CANCELLED,</a>
 <a name="86"><span class="lineNum">      86 </span>                :            :                                &quot;Operation cancelled&quot;);</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :     }</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : </a>
-<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 73 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         73 :   g_clear_pointer (&amp;closure, valent_task_closure_free);</span></a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         73 : }</span></a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         80 :   g_clear_pointer (&amp;closure, valent_task_closure_free);</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         80 : }</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            : </a>
 <a name="92"><span class="lineNum">      92 </span>                :            : /*</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :  * GThreadFunc</a>
@@ -214,14 +214,14 @@
 <a name="131"><span class="lineNum">     131 </span>                :            : }</a>
 <a name="132"><span class="lineNum">     132 </span>                :            : </a>
 <a name="133"><span class="lineNum">     133 </span>                :            : static inline int</a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">         84 : valent_task_queue_sort (gconstpointer a,</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">         85 : valent_task_queue_sort (gconstpointer a,</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            :                         gconstpointer b,</a>
 <a name="136"><span class="lineNum">     136 </span>                :            :                         gpointer      user_data)</a>
 <a name="137"><span class="lineNum">     137 </span>                :            : {</a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         84 :   const ValentTaskClosure *closure1 = a;</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         84 :   const ValentTaskClosure *closure2 = b;</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         85 :   const ValentTaskClosure *closure1 = a;</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         85 :   const ValentTaskClosure *closure2 = b;</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            : </a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         84 :   return closure1-&gt;priority - closure2-&gt;priority;</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         85 :   return closure1-&gt;priority - closure2-&gt;priority;</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            : }</a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
 <a name="144"><span class="lineNum">     144 </span>                :            : static inline void</a>
@@ -321,27 +321,27 @@
 <a name="238"><span class="lineNum">     238 </span>                :            :  * Push @task and @task_func onto @queue with @task_mode.</a>
 <a name="239"><span class="lineNum">     239 </span>                :            :  */</a>
 <a name="240"><span class="lineNum">     240 </span>                :            : static void</a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">       1303 : valent_task_queue_run_full (ValentTaskQueue *self,</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">       1310 : valent_task_queue_run_full (ValentTaskQueue *self,</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            :                             GTask           *task,</a>
 <a name="243"><span class="lineNum">     243 </span>                :            :                             GTaskThreadFunc  task_func,</a>
 <a name="244"><span class="lineNum">     244 </span>                :            :                             ValentTaskMode   task_mode)</a>
 <a name="245"><span class="lineNum">     245 </span>                :            : {</a>
 <a name="246"><span class="lineNum">     246 </span>                :            :   ValentTaskClosure *closure;</a>
 <a name="247"><span class="lineNum">     247 </span>                :            : </a>
-<a name="248"><span class="lineNum">     248 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1303 times"> + </span>]:<span class="lineCov">       1303 :   g_assert (VALENT_IS_TASK_QUEUE (self));</span></a>
-<a name="249"><span class="lineNum">     249 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1303 times"> + </span><span class="branchCov" title="Branch 2 was taken 1303 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1303 :   g_assert (G_IS_TASK (task));</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 1303 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 1303 times"> + </span>]
-<a name="250"><span class="lineNum">     250 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1303 times"> + </span>]:<span class="lineCov">       1303 :   g_assert (task_func != NULL);</span></a>
+<a name="248"><span class="lineNum">     248 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1310 times"> + </span>]:<span class="lineCov">       1310 :   g_assert (VALENT_IS_TASK_QUEUE (self));</span></a>
+<a name="249"><span class="lineNum">     249 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1310 times"> + </span><span class="branchCov" title="Branch 2 was taken 1310 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1310 :   g_assert (G_IS_TASK (task));</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 1310 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 1310 times"> + </span>]
+<a name="250"><span class="lineNum">     250 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1310 times"> + </span>]:<span class="lineCov">       1310 :   g_assert (task_func != NULL);</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : </a>
-<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">       1303 :   closure = g_new0 (ValentTaskClosure, 1);</span></a>
-<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">       1303 :   closure-&gt;task = g_object_ref (task);</span></a>
-<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">       1303 :   closure-&gt;task_func = task_func;</span></a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">       1303 :   closure-&gt;task_mode = task_mode;</span></a>
-<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">       1303 :   closure-&gt;priority = g_task_get_priority (task);</span></a>
+<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">       1310 :   closure = g_new0 (ValentTaskClosure, 1);</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">       1310 :   closure-&gt;task = g_object_ref (task);</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">       1310 :   closure-&gt;task_func = task_func;</span></a>
+<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">       1310 :   closure-&gt;task_mode = task_mode;</span></a>
+<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">       1310 :   closure-&gt;priority = g_task_get_priority (task);</span></a>
 <a name="257"><span class="lineNum">     257 </span>                :            : </a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">       1303 :   g_async_queue_lock (self-&gt;tasks);</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">       1310 :   g_async_queue_lock (self-&gt;tasks);</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
-<a name="260"><span class="lineNum">     260 </span>        [<span class="branchCov" title="Branch 0 was taken 1255 times"> + </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span>]:<span class="lineCov">       1303 :   if (!self-&gt;closed)</span></a>
+<a name="260"><span class="lineNum">     260 </span>        [<span class="branchCov" title="Branch 0 was taken 1255 times"> + </span><span class="branchCov" title="Branch 1 was taken 55 times"> + </span>]:<span class="lineCov">       1310 :   if (!self-&gt;closed)</span></a>
 <a name="261"><span class="lineNum">     261 </span>                :            :     {</a>
 <a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">       1255 :       self-&gt;closed = (closure-&gt;task_mode == VALENT_TASK_TERMINAL);</span></a>
 <a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">       1255 :       g_async_queue_push_sorted_unlocked (self-&gt;tasks,</span></a>
@@ -350,10 +350,10 @@
 <a name="266"><span class="lineNum">     266 </span>                :            :                                           NULL);</a>
 <a name="267"><span class="lineNum">     267 </span>                :            :     }</a>
 <a name="268"><span class="lineNum">     268 </span>                :            : </a>
-<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">       1303 :   g_async_queue_unlock (self-&gt;tasks);</span></a>
+<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">       1310 :   g_async_queue_unlock (self-&gt;tasks);</span></a>
 <a name="270"><span class="lineNum">     270 </span>                :            : </a>
-<a name="271"><span class="lineNum">     271 </span>        [<span class="branchCov" title="Branch 0 was taken 48 times"> + </span><span class="branchCov" title="Branch 1 was taken 1255 times"> + </span>]:<span class="lineCov">       1303 :   g_clear_pointer (&amp;closure, valent_task_closure_cancel);</span></a>
-<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">       1303 : }</span></a>
+<a name="271"><span class="lineNum">     271 </span>        [<span class="branchCov" title="Branch 0 was taken 55 times"> + </span><span class="branchCov" title="Branch 1 was taken 1255 times"> + </span>]:<span class="lineCov">       1310 :   g_clear_pointer (&amp;closure, valent_task_closure_cancel);</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">       1310 : }</span></a>
 <a name="273"><span class="lineNum">     273 </span>                :            : </a>
 <a name="274"><span class="lineNum">     274 </span>                :            : /**</a>
 <a name="275"><span class="lineNum">     275 </span>                :            :  * valent_task_queue_run:</a>
@@ -418,16 +418,16 @@
 <a name="332"><span class="lineNum">     332 </span>                :            :  * before tasks already waiting in @queue.</a>
 <a name="333"><span class="lineNum">     333 </span>                :            :  */</a>
 <a name="334"><span class="lineNum">     334 </span>                :            : void</a>
-<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">        633 : valent_task_queue_run_close (ValentTaskQueue *queue,</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">        640 : valent_task_queue_run_close (ValentTaskQueue *queue,</span></a>
 <a name="336"><span class="lineNum">     336 </span>                :            :                              GTask           *task,</a>
 <a name="337"><span class="lineNum">     337 </span>                :            :                              GTaskThreadFunc  task_func)</a>
 <a name="338"><span class="lineNum">     338 </span>                :            : {</a>
-<a name="339"><span class="lineNum">     339 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 633 times"> + </span>]:<span class="lineCov">        633 :   g_return_if_fail (VALENT_IS_TASK_QUEUE (queue));</span></a>
-<a name="340"><span class="lineNum">     340 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 633 times"> + </span><span class="branchCov" title="Branch 2 was taken 633 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        633 :   g_return_if_fail (G_IS_TASK (task));</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 633 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 633 times"> + </span>]
-<a name="341"><span class="lineNum">     341 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 633 times"> + </span>]:<span class="lineCov">        633 :   g_return_if_fail (task_func != NULL);</span></a>
+<a name="339"><span class="lineNum">     339 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 640 times"> + </span>]:<span class="lineCov">        640 :   g_return_if_fail (VALENT_IS_TASK_QUEUE (queue));</span></a>
+<a name="340"><span class="lineNum">     340 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 640 times"> + </span><span class="branchCov" title="Branch 2 was taken 640 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        640 :   g_return_if_fail (G_IS_TASK (task));</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 640 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 640 times"> + </span>]
+<a name="341"><span class="lineNum">     341 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 640 times"> + </span>]:<span class="lineCov">        640 :   g_return_if_fail (task_func != NULL);</span></a>
 <a name="342"><span class="lineNum">     342 </span>                :            : </a>
-<a name="343"><span class="lineNum">     343 </span>                :<span class="lineCov">        633 :   valent_task_queue_run_full (queue, task, task_func, VALENT_TASK_TERMINAL);</span></a>
+<a name="343"><span class="lineNum">     343 </span>                :<span class="lineCov">        640 :   valent_task_queue_run_full (queue, task, task_func, VALENT_TASK_TERMINAL);</span></a>
 <a name="344"><span class="lineNum">     344 </span>                :            : }</a>
 <a name="345"><span class="lineNum">     345 </span>                :            : </a>
 <a name="346"><span class="lineNum">     346 </span>                :            : /**</a>
